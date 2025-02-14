@@ -1,0 +1,24 @@
+/* Adjust spacing below the title (h1) */
+.quarto-title-block h1.title {
+  margin-bottom: 40px !important;
+}
+
+/* Adjust spacing above the first h2 header */
+.level2 h2.anchored {
+  margin-top: 40px; /* Adds space above the first h2 header */
+  border-bottom: 2px solid #ccc; /* Optional underline for emphasis */
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+
+
+/* Custom styles for floating figures */
+.wrapfig {
+  float: right;
+  margin: 0 20px 10px 0; /* Adjust space around the image */
+  width: 40%; /* Adjust image width */
+}
+

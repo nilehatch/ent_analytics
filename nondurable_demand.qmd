@@ -1,0 +1,527 @@
+---
+title: "Estimating Demand of Non-durable Goods Using R"
+author: "Nile Hatch"
+#format: 
+#  pdf:
+#    toc: true
+#    number-sections: true
+#    colorlinks: true
+format:
+  html: 
+    toc: true
+    code-fold: true
+    number-sections: true
+    colorlinks: true
+    embed-resources: true
+editor: visual
+execute:
+  echo: false
+---
+
+```{r}
+#| output: false
+library(tidyverse)
+library(ggthemes)
+library(scales)
+library(gt)
+```
+
+## Non-durable Goods
+
+In the world of entrepreneurial analytics, understanding customer demand is a pivotal factor. In the previous chapter, we explored the intricacies of durable goods. Now, let's dive into non-durable goods, another commonly-encountered dimension of demand analysis in startups.
+
+Non-durable goods are products that are typically consumed in a single use, such as food, toiletries, or movie tickets. These items are characterized by their transient nature and limited lifespan. Unlike durable goods that last for an extended period, non-durable goods are usually exhausted after one use. As a result, we normally expect that consumers will purchase more than one unit per period.
+
+It is important to treat non-durable goods correctly because treating them like durable goods and asking only about consumer's willingness to pay overlooks the multiple units that each consumer intends to purchase.
+
+**Examples of Non-durable Goods:**
+
+-   **Food and Beverages:** Items like fruits, vegetables, soft drinks, and packaged snacks fall into this category. They are consumed quickly and need replenishment.
+-   **Toiletries:** Products such as toothpaste, shampoo, and soap are non-durable because they get used up with each application.
+-   **Tickets:** Movie tickets and concert tickets are also considered non-durable as they grant access for a specific event or period.
+
+To effectively analyze non-durable goods demand, it's crucial to gather both price and quantity data. Unlike durable goods, where consumers typically buy one unit for an extended period, non-durable goods often involve repeat purchases within a given time frame. Therefore, understanding how price influences the quantity that individual consumers intend to purchase is essential for informed decision-making in entrepreneurial ventures.
+
+The primary approach to collect price-quantity data for non-durable goods is to ask potential customers how many they will purchase at a series of prices, .e.g., \$10, \$20, etc. You name the price and they name the quantity giving us the price-quantity we need to estimate their demand model. The major drawback is that you will be asking many similar questions. If you ask too many, your respondents will suffer survey fatigue and stop answering.
+
+```{=html}
+<!--  two main approaches can be considered:
+
+1.  Collecting quantity decisions of customers when facing a series of potential prices: This method provides direct data on price and quantity but it is likely to lead to survey fatigue in the respondents it too many prices are named.
+
+2.  Collecting willingness to pay data for the product and then collecting data on how many units would be purchased at that price: This method asks only two questions so it reduces the risk of respondent fatigue. This approach has the drawback that it probably under-reports the quantities that customers would willing to pay at lower prices. For example, if a customer is willing to pay \$5.00 for the product and is willing to buy 10 units per period at that price, they would probably be willing to buy more than 10 units if the price were \$3.00.
+
+These approaches do not lead to identical demand data and each has drawbacks. Asking about consumption at different prices limits the variance in price to the list that is named and tends to dissuade impatient respondents from finishing the survey. Asking about willingness to pay for the product and how many units would be consumed at that price is a much lower burden on the respondent but it undercounts the quantity the respondent would demand at prices lower than their maximum willingness to pay. It is not clear which of these drawbacks leads to more bias in the data or which approach is more reliable, so we will consider both.-->
+```
+
+------------------------------------------------------------------------
+
+## Quantity Data at Various Prices {#sec-pq-data}
+
+### Gathering Price-Quantity Data {#sec-gathering-pq}
+
+Collecting data about how many units potential customers would purchase at various prices is a vital step in understanding demand for non-durable goods. However, the way you approach and interact with potential customers during this data collection process can significantly impact the quality of insights you gather.
+
+Here are some essential tips for effectively interacting with potential customers:
+
+1.  **Set the Context:** Begin your conversation by providing context about the non-durable good. Explain its unique features, benefits, and how it addresses specific needs or problems. Help potential customers visualize how the product fits into their lives.
+
+2.  **Engage in a Dialogue:** Before jumping into questions about pricing, engage customers in a conversation about the product.
+
+    -   **The Wow Factor Test:** Start by asking them to rate their initial impression of the product on a scale of 1 to 10, without predefined meanings for 1 or 10. This not only breaks the ice but also provides valuable feedback.
+    -   **Open-Ended Queries:** Encourage customers to share what they like the most and least about the product. These open-ended questions can uncover insights you might have missed.
+    -   **Seek Suggestions:** Ask for suggestions on how the product could better meet their needs. This not only provides improvement ideas but also makes customers feel valued and engaged in the product's development.
+
+3.  **Introduce the Pricing Question Thoughtfully:** When transitioning to the question about how many units they would purchase at different prices, do so thoughtfully.
+
+    -   **Express Genuine Interest:** Preface the pricing question by expressing genuine interest in their opinions. Explain that you're passionate about the product's potential and sincerely value their input.
+    -   **Frame the Question:** Phrase the pricing question as an extension of their evaluation: "Given the product's features and benefits we've discussed, at a price of \$3, how many units would you buy?" "At a price of \$3.50, how many units would you buy?" and so on. This framing makes it feel like another aspect of rating the product rather than a commitment.
+
+4.  **Systematic Data Recording:** Ensure that you systematically record the responses to willingness-to-pay questions, along with any additional feedback or comments provided by customers. This documentation will help you identify trends and patterns in consumer sentiment over time.
+
+5.  **Show Appreciation:** Always express gratitude for their time and insights. Let customers know that their feedback plays a vital role in shaping the product and its journey.
+
+In summary, gathering data about how customers would respond to various prices for non-durable goods is not just about numbers; it's about creating a meaningful dialogue, understanding perceptions, and making potential customers feel valued in the product development process. When approached with care and genuine interest, this interaction becomes a valuable part of the journey towards mutual value creation.
+
+@tbl-p-q-data provides a small sample of demand data using this approach where 23 potential target customers were asked the quantity they were willing to purchase at every price in a series. The data are in a tibble named `pq_data` and here is a `glimpse()` of that data.
+
+```{r}
+#| label: tbl-p-q-data
+#| tbl-cap: "Quantity demanded by the sample as the sum of quantity demanded of each respondent at various named prices."
+#| tbl-cap-location: margin
+
+# Create a tibble with the data
+pq_data <- tribble(
+  ~`$0.00`, ~`$0.50`, ~`$1.00`, ~`$1.50`, ~`$2.00`, ~`$2.50`, ~`3.00`,
+  10, 5, 4, 2, 2, 1, 1,
+  1, 0, 0, 0, 0, 0, 0,
+  1, 1, 1, 1, 0, 0, 0,
+  4, 2, 1, 1, 1, 1, 1,
+  1, 1, 1, 0, 0, 0, 0,
+  10, 3, 0, 0, 0, 0, 0,
+  1, 0, 0, 0, 0, 0, 0,
+  10, 1, 0, 0, 0, 0, 0,
+  1, 1, 0, 0, 0, 0, 0,
+  1, 0, 0, 0, 0, 0, 0,
+  3, 2, 1, 1, 1, 0, 0,
+  1, 1, 0, 0, 0, 0, 0,
+  2, 1, 0, 0, 0, 0, 0,
+  4, 3, 3, 3, 2, 1, 1,
+  6, 5, 3, 2, 1, 0, 0,
+  2, 2, 2, 2, 2, 0, 0,
+  1, 1, 1, 1, 0, 0, 0,
+  1, 1, 0, 0, 0, 0, 0,
+  2, 2, 1, 0, 0, 0, 0,
+  2, 2, 1, 1, 0, 0, 0,
+  4, 4, 4, 4, 3, 3, 2,
+  5, 4, 3, 2, 1, 1, 1,
+  8, 2, 2, 1, 0, 0, 0
+)
+
+#(resp <- c(1:23))
+#pq_data <- pq_data |> 
+#  mutate(Respondent = resp, .before = `$0.00`)
+
+pq_gt <- pq_data |> 
+  gt() |> 
+  tab_spanner(
+    label = "Price",
+    columns = c(1:7)) |> 
+  grand_summary_rows(
+    columns = c(1:7),
+    fns = list("Quantity (total)" ~ sum(.)),
+    fmt = ~ fmt_number(., use_seps = FALSE))
+pq_gt
+```
+
+### Calculating Price-Quantity Variables
+
+```{r}
+#glimpse(pq_data)
+```
+
+Quantity data usually come survey platforms in the format we see in @tbl-p-q-data. We ask how many they would buy at \$0.00, \$1.00, etc and the survey platform sets up each price as a column for responses. Unfortunately, this data format is not tidy.
+
+Having tidy data means that every column is a variable and every row is an observation. The columns of this data are for each price in the series we named. In other words, they are values of an underlying price variable rather than different variables. We really ony have have two variables here, price and the quantity the respondent would buy at that price. To tidy the data, we use R's `pivot_longer()` function.
+
+::: {.callout-tip title="Constructing your AI prompt:"}
+The `pivot_longer()` code we need is not very intuitive for your AI to understand. In other words, the prompt you give it needs to be very specific or it will give you code that does something different from what you need. I recommend laying it out as a list. If you edit the following to match the particulars of your data, it should work reliably.
+
+To transform your data using `pivot_longer()`, follow these detailed steps:
+
+1.  **Provide a Glimpse of Your Tibble:** Run the `glimpse()` function on your data and share the output with your AI. Use this format:\
+    *"[Here is a glimpse of my data:]{style="color:#6AA99D"}"*\
+    (Then paste the output of `glimpse(your_tibble_name)`)
+
+2.  **Specify Columns for Transformation:** Clearly state which columns you need to transform. For instance:\
+    *"[I want to use `pivot_longer()` on columns q_p_050 to q_p_250.]{style="color:#6AA99D"}"*
+
+3.  Define New Column Names:\
+    *"[The values from these columns should be placed in a new column named quantity.]{style="color:#6AA99D"}"*\
+    *"[The names of these columns should become values in a new column named price.]{style="color:#6AA99D"}"*
+
+4.  **Provide Column Name to Value Conversion:** Explain how column names should be converted to values:\
+    *"[For the conversion, q_p_050 should become 0.50, q_p_100 should become 1.00, and so on.]{style="color:#6AA99D"}"*
+:::
+
+After receiving the code:
+
+-   **Verify Column Count:** Ensure you have the correct number of columns. You should see two new columns (price and quantity), and the original columns in the specified range should be gone.
+
+-   **Verify Row Count:** The number of rows in the transformed tibble should equal the number of original price values multiplied by the rows in the original tibble.
+
+This structured approach will help AI provide you with the most accurate code for your requirements.
+
+Here is the text of a sample prompt that can be edited, copied, and pasted directly into your AI:
+
+::: {.callout-tip title="AI prompt for calculating price and quantity"}
+*"[Here is a glimpse(tb) ... Please provide the tidyverse code to pivot_longer() on the columns q_p_050 to q_p_250 where the column values should be named quantity and the column names are the values of a variable named price. Note that the column names need to be converted to values q_p_050 = 0.50, q_p_100 = 1.00, etc.]{style="color:#6AA99D"}"*
+:::
+
+```{r}
+#| label: pq-long2
+#| echo: true
+
+# Assuming your data frame is named pq_data
+pq_long <- pq_data %>%
+  pivot_longer(cols = everything(), 
+               names_to = "price", 
+               values_to = "quantity") %>%
+  mutate(price = parse_number(gsub("\\$", "", price)))
+```
+
+@tbl-wtp-q-data provides 10 rows out of the `r nrow(pq_long)` rows of the tidy demand data where every row is the quantity that an individual respondent would buy at the named price. The tibble is made longer to have `r nrow(pq_long)` rows because the data are pivoted to show `r ncol(pq_data)` rows (one for each price) for every one of the 23 respondents.
+
+```{r}
+#| label: tbl-pq-long
+#| tbl-cap: "Tidy data of the quantities that would be purchased at every price by every respondent."
+#| tbl-cap-location: margin
+
+gt(head(pq_long, 10))
+```
+
+### Estimate the Demand Curve {#sec-estimate-pq-data}
+
+The data in the new tibble `pq_long` are tidy because we have one column for each of price and quantity and every row is an observation of the quantity purchased at each price by each respondent.
+
+Now lets visualize the relationship:
+
+```{r}
+#| label: fig-p-q-data
+#| fig-cap: Visualization of the price quantity relationship of a non-durable good.
+#| fig-cap-location: margin
+
+ggplot(data = pq_long,
+       aes(x = price, y = quantity)) +
+  geom_point() +
+  labs(x = "Price", y = "Quantity") +
+  theme_minimal()
+
+```
+
+The variance in the data at every named price makes it more difficult to verify that the data are linear but the impact of price on quantity quantity is clearly negative. We can use linear regression to estimate the model and evaluate the relationship between price and quantity.
+
+#### Estimation of the Linear Demand Curve
+
+Let's first estimate the relationship as linear and then test for a nonlinear demand curve with the demand regression
+
+```{r}
+#| label: pq-model
+#| echo: true
+
+linear_demand_model <- lm(quantity ~ price, pq_long)
+summary(linear_demand_model)
+```
+
+**Model Interpretation:**
+
+-   In terms of overall model fit, we see that the F-statistic of `r summary(linear_demand_model)$fstatistic[1]` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(linear_demand_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(linear_demand_model)$r.squared,2)` percent of the variance of quantity. Given the variance we saw in the plot, it is not surprising that the R-squared is not terribly high.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r summary(linear_demand_model)$coefficients["price", "t value"]` and a p-value of `r summary(linear_demand_model)$coefficients["price", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated demand curve for the non-durable good is $$ \mathsf{Q = `r summary(linear_demand_model)$coefficients["(Intercept)", "Estimate"]` `r coef(linear_demand_model)[[2]]` P} $$ for each potential customer. This demand curve suggests that for every \$1.00 increase in the price of the non-durable good, the quantity demanded decreases by `r -1*round(coef(linear_demand_model)[2],4)` units of the product per person.
+
+-   Visually, it was not clear that the relationship is linear. Not all data exhibit this clear linear relationship so let's examine it.
+
+#### Estimation of the Nonlinear (exponential) Demand Curve
+
+In some cases, the demand relationship for non-durable goods follows a nonlinear exponential form, which has the mathematical structure:
+
+$$\mathsf{Q = a \cdot e^{bP}}$$
+
+Here, $\mathsf{e}$ represents the base for the exponential function (usually computed using `exp()` in R). Unfortunately, we cannot estimate this nonlinear relationship directly because traditional linear regression assumes the form $\mathsf{y = b_0 + b_1 x}$, which the exponential demand curve does not conform to.
+
+However, there's good news! We can transform the data to "linearize" it, making it possible to estimate a linear relationship. To linearize the data, we take the natural logarithm (using `log()` in R) of both sides of the demand curve equation, resulting in:
+
+$$\mathsf{log(Q) =  \alpha + bP}$$
+
+where $\mathsf{\alpha = log(a)}$. In simpler terms, we log-transform the dependent variable (quantity) and then proceed to estimate a linear regression.
+
+Here's the R code to estimate the nonlinear exponential demand curve and the corresponding output:
+
+```{r}
+#| label: p-q-exp-lm
+#| echo: true
+
+exponential_demand_model <- lm(log(quantity + 1) ~ price, pq_long)
+summary(exponential_demand_model)
+summary(pq_long)
+```
+
+**Model Interpretation:**
+
+Following the linearization of the data, we've estimated the demand model as a nonlinear exponential demand curve. Notice that because the `quantity` variable has a minimum value of 0, the log of quantity at the value is not defined so we had to add one (`log(quantity + 1)`) to be able to run the regression. This means that the regression model is based on $\mathsf{log(quantity + 1)}$, not directly on $\mathsf{quantity}$.
+
+Assessing the goodness of fit, observe that the F-statistic of `r round(summary(exponential_demand_model)$fstatistic[1], 4)` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(exponential_demand_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(exponential_demand_model)$r.squared,2)` percent of the variance of quantity, implying that the exponential model captures more variation in the data compared to a linear model.
+
+Regarding the impact of price on quantity, the estimated coefficient for price is negative, in accordance with the law of demand. This coefficient is significantly different from zero, as indicated by the t-value (t-value) and the p-value (p-value), which is very close to zero.
+
+The estimated nonlinear exponential demand curve for non-durable goods can be expressed as:
+
+$$
+\mathsf{log(Q + 1) = `r round(summary(exponential_demand_model)$coefficients["(Intercept)", "Estimate"], 4)` `r round(coef(exponential_demand_model)[[2]], 4)` P}
+$$ or $$
+\mathsf{Q = e^{`r round(summary(exponential_demand_model)$coefficients["(Intercept)", "Estimate"], 4)`  `r round(coef(exponential_demand_model)[[2]], 4)` P} - 1} 
+$$ where `wtp` represents a proxy for price.
+
+Interpreting the exponential demand curve, for every \$1.00 increase in the price of the non-durable good, the logarithm of the quantity demanded across the sample of respondents decreases by `r -1*round(coef(exponential_demand_model)[2],4)` units of the product. It's important to note that interpreting changes in the logarithm of a value may not be intuitive to most individuals.
+
+This methodology enables us to estimate the demand curve for non-durable goods and understand how price influences consumer behavior in this context.
+
+------------------------------------------------------------------------
+
+````{=html}
+<!--
+## Quantity Data at the Willingness to Pay Price Only {#sec-wtp-q}
+
+### Gathering Willingness to Pay and Quantity Data
+
+Alternatively, you can refine the survey approach by initially asking respondents, "What is the most you would be willing to pay for \[solution\]? How many \[solution\] would you buy per \[period\] if the price were equal to the willingness to pay you reported above?" This approach significantly reduces the respondent burden, as they only need to answer once regarding the quantity they would purchase. Moreover, it allows for a more streamlined data collection process. This has the drawback that it probably under-reports the quantities that customers are willing to pay at lower prices.
+
+As with gathering quantity data at a series of prices, the way you approach and interact with potential customers during this data collection process can significantly impact the quality of insights you gather. The same essential tips for effectively interacting with potential customers apply here as they did in @sec-gathering-pq.
+
+@tbl-wtp-q-data provides a small sample of demand data collected using the latter approach where the first value is the stated willingness to pay and the second value is the quantity they are willing to buy at that price:
+
+```{r}
+#| label: tbl-wtp-q-data
+#| tbl-cap: "Willingness to pay for each respondent and the quantity they are willing to buy at that price."
+#| tbl-cap-location: margin
+
+# Create the list of 2-tuples
+wtp_q_vars <- list(
+  c(0, 0), c(1.99, 1), c(2, 1), c(1.96, 1), c(3, 1), c(0, 0),
+  c(0.5, 2), c(3, 1), c(3, 1), c(1.45, 2), c(1.96, 2), c(1, 1),
+  c(0, 1), c(2.5, 1), c(0, 0), c(7, 10), c(5, 1), c(0.92, 2),
+  c(4, 1), c(1.5, 2), c(3, 2), c(2.5, 1), c(3.5, 1)
+)
+
+# Convert the list to a tibble with named columns
+wtp_q_stated <- tibble(wtp = sapply(wtp_q_vars, "[[", 1), quantity = sapply(wtp_q_vars, "[[", 2))
+# Rename the columns
+colnames(wtp_q_stated) <- c("wtp", "quantity")
+
+gt(wtp_q_stated)
+```
+
+### Calculating Willingness to Pay (price) and Quantity Variables
+
+To transform your willingness to pay data into quantity demanded data for non-durable goods, you can follow a process similar to what we did for durable goods. The steps involve sorting the data by willingness to pay, counting the quantity reported for each unique price, and calculating the cumulative sum of quantities for each price.
+
+Since this calculation closely resembles the method used for durable goods, we'll provide the R code and output for this calculation here. For a more detailed explanation of the process, please refer to the chapter on demand for durable goods.
+
+```{r}
+#| label: wtp-q-calc
+
+wtp_q_data <- wtp_q_stated |> 
+  group_by(wtp) |> 
+  summarise(count = n()) |> 
+  arrange(desc(wtp)) |> 
+  mutate(quantity = cumsum(count))
+
+gt(wtp_q_data)
+```
+
+One notable difference in this dataset is the presence of a count variable. While it may appear different, it does not significantly impact the process because we will ultimately estimate the relationship between quantity and wtp. The more subtle but important difference lies in how the quantity data is calculated.
+
+When you gather data by asking for quantities at different prices, you're collecting individual responses, and the resulting demand curve represents the predicted demand for a single customer. On the other hand, when you ask about willingness to pay and the quantity customers are willing to purchase at that price, the process of counting and summing quantities aggregates the data for the entire sample of respondents. Consequently, the demand curve we estimate with this data reflects the demand of the entire sample of 23 respondents.
+
+### Estimate the Demand Curve {#sec-wtp-q-reg}
+
+As we normally do, let's begin anlaysis of this demand data by visualizing the relationship between quantity and price (wtp).
+
+```{r}
+#| label: fig-wtp-q
+#| fig-cap: "Scatterplot of the relationship between willingness to pay and quantity data for a non-durable good."
+#| fig-cap-location: margin
+
+ggplot(wtp_q_data,
+       aes(x = wtp, y = quantity)) +
+  geom_point() +
+  labs(x = "Price (wtp)", y = "Quantity") +
+  theme_minimal()
+```
+
+One immediate observation when looking at this "market" data for the collective sample is that there is notably less variability compared to the data collected from individual consumers. This reduction in variability is unsurprising because the process of aggregation naturally smooths out some of the individual preference variations. However, it's important to note that this reduction in variance doesn't necessarily indicate a superior demand model; it simply suggests that we can anticipate a higher level of goodness of fit in our estimation of the demand curve.
+
+In essence, the aggregation process results in data that is more consistent and less scattered, making it potentially easier to estimate a demand curve that closely aligns with the overall preferences of the sample. Nonetheless, the true test lies in the model's ability to accurately capture the underlying demand dynamics.
+
+As observed in the price-quantity data, a discernible pattern emerges where increasing prices correspond to decreasing quantities, aligning with the fundamental principle of the law of demand. Just as we did with that data, it appears that the relationship may exhibit nonlinearity.
+
+#### Estimate the Linear Demand Curve
+
+Our approach begins by initially estimating a linear relationship. Following this, we will conduct regression analysis to assess whether the relationship is better explained by a nonlinear model. This process allows us to systematically explore the potential for nonlinear dynamics in the demand curve.
+
+```{r}
+#| label: wtp-q-lin-reg
+
+linear_wtp_model <- lm(quantity ~ wtp, wtp_q_data)
+summary(linear_wtp_model)
+```
+
+**Model Interpretation:**
+
+-   In terms of overall model fit, we see that the F-statistic of `r summary(linear_wtp_model)$fstatistic[1]` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(linear_wtp_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(linear_wtp_model)$r.squared,2)` percent of the variance of quantity.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r summary(linear_wtp_model)$coefficients["wtp", "t value"]` and a p-value of `r summary(linear_wtp_model)$coefficients["wtp", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated demand curve for the non-durable good is $$ \mathsf{Q = `r summary(linear_wtp_model)$coefficients["(Intercept)", "Estimate"]` `r coef(linear_wtp_model)[[2]]` P} $$ for each potential customer. This demand curve suggests that for every \$1.00 increase in the price of the non-durable good, the quantity demanded decreases by `r -1*round(coef(linear_wtp_model)[2],4)` units of the product per person.
+
+It was not clear that the relationship is linear so let's examine the nonlinear relationship.
+
+#### Estimate the Exponential Demand Curve
+
+We begin by estimating a linear relationship. Following this, we will conduct regression analysis to assess whether the relationship is better explained by a nonlinear model. This process allows us to systematically explore the potential for nonlinear dynamics in the demand curve.
+
+```{r}
+#| label: wtp-q-exp-reg
+
+exp_wtp_model <- lm(log(quantity) ~ wtp, wtp_q_data)
+summary(exp_wtp_model)
+```
+
+**Model Interpretation:**
+
+-   In terms of overall model fit, we see that the F-statistic of `r round(summary(exp_wtp_model)$fstatistic[1], 4)` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(exp_wtp_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(exp_wtp_model)$r.squared,2)` percent of the variance of quantity. Given the lower variance we saw in the plot, it is not surprising that the R-squared is much higher than for demand of individual consumers.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r round(summary(exp_wtp_model)$coefficients["wtp", "t value"],4)` and a p-value of `r summary(exp_wtp_model)$coefficients["wtp", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated nonlinear exponential demand curve for non-durable goods can be expressed as:
+
+$$
+\mathsf{log(Q) = `r round(summary(exp_wtp_model)$coefficients["(Intercept)", "Estimate"], 4)` `r round(coef(exp_wtp_model)[[2]], 4)` P}
+$$ or $$
+\mathsf{Q = e^{`r round(summary(exp_wtp_model)$coefficients["(Intercept)", "Estimate"], 4)`  `r round(coef(exp_wtp_model)[[2]], 4)` P}} 
+$$ where `wtp` represents a proxy for price.
+
+------------------------------------------------------------------------
+-->
+````
+
+## Aggregate Quantity Data at Various Prices
+
+In @sec-pq-data, we gathered and tidied quantity data provided in response to a series of prices. As we saw the resulting demand curve predicts demand for an individual customer. In @sec-wtp-q, we gathered willingness to pay and quantity data that led us to a demand curve for the collective sample of respondents rather than individual respondents.
+
+In this section, we will explore how to transition from individual demand curves, represented by price-quantity data for each respondent, to aggregated demand curves that reflect the preferences of the entire sample.
+
+### Understanding the Transition
+
+To begin, let's briefly clarify the difference between individual and aggregated demand curves:
+
+-   **Individual Demand Curves:** These curves represent the demand behavior of individual consumers. Each respondent's willingness to pay and corresponding quantity data form a unique demand curve. They provide insights into the preferences of specific consumers.
+-   **Aggregated Demand Curves:** These curves reflect the combined demand patterns of the entire sample of respondents. They result from aggregating the individual demand data to create a collective representation of demand behavior. These curves aim to capture overall market trends.
+
+### Aggregating the Data
+
+-   **Grouping by Price:** To aggregate the individual demand data, we start by grouping the data by price. This process consolidates responses at each price point.
+-   **Summarizing Quantity:** Next, we summarize the data by calculating the total quantity demanded at each price level. This aggregation process transforms the individual quantity data into collective demand figures.
+
+::: {.callout-tip title="Prompt your AI for code for aggregation"}
+This is one of those requests that can cause chatGPT to generate many different commands. That means our prompts are often too ambiguous. Here is a template prompt that you can edit and paste into ChatGPT to get the code you need. The key is tell it the tibble name (call it a tibble and you will signal that you want tidyverse code or ask for tidyverse code directly), the price and quantity variables and ask it to aggregate the quantity variable for every price.
+
+*"[I have a tibble tb with price and quantity variables. I want to aggregate the quantity variable for every price.]{style="color:#6AA99D"}"*
+:::
+
+Here's the R code to achieve this aggregation:
+
+```{r}
+#| label: aggregate-demand-data]
+#| echo: true
+
+# Grouping data by price and summarizing quantity
+aggregated_pq_data <- pq_long |>
+  group_by(price) |>
+  summarise(Q = sum(quantity))
+```
+
+```{r}
+#| label: tbl-agg-data
+#| tbl-cap: "Price and quantity data aggregated for the sample of 23 respondents."
+#| tbl-cap-location: margin
+
+gt(aggregated_pq_data)
+```
+
+Notice that aggregation has reduced the data to just seven rows -- one for each price we named when collecting data from the respondents. This reduction is unavoidable and usually leaves us with relatively small datasets. The more prices we name during data collection, the greater the bias from survey fatigue.
+
+### Estimate the Aggregated Demand Curve
+
+First, let's visualize the aggregated demand data with a scatterplot to gain insights into the overall demand trend. We'll then proceed to estimate both a linear and exponential demand curve to assess potential nonlinearity.
+
+```{r}
+#| label: fig-agg-pq
+#| fig-cap: "Scatterplot of the relationship between aggregated price and quantity data for the sample or resondents."
+#| fig-cap-location: margin
+
+ggplot(aggregated_pq_data,
+       aes(x = price, y = Q)) + 
+  geom_point() +
+  labs(x = "Price", y = "Quantity") +
+  theme_minimal()
+
+```
+
+The scatterplot in @fig-agg-pq shows the same negative relationship in the aggregated data that we saw in the individual data in @fig-p-q-data but with less variance. The nonlinear relationship is more pronounced in the aggregated data as well.
+
+### Estimate the Linear Aggregate Demand
+
+We'll start by estimating a linear demand curve for the aggregated data using regression analysis.
+
+```{r}
+#| label: agg-lin-reg
+#| echo: true
+
+aggregate_linear_model <- lm(Q ~ price, aggregated_pq_data)
+summary(aggregate_linear_model)
+```
+
+**Model Interpretation:**
+
+-   In terms of overall model fit, we see that the F-statistic of `r summary(aggregate_linear_model)$fstatistic[1]` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(aggregate_linear_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(aggregate_linear_model)$r.squared,2)` percent of the variance of quantity.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r summary(aggregate_linear_model)$coefficients["price", "t value"]` and a p-value of `r summary(aggregate_linear_model)$coefficients["price", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated demand curve for the non-durable good is $$ \mathsf{Q = `r summary(aggregate_linear_model)$coefficients["(Intercept)", "Estimate"]` `r coef(aggregate_linear_model)[[2]]` P} $$ for the sample of potential customers. This demand curve suggests that for every \$1.00 increase in the price of the non-durable good, the quantity demanded decreases by `r -1*round(coef(linear_wtp_model)[2],4)` units of the product.
+
+### Estimate the Exponential Demand Curve
+
+Now we linearize the data to estimate the nonlinear exponential demand curve.
+
+```{r}
+#| label: agg-exp-reg
+#| echo: true
+
+aggregate_exp_model <- lm(log(Q) ~ price, aggregated_pq_data)
+summary(aggregate_exp_model)
+```
+
+**Model Interpretation:**
+
+-   In terms of overall model fit, we see that the F-statistic of `r summary(aggregate_exp_model)$fstatistic[1]` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(aggregate_exp_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(aggregate_exp_model)$r.squared,2)` percent of the variance of quantity. The increase in R-squared and F-statistic suggest that the demand curve is indeed an exponential form.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r summary(aggregate_exp_model)$coefficients["price", "t value"]` and a p-value of `r summary(aggregate_exp_model)$coefficients["price", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated exponential aggregate demand curve for the non-durable good is $$
+    \mathsf{log(Q) = `r round(summary(aggregate_exp_model)$coefficients["(Intercept)", "Estimate"], 4)` `r round(coef(aggregate_exp_model)[[2]], 4)` P}
+    $$ or $$
+    \mathsf{Q = e^{`r round(summary(aggregate_exp_model)$coefficients["(Intercept)", "Estimate"], 4)`  `r round(coef(aggregate_exp_model)[[2]], 4)` P}} 
+    $$

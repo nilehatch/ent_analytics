@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Cost Structure – Profit Analytics for Entrepreneurs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cost_dynamics.html" rel="next">
+<link href="./nondurable_demand.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-28e1de5e8b558a0209691034755ec9c6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Profit Analytics for Entrepreneurs</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cost.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cost Structure</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_entrepreneurship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Navigating Uncertainty in Entrepreneurship</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./non-price_competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competing on Things other than Price</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
+  <li><a href="#the-nature-of-cost" id="toc-the-nature-of-cost" class="nav-link" data-scroll-target="#the-nature-of-cost"><span class="header-section-number">7.2</span> The Nature of Cost</a>
+  <ul class="collapse">
+  <li><a href="#total-cost" id="toc-total-cost" class="nav-link" data-scroll-target="#total-cost">Total Cost</a></li>
+  <li><a href="#unit-costs" id="toc-unit-costs" class="nav-link" data-scroll-target="#unit-costs">Unit Costs</a></li>
+  <li><a href="#time-and-cost-the-short-run-vs.-the-long-run" id="toc-time-and-cost-the-short-run-vs.-the-long-run" class="nav-link" data-scroll-target="#time-and-cost-the-short-run-vs.-the-long-run">Time and Cost: The Short-Run vs.&nbsp;The Long-Run</a></li>
+  <li><a href="#sec-fixed-sunk" id="toc-sec-fixed-sunk" class="nav-link" data-scroll-target="#sec-fixed-sunk">Fixed costs vs.&nbsp;Sunk Costs</a></li>
+  <li><a href="#cost-structure-and-the-business-model" id="toc-cost-structure-and-the-business-model" class="nav-link" data-scroll-target="#cost-structure-and-the-business-model">Cost Structure and the Business Model</a></li>
+  </ul></li>
+  <li><a href="#where-do-we-get-cost-curves" id="toc-where-do-we-get-cost-curves" class="nav-link" data-scroll-target="#where-do-we-get-cost-curves"><span class="header-section-number">7.3</span> Where Do We Get Cost Curves?</a>
+  <ul class="collapse">
+  <li><a href="#gathering-cost-information" id="toc-gathering-cost-information" class="nav-link" data-scroll-target="#gathering-cost-information">Gathering Cost Information</a></li>
+  </ul></li>
+  <li><a href="#choosing-a-cost-structure" id="toc-choosing-a-cost-structure" class="nav-link" data-scroll-target="#choosing-a-cost-structure"><span class="header-section-number">7.4</span> Choosing a Cost Structure</a>
+  <ul class="collapse">
+  <li><a href="#early-stages" id="toc-early-stages" class="nav-link" data-scroll-target="#early-stages">Early Stages</a></li>
+  <li><a href="#growth-and-scaling" id="toc-growth-and-scaling" class="nav-link" data-scroll-target="#growth-and-scaling">Growth and Scaling</a></li>
+  <li><a href="#maturation" id="toc-maturation" class="nav-link" data-scroll-target="#maturation">Maturation</a></li>
+  <li><a href="#cost-structure-transition" id="toc-cost-structure-transition" class="nav-link" data-scroll-target="#cost-structure-transition">Cost Structure Transition</a></li>
+  <li><a href="#the-decision-to-make-or-to-buy" id="toc-the-decision-to-make-or-to-buy" class="nav-link" data-scroll-target="#the-decision-to-make-or-to-buy">The Decision to Make or to Buy</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7.5</span> References</a></li>
+  <li><a href="#workout-problems" id="toc-workout-problems" class="nav-link" data-scroll-target="#workout-problems"><span class="header-section-number">7.6</span> Workout Problems</a>
+  <ul class="collapse">
+  <li><a href="#cost-structure-of-the-dorsal-travel-pack" id="toc-cost-structure-of-the-dorsal-travel-pack" class="nav-link" data-scroll-target="#cost-structure-of-the-dorsal-travel-pack">Cost structure of the Dorsal travel pack</a></li>
+  </ul></li>
+  <li><a href="#sec-tce-appendix" id="toc-sec-tce-appendix" class="nav-link" data-scroll-target="#sec-tce-appendix"><span class="header-section-number">7.7</span> Appendix A: Clarifying the Make-Buy Decision through Transaction Cost Economics</a></li>
+  <li><a href="#sec-eos-appendix" id="toc-sec-eos-appendix" class="nav-link" data-scroll-target="#sec-eos-appendix"><span class="header-section-number">7.8</span> Appendix B: Economies and Diseconomies of Scale</a>
+  <ul class="collapse">
+  <li><a href="#economies-of-scale" id="toc-economies-of-scale" class="nav-link" data-scroll-target="#economies-of-scale">Economies of Scale</a></li>
+  <li><a href="#diseconomies-of-scale" id="toc-diseconomies-of-scale" class="nav-link" data-scroll-target="#diseconomies-of-scale">Diseconomies of Scale</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-cost-chapter" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
+<p>Cost is the money you pay to do the things you do to deliver value to your customers. The importance of cost is simple: if your cost exceeds your revenue, your business won’t be sustainable. Every dollar saved on costs is as valuable as an extra dollar of revenue.</p>
+<p><strong>Cost Structure:</strong> The cost structure is a crucial concept—it’s about how much of your costs are fixed and how much are variable. Some businesses operate with hardly any fixed costs but have higher variable cost for each unit sold. Others might have significant fixed costs, but very low costs per unit.</p>
+<p>Your startup’s cost structure isn’t just happenstance; it’s a result of strategic decisions, much like your revenue model. The way you choose to serve your customers—a high fixed-cost model with everything in-house, or a variable-cost model relying on outsourced services—affects both your initial investment and your ongoing expenses.</p>
+<p>Keep in mind, your chosen cost structure dictates the kind of solutions you can offer. Not all cost structures can support the same solutions, and the most effective solution isn’t always the most cost-effective one.</p>
+<p>Selecting a cost structure is as fundamental as choosing how and when to invest in the resources that will become your fixed costs. Understanding the nature of your costs is the first step towards making informed decisions about your business’s financial future.</p>
+<p><br></p>
+</section>
+<section id="the-nature-of-cost" class="level2 page-columns page-full" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="the-nature-of-cost"><span class="header-section-number">7.2</span> The Nature of Cost</h2>
+<p>Costs are the sum of all expenses a business incurs to produce and deliver its services or products, encompassing everything from labor to utilities. These costs define how a business allocates its resources and sets prices.</p>
+<section id="total-cost" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="total-cost">Total Cost</h3>
+<p>Total cost reflects the entire expense of producing a given level of output in a period of time. It’s critical to understand that while historical data often inform cost analyses in existing companies, entrepreneurs must instead estimate future costs to make informed decisions. Without historical data to rely on, we typically forecast a linear approximation of total costs, such as</p>
+<p><span class="math display">\[\begin{align}
+
+\mathsf{C} &amp;= \mathsf{cQ + f}  \\
+           &amp;= \mathsf{50\,000 + 200\ Q}
+
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\mathsf{C}\)</span> is total cost, <span class="math inline">\(\mathsf{c}\)</span> is the variable cost per unit, <span class="math inline">\(\mathsf{f}\)</span> is the fixed cost and <span class="math inline">\(\mathsf{cQ}\)</span> is the total variable cost.</p>
+<p>Before revenue, you will typically have complete knowledge of your future variable and fixed costs. As your business evolves and you gather actual data, these cost functions can be refined.</p>
+<p>Understanding the composition of total costs is foundational. Fixed costs, like rent, remain constant regardless of output levels. Variable costs, such as materials and labor, fluctuate with production volume. The interplay of these costs dictates pricing strategies and potential profit margins.</p>
+<p>The relationship between fixed and variable costs, and their total, is illustrated in <a href="#fig-tot-cost" class="quarto-xref">Figure&nbsp;<span>7.1</span></a>, where the fixed cost is <span class="math inline">\(\mathsf{ f = 50\, 000}\)</span> and the variable cost per unit <span class="math inline">\(\mathsf{c = 200}\)</span> is the rate at which total cost rises as quantity increases.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tot-cost" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-tot-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cost_files/figure-html/fig-tot-cost-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-tot-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Measures of Total Cost
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Entrepreneurs must navigate these concepts with both foresight and flexibility to build a sustainable cost structure for their ventures.</p>
+</section>
+<section id="unit-costs" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="unit-costs">Unit Costs</h3>
+<p>Understanding unit costs is imperative for businesses to ensure they price their products or services appropriately. It’s not merely about covering total costs but also ensuring each unit sold contributes to the overall financial health of the business. Unit costs, also known as “cost per unit,” refer to the cost incurred by a company to produce, store, and sell one unit of a particular product or service. This measure is crucial for businesses to calculate in order to set appropriate selling prices, determine break-even points, and strategize for profitability. Unit costs can be broken down into various components, such as:</p>
+<section id="average-total-cost-atc" class="level4">
+<h4 class="anchored" data-anchor-id="average-total-cost-atc">Average Total Cost (ATC)</h4>
+<p>This is the total cost of production divided by the number of units produced. It encompasses all costs, both fixed and variable, averaged over all units of output. The formula for ATC is:</p>
+<p><span class="math display">\[\begin{align}
+
+\mathsf{ATC} &amp;= \mathsf{\dfrac{C}{Q}} \\[9pt]
+             &amp;= \mathsf{\dfrac{f + cQ}{Q}} \\[9pt]
+             &amp;= \mathsf{\dfrac{50\, 000 + 200Q}{Q}} \\[9pt]
+             &amp;= \mathsf{\dfrac{50\, 000}{Q} + 200}
+
+\end{align}\]</span></p>
+<p>We can see that average total cost ATC comprises average fixed cost and average variable cost.</p>
+<p>If the chosen price of a product is below the ATC, it may be unsustainable to enter the market or continue operations. The equation for ATC often highlights the benefits of economies of scale – as production increases, the fixed cost contribution per unit decreases, potentially lowering the ATC.</p>
+</section>
+<section id="average-variable-cost" class="level4">
+<h4 class="anchored" data-anchor-id="average-variable-cost">Average Variable Cost</h4>
+<p>Average variable cost (AVC) specifically looks at the costs that vary with production. Keeping prices above AVC is crucial in the short run to ensure a business isn’t operating at a loss. This measure helps in making incremental production decisions, especially when considering the minimum price at which it’s viable to keep producing.</p>
+<p><span class="math display">\[\begin{align}
+
+\mathsf{AVC} &amp;= \mathsf{\dfrac{VC}{Q}} \\[9pt]
+             &amp;= \mathsf{\dfrac{cQ}{Q} = c} \\[9pt]
+             &amp;= \mathsf{\dfrac{200Q}{Q} = 200}
+
+\end{align}\]</span></p>
+</section>
+<section id="marginal-cost" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="marginal-cost">Marginal Cost</h4>
+<p>Marginal cost (MC) represents the cost of producing one additional unit. In a linear cost model, the marginal cost is constant and identical to average variable cost, simplifying decision-making. It’s vital for making informed decisions about increasing or decreasing production levels and for setting competitive prices.</p>
+<p>These unit cost measures are visually represented in <a href="#fig-unit-costs" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, allowing for a clearer understanding of the cost implications at different production levels.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-unit-costs" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-unit-costs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cost_files/figure-html/fig-unit-costs-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-unit-costs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Measures of Unit Cost
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="time-and-cost-the-short-run-vs.-the-long-run" class="level3">
+<h3 class="anchored" data-anchor-id="time-and-cost-the-short-run-vs.-the-long-run">Time and Cost: The Short-Run vs.&nbsp;The Long-Run</h3>
+<p>The perspective on what constitutes a fixed or a variable cost can shift based on the time frame considered. In the short run, certain costs are fixed because the firm’s scale of operations cannot be adjusted quickly— for example, the rent for a factory. In the long run, as the firm has the opportunity to adjust its scale of operations, these costs become variable.</p>
+<p>Thus, the categorization of costs as fixed or variable is less about the nature of the cost itself and more about the firm’s ability to modify these costs within a given time frame. This time sensitivity is crucial in strategic planning, as it influences the flexibility of a business to adapt to market changes and manage its cost structure for sustainable growth.</p>
+</section>
+<section id="sec-fixed-sunk" class="level3">
+<h3 class="anchored" data-anchor-id="sec-fixed-sunk">Fixed costs vs.&nbsp;Sunk Costs</h3>
+<p>Fixed costs and sunk costs are often conflated but they have differences that are important in making decisions about investments in infrastructure that increases fixed costs. Here’s a detailed look at the differences between the two and how they relate to decision-making:</p>
+<section id="fixed-costs" class="level4">
+<h4 class="anchored" data-anchor-id="fixed-costs">Fixed Costs</h4>
+<p>Fixed costs are business expenses that remain unchanged regardless of the level of production or sales. These costs are “fixed” over a specified period and do not fluctuate with the volume of output. Examples include rent, salaries of permanent employees, depreciation of machinery, and insurance. These are costs a company incurs just for being in business, whether it produces anything or not.</p>
+<p>Fixed costs can sometimes be altered or eliminated, but this usually requires a strategic shift or long-term planning. For example, a company might relocate to a cheaper facility or downsize its staff to reduce its fixed costs.</p>
+</section>
+<section id="sunk-costs" class="level4">
+<h4 class="anchored" data-anchor-id="sunk-costs">Sunk Costs</h4>
+<p>Sunk costs, on the other hand, are costs that have already been incurred and cannot be recovered. They are “sunk” because they are past expenditures that can no longer be affected by current or future actions. For instance, if a company invests in research and development for a product that it later decides not to produce, the money spent on R&amp;D is a sunk cost.</p>
+<p>Sunk costs should not influence future business decisions since they cannot be recovered or changed. However, businesses and individuals often fall prey to the “sunk cost fallacy,” where they continue investing in a project due to the amount already spent, rather than based on future viability.</p>
+</section>
+<section id="decision-making-and-cost" class="level4">
+<h4 class="anchored" data-anchor-id="decision-making-and-cost">Decision-Making and Cost</h4>
+<p>In decision-making, particularly within economics, it’s essential to focus on relevant costs which include opportunity costs and incremental costs. Opportunity costs represent the benefits a business misses out on when choosing one alternative over another. Incremental costs are the additional costs incurred when making business decisions, such as producing additional units.</p>
+<p><strong>Opportunity Cost:</strong> This is the cost of the next best alternative that is foregone when a decision is made. It’s the value of what you could have done versus what you actually chose to do.</p>
+<p><strong>Incremental Cost:</strong> When comparing options, it’s the additional cost over the current expenditure. It’s crucial for decision-makers to consider incremental costs rather than sunk costs because they reflect the potential future impact of decisions.</p>
+</section>
+<section id="accounting-vs.-economic-perspective" class="level4">
+<h4 class="anchored" data-anchor-id="accounting-vs.-economic-perspective">Accounting vs.&nbsp;Economic Perspective</h4>
+<p><strong>Accounting:</strong> From an accounting standpoint, sunk costs are recognized and cannot typically be adjusted. They are recorded as they are incurred and may affect overall profitability.</p>
+<p><strong>Finance:</strong> In finance, particularly when conducting cash flow analysis, the timing of cost recovery is crucial. Fixed costs that can be recovered, such as through the sale of an asset, are considered when calculating the net present value or internal rate of return.</p>
+<p><strong>Economics:</strong> Economists consider only those costs that can affect future decisions. Sunk costs are irrelevant to future economic decision-making because they do not change regardless of the outcome of future events.</p>
+<p>Understanding the difference between fixed and sunk costs is vital in making informed decisions that affect the economic health of a company. Decision-makers must look beyond past investments (sunk costs) and focus on the costs and benefits that can be influenced by their decisions (incremental and opportunity costs).</p>
+</section>
+</section>
+<section id="cost-structure-and-the-business-model" class="level3">
+<h3 class="anchored" data-anchor-id="cost-structure-and-the-business-model">Cost Structure and the Business Model</h3>
+<p>Let’s explore the relationship between cost structure and the business model. We choose both the cost structure and the business model and both need to be taken into account because different business models inherently have different cost implications:</p>
+<ul>
+<li><p><strong>Production Revenue Model</strong></p>
+<ul>
+<li><p><em>Variable Costs:</em> These include costs that vary with production volume such as raw materials, inventory costs, piece-rate labor (wages paid per unit produced), and sales commissions that are tied directly to the number of units sold.</p></li>
+<li><p><em>Fixed Costs:</em> Costs that remain constant regardless of production volume, such as salaries for management, costs related to the manufacturing facility, equipment, and general overhead.</p></li>
+</ul></li>
+<li><p><strong>Retail Revenue Model</strong></p>
+<ul>
+<li><p><em>Variable Costs:</em> In a retail environment, the variable costs mainly consist of the cost of goods sold (purchases of inventory that will be resold) and sales commissions if applicable.</p></li>
+<li><p><em>Fixed Costs:</em> The costs of operating a retail space (rent, utilities, etc.), purchasing staff salaries, and general overhead expenses remain fixed.</p></li>
+</ul></li>
+<li><p><strong>Licensing Revenue Model</strong></p>
+<ul>
+<li><p><em>Variable Costs:</em> For a licensing model, the costs that vary with the number of licenses sold could include sales commissions and legal costs for drafting and enforcing contracts.</p></li>
+<li><p><em>Fixed Costs:</em> The substantial investments in research and development (R&amp;D) to create the intellectual property (IP), and the legal costs associated with securing IP rights (patents, copyrights, trademarks).</p></li>
+</ul></li>
+</ul>
+<section id="scalability-challenges" class="level4">
+<h4 class="anchored" data-anchor-id="scalability-challenges">Scalability Challenges</h4>
+<ul>
+<li><p><strong>Labor-Intensive Solutions:</strong> Businesses that rely heavily on human labor (like consulting or teaching) are less scalable because costs increase linearly with revenue. To grow, you need to hire more people, and profit margins don’t significantly improve due to the proportional increase in labor costs.</p></li>
+<li><p><strong>Asset-Intensive Solutions:</strong> For businesses that require physical assets like property or buildings, scaling up often means acquiring more assets, which leads to a proportional increase in costs relative to revenues.</p></li>
+</ul>
+</section>
+<section id="cost-structure-and-profitability" class="level4">
+<h4 class="anchored" data-anchor-id="cost-structure-and-profitability">Cost Structure and Profitability</h4>
+<ul>
+<li><p><strong>Scalability and Margins:</strong> The ideal business model is one where costs do not grow at the same pace as revenues, allowing profit margins to increase with scale. Web-based solutions are a prime example, as they require minimal additional costs for serving additional customers, thus scaling effectively.</p></li>
+<li><p><strong>Trade-off Between Fixed and Variable Costs:</strong> Investing in scalable fixed assets can often reduce variable costs and allow for better scalability. However, such fixed costs can be significant and challenging for entrepreneurs to fund, especially in the early stages of a startup.</p></li>
+</ul>
+</section>
+<section id="entrepreneurial-challenges" class="level4">
+<h4 class="anchored" data-anchor-id="entrepreneurial-challenges">Entrepreneurial Challenges</h4>
+<p>For entrepreneurs, particularly in the startup phase, there is often a tension between the desire to invest in scalable assets and the reality of limited funds. This often results in a reliance on higher variable costs due to a lack of capital to invest in fixed, scalable assets. Entrepreneurs must navigate this trade-off while seeking funding sources that can support investments in assets that will help them scale more effectively in the long run.</p>
+<p>In essence, the choice of business model and the resulting cost structure are crucial in determining how easily a business can scale and how its profitability will change as it grows.</p>
+<p><br></p>
+</section>
+</section>
+</section>
+<section id="where-do-we-get-cost-curves" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="where-do-we-get-cost-curves"><span class="header-section-number">7.3</span> Where Do We Get Cost Curves?</h2>
+<ul>
+<li><p><strong>For Established Firms:</strong></p>
+<ul>
+<li>Established firms often have a well-documented history of their input usage, allowing them to derive accurate cost curves.</li>
+<li>Some companies go to lengths such as hiring consultants to estimate competitors’ cost functions, which can involve indirect methods like monitoring deliveries.</li>
+</ul></li>
+<li><p><strong>For New Ventures:</strong></p>
+<ul>
+<li>New ventures face uncertainty regarding the cost of inputs since they lack historical data.</li>
+<li>Early cost estimates must be made without complete knowledge, which is risky and potentially inaccurate.</li>
+<li>Costs can be influenced by factors like purchase volume and supplier relationships, making initial estimates challenging.</li>
+<li>Entrepreneurs sometimes erroneously assume that knowing the cost of goods sold equates to understanding their entire cost structure.</li>
+</ul></li>
+</ul>
+<section id="gathering-cost-information" class="level3">
+<h3 class="anchored" data-anchor-id="gathering-cost-information">Gathering Cost Information</h3>
+<ul>
+<li><p><strong>Physical Products:</strong></p>
+<ul>
+<li>Use market prices for standard materials.</li>
+<li>Obtain tentative quotes for customized inputs.</li>
+</ul></li>
+<li><p><strong>Software/Services:</strong></p>
+<ul>
+<li>Base estimates on local labor rates for established job functions.</li>
+<li>For specialized roles, discussions or negotiations with potential workers may be necessary.</li>
+</ul></li>
+<li><p><strong>Cost Efficiency:</strong></p>
+<ul>
+<li>The subsection cautions that the assumption of efficient input usage might not hold true in practice.</li>
+<li>Inefficiencies, like congestion during a move with too many helpers, can lead to higher costs than necessary.</li>
+<li>Overcoming these inefficiencies requires targeted efforts to optimize production and service processes.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="choosing-a-cost-structure" class="level2 page-columns page-full" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="choosing-a-cost-structure"><span class="header-section-number">7.4</span> Choosing a Cost Structure</h2>
+<section id="early-stages" class="level3">
+<h3 class="anchored" data-anchor-id="early-stages">Early Stages</h3>
+<ul>
+<li><p><strong>Bootstrapping Phase:</strong> Startups often begin with minimal fixed costs; operating out of a free space and covering expenses via personal means, maintaining flexibility by using external services.</p></li>
+<li><p><strong>Cost Minimization:</strong> The goal is to keep fixed costs low until there is proof of demand for the product, thus avoiding unnecessary financial burdens.</p></li>
+</ul>
+</section>
+<section id="growth-and-scaling" class="level3">
+<h3 class="anchored" data-anchor-id="growth-and-scaling">Growth and Scaling</h3>
+<ul>
+<li><p><strong>Initial Growth:</strong> As the product gains market traction or investment is secured, the startup can afford to incur more fixed costs like office space and salaries.</p></li>
+<li><p><strong>Hiring Key Talent:</strong> Skilled professionals are brought on board to refine and build the product.</p></li>
+<li><p><strong>Founder Compensation:</strong> Founders may start with modest salaries, their main compensation being the growing value of their equity.</p></li>
+</ul>
+</section>
+<section id="maturation" class="level3">
+<h3 class="anchored" data-anchor-id="maturation">Maturation</h3>
+<ul>
+<li><p><strong>Established Presence:</strong> A successful venture with significant market share may invest in permanent assets, such as buildings, and start developing a more hierarchical structure.</p></li>
+<li><p><strong>Professional Management:</strong> The operational complexity may lead to the hiring of professional executives to manage the company’s growth and operations effectively.</p></li>
+</ul>
+</section>
+<section id="cost-structure-transition" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="cost-structure-transition">Cost Structure Transition</h3>
+<p>The decision to shift from a lower fixed cost structure to a higher one depends on the company’s scale and its ability to cover fixed costs. <a href="#fig-cost-structures" class="quarto-xref">Figure&nbsp;<span>7.3</span></a> shows how total costs vary with different ratios of fixed to variable costs, illustrating the optimal points for transitioning.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-cost-structures" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-cost-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cost_files/figure-html/fig-cost-structures-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-cost-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Choose the cost structure that minimizes cost at the level of scale (production or sales)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="strategic-decisions" class="level4">
+<h4 class="anchored" data-anchor-id="strategic-decisions">Strategic Decisions</h4>
+<ul>
+<li><strong>Avoid Premature Fixed Costs:</strong> Entrepreneurs should resist investing in large fixed assets too early, as customer needs and solutions are still evolving.</li>
+<li><strong>Incremental Investments:</strong> It is advisable to gradually improve the product with a focus on adaptability, even if that means higher variable costs initially.</li>
+</ul>
+</section>
+<section id="considerations-for-startups" class="level4">
+<h4 class="anchored" data-anchor-id="considerations-for-startups">Considerations for Startups</h4>
+<ul>
+<li>Startups should carefully assess when to transition to a cost structure with higher fixed costs.</li>
+<li>The goal is to minimize costs at the current level of scale, avoiding the trap of scaling fixed costs too quickly which could lead to unprofitability.</li>
+<li>The timing of these transitions is critical and can be guided by analyzing cost curves and scale of operations.</li>
+</ul>
+<p>This provides a strategic framework for startups to consider when scaling their operations, emphasizing the importance of aligning cost structures with stages of growth and the inherent risks of moving too quickly into high fixed costs without the sales volume to support them. It is a crucial guide for entrepreneurs to understand the financial implications of growth and scale in the context of a startup lifecycle.</p>
+</section>
+</section>
+<section id="the-decision-to-make-or-to-buy" class="level3">
+<h3 class="anchored" data-anchor-id="the-decision-to-make-or-to-buy">The Decision to Make or to Buy</h3>
+<p>The make-or-buy decision shapes your startup’s cost structure at a fundamental level. Producing goods in-house generally ramps up fixed costs due to the need for equipment, space, and expertise. On the other hand, procuring goods from a supplier increases variable costs, as you pay for their production plus a margin.</p>
+<p>Conventional wisdom advocates for startups to purchase inputs, conserving resources to innovate on what can’t be bought. The challenge lies in discerning when it’s financially wiser to produce rather than purchase.</p>
+<p>Purchasing inputs can shift substantial fixed costs to the supplier, leaving your startup with higher variable costs. However, the total purchase cost may exceed in-house production if the supplier’s profit margin is steep. Alternatively, a supplier’s specialized operations can result in lower costs for you, even with their profit margin included.</p>
+<section id="sec-tce" class="level4">
+<h4 class="anchored" data-anchor-id="sec-tce">Transaction Costs</h4>
+<p>When buying, consider <em>transaction costs</em>—the risk and governance expenses in transactions <span class="citation" data-cites="williamson75 williamson85">(<a href="cost.html#ref-williamson75" role="doc-biblioref">Williamson 1975</a>, <a href="cost.html#ref-williamson85" role="doc-biblioref">1985</a>)</span>. Suppliers can falter, causing <em>holdups</em> that delay your operations. Contracts and strong relationships are governance mechanisms that reduce such risks, but in cases of significant holdup risk, in-house production might safeguard your startup’s future.</p>
+<p>Entrepreneurial decisions should weigh these transaction costs. For low-risk inputs, buying is typically safe. For high-risk inputs, manufacturing internally may be essential. Refer to <a href="#sec-tce-appendix" class="quarto-xref"><span>Section 7.7</span></a> (Appendix A) for an in-depth analysis of transaction cost economics and the make-or-buy conundrum.</p>
+</section>
+</section>
+</section>
+<section id="references" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="references"><span class="header-section-number">7.5</span> References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bryce-dyer07" class="csl-entry" role="listitem">
+Bryce, David J, and Jeffrey H Dyer. 2007. <span>“Strategies to Crack
+Well-Guarded Markets.”</span> <em>Harvard Business Review</em> 85 (5):
+84–92.
+</div>
+<div id="ref-christensen-raynor03" class="csl-entry" role="listitem">
+Christensen, Clayton M., and Michael E. Raynor. 2003. <em>The
+Innovator’s Solution: Creating and Sustaining Successful Growth</em>.
+Boston, Massachusetts: Harvard Business School Press.
+</div>
+<div id="ref-edlin97" class="csl-entry" role="listitem">
+Edlin, Aaron S. 1997. <span>“Do Guaranteed-Low-Price Policies Guarantee
+High Prices, and Can Antitrust Rise to the Challenge?”</span>
+<em>Harvard Law Review</em>, 528–75.
+</div>
+<div id="ref-gasmi-vuong-laffont92" class="csl-entry" role="listitem">
+Gasmi, Farid, Quang Vuong, and J. J. Laffont. 1992. <span>“Econometric
+Analysis of Collusive Behavior in a Soft-Drink Market.”</span>
+<em>Journal of Economics and Management Strategy</em> 1 (2): 277–311.
+</div>
+<div id="ref-hviid-shaffer99" class="csl-entry" role="listitem">
+Hviid, Morten, and Greg Shaffer. 1999. <span>“Hassle Costs: The
+Achilles’ Heel of Price-Matching Guarantees.”</span> <em>Journal of
+Economics &amp; Management Strategy</em> 8 (4): 489–521.
+</div>
+<div id="ref-manez06" class="csl-entry" role="listitem">
+Mañez, Juan A. 2006. <span>“Unbeatable Value Low-Price Guarantee:
+Collusive Mechanism or Advertising Strategy?”</span> <em>Journal of
+Economics &amp; Management Strategy</em> 15 (1): 143–66.
+</div>
+<div id="ref-nash50" class="csl-entry" role="listitem">
+Nash, John Forbes. 1950. <span>“The Bargaining Problem.”</span>
+<em>Econometrica</em> 18: 155–62.
+</div>
+<div id="ref-nash51" class="csl-entry" role="listitem">
+———. 1951. <span>“Non-Cooperative Games.”</span> <em>Annals of
+Mathematics</em> 54: 286–95.
+</div>
+<div id="ref-thiel14" class="csl-entry" role="listitem">
+Thiel, Peter. 2014. <span>“Competition Is for Losers.”</span> <em>Wall
+Street Journal</em>, September.
+</div>
+<div id="ref-williamson75" class="csl-entry" role="listitem">
+Williamson, Oliver E. 1975. <em>Markets and Hierarchies</em>. New York:
+Free Press.
+</div>
+<div id="ref-williamson85" class="csl-entry" role="listitem">
+———. 1985. <em>The Economic Intstitutions of Capitalism</em>. Simon;
+Schuster.
+</div>
+</div>
+</section>
+<section id="workout-problems" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="workout-problems"><span class="header-section-number">7.6</span> Workout Problems</h2>
+<section id="cost-structure-of-the-dorsal-travel-pack" class="level3">
+<h3 class="anchored" data-anchor-id="cost-structure-of-the-dorsal-travel-pack">Cost structure of the Dorsal travel pack</h3>
+<p>The Dorsal travel pack is a stylish, modern backpack with all of the zippers facing inward toward the wearer’s back. It is made of slash resistant fabric in nondescript colors to avoid the attention that more popular colorful brands draw. Let’s look at the cost of having the Dorsal pack manufactured by a contract manufacturer. The manufacturer charges $40 per backpack to be manufactured, packaged, and delivered to the start-up’s offices. The start up is also spending $200 per month for web hosting and $5500 per month for contracted web development. Their total cost curve is linear: <span class="math display">\[ \mathsf{C = cQ + f}\]</span> where <span class="math inline">\(\mathsf{c}\)</span> is the variable cost per unit and <span class="math inline">\(\mathsf{f}\)</span> is fixed cost per month.</p>
+<hr>
+<p><strong>In homework 2, we studied revenue models for the Dorsal travel pack. In this homework, we will continue the analysis by focusing on cost of the backpack.</strong></p>
+<hr>
+<ol type="1">
+<li><p>What is the variable cost per unit for the Dorsal pack?</p></li>
+<li><p>What is the average variable cost of producing and selling 32 Dorsal packs?</p></li>
+<li><p>What is the fixed cost per month?</p></li>
+<li><p>What is the total cost of the first 62 units?</p></li>
+<li><p>What is the total variable cost of 37 units?</p></li>
+<li><p>What is the total fixed cost of 75 units?</p></li>
+<li><p>What is average total cost of 43 units?</p></li>
+<li><p><strong>Investing in new cost structure:</strong> Like most start-ups in the early days, Dorsal pack has embraced a cost structure with low fixed costs and high variable costs. In the next stage of business model development, they are considering doing the packaging and order fulfillment themselves. In this scenario, the manufacturer would ship to the finished product in bulk to Dorsal’s headquarters. Without packaging, the manufacturing cost is $25. A single person can manage the packaging and order fulfillment operation once it is set up. The cost of setting up packaging and fulfillment operations is $16,000 per month. This cost is in addition to the fixed costs from original cost structure that will remain in the new cost structure. How many travel packs does Dorsal need to sell per month to justify moving to the new cost structure by investing in packaging and fulfillment?&nbsp;<br>
+<br>
+Note that you can use a ggplot with a layer for each function (using geom_function twice) to roughly find the point where two functions intersect. However, to know the precise value where intersection happens, you first create a new function that is the difference between the functions (f1intersect2 &lt;- function(x) f1(x) - f2(x)). Then use the package <code>rootsolve</code> (you will probably need to install it) to find the roots of the new function. When the difference between the functions is equal to zero, they have intersected one another. The syntax for using <code>rootsolve</code> is <code>uniroot(f1m2, lower = #, upper = #)</code> where <code>lower =</code> and <code>upper =</code> provide the values of <span class="math inline">\(\mathsf{x}\)</span> that are the lower bound and upper bound to search for the intersection.</p></li>
+<li><p><strong>The impact of pricing on cost:</strong>. We have been working with cost as a function of quantity which is traditional. However, we will normally make the pricing decision to tell us what the quantity demanded will be. To incorporate price into decisions about cost, just insert the demand curve <span class="math inline">\(\mathsf{Q(P)}\)</span> in place of the quantity variable in the cost equations. In the case of the Dorsal travel pack, we estimated the demand curve in Homework 1 and 2 to be <span class="math inline">\(\mathsf{Q_{dp} = e^{5.115604 - 0.011612\cdot P}}\)</span>.</p>
+<ol type="a">
+<li>Using this demand curve, what is the expected <em>total cost</em> when we set the price at $100?<br>
+</li>
+<li>What is the <em>average total cost</em> when the price of a dorsal pack is $200?</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="sec-tce-appendix" class="level2 page-columns page-full" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sec-tce-appendix"><span class="header-section-number">7.7</span> Appendix A: Clarifying the Make-Buy Decision through Transaction Cost Economics</h2>
+<p>A common question that entrepreneurs face is whether to make a particular input to their solution or to buy it from a supplier. For example, a startup with a software-as-a-service (SAAS) solution needs a great deal of computing capacity to serve the customer needs that come from around the globe. Should the startup buy, host, and maintain its own web servers or should it contract with one of the many cloud computing providers? For a SAAS startup, the wisdom of ``buying everything you can’’ means that a contract provider of cloud computing should be used. When you consider the costs and hassles of buying, installing, maintaining, and securing the computers, it sounds logical to let the experts focus on their strength in computer hardware while the startup focuses on its expertise in building a software solution.</p>
+<p>Much like the concept of opportunity cost, transaction costs often do not show up in the direct and indirect accounting costs of making and delivering your solution. As a result, it is easy to neglect or ignore the influence of transaction costs in your decisions. When transaction costs are large, ignoring them can lead to decisions that are very costly and even fatal to your company.</p>
+<p>The risk of holdup demands governance mechanisms to facilitate transactions. Let’s first explore the factors that lead to the risk of holdup: uncertainty, bounded rationality, opportunism, and asset specificity. When there is certainty about a transaction or the markets of the supplier and the buyer, there is no risk of opportunism. If you are certain about what will happen, there will be no surprises and you will only transact if it is safe.</p>
+<p>When there is <em>uncertainty</em>, surprises happen. When there is uncertainty, it is not possible to write a fully contingent contract–one where every possible contingency is addressed and agreed upon—so the unexpected can happen to either or both of the transactors. Surprises often lead to unexpected problems that make it impossible to fulfill the terms of the contract and holdup happens. Uncertainty causes the parties to a transaction to have <em>bounded rationality</em> meaning that their ability to foresee and specify risks is limited. Since we all have limits to our rationality, especially in our ability to see through uncertainty, you must evaluate the risk of holdup in our transactions.</p>
+<p>Some suppliers are more trustworthy than others. Usually, you perceive that a supplier is less trustworthy because they show a tendency or a history of <em>opportunism</em>. Opportunism is a willingness to take advantage of the other party in a transaction, even resorting to guile to take advantage and get ahead. It is not necessary for every possible transactor to be opportunistic. It is not even necessary for one of the transactors of a particular transaction to be opportunistic. If there is uncertainty and you can not be sure that the other transactor is honest, the risk of opportunism is present and you must respond to it.</p>
+<p>Some inputs to your solution will be generic type inputs for which there are many competing suppliers competing in commodity markets to sell to you. Other inputs are specific to the transaction and open the door to holdup. A <em>specific asset</em> is one that cannot be redeployed to new uses if the transaction fails. The inability to redeploy the asset means that it is closely related to the sunk costs we discussed in <a href="#sec-fixed-sunk" class="quarto-xref"><span>Section 7.2.4</span></a>.</p>
+<p>To see the relationship between asset specificity and the risk of holdup, consider the case of injection molding. Injection molding, as the name suggests, injects a material into a mold to quickly produce a physical part in a desired shape. The mold must be created to exacting standards to produce the desired shape of the finished part. As a result, it can almost never be used in another application. We would say that the mold is an asset that is specific to the transaction for that particular molded part. The high degree of asset-specificity of the mold is the primary source of the risk of holdup. Once the molding company has incurred the cost of creating the mold, that cost is sunk. The buyer can come back to the supplier and demand a price reduction. Since the cost of the mold is sunk, the supplier has little leverage and will likely have to give in.</p>
+<p>When assets are highly specific to the transaction and the risk of opportunism is high, the transaction costs may be so high that transactions never happen. In practice, transactions between customers and suppliers of injection molding because the customer is required to buy the molds.</p>
+<p>Transaction cost economics identifies at least six types of asset specificity that raise the risk of holdup:</p>
+<ol type="1">
+<li><p><strong>Site Specificity:</strong> when a supplier locates production near a buyer, or vice versa, for the sake of lower transportation costs and increased coordination, the cost of relocating and the cost of changing suppliers increases;</p></li>
+<li><p><strong>Physical Asset Specificity:</strong> when a physical asset can only do one thing for one buyer, it cannot be redeployed and the risk of holdup increases;</p></li>
+<li><p><strong>Human Asset Specificity:</strong> when employees develop knowledge and skills that can only be used in a particular employer, the cost of the employee leaving is higher for both the employee and the firm;</p></li>
+<li><p><strong>Temporal Specificity:</strong> when there is a window of opportunity after which value is lost such as in earning an on-time delivery bonus or earning a first-mover advantage, buyers are vulnerable to suppliers who are slow to deliver;</p></li>
+<li><p><strong>Dedicated Assets:</strong> when a customer invests in assets for a particular supplier or when a supplier invests in assets for a particular customer, the cost of redeploying the may be very high if it is even possible;</p></li>
+<li><p><strong>Brand-name Capital:</strong> brand equity is tied to the firm that developed it and is difficult to transfer to another firm or brand. It is harder to build brand equity than to sustain it so firms with brand equity are vulnerable to firms who can damage it without damaging their own brand.</p></li>
+</ol>
+<p>The risk of holdup threatens to derail transactions when the risk is particularly high. The solution is to implement a <em>governance mechanism</em> that reduces the risk of holdup to levels that allow transactions to proceed. We saw an example of a governance mechanism in the transactions for injection molding. The supplier requires the buyer to pay for the mold before the mold is built. Because the buyer bears the fixed cost, the primary opportunity for the buyer’s opportunism is eliminated. This particular governance mechanism is known as where the giving of a hostage (the molds) aligns the incentives of the buyer and the supplier and allows them to transact with confidence.</p>
+<p>There are three primary categories of governance mechanisms with varying effectiveness in eliminating holdup cost. The first category is the <em>spot market</em> which is sometimes known as “cash and carry.” For example, if you need paper for your printer, you typically go to a retailer, give them cash, and carry away the paper. This governance mechanism is weakest in terms of reducing the risk of holdup but it is also the cheapest and easiest to implement. When the risk of holdup is low enough, it works well.</p>
+<p>At the other extreme of the governance mechanism continuum is <em>hierarchy</em> which means that the transaction happens inside the hierarchy of the company. Hierarchy is a very powerful governance mechanism because even when there is high asset specificity, the risk of holdup is low. If one division of a company exercises opportunism against another division of the same company, the opportunistic division may be better off but the company is injured overall. An executive of the company can rein in the opportunistic division, sort out the differences and ensure a collective benefit for the company. The downside of hierarchy is that it is expensive. A new division of the company has to be formed; new employees and managers must be brought in and trained; new executives and executive responsibilities must be adopted; and coordination between divisions grows geometrically as the number of divisions grows.</p>
+<p>Between the extremes of market and hierarchy is the <em>hybrid</em> category which contains elements of market and hierarchy. The simplest hybrid form is a contract that defines how the buyer and the seller will act under various contingencies. A contract is more effective than the spot market in overcoming the risk of holdup but it is more expensive in terms of contracting costs and coordination. A contract is less effective than hierarchy in overcoming holdup because courts must be used to resolve disputes but it is cheaper to set up and coordinate. Alliances, joint ventures, and franchises are additional forms of hybrid governance mechanisms. Each is closer to hierarchy than contracts and more effective in reducing holdup but also more expensive.</p>
+<p>While governance mechanisms are effective in reducing or eliminating the risk of holdup, their cost must be included in the total transaction cost. The total transaction cost is the sum of the cost of the governance mechanism and the cost of the remaining risk of holdup. The varying governance mechanisms have varying costs. In general, more effective governance mechanisms are also more expensive to implement and are only cost effective when the risk of holdup is high such as when there is high asset specificity. This insight is illustrated in <a href="#fig-governance" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>, adapted from Oliver <span class="citation" data-cites="williamson85">Williamson (<a href="cost.html#ref-williamson85" role="doc-biblioref">1985</a>)</span>, where we see the cost of the governance mechanism graphed against the degree of asset specificity which directly causes the risk of holdup.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-governance" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-governance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cost_files/figure-html/fig-governance-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-governance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: Choosing Governance Mechanisms to Minimize Transaction Costs
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>When asset specificity is low, spot market governance works well and has a low cost. However, as asset specificity grows, the cost of governance using spot markets grows much faster due to the cost of monitoring, coordinating, and the cost of holdup. When there is no asset specificity, the hybrid governance mechanism has a higher cost than markets because of the cost of setting up legal contracts and coordination. With very low asset specificity, hybrid governance is a poor choice. As asset specificity rises, the cost of governance rises and eventually hybrid governance becomes the least expensive choice for moderate levels of asset specificity. In the absence of asset specificity, hierarchy is the most expensive governance mechanism. As asset specificity rises, the cost of governance rises more slowly so that hierarchy is the least expensive choice for high levels of asset specificity. The choice of appropriate governance mechanism is straightforward. Choose the mechanism that minimizes the transaction costs given the level of asset specificity.</p>
+<p>What does this mean for the entrepreneur? The debate over which inputs to make and which to buy is best resolved through the lens of transaction cost economics. The traditional wisdom is that entrepreneurs should buy every input they can. This is good advice for inputs with low asset specificity where spot markets can be used and for inputs with moderate asset specificity where contracts or partnerships can be used. In contrast, when asset specificity for a transaction for an input is high and the risk of holdup is also high, you are better off to make that input. Even when it is available to be purchased in the market, the risk of holdup is so high that the well-being of your startup is in jeopardy when you buy the input rather than make it.</p>
+</section>
+<section id="sec-eos-appendix" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="sec-eos-appendix"><span class="header-section-number">7.8</span> Appendix B: Economies and Diseconomies of Scale</h2>
+<p>There are diverse reasons why average total cost falls as scale increases. The primary reason is the spreading of fixed costs over more units sold. On top of that, economies of scale may result from increased efficiency as scale increases.</p>
+<section id="economies-of-scale" class="level3">
+<h3 class="anchored" data-anchor-id="economies-of-scale">Economies of Scale</h3>
+<section id="product-specific-economies-of-scale" class="level4">
+<h4 class="anchored" data-anchor-id="product-specific-economies-of-scale">Product-Specific Economies of Scale</h4>
+<p>These economies of scale are associated with the volume of a single product.</p>
+<ol type="1">
+<li><p>At higher volumes, specialized investments in machines and human capital (both R&amp;D and production) allow for production methods that reduce the cost per unit. In particular, labor costs decrease due to increases in proficiency as well as fewer errors per unit. For example, in ball bearing manufacturing, production of less than 100 rings is done by hand on general purpose lathes. For production between 100 – 1,000,000 rings, production is done with a specialized screw machine. For production greater than 1,000,000 rings, production is done with an even more specialized high speed, continuous process machine.</p></li>
+<li><p>Increased bargaining power in procuring raw materials/inputs decreases the cost of raw material inputs.</p></li>
+</ol>
+</section>
+<section id="plant-specific-economies-of-scale" class="level4">
+<h4 class="anchored" data-anchor-id="plant-specific-economies-of-scale">Plant-Specific Economies of Scale</h4>
+<p>These economies of scale are associated with the total output of an entire plant.</p>
+<ol type="1">
+<li>Efficiency gains that result from expanding the size of individual processing units and sharing plant costs across several related products (e.g., procurement, inventory management/receiving, transportation/distribution). These types of efficiency gains are</li>
+<li>Energy usage — rises less than proportionately with increases in processing size.</li>
+<li>Labor — crews required to operate a large processing unit or machine are often no larger than what is needed for a unit with smaller capacity.</li>
+<li>Massed reserves — lower costs for back-up of specialized machines (e.g.&nbsp;you need a back-up if you have one or five machines running). Fewer maintenance personnel are required per machine/plant; also useful when unit/machine shutdowns occur regularly and predictably.</li>
+</ol>
+</section>
+<section id="economies-of-multi-plant-operations" class="level4">
+<h4 class="anchored" data-anchor-id="economies-of-multi-plant-operations">Economies of Multi-Plant Operations</h4>
+<p>These economies of scale are associated with total corporate size.</p>
+<ol type="1">
+<li>Economies of scale in centralized service functions, such as R&amp;D and management/staff. Costs per unit are lower by having a common central pool of researchers, financial planners, accountants, purchasing agents, lawyers, etc.</li>
+<li>Value of experimentation and diversity of operations wherein knowledge from one plant can be transferred to other plants. Shared production experience (best demonstrated practices) across plants can increase efficiency.</li>
+<li>Economies of scale in raising capital through common stock issues and borrowing. For example, firms with $200 mm in assets borrow on average at 0.74 percentage points less than $5 mm asset firms; $1 billion asset firms borrow for 1.08 percentage points less. (1960’s; Scherer et al.) This is due to reduced variance in profits (lower perceived risk). The CAPM pricing model is typically used to assess risk and even one bad year of earnings is perceived as a trend. Thus, larger companies in more concentrated industries have lower Betas. Also, a firm of $500 mm assets can borrow $25 mm at close to the prime rate but if it tries to borrow $100 - 500 mm in a short time frame, it will have to pay a steep interest premium. Such capital market imperfections may contribute to concentration in capital intensive industries like steel, autos, petrol. refining, etc., requiring a very high capital investment for minimum efficient scale (MES) operation. Small competitors may have considerable difficulty financing a great leap forward in MES operation.</li>
+<li>Economies of scale in advertising which allow you to achieve a “minimum threshold” of advertising messages to influence the consumer; however, above the minimum threshold at some point there appears to be diminishing returns to advertising. (e.g., according to reports, some beer drinkers deluged with Budweiser ads, said, “Give me anything but a Bud.”)</li>
+<li>The ability to locate plants to reduce distribution/transportation costs associated with getting the product to the end user (e.g.&nbsp;especially with low value to bulk items or items with special distribution properties like ice, dairy products, cement, etc.)</li>
+</ol>
+</section>
+</section>
+<section id="diseconomies-of-scale" class="level3">
+<h3 class="anchored" data-anchor-id="diseconomies-of-scale">Diseconomies of Scale</h3>
+<p>It is common for diseconomies of scale to exist as well as economies of scale. When there are diseconomies of scale, average total cost rises as the scale increases. Diseconomies of scale typically occur when increasing marginal costs outweigh the advantages of spreading fixed cost and the average cost rises.<br>
+%For many firms, there are also observed ranges of output that exhibit diseconomies of scale. Over these ranges, average cost is rising as output increases.</p>
+<p>Diseconomies of scale put limits on scale and complicate efforts to realize the cost advantages of economies of scale. Reasons for diseconomies of scale include</p>
+<ol type="1">
+<li>Diminishing returns to scale economies—with large enough volume, set-up costs dwindle to insignificance. %Learning curves flatten.</li>
+<li>Psychological surveys show that for reasons not completely understood workers are less satisfied with jobs and challenges offered in large plants vs.&nbsp;small. Therefore, to attract the required work force, you need to pay a wage premium.</li>
+<li>Increasing the workforce in a small town may require expanding the geographic radius from which workers are drawn; this increases commuting costs and results in higher offsetting wages.</li>
+<li>Material flows lengthen and become more complex; managing a large plant is more difficult than a small one, all things being equal. Typically, the larger the plant, the more decisions are made at higher levels by executives who are removed farther and farther from the reality of front line production.</li>
+<li>Transportation costs typically increase with fewer, larger plants, both in transporting inputs to the plant and finished products to the market, because fewer plants cannot be located as closely to their destinations.</li>
+<li>Risks of fire, explosion, wildcat strikes are at a maximum when all production is concentrated at a single plant site.</li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./nondurable_demand.html" class="pagination-link" aria-label="Estimating Demand of Non-durable Goods Using R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cost_dynamics.html" class="pagination-link" aria-label="Cost Dynamics">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

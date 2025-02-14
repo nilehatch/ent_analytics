@@ -1,0 +1,308 @@
+---
+title: "Estimating Demand of Durable Goods Using R"
+author: "Nile Hatch"
+#format: 
+#  pdf:
+#    toc: true
+#    number-sections: true
+#    colorlinks: true
+format:
+  html: 
+    toc: true
+    code-fold: true
+    number-sections: true
+    colorlinks: true
+    embed-resources: true
+editor: visual
+execute:
+  echo: false
+---
+
+```{r}
+#| output: false
+library(tidyverse)
+library(ggthemes)
+library(scales)
+library(gt)
+```
+
+## Durable Goods
+
+Durable goods, also referred to as capital goods, hard goods, or consumer durables, are products that do not wear out quickly and thus do not need to be purchased frequently. These are items that typically last for more than one purchase period (one or more years) and can withstand repeated use over an extended period of time.
+
+**Examples:**
+
+-   Household appliances (e.g., refrigerators, washing machines)
+
+-   Vehicles (e.g., cars, trucks)
+
+-   Furniture (e.g., sofas, dining tables)
+
+-   Electronics (e.g., TVs, computers)
+
+-   Machinery and equipment for businesses
+
+-   Subscriptions (e.g., mobile phone plans, AI services)
+
+Once consumers buy a durable good, they do not feel the need to replace it until it wears out, breaks, or becomes technologically obsolete. This means purchases of these items is not as frequent as non-durable goods. Given their long-lasting nature and often high price, the purchase of durable goods is often seen as an investment.
+
+## Gather Willingness to Pay Data
+
+Understanding the demand for durable goods requires a strategic approach to data collection. Due to the lasting nature of these goods, gauging customers' willingness to pay becomes paramount. While the general principles of data collection remain constant, there are nuanced methods tailored to durable goods.
+
+1.  **Contextual Introduction:** Begin by setting the stage. Describe the product in detail, emphasizing its long-term benefits, durability, and how it stands apart from other similar products in the market. A well-painted picture helps potential customers visualize the product in their lives.
+
+2.  **Seek Genuine Feedback:** Before diving into the monetary aspect, engage customers in a dialogue about the product.
+
+    1.  **The Wow Factor Test:** Start by asking them to rate the product on a scale of 1 to 10. Don't give them any conditions on what 1 or 10 means -- that would only bias their responses. This initial interaction can serve as an icebreaker and provide invaluable feedback.
+    2.  **Open-Ended Queries:** Encourage them to share what they like the most and least about the product. While many might skip these open-ended questions, it sends a clear message that you value their opinion.
+    3.  **Product Improvement:** Ask for suggestions on how the product can be enhanced. Not only does this give you a perspective on areas of improvement, but it also makes the customer feel valued and engaged.
+
+3.  **Positioning the Willingness to Pay Question:** Now that you've engaged the customer and cultivated a mindset of evaluation, you can segue into the pivotal question without it sounding opportunistic.
+
+    1.  **Set the Tone:** Preface the question by expressing genuine interest in their opinion. Mention that as entrepreneurs or students, you're passionate about the product and genuinely need their help in shaping it further.
+    2.  **The Main Query:** Then, frame the question: "Considering the features and benefits we've discussed, what is the most you would be willing to pay for this product?" By this point, the customer perceives this question as another form of rating the product, rather than feeling pressured into a commitment.
+
+4.  **Data Documentation:** Record their willingness to pay responses systematically, noting any additional feedback or comments that might accompany the figures. Over time, this will allow you to discern patterns and trends in consumer sentiment.
+
+5.  **Acknowledge and Appreciate:** Thank your respondents for their time and insights. Let them know their feedback is instrumental in the evolution of the product.
+
+In conclusion, for durable goods, gauging willingness to pay isn't just about fetching a figure. It's a blend of understanding perceptions, capturing genuine feedback, and making potential customers feel valued in the product's journey. Approached with care and genuine interest, it becomes less about money and more about mutual value creation.
+
+As an example, we have a relatively short survey of respondents who are representative of the target customers for an innovative product. The respondents were shown the product, engaged in a wow focus test, and then asked about the most they would be willing to pay for the durable good. The data set is named `durable_good_data` and has a variable named `wow` with the wow factor score awarded by each respondent ("Rate this product on a scale of 1 - 10") and their willingness to pay.
+
+The data are found in @tbl-wtp.
+
+```{r}
+#| label: tbl-wtp
+#| tbl-cap: "Wow factor scores and willingness to pay data from a survey of 23 target customers."
+#| tbl-cap-location: margin
+
+durable_good_data <- tibble(
+  wtp = c(
+    0, 1.99, 2, 1.96, 3, 0, 0.51, 2.97, 3, 
+    1.45, 1.96, 1, 0, 2.49, 0, 7.13, 5, 
+    0.92, 3.94, 1.51, 3.01, 2.51, 3.41))
+
+durable_good_data <-  durable_good_data %>%
+  mutate(wow = round(pmin(pmax(wtp * 7.87 / 2.163 + rnorm(length(wtp), 0, 1), 1), 10), 0), 
+         .before = wtp)
+
+
+gt(durable_good_data)
+
+```
+
+## Calculating Quantity for Durable Goods from Willingness to Pay Data
+
+To derive a demand curve from willingness to pay data for durable goods, we need to convert the data into a price-quantity relationship that aligns with the law of demand. Here's a condensed step-by-step process:
+
+1.  **Organize the Data:** Arrange willingness to pay data and identify unique values.
+2.  **Count Responses:** Quantify how many respondents are willing to pay at each unique price point.
+3.  **Calculate Cumulative Quantity:** To adhere to the law of demand, ensure that a respondent willing to pay a higher price would also buy at a lower price. Starting from the highest price, accumulate the counts to reflect the total number of consumers willing to purchase at or below each price.
+
+Let's work through the process of calculating quantity from the willingness to pay data in the `durable_good_data` tibble. We begin by getting a count of how many times each unique willingness to pay was named. The R codebase and output for this count are
+
+```{r}
+#| label: wtp-count
+#| echo: true
+
+durable_count <- durable_good_data |>
+  group_by(wtp) |>
+  summarise(count = n())
+durable_count
+
+```
+
+Next we convert the count variable into a quantity variable that adheres to the law of demand by calculating a cumulative sum of the counts beginning with the highest willingness to pay. The R code and output of the calculation of quantity as a cumulative sum of count gives us:
+
+```{r}
+#| label: durable-wtp-q
+#| echo: true
+durable_quantity <- durable_count |> 
+  arrange(desc(wtp)) |> 
+  mutate(quantity = cumsum(count))
+durable_quantity
+```
+
+<br>
+
+This is more efficient to do in a single command.
+
+::: {.callout-tip title="Prompting your AI for code to calculate quantity"}
+The code we need to transform the willingness to pay variable into a quantity variable is not very intuitive for ChatGPT to understand. To get accurate and reliable code, it's essential to be very specific with the prompt, especially when using advanced transformations. Please use the following template to ensure accuracy:
+
+1.  *"[Here's a glimpse of my data: glimpse(tb)]{style="color:#6AA99D"}"* (Replace tb with your data frame's name and paste the output from your R console showing the structure of your data).
+2.  [*I'm looking to use tidyverse to transform my willingness to pay (wtp) data into a quantity variable. Specifically, I'd like to:*]{style="color:#6AA99D"}
+    1.  [*Group by the wtp variable.*]{style="color:#6AA99D"}
+    2.  [*Summarise the data to get the count of each unique wtp value.*]{style="color:#6AA99D"}
+    3.  [*Arrange the summarized data in descending order by wtp.*]{style="color:#6AA99D"}
+    4.  [*Generate a new variable, quantity, which is the cumulative sum of the count for each wtp value."*]{style="color:#6AA99D"}
+:::
+
+```{r}
+#| label: wtp-quantity
+#| #| echo: true
+#| #| warning: false
+
+# Assuming your data is stored in a tibble called durable_good_data
+durable_quantity <- durable_good_data %>%  
+# 1. Group by the wtp variable  
+group_by(wtp) %>%  
+# 2. Summarise the data to get the count of each unique wtp value  
+summarise(count = n()) %>%  
+# 3. Arrange the summarized data in descending order by wtp  
+arrange(desc(wtp)) %>%  
+# 4. Generate a new variable, quantity, which is the cumulative sum of the count for each wtp value  
+mutate(quantity = cumsum(count))
+durable_quantity
+```
+
+The output providing price / quantity data is given in @tbl-durable-q
+
+```{r}
+#| label: tbl-durable-q
+#| tbl-cap: "Count and quantity data calculated from willingness to pay data for a durable good."
+#| tbl-cap-location: margin
+
+gt(durable_quantity)
+```
+
+## Estimate the Demand Curve {#sec-reg}
+
+Armed with the willingness to pay `wtp` and quantity, we are ready to estimate the demand curve for the durable good. The data are stored in a tibble named `durable_quantity` and the glimpse of the data is
+
+```{r}
+#| label: wtp-q-glimpse
+glimpse(durable_quantity)
+```
+
+Here, `wtp` is willingness to pay which serves as a proxy for `price` and `quantity` is the dependent variable that is caused by changes in price.
+
+Before regression of the price / quantity relationship, let's visualize it in a scatterplot using `ggplot`.
+
+```{r}
+#| label: fig-wtp-q-plot
+#| fig-cap: "Scatterplot visualization of the relatiionship between quantity and willingness to pay (price) data."
+#| fig-cap-location: margin
+#| echo: true
+
+# Plotting the data
+ggplot(data = durable_quantity, 
+       aes(x=wtp, y=quantity)) +
+  geom_point() +
+  labs(x="Price", y="Quantity") +
+  theme_minimal()
+```
+
+Visually, the impact of `wtp` on `quantity` seems clear and strongly negative as we would expect. The shape of the relationship may be linear but there are strong hints of a nonlinear relationship. We will test that.
+
+### Estimating the Linear Demand Curve
+
+First, let's use the linear model function `lm()` from R to estimate the linear regression model of `quantity` and `wtp` assuming a linear relationship between the variables.
+
+```{r}
+#| label: lin-model
+#| echo: true
+ 
+linear_demand_model <- lm(data = durable_quantity, 
+                       quantity ~ wtp)
+summary(linear_demand_model)
+```
+
+```{r}
+#install.packages("gtsummary")
+#library(gtsummary)
+#tbl_regression(demand_model, intercept=T)
+
+```
+
+**Linear Model Interpretation:**
+
+-   In terms of overall model fit, we see that the F-statistic of `r round(summary(linear_demand_model)$fstatistic[1], 4)` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(linear_demand_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(linear_demand_model)$r.squared,2)` percent of the variance of quantity.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r summary(linear_demand_model)$coefficients["wtp", "t value"]` and a p-value of `r summary(linear_demand_model)$coefficients["wtp", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated linear demand curve for the durable good is $$ \mathsf{Q = `r round(summary(linear_demand_model)$coefficients["(Intercept)", "Estimate"], 4)` `r round(coef(linear_demand_model)[[2]], 4)` P} $$ where `wtp` serves as a proxy for `price`. In simple terms, this demand curve suggests that for every \$1.00 increase in the price of the durable good, the quantity demanded across the sample of respondents decreases by `r -1*round(coef(linear_demand_model)[2],4)` units of the product.
+
+-   Empirically we can see that there is a good fit of the linear model to the price / quantity data. Visualization throug a scatterplot suggests that we should consider a nonlinear relationship such as a negative exponential demand curve.\
+
+### Estimating the Exponential Demand Curve
+
+The negative exponential demand curve has the form $$\mathsf{Q = a \mbox{e}^{bP}}$$ where e is the base for the exponential function `exp()`. We cannot estimate this nonlinear relationship directly because all linear regression must have the form $\mathsf{y = b_0 + b_1 x}$ and the negative exponential relationship does not have this linear form.\
+\
+Fortunately, we can transform the data to "linearize" it giving us a linear relationship. To linearize the data, we take the natural log (`log()` in R) of both sides of the demand curve giving us $$\mathsf{log(Q) =  \alpha + b P}$$ where $\mathsf{\alpha = log(a)}$. In words, we simply need to take the log of the dependent variable (y-variable) quantity and estimate the linear regression. The R code to do this and the output are
+
+```{r}
+#| label: wtp-q-lm
+#| echo: true
+
+exponential_demand_model <- lm(log(quantity) ~ wtp, durable_quantity)
+summary(exponential_demand_model)
+```
+
+**Exponential Model Interpretation:**
+
+-   After linearization of the data, we have estimated the demand model as an exponential demand curve. Looking at the regression results, we must first recognize that we have the regression model of $\mathsf{log(quantity)}$ rather than the model of $\mathsf{quantity}$.
+
+-   In terms of overall fit of the exponential model, we see that the F-statistic of `r round(summary(exponential_demand_model)$fstatistic[1], 4)` is significantly different from zero meaning that the model fits well. The R-squared value is `r round(summary(exponential_demand_model)$r.squared,4)` meaning that we are explaining `r round(100*summary(exponential_demand_model)$r.squared,2)` percent of the variance of quantity. The F-statistic and the R-squared values for the exponential model are both greater than their counterparts in the linear model. This suggests that the relationship is more likely to be exponential than linear.
+
+-   In terms of the impact of price on quantity, we see that the estimated coefficient for price is negative as the law of demand dictates. We also see that the estimated coefficient of price is significantly different from zero with a t-value of `r summary(exponential_demand_model)$coefficients["wtp", "t value"]` and a p-value of `r summary(exponential_demand_model)$coefficients["wtp", "Pr(>|t|)"]` which is very close to zero.
+
+-   The estimated linear demand curve for the durable good is $$ \mathsf{log(Q) = `r round(summary(exponential_demand_model)$coefficients["(Intercept)", "Estimate"], 4)` `r round(coef(exponential_demand_model)[[2]], 4)` P} $$ or $$ \mathsf{Q = e^{`r round(summary(exponential_demand_model)$coefficients["(Intercept)", "Estimate"], 4)` `r round(coef(exponential_demand_model)[[2]], 4)` P}}$$ where `wtp` serves as a proxy for `price`.
+
+-   Because it is an exponential demand curve, the interpretation is different. For every \$1.00 increase in the price of the durable good, the logarithm of the quantity demanded across the sample of respondents decreases by `r -1*round(coef(exponential_demand_model)[2],4)` units of the product. The change in logarithm of a value is not very intuitive to most of us.
+
+### Test to Choose between the Linear Demand and Exponential Demand Models
+
+The linear model and the exponential model are not directly comparable because one is the linear model of $\mathsf{quantity}$ and the other is the linear model of $\mathsf{log(quantity)}$. In general, comparing the F-statistics and the R-squared values of the two models gives us a pretty clear picture of which model is better for the data. However, it is not the best comparison.
+
+The "Akaike Information Criterion" (AIC) is a single number that encapsulates the quality of each model in its entirety. It takes into consideration how well the model fits the data (like R-squared) and the simplicity of the model (we prefer simpler models because they're easier to understand and less prone to errors). The model with the lowest AIC is often considered the best choice, as it represents the best balance between fitting our data well and being straightforward.
+
+Let's compare the linear demand model with the exponential demand model based on their AIC scores.
+
+```{r}
+#| label: wtp-q-aic
+#| echo: true
+
+# Compare the AIC values for the two models
+(aic_linear <- AIC(linear_demand_model))
+(aic_exponential <- AIC(exponential_demand_model))
+
+```
+
+The AIC score for the linear demand model is `r aic_linear` and the AIC score for the exponential demand model is `r aic_exponential`. Since the AIC score of the exponential demand model is much lower than from the linear demand model, we conclude that the demand curve is indeed exponential and choose that regression model results.
+
+## Conclusion
+
+For a visual representation of the demand data and the estimated demand curve, refer to @fig-wtp-q-fn. Based on the estimated coefficients and the robust goodness-of-fit statistics, we have confidence that the exponential demand curve accurately represents the behavior of consumers. By sampling actual customers and asking relevant questions about their willingness to pay for this durable good, we have obtained a reliable estimate of the demand curve, which serves as a crucial element in constructing the profit function.
+
+```{r}
+#| label: fig-wtp-q-fn
+#| fig-cap: "Demand data and estimated demand curve for a durable good."
+#| fig-cap-location: margin
+
+f_durable_q <- function(P) {exp(coef(exponential_demand_model)[[1]] + 
+                                  coef(exponential_demand_model)[[2]] * P)}
+
+ggplot() +
+  geom_function(fun = f_durable_q, color = "RoyalBlue", linewidth = 2) +
+  geom_point(aes(x = wtp, y = quantity), data = durable_quantity,) +
+  labs(x = "Price", y = "Quantity") +
+  theme_minimal()
+
+```
+
+Estimating demand is akin to being an explorer charting new territories. For durable goods, understanding demand is more than just counting those who are willing to pay; it's about interpreting the entire landscape of customer value. Through our journey in this chapter, we've dug into the nuances of willingness to pay, learned the dance between price and quantity, and harnessed the power of statistical tools to carve out our demand curve. Armed with this knowledge, entrepreneurs can confidently stride forward, making informed decisions that optimize both profits and customer satisfaction. Remember, in the world of business, knowledge isn't just power---it's the compass that guides towards success.
+
+```{r}
+
+#tinytex::uninstall_tinytex()
+
+#options(repos = c(CRAN = "https://cloud.r-project.org/"))
+#install.packages('tinytex')
+#tinytex::install_tinytex()
+#tinytex:::is_tinytex()
+
+
+```

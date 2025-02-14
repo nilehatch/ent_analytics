@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Profit – Profit Analytics for Entrepreneurs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./competition.html" rel="next">
+<link href="./cost_dynamics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-28e1de5e8b558a0209691034755ec9c6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Profit Analytics for Entrepreneurs</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./profit.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profit</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_entrepreneurship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Navigating Uncertainty in Entrepreneurship</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./non-price_competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competing on Things other than Price</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-profitability-matters" id="toc-why-profitability-matters" class="nav-link active" data-scroll-target="#why-profitability-matters"><span class="header-section-number">9.1</span> Why Profitability Matters</a></li>
+  <li><a href="#rescaling-is-required-to-calculate-profit" id="toc-rescaling-is-required-to-calculate-profit" class="nav-link" data-scroll-target="#rescaling-is-required-to-calculate-profit"><span class="header-section-number">9.2</span> Rescaling Is Required to Calculate Profit</a>
+  <ul class="collapse">
+  <li><a href="#the-solution-rescaling" id="toc-the-solution-rescaling" class="nav-link" data-scroll-target="#the-solution-rescaling">The Solution: Rescaling</a></li>
+  <li><a href="#scaling-up-demand" id="toc-scaling-up-demand" class="nav-link" data-scroll-target="#scaling-up-demand">Scaling Up Demand</a></li>
+  <li><a href="#scaling-down-fixed-cost" id="toc-scaling-down-fixed-cost" class="nav-link" data-scroll-target="#scaling-down-fixed-cost">Scaling Down Fixed Cost</a></li>
+  </ul></li>
+  <li><a href="#maximize-profit" id="toc-maximize-profit" class="nav-link" data-scroll-target="#maximize-profit"><span class="header-section-number">9.3</span> Maximize Profit</a>
+  <ul class="collapse">
+  <li><a href="#monopoly-profits-and-market-choice" id="toc-monopoly-profits-and-market-choice" class="nav-link" data-scroll-target="#monopoly-profits-and-market-choice">Monopoly Profits and Market Choice</a></li>
+  <li><a href="#maximizing-profit-through-optimal-pricing" id="toc-maximizing-profit-through-optimal-pricing" class="nav-link" data-scroll-target="#maximizing-profit-through-optimal-pricing">Maximizing Profit through Optimal Pricing</a></li>
+  <li><a href="#beyond-monopoly-preparing-for-competitive-markets" id="toc-beyond-monopoly-preparing-for-competitive-markets" class="nav-link" data-scroll-target="#beyond-monopoly-preparing-for-competitive-markets">Beyond Monopoly: Preparing for Competitive Markets</a></li>
+  </ul></li>
+  <li><a href="#break-even-analysis" id="toc-break-even-analysis" class="nav-link" data-scroll-target="#break-even-analysis"><span class="header-section-number">9.4</span> Break-even Analysis</a>
+  <ul class="collapse">
+  <li><a href="#calculating-break-even-quantity" id="toc-calculating-break-even-quantity" class="nav-link" data-scroll-target="#calculating-break-even-quantity">Calculating Break-Even Quantity</a></li>
+  <li><a href="#applying-break-even-analysis-a-practical-example" id="toc-applying-break-even-analysis-a-practical-example" class="nav-link" data-scroll-target="#applying-break-even-analysis-a-practical-example">Applying Break-Even Analysis: A Practical Example</a></li>
+  <li><a href="#break-even-quantity-and-time-determine-your-funding-needs" id="toc-break-even-quantity-and-time-determine-your-funding-needs" class="nav-link" data-scroll-target="#break-even-quantity-and-time-determine-your-funding-needs">Break-even Quantity and Time Determine Your Funding Needs</a></li>
+  <li><a href="#understanding-the-impact-of-cost-structure" id="toc-understanding-the-impact-of-cost-structure" class="nav-link" data-scroll-target="#understanding-the-impact-of-cost-structure">Understanding the Impact of Cost Structure</a></li>
+  <li><a href="#case-study-launching-a-no-frills-car-brand" id="toc-case-study-launching-a-no-frills-car-brand" class="nav-link" data-scroll-target="#case-study-launching-a-no-frills-car-brand">Case Study: Launching a No-Frills Car Brand</a></li>
+  </ul></li>
+  <li><a href="#workout-problems" id="toc-workout-problems" class="nav-link" data-scroll-target="#workout-problems"><span class="header-section-number">9.5</span> Workout Problems</a>
+  <ul class="collapse">
+  <li><a href="#dorsal-packs" id="toc-dorsal-packs" class="nav-link" data-scroll-target="#dorsal-packs">Dorsal Packs</a></li>
+  <li><a href="#dorsal-pack-data" id="toc-dorsal-pack-data" class="nav-link" data-scroll-target="#dorsal-pack-data">Dorsal Pack data</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-profit-chapter" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profit</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Entrepreneurship is, at its essence, an economic activity and profitability is the cornerstone of entrepreneurial success. Profitability is not just a financial metric, but a comprehensive indicator of your startup’s health, sustainability, and potential for growth.</p>
+<p>Profitability represents the ability of a business to generate more revenue than it spends in costs. It’s the lifeblood of any venture, determining its viability and long-term success. For entrepreneurs, profitability is not merely a goal; it’s a vital sign of their startup’s effectiveness in creating value and its efficiency in managing resources.</p>
+<section id="why-profitability-matters" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="why-profitability-matters"><span class="header-section-number">9.1</span> Why Profitability Matters</h2>
+<p>For startups, the path to profitability is often challenging yet imperative. It’s a clear indicator to investors and stakeholders of your business’s potential. Profitability demonstrates that your startup is not just an idea but a functional entity capable of sustaining itself and scaling. It reassures that the business model is sound, the market demand is adequately met, and the operational efficiencies are in place.</p>
+<p>This chapter stands at the confluence of the preceding discussions on demand, revenue, and cost. Here, we weave these elements together to provide you with a comprehensive understanding of how to calculate and evaluate your startup’s profitability. We will delve into the analytics of profitability, using data-driven insights to make informed decisions.</p>
+<p>You’ve learned about demand curves, understood revenue streams, and dissected cost structures. Now, it’s time to integrate these concepts. We’ll start with the maximization of profit - identifying the optimal balance between revenue generation and cost management. This section will not only discuss the theoretical aspects but also demonstrate practical analytical methods to derive these insights.</p>
+<p>Following this, we will explore how to utilize the optimal pricing strategy, gleaned from profit maximization, to conduct a thorough break-even analysis. This analysis is crucial in understanding at what point your startup stops operating at a loss and starts generating profits.</p>
+<p>Remember, profitability is more than a number; it’s a testament to your startup’s ability to thrive in a competitive landscape. Through this chapter, you will gain the analytical acumen to not just dream of profitability but to strategically plan for it, measure it, and achieve it.</p>
+<p><br></p>
+</section>
+<section id="rescaling-is-required-to-calculate-profit" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="rescaling-is-required-to-calculate-profit"><span class="header-section-number">9.2</span> Rescaling Is Required to Calculate Profit</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1000000</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> p<span class="sc">/</span>s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The basic profit equation is</p>
+<p><span class="math display">\[ \mathsf{\pi = PQ - cQ -f} \]</span> meaning that to calculate profit we need to know price, quantity, variable unit cost, and fixed cost. Price is something you set in your optimization. Quantity is determined by customers’ demand given the choice of price. Variable unit cost <span class="math inline">\(\mathsf{c}\)</span> and fixed cost <span class="math inline">\(\mathsf{f}\)</span> are determined by the cost structure chosen to produce the product or service you offer for sale. In short, the earlier chapters in demand, revenue and cost formed the building blocks we need to calculate profit.</p>
+<p>But there’s a catch: revenue (driven by demand) and cost data often don’t align. Typically, demand data comes from a small sample of customers, while cost data reflects the entire market. Imagine trying to cover the costs of a nationwide campaign with just a local fundraiser’s revenue - it doesn’t add up.</p>
+<section id="the-solution-rescaling" class="level3">
+<h3 class="anchored" data-anchor-id="the-solution-rescaling">The Solution: Rescaling</h3>
+<p>To resolve this, we either scale up demand to match market size or scale down fixed costs to the sample size.</p>
+<ol type="1">
+<li><p><strong>Scaling up demand:</strong> Multiply your sample-based demand by a factor that represents the market size.</p></li>
+<li><p><strong>Scaling down fixed cost:</strong> Adjust the market-level fixed costs to reflect the proportion attributed to your sample size.</p></li>
+</ol>
+</section>
+<section id="scaling-up-demand" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-up-demand">Scaling Up Demand</h3>
+<p>Let’s say our sample demand curve from 100 respondents is:</p>
+<p><span class="math display">\[ \mathsf{Q_{sample} = 327 - 2.19 \ P.} \]</span> With a market of 1,000,000,000 potential customers, our sample is just a tiny fraction. To scale up, multiply by the scaling factor <span class="math inline">\(\mathsf{m = \frac{Population}{Sample} = 10000}\)</span>.</p>
+<p>Here’s the math magic:</p>
+<p><span class="math display">\[\begin{align}
+\mathsf{m \cdot Q_{sample}} &amp;= \mathsf{m \cdot (327 - 2.19 \ P)}  \\
+        \mathsf{Q_{market}} &amp;= \mathsf{327,\!000 - 21,\!900 \ P}
+\end{align}\]</span></p>
+<p>Suddenly, the prospect of covering market-level costs seems realistic!</p>
+<p>The market-level profit equation then becomes:</p>
+<p><span class="math display">\[\begin{align}
+\mathsf{\pi_{market}} =&amp; \mathsf{\  P\ Q_{market} - f_{market} - c\ Q_{market}} \\
+                      =&amp; \mathsf{\ P \ (3\,270\,000 - 21\,900 \ P)} - \\
+                      &amp; \qquad \mathsf{ 1\,000\,000 - 1.5 \ (3\,270\,000 - 21\,900 \ P) }
+\end{align}\]</span></p>
+</section>
+<section id="scaling-down-fixed-cost" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-down-fixed-cost">Scaling Down Fixed Cost</h3>
+<p>Imagine the fixed cost to serve the market is $1,000,000. To scale this to our sample size:</p>
+<p>Divide the fixed cost by the scaling factor <span class="math inline">\(m\)</span>. Now, your sample’s share of the fixed cost is:</p>
+<p><span class="math display">\[\begin{align}
+\mathsf{C_{sample}} &amp;= \mathsf{ \frac{f_{market} }{m} + c\ Q} \\[8pt]
+                    &amp;= \mathsf{ \frac{1\ 000\ 000}{100} + 1.5 \ Q} \\[8pt]
+                    &amp;= \mathsf{ 10\ 000 + 1.5 \ Q}
+\end{align}\]</span></p>
+<p>Your sample-level profit equation is:</p>
+<p><span class="math display">\[\begin{align}
+\mathsf{\pi_{sample}} =&amp; \mathsf{\  P\ Q_{sample} - f_{sample} - c\ Q_{sample}} \\
+                      =&amp; \mathsf{\  P \ (327 - 2.19 \ P) - 100 - 1.5 \ (327 - 2.19 \ P) }
+\end{align}\]</span></p>
+<p>Through rescaling, we align our demand data with our cost data, enabling an accurate and realistic profitability analysis. It’s a crucial step in ensuring your entrepreneurial decisions are data-driven and grounded in financial reality.</p>
+<p><br></p>
+</section>
+</section>
+<section id="maximize-profit" class="level2 page-columns page-full" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="maximize-profit"><span class="header-section-number">9.3</span> Maximize Profit</h2>
+<p>In the journey toward understanding profitability, we’ve navigated through the intricacies of demand curves, revenue models, and cost structures. Now, we arrive at the pivotal concept of maximizing profit, a critical goal for any entrepreneur. The essence of profitability lies not just in generating revenue but in outpacing costs, a balance heavily influenced by market competition.</p>
+<section id="monopoly-profits-and-market-choice" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="monopoly-profits-and-market-choice">Monopoly Profits and Market Choice</h3>
+<p>As an entrepreneur, the choice of market and problem-solving approach significantly impacts your profitability potential. Ideally, operating as a monopolist, where you’re the sole provider of a unique solution, offers the highest profit margin. However, true monopolies are rare. They represent the upper bound of profitability you can expect to earn, serving as a benchmark for assessing performance in more competitive contexts.</p>
+<p><strong>Monopoly Characteristics:</strong></p>
+<ul>
+<li><strong>Single Firm Dominance:</strong> A market with one powerful firm.</li>
+<li><strong>Complete Product Differentiation:</strong> No rival products, ensuring complete market control.</li>
+<li><strong>Strong Entry Barriers:</strong> Prevent potential competitors from entering the market.</li>
+<li><strong>Powerless Customers:</strong> Large customer base with limited individual influence on price.</li>
+<li><strong>Perfect Information:</strong> Complete awareness of prices and availability among buyers and sellers.</li>
+</ul>
+<p>In monopoly settings, profit (denoted <span class="math inline">\(\mathsf{\pi}\)</span>) is the difference between revenue (<span class="math inline">\(\mathsf{R}\)</span>) and cost (<span class="math inline">\(\mathsf{C}\)</span>) with the profit equation <span class="math inline">\(\mathsf{ \pi = R - C}\)</span>. To illustrate, consider the demand, revenue, and cost functions from earlier chapters:</p>
+<p><span class="math display">\[\begin{align}
+
+\mathsf{Q} &amp;= \mathsf{2000 - 2P} \\
+
+\mathsf{R} &amp;= \mathsf{2000P - 2P^2} \\
+
+\mathsf{C} &amp;= \mathsf{50,\!000 + 200 Q} \\
+           &amp;= \mathsf{450,\!000 - 400P}
+
+\end{align}\]</span></p>
+<p>These core elements of the profit function yield a final profit function of <span class="math display">\[ \mathsf{\pi = 1600 P - 2P^2 - 450,\!000.} \]</span> as depicted in <a href="#fig-profit-function" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-profit-function" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-profit-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="profit_files/figure-html/fig-profit-function-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-profit-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Profit as the difference between revenue and cost.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="maximizing-profit-through-optimal-pricing" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="maximizing-profit-through-optimal-pricing">Maximizing Profit through Optimal Pricing</h3>
+<p>The crux of profit maximization lies in setting the right price. The optimal price is the one that marks the greatest distance between revenue and cost. This is illustrated in <a href="#fig-profit-R-C" class="quarto-xref">Figure&nbsp;<span>9.2</span></a>.</p>
+<ol type="1">
+<li><p><strong>Revenue Maximizing Price:</strong> At first glance, it might seem logical to aim for the price that maximizes revenue. For example, our analysis shows that at a price of $500, the revenue hits its peak. However, this doesn’t translate to maximum profit. Despite generating a profit of $250,000 at this price, a closer look at <a href="#fig-profit-R-C" class="quarto-xref">Figure&nbsp;<span>9.2</span></a> reveals that we’re not optimizing our profit potential here.</p></li>
+<li><p><strong>Profit Maximizing Price:</strong> Diving deeper, we discover that the key to maximizing profit lies not in the revenue peak but at a different price point. By adjusting the price to $600, we find the sweet spot where profit is maximized at $270,000. This is a crucial insight for entrepreneurs: the price that maximizes revenue is not the one that maximizes profit.</p></li>
+</ol>
+<p>In short, the goal is always to find the profit maximizing price. While it might be tempting to chase the highest revenue, it’s the profit that ultimately sustains and grows your business.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-profit-R-C" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-profit-R-C-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="profit_files/figure-html/fig-profit-R-C-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-profit-R-C-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Profit earned at the revenue maximizing price.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="beyond-monopoly-preparing-for-competitive-markets" class="level3">
+<h3 class="anchored" data-anchor-id="beyond-monopoly-preparing-for-competitive-markets">Beyond Monopoly: Preparing for Competitive Markets</h3>
+<p>While our analysis so far assumes a monopolistic setting, most startups eventually face competition. The upcoming chapters delve into oligopoly and game theory, crucial for understanding competitive dynamics. This understanding will further refine our analysis of profitability, accounting for competitor interactions and market responses.</p>
+<p><br></p>
+</section>
+</section>
+<section id="break-even-analysis" class="level2 page-columns page-full" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="break-even-analysis"><span class="header-section-number">9.4</span> Break-even Analysis</h2>
+<p>A critical task for you as an entrepreneur is to ensure your selling price per unit surpasses your cost per unit. This sounds simple, but it’s nuanced. If your venture has no fixed costs, just ensure your price is above your average variable cost. However, most businesses do face fixed costs, meaning your total revenue over a period must exceed all your costs, including these fixed expenses. Remember, covering fixed costs can take time, and your venture needs sufficient revenue growth to meet these expenses.</p>
+<p>Break-even analysis helps you determine the break-even quantity - the volume of sales needed to cover all costs without making a profit. Before you reach break-even, you are operating at a loss that you must cover with debt or investor money. After you reach break-even, you can begin paying back the losses you incurred before reaching break-even. Without large amounts of outside funding, it may be necessary to invest in a different cost structure that is more favorable in the short-run even if it leads to higher costs in the long run. If this condition seems unreachable, it’s a red flag for your business model.</p>
+<section id="calculating-break-even-quantity" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-break-even-quantity">Calculating Break-Even Quantity</h3>
+<p>The key to break-even analysis is to determine how many units you must sell to cover your fixed costs in additions to your variable costs. To find this quantity, set your profit function (revenue minus costs) to zero, assuming you know your profit-maximizing price <span class="math inline">\(\mathsf{P^*}\)</span> . The break-even quantity, denoted as <span class="math inline">\(\mathsf{\underline{Q}}\)</span>, is then calculated by dividing your fixed costs by the margin (price minus variable cost). The equation is:</p>
+<p><span class="math display">\[\begin{align}
+          \mathsf{\pi} &amp;= \mathsf{P\ Q - f - cQ} = 0 \notag \\[8pt]
+\mathsf{\underline{Q}} &amp;= \mathsf{\dfrac{f}{P^*-c}}
+\end{align}\]</span></p>
+<p>which is, in words, the fixed cost divided by the margin.</p>
+</section>
+<section id="applying-break-even-analysis-a-practical-example" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="applying-break-even-analysis-a-practical-example">Applying Break-Even Analysis: A Practical Example</h3>
+<p>Imagine you estimated a demand curve from a sample of potential customers:</p>
+<p><span class="math display">\[ \mathsf{q = 12 - 0.02 \ p.} \]</span></p>
+<p>Scaling this demand curve up to your target market size is essential. Let’s say your potential market is 250,000 customers, scaled up from the 50 in your sample. Your adjusted demand curve becomes:</p>
+<span class="math display">\[\begin{aligned}
+\mathsf{Q} &amp;= \mathsf{\frac{250,\!000}{50} \ q} \\[8pt]
+           &amp;= \mathsf{60,\!000 - 100 P}
+\end{aligned}\]</span>
+<p>Now, using a specific cost structure:</p>
+<p><span class="math display">\[ \mathsf{C = 50,\!000 - 200Q} \]</span></p>
+<p>This combination of demand and cost curves leads to a profit-maximizing price of <span class="math inline">\(\mathsf{P^* = \$400}\)</span> and maximized profit at that price is <span class="math inline">\(\mathsf{\pi = \$3,\!950,\!000}\)</span>. With the demand curve, cost curve, and profit maximizing price, break-even quantity is a simple calculation.</p>
+<p><span class="math display">\[\begin{align}
+\mathsf{\underline{Q}} &amp;= \mathsf{\frac{f}{P^*\! - c} = \frac{50,\!000}{400 - 200} } \\[8pt]
+                       &amp;= \mathsf{\frac{50,\!000}{200} }\\[8pt]
+                       &amp;= \mathsf{250}.
+\end{align}\]</span></p>
+<p>Before this startup is able to reliably sell 250 units, it is operating at a loss. Every unit of quantity above 250 generates positive profit.</p>
+<p>The relationship between revenue, cost, and break-even quantity is illustrated in <a href="#fig-beq" class="quarto-xref">Figure&nbsp;<span>9.3</span></a>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb2" data-cap-location="margin"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">###  Break even quantity</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="dv">50000</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fTC <span class="ot">&lt;-</span> <span class="cf">function</span>(Q) f <span class="sc">+</span> c<span class="sc">*</span>Q</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>fF <span class="ot">&lt;-</span> <span class="cf">function</span>(Q) f </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Pstar <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fR <span class="ot">&lt;-</span> <span class="cf">function</span>(Q) Pstar <span class="sc">*</span> Q </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>rev_bounds <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">500</span>))    <span class="co"># Create tibble containing plot range for x-axis (P)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>eqn1 <span class="ot">&lt;-</span> <span class="st">" R = P Q = 400 Q"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>eqn2 <span class="ot">&lt;-</span> <span class="st">" C = 50,000 + 200 Q "</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>eqn3 <span class="ot">&lt;-</span> <span class="st">" underline(Q) == 250 "</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>eqn4 <span class="ot">&lt;-</span> <span class="st">" f = 50,000 "</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rev_bounds, <span class="fu">aes</span>(x)) <span class="sc">+</span>                     <span class="co"># Draw ggplot2 plot</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> fF, <span class="at">color =</span> <span class="st">"#FA7240"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> fTC, <span class="at">color =</span> <span class="st">"#DA0406"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> fR, <span class="at">color =</span> <span class="st">"RoyalBlue"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="co">#title = "Revenue for a ticket to a dollar theater",</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Quantity"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Revenue and Cost"</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">360</span>, <span class="at">y=</span><span class="dv">170000</span>, <span class="at">label=</span><span class="st">"Revenue"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">360</span>, <span class="at">y=</span><span class="dv">158000</span>, <span class="at">label=</span>eqn1, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">450</span>, <span class="at">y=</span><span class="dv">120000</span>, <span class="at">label=</span><span class="st">"Total Cost"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">450</span>, <span class="at">y=</span><span class="dv">108000</span>, <span class="at">label=</span>eqn2, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">260</span>, <span class="at">y=</span><span class="dv">18000</span>, <span class="at">label=</span><span class="st">"Break-even Quantity"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">260</span>, <span class="at">y=</span><span class="dv">6000</span>, <span class="at">label=</span>eqn3, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">parse=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">400</span>, <span class="at">y=</span><span class="dv">68000</span>, <span class="at">label=</span><span class="st">"Fixed Cost"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">400</span>, <span class="at">y=</span><span class="dv">56000</span>, <span class="at">label=</span>eqn4, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">parse=</span>F) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_x_continuous(labels=scales::dollar_format()) + </span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">lim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">0</span>,<span class="dv">200000</span>), <span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span> </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_hc</span>() <span class="sc">+</span> <span class="co"># base size = 12, font family = sans, ... </span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  scale_color_brewer(palette="GnBu", direction=-1) +</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.justification=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">legend.position=</span><span class="fu">c</span>(<span class="fl">1.8</span>, <span class="dv">1</span>)) <span class="co"># hides legend outside the frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-beq" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-beq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="profit_files/figure-html/fig-beq-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-beq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: Break-even quantity where revenue equals cost and positive profits begin
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="break-even-quantity-and-time-determine-your-funding-needs" class="level3">
+<h3 class="anchored" data-anchor-id="break-even-quantity-and-time-determine-your-funding-needs">Break-even Quantity and Time Determine Your Funding Needs</h3>
+<p>The relationship between revenue, cost, and break-even quantity, illustrated in <a href="#fig-beq" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> tells you the scale needed for profitability. However, it doesn’t indicate the time required to reach this scale, which depends on sales growth. Depending on demand, you may expect to sell 250 units every hour or it may take more than a year to sell that many units.</p>
+<p>You should estimate how long you think it will take for your sales to reach the break-even quantity based on your demand curve and your early growth rate. That estimate will guide you in how much money you will need from outside sources for your venture to reach profitability. Estimate how much time it’ll take for your sales to reach the break-even quantity. This will guide your funding needs to sustain the venture until it becomes profitable.</p>
+</section>
+<section id="understanding-the-impact-of-cost-structure" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="understanding-the-impact-of-cost-structure">Understanding the Impact of Cost Structure</h3>
+<p>Break-even analysis isn’t just a mathematical exercise; it’s a strategic tool. It guides your decisions on cost structures and underscores the importance of understanding your market and sales potential. Different cost structures lead to different break-even points and, by extension, different funding requirements. This is detailed in <a href="#tbl-beq-cost-structures" class="quarto-xref">Table&nbsp;<span>9.1</span></a>. Observe how changes in fixed and variable costs influence the break-even quantity, shaping your strategic decisions.</p>
+<div class="cell page-columns page-full" data-tbl-cap-location="margin">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the data frame</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cost_structures <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cost_Structure =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Fixed_Cost =</span> <span class="fu">c</span>(<span class="st">"$5000"</span>, <span class="st">"$50,000"</span>, <span class="st">"$500,000"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable_Cost =</span> <span class="fu">c</span>(<span class="st">"$300"</span>, <span class="st">"$200"</span>, <span class="st">"$100"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Profit_Maximizing_Price =</span> <span class="fu">c</span>(<span class="st">"$450"</span>, <span class="st">"$400"</span>, <span class="st">"$350"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Break_Even_Quantity =</span> <span class="fu">c</span>(<span class="fl">33.33</span>, <span class="dv">250</span>, <span class="dv">2000</span>)  <span class="co"># Retaining as numeric</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating and styling the gt table</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(cost_structures) <span class="sc">%&gt;%</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Cost_Structure =</span> <span class="st">"Cost Structure"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fixed_Cost =</span> <span class="st">"Fixed Cost"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Variable_Cost =</span> <span class="st">"Variable Cost"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Profit_Maximizing_Price =</span> <span class="st">"Profit-maximizing Price"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Break_Even_Quantity =</span> <span class="st">"Break-even Quantity"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> Break_Even_Quantity,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">drop_trailing_zeros =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align_decimal</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.font.size =</span> <span class="st">"large"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-beq-cost-structures" class="cell quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-tbl-cap-location="margin">
+<figure class="quarto-float quarto-float-tbl figure page-columns page-full">
+<div aria-describedby="tbl-beq-cost-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="zsshthohnx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zsshthohnx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zsshthohnx thead, #zsshthohnx tbody, #zsshthohnx tfoot, #zsshthohnx tr, #zsshthohnx td, #zsshthohnx th {
+  border-style: none;
+}
+
+#zsshthohnx p {
+  margin: 0;
+  padding: 0;
+}
+
+#zsshthohnx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zsshthohnx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zsshthohnx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zsshthohnx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: large;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zsshthohnx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: large;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zsshthohnx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zsshthohnx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zsshthohnx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zsshthohnx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zsshthohnx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zsshthohnx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zsshthohnx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zsshthohnx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zsshthohnx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zsshthohnx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zsshthohnx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zsshthohnx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zsshthohnx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zsshthohnx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zsshthohnx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zsshthohnx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zsshthohnx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zsshthohnx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zsshthohnx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zsshthohnx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zsshthohnx .gt_left {
+  text-align: left;
+}
+
+#zsshthohnx .gt_center {
+  text-align: center;
+}
+
+#zsshthohnx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zsshthohnx .gt_font_normal {
+  font-weight: normal;
+}
+
+#zsshthohnx .gt_font_bold {
+  font-weight: bold;
+}
+
+#zsshthohnx .gt_font_italic {
+  font-style: italic;
+}
+
+#zsshthohnx .gt_super {
+  font-size: 65%;
+}
+
+#zsshthohnx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zsshthohnx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zsshthohnx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zsshthohnx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zsshthohnx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zsshthohnx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zsshthohnx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zsshthohnx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zsshthohnx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Cost_Structure" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Cost Structure</th>
+<th id="Fixed_Cost" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fixed Cost</th>
+<th id="Variable_Cost" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Variable Cost</th>
+<th id="Profit_Maximizing_Price" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Profit-maximizing Price</th>
+<th id="Break_Even_Quantity" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Break-even Quantity</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Cost_Structure">1&nbsp;</td>
+<td class="gt_row gt_right" headers="Fixed_Cost">$5000</td>
+<td class="gt_row gt_right" headers="Variable_Cost">$300</td>
+<td class="gt_row gt_right" headers="Profit_Maximizing_Price">$450</td>
+<td class="gt_row gt_right" headers="Break_Even_Quantity">   33.33</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Cost_Structure">2&nbsp;</td>
+<td class="gt_row gt_right" headers="Fixed_Cost">$50,000</td>
+<td class="gt_row gt_right" headers="Variable_Cost">$200</td>
+<td class="gt_row gt_right" headers="Profit_Maximizing_Price">$400</td>
+<td class="gt_row gt_right" headers="Break_Even_Quantity">  250   </td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Cost_Structure">3&nbsp;</td>
+<td class="gt_row gt_right" headers="Fixed_Cost">$500,000</td>
+<td class="gt_row gt_right" headers="Variable_Cost">$100</td>
+<td class="gt_row gt_right" headers="Profit_Maximizing_Price">$350</td>
+<td class="gt_row gt_right" headers="Break_Even_Quantity">2,000   </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-tbl margin-caption" id="tbl-beq-cost-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.1: Impact of changing cost structure on break-even quantity
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="case-study-launching-a-no-frills-car-brand" class="level3">
+<h3 class="anchored" data-anchor-id="case-study-launching-a-no-frills-car-brand">Case Study: Launching a No-Frills Car Brand</h3>
+<p><br> <strong>The Modern Automobile: A Technology Showcase</strong></p>
+<p>In today’s world, cars are not just about transportation; they’re marvels of technology. Imagine the latest models with their array of features: airbags, anti-lock brakes, anti-theft systems, and a suite of automated systems like GPS, on-board WIFI, and self-driving capabilities. Initially, these features are exclusive to luxury cars due to their high development costs. But as technology evolves, even entry-level cars start boasting these sophisticated systems. By 2016, electronics constitute a third of a car’s cost, a significant price bump passed on to consumers. For tech enthusiasts, this is a bargain; for those seeking basic transportation, it’s a steep price to pay.</p>
+<p><strong>The Market Gap: Simplicity in Complexity</strong></p>
+<p>Amidst this tech escalation, there’s a gap: what about consumers who want simple, affordable cars? This overlooked segment could represent a unique entrepreneurial opportunity. What if you could start a company focused on building basic, low-tech cars? Let’s dive into the financial feasibility of this idea.</p>
+<p><strong>The Cost of Car-Making</strong></p>
+<p>Developing a new car platform is a costly affair, typically ranging from $700 million to $2 billion. Our approach, eschewing expensive tech, might reduce these costs. Let’s estimate a development cost of $500 million, allocated to design, engineering, and factory retooling. The big automakers average a $2500 profit per car, but for smaller, simpler cars, this margin might shrink to $2000. To break even, you’d need to sell a quarter of a million cars - a daunting target.</p>
+<p><strong>Reality Check: The Sales Challenge</strong></p>
+<p>In 2015, the U.S. car market saw record-breaking sales of 1.7 million cars. But how realistic is our target of 250,000 cars? Comparing with smaller, established brands like Buick, Acura, or Land Rover offers perspective. These brands sold hundreds of thousands of cars annually, but a new brand like ours would likely start much smaller. Tesla, a relatively new entrant, sold only 22,800 cars in 2015. At that rate, it would take over a decade to recover the development costs.</p>
+<p><strong>The High Stakes of High Fixed Costs</strong></p>
+<p>The auto industry’s high fixed-cost structure presents a formidable barrier to new entrants, especially at the low-end market. Tesla’s success comes from catering to an affluent customer base, offering high-tech cars at premium prices. Our proposed venture sits at the opposite end: targeting cost-conscious consumers with simpler, cheaper vehicles. The challenge is immense: attract enough buyers willing to trade tech for savings and achieve the massive sales volume needed to cover the fixed costs.</p>
+<p><strong>The Verdict: A Tough Road Ahead</strong></p>
+<p>In conclusion, breaking into the auto industry at the low end poses significant risks. The sheer volume of sales needed to cover fixed costs is daunting, and the competitive landscape is unforgiving. Any entrepreneur eyeing this opportunity must carefully weigh these factors against the potential of tapping into an underserved market.</p>
+<p><br></p>
+</section>
+</section>
+<section id="workout-problems" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="workout-problems"><span class="header-section-number">9.5</span> Workout Problems</h2>
+<section id="dorsal-packs" class="level3">
+<h3 class="anchored" data-anchor-id="dorsal-packs">Dorsal Packs</h3>
+<p>A group of entrepreneurs, concerned about pick-pocketing in tourist destinations, created the Dorsal travel pack. This stylish, modern backpack has zippers facing inward, toward the back of the wearer, for security. For added security, it is made of slash-resistant fabric in nondescript colors to avoid the attention that more colorful, fashion-oriented brands draw.</p>
+<p>The team validated the problem and solution, refined the concept, and confirmed direct sales through their website. They conducted a profitability analysis with 107 potential customers, who rated the innovation, suggested improvements, stated their maximum willingness to pay, and provided travel and demographic information.</p>
+</section>
+<section id="dorsal-pack-data" class="level3">
+<h3 class="anchored" data-anchor-id="dorsal-pack-data">Dorsal Pack data</h3>
+<p>Initially, the team reached out to members of their social networks and invited those who had recently traveled or were planning to travel in the near future to help. They were able to get 112 responses from potential customers who had traveled or were about to travel.</p>
+<section id="demand-and-revenue" class="level4">
+<h4 class="anchored" data-anchor-id="demand-and-revenue">Demand and Revenue</h4>
+<p>The respondents were shown the backpack and its features. They were asked to rate the innovation and offer suggestions to improve it. They were also asked “What is the most you would be willing to pay for the Dorsal travel pack?” Finally, they provided information about their travel patterns as well as demographics. Because the travel pack is a durable good for most travelers, they focused on the of willingness to pay from respondents who had traveled or were planning to travel soon. We see the following responses:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">wtp =</span> <span class="fu">c</span>(<span class="dv">64</span>, <span class="dv">18</span>, <span class="dv">46</span>, <span class="dv">92</span>, <span class="dv">110</span>, <span class="dv">138</span>, <span class="dv">113</span>, <span class="dv">89</span>, <span class="dv">0</span>, <span class="dv">258</span>, <span class="dv">205</span>, <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">202</span>, <span class="dv">46</span>, <span class="dv">258</span>, <span class="dv">0</span>, <span class="dv">141</span>, <span class="dv">0</span>, <span class="dv">46</span>, <span class="dv">61</span>, <span class="dv">101</span>, <span class="dv">64</span>, <span class="dv">215</span>, <span class="dv">95</span>, <span class="dv">43</span>, <span class="dv">46</span>, <span class="dv">46</span>, <span class="dv">132</span>, <span class="dv">21</span>, <span class="dv">18</span>, <span class="dv">113</span>, <span class="dv">9</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">18</span>, <span class="dv">104</span>, <span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">6</span>, <span class="dv">224</span>, <span class="dv">322</span>, <span class="dv">18</span>, <span class="dv">316</span>, <span class="dv">156</span>, <span class="dv">104</span>, <span class="dv">322</span>, <span class="dv">285</span>, <span class="dv">208</span>, <span class="dv">316</span>, <span class="dv">0</span>, <span class="dv">288</span>, <span class="dv">95</span>, <span class="dv">6</span>, <span class="dv">52</span>, <span class="dv">46</span>, <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">64</span>, <span class="dv">98</span>, <span class="dv">248</span>, <span class="dv">18</span>, <span class="dv">110</span>, <span class="dv">0</span>, <span class="dv">67</span>, <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">0</span>, <span class="dv">89</span>, <span class="dv">132</span>, <span class="dv">101</span>, <span class="dv">18</span>, <span class="dv">215</span>, <span class="dv">18</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">104</span>, <span class="dv">285</span>, <span class="dv">3</span>, <span class="dv">46</span>, <span class="dv">141</span>, <span class="dv">322</span>, <span class="dv">291</span>, <span class="dv">89</span>, <span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">113</span>, <span class="dv">67</span>, <span class="dv">58</span>, <span class="dv">132</span>, <span class="dv">215</span>, <span class="dv">224</span>, <span class="dv">291</span>, <span class="dv">9</span>, <span class="dv">291</span>, <span class="dv">267</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">61</span>, <span class="dv">178</span>, <span class="dv">285</span>, <span class="dv">64</span>, <span class="dv">126</span>, <span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">15</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the data</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 107
+Columns: 1
+$ wtp &lt;dbl&gt; 64, 18, 46, 92, 110, 138, 113, 89, 0, 258, 205, 0, 18, 202, 46, 25…</code></pre>
+</div>
+</div>
+</section>
+<section id="cost-structure" class="level4">
+<h4 class="anchored" data-anchor-id="cost-structure">Cost Structure</h4>
+<p>Dorsal plans to have the pack manufactured by a contract manufacturer who charges $40 per backpack to be manufactured, packaged, and delivered to the startup’s offices. The startup is also spending $200 per month for web hosting and $5500 per month for contracted web development. Their total cost curve is linear: <span class="math inline">\(\mathsf{C = cQ + f}\)</span> where <span class="math inline">\(\mathsf{c}\)</span> is the variable cost per unit and <span class="math inline">\(\mathsf{f}\)</span> is fixed cost per month.</p>
+</section>
+<section id="rescaling" class="level4">
+<h4 class="anchored" data-anchor-id="rescaling">Rescaling</h4>
+<p>To conduct profitability analytics, it’s crucial to align the scale of sample demand with the fixed costs required to serve the market. For this analysis, we will rescale the demand up to the market level. Concerning market size:</p>
+<ul>
+<li><p><strong>International Travelers from the U.S.:</strong> According to the U.S. National Travel and Tourism Office, approximately 93 million international trips were made by U.S. citizens in 2019. We focus on 2019 data because international travel dynamics significantly changed due to the COVID-19 pandemic, and recent recovery data is not yet fully available.</p>
+<ul>
+<li>We estimate that the average international traveler makes about 1.5 trips per year, accounting for both frequent travelers and those who rarely travel abroad.</li>
+<li>It is generally estimated that 70 to 80 percent of these trips are for leisure purposes.</li>
+<li>Combining these factors, we assume there were approximately 43.4 million unique international travelers in 2019.</li>
+</ul></li>
+<li><p><strong>Percentage of Young Travelers Likely to Use a Backpack:</strong> While detailed data is unavailable, a conservative estimate suggests that 25% of these travelers are in the 20-39 age group, a demographic typically more active in international travel. This estimation brings our target population down to 10.85 million.</p></li>
+<li><p><strong>Interest in Security:</strong> Estimating the proportion interested in security-enhanced travel gear is challenging. However, considering increased travel safety awareness, we assume that around 20% of the travelers in this age group might be interested in a more secure backpack. This further narrows our target population to approximately 2.17 million.</p></li>
+<li><p><strong>Market share in a crowded backpack market:</strong> Recognizing the diverse needs and preferences of travelers, as well as the crowded nature of the backpack market, achieving a 1-5% market share would be substantial. Opting for a midpoint estimate of 3%, we approximate the target market to be around 65,100 potential customers.</p></li>
+</ul>
+<p>In summary, our assumption for the target market is about 65,100 potential travelers, and the Dorsal team has sampled data from 112 individuals within this segment for their analysis.</p>
+</section>
+</section>
+<section id="questions" class="level3">
+<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<ol type="1">
+<li><p>What is the rescaling factor <span class="math inline">\(\mathsf{m}\)</span> based on the calculation of the target population?</p></li>
+<li><p>How many backpacks would you expect to sell to the sample of 107 respondents at a price of $110?</p></li>
+<li><p>How many backpacks would you expect to sell to the complete market at a price of $110?</p></li>
+<li><p>What is the fixed cost?</p></li>
+<li><p>What is the unit variable cost?</p></li>
+<li><p>What is the <em>profit maximizing price</em> for a Dorsal pack? Use the rescaled market demand curve for your calculation and continue to use the market demand for the rest of the questions.</p></li>
+<li><p>What is the <em>quantity</em> of travel packs sold at the profit maximizing price?</p></li>
+<li><p>What is the <em>revenue</em> earned by selling Dorsal packs at the profit maximizing price?</p></li>
+<li><p>What is the <em>profit</em> earned by selling Dorsal packs at the profit maximizing price?</p></li>
+<li><p>What is the <em>difference</em> between the profit maximizing price and the revenue maximizing price for Dorsal packs? Specifically calculate this as <span class="math inline">\(\mathsf{P^*_{\pi_{max}} - P^*_{R_{max}}}\)</span>.</p></li>
+<li><p>What is the <em>difference</em> between the revenue when charging the profit maximizing price and the revenue when charging the revenue maximizing price for Dorsal packs? Specifically, calculate this as <span class="math inline">\(\mathsf{R^*_{\pi_{max}} - R^*_{R_{max}}}\)</span>.</p></li>
+<li><p>What is the <em>difference</em> between the profit when charging the profit maximizing price and the profit when charging the revenue maximizing price for Dorsal packs. Specifically, calculate this as <span class="math inline">\(\mathsf{\pi^*_{\pi_{max}} - \pi^*_{R_{max}}}\)</span>.</p></li>
+<li><p>Should the Dorsal pack team charge the profit maximizing price or the revenue maximizing price? Choose the best price and un-comment it.</p>
+<ol type="1">
+<li>best_price &lt;- “They should charge the profit maximizing price.”</li>
+<li>best_price &lt;- “They should charge the revenue maximizing price.”</li>
+</ol></li>
+<li><p>The Dorsal pack team is seeking funding from investors and wants to be able to communicate how long it will need investor funding to reach profitability. What is the breakeven quantity for the Dorsal pack?<br>
+&nbsp; <em>Hint: You can calculate this two different ways:</em></p>
+<ol type="1">
+<li><em>The simple formula in the reading;</em></li>
+<li><em>Create a profit function as a function of quantity and find its root.</em></li>
+</ol></li>
+</ol>
+<p><br></p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Note: In certain scenarios, like software products with zero variable unit cost, maximizing revenue might coincide with maximizing profit. However, this changes if there are costs associated with customer acquisition. In situations where stakeholders prioritize revenue growth, it’s still prudent to highlight the importance of profit maximization. After all, a business thrives on profit, not just on revenue.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cost_dynamics.html" class="pagination-link" aria-label="Cost Dynamics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./competition.html" class="pagination-link" aria-label="Competition">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
