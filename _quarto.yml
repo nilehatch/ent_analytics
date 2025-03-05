@@ -27,18 +27,24 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - uncertainty_entrepreneurship.qmd
-    - uncertainty_profit.qmd
-    - demand.qmd
-    - durable_demand.qmd
-    - nondurable_demand.qmd
-    - cost.qmd
-    - cost_dynamics.qmd
-    - profit.qmd
-    - competition.qmd
-    - entry.qmd
-    - competitive_advantage.qmd
-    - non-price_competition.qmd
+    - part: Uncertainty
+      chapters:
+        - uncertainty_entrepreneurship.qmd
+        - uncertainty_profit.qmd
+    - part: Profit
+      chapters:
+        - demand.qmd
+        - durable_demand.qmd
+        - nondurable_demand.qmd
+        - cost.qmd
+        - cost_dynamics.qmd
+        - profit.qmd
+    - part: Competition
+      chapters:
+        - competition.qmd
+        - entry.qmd
+        - competitive_advantage.qmd
+        - non-price_competition.qmd
     - summary.qmd
     - references.qmd
 

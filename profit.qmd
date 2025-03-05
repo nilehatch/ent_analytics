@@ -33,6 +33,8 @@ Remember, profitability is more than a number; it's a testament to your startup'
 ## Rescaling Is Required to Calculate Profit
 
 ```{r}
+#| echo: false
+
 options(scipen = 999)
 s <- 100
 p <- 1000000

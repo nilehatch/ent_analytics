@@ -241,7 +241,7 @@ This approach underscores the importance of adaptability and the potential to in
 
 
 
-### Build Custom Games
+## Build Custom Games
 
 Diving into the practical application of game theory, we aim to equip you with the ability to craft and solve games tailored to the unique strategic challenges of your business environment. This approach ensures that insights are directly applicable, guiding you toward informed strategic decisions in real scenarios."
 
@@ -249,14 +249,14 @@ A pivotal step in applying game theory is defining payoffs—the outcomes of str
 
 
 
-#### Ordinal Payoffs: A Logical Approach {.unnumbered}
+### Ordinal Payoffs: A Logical Approach {.unnumbered}
 
 Identifying payoffs is a crucial yet challenging step in game theory, particularly when the strategic scenario defines players and actions clearly, but payoffs remain ambiguous. For _ordinal payoffs_, the key is to ensure they represent a clear ranking of outcomes without necessitating specific values or units. Start by selecting a baseline scenario and assigning payoffs that mirror the expected order of preferences. For instance, in a rock-paper-scissors game, a tie scenario like Rock/Rock might be assigned a payoff of 0/0. This sets a foundation to then value a win at one point and a loss at negative one, simplifying the construction of the game matrix based on these relative rankings.
 
 Ordinal payoffs expedite game building by sidestepping detailed financial calculations, provided they accurately reflect the preference order. By methodically considering the relative merits of different strategic outcomes, you not only craft a clearer game structure but also enhance your strategic insights, enabling informed decision-making and predictable outcomes.
 
 
-#### Cardinal Payoffs: A Competition Analytics Approach {.unnumbered}
+### Cardinal Payoffs: A Competition Analytics Approach {.unnumbered}
 
 <!-- Ordinal payoffs house an implicit assumption that we know what will result from the chosen actions so we can set the order of our preferences.  It is often the case that we cannot determine the outcome or our preferences for it just from a thought experiment.  When the outcomes are ambiguous, we need a deeper understanding that we get from the profit analytics that run throughout this book.
 
@@ -264,9 +264,9 @@ When working with *cardinal payoffs*, it is best if they are computed profits th
 
 While ordinal payoffs rank outcomes based on preferences, cardinal payoffs require quantifiable insights often not evident through mere speculation. These payoffs, crucial for understanding the tangible outcomes of strategic choices, are derived from profit analytics. Whether it's profits from a one-time differentiated Bertrand competition or the net present value (NPV) of ongoing competitive profits, cardinal payoffs quantify the financial impact of decisions over the duration of interdependence between players. This depth of analysis, rooted in profit calculations, provides a comprehensive view of potential strategic outcomes.
 
-##### A Demonstration Case of Airbus and Boeing Choosing to Develop a New Aircraft {.unnumbered}
+#### A Demonstration Case of Airbus and Boeing Choosing to Develop a New Aircraft {.unnumbered}
 
-##### Airbus vs. Boeing: A Demonstration of Cardinal Payoffs
+#### Airbus vs. Boeing: A Demonstration of Cardinal Payoffs
 
 Consider Airbus and Boeing, evaluating whether to develop a new, technologically advanced aircraft. This strategic decision is influenced by potential market responses, competitive actions, and financial implications. Here’s how we break down their game using cardinal payoffs derived from profit analytics.
 
