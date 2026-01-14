@@ -1,50 +1,66 @@
 project:
   type: book
+  output-dir: _book
 
 book:
-  title: "Profit Analytics for Entrepreneurs"
-  author: "Nile Hatch"
-  date: "1/1/2025"
+  title: "Is This Worth Doing?"
+  subtitle: "How to Evaluate Profit Before Revenue Exists"
+#  author: "Nile Hatch"
+#  date: "1/1/2026"
   
   navbar:
     background: primary
     search: true
   reader-mode: true
 
-#  page-footer:
-#    left: |
-#      _Expeditionary Innovation_ was written by Nile Hatch.
-#    right: |
-#      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  page-footer:
+    left: |
+      _Is This Worth Doing?_ was written by Nile Hatch (2026).
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
 # cover-image: cassia_crossbill_2.jpg
-#  site-url: https://ei.nilehatch.com/
-#  repo-url: https://github.com/nilehatch/exp_innov/
-#  page-navigation: true
-#  bread-crumbs: true
-#  search: true
+  site-url: https://ei.nilehatch.com/
+  repo-url: https://github.com/nilehatch/exp_innov/
+  page-navigation: true
+  bread-crumbs: true
+  search: true
 
   
   chapters:
     - index.qmd
-    - intro.qmd
+    - part: The Decision and the Object
+      chapters:
+        - ch1_is_this_worth_doing.qmd
+        - ch2_profit_before_revenue.qmd    
+#    - intro.qmd
     - part: Uncertainty
       chapters:
         - uncertainty_entrepreneurship.qmd
         - uncertainty_profit.qmd
-    - part: Profit
+    - part: Demand
       chapters:
         - demand.qmd
         - durable_demand.qmd
         - nondurable_demand.qmd
+    - part: Profit
+      chapters:
         - cost.qmd
         - cost_dynamics.qmd
         - profit.qmd
     - part: Competition
       chapters:
         - competition.qmd
-        - entry.qmd
+        - competition_undiff_bertrand.qmd
+        - competition_diff_bertrand.qmd        
         - competitive_advantage.qmd
-        - non-price_competition.qmd
+        - entry.qmd        
+    - part: part_competitive_dynamics.qmd
+      chapters:
+        - game_theory.qmd
+        - simultaneous_games.qmd        
+        - sequential_games.qmd
+        - strategic_commitment.qmd
+    - part: Competing to Sell to Businesses
     - summary.qmd
     - references.qmd
 

@@ -1,0 +1,237 @@
+
+# Game Theory {#sec-game-theory-chapter}
+
+## Anticipating and Responding to Rivals
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+Game theory is more than a theoretical construct or a toolkit for gamers to dominate at Monopoly; it's a critical framework for entrepreneurs navigating the competitive business landscape. It demystifies the complex process of strategic decision-making in an environment where outcomes are influenced not just by your actions, but also by the responses of competitors, partners, and customers.
+
+## The Importance of Game Theory in Competitive Strategy
+Many people assume that competition is straightforward: firms either enjoy *monopoly power*, where they control prices and earn high profits, or they operate under *perfect competition*, where the invisible hand of the market ensures that self-interested actions serve the common good.  
+
+However, real-world markets exist on a continuum between these extremes, where firms have some influence over market outcomes, but their success is interdependent on the strategic choices of others. Unlike in perfect competition, where firms act independently of each other and price falls to cost, businesses in oligopolistic or differentiated markets must anticipate and react to competitors' actions.
+
+Game theory offers a lens to understand and navigate this intricate network, highlighting how strategic choices are intertwined. It underscores the critical insight that the success of your decisions hinges on the interconnected strategies within your business ecosystem. This understanding is pivotal for several reasons:
+
+-   **Enhanced Competitive Insight:** By acknowledging the interconnected nature of market actions, entrepreneurs can better predict competitor reactions, enabling strategic moves that are informed, proactive, and one step ahead.
+-   **Informed Strategic Choices:** Grasping the concept of interdependence aids in identifying actions that not only advance your position but also shape the competitive landscape in your favor, thus fostering optimal strategic decision-making.
+-   **Opportunities for Collaboration:** Beyond competitive dynamics, game theory also reveals avenues for negotiation and cooperation, identifying potential alliances that bolster your competitive stance.
+
+Through game theory, entrepreneurs gain the ability to not just react to the competitive environment but to actively influence its evolution, equipping them with the strategies to thrive in tomorrow’s market.
+
+
+## Individual vs. Interdependent Decision-Making
+
+#### Contrasting Contributions of Adam Smith and John Nash {.unnumbered}
+Adam Smith, the father of modern economics, is often credited with the idea that "individual ambition serves the common good". In markets with *perfect competition*, this is largely true—with myriad economic actors acting in their own self-interest, the "invisible hand" naturally directs the market to the best outcome for society.optimize market outcomes.  
+
+However, as dramatized in *A Beautiful Mind*, John Nash pointed out that when competitors' choices influence each other, independent optimization fails. The best outcomes occur not when each player does what is best for themselves in isolation, but when each player chooses what is best for themselves given what others are doing.  Like Adam Smith, Nash recommends that you should pursue your self-interest but you should pursue your individual ambition in response to the behavior of the other players.
+
+This is the essence of game theory—understanding how strategic interdependence shapes competition and decision-making.
+
+
+## The Five Steps of Game Theory
+Game theory provides a structured approach to understanding competitive dynamics. Regardless of the type of strategic interaction, analyzing a game follows five core steps:
+
+1. **Identify the Players**  
+   - Who are the decision-makers in the game?  
+   - In business, players might include competitors, customers, suppliers, investors, or regulators.  
+
+2. **Identify the Possible Actions**  
+   - What choices do each of the players have?  
+   - These actions could involve pricing strategies, product launches, marketing moves, supply chain decisions, or investment choices.  
+
+3. **Determine Payoffs**  
+   - What are the consequences of each possible action?  
+   - Payoffs can be financial (profits, market share, revenue) or strategic (brand loyalty, competitive positioning).  
+
+4. **Identify the Strategies**  
+   - A strategy is a plan of action that accounts for every possible move by rivals.  
+   - Some strategies may be dominant (always the best choice), while others depend on rival responses.  
+
+5. **Solve for the Equilibrium Outcome**  
+   - The equilibrium is the expected result of rational decision-making, where no player has an incentive to unilaterally change their strategy.  
+   - The *Nash Equilibrium* occurs when each player is playing their best response to every other player’s choice.
+
+This systematic approach helps entrepreneurs move beyond intuition and predict how competitors and partners will react to strategic moves.
+
+---
+
+## Real-World Applications of Game Theory in Entrepreneurship
+Game theory is not just an academic exercise—it has practical applications in entrepreneurial strategy, shaping how startups and businesses pricing, investment, and market entry decisions.
+
+#### 1. Competitive Pricing Strategies
+Many entrepreneurs assume they can set prices freely to maximize their own profits. However, in competitive markets, price changes trigger responses from rivals.  
+
+For example, if a startup cuts prices to gain market share, competitors may match the cut, leading to a price war that reduces profits for everyone. Undiferentiated Bertrand competition models show that rational competitors tend to undercut each other until price equals cost—a dangerous trap for startups without a cost advantage.  
+
+**Key Lesson:** Game theory helps businesses anticipate competitive price reactions* and develop differentiation strategies that avoid price wars.
+
+#### 2. Market Entry and Deterrence Strategies
+When entering a new market, a startup must consider how incumbents will react. If a dominant firm threatens to lower prices to drive new entrants out, should the startup ignore the threat?  
+
+Using game theory and backward induction, an entrepreneur can determine whether such a threat is credible. If the incumbent has no incentive to follow through, the startup can confidently enter the market. However, if the incumbent has committed to cost-cutting investments, its threat may be real, and entry may need to be reconsidered.
+
+**Key Lesson:** Game theory helps predict whether competitive threats are credible, guiding smarter entry decisions.
+
+### 3. Negotiation and Strategic Alliances
+Game theory doesn’t just apply to rivalries—it also helps entrepreneurs negotiate effectively with investors, suppliers, and partners.  For example, if a startup is seeking venture capital funding, multiple investors may be competing to invest. Should the startup hold out for better terms or accept an early offer?  
+
+A game-theoretic approach can help entrepreneurs:  
+
+- Recognize when investors have an incentive to negotiate aggressively.  
+- Use commitment strategies to increase their bargaining power.  
+- Identify collaborative game structures where win-win partnerships emerge.
+
+**Key Lesson:** Game theory provides a framework for optimizing negotiations and securing advantageous deals.
+
+
+## Conclusion: Why Entrepreneurs Need Game Theory
+Ignoring strategic interdependence can lead to unpleasant surprises—price wars, unexpected competitor reactions, or failed negotiations. Entrepreneurs who recognize and analyze interdependent decision-making can anticipate challenges before they arise, giving them a competitive edge.
+
+### Key Takeaways
+
+- Game theory explains why competition is interdependent, not isolated. 
+- The five-step process (players, actions, payoffs, strategies, equilibrium) helps analyze competitive decisions.
+- Real-world applications include pricing, market entry, and negotiation strategies.
+- Entrepreneurs who use game theory can anticipate rival responses, avoid costly mistakes, and gain strategic advantages.
+
+By applying game-theoretic thinking, entrepreneurs can not only navigate competitive landscapes but also reshape them in their favor.
+
+
+
+<!-- 
+Reading Quiz: Game Theory in Entrepreneurship
+
+1. Why is game theory important for entrepreneurs?
+
+a) It helps entrepreneurs dominate at board games like Monopoly.
+b) It provides a structured way to understand and navigate strategic interdependencies.
+c) It ensures that every entrepreneur becomes a monopoly.
+d) It guarantees that all business decisions will be profitable.
+
+Correct Answer: b – Game theory helps entrepreneurs analyze and respond to competitors’ strategies rather than making isolated decisions.
+
+⸻
+
+2. According to game theory, how does Nash’s perspective differ from Adam Smith’s?
+
+a) Smith believed that businesses should cooperate, while Nash believed competition is always destructive.
+b) Smith assumed independent decision-making leads to the common good, while Nash emphasized interdependent strategic decision-making.
+c) Nash rejected the idea of competition, while Smith encouraged businesses to ignore competitors.
+d) Smith and Nash had identical views on economic competition.
+
+Correct Answer: b – Smith’s view assumes independent decision-making in perfect competition, while Nash showed that interdependent strategies are key in markets with strategic interactions.
+
+⸻
+
+3. What are the five steps in applying game theory to strategic decisions?
+
+a) Identify the industry, predict government intervention, set prices, adjust profit margins, and react to market trends.
+b) Identify players, identify possible actions, determine payoffs, identify strategies, and solve for equilibrium.
+c) Choose a random strategy, wait for competitors to react, adjust tactics, increase advertising, and repeat the process.
+d) Find the best business idea, secure funding, start marketing, launch the product, and analyze sales.
+
+Correct Answer: b – The structured process of game theory involves identifying players, their possible actions, payoffs, strategies, and equilibrium outcomes.
+
+⸻
+
+4. In the context of game theory, what is a Nash equilibrium?
+
+a) A situation where every player is making their best decision based on what others are doing, and no one has an incentive to change their strategy.
+b) The outcome where one player wins everything and all others lose.
+c) The most ethical decision that benefits all parties equally.
+d) A strategy that guarantees success regardless of competitors’ choices.
+
+Correct Answer: a – A Nash equilibrium occurs when all players are making their best strategic choices given their rivals’ decisions, and no one benefits from changing unilaterally.
+
+⸻
+
+5. Which of the following is NOT an example of how entrepreneurs can apply game theory?
+
+a) Anticipating competitor reactions when setting prices.
+b) Evaluating whether a large firm’s threat to lower prices is credible before entering a market.
+c) Negotiating better deals with investors by understanding their incentives.
+d) Using game theory to predict stock market trends with absolute certainty.
+
+Correct Answer: d – Game theory helps in strategic decision-making, but it does not predict market movements with certainty.
+-->
+
+<!-- From the old reading quizzes
+In game theory, what is a strategy?
+  A goal and set of policies designed to achieve competitive advantage in a particular marketplace. 
+  Performing similar activities better than rivals perform them. 
+  Performing different activities from rivals' or performing similar activities in different ways. 
+Correct Answer
+  The complete set of one player's best responses to every possible action of other. 
+  What a player should do to win a game. 
+General answer comments
+A strategy is a very specific thing in game theory. A player's strategy is the set of her best responses to every possible action her rivals could take. Once the strategies of all players are specified, we are ready to find the equilibrium outcome (the outcome that we expect to happen).
+
+
+In the Academy Award winning film A Beautiful Mind, John Nash's character has an epiphany while in a pub in Princeton New Jersey. When a beautiful blond girl enters the pub with her brunette friends, John Nash and his fellow math Ph.D. students (big men on campus at Princeton in the 1950s) begin posturing to meet and dance with the blonde. They discuss Adam Smith and agree to "every man for himself, gentlemen." John Nash proposes: "If we all go for the blond, we block each other. Not a single one of us is going to get her. So then we go for the friends, but they will all give us the cold shoulder because nobody likes to be second choice. But what if no one goes for the blond. We don't get in each other's way and we don't insult the other girls. That's the only way we win."
+
+Which of the following is true about the equilibrium outcome of the game as John Nash proposes it.
+
+  The game leads to a Bertrand equilibrium. 
+  The game does NOT lead to a Bertrand equilibrium. 
+  The game leads to a Nash equilibrium. 
+Correct Answer
+  The game does NOT lead to a Nash equilibrium. 
+  The game leads to a Stackelberg equilibrium. 
+  The game does NOT lead to a Stackelberg equilibrium. 
+General answer comments
+"The first introduction that many people have to game theory and the Nash equilibrium in in the Academy award winning movie A Beautiful Mind. Ironically, the equilibrium outcome that is proposed in the movie is not a Nash equilibrium." [page 4]
+
+
+What is a Nash equilibrium?
+  An outcome where every player is simultaneously playing a best response to all other players. 
+  An outcome where no player has an incentive to choose a different action. 
+  An outcome of the highest common good achieved by every player doing what is best for himself. 
+Correct Answer
+  A and B are true 
+  A and C are true 
+  B and C are true 
+General answer comments
+"The final step in solving the game is to find the equilibrium outcome. If the outcome is a Nash equilibrium, it must be that every player is playing a best response to every other player at the same time." [pages 7-8]
+
+"[E]very player is simultaneously playing their best response---no player has an incentive to choose a different action." [inset in page 7]
+
+
+Prisoner dilemma games are bad for players because their strategies lead them to actions that are mutually most destructive, like price wars in undifferentiated Bertrand oligopolies. In practice, firms can avoid self-destructive behavior by using trigger strategies in repeated games as long as
+Correct Answer
+  the discount rate is low enough. 
+  the discount rate is high enough. 
+  there are many players in the repeated game. 
+  no player can effectively damage (punish) its rivals. 
+  players cannot observe what their rivals are doing. 
+General answer comments
+"In general, cooperation is possible when the value of cooperation is greater than the value of aggressive play. There are several elements that influence the relative value of cooperative and aggressive play:
+
+Potential gains from cooperation: It is easier to induce cooperation when the payoffs to cooperation are much higher than the payoffs in the prisoner's dilemma equilibrium.
+
+Potential to punish an aggressive rival: We can "punish an aggressive player by responding in kind to aggressive play. If the prisoner's dilemma payoff is low enough compared to the cooperative equilibrium, an aggressor will lose enough from the punishment for aggressive pricing to promote cooperation.
+
+The discount rate is low enough: The discount rate defines how heavily we discount the future. Since the payment from aggression comes immediately and the punishments are spread over a long time, heavy discounting of the future (a high discount rate) makes it more difficult to cooperate.
+
+The ability to monitor and punish aggressive play: Firms must be able to monitor their rivals' behavior, recognize betrayal, and implement punishment by retaliating with a low price. When it is difficult to monitor a rival, the risk of punishment is low and cooperation is unlikely.
+
+Few enough players in the game: The more players, the more difficult it is to monitor each other and cooperation is less likely. The entry of new players to the game is particularly difficult because their benefits, costs, and discount rate are unknown. A new player may be playing aggressively or just not know the rules.
+
+A history of punishment in response to aggressive play: The threat of punishment is effective only when the potential aggressor believes the potential target will retaliate. Firms that develop a reputation of protecting themselves by punishing aggressors are more credible when they threaten aggressive rivals who contemplate betrayal. Firms that forgive and ignore all aggressive play mark themselves as patsies and attract aggressive rivals who are eager for their turn to take advantage.
+
+When all these factors are in place, it is reasonably likely that undifferentiated Bertrand competitors facing a prisoner's dilemma can cooperate.
+
+
+-->
+

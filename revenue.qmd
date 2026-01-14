@@ -1,0 +1,74 @@
+
+# Revenue Models {#sec-revenue-chapter}
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+<!-- 
+
+What is a revenue model?
+Correct Answer
+  the system that describes how a business receives payment. 
+  the price that customers want to pay. 
+  the price that businesses as their customers pay. 
+  a report on revenues received. 
+General answer comments
+Revenue model: system design describing how a business receives payment for solving customer problems. [page 1 inset]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+Which of the following is NOT an example of a revenue model?
+Correct Answer
+  Venture capital investment model where you sell equity in the startup to investors. 
+  Licensing model where you sell the right to use intellectual property such as patents or copyrights. 
+  Advertising model where you sell access to the users of your platform. 
+  Free model where you give away your solution and use that transaction as a platform for earning revenue in other ways. 
+General answer comments
+The listed revenue models are the production model, markup model, subscription model, commission model, licensing model, advertising model, philanthropy model, and free model. Venture capital investment is an important source of funds but it is not a source of revenue because the money comes from selling equity to investment rather than selling solutions to customers. [pages 2-6]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+If you increase price, what will happen to revenue?
+Correct Answer
+  We cannot know from the information provided. 
+  It will increase. 
+  It will decrease. 
+  It will remain unchanged. 
+General answer comments
+In contrast to demand curves that always slope down, revenue curves slope up and down. Because revenue curves are increasing in their early stages and decreasing in their later stages, they have a unique maximum as shown the revenue curve shown in Figure 2. The revenue curve gets its characteristic, inverted U-shape from the relative strength of two opposing forces. The law of demand implies that when you raise price, quantity demanded will fall. Increasing price and decreasing quantity compete in their influence on revenue. Increasing price increases revenue on every unit sold; decreasing quantity reduces the number of units sold. Since revenue is the product of price and quantity, the effect of a price increase depends on whether the price effect or the quantity effect is stronger. [pages 8-9]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+When the demand curve is not linear, 
+Correct Answer
+  the revenue curve has a different shape than the revenue curve of a linear demand curve and revenue CAN be maximized. 
+  it cannot be estimated with linear models. 
+  the revenue curve has the same shape as the revenue curve of a linear demand curve. 
+  the revenue curve has a different shape than the revenue curve of a linear demand curve and revenue CANNOT be maximized. 
+General answer comments
+Page 15 shows maximization of revenue from a non-linear demand curve. It has a different, non-symmetric shape but can still be maximized.
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+Revenue maximization
+Correct Answer
+  is not the same as profit maximization but previews the methods of profit maximization. 
+  is the same thing as profit maximization and should be done. 
+  is the same as profit maximization when costs are not equal to zero. 
+  is not the same thing as profit maximization and should not be done. 
+General answer comments
+As a rule, economists and entrepreneurs seek to maximize profit which means taking into account both revenues and costs.  When marginal cost is greater than zero, the profit maximizing output will typically be lower than the revenue maximizing output. When marginal cost equals zero, profit maximization and revenue maximization are the same. (footnote on pages 10-11)
+
+-->

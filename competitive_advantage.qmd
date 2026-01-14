@@ -13,7 +13,6 @@ library(latex2exp)
 knitr::opts_chunk$set(echo = TRUE) 
 ```
 
-<br><br>
 
 ## Rethinking Market Size: A Shift Towards Profitability Analysis
 
@@ -101,6 +100,7 @@ $$
 
 ```{r}
 #| label: parameters
+#| echo: false
 
 # firm 1
 a_1 <- 100
@@ -117,6 +117,7 @@ c_2 <- 25
 
 ```{r}
 #| label: p-star
+#| echo: false
 
 fP1_star <- function(a1, a2, b1, b2, b12, b21, c1, c2) {(-2*a1*b2 + 2*b1*b2*c1 + a2*b21 - b2*b21*c2) / (4*b1*b2 - b21*b12)}
 fP2_star <- function(a1, a2, b1, b2, b12, b21, c1, c2) {(-2*a2*b1 + 2*b2*b1*c2 + a1*b12 - b1*b12*c1) / (4*b2*b1 - b12*b21)}
@@ -128,6 +129,7 @@ P2_star <- fP2_star(a_1, a_2, b_1, b_2, b_12, b_21, c_1, c_2) # 50
 
 ```{r}
 #| label: q-star
+#| echo: false
 
 fQ1_star <- function(P1, P2) { a_1 + b_1 * P1 + b_12 * P2}
 fQ2_star <- function(P1, P2) { a_2 + b_2 * P2 + b_21 * P1}
@@ -140,6 +142,7 @@ Q2_star <- fQ2_star(P1_star, P2_star) # 50
 ```{r Pistar}
 #| label: pi-star
 #| warning: false
+#| echo: false
  
 fPi1_star <- function(P1,P2) { (P1 - c_1) * fQ1_star(P1,P2) }
 fPi2_star <- function(P1,P2) { (P2 - c_2) * fQ2_star(P1,P2) }
@@ -172,6 +175,7 @@ In contrast, our analytical approach calculates expected revenue using demand an
 
 ```{r}
 #| label: revenue-max
+#| echo: false
 
 fR1_star <- function(P1,P2) { fQ1_star(P1,P2) * P1}
 fR2_star <- function(P1,P2) { fQ2_star(P1,P2) * P2}
@@ -212,6 +216,7 @@ When Company 1's target customer segment expands, indicating an increase in mark
 #| fig-cap: "Equilibrium prices of Company 1 and Company 2 when market size of Company 1 (a~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fP1_a1 <- function(a1){(-2*a1*b_2 + 2*b_1*b_2*c_1 + a_2*b_21 - b_2*b_21*c_2) / (4*b_1*b_2 - b_12*b_21)}
 fP2_a1 <- function(a1){(-2*a_2*b_1 + 2*b_2*b_1*c_2 + a1*b_12 - b_1*b_12*c_1) / (4*b_2*b_1 - b_12*b_21)}
@@ -223,7 +228,7 @@ ggplot() + xlim(0,200) +
        y = "Prices of Companies 1 and 2") +
   annotate("text", x = 130, y = 67, label = expression(paste(" Company 1 " (P[1]))), color = "blue2") +
   annotate("text", x = 180, y = 52, label = expression(paste(" Company 2 " (P[2]))), color = "blue4") +
-  theme_hc()
+  theme_minimal()
 
 ```
 
@@ -238,6 +243,7 @@ Next, we explore how these market size changes impact the quantities sold by bot
 #| fig-cap: "Equilibrium quantities of Company 1 and Company 2 when market size of Company 1 (a~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fQ1_a1 <- function(a1) { a1 + b_1 * fP1_a1(a1) + b_12 * fP2_a1(a1)}
 fQ2_a1 <- function(a1) { a_2 + b_2 * fP2_a1(a1) + b_21 * fP1_a1(a1)}
@@ -264,6 +270,7 @@ Market share is crucial in understanding a company's position in the market. Her
 #| fig-cap: "Equilibrium market shares of Company 1 and Company 2 when market size of Company 1 (a~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fMS1_a1 <- function(a1) {fQ1_a1(a1) / (fQ1_a1(a1) + fQ2_a1(a1)) }
 fMS2_a1 <- function(a1) {fQ2_a1(a1) / (fQ1_a1(a1) + fQ2_a1(a1)) }
@@ -290,6 +297,7 @@ Margins are a direct indicator of profitability. Let's see how changes in market
 #| fig-cap: "Equilibrium margins of Company 1 and Company 2 when market size of Company 1 (a~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fMargin1_a1 <- function(a1) {fP1_a1(a1) - c_1 }
 fMargin2_a1 <- function(a1) {fP2_a1(a1) - c_2 }
@@ -315,6 +323,7 @@ Ultimately, profit is the goal. Here's how market size affects the profits of Co
 #| fig-cap: "Equilibrium profits of Company 1 and Company 2 when market size of Company 1 ($a_1$) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fProfit1_a1 <- function(a1) { (fP1_a1(a1) - c_1) * fQ1_a1(a1) }
 fProfit2_a1 <- function(a1) { (fP2_a1(a1) - c_2) * fQ1_a1(a1) }
@@ -360,6 +369,7 @@ How does a change in Company 1's customers' price sensitivity affect the pricing
 #| fig-cap: "Equilibrium prices of Company 1 and Company 2 when price sensitivity of Company 1 customers (b~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fP1_b1 <- function(b1){(-2*a_1*b_2 + 2*b1*b_2*c_1 + a_2*b_21 - b_2*b_21*c_2) / (4*b1*b_2 - b_12*b_21)}
 fP2_b1 <- function(b1){(-2*a_2*b1 + 2*b_2*b1*c_2 + a_1*b_12 - b1*b_12*c_1) / (4*b_2*b1 - b_21*b_12)}
@@ -386,6 +396,7 @@ Now, let's examine how price sensitivity affects the quantities sold by both com
 #| fig-cap: "Equilibrium quantities of Company 1 and Company 2 when price sensitivity of Company 1 customers (b~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fQ1_b1 <- function(b1) { a_1 + b1 * fP1_b1(b1) + b_12 * fP2_b1(b1)}
 fQ2_b1 <- function(b1) { a_2 + b_2 * fP2_b1(b1) + b_21 * fP1_b1(b1)}
@@ -412,6 +423,7 @@ Finally, let's see how varying levels of price sensitivity impact the profits of
 #| fig-cap: "Equilibrium profits of Company 1 and Company 2 when price sensitivity of Company 1 customers (b~1~) changes." 
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fProfit1_b1 <- function(b1) (fP1_b1(b1) - c_1) * fQ1_b1(b1)
 fProfit2_b1 <- function(b1) (fP2_b1(b1) - c_2) * fQ2_b1(b1)
@@ -459,6 +471,7 @@ How does an increase in Company 1's customer loyalty affect its equilibrium pric
 #| fig-cap: "Equilibrium prices of Company 1 and Company 2 when customer loyalty for Company 1 (b~12~ and b~21~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 # b_12 increasing means that more customers come to F1 when F2 raises price P2
 # b_21 has a parallel decrease meaning that fewer customers go to F2 when F1 raises P1
@@ -490,6 +503,7 @@ Finally, we assess how these loyalty-driven pricing strategies impact the profit
 #| fig-cap: "Equilibrium profits of Company 1 and Company 2 when customer loyalty for Company 1 (b~12~ and b~12~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fQ1_b12 <- function(b12) { a_1 + b_1 * fP1_b12(b12) + b12 * fP2_b12(b12)}
 fQ2_b12 <- function(b12) { a_2 + b_2 * fP2_b12(b12) + b_21 * fP1_b12(b12)}
@@ -534,6 +548,7 @@ What happens to the equilibrium prices of companies 1 and 2 when Company 1 gains
 #| fig-cap: "Equilibrium prices of Company 1 and Company 2 when variable cost of Company 1 (c~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fP1_c1 <- function(c1) {(-2*a_1*b_2 + 2*b_1*b_2*c1 + a_2*b_21 - b_2*b_21*c_2) / (4*b_1*b_2 - b_12*b_21)}
 fP2_c1 <- function(c1) {(-2*a_2*b_1 + 2*b_2*b_1*c_2 + a_1*b_12 - b_1*b_12*c1) / (4*b_2*b_1 - b_21*b_12)}
@@ -560,6 +575,7 @@ Now, let's assess how these cost-driven pricing strategies impact the profits of
 #| fig-cap: "Equilibrium profits of Company 1 and Company 2 when cost of Company 1 (c~1~) changes."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fQ1_c1 <- function(c1) { a_1 + b_1 * fP1_c1(c1) + b_12 * fP2_c1(c1)}
 fQ2_c1 <- function(c1) { a_2 + b_2 * fP2_c1(c1) + b_21 * fP1_c1(c1)}
@@ -608,3 +624,171 @@ We have explored the intricate dynamics of market competition and profitability 
 Entrepreneurs should embrace these insights as part of their broader business strategy. The integration of detailed analytics into decision-making processes enables more precise targeting of competitive advantages and better alignment of business strategies with market realities. This approach is not just about understanding the market---it's about actively shaping a firm's position within it.
 
 In conclusion, the fusion of entrepreneurial vision with rigorous analytics paves the way for more successful and sustainable business ventures. By focusing on these key competitive elements and continually refining strategies based on analytical insights, entrepreneurs can navigate the complex landscape of market competition with greater confidence and efficacy.
+
+
+
+<!-- 
+
+Reading Quiz: Competitive Advantage
+
+Multiple-Choice Questions
+
+(Select the best answer)
+	1.	What is a primary limitation of using market size estimates as a measure of profit potential?
+a) They do not consider the cost of production.
+b) They assume market share is easy to attain.
+c) They underestimate demand.
+d) They focus too much on profits rather than revenue.
+
+	1.	b) They assume market share is easy to attain.
+	•	Market size estimates often overlook barriers to entry and assume companies can easily capture market share.
+	
+	
+	2.	According to the chapter, a more direct approach to estimating profitability involves:
+a) Using customer demand curves.
+b) Analyzing market share trends.
+c) Comparing total addressable market (TAM) to serviceable available market (SAM).
+d) Estimating advertising effectiveness.
+
+a) Using customer demand curves.
+	•	The chapter emphasizes that estimating demand directly, rather than relying on broad market size estimates, provides a better measure of profitability.
+	
+	
+	3.	In a Bertrand oligopoly, how do firms typically compete?
+a) By setting prices strategically.
+b) By expanding production capacity.
+c) By controlling supply chains.
+d) By forming market monopolies.
+
+a) By setting prices strategically.
+	•	The Bertrand model describes price competition between firms, where companies set prices strategically in response to competitors.
+	
+	
+	
+	4.	What happens to Company 1’s market share when it increases customer loyalty?
+a) It decreases.
+b) It remains unchanged.
+c) It increases as fewer customers switch to competitors.
+d) It increases only if the company raises prices.
+
+c) It increases as fewer customers switch to competitors.
+	•	Higher customer loyalty means customers are less likely to leave, improving market share.
+	
+	
+	5.	When a company has reduced price sensitivity among its customers, it can:
+a) Increase its prices significantly without losing too many customers.
+b) Increase its prices, but demand will drop proportionally.
+c) Lower its prices to increase market share.
+d) Depend entirely on brand reputation for sales.
+
+a) Increase its prices significantly without losing too many customers.
+	•	If customers are less sensitive to price changes, the company can raise prices without a significant drop in demand.
+	
+	
+	6.	What is the key benefit of a unit variable cost advantage?
+a) The ability to lower prices while maintaining profitability.
+b) A stronger ability to raise prices compared to competitors.
+c) Increased total revenue without a change in cost structure.
+d) Reduced reliance on economies of scale.
+
+a) The ability to lower prices while maintaining profitability.
+	•	A lower unit cost allows a company to reduce prices, attracting more customers while still maintaining or increasing profits.
+
+⸻
+
+True/False Questions
+
+(Indicate whether each statement is true or false)
+	7.	T/F – Profitability is a more reliable predictor of long-term success than revenue.
+	8.	T/F – The Bertrand model assumes companies in competition set output levels instead of prices.
+	9.	T/F – A company with a larger market size will always have higher profits than its competitors.
+	10.	T/F – A firm with strong customer loyalty may lower prices to attract even more customers.
+	11.	T/F – Lowering unit variable costs can increase both profit margins and market share.
+	
+	True/False Questions
+	7.	True – Profitability, rather than revenue, is a better measure of long-term business viability.
+	8.	False – The Bertrand model assumes firms compete on price, not output (which is assumed in the Cournot model).
+	9.	False – A larger market size does not guarantee higher profits if costs are high or competition is intense.
+	10.	True – A firm with high customer loyalty may have more flexibility to adjust prices without losing customers.
+	11.	True – Lower unit costs improve both profit margins and competitive pricing ability.
+
+⸻
+
+Short-Answer Questions
+
+(Provide a brief response)
+	12.	Explain why investors should focus on profit rather than revenue when assessing market opportunities.
+	Explain why investors should focus on profit rather than revenue when assessing market opportunities.
+
+	•	Revenue shows the total sales volume, but profit accounts for costs and reflects the actual financial health of a company. A company with high revenue but low profits may not be sustainable.
+	
+	
+	13.	What are two ways a company can decrease customer price sensitivity?
+	
+	14.	In the Bertrand model, what happens when two companies have identical costs and differentiation?
+	
+		In the Bertrand model, what happens when two companies have identical costs and differentiation?
+
+	•	The firms compete on price, leading to an equilibrium where both firms charge similar prices and earn similar profits, assuming no other competitive advantages exist.
+
+
+
+	15.	What strategic trade-offs must an entrepreneur consider when balancing market share growth and profit margins?
+	
+	What strategic trade-offs must an entrepreneur consider when balancing market share growth and profit margins?
+
+	•	If a company lowers prices to increase market share, it may sacrifice short-term profit margins. On the other hand, focusing only on high profit margins may limit customer acquisition and market penetration. The key is finding an optimal balance based on industry conditions.
+	
+-->
+
+<!-- From the reading quiz on market size
+
+What makes a strategic commitment credible and effective in deterring competitors?
+  The ability to reverse the commitment easily if it proves to be unprofitable. 
+Correct Answer
+  The visibility and understandability of the commitment to competitors. 
+  The use of non-binding verbal agreements to signal intentions to the market. 
+  The commitment's potential for quick adaptation to changing market conditions. 
+General answer comments
+A strategic commitment becomes credible and effective in influencing competitors' actions when it is both visible and understandable to them. This means that the commitment must be openly demonstrated or communicated in a way that competitors can observe and interpret the intended strategic direction and implications. Such commitments change the competitive landscape by altering the perceived payoffs of competing actions, deterring competitors from making moves that would challenge the committing firm's strategic advantage. The other options are incorrect because strategic commitments need to be irreversible (not easily reversed), clear and binding (not non-binding verbal agreements), and typically involve long-term strategic changes rather than quick adaptations.
+
+Why is profit considered a more relevant indicator for investment decisions compared to traditional market size metrics like Total Addressable Market (TAM)?
+  Profit estimation is easier and requires less data than market size metrics. 
+  Profit directly correlates to the total value of sales in the market. 
+Correct Answer
+  Profit provides a more accurate and meaningful measure, considering factors like pricing strategy and market dynamics, rather than just revenue. 
+  Investors only focus on profit and disregard other aspects like market share or revenue. 
+General answer comments
+Profit is a more relevant indicator for investment decisions because it provides a comprehensive view of a company's financial health, considering not just revenue but also costs and market dynamics. Traditional market size metrics, such as Total Addressable Market, mainly focus on the potential revenue pool without delving into how much of that revenue can be converted into actual profit. By using demand and profit functions, we can estimate expected revenue in the context of market size but with a crucial focus on profit maximization. This approach allows for a more nuanced understanding of a company's true profit potential, taking into account factors like strategic pricing, cost management, and competitive market positioning, thus offering a more realistic and actionable forecast for long-term success.
+
+
+What is the effect of an increase in Company 1's market size (a1) on its pricing strategy, market share, and profitability?
+  An increase in market size leads to reduced prices and lower profit margins, decreasing overall profitability. 
+  With a larger market size, Company 1's prices, market share, and profits all decrease due to intensified competition. 
+Correct Answer
+  As market size increases, Company 1 experiences higher sales volumes and profitability, but it must balance market share growth with pricing strategies. 
+  An expanded market size results in a loss of market share for Company 1, as it struggles to meet the diverse needs of a larger customer base. 
+General answer comments
+An increase in Company 1's market size generally leads to higher sales volumes and improved profitability due to the expansion of its target customer segment. However, this growth requires strategic decision-making regarding pricing. As Company 1's market size increases, it faces decisions that can either increase market share or improve profit margins. While gaining a larger market share can be a significant competitive advantage, it is important for the company to balance this with effective pricing strategies to ensure optimal profitability. The analysis suggests that maintaining healthy margins while expanding market size is key to sustainable growth. This balance is crucial for maximizing the benefits of an increased market size, as it allows Company 1 to capitalize on its competitive advantage while sustaining profitability.
+
+
+How does a decrease in the price sensitivity (b1) of Company 1's customers affect its business strategy and market performance?
+  Company 1 will have to significantly lower its prices to maintain market share, leading to reduced profits. 
+  Decreased price sensitivity in Company 1's customers results in lower profits due to increased competition with Company 2. 
+Correct Answer
+  Company 1 can increase its prices without significantly losing customers, leading to higher profits, even though it may lose some market share to Company 2. 
+  Decreased price sensitivity causes both Company 1 and Company 2 to lower their prices, leading to a price war. 
+General answer comments
+When Company 1's customers exhibit lower price sensitivity, it indicates that these customers are less likely to change their purchasing decisions in response to price increases. As a result, Company 1 can afford to increase its prices more significantly compared to Company 2 without experiencing a substantial loss in customer base. This strategy leads to an exponential increase in Company 1's prices, offering a distinct pricing advantage. However, it's important to note that while Company 1 can increase prices without losing many customers, it might still cede some market share to Company 2 due to the substitution effect. Despite this, the overall impact of decreased price sensitivity is positive for Company 1, as it allows for substantial profit gains, outstripping the benefits that might come from merely increasing market share. This scenario highlights the strategic value of understanding and leveraging customer price sensitivity to enhance profitability.
+
+
+How does an increase in customer loyalty for Company 1 (b12 and b21) affect its pricing strategy and profitability in a Bertrand oligopoly?
+  Increased customer loyalty leads Company 1 to significantly raise its prices, resulting in a loss of market share to Company 2. 
+Correct Answer
+  As customer loyalty increases, Company 1 decreases its prices to attract more customers from Company 2, increasing its overall profits despite lower prices. 
+  Higher customer loyalty for Company 1 has no significant impact on its pricing strategy or profitability. 
+  Company 1's increased customer loyalty causes both companies to engage in a price war, reducing profits for both. 
+General answer comments
+With increased customer loyalty, Company 1 experiences two key effects: more customers switch from Company 2 to Company 1 when Company 2 raises prices (the b12 effect), and fewer Company 1 customers switch to Company 2 when Company 1 raises its prices (the b21 effect). This dynamic enables Company 1 to strategically reduce its prices to attract more customers from Company 2. Despite these price reductions, Company 1's increased customer loyalty means that it retains a high number of its customers, thus increasing its overall profits. This strategy demonstrates the value of customer loyalty as a competitive advantage, allowing Company 1 to leverage loyalty not just for customer retention but also for strategic pricing and market share gains. The approach underscores the importance of understanding how increased customer loyalty can be used to adjust pricing strategies and enhance market presence, ultimately leading to increased profitability.
+
+-->

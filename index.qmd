@@ -1,9 +1,113 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+#### An invitation to stop guessing about profit—and start evaluating it with evidence
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## Making Profit-Relevant Decisions Before Revenue Exists
 
-```{r}
-1 + 1
-```
+Entrepreneurship is full of decisions that must be made before the numbers exist.
+
+Should you start this business—or kill it?  
+Should you acquire this company—or walk away?  
+Should you raise prices, change positioning, invest in fixed costs, or slow growth?
+
+In these moments, there is no revenue history. No accounting data. No clean financial statements to lean on. Yet the decisions are consequential, often irreversible, and deeply tied to profit.
+
+Most people guess.
+
+They lean on intuition, analogies, familiar strategy frameworks, or optimistic projections. Others delay decisions, hoping clarity will arrive on its own.
+
+It rarely does.
+
+This book offers another way.
+
+
+## The Problem: Profit Without Data
+
+Before revenue exists, profit is uncertain—but it is not unknowable.
+
+Every entrepreneurial decision rests on a value proposition: who the customer is, what they want, what they are willing to pay, how many of them exist, and what it costs to serve them. Even without accounting data, there is evidence that can be gathered, structured, and reasoned about.
+
+Many people try to bridge this gap using tools they already know—market sizing exercises, industry analysis frameworks, business model templates, or pro forma projections built on imagined revenue. These tools can be useful for organizing thinking, but they were not designed to estimate profit under deep uncertainty.
+
+As a result, the hardest questions are often postponed until after real money has already been spent.
+
+This book is about asking—and answering—those questions earlier.
+
+
+## What This Book Is About
+
+This book is about estimating profit before revenue exists.
+
+It provides a disciplined way to gather evidence, model uncertainty, and reason about profit when:
+
+- Accounting data is unavailable
+- Demand is uncertain
+- Prices have not yet been set
+- Fixed costs involve real risk
+- Judgment cannot be avoided
+
+Rather than teaching you how to code or build financial models from scratch, this book focuses on how to think: how evidence connects to demand, how demand connects to profit, and how profit estimates should guide strategic decisions under uncertainty.
+
+The analytics matter—but the judgment matters more.
+
+
+## Who This Book Is For
+
+You may come to this book from many directions.
+
+You might be:
+
+- Deciding whether to start a new venture—or walk away
+- Evaluating the profit potential of an acquisition target
+- Struggling to set or justify pricing
+- Weighing the value of changes to a business model
+- Assessing whether you have a real competitive advantage
+- Timing or sizing fixed-cost investments
+- Managing growth and asking whether margins can fund it
+- Making product, customer, or positioning decisions with real financial consequences
+
+These situations look different on the surface. But underneath, they share the same challenge:
+
+You must make profit-relevant decisions before reliable financial data exists.
+
+This book gives you a way to do that with clarity and discipline.
+
+
+## Analytics as Judgment Support
+
+This is not a book about replacing judgment with algorithms.
+
+Some uncertainty is irreducible. No model can tell you exactly what will happen. But many entrepreneurs overestimate how much uncertainty is unavoidable and underestimate how much can be reduced before committing resources.
+
+Profit analytics, used well, forces assumptions into the open, connects evidence to economic consequences, and sharpens judgment where certainty is impossible.
+
+The goal is not precision. The goal is better decisions.
+
+
+## How This Book Works
+
+This book develops the conceptual foundations of entrepreneurship analytics and pairs them with practical applications using a purpose-built analytics workbench.
+
+You’ll learn:
+
+- How to gather evidence when no revenue data exists
+- How to model demand under uncertainty
+- How pricing, scale, and costs interact to shape profit
+- How to compare strategic options on profit-relevant grounds
+- Where analytics ends—and judgment must begin
+
+Before we can do that, however, we need to confront an uncomfortable reality: many of the tools we rely on for strategic thinking were never designed to answer the question of profit under pre-revenue uncertainty. That is where the book begins.
+
+
+## An Invitation
+
+If you’ve ever felt forced to choose between guessing and overconfidence, this book is for you.
+
+It won’t eliminate uncertainty. But it will help you face it honestly, reduce what can be reduced, and make decisions you can stand behind—before the money is spent and before the damage is done.
+
+This is a book about making the call—when profit is uncertain, but action is unavoidable.  
+
+
+---
+
+This book is the result of more than two decades of teaching, research, and experimentation around a persistent question: how to make sound economic decisions when the information you wish you had does not yet exist. Earlier versions of this work appeared in different forms—course materials, unpublished manuscripts, and prior drafts—under different titles and with different emphases. This volume represents the first time these ideas have been brought together around a single, focused problem: how to evaluate whether a business is worth doing when profit must be assessed before revenue exists.

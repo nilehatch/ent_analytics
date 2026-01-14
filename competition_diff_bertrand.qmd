@@ -1,5 +1,5 @@
 
-# Competition {#sec-competition-chapter}
+# Differentiated Bertrand Competition {#sec-diff-bertrand-chapter}
 
 ```{r}
 #| output: false
@@ -12,253 +12,7 @@ library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
 ```
 
-Competition is fundamentally about contending with competitors to capture and retain customers. This contest is not merely a battle for market share, but a critical determinant of a company's overall performance and viability. The demand a business creates with its product or service defines its ability to attract customers.
-
-At its core, competition in business is a zero-sum game in the quest for customers. Every customer won is a gain for one company and a loss for another. This dynamic shapes the demand landscape, where the success of a product or service hinges on its ability to attract and retain customers. As one company's offering gains favor, its competitors inevitably feel the pinch, leading to shifts in market demand.
-
-The real battleground in business competition, however, lies in profitability. Various strategies, from innovative pricing to creative marketing and beyond, are deployed to capture customer interest. The goal is not just to increase sales but to do so in a way that amplifies profits. For instance, a company that manages to distinguish its product, appealing more to customer preferences than its competitors, can boost demand. If the cost of this differentiation is outweighed by the increase in revenue, the result is a net gain in profitability.
-
-------------------------------------------------------------------------
-
-<br>
-
-## Competition in Oligopoly
-
-Traditional economic models paint a picture of competition as either a monopoly, where one company reigns supreme, or a perfectly competitive arena with many players and no clear leaders. For startups, however, reality is typically found somewhere in between.
-
-### Competitive Extremes
-
-#### Entrepreneurs dream of **monopoly** but it is a pipe dream
-
-The idea of a monopoly, where a single firm controls the market, is often touted as the holy grail for startups. Peter @thiel14, for instance, champions the pursuit of monopolistic status as the path to significant profitability and market and pricing control. However, true monopolies are exceedingly rare and often not a practical goal for most entrepreneurs.
-
-#### Entrepreneurs in **perfect competition** are living a nightmare
-
-On the other end of the spectrum, perfect competition, characterized by numerous players and uniform products, presents a challenging environment with limited rewards. In such markets, companies have little control over pricing and face intense competition, leading to razor-thin profit margins. While it's crucial to understand the dynamics of perfect competition, as an entrepreneur, steering clear of such markets is advisable.[^1]
-
-[^1]: In an effort emphasize entrepreneurship over economic theory, we have glossed over the details of perfect competition. If you would like to understand why profits are so low in perfect competition, see the supplementary document on perfect competition.
-
-#### Awake entrepreneurs compete in the reality of **oligopoly**
-
-Most startups find themselves in oligopolies - markets dominated by a few firms engaged in a sophisticated dance of action and reaction. This market structure demands a keen understanding of strategic interplay among competitors, be it in pricing, product innovation, or marketing.
-
-### Competition in Bertrand Oligopolies
-
-For entrepreneurs, the most relevant form of oligopoly is often Bertrand competition, which encompasses both highly differentiated markets and those with minimal differentiation. This chapter delves into Bertrand competition, offering insights and strategies for startups to navigate and thrive in these competitive waters.[^2]
-
-[^2]: There are many forms of oligopoly competition where firms compete on different variables such as quantity, price, timing, and product differentiation. We will not consider the other forms of oligopoly here because Bertrand oligpoly is most relevant to entrepreneurship. For a broader perspective on the types of oligopolistic competition, see the supplementary chapters on Cournot oligopoly, Stackelberg Oligopoly, and collusion.
-
-------------------------------------------------------------------------
-
-<br>
-
-## The Realities of Competing on Price
-
-### Avoid the Quicksand of Price Competition
-
-Successful companies continuously strategize to captivate their target customers. One common approach is enhancing product value through innovation and effective branding. However, a more direct and often perilous route is through *price competition*---lowering prices to divert customers from competitors. This method, while immediately impactful, can trigger a chain reaction of price matching or undercutting by competitors, culminating in a harmful price war. The more they compete, the further they sink into price wars. Such wars often result in selling similar quantities but at continually decreasing prices, eroding profits for all involved.
-
-### The Inevitability of Competing on Price
-
-Despite the evident risks of price competition, it's crucial to acknowledge a fundamental truth: all firms, in one way or another, compete on price. The pricing decisions made by businesses significantly influence customer purchasing choices, thus determining the demand for their products. Price considerations remain paramount even when a company's focus is on non-price factors like product features or brand allure. The challenge lies in strategically setting prices that optimize profit without igniting a price war.
-
-### Extend Strategic Focus to Pricing and Beyond
-
-Our goal is to master the art of competing effectively while not solely relying on price. This requires a keen understanding of oligopoly markets, particularly in contexts where the temptation to engage in price battles is strongest. We delve into the concept of *undifferentiated Bertrand oligopoly*, where the allure and risks of pure price competition loom large, and contrast it with *differentiated Bertrand oligopoly*. In the latter, product differentiation plays a pivotal role, offering avenues to sidestep a battle centered only on price.
-
-### Diverse Customers Prefer Diverse Products over Lower Prices
-
-The idea that a race to the lowest price benefits customers seems appealing, especially in markets with undifferentiated products. It suggests a scenario where everyone gets exactly what they want at the lowest possible price. However, this notion overlooks a critical aspect of consumer behavior: heterogeneity in customer preferences. Customers often seek varied products that cater specifically to their unique needs. In such a diverse marketplace, the lowest price for a one-size-fits-all product is rarely the most attractive option. This is true even in segments with limited incomes, where the demand for variety and specificity remains robust. Therefore, a market thriving on serving customer diversity often trumps one racing to the bottom in pricing, especially in meeting the nuanced needs of a varied customer base.
-
-------------------------------------------------------------------------
-
-<br>
-
-## Undifferentiated Bertrand Oligopoly
-
-Oligopolies, which lie between perfect competition and monopoly, present unique competitive dynamics. In undifferentiated Bertrand competition, a few key conditions prevail:
-
-1.  **A Few, Powerful Firms:** These firms can influence market equilibrium and each other's behaviors.
-2.  **Undifferentiated Products:** Customers see no difference between products from different firms.
-3.  **Entry Barriers:** These maintain industry concentration.
-4.  **Many Powerless Customers:** Customers lack influence over market dynamics.
-5.  **Perfect Information:** Everyone knows all prices and product availabilities.
-6.  **Price-Based Competition:** Firms compete primarily through pricing strategies.
-7.  **Unlimited Capacity:** Firms can meet any market demand.
-
-### Price Wars Are Rational but Mutually Destructive
-
-Imagine a market with just two firms (a duopoly) where products and costs are identical. When one firm sets a price, the other has three options: match it, price higher, or undercut it. The logical move is to undercut, capturing the entire market at a slightly reduced price. This, however, prompts the first firm to respond with its own price cut to regain the market, leading to a continuous undercutting cycle.
-
-This strategic price reduction leads to a price war, with both firms lowering their prices in tandem. Equilibrium is eventually reached when prices fall to the leveo of costs. At this point, lowering prices further would mean operating at a loss, so no incentive remains for either firm to change their pricing strategy. This situation, where firms end up earning zero economic profit, represents the epitome of fierce price competition.
-
-::: {.callout-note icon="false"}
-## Economic Profit vs. Accounting Profit
-
-Zero economic profit doesn't imply the absence of accounting profit. It means the business is viable---it covers all expenses and compensates for the entrepreneur's time and capital---but doesn't generate surplus profits beyond what could be earned elsewhere with the same investment of time and resources.
-:::
-
-The equilibrium where a firm's best response is to set price equal to cost is competition at its worst.[^3] It highlights the need to avoid competing solely on prices. What can a company do in this situation to avoid price wars and zero profit?
-
-[^3]: There are cases where it is rational to set price below cost which are nightmarish pricing scenarios of economic and accounting losses. We will not cover those cases here.
-
-### Strategies to Avoid the Price War Trap
-
-#### Gaining a Cost Advantage
-
-One effective strategy to steer clear of price wars in undifferentiated Bertrand competition is to establish a cost advantage. Consider firms with varying costs due to different technologies. The firm with the lowest marginal cost (Firm 1) and the next lowest (Firm 2) set the stage for market dynamics.
-
--   **Market Dynamics with Varied Costs:** When the market price equates to the cost of the higher-cost firm, that firm can't gain by reducing its price. However, the lower-cost firm (Firm 1) continues to have the incentive to undercut. This process drives the higher-cost firm out of the market, with the price cutting halting at the cost level of Firm 2.
-
--   **Position of the Lowest-Cost Firm:** Firm 1, with the lowest cost, doesn't become a monopolist but instead dominates the market share, constrained by the cost structure of its closest competitor (Firm 2). Its pricing power is limited, capping just below the cost of Firm 2.
-
-#### Exploiting Capacity Constraints
-
-Typically, in undifferentiated Bertrand oligopolies, it's assumed that firms can satisfy total market demand at the lowest price. However, adding capacity constraints changes this assumption and the resultant market behavior. Firms can only sell as much as they can produce, even if they offer the lowest price, altering the usual trajectory of a price war and offering some protection against it.
-
-#### Demonstrative Example: Capacity Constraints in Action
-
-##### Setting the Market Scene {.unnumbered .unlisted}
-
-Imagine a scenario in a market where no single firm can satisfy more than 40% of the total demand at the equilibrium price. In such a setup, a minimum of three firms is necessary to fully meet market demand. Let's consider three firms with the following variable costs:
-
--   **Firm 1's variable unit cost:** $\mathsf{\quad c_1 = \$10}$
--   **Firm 2's variable unit cost:** $\mathsf{\quad c_2 = \$20}$
--   **Firm 3's variable unit cost:** $\mathsf{\quad c_3 = \$30}$
-
-##### Market Dynamics and Pricing
-
-In this market structure, the pricing will stabilize at $\mathsf{\$30}$, aligning with the highest variable unit cost among the firms. Here's how the market share gets distributed: Firms 1 and 2, with their cost advantages, capture 40% of the market each and Firm 3, with the highest cost, caters to the remaining 20%.
-
--   **Firm 1's market share:** 40% of the market
--   **Firm 2's market share:** 40% of the market
--   **Firm 3's market share:** 20% of the market
-
-When Firm 3 attempts to expand its market share beyond this 20%, Firms 1 and 2 have the leeway to reduce their prices below $\mathsf{\$30}$. Their lower costs enable them to do so while maintaining profitability. As a result, Firm 3, operating at the brink of its cost, can only break even and finds itself unable to compete with the lowered prices.
-
-##### Impact of a New Entrant
-
-Now, introduce a twist in the market with the entry of Firm 4, which has a marginal cost of $\mathsf{\$25}$. This new competitive dynamic would push the market price down to $\mathsf{\$25,}$ effectively ousting Firm 3 from the market. Firms 1 and 2, despite experiencing a dip in their profits due to the new lower market price, remain profitable. Firm 4, with its cost aligning with the new market price, manages to break even and captures the market share previously held by Firm 3.
-
-##### Strategic Implications
-
-This example highlights how capacity constraints and varying cost structures among firms can significantly influence market pricing and distribution of market shares. It illustrates the strategic complexity in an undifferentiated Bertrand oligopoly and underscores the importance of cost management and capacity considerations in competitive positioning.
-
-#### Mini-mills in the Steel Industry: A Case Study in Undifferentiated Bertrand Competition
-
-The emergence of mini-mills in steel production offers a compelling illustration of the dynamics of an undifferentiated Bertrand oligopoly, particularly in the context of heterogeneous variable costs and capacity constraints.
-
-##### Innovation and Cost Advantage
-
-Mini-mills, an innovative approach to steel production, utilize scrap metal as their primary raw material, contrasting with the traditional integrated steel mills that begin with iron ore. The mini-mills' process, which starts with already-refined metal, grants them a significant cost advantage over integrated mills. This advantage becomes pronounced in the production of lower-end steel products, such as rebar for construction.
-
-##### Market Dynamics and Price Impact
-
-As mini-mills proliferated, they systematically undercut the integrated mills in the rebar market, leveraging their lower costs. This competitive pressure gradually forced the integrated mills to retreat from this segment. Following their exit, rebar prices experienced a notable 20% decline, equal to the cost advantage of the mini-mills. This pattern---a period of stable prices disrupted by the entry of low-cost innovations and subsequent exit of higher-cost incumbents---consistently resulted in price collapses, aligning with the cost level of the most efficient mini-mills.[^4]
-
-[^4]: @christensen-raynor03 point out what appears to be a puzzle that when high cost competitors (integrated steel mills) are driven out of an industry by innovative lower-cost competitors, the price collapses. This puzzle is easily explained by the competitive dynamics of undifferentiated Bertrand competition.
-
-##### The Commodity Nature of Steel and Market Evolution
-
-Steel, being a commodity product, exhibits minimal differentiation within each category. Initially, the presence of low-cost mini-mills prompted a shift in market pricing to the level of the highest-cost integrated mills. The mini-mills, with their limited capacity, were able to fill their production to the brim, leaving the remainder of the market demand to the integrated mills.
-
-However, as more mini-mills entered the market, attracted by the potential profits, they brought additional capacity. This increasing capacity from low-cost producers gradually diminished the market share of the higher-cost incumbents. Once the collective capacity of the mini-mills was sufficient to meet market demand, the integrated mills found themselves redundant and exited the market. Subsequently, the price plummeted to the level of the costliest mini-mill.
-
-##### Conclusion: The Bertrand Trap for Mini-mills
-
-The mini-mills initially enjoyed attractive profits when their capacity was insufficient to meet total market demand. Yet, as their capacity expanded and their costs converged, they found themselves in a classic undifferentiated Bertrand competition scenario. With similar cost structures, the mini-mills faced intense price competition, leading to the inevitable outcome of such markets: prices equalizing to marginal costs and the erosion of extraordinary profits.
-
-### Quantitative Case: Drop-Shipping
-
-#### Background
-
-In the dynamic e-commerce landscape, drop-shipping has become a common business model. Companies partner with manufacturers, often in China, to sell products on platforms like Amazon or Shopify. The products are shipped directly from the manufacturer to the customer upon order. This model, while efficient, often leads to intense price competition, especially for undifferentiated products.
-
-#### With different costs
-
-##### Scenario
-
-Imagine a drop-shipping market with four companies: QuickShip, SpeedyDelivery, FastDrop, and RapidSend. They all sell a similar, popular gadget but have different cost structures due to varying agreements with manufacturers.
-
--   **Market Demand:** The daily market demand for the gadget is given by $\mathsf{Q=1600−5P}$, where $\mathsf{Q}$ is the quantity of gadgets and $\mathsf{P}$ is the selling price.
-
--   **Cost Structures:**
-
-    | Company        | Fixed Cost (per day) | Variable Cost (per unit) |
-    |----------------|:--------------------:|:------------------------:|
-    | QuickShip      |       \\\$2000       |          \\\$60          |
-    | SpeedyDelivery |       \\\$2200       |          \\\$50          |
-    | FastDrop       |       \\\$2800       |          \\\$35          |
-    | RapidSend      |       \\\$3000       |          \\\$25          |
-
-##### Competitive Dynamics
-
-In this highly competitive market, companies will undercut each other's prices. RapidSend, with the lowest variable cost of \$25, can profitably offer the gadget at lower prices than competitors. To maximize profits, RapidSend will set a price just low enough to out-compete SpeedyDelivery, the next cheapest competitor.
-
--   **Optimal Pricing:** RapidSend sets the price at \$34, undercutting SpeedyDelivery. At this price, RapidSend becomes the sole supplier in the market.
-
--   **Demand and Profit Calculation:**
-
-    -   At a price of \$34, daily demand is $\mathsf{Q = 1600 − 5 \cdot 34 = 1430}$ units.
-    -   RapidSend's daily profit is \begin{align} 
-
-          \mathsf{\pi} &= \mathsf{(P − c) Q − f} \\
-                       &= \mathsf{(34 − 25) \cdot 1430 − 3000} \\
-                       &= \mathsf{\$9870}.
-          \end{align}
-    -   QuickShip's daily profit is \$0 if they have not yet entered and can avoid their fixed costs and -\$2000 if they have already entered.
-    -   SpeedyDelivery's daily profit is \$0 if they have not yet entered and -\$2200 if they have.
-    -   FastDrop's daily profit is \$0 if they have not yet entered and and -\$2800 if they have.
-
-#### With capacity constraints and different costs
-
-##### Scenario
-
-Suppose each company can only handle a maximum of 390 orders per day. Their cost structures are unchanged from above.
-
-##### Competitive Dynamics
-
-With this capacity constraint, the market dynamics change.
-
--   **Market Structure:** The market can accommodate up to four firms, with each firm having a maximum capacity of 390 units. Three firms will sell at their capacity of 390 with the fourth selling enough to cover the rest of demand at the equilibrium price.
--   **Equilibrium Price:** The price will adjust to a level where four firms can operate profitably in the market -- at the highest-cost firm's variable unit cost (\$60).
-
-#### Conclusion
-
-This case demonstrates the competitive nature of drop-shipping in an undifferentiated Bertrand market. The key takeaway is the importance of cost management and capacity constraints in determining market dynamics and profitability. Drop-shipping companies often must navigate intense price competition, where having a cost advantage is crucial for survival and profitability.
-
-### Low Price Guarantees
-
-So far, the methods for avoiding price competition have had more to do with variable cost and fixed cost (capacity) than with pricing. *Low-price guarantees* represent a pricing strategy aimed at avoiding constant price wars.
-
-#### The Idea Behind Low-Price Guarantees
-
-Low-price guarantees are promises made to customers that a firm will match or beat the prices of its competitors. While appearing as a customer-centric approach, these guarantees can actually serve as a strategic tool for the firms themselves.
-
-#### Impact on Price Competition
-
-In a typical Bertrand scenario, a small price cut by one firm can lead to it capturing the entire market. This triggers a race to the bottom, with firms continually undercutting each other. However, with a low-price guarantee in place, this dynamic changes:
-
--   **Deterrent to Undercutting:** If a competitor lowers its price, the firm with the guarantee can simply match it, retaining its customers. The competing firm gains no additional market share but suffers a reduction in revenue, removing the incentive to undercut prices.[^5]
--   **Maintaining Prices Above Cost:** These guarantees can help maintain prices at a level above cost, benefiting the firms more than their customers.
-
-[^5]: For more detail on how low-price guarantees work as well as their limitations, see @edlin97, @hviid-shaffer99, and @manez06.
-
-#### Why Aren't Low-Price Guarantees Universal?
-
-Despite their theoretical effectiveness, low-price guarantees are not universally adopted. The reasons include:
-
--   **Limited Effectiveness in Differentiated Markets:** Firms engaged in differentiated competition find these guarantees less effective and necessary.
--   **Customer Hassle Factor:** The onus is often on the customer to claim the guarantee, which can be a hassle. Not all customers will go through the process, reducing the effectiveness of the guarantee.
--   **Branding Over Deterrence:** Recent studies suggest that low-price guarantees are often used more for branding and advertising than as a genuine pricing strategy.
-
-While low-price guarantees offer some respite from relentless price competition, they are not foolproof. A more sustainable approach for entrepreneurs is to identify a niche market with unmet needs and innovate to provide differentiated solutions. Catering to a heterogeneous group of customers with unique demands can be a more effective path to profitability than relying on pricing strategies alone in an undifferentiated market.
-
-------------------------------------------------------------------------
-
-<br>
-
-## Differentiated Bertand Oligopoly
+## Introduction
 
 Differentiated Bertrand competition is arguably the most prevalent form of oligopoly in real-world markets. It's characterized by product differentiation and strategic pricing---a scenario familiar in industries like cola, desktop computers, automobiles, airlines, and ski resorts. The defining feature here, in contrast to undifferentiated Bertrand competition, is the unique characteristics of each product. To be part of this competitive landscape, the market must exhibit the following criteria:
 
@@ -269,17 +23,17 @@ Differentiated Bertrand competition is arguably the most prevalent form of oligo
 -   **Perfect Information:** All parties are well-informed about product prices and availability.
 -   **Price Competition:** Despite product differentiation, pricing remains a crucial competitive tool.
 
-### Differentiation and the Dynamics of Pricing
+## Differentiation and the Dynamics of Pricing
 
 Differentiated Bertrand markets allow firms to command higher, more sustainable prices, thanks to the unique appeal of their products. For instance, consider two firms offering similar but distinct products, each enjoying its own loyal customer base. A scenario where one firm offers its product for free doesn't automatically mean the other loses all its customers. Brand loyalty and product preferences ensure that some customers remain willing to pay a premium.
 
 In this market, firms lose the typical price war incentives seen in undifferentiated scenarios. Unique product attributes allow firms to adjust their pricing strategies flexibly. If one firm raises its price, its competitor might also increase its price, potentially adding a premium for its distinct features. This pricing interplay continues until reaching a threshold where customers no longer perceive additional value in paying a higher price.
 
-### Differentiated Bertrand Equilibrium
+## Differentiated Bertrand Equilibrium
 
 In differentiated Bertrand oligopolies, products are distinct yet substitutable, catering to the diverse needs of heterogeneous customers. This scenario is typical in industries where strategic pricing and product uniqueness play pivotal roles.
 
-#### Demand Curves for Differentiated Products
+### Demand Curves for Differentiated Products
 
 Here, the customer's perception of products directly influences demand. The general demand equations for two competing firms in such a market can be expressed as:
 
@@ -289,7 +43,7 @@ Here, the customer's perception of products directly influences demand. The gene
 
 In these equations, $\mathsf{Q_1}$ and $\mathsf{Q_2}$ denote the demand for Firm 1 and Firm 2, respectively, while $\mathsf{P_1}$ and $\mathsf{P_2}$ are their corresponding prices. The coefficients $\mathsf{a_1}$, $\mathsf{b_1}$, and $\mathsf{b_{12}}$ (and their Firm 2 counterparts) represent the demand intercept, slope, and cross-price effect, illustrating how each firm's demand is affected by both its own and its competitor's pricing.
 
-#### Maximizing Profits with Differentiation
+### Maximizing Profits with Differentiation
 
 Profit maximization for each firm involves finding the optimal price that balances revenue and costs. The profit functions are:
 
@@ -303,7 +57,7 @@ Where $\mathsf{\pi_{1}}$ and $\mathsf{\pi_{2}}$ represent the profits, incorpora
 
 -   **Firm 2:** $\quad \mathsf{\pi_2 = P_{2}(a_{2} - b_{2}P_{2}+b_{21}P_{1}) - f_{2} - c_{2}(a_{2} - b_{2}P_{2}+b_{21}P_{1}) }$.
 
-#### Reaction Functions
+### Reaction Functions
 
 Each differentiated Bertrand oligopolist's pricing decision is intertwined with its competitor's pricing strategy. The relationship between the company's optimal price and the competitor's price is captured in **reaction functions** which map out the optimal pricing response to every possible competitor price.
 
@@ -316,6 +70,7 @@ Company 1's reaction function showing how its optimal price adjusts in response 
 #| fig-cap: "Reaction function for Company 1 -- Company 1's optimal prices as its best response to every possible price from Company 2"
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 library(ggthemes)
 
@@ -381,6 +136,7 @@ This addition of Company 2's reaction function to the plot not only enriches our
 #| fig-cap: "Reaction functions for Company 1 and Company 2"
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 rev_bounds <- tibble(x = c(0, 100))    # Create tibble containing plot range for x-axis (P)
 eqn1 <- " P[1] == frac(b[1] * c[1] - a[1], 2*b[1]) - frac(b[12],2*b[1]) * ~~ P[2] "
@@ -418,6 +174,7 @@ In practice, firms often reach the Bertrand equilibrium through a process of obs
 #| fig-cap: "Reaction functions for Company 1 and Company 2"
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 fr1_0 <- fr1(0)
 fr2_27 <- fr2(fr1_0)
@@ -468,7 +225,7 @@ This logic of both companies choosing their best response to their competitor is
 
 [^6]: This equilibrium is named after the Princeton mathematician John Nash who won a Nobel prize in economics for his contributions to game theory. His journey to this discovery and eventually receiving the Nobel prize was portrayed in the film *A Beautiful Mind*.
 
-### Quantitative Example: Coke v. Pepsi in Bertrand Competition
+## Quantitative Example: Coke v. Pepsi in Bertrand Competition
 
 Coca-Cola and Pepsi, two of the most iconic soft drink brands, exemplify the dynamics of differentiated Bertrand competition. Utilizing demand and cost curves estimated from historical data,1 we can delve into their competitive strategies and profitability within the Bertrand framework.
 
@@ -507,6 +264,7 @@ Next, we determine the reaction functions for each company:
 #| fig-cap: "Differentiated Bertrand reaction functions for Coke and Pepsi. The optimal price for Coke is $12.74 and for Pepsi is $8.12. Coke earns $242.71 in economic profit and Pepsi earns $95.08."
 #| fig-cap-location: margin
 #| warning: false
+#| echo: false
 
 frc <- function(Pp) 10.45 + 0.2827 * Pp
 frp <- function(Pc) 6.498 + 0.1277 * Pc
@@ -574,6 +332,8 @@ Finally, the ability to compete effectively is not a matter of guesswork. It req
 
 In conclusion, the journey through the nuances of Bertrand oligopolies reveals much about the strategic underpinnings of effective competition. For entrepreneurs, the lessons learned here are invaluable. They provide a framework for understanding market dynamics, a guide for strategic decision-making, and a reminder of the importance of innovation and customer focus. By applying these insights, entrepreneurs can navigate the competitive landscape with greater confidence and precision, turning challenges into opportunities for growth and success.
 
+
+<!-- 
 ------------------------------------------------------------------------
 
 <br>
@@ -674,3 +434,68 @@ In summary, our assumption for the target market is about 565,500 potential inte
 14. How does Dorsal pack's expected profit change when considering only the responses of customers who value security highly (security preference score of 7 or higher)?
 
 15. Is Dorsal a stronger competitor (higher expected profit) with customers who care about more about security or with all travelers?
+
+
+------------------------------
+
+
+from the old chapter reading quiz
+
+-- competition chapter
+How do customer preferences influence pricing and price competition?
+  Lowering prices is the most effective way to attract all customer segments. 
+  Price competition leads to higher profits by increasing market demand. 
+Correct Answer
+  Heterogeneity in customer preferences makes the lowest price not always the most desirable option. 
+  Product innovation and branding are less important than price competition. 
+  Engaging in price wars is the most sustainable strategy for long-term growth. 
+  All firms should focus solely on price to outcompete rivals. 
+General answer comments
+While competing on price is an unavoidable aspect of business, it should not be the sole focus of a company’s strategy. It emphasizes that the lure of lowering prices can lead to detrimental price wars, where similar quantities are sold but at continually decreasing prices, ultimately eroding profits. Furthermore, it points out the importance of recognizing customer heterogeneity - customers have diverse preferences and often value product variety and specificity over the lowest price. This understanding underlines why a strategy focused solely on price reduction is not always the most attractive or effective in meeting the varied needs of a customer base.
+ 
+-- undiff bertrand chapter
+What is the primary outcome when firms engage in a price war in an undifferentiated Bertrand Oligopoly?
+  Firms achieve higher profits due to increased market share. 
+  The market price stabilizes at a level above the cost of production. 
+  Only the highest-cost competitor remaining in the market earns zero profit when there are different costs and capacity constraints. 
+  Price wars lead to significant product innovation. 
+  Firms develop stronger brand loyalty among customers. 
+Correct Answer
+  Firms end up earning zero economic profit as prices fall to the level of costs. 
+General answer comments
+In an undifferentiated Bertrand Oligopoly, firms often engage in price wars, continuously undercutting each other's prices. This process ultimately leads to an equilibrium where prices fall to the level of the firms' production costs. At this point, further price reductions would result in losses, so firms have no incentive to change their pricing strategy. The consequence is that all competing firms earn zero economic profit, which means they cover their costs and compensate for the risk and effort, but do not generate surplus profits.
+ 
+-- undiff bertrand chapter
+Low-price guarantees
+  protect customers from price gouging competitors. 
+Correct Answer
+  protect competitors from undercutting each others' prices. 
+  ensure that markets are efficient in delivering what customers want. 
+  are a hassle free way for customers to manage their budgets. 
+General answer comments
+if a firm has a low-price guarantee in place, if its rival undercuts its price, its customers do not go to the rival but rather come to the firm and ask for the guarantee to be fulfilled. Since the rival gets no additional quantity but suffers a loss in price, the rival has no incentive to undercut price and the firms maintain price above cost in equilibrium. This deterrent to price cutting would probably surprise many customers who think the guarantee is a protection device offered by a caring company rather than a mechanism to keep prices high.
+ 
+++
+What differentiates a market operating under Differentiated Bertrand Competition from one under Undifferentiated Bertrand Competition?
+Correct Answer
+  Products in Differentiated Bertrand are distinct, influencing customer preferences and choices. 
+  In Differentiated Bertrand, products are identical across different firms. 
+  Firms in Differentiated Bertrand do not compete on price. 
+  Differentiated Bertrand markets have no entry barriers. 
+  In Differentiated Bertrand, firms cannot influence market equilibrium. 
+General answer comments
+Differentiated Bertrand Competition is characterized by the presence of unique product characteristics across different firms. Unlike in Undifferentiated Bertrand Competition, where products are seen as identical by customers, Differentiated Bertrand markets have products that are distinct in the eyes of consumers. This differentiation allows firms to have some degree of pricing power and lessens the intensity of price competition, as customers may show loyalty or preference for specific product attributes.
+ 
+++
+How do firms in a Differentiated Bertrand market reach equilibrium pricing?
+  Firms set prices based on costs alone, ignoring competitor pricing. 
+  Equilibrium is achieved through government regulation of prices. 
+  The essence of competition in business is to navigate between extremes of monopoly and perfect competition. 
+  Firms reach equilibrium by engaging in non-stop price wars. 
+  Equilibrium is reached when all firms offer their products for free. 
+Correct Answer
+  Equilibrium pricing is determined through the intersection of each firm’s reaction function to competitor pricing. 
+General answer comments
+In a Differentiated Bertrand market, each firm considers its competitor's pricing when determining its own optimal price. This mutual dependency is captured in what are known as reaction functions. The reaction function of each firm shows how it should adjust its prices in response to the pricing of its competitors. The point where these reaction functions intersect represents the optimal pricing for both firms, where neither has an incentive to deviate from their chosen price. This intersection point is where the Bertrand-Nash equilibrium is established, ensuring that both firms can simultaneously choose their best responses in terms of pricing.
+
+-->

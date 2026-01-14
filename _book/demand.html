@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./durable_demand.html" rel="next">
 <link href="./uncertainty_profit.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-28e1de5e8b558a0209691034755ec9c6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-eb4725d83ca4e00fd685f6af566d6c15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -136,7 +138,7 @@ window.Quarto = {
 <link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent">
+<body class="nav-sidebar floating nav-fixed slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -162,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./demand.html">Profit</a></li><li class="breadcrumb-item"><a href="./demand.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./demand.html">Demand</a></li><li class="breadcrumb-item"><a href="./demand.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -212,7 +214,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Profit</span></a>
+ <span class="menu-text">Demand</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -236,6 +238,17 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cost.html" class="sidebar-item-text sidebar-link">
@@ -258,13 +271,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Competition</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./competition.html" class="sidebar-item-text sidebar-link">
@@ -273,28 +286,73 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./entry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./non-price_competition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competing on Things other than Price</span></span></a>
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -323,24 +381,13 @@ window.Quarto = {
   <li><a href="#sec-demand-model" id="toc-sec-demand-model" class="nav-link" data-scroll-target="#sec-demand-model">Estimate the Demand Curve</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4.5</span> Conclusion</a></li>
-  <li><a href="#workout-problems" id="toc-workout-problems" class="nav-link" data-scroll-target="#workout-problems"><span class="header-section-number">4.6</span> Workout Problems</a>
-  <ul class="collapse">
-  <li><a href="#dorsal-packs" id="toc-dorsal-packs" class="nav-link" data-scroll-target="#dorsal-packs">Dorsal Packs</a></li>
-  <li><a href="#dorsal-pack-data" id="toc-dorsal-pack-data" class="nav-link" data-scroll-target="#dorsal-pack-data">Dorsal Pack data</a></li>
-  <li><a href="#homework-questions" id="toc-homework-questions" class="nav-link" data-scroll-target="#homework-questions">Homework Questions:</a></li>
-  </ul></li>
-  <li><a href="#sec-elasticity" id="toc-sec-elasticity" class="nav-link" data-scroll-target="#sec-elasticity"><span class="header-section-number">4.7</span> Appendix: Elasticity of Demand</a>
-  <ul class="collapse">
-  <li><a href="#elasticity-with-linear-demand-curves" id="toc-elasticity-with-linear-demand-curves" class="nav-link" data-scroll-target="#elasticity-with-linear-demand-curves">Elasticity with Linear Demand Curves</a></li>
-  <li><a href="#elasticity-with-nonlinear-exponential-demand-curves" id="toc-elasticity-with-nonlinear-exponential-demand-curves" class="nav-link" data-scroll-target="#elasticity-with-nonlinear-exponential-demand-curves">Elasticity with Nonlinear (Exponential) Demand Curves</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./demand.html">Profit</a></li><li class="breadcrumb-item"><a href="./demand.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./demand.html">Demand</a></li><li class="breadcrumb-item"><a href="./demand.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-demand-chapter" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></h1>
 </div>
@@ -421,7 +468,7 @@ Figure&nbsp;4.2: Change in Demand vs.&nbsp;Change in Quantity Demanded
 <h2 data-number="4.3" class="anchored" data-anchor-id="sec-sensitivity"><span class="header-section-number">4.3</span> Price Sensitivity</h2>
 <p>In traditional economics, much emphasis is placed on the concept of price elasticity, which measures how sensitive customers are to changes in prices. Price-sensitive customers are always on the lookout for discounts and quickly reduce their purchases when prices rise slightly. For well-established companies with ample transaction data and small, infrequent price changes, studying price sensitivity through elasticity makes sense—it helps optimize profit.</p>
 <p>However, in the entrepreneurial context, where we often lack transaction data and need to directly engage with customers to estimate demand curves across a wide price range, a different approach is more practical. Rather than analyzing price sensitivity indirectly through elasticity, we will focus on how to directly find and estimate demand curves. This approach allows us to analyze everything we need without the need for elasticity calculations.</p>
-<p>For those interested in a deeper dive into elasticity, you can explore the appendix in <a href="#sec-elasticity" class="quarto-xref"><span>Section 4.7</span></a>.</p>
+<p>For those interested in a deeper dive into elasticity, you can explore the appendix in <span class="quarto-unresolved-ref">?sec-elasticity</span>.</p>
 <hr>
 </section>
 <section id="sec-where-demand-curves" class="level2 page-columns page-full" data-number="4.4">
@@ -466,23 +513,23 @@ Avoid softening the question by naming a specific price and asking if they would
 <figure class="quarto-float quarto-float-tbl figure page-columns page-full">
 <div aria-describedby="tbl-wtp-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ojmulleznc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ojmulleznc table {
+<div id="rpftzhdvrj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rpftzhdvrj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ojmulleznc thead, #ojmulleznc tbody, #ojmulleznc tfoot, #ojmulleznc tr, #ojmulleznc td, #ojmulleznc th {
+#rpftzhdvrj thead, #rpftzhdvrj tbody, #rpftzhdvrj tfoot, #rpftzhdvrj tr, #rpftzhdvrj td, #rpftzhdvrj th {
   border-style: none;
 }
 
-#ojmulleznc p {
+#rpftzhdvrj p {
   margin: 0;
   padding: 0;
 }
 
-#ojmulleznc .gt_table {
+#rpftzhdvrj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -508,12 +555,12 @@ Avoid softening the question by naming a specific price and asking if they would
   border-left-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_caption {
+#rpftzhdvrj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ojmulleznc .gt_title {
+#rpftzhdvrj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -525,7 +572,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-bottom-width: 0;
 }
 
-#ojmulleznc .gt_subtitle {
+#rpftzhdvrj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -537,7 +584,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-top-width: 0;
 }
 
-#ojmulleznc .gt_heading {
+#rpftzhdvrj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -549,13 +596,13 @@ Avoid softening the question by naming a specific price and asking if they would
   border-right-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_bottom_border {
+#rpftzhdvrj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_col_headings {
+#rpftzhdvrj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -570,7 +617,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-right-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_col_heading {
+#rpftzhdvrj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -590,7 +637,7 @@ Avoid softening the question by naming a specific price and asking if they would
   overflow-x: hidden;
 }
 
-#ojmulleznc .gt_column_spanner_outer {
+#rpftzhdvrj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -602,15 +649,15 @@ Avoid softening the question by naming a specific price and asking if they would
   padding-right: 4px;
 }
 
-#ojmulleznc .gt_column_spanner_outer:first-child {
+#rpftzhdvrj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ojmulleznc .gt_column_spanner_outer:last-child {
+#rpftzhdvrj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ojmulleznc .gt_column_spanner {
+#rpftzhdvrj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -622,11 +669,11 @@ Avoid softening the question by naming a specific price and asking if they would
   width: 100%;
 }
 
-#ojmulleznc .gt_spanner_row {
+#rpftzhdvrj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ojmulleznc .gt_group_heading {
+#rpftzhdvrj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -652,7 +699,7 @@ Avoid softening the question by naming a specific price and asking if they would
   text-align: left;
 }
 
-#ojmulleznc .gt_empty_group_heading {
+#rpftzhdvrj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -667,15 +714,15 @@ Avoid softening the question by naming a specific price and asking if they would
   vertical-align: middle;
 }
 
-#ojmulleznc .gt_from_md > :first-child {
+#rpftzhdvrj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ojmulleznc .gt_from_md > :last-child {
+#rpftzhdvrj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ojmulleznc .gt_row {
+#rpftzhdvrj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -694,7 +741,7 @@ Avoid softening the question by naming a specific price and asking if they would
   overflow-x: hidden;
 }
 
-#ojmulleznc .gt_stub {
+#rpftzhdvrj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -707,7 +754,7 @@ Avoid softening the question by naming a specific price and asking if they would
   padding-right: 5px;
 }
 
-#ojmulleznc .gt_stub_row_group {
+#rpftzhdvrj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,15 +768,15 @@ Avoid softening the question by naming a specific price and asking if they would
   vertical-align: top;
 }
 
-#ojmulleznc .gt_row_group_first td {
+#rpftzhdvrj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ojmulleznc .gt_row_group_first th {
+#rpftzhdvrj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ojmulleznc .gt_summary_row {
+#rpftzhdvrj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -739,16 +786,16 @@ Avoid softening the question by naming a specific price and asking if they would
   padding-right: 5px;
 }
 
-#ojmulleznc .gt_first_summary_row {
+#rpftzhdvrj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_first_summary_row.thick {
+#rpftzhdvrj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ojmulleznc .gt_last_summary_row {
+#rpftzhdvrj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,7 +805,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-bottom-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_grand_summary_row {
+#rpftzhdvrj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -768,7 +815,7 @@ Avoid softening the question by naming a specific price and asking if they would
   padding-right: 5px;
 }
 
-#ojmulleznc .gt_first_grand_summary_row {
+#rpftzhdvrj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -778,7 +825,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-top-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_last_grand_summary_row_top {
+#rpftzhdvrj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -788,11 +835,11 @@ Avoid softening the question by naming a specific price and asking if they would
   border-bottom-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_striped {
+#rpftzhdvrj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ojmulleznc .gt_table_body {
+#rpftzhdvrj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -801,7 +848,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-bottom-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_footnotes {
+#rpftzhdvrj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -815,7 +862,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-right-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_footnote {
+#rpftzhdvrj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -824,7 +871,7 @@ Avoid softening the question by naming a specific price and asking if they would
   padding-right: 5px;
 }
 
-#ojmulleznc .gt_sourcenotes {
+#rpftzhdvrj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -838,7 +885,7 @@ Avoid softening the question by naming a specific price and asking if they would
   border-right-color: #D3D3D3;
 }
 
-#ojmulleznc .gt_sourcenote {
+#rpftzhdvrj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -846,72 +893,72 @@ Avoid softening the question by naming a specific price and asking if they would
   padding-right: 5px;
 }
 
-#ojmulleznc .gt_left {
+#rpftzhdvrj .gt_left {
   text-align: left;
 }
 
-#ojmulleznc .gt_center {
+#rpftzhdvrj .gt_center {
   text-align: center;
 }
 
-#ojmulleznc .gt_right {
+#rpftzhdvrj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ojmulleznc .gt_font_normal {
+#rpftzhdvrj .gt_font_normal {
   font-weight: normal;
 }
 
-#ojmulleznc .gt_font_bold {
+#rpftzhdvrj .gt_font_bold {
   font-weight: bold;
 }
 
-#ojmulleznc .gt_font_italic {
+#rpftzhdvrj .gt_font_italic {
   font-style: italic;
 }
 
-#ojmulleznc .gt_super {
+#rpftzhdvrj .gt_super {
   font-size: 65%;
 }
 
-#ojmulleznc .gt_footnote_marks {
+#rpftzhdvrj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ojmulleznc .gt_asterisk {
+#rpftzhdvrj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ojmulleznc .gt_indent_1 {
+#rpftzhdvrj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ojmulleznc .gt_indent_2 {
+#rpftzhdvrj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ojmulleznc .gt_indent_3 {
+#rpftzhdvrj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ojmulleznc .gt_indent_4 {
+#rpftzhdvrj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ojmulleznc .gt_indent_5 {
+#rpftzhdvrj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ojmulleznc .katex-display {
+#rpftzhdvrj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ojmulleznc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rpftzhdvrj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1051,23 +1098,23 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
 <figure class="quarto-float quarto-float-tbl figure page-columns page-full">
 <div aria-describedby="tbl-wtp-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xzsuqbqxks" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xzsuqbqxks table {
+<div id="vwwwfxpeyv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vwwwfxpeyv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xzsuqbqxks thead, #xzsuqbqxks tbody, #xzsuqbqxks tfoot, #xzsuqbqxks tr, #xzsuqbqxks td, #xzsuqbqxks th {
+#vwwwfxpeyv thead, #vwwwfxpeyv tbody, #vwwwfxpeyv tfoot, #vwwwfxpeyv tr, #vwwwfxpeyv td, #vwwwfxpeyv th {
   border-style: none;
 }
 
-#xzsuqbqxks p {
+#vwwwfxpeyv p {
   margin: 0;
   padding: 0;
 }
 
-#xzsuqbqxks .gt_table {
+#vwwwfxpeyv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1093,12 +1140,12 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-left-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_caption {
+#vwwwfxpeyv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xzsuqbqxks .gt_title {
+#vwwwfxpeyv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1110,7 +1157,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-bottom-width: 0;
 }
 
-#xzsuqbqxks .gt_subtitle {
+#vwwwfxpeyv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1122,7 +1169,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-top-width: 0;
 }
 
-#xzsuqbqxks .gt_heading {
+#vwwwfxpeyv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1134,13 +1181,13 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-right-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_bottom_border {
+#vwwwfxpeyv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_col_headings {
+#vwwwfxpeyv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1155,7 +1202,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-right-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_col_heading {
+#vwwwfxpeyv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1175,7 +1222,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   overflow-x: hidden;
 }
 
-#xzsuqbqxks .gt_column_spanner_outer {
+#vwwwfxpeyv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1187,15 +1234,15 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   padding-right: 4px;
 }
 
-#xzsuqbqxks .gt_column_spanner_outer:first-child {
+#vwwwfxpeyv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xzsuqbqxks .gt_column_spanner_outer:last-child {
+#vwwwfxpeyv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xzsuqbqxks .gt_column_spanner {
+#vwwwfxpeyv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1207,11 +1254,11 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   width: 100%;
 }
 
-#xzsuqbqxks .gt_spanner_row {
+#vwwwfxpeyv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xzsuqbqxks .gt_group_heading {
+#vwwwfxpeyv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1237,7 +1284,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   text-align: left;
 }
 
-#xzsuqbqxks .gt_empty_group_heading {
+#vwwwfxpeyv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1252,15 +1299,15 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   vertical-align: middle;
 }
 
-#xzsuqbqxks .gt_from_md > :first-child {
+#vwwwfxpeyv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xzsuqbqxks .gt_from_md > :last-child {
+#vwwwfxpeyv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xzsuqbqxks .gt_row {
+#vwwwfxpeyv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1279,7 +1326,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   overflow-x: hidden;
 }
 
-#xzsuqbqxks .gt_stub {
+#vwwwfxpeyv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1292,7 +1339,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   padding-right: 5px;
 }
 
-#xzsuqbqxks .gt_stub_row_group {
+#vwwwfxpeyv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1306,15 +1353,15 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   vertical-align: top;
 }
 
-#xzsuqbqxks .gt_row_group_first td {
+#vwwwfxpeyv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xzsuqbqxks .gt_row_group_first th {
+#vwwwfxpeyv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xzsuqbqxks .gt_summary_row {
+#vwwwfxpeyv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1324,16 +1371,16 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   padding-right: 5px;
 }
 
-#xzsuqbqxks .gt_first_summary_row {
+#vwwwfxpeyv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_first_summary_row.thick {
+#vwwwfxpeyv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xzsuqbqxks .gt_last_summary_row {
+#vwwwfxpeyv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1343,7 +1390,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-bottom-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_grand_summary_row {
+#vwwwfxpeyv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1353,7 +1400,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   padding-right: 5px;
 }
 
-#xzsuqbqxks .gt_first_grand_summary_row {
+#vwwwfxpeyv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1363,7 +1410,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-top-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_last_grand_summary_row_top {
+#vwwwfxpeyv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1373,11 +1420,11 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-bottom-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_striped {
+#vwwwfxpeyv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xzsuqbqxks .gt_table_body {
+#vwwwfxpeyv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1386,7 +1433,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-bottom-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_footnotes {
+#vwwwfxpeyv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1400,7 +1447,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-right-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_footnote {
+#vwwwfxpeyv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1409,7 +1456,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   padding-right: 5px;
 }
 
-#xzsuqbqxks .gt_sourcenotes {
+#vwwwfxpeyv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1423,7 +1470,7 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   border-right-color: #D3D3D3;
 }
 
-#xzsuqbqxks .gt_sourcenote {
+#vwwwfxpeyv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1431,72 +1478,72 @@ Table&nbsp;4.1: Willingness to pay for each of 27 respondents.
   padding-right: 5px;
 }
 
-#xzsuqbqxks .gt_left {
+#vwwwfxpeyv .gt_left {
   text-align: left;
 }
 
-#xzsuqbqxks .gt_center {
+#vwwwfxpeyv .gt_center {
   text-align: center;
 }
 
-#xzsuqbqxks .gt_right {
+#vwwwfxpeyv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xzsuqbqxks .gt_font_normal {
+#vwwwfxpeyv .gt_font_normal {
   font-weight: normal;
 }
 
-#xzsuqbqxks .gt_font_bold {
+#vwwwfxpeyv .gt_font_bold {
   font-weight: bold;
 }
 
-#xzsuqbqxks .gt_font_italic {
+#vwwwfxpeyv .gt_font_italic {
   font-style: italic;
 }
 
-#xzsuqbqxks .gt_super {
+#vwwwfxpeyv .gt_super {
   font-size: 65%;
 }
 
-#xzsuqbqxks .gt_footnote_marks {
+#vwwwfxpeyv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xzsuqbqxks .gt_asterisk {
+#vwwwfxpeyv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xzsuqbqxks .gt_indent_1 {
+#vwwwfxpeyv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xzsuqbqxks .gt_indent_2 {
+#vwwwfxpeyv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xzsuqbqxks .gt_indent_3 {
+#vwwwfxpeyv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xzsuqbqxks .gt_indent_4 {
+#vwwwfxpeyv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xzsuqbqxks .gt_indent_5 {
+#vwwwfxpeyv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xzsuqbqxks .katex-display {
+#vwwwfxpeyv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xzsuqbqxks div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vwwwfxpeyv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1580,23 +1627,23 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
 <figure class="quarto-float quarto-float-tbl figure page-columns page-full">
 <div aria-describedby="tbl-wtp-q-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tiyheatpql" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tiyheatpql table {
+<div id="ztrwmoqmgl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ztrwmoqmgl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tiyheatpql thead, #tiyheatpql tbody, #tiyheatpql tfoot, #tiyheatpql tr, #tiyheatpql td, #tiyheatpql th {
+#ztrwmoqmgl thead, #ztrwmoqmgl tbody, #ztrwmoqmgl tfoot, #ztrwmoqmgl tr, #ztrwmoqmgl td, #ztrwmoqmgl th {
   border-style: none;
 }
 
-#tiyheatpql p {
+#ztrwmoqmgl p {
   margin: 0;
   padding: 0;
 }
 
-#tiyheatpql .gt_table {
+#ztrwmoqmgl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1622,12 +1669,12 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-left-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_caption {
+#ztrwmoqmgl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tiyheatpql .gt_title {
+#ztrwmoqmgl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1639,7 +1686,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-bottom-width: 0;
 }
 
-#tiyheatpql .gt_subtitle {
+#ztrwmoqmgl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1651,7 +1698,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-top-width: 0;
 }
 
-#tiyheatpql .gt_heading {
+#ztrwmoqmgl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1663,13 +1710,13 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-right-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_bottom_border {
+#ztrwmoqmgl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_col_headings {
+#ztrwmoqmgl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1684,7 +1731,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-right-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_col_heading {
+#ztrwmoqmgl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1704,7 +1751,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   overflow-x: hidden;
 }
 
-#tiyheatpql .gt_column_spanner_outer {
+#ztrwmoqmgl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1716,15 +1763,15 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   padding-right: 4px;
 }
 
-#tiyheatpql .gt_column_spanner_outer:first-child {
+#ztrwmoqmgl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tiyheatpql .gt_column_spanner_outer:last-child {
+#ztrwmoqmgl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tiyheatpql .gt_column_spanner {
+#ztrwmoqmgl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1736,11 +1783,11 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   width: 100%;
 }
 
-#tiyheatpql .gt_spanner_row {
+#ztrwmoqmgl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tiyheatpql .gt_group_heading {
+#ztrwmoqmgl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1766,7 +1813,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   text-align: left;
 }
 
-#tiyheatpql .gt_empty_group_heading {
+#ztrwmoqmgl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1781,15 +1828,15 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   vertical-align: middle;
 }
 
-#tiyheatpql .gt_from_md > :first-child {
+#ztrwmoqmgl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tiyheatpql .gt_from_md > :last-child {
+#ztrwmoqmgl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tiyheatpql .gt_row {
+#ztrwmoqmgl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1808,7 +1855,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   overflow-x: hidden;
 }
 
-#tiyheatpql .gt_stub {
+#ztrwmoqmgl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1821,7 +1868,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   padding-right: 5px;
 }
 
-#tiyheatpql .gt_stub_row_group {
+#ztrwmoqmgl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1835,15 +1882,15 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   vertical-align: top;
 }
 
-#tiyheatpql .gt_row_group_first td {
+#ztrwmoqmgl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tiyheatpql .gt_row_group_first th {
+#ztrwmoqmgl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tiyheatpql .gt_summary_row {
+#ztrwmoqmgl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1853,16 +1900,16 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   padding-right: 5px;
 }
 
-#tiyheatpql .gt_first_summary_row {
+#ztrwmoqmgl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_first_summary_row.thick {
+#ztrwmoqmgl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tiyheatpql .gt_last_summary_row {
+#ztrwmoqmgl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1872,7 +1919,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-bottom-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_grand_summary_row {
+#ztrwmoqmgl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1882,7 +1929,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   padding-right: 5px;
 }
 
-#tiyheatpql .gt_first_grand_summary_row {
+#ztrwmoqmgl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1892,7 +1939,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-top-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_last_grand_summary_row_top {
+#ztrwmoqmgl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1902,11 +1949,11 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-bottom-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_striped {
+#ztrwmoqmgl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tiyheatpql .gt_table_body {
+#ztrwmoqmgl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1915,7 +1962,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-bottom-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_footnotes {
+#ztrwmoqmgl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1929,7 +1976,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-right-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_footnote {
+#ztrwmoqmgl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1938,7 +1985,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   padding-right: 5px;
 }
 
-#tiyheatpql .gt_sourcenotes {
+#ztrwmoqmgl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1952,7 +1999,7 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   border-right-color: #D3D3D3;
 }
 
-#tiyheatpql .gt_sourcenote {
+#ztrwmoqmgl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1960,72 +2007,72 @@ Table&nbsp;4.2: Unique values of willingness to pay for the product named by the
   padding-right: 5px;
 }
 
-#tiyheatpql .gt_left {
+#ztrwmoqmgl .gt_left {
   text-align: left;
 }
 
-#tiyheatpql .gt_center {
+#ztrwmoqmgl .gt_center {
   text-align: center;
 }
 
-#tiyheatpql .gt_right {
+#ztrwmoqmgl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tiyheatpql .gt_font_normal {
+#ztrwmoqmgl .gt_font_normal {
   font-weight: normal;
 }
 
-#tiyheatpql .gt_font_bold {
+#ztrwmoqmgl .gt_font_bold {
   font-weight: bold;
 }
 
-#tiyheatpql .gt_font_italic {
+#ztrwmoqmgl .gt_font_italic {
   font-style: italic;
 }
 
-#tiyheatpql .gt_super {
+#ztrwmoqmgl .gt_super {
   font-size: 65%;
 }
 
-#tiyheatpql .gt_footnote_marks {
+#ztrwmoqmgl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tiyheatpql .gt_asterisk {
+#ztrwmoqmgl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tiyheatpql .gt_indent_1 {
+#ztrwmoqmgl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tiyheatpql .gt_indent_2 {
+#ztrwmoqmgl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tiyheatpql .gt_indent_3 {
+#ztrwmoqmgl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tiyheatpql .gt_indent_4 {
+#ztrwmoqmgl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tiyheatpql .gt_indent_5 {
+#ztrwmoqmgl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tiyheatpql .katex-display {
+#ztrwmoqmgl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tiyheatpql div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ztrwmoqmgl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2243,376 +2290,494 @@ Figure&nbsp;4.4: Demand data and estimated demand curve.
 <p>While traditional business model validation tests may not explicitly estimate the demand curve, they help us understand if the demand curve exists, and if so, its strength.</p>
 <p>One of the most robust ways to gauge the viability of an innovation is by calculating its expected profitability using evidence gathered from customers. In the early stages of testing, we focus on validation tests to ascertain if any demand for the solution exists. As we progress and the solution evolves, we transition to calculating expected profits, leveraging the evidence at hand. Customer demand serves as the cornerstone of profitability calculations. Once we accurately estimate the demand curve, it becomes our compass for navigating the intricacies of revenue, cost, and ultimately, profitability.</p>
 <p>In seeking evidence for the key decisions in a startup, demand isn’t just a concept; it’s the catalyst that enables us to predict the decisions that lead to success.</p>
-</section>
-<section id="workout-problems" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="workout-problems"><span class="header-section-number">4.6</span> Workout Problems</h2>
-<section id="dorsal-packs" class="level3">
-<h3 class="anchored" data-anchor-id="dorsal-packs">Dorsal Packs</h3>
-<p>After receiving warnings about the risks of pickpockets when traveling to international tourist destinations, a group of entrepreneurs compared notes about their international travel experiences. They found that they had all experienced some anxiety about their own safety and the security of their belongings in popular tourist destinations. More importantly, they had all taken some steps to try to protect against pickpockets and thieves.</p>
-<p>To confirm their personal experiences, they talked with many others who had also traveled to tourist destinations. They confirmed that thieves are active in those places and that even travelers who had not lost possessions suffered anxiety about the risk and took steps to protect their belongings. One common problem that came up in those discussions is that the zippers that make our bags simultaneously accessible and secure also make our bags accessible to thieves. An experienced pickpocket can unzip a backpack, take its contents, and flee before the wearer notices. Possessions are also lost when a thief slashes the fabric at the bottom of a backpack with a razor, opening new access to the contents.</p>
-<p>The team responded by creating the Dorsal travel pack. It is a stylish, modern backpack with all of the zippers facing inward toward the wearer’s back. It is made of slash resistant fabric in nondescript colors to avoid the attention that more popular colorful brands draw. The team went through a series of validation tests to confirm the pain and confirm the solution. The tests also helped the team refine the concept to meet the needs of their targeted travelers. The team also confirmed that they can sell the pack directly from their website.</p>
-<p>One of the final tests was to analyze the expected profitability of the travel pack. The team reached out to members of their social networks and invited those who had recently traveled or were planning to travel in the near future to help. They were able to get 107 responses from potential customers who had traveled or were about to travel internationally. The respondents were shown the backpack and its features. They were asked to rate the innovation and offer suggestions to improve it. They were also asked “What is the most you would be willing to pay for the Dorsal travel pack?” Finally, they provided information about their travel patterns as well as demographics.</p>
-</section>
-<section id="dorsal-pack-data" class="level3">
-<h3 class="anchored" data-anchor-id="dorsal-pack-data">Dorsal Pack data</h3>
-<p>Because the travel pack is a durable good for most travelers, we focusing on the of willingness to pay from respondents who had traveled or were planning to travel soon. We see the following willingness to pay responses:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">wtp =</span> <span class="fu">c</span>(<span class="dv">64</span>, <span class="dv">18</span>, <span class="dv">46</span>, <span class="dv">92</span>, <span class="dv">110</span>, <span class="dv">138</span>, <span class="dv">113</span>, <span class="dv">89</span>, <span class="dv">0</span>, <span class="dv">258</span>, <span class="dv">205</span>, <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">202</span>, <span class="dv">46</span>, <span class="dv">258</span>, <span class="dv">0</span>, <span class="dv">141</span>, <span class="dv">0</span>, <span class="dv">46</span>, <span class="dv">61</span>, <span class="dv">101</span>, <span class="dv">64</span>, <span class="dv">215</span>, <span class="dv">95</span>, <span class="dv">43</span>, <span class="dv">46</span>, <span class="dv">46</span>, <span class="dv">132</span>, <span class="dv">21</span>, <span class="dv">18</span>, <span class="dv">113</span>, <span class="dv">9</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">18</span>, <span class="dv">104</span>, <span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">6</span>, <span class="dv">224</span>, <span class="dv">322</span>, <span class="dv">18</span>, <span class="dv">316</span>, <span class="dv">156</span>, <span class="dv">104</span>, <span class="dv">322</span>, <span class="dv">285</span>, <span class="dv">208</span>, <span class="dv">316</span>, <span class="dv">0</span>, <span class="dv">288</span>, <span class="dv">95</span>, <span class="dv">6</span>, <span class="dv">52</span>, <span class="dv">46</span>, <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">64</span>, <span class="dv">98</span>, <span class="dv">248</span>, <span class="dv">18</span>, <span class="dv">110</span>, <span class="dv">0</span>, <span class="dv">67</span>, <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">0</span>, <span class="dv">89</span>, <span class="dv">132</span>, <span class="dv">101</span>, <span class="dv">18</span>, <span class="dv">215</span>, <span class="dv">18</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">104</span>, <span class="dv">285</span>, <span class="dv">3</span>, <span class="dv">46</span>, <span class="dv">141</span>, <span class="dv">322</span>, <span class="dv">291</span>, <span class="dv">89</span>, <span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">113</span>, <span class="dv">67</span>, <span class="dv">58</span>, <span class="dv">132</span>, <span class="dv">215</span>, <span class="dv">224</span>, <span class="dv">291</span>, <span class="dv">9</span>, <span class="dv">291</span>, <span class="dv">267</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">61</span>, <span class="dv">178</span>, <span class="dv">285</span>, <span class="dv">64</span>, <span class="dv">126</span>, <span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">15</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect the data</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 107
+<!-- 
+Question1 pts
+Edit this Question Delete this Question
+Which dimension of successful innovations encompasses the other two and is the measure of success as measured through entrepreneurial analytics?
+Correct Answer
+  Viability 
+  Desirability 
+  Feasibility 
+  Salability 
+  Confirmability 
+General answer comments
+"This interdependence between desirability, feasibility, and viability means that innovation, and the entrepreneurship that follows, is an economic activity where we can measure success as the value that is created and the long-term profitability (viability) that results." (pg 1)
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+A demand curve represents
+Correct Answer
+  the quantity customers will buy given the price Q(P). 
+  the price customers will pay given the quantity P(Q). 
+  the quantity customers will buy given their income Q(Y). 
+  the sensitivity of customer purchases to changes in the price (b*P/Q) 
+General answer comments
+A demand curve is a “schedule” of prices and quantities that reveals the willingness of customers to buy. In other words, it is a view of how much customers value a product. This relationship is typically given as a mathematical equation of quantity consumed as a function of price, Q = a - bP or Q = 2000 - 2P.  [page 5]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+If customers' income rises, the new level of consumption will represent
+Correct Answer
+  a change in demand. 
+  a change in cross-price elasticity. 
+  a change in income elasticity. 
+  a change in quantity demanded. 
+General answer comments
+Economists refer to movements along the demand curve (due to changes in the price) as a change in quantity demanded.  Movements from one demand curve to another shifted demand curve are known as a change in demand.  A change in income is not a change in price so it will necessarily shift the demand curve -- a change in demand.  We see this graphically as a shift in the demand curve to a higher or lower intercept.
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+Which of the following represents best practice to avoid sampling bias when collecting willingness-to-pay data for estimating demand curves?
+Correct Answer
+  Sampling of targeted individuals who have the hypothesized problem 
+  Sampling of friends, relatives, classmates, and co-workers 
+  Convenience sampling 
+  Sampling the widest possible set of people to get maximum variety 
+General answer comments
+Minimize Sampling Bias: Collect data from respondents who are actually your target customers...[Convenience samples] may also be completely unrelated to your actual customers and your sampling bias may lead to bias in the evidence you use for judgement...Good sampling requires that you have a clear understanding of who your customers are and where you can find them. [page 15]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+If the data show a nonlinear relationship between quantity and price, the first thing you should try is to
+Correct Answer
+  transform the data to linearize it and then estimate the demand curve with linear regression. 
+  leave the data as is and estimate the demand curve with linear regression. 
+  collect new data. 
+  estimate the demand curve with nonlinear regression. 
+General answer comments
+"If we assume an exponential demand curve, we can transform it to linearize it and check that it is indeed linear. To do this transformation, we take the natural log of the quantity variable and regress it on the price variable." [p. 22]
+-->
+<!-- 
+## Workout Problems
+
+### Dorsal Packs
+
+After receiving warnings about the risks of pickpockets when traveling to international tourist destinations, a group of entrepreneurs compared notes about their international travel experiences. They found that they had all experienced some anxiety about their own safety and the security of their belongings in popular tourist destinations. More importantly, they had all taken some steps to try to protect against pickpockets and thieves.
+
+To confirm their personal experiences, they talked with many others who had also traveled to tourist destinations. They confirmed that thieves are active in those places and that even travelers who had not lost possessions suffered anxiety about the risk and took steps to protect their belongings. One common problem that came up in those discussions is that the zippers that make our bags simultaneously accessible and secure also make our bags accessible to thieves. An experienced pickpocket can unzip a backpack, take its contents, and flee before the wearer notices. Possessions are also lost when a thief slashes the fabric at the bottom of a backpack with a razor, opening new access to the contents.
+
+The team responded by creating the Dorsal travel pack. It is a stylish, modern backpack with all of the zippers facing inward toward the wearer's back. It is made of slash resistant fabric in nondescript colors to avoid the attention that more popular colorful brands draw. The team went through a series of validation tests to confirm the pain and confirm the solution. The tests also helped the team refine the concept to meet the needs of their targeted travelers. The team also confirmed that they can sell the pack directly from their website.
+
+One of the final tests was to analyze the expected profitability of the travel pack. The team reached out to members of their social networks and invited those who had recently traveled or were planning to travel in the near future to help. They were able to get 107 responses from potential customers who had traveled or were about to travel internationally. The respondents were shown the backpack and its features. They were asked to rate the innovation and offer suggestions to improve it. They were also asked "What is the most you would be willing to pay for the Dorsal travel pack?" Finally, they provided information about their travel patterns as well as demographics.
+
+### Dorsal Pack data
+
+Because the travel pack is a durable good for most travelers, we focusing on the of willingness to pay from respondents who had traveled or were planning to travel soon. We see the following willingness to pay responses:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+
+dp <- tibble(wtp = c(64, 18, 46, 92, 110, 138, 113, 89, 0, 258, 205, 0, 18, 202, 46, 258, 0, 141, 0, 46, 61, 101, 64, 215, 95, 43, 46, 46, 132, 21, 18, 113, 9, 18, 21, 18, 104, 6, 0, 101, 6, 224, 322, 18, 316, 156, 104, 322, 285, 208, 316, 0, 288, 95, 6, 52, 46, 0, 18, 64, 98, 248, 18, 110, 0, 67, 0, 18, 0, 89, 132, 101, 18, 215, 18, 0, 0, 104, 285, 3, 46, 141, 322, 291, 89, 0, 101, 113, 67, 58, 132, 215, 224, 291, 9, 291, 267, 6, 6, 61, 178, 285, 64, 126, 0, 101, 15))
+
+# inspect the data
+glimpse(dp)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+Rows: 107
 Columns: 1
-$ wtp &lt;dbl&gt; 64, 18, 46, 92, 110, 138, 113, 89, 0, 258, 205, 0, 18, 202, 46, 25…</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      wtp       
+$ wtp <dbl> 64, 18, 46, 92, 110, 138, 113, 89, 0, 258, 205, 0, 18, 202, 46, 25…
+```
+
+
+:::
+
+```{.r .cell-code}
+summary(dp)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+      wtp       
  Min.   :  0.0  
  1st Qu.: 18.0  
  Median : 67.0  
  Mean   :102.3  
  3rd Qu.:141.0  
- Max.   :322.0  </code></pre>
-</div>
-</div>
-</section>
-<section id="homework-questions" class="level3">
-<h3 class="anchored" data-anchor-id="homework-questions">Homework Questions:</h3>
-<ol type="1">
-<li><p><strong>Calculate quantity from willingness to pay:</strong></p>
-<ol type="a">
-<li><p>Working under the assumption of a durable good, the Dorsal pack team collected data on the willingness to pay of their targeted customers. In the absence of quantity data, use the willingness to pay (wtp) data in the dp tibble to calculate the quantities for the Dorsal pack demand curve.</p></li>
-<li><p>How many unique values of willingness to pay are there?</p></li>
-<li><p>What is the average of the <strong>unique</strong> values of willingness to pay?</p></li>
-<li><p>What is the average of all of the values of willingness to pay?</p></li>
-</ol></li>
-<li><p><strong>Visualize dorsal pack wtp data:</strong>. Visualize the relationship between the price (wtp) and quantity in a scatterplot of the Dorsal pack demand data. Does the relationship between willingness to pay and quantity seem to be more linear or more nonlinear?</p></li>
-<li><p><strong>Dorsal pack - linear demand:</strong></p>
-<ol type="a">
-<li>Assume that the relationship between willingness to pay is linear. Estimate the linear model.</li>
-<li>Calculate the AIC value for the linear demand model.</li>
-</ol></li>
-<li><p><strong>Dorsal pack - exponential demand:</strong></p>
-<ol type="a">
-<li>Assume that the relationship between willingness to pay is nonlinear - specifically an exponential demand curve. Estimate the exponential demand model.</li>
-<li>Calculate the AIC value for the exponential demand model.</li>
-</ol></li>
-<li><p><strong>Best model:</strong> Is the linear demand model a better fit for the Dorsal Pack data or the exponential demand model?</p></li>
-<li><p><strong>Model interpretation:</strong></p>
-<ol type="a">
-<li><p>What is the F-statistic of the best model?</p></li>
-<li><p>What is the R-squared of the best model?</p></li>
-<li><p>In the best model, how confident are you that the estimated slope (<code>wtp</code>) coefficient is different from zero?</p></li>
-</ol></li>
-<li><p><strong>Calculate demand:</strong></p>
-<ol type="a">
-<li><p>What is the level of demand when price is P = 100?</p></li>
-<li><p>What is the level of demand when price is P = 200?</p></li>
-</ol></li>
-</ol>
-<hr>
-<div style="page-break-after: always;"></div>
-</section>
-</section>
-<section id="sec-elasticity" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="sec-elasticity"><span class="header-section-number">4.7</span> Appendix: Elasticity of Demand</h2>
-<p>It is traditional, when learning about demand curves, to turn our attention to the sensitivity of customers as measured by the elasticity of demand. Since customers provide the flow of funds that ultimately finance all of the activities in the firm, they are critical to performance. If customers are unwilling to pay, there is no hope for a competitive advantage to generate superior performance. The rate at which quantity demanded falls as price rises is the slope of the demand curve and defines how sensitive consumers are to changes in prices. Customers who are sensitive to prices will demand price cuts and resist our attempts to raise prices by buying the solutions of others. Price sensitivity can guide you in choosing solutions where customers are less sensitive to prices in addition to assisting in pricing decisions.</p>
-<p>Measures of price sensitivity are complicated by their reliance on the unit of measurement. For example, if I say that the price of gasoline fell by 1, you immediately wonder if I mean $1 or 1 cent. Pennies versus dollars is an important difference of units of money. If I say that price fell by $1.00, you may be tempted to run out and fill your tank. However, your next question should be, “Price fell by $1.00 per what?” If it is $1.00 off from 1000 gallons, it is not so attractive. Units matter. To resolve the problem of units, economists express sensitivity to price in terms of percentage changes. This sensitivity measure is independent of units and is called <strong>elasticity</strong>. The sensitivity of the changes is expressed as a percentage change in the one thing leading to some percentage change in the other thing.</p>
-<p>The traditional measure of price sensitivity is the <strong>own-price elasticity of demand</strong> which reveals the percentage change in quantity demanded that results from a one percent change in price.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The method to calculate the own-price elasticity of demand using calculus is</p>
-<p><span class="math display">\[
+ Max.   :322.0  
+```
+
+
+:::
+:::
+
+
+### Homework Questions:
+
+1.  **Calculate quantity from willingness to pay:**
+
+    a.  Working under the assumption of a durable good, the Dorsal pack team collected data on the willingness to pay of their targeted customers. In the absence of quantity data, use the willingness to pay (wtp) data in the dp tibble to calculate the quantities for the Dorsal pack demand curve.
+
+    b.  How many unique values of willingness to pay are there?
+
+    c.  What is the average of the **unique** values of willingness to pay?
+
+    d.  What is the average of all of the values of willingness to pay?
+
+2.  **Visualize dorsal pack wtp data:**. Visualize the relationship between the price (wtp) and quantity in a scatterplot of the Dorsal pack demand data. Does the relationship between willingness to pay and quantity seem to be more linear or more nonlinear?
+
+3.  **Dorsal pack - linear demand:**
+
+    a.  Assume that the relationship between willingness to pay is linear. Estimate the linear model.
+    b.  Calculate the AIC value for the linear demand model.
+
+4.  **Dorsal pack - exponential demand:**
+
+    a.  Assume that the relationship between willingness to pay is nonlinear - specifically an exponential demand curve. Estimate the exponential demand model.
+    b.  Calculate the AIC value for the exponential demand model.
+
+5.  **Best model:** Is the linear demand model a better fit for the Dorsal Pack data or the exponential demand model?
+
+6.  **Model interpretation:**
+
+    a.  What is the F-statistic of the best model?
+
+    b.  What is the R-squared of the best model?
+
+    c.  In the best model, how confident are you that the estimated slope (`wtp`) coefficient is different from zero? 
+
+7.  **Calculate demand:**
+
+    a.  What is the level of demand when price is P = 100?
+
+    b.  What is the level of demand when price is P = 200?
+
+-->
+<!--
+------------------------------------------------------------------------
+
+
+
+## Appendix: Elasticity of Demand {#sec-elasticity}
+
+It is traditional, when learning about demand curves, to turn our attention to the sensitivity of customers as measured by the elasticity of demand. Since customers provide the flow of funds that ultimately finance all of the activities in the firm, they are critical to performance. If customers are unwilling to pay, there is no hope for a competitive advantage to generate superior performance. The rate at which quantity demanded falls as price rises is the slope of the demand curve and defines how sensitive consumers are to changes in prices. Customers who are sensitive to prices will demand price cuts and resist our attempts to raise prices by buying the solutions of others. Price sensitivity can guide you in choosing solutions where customers are less sensitive to prices in addition to assisting in pricing decisions.
+
+Measures of price sensitivity are complicated by their reliance on the unit of measurement. For example, if I say that the price of gasoline fell by 1, you immediately wonder if I mean \$1 or 1 cent. Pennies versus dollars is an important difference of units of money. If I say that price fell by \$1.00, you may be tempted to run out and fill your tank. However, your next question should be, "Price fell by \$1.00 per what?" If it is \$1.00 off from 1000 gallons, it is not so attractive. Units matter. To resolve the problem of units, economists express sensitivity to price in terms of percentage changes. This sensitivity measure is independent of units and is called **elasticity**. The sensitivity of the changes is expressed as a percentage change in the one thing leading to some percentage change in the other thing.
+
+The traditional measure of price sensitivity is the **own-price elasticity of demand** which reveals the percentage change in quantity demanded that results from a one percent change in price.[^demand-1] The method to calculate the own-price elasticity of demand using calculus is
+
+[^demand-1]: The own-price elasticity of demand is focused on the change of quantity demanded attributable to a change in the price of the product. In practice, we can find the elasticity of anything that causes another thing. For example, the cross-price elasticity of demand shows how demand changes as the price of another good changes and income elasticity of demand shows how demand changes as income changes.
+
+$$
    \mathsf{\epsilon_{Q_x,P_x} =  \frac{d Q_{x}}{d P_{x}} \cdot \frac{P_{x}}{Q_{x}} }
-\]</span></p>
-<p>where <span class="math inline">\(\epsilon\)</span>, the Greek letter “epsilon” is used to denote elasticity, <span class="math inline">\(\mathsf{Q_x}\)</span> is quantity demanded of product <span class="math inline">\(\mathsf{x}\)</span>, <span class="math inline">\(\mathsf{P_x}\)</span> is the price of <span class="math inline">\(\mathsf{x}\)</span>, and <span class="math inline">\(\mathsf{\frac{dQ_{x}}{dP_{x}}}\)</span> is the derivative (slope) of the demand curve.</p>
-<p>To characterize a customer’s sensitivity to price we compare the absolute value of elasticity to one. When <span class="math inline">\(|\epsilon| &gt;1\)</span>, demand is <em>elastic</em>; when <span class="math inline">\(| \epsilon| &lt;1\)</span>, demand is <em>inelastic</em>; when <span class="math inline">\(| \epsilon| =1\)</span>, demand is <em>unitary elastic</em>. These labels reflect the size of the response in quantity demanded to a change in price. When you know the elasticity of demand, you know how consumption and revenue will change in response to a change in price. When the own-price elasticity of demand, in absolute value, is greater than one, revenue will rise when you lower the price. The fact that demand is elastic means that a one percent reduction in price will lead to more than a one percent increase in consumption. Since quantity goes up more than price goes down, revenue will rise. By the same logic and math, when the elasticity of demand is inelastic, revenue rises when price is increased because a one percent increase in price will result in less than a one percent reduction in quantity demanded.</p>
-<p>Calculating percentage changes is straightforward by simply finding the difference between the new value and the original value and dividing by the original value. For example, if a price went from $50 to $55, the percentage change is <span class="math display">\[
+$$
+
+where $\epsilon$, the Greek letter "epsilon" is used to denote elasticity, $\mathsf{Q_x}$ is quantity demanded of product $\mathsf{x}$, $\mathsf{P_x}$ is the price of $\mathsf{x}$, and $\mathsf{\frac{dQ_{x}}{dP_{x}}}$ is the derivative (slope) of the demand curve.
+
+To characterize a customer's sensitivity to price we compare the absolute value of elasticity to one. When $|\epsilon| >1$, demand is *elastic*; when $| \epsilon| <1$, demand is *inelastic*; when $| \epsilon| =1$, demand is *unitary elastic*. These labels reflect the size of the response in quantity demanded to a change in price. When you know the elasticity of demand, you know how consumption and revenue will change in response to a change in price. When the own-price elasticity of demand, in absolute value, is greater than one, revenue will rise when you lower the price. The fact that demand is elastic means that a one percent reduction in price will lead to more than a one percent increase in consumption. Since quantity goes up more than price goes down, revenue will rise. By the same logic and math, when the elasticity of demand is inelastic, revenue rises when price is increased because a one percent increase in price will result in less than a one percent reduction in quantity demanded.
+
+Calculating percentage changes is straightforward by simply finding the difference between the new value and the original value and dividing by the original value. For example, if a price went from \$50 to \$55, the percentage change is $$
   \mathsf{ \dfrac{P_{1}-P_{0}}{P_{0}} = \dfrac{55-50}{50} = 0.1}
-\]</span> or in words, a 10% increase in price. We find the elasticity of one variable with respect to another by dividing the percentage change in the first variable by the percentage change in the second.</p>
-<p>The <em>own-price elasticity of demand</em> shows us how sensitive customers of <span class="math inline">\(\mathsf{X}\)</span> are to changes in the price of <span class="math inline">\(\mathsf{X}\)</span>. We call it the “own-price elasticity of demand” to distinguish it from the influence of prices of other goods. We call their influence the “cross-price elasticity of demand.” If the price of <span class="math inline">\(\mathsf{X}\)</span> is increased by one percent, by what percent do customers decrease their quantity demanded of <span class="math inline">\(\mathsf{X}\)</span>? This is the own-price elasticity of demand and it is expressed mathematically as <span class="math display">\[\begin{align}
-   \mathsf{\epsilon_{Q_x,P_x}} &amp; = \mathsf{\dfrac{\%\Delta Q_x }{\%\Delta P_x }
-    = \dfrac{\dfrac{Q_1-Q_0}{Q_0}}{\dfrac{P_1-P_0}{P_0}}
-    = \dfrac{\dfrac{\Delta Q_{x}}{Q_0}}{\dfrac{\Delta P_{x}}{P_0}}
+$$ or in words, a 10% increase in price. We find the elasticity of one variable with respect to another by dividing the percentage change in the first variable by the percentage change in the second.
+
+The *own-price elasticity of demand* shows us how sensitive customers of $\mathsf{X}$ are to changes in the price of $\mathsf{X}$. We call it the "own-price elasticity of demand" to distinguish it from the influence of prices of other goods. We call their influence the "cross-price elasticity of demand." If the price of $\mathsf{X}$ is increased by one percent, by what percent do customers decrease their quantity demanded of $\mathsf{X}$? This is the own-price elasticity of demand and it is expressed mathematically as \begin{align}
+   \mathsf{\epsilon_{Q_x,P_x}} & = \mathsf{\dfrac{\%\Delta Q_x }{\%\Delta P_x }
+    = \dfrac{\dfrac{Q_1-Q_0}{Q_0}}{\dfrac{P_1-P_0}{P_0}} 
+    = \dfrac{\dfrac{\Delta Q_{x}}{Q_0}}{\dfrac{\Delta P_{x}}{P_0}} 
     = \dfrac{\Delta Q_{x}}{Q_{0}}\dfrac{P_{0}}{\Delta P_{x}}} \notag \\
-   &amp;= \mathsf{\dfrac{\Delta Q_{x}}{\Delta P_{x}} \cdot \dfrac{P_{0}}{Q_{0}}}
-\end{align}\]</span></p>
-<p>where <span class="math inline">\(\mathsf{\Delta}\)</span> signifies a change. Notice that the first part of the elasticity formula is the slope of the demand curve. Remember that slope is the rise of a function divided by its run. The change in quantity is the “rise” of the demand curve and the change in price is the “run.” Therefore, <span class="math inline">\(\mathsf{\frac{\Delta Q_{x}}{\Delta P_{x}}}\)</span> is the rise over the run (slope) of the demand curve. In short, the own-price elasticity of demand is the slope of the demand curve multiplied by price over quantity.</p>
-<p>If we let the changes in price become infinitely small they become the derivative of quantity with respect to price and the elasticity equation becomes the more useful calculus version of elasticity:</p>
-<p><span class="math display">\[
+   &= \mathsf{\dfrac{\Delta Q_{x}}{\Delta P_{x}} \cdot \dfrac{P_{0}}{Q_{0}}}
+\end{align}
+
+where $\mathsf{\Delta}$ signifies a change. Notice that the first part of the elasticity formula is the slope of the demand curve. Remember that slope is the rise of a function divided by its run. The change in quantity is the "rise" of the demand curve and the change in price is the "run." Therefore, $\mathsf{\frac{\Delta Q_{x}}{\Delta P_{x}}}$ is the rise over the run (slope) of the demand curve. In short, the own-price elasticity of demand is the slope of the demand curve multiplied by price over quantity.
+
+If we let the changes in price become infinitely small they become the derivative of quantity with respect to price and the elasticity equation becomes the more useful calculus version of elasticity:
+
+$$
    \mathsf{\epsilon_{Q_x,P_x} =  \dfrac{d Q_{x}}{d P_{x}} \cdot \dfrac{P_{x}}{Q_{x}}}
-\]</span> where <span class="math inline">\(\mathsf{\frac{dQ_{x}}{dP_{x}}}\)</span> is the derivative (slope) of the demand curve.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The elasticity is a number that we interpret, in words, as a one percent change in price of <span class="math inline">\(\mathsf{x}\)</span> causing a <span class="math inline">\(\mathsf{\epsilon_{Q_x,P_x}}\)</span> percent change in quantity demanded. More specifically, if the own-price elasticity is <span class="math inline">\(\mathsf{\epsilon_{Q_x,P_x} = -0.5}\)</span>, we say that a one percent increase in price leads to a 0.5 percent <em>decrease</em> in quantity demanded.</p>
-<p>Consider a rubber band. If a force is applied and the rubber band stretches a long way, it is more elastic than a rubber band that stretches less. Similarly, when the force of a one percent increase in price is applied to a customer, that customer’s demand is elastic when the customer reduces consumption by more than one percent. When a one percent price hike is presented to an inelastic customer, the customer reduces quantity demand by less than one percent. When the customer is unitary elastic, a one percent increase in price results in a one percent reduction in quantity demanded.</p>
-<p>A customer’s sensitivity to price is influenced by several factors. In general, anything that shifts the intercept or the slope of the demand curve will also change the elasticity at a particular price. For example, if concerns about the health effects of saturated fat reduce the demand for cheese, customers’ demand will also be more elastic at the historical price. Logically, this is because the health concerns will exacerbate the reductions in consumption when price is raised. Mathematically, customers become more elastic (elasticity becomes a larger negative number) because the quantity in the denominator falls while the slope and price stay the same. Time will also change elasticity. In the short-run, we have fewer substitutes and are therefore more inelastic. Similarly, we are more inelastic about consuming categories of goods than consuming specific goods. For example, demand for New Balance running shoes is much more elastic than for clothing in general.</p>
-<section id="elasticity-with-linear-demand-curves" class="level3">
-<h3 class="anchored" data-anchor-id="elasticity-with-linear-demand-curves">Elasticity with Linear Demand Curves</h3>
-<p>Now let’s look at the relationship between elasticity and the demand curve. From the elasticity equation, we can see that the own-price elasticity of any demand curve is the slope of the demand curve multiplied by <span class="math inline">\(\mathsf{\frac{P}{Q}}\)</span>. This means that the elasticity is proportional to the slope of the demand curve but not the same thing as the slope. As the ratio of price and quantity changes while moving along the demand curve, the elasticity also changes. If the slope of the demand curve is -2 at every point on the curve but the elasticity differs along the curve because the ratio of price and quantity is changing.</p>
-<p>For example, at a price of $250, the elasticity is very different from the elasticity at a price of $750.</p>
-<p><span class="math display">\[\begin{align}
-  \mathsf{\epsilon_{Q_x= 1500,P_x = 250}} &amp;= \mathsf{-2 \frac{250}{1500}} &amp;  \mathsf{\epsilon_{Q_{x} =500,P_{x}=750}} &amp;= \mathsf{-2 \cdot \dfrac{750}{500}} \\
-                                          &amp;= -0.3333                      &amp;                                           &amp;= -3.0
-\end{align}\]</span> When the demand curve becomes steeper, the slope (derivative) becomes a larger negative number and demand becomes more elastic.</p>
-<p>Elasticity does not only pertain to the sensitivity of customers of a good. The sensitivity of any relationship where one thing causes another can be characterized by an elasticity. As we have seen, demand curves depend on many things besides the price of the good. For example, the demand curve <span class="math inline">\(\mathsf{Q_{x}(P_{x}) = a - bP_{x} + cP_{y} + dM}\)</span> implies that the price of <span class="math inline">\(\mathsf{Y}\)</span> and income (<span class="math inline">\(\mathsf{M}\)</span>) also determine demand for <span class="math inline">\(\mathsf{X}\)</span>. The <strong>cross-price elasticity</strong> of demand between <span class="math inline">\(\mathsf{X}\)</span> and <span class="math inline">\(\mathsf{Y}\)</span> displays the sensitivity of demand for <span class="math inline">\(\mathsf{X}\)</span> to changes in the price of <span class="math inline">\(\mathsf{Y}\)</span>. The cross-price elasticity is calculated in the same way as the own price elasticity with the appropriate substitution of <span class="math inline">\(\mathsf{P_{y}}\)</span> for <span class="math inline">\(\mathsf{P_{x}}\)</span>:</p>
-<p><span class="math display">\[
+$$ where $\mathsf{\frac{dQ_{x}}{dP_{x}}}$ is the derivative (slope) of the demand curve.[^demand-2] The elasticity is a number that we interpret, in words, as a one percent change in price of $\mathsf{x}$ causing a $\mathsf{\epsilon_{Q_x,P_x}}$ percent change in quantity demanded. More specifically, if the own-price elasticity is $\mathsf{\epsilon_{Q_x,P_x} = -0.5}$, we say that a one percent increase in price leads to a 0.5 percent *decrease* in quantity demanded.
+
+[^demand-2]: A brief review of derivatives may be useful. For a general function like $\mathsf{y = bx^{n}}$, the slope of the function is found through the derivative which is $\mathsf{dy/dx = nbx^{n-1}}$. In words, a derivative is taken by bringing down the exponent, multiplying it by the slope parameter, and reducing the exponent by one. Consider the following example. The demand curve can be written as $\mathsf{Q = a - bP}$ and can be equivalently written as $\mathsf{Q = ax^{0} - bx^{1}}$. The elasticity is the derivative times price divided by quantity. Taking the derivative of the demand curve we get $\mathsf{dQ/dP = 0\times a\times x^{-1} -1\times b\times x^{0} = -b}$. This means that the complete elasticity is \$ \mathsf{\epsilon = (dQ/dP) \times (P/Q) =  -bP/Q}\$. For a more specific example, consider the demand curve $\mathsf{Q_{x} = 1000 - 10P_{x}}$. We can rewrite this as $\mathsf{Q_{x} = 1000P_{x}^{0} - 10P_{x}^{1}}$. The slope of the demand curve is the derivative. It is found by bringing down the exponent of each term to multiply it by the rest of the term and then subtracting one from the exponent as follows: $\mathsf{dQ/dP = 0 \times 100 \times P_{x}^{-1} - 1 \times 10 \times P_{x}^{0} = -10}$. The elasticity is $\mathsf{\epsilon = (dQ/dP) \times (P/Q) = -10\times P/Q}$.
+
+Consider a rubber band. If a force is applied and the rubber band stretches a long way, it is more elastic than a rubber band that stretches less. Similarly, when the force of a one percent increase in price is applied to a customer, that customer's demand is elastic when the customer reduces consumption by more than one percent. When a one percent price hike is presented to an inelastic customer, the customer reduces quantity demand by less than one percent. When the customer is unitary elastic, a one percent increase in price results in a one percent reduction in quantity demanded.
+
+A customer's sensitivity to price is influenced by several factors. In general, anything that shifts the intercept or the slope of the demand curve will also change the elasticity at a particular price. For example, if concerns about the health effects of saturated fat reduce the demand for cheese, customers' demand will also be more elastic at the historical price. Logically, this is because the health concerns will exacerbate the reductions in consumption when price is raised. Mathematically, customers become more elastic (elasticity becomes a larger negative number) because the quantity in the denominator falls while the slope and price stay the same. Time will also change elasticity. In the short-run, we have fewer substitutes and are therefore more inelastic. Similarly, we are more inelastic about consuming categories of goods than consuming specific goods. For example, demand for New Balance running shoes is much more elastic than for clothing in general.
+
+### Elasticity with Linear Demand Curves
+
+Now let's look at the relationship between elasticity and the demand curve. From the elasticity equation, we can see that the own-price elasticity of any demand curve is the slope of the demand curve multiplied by $\mathsf{\frac{P}{Q}}$. This means that the elasticity is proportional to the slope of the demand curve but not the same thing as the slope. As the ratio of price and quantity changes while moving along the demand curve, the elasticity also changes. If the slope of the demand curve is -2 at every point on the curve but the elasticity differs along the curve because the ratio of price and quantity is changing.
+
+For example, at a price of \$250, the elasticity is very different from the elasticity at a price of \$750.
+
+\begin{align}
+  \mathsf{\epsilon_{Q_x= 1500,P_x = 250}} &= \mathsf{-2 \frac{250}{1500}} &  \mathsf{\epsilon_{Q_{x} =500,P_{x}=750}} &= \mathsf{-2 \cdot \dfrac{750}{500}} \\
+                                          &= -0.3333                      &                                           &= -3.0
+\end{align} When the demand curve becomes steeper, the slope (derivative) becomes a larger negative number and demand becomes more elastic.
+
+Elasticity does not only pertain to the sensitivity of customers of a good. The sensitivity of any relationship where one thing causes another can be characterized by an elasticity. As we have seen, demand curves depend on many things besides the price of the good. For example, the demand curve $\mathsf{Q_{x}(P_{x}) = a - bP_{x} + cP_{y} + dM}$ implies that the price of $\mathsf{Y}$ and income ($\mathsf{M}$) also determine demand for $\mathsf{X}$. The **cross-price elasticity** of demand between $\mathsf{X}$ and $\mathsf{Y}$ displays the sensitivity of demand for $\mathsf{X}$ to changes in the price of $\mathsf{Y}$. The cross-price elasticity is calculated in the same way as the own price elasticity with the appropriate substitution of $\mathsf{P_{y}}$ for $\mathsf{P_{x}}$:
+
+$$
   \mathsf{\epsilon_{Q_{x},P_{y}} = \dfrac{dQ_{x}}{dP_{y}} \cdot \dfrac{P_{y}}{Q_{x}}.}
-\]</span></p>
-<p>While the calculation of the cross-price elasticity of demand is the same as the own-price elasticity of demand, the interpretation of the elasticity is not. With the cross-price elasticity, we are looking at the sign to interpret its impact on demand. If the cross-price elasticity is positive, the good <span class="math inline">\(\mathsf{Y}\)</span> is a substitute for good <span class="math inline">\(\mathsf{X}\)</span>. If the cross-price elasticity is positive it means that a one percent increase in the price of <span class="math inline">\(\mathsf{Y}\)</span> results in an increase in consumption of <span class="math inline">\(\mathsf{X}\)</span>. We know from the law of demand that an increase in <span class="math inline">\(\mathsf{P_{y}}\)</span> results in a decrease in quantity demanded for <span class="math inline">\(\mathsf{Q_{y}}\)</span>. If demand for <span class="math inline">\(\mathsf{X}\)</span> also increases, it must be because consumers that were consuming <span class="math inline">\(\mathsf{Y}\)</span> have begun consuming <span class="math inline">\(\mathsf{X}\)</span>. That makes <span class="math inline">\(\mathsf{X}\)</span> a substitute for <span class="math inline">\(\mathsf{Y}\)</span>. For example, sports drinks would be expected to be substitutes for cola and the cross-price elasticity should be positive.</p>
-<p>If the cross-price elasticity is negative, the good <span class="math inline">\(\mathsf{Y}\)</span> is a complement of <span class="math inline">\(\mathsf{X}\)</span>. If <span class="math inline">\(\mathsf{P_{y}}\)</span> increases, then <span class="math inline">\(\mathsf{Q_{y}}\)</span> decreases. If <span class="math inline">\(\mathsf{Q_{x}}\)</span> is also caused to decrease by the increase in <span class="math inline">\(\mathsf{P_{y}}\)</span>, it must mean that customers stop consuming <span class="math inline">\(\mathsf{X}\)</span> when they stop consuming <span class="math inline">\(\mathsf{Y}\)</span>. This usually means that the products are consumed together and they are complementary products. For example, products consumed together like cars and gasoline are complements. If demand for cars in China increases, demand for gasoline does too. If the world supply of gasoline remains constant, the increased demand drives up price. We may be quite inelastic with respect to gasoline prices but our cross-price elasticity for gas-guzzling cars is quite large. High gas prices cut gas consumption by a little and gas-guzzling car consumption by a lot.</p>
-</section>
-<section id="elasticity-with-nonlinear-exponential-demand-curves" class="level3">
-<h3 class="anchored" data-anchor-id="elasticity-with-nonlinear-exponential-demand-curves">Elasticity with Nonlinear (Exponential) Demand Curves</h3>
-<p>The basic formula for the own-price elasticity of demand, <span class="math inline">\(\mathsf{\epsilon_{Q_{x},P_{y}} = \frac{dQ_{x}}{dP_{y}} \cdot \frac{P_{y}}{Q_{x}}}\)</span> is the same for linear and nonlinear demand curves alike. However, the slope (derivative) of nonlinear demand curves differs from linear demand curves so the specific formula for elasticity in nonlinear demand curves deserves attention.</p>
-<p>The exponential demand curve has the form <span class="math inline">\(\mathsf{Q = ae^{-bP}}\)</span>. The own-price elasticity of demand for this form is <span class="math display">\[\begin{align}
-\mathsf{\epsilon_{Q,P}} &amp;= \mathsf{\dfrac{dQ}{dP} \cdot \dfrac{P}{Q} = -bae^{-bP} \cdot \dfrac{P}{Q}} \notag \\[9pt]
-                         &amp;= \mathsf{\dfrac{-bae^{-bP}P}{ae^{-bp}}} \notag \\[9pt]
-                         &amp;= \mathsf{-bP}
-\end{align}\]</span></p>
-<p>This means that the own-price elasticity of the exponential demand curve is negative one when <span class="math inline">\(\mathsf{P= -\frac{1}{b}}\)</span>.</p>
+$$
+
+While the calculation of the cross-price elasticity of demand is the same as the own-price elasticity of demand, the interpretation of the elasticity is not. With the cross-price elasticity, we are looking at the sign to interpret its impact on demand. If the cross-price elasticity is positive, the good $\mathsf{Y}$ is a substitute for good $\mathsf{X}$. If the cross-price elasticity is positive it means that a one percent increase in the price of $\mathsf{Y}$ results in an increase in consumption of $\mathsf{X}$. We know from the law of demand that an increase in $\mathsf{P_{y}}$ results in a decrease in quantity demanded for $\mathsf{Q_{y}}$. If demand for $\mathsf{X}$ also increases, it must be because consumers that were consuming $\mathsf{Y}$ have begun consuming $\mathsf{X}$. That makes $\mathsf{X}$ a substitute for $\mathsf{Y}$. For example, sports drinks would be expected to be substitutes for cola and the cross-price elasticity should be positive.
+
+If the cross-price elasticity is negative, the good $\mathsf{Y}$ is a complement of $\mathsf{X}$. If $\mathsf{P_{y}}$ increases, then $\mathsf{Q_{y}}$ decreases. If $\mathsf{Q_{x}}$ is also caused to decrease by the increase in $\mathsf{P_{y}}$, it must mean that customers stop consuming $\mathsf{X}$ when they stop consuming $\mathsf{Y}$. This usually means that the products are consumed together and they are complementary products. For example, products consumed together like cars and gasoline are complements. If demand for cars in China increases, demand for gasoline does too. If the world supply of gasoline remains constant, the increased demand drives up price. We may be quite inelastic with respect to gasoline prices but our cross-price elasticity for gas-guzzling cars is quite large. High gas prices cut gas consumption by a little and gas-guzzling car consumption by a lot.
+
+### Elasticity with Nonlinear (Exponential) Demand Curves
+
+The basic formula for the own-price elasticity of demand, $\mathsf{\epsilon_{Q_{x},P_{y}} = \frac{dQ_{x}}{dP_{y}} \cdot \frac{P_{y}}{Q_{x}}}$ is the same for linear and nonlinear demand curves alike. However, the slope (derivative) of nonlinear demand curves differs from linear demand curves so the specific formula for elasticity in nonlinear demand curves deserves attention.
+
+The exponential demand curve has the form $\mathsf{Q = ae^{-bP}}$. The own-price elasticity of demand for this form is \begin{align}
+ \mathsf{\epsilon_{Q,P}} &= \mathsf{\dfrac{dQ}{dP} \cdot \dfrac{P}{Q} = -bae^{-bP} \cdot \dfrac{P}{Q}} \notag \\[9pt]
+                         &= \mathsf{\dfrac{-bae^{-bP}P}{ae^{-bp}}} \notag \\[9pt]
+                         &= \mathsf{-bP}
+\end{align}
+
+This means that the own-price elasticity of the exponential demand curve is negative one when $\mathsf{P= -\frac{1}{b}}$.
+
+-->
 
 
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>The own-price elasticity of demand is focused on the change of quantity demanded attributable to a change in the price of the product. In practice, we can find the elasticity of anything that causes another thing. For example, the cross-price elasticity of demand shows how demand changes as the price of another good changes and income elasticity of demand shows how demand changes as income changes.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>A brief review of derivatives may be useful. For a general function like <span class="math inline">\(\mathsf{y = bx^{n}}\)</span>, the slope of the function is found through the derivative which is <span class="math inline">\(\mathsf{dy/dx = nbx^{n-1}}\)</span>. In words, a derivative is taken by bringing down the exponent, multiplying it by the slope parameter, and reducing the exponent by one. Consider the following example. The demand curve can be written as <span class="math inline">\(\mathsf{Q = a - bP}\)</span> and can be equivalently written as <span class="math inline">\(\mathsf{Q = ax^{0} - bx^{1}}\)</span>. The elasticity is the derivative times price divided by quantity. Taking the derivative of the demand curve we get <span class="math inline">\(\mathsf{dQ/dP = 0\times a\times x^{-1} -1\times b\times x^{0} = -b}\)</span>. This means that the complete elasticity is $ $. For a more specific example, consider the demand curve <span class="math inline">\(\mathsf{Q_{x} = 1000 - 10P_{x}}\)</span>. We can rewrite this as <span class="math inline">\(\mathsf{Q_{x} = 1000P_{x}^{0} - 10P_{x}^{1}}\)</span>. The slope of the demand curve is the derivative. It is found by bringing down the exponent of each term to multiply it by the rest of the term and then subtracting one from the exponent as follows: <span class="math inline">\(\mathsf{dQ/dP = 0 \times 100 \times P_{x}^{-1} - 1 \times 10 \times P_{x}^{0} = -10}\)</span>. The elasticity is <span class="math inline">\(\mathsf{\epsilon = (dQ/dP) \times (P/Q) = -10\times P/Q}\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2620,185 +2785,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./uncertainty_profit.html" class="pagination-link" aria-label="Profit Uncertainty">

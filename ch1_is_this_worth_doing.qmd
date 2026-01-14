@@ -1,0 +1,78 @@
+# Is This Worth Doing? {#sec-intro-chapter}
+
+Entrepreneurship often begins long before revenue exists.
+
+It begins with a decision that feels both urgent and premature: whether to move forward at all. Whether to start a company, acquire a business, launch a product, invest in growth, or make a meaningful change to how an existing business operates.
+
+These decisions arise early, when information is thin and stakes are high. They are not abstract. They involve time, money, reputation, and responsibility to others. They shape what happens next and, just as importantly, what cannot happen later.
+
+At this stage, the question is rarely framed cleanly. People talk about vision, momentum, strategy, or timing. But underneath those conversations is a simpler and more difficult question:
+
+*Is this worth doing?*
+
+## The Moment Before Commitment
+
+The pre-revenue decision moment appears in many forms.
+
+You might be deciding whether to leave a stable job to pursue a new venture. You might be evaluating an acquisition target with incomplete information. You might be considering a pricing change, a new customer segment, or a fixed-cost investment that cannot easily be reversed.
+
+In each case, the situation has a common structure:
+
+- The decision matters.
+- The outcome is uncertain.
+- The data you wish you had does not yet exist.
+
+Waiting feels prudent, but waiting has costs. Acting feels decisive, but acting feels risky. The pressure to move forward builds, even as confidence remains elusive.
+
+This is the moment when many people default to intuition—not because intuition is superior, but because it is available.
+
+## This Decision Feels Impossible
+
+The difficulty of the pre-revenue decision is not simply uncertainty. It is the absence of familiar anchors.
+
+Most people are accustomed to making decisions with reference to numbers: past performance, benchmarks, forecasts, or financial statements. In the pre-revenue setting, those anchors are missing. There is no history to consult and no outcome to measure.
+
+Instead, people face competing signals:
+
+- Encouragement from peers or advisors
+- Analogies to other businesses
+- Stories of success and failure
+- Internal excitement or doubt
+
+These signals point in different directions. None feels decisive. As a result, confidence and overconfidence become difficult to distinguish. Skepticism and paralysis begin to look the same.
+
+The problem is not that the decision is irrational. The problem is that it is **underspecified**.
+
+## The False Choice: Guess Now or Learn Later
+
+In the absence of clarity, many people come to believe they face a forced choice.
+
+Either they guess now—commit, launch, and see what happens—or they delay, waiting for certainty that never arrives. This framing is reinforced by common advice: act fast, fail early, learn by doing.
+
+There is truth in this advice. Action does generate information. But it is not the only way information can be obtained, and it is often not the cheapest, fastest, or most responsible way to learn.
+
+Framing the decision as a choice between guessing and paralysis obscures a third option: learning before committing.
+
+This option is often overlooked not because it is impossible, but because it requires a different way of thinking about uncertainty and evidence.
+
+## Why the Question Cannot Be Avoided
+
+It is tempting to postpone the question of whether something is worth doing. Many entrepreneurs do. They focus instead on building, experimenting, or gaining traction, hoping that clarity will emerge along the way.
+
+But postponement does not eliminate the decision. It merely answers it implicitly.
+
+Every step forward—every hire, every contract, every investment—embeds a judgment about worth. Even the decision to “just try” assumes that the expected upside justifies the cost of trying.
+
+Not deciding explicitly does not make the decision go away. It makes it harder to examine and harder to revise.
+
+## What This Book Is—and Is Not
+
+This book does not promise certainty. It does not claim that the right answer can always be found in advance, nor that judgment can be replaced by analysis.
+
+What it offers is something more modest and more useful: a way to evaluate whether a business is worth doing *before* revenue exists, using evidence rather than intuition alone.
+
+You will not be asked to predict the future. You will be asked to reason carefully about what can be learned now, what must remain uncertain, and how to make decisions that you can stand behind even when outcomes are unknown.
+
+The goal is not to eliminate risk. It is to avoid unnecessary ignorance.
+
+The chapters that follow begin by clarifying why this decision is fundamentally an economic one—and why, despite appearances, it is possible to reason about profit before revenue exists.

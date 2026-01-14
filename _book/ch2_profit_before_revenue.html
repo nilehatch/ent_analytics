@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Profit Before Revenue – Is This Worth Doing?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./uncertainty_entrepreneurship.html" rel="next">
+<link href="./ch1_is_this_worth_doing.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-eb4725d83ca4e00fd685f6af566d6c15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Is This Worth Doing?</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="https://github.com/nilehatch/exp_innov/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch1_is_this_worth_doing.html">The Decision and the Object</a></li><li class="breadcrumb-item"><a href="./ch2_profit_before_revenue.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">The Decision and the Object</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_is_this_worth_doing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Is This Worth Doing?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_profit_before_revenue.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Uncertainty</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_entrepreneurship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating Uncertainty in Entrepreneurship</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Profit Uncertainty</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Demand</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-profit-question-section" id="toc-sec-profit-question-section" class="nav-link active" data-scroll-target="#sec-profit-question-section"><span class="header-section-number">2.1</span> “Is This Worth Doing?” Is a Profit Question</a>
+  <ul class="collapse">
+  <li><a href="#the-mistake-of-postponing-the-profit-question" id="toc-the-mistake-of-postponing-the-profit-question" class="nav-link" data-scroll-target="#the-mistake-of-postponing-the-profit-question">The Mistake of Postponing the Profit Question</a></li>
+  <li><a href="#profit-as-a-decision-object-not-an-outcome" id="toc-profit-as-a-decision-object-not-an-outcome" class="nav-link" data-scroll-target="#profit-as-a-decision-object-not-an-outcome">Profit as a Decision Object, Not an Outcome</a></li>
+  <li><a href="#why-this-question-must-be-asked-early" id="toc-why-this-question-must-be-asked-early" class="nav-link" data-scroll-target="#why-this-question-must-be-asked-early">Why This Question Must Be Asked Early</a></li>
+  </ul></li>
+  <li><a href="#the-profit-equation-as-an-epistemic-map" id="toc-the-profit-equation-as-an-epistemic-map" class="nav-link" data-scroll-target="#the-profit-equation-as-an-epistemic-map"><span class="header-section-number">2.2</span> The Profit Equation as an Epistemic Map</a>
+  <ul class="collapse">
+  <li><a href="#what-is-chosen-and-what-is-unknown" id="toc-what-is-chosen-and-what-is-unknown" class="nav-link" data-scroll-target="#what-is-chosen-and-what-is-unknown">What Is Chosen and What Is Unknown</a></li>
+  <li><a href="#why-this-insight-matters" id="toc-why-this-insight-matters" class="nav-link" data-scroll-target="#why-this-insight-matters">Why This Insight Matters</a></li>
+  <li><a href="#profit-before-revenue-is-not-a-contradiction" id="toc-profit-before-revenue-is-not-a-contradiction" class="nav-link" data-scroll-target="#profit-before-revenue-is-not-a-contradiction">Profit Before Revenue Is Not a Contradiction</a></li>
+  <li><a href="#demand-as-the-anchor" id="toc-demand-as-the-anchor" class="nav-link" data-scroll-target="#demand-as-the-anchor">Demand as the Anchor</a></li>
+  </ul></li>
+  <li><a href="#profit-feels-impossible-before-revenue" id="toc-profit-feels-impossible-before-revenue" class="nav-link" data-scroll-target="#profit-feels-impossible-before-revenue"><span class="header-section-number">2.3</span> Profit Feels Impossible Before Revenue</a>
+  <ul class="collapse">
+  <li><a href="#the-missing-signals" id="toc-the-missing-signals" class="nav-link" data-scroll-target="#the-missing-signals">The Missing Signals</a></li>
+  <li><a href="#substituting-proxies-for-evidence" id="toc-substituting-proxies-for-evidence" class="nav-link" data-scroll-target="#substituting-proxies-for-evidence">Substituting Proxies for Evidence</a></li>
+  <li><a href="#confusing-uncertainty-with-unknowability" id="toc-confusing-uncertainty-with-unknowability" class="nav-link" data-scroll-target="#confusing-uncertainty-with-unknowability">Confusing Uncertainty with Unknowability</a></li>
+  <li><a href="#profit-as-an-evaluative-question-not-a-forecast" id="toc-profit-as-an-evaluative-question-not-a-forecast" class="nav-link" data-scroll-target="#profit-as-an-evaluative-question-not-a-forecast">Profit as an Evaluative Question, Not a Forecast</a></li>
+  <li><a href="#reframing-the-problem" id="toc-reframing-the-problem" class="nav-link" data-scroll-target="#reframing-the-problem">Reframing the Problem</a></li>
+  </ul></li>
+  <li><a href="#common-tools-mislead-rather-than-help" id="toc-common-tools-mislead-rather-than-help" class="nav-link" data-scroll-target="#common-tools-mislead-rather-than-help"><span class="header-section-number">2.4</span> Common Tools Mislead Rather Than Help</a>
+  <ul class="collapse">
+  <li><a href="#accounting-data-correct-but-unavailable" id="toc-accounting-data-correct-but-unavailable" class="nav-link" data-scroll-target="#accounting-data-correct-but-unavailable">Accounting Data: Correct but Unavailable</a></li>
+  <li><a href="#pro-forma-cash-flows-and-discounted-cash-flow-precision-without-knowledge" id="toc-pro-forma-cash-flows-and-discounted-cash-flow-precision-without-knowledge" class="nav-link" data-scroll-target="#pro-forma-cash-flows-and-discounted-cash-flow-precision-without-knowledge">Pro Forma Cash Flows and Discounted Cash Flow: Precision Without Knowledge</a></li>
+  <li><a href="#five-forces-structure-without-quantification" id="toc-five-forces-structure-without-quantification" class="nav-link" data-scroll-target="#five-forces-structure-without-quantification">Five Forces: Structure Without Quantification</a></li>
+  <li><a href="#business-model-canvas-description-without-evaluation" id="toc-business-model-canvas-description-without-evaluation" class="nav-link" data-scroll-target="#business-model-canvas-description-without-evaluation">Business Model Canvas: Description Without Evaluation</a></li>
+  <li><a href="#tam-sam-som-scale-without-value" id="toc-tam-sam-som-scale-without-value" class="nav-link" data-scroll-target="#tam-sam-som-scale-without-value">TAM, SAM, SOM: Scale Without Value</a></li>
+  <li><a href="#the-common-failure-mode" id="toc-the-common-failure-mode" class="nav-link" data-scroll-target="#the-common-failure-mode">The Common Failure Mode</a></li>
+  </ul></li>
+  <li><a href="#reducible-and-irreducible-profit-uncertainty" id="toc-reducible-and-irreducible-profit-uncertainty" class="nav-link" data-scroll-target="#reducible-and-irreducible-profit-uncertainty"><span class="header-section-number">2.5</span> Reducible and Irreducible Profit Uncertainty</a>
+  <ul class="collapse">
+  <li><a href="#two-kinds-of-uncertainty" id="toc-two-kinds-of-uncertainty" class="nav-link" data-scroll-target="#two-kinds-of-uncertainty">Two Kinds of Uncertainty</a></li>
+  <li><a href="#why-demand-uncertainty-is-often-reducible" id="toc-why-demand-uncertainty-is-often-reducible" class="nav-link" data-scroll-target="#why-demand-uncertainty-is-often-reducible">Why Demand Uncertainty Is Often Reducible</a></li>
+  <li><a href="#the-cost-of-treating-reducible-uncertainty-as-irreducible" id="toc-the-cost-of-treating-reducible-uncertainty-as-irreducible" class="nav-link" data-scroll-target="#the-cost-of-treating-reducible-uncertainty-as-irreducible">The Cost of Treating Reducible Uncertainty as Irreducible</a></li>
+  <li><a href="#evaluation-before-commitment" id="toc-evaluation-before-commitment" class="nav-link" data-scroll-target="#evaluation-before-commitment">Evaluation Before Commitment</a></li>
+  <li><a href="#a-different-starting-point" id="toc-a-different-starting-point" class="nav-link" data-scroll-target="#a-different-starting-point">A Different Starting Point</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch1_is_this_worth_doing.html">The Decision and the Object</a></li><li class="breadcrumb-item"><a href="./ch2_profit_before_revenue.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-proft-uncertainty-chapter" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-profit-question-section" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-profit-question-section"><span class="header-section-number">2.1</span> “Is This Worth Doing?” Is a Profit Question</h2>
+<p>When people ask whether a business idea is “worth doing,” they rarely mean just one thing.</p>
+<p>They may be thinking about time, effort, identity, or opportunity cost. They may be thinking about whether the work will be meaningful, whether it fits their skills, or whether they will enjoy the process. All of those considerations matter. But beneath them is a harder, more concrete question—one that often goes unspoken:</p>
+<p><em>Can this plausibly make money?</em></p>
+<p>Not eventually, not in the abstract, and not after a long chain of hopeful assumptions—but plausibly, given what is known now and what can reasonably be learned next.</p>
+<p>This is the sense in which “Is this worth doing?” is fundamentally a <strong>profit question</strong>.</p>
+<p>Profit is not the only thing that matters in entrepreneurship, but it is the constraint that makes the question real. A venture that cannot plausibly generate profit cannot sustain itself, cannot scale responsibly, and cannot justify the irreversible commitments it will eventually require. Passion, effort, and execution do not compensate for an absence of economic value. They only delay the moment when that absence becomes undeniable.</p>
+<p>For this reason, the question of worth is inseparable from the question of profit—even before revenue exists.</p>
+<section id="the-mistake-of-postponing-the-profit-question" class="level3">
+<h3 class="anchored" data-anchor-id="the-mistake-of-postponing-the-profit-question">The Mistake of Postponing the Profit Question</h3>
+<p>Most entrepreneurship advice encourages people to postpone profit questions. The usual logic is that profit is unknowable early on, so it is better to focus on learning, experimentation, growth, or traction, and to worry about economics later. In practice, this often means building first and asking hard questions second.</p>
+<p>This approach feels reasonable because early ventures lack the data we normally associate with profit: revenue histories, cost reports, margins, and financial statements. Without those numbers, profit can feel speculative at best and meaningless at worst. As a result, many entrepreneurs conclude—explicitly or implicitly—that profit simply cannot be evaluated before launch.</p>
+<p>That conclusion is understandable. It is also wrong.</p>
+<p>Postponing the profit question does not eliminate it. It merely defers it until more resources have been spent, more commitments have been made, and fewer options remain. By the time profit is confronted directly, the cost of being wrong is often much higher.</p>
+<p>Asking whether something is worth doing after those commitments are in place is not prudence. It is surrender.</p>
+</section>
+<section id="profit-as-a-decision-object-not-an-outcome" class="level3">
+<h3 class="anchored" data-anchor-id="profit-as-a-decision-object-not-an-outcome">Profit as a Decision Object, Not an Outcome</h3>
+<p>A common source of confusion is the belief that profit is something that can only be observed after the fact. In accounting, profit is a realized outcome, recorded once transactions have occurred. In entrepreneurship, however, profit must be treated differently.</p>
+<p>Here, profit is not primarily an outcome. It is a decision object.</p>
+<p>Entrepreneurs must make choices—about pricing, investment, scale, features, positioning, and timing—before outcomes are known. Those choices are implicitly claims about future profit. Whether or not those claims are made explicit, they are always present. Every decision to proceed, delay, invest, or walk away carries an implicit judgment about whether the venture is worth doing.</p>
+<p>The question is not whether profit judgments will be made. The question is how they will be made.</p>
+<p>They can be made implicitly, through intuition, analogy, and hope. Or they can be made explicitly, through evidence, analysis, and disciplined reasoning under uncertainty.</p>
+<p>This book is about the second approach.</p>
+</section>
+<section id="why-this-question-must-be-asked-early" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-question-must-be-asked-early">Why This Question Must Be Asked Early</h3>
+<p>Asking whether a venture is worth doing before revenue exists is uncomfortable precisely because it forces clarity in the absence of certainty. It requires separating what is chosen from what is unknown, and what is unknowable from what can still be learned.</p>
+<p>But this discomfort is not a sign that the question is premature. It is a sign that the question is essential.</p>
+<p>Entrepreneurship does not become less uncertain by waiting. It becomes more constrained. The earlier profit-relevant questions are asked, the more freedom there is to act on the answers—whether that means proceeding with confidence, changing course, or deciding not to proceed at all.</p>
+<p>The purpose of this book is not to eliminate uncertainty. That is impossible. Its purpose is to help you evaluate whether a business is worth doing before uncertainty hardens into commitment.</p>
+<p>To do that, we must be clear about what profit is, why it feels unknowable early on, and where uncertainty actually lives. That work begins by looking carefully at the structure of profit itself.</p>
+</section>
+</section>
+<section id="the-profit-equation-as-an-epistemic-map" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-profit-equation-as-an-epistemic-map"><span class="header-section-number">2.2</span> The Profit Equation as an Epistemic Map</h2>
+<p>When people think about profit, they often think about accounting. Income statements, margins, and cash flows come to mind. Those tools are useful once a business is operating, but they offer little help before revenue exists. To understand profit <em>before</em> revenue, we need a different way of thinking about it.</p>
+<p>A simple profit equation provides that starting point:</p>
+<p><span class="math display">\[ \mathsf{\pi} = \mathsf{pq - cq - f}. \]</span></p>
+<p>Here, profit (<span class="math inline">\(\mathsf{\pi}\)</span>) is revenue minus costs. Price (<span class="math inline">\(\mathsf{p}\)</span>) times quantity sold (<span class="math inline">\(\mathsf{q}\)</span>) gives revenue. Variable cost per unit (<span class="math inline">\(\mathsf{c}\)</span>) times quantity sold gives total variable cost. Fixed costs (<span class="math inline">\(\mathsf{f}\)</span>) are incurred regardless of how much is sold.</p>
+<p>This equation is not new. What matters here is not its novelty, but how it helps us locate uncertainty.</p>
+<p>Used properly, the profit equation is not a calculation. It is an <em>epistemic map</em>—a way to see which parts of profit are chosen, which parts are constrained, and which parts are genuinely uncertain before revenue exists.</p>
+<section id="what-is-chosen-and-what-is-unknown" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-chosen-and-what-is-unknown">What Is Chosen and What Is Unknown</h3>
+<p>Before a business launches, most of the elements in the profit equation are the result of decisions, not uncertainty.</p>
+<p>Price is chosen by the firm. Whether pricing is simple or complex, fixed or dynamic, it is ultimately a decision variable. Firms may not know the “right” price in advance, but they are not ignorant of price altogether. They choose prices deliberately, often revising them as they learn.</p>
+<p>Costs are also largely chosen. Variable costs reflect design, sourcing, and operational decisions. Fixed costs reflect commitments to capacity, infrastructure, and overhead. These choices may be difficult or constrained, but they are not unknown in the same sense as demand. They are outcomes of how the business is designed and operated.</p>
+<p>Quantity sold is different.</p>
+<p>Quantity is not chosen by the firm. It is revealed through the behavior of customers.</p>
+<p>It depends on how many customers exist, whether they care, what they are willing to pay, and how sensitive they are to price and alternatives. It depends on behavior outside the firm’s direct control. Before revenue exists, quantity is the only element of the profit equation that cannot be set by decision alone.</p>
+<p>This is the central insight: <strong>before revenue exists, profit uncertainty is almost entirely demand uncertainty.</strong></p>
+</section>
+<section id="why-this-insight-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-insight-matters">Why This Insight Matters</h3>
+<p>Entrepreneurs often feel surrounded by uncertainty. Markets are unfamiliar. Customers are unknown. Competition is unpredictable. Costs may change. The future feels opaque in every direction.</p>
+<p>The profit equation helps discipline that feeling.</p>
+<p>It shows that much of what feels uncertain is actually the result of choice. Pricing decisions, cost structures, and investment levels are not mysteries waiting to be solved by the market. They are commitments the firm makes. They shape profit, but they do not create uncertainty in the same way demand does.</p>
+<p>Demand is different. Demand must be learned.</p>
+<p>This does not mean demand is easy to know. It means demand is the <strong>right object of inquiry</strong>. When entrepreneurs treat all aspects of profit as equally uncertain, they either give up on analysis or replace it with intuition. When they recognize that uncertainty is concentrated in demand, their efforts can become focused and productive.</p>
+</section>
+<section id="profit-before-revenue-is-not-a-contradiction" class="level3">
+<h3 class="anchored" data-anchor-id="profit-before-revenue-is-not-a-contradiction">Profit Before Revenue Is Not a Contradiction</h3>
+<p>At first glance, talking about profit before revenue exists can sound like a contradiction. If nothing has been sold, how can profit be evaluated at all?</p>
+<p>The answer is that evaluating profit does not require observing it. It requires understanding the relationship between price, quantity, and costs, and forming disciplined judgments about the range of outcomes those relationships imply.</p>
+<p>Before revenue exists, profit cannot be <em>measured</em>. But it can be <strong>evaluated</strong>.</p>
+<p>That evaluation is necessarily uncertain, but it is not arbitrary. It can be grounded in evidence, bounded by assumptions, and improved through deliberate learning. Treating profit as unknowable until it appears on a financial statement confuses realization with reasoning.</p>
+<p>Entrepreneurs do not have the luxury of waiting for realization. Decisions must be made earlier.</p>
+</section>
+<section id="demand-as-the-anchor" class="level3">
+<h3 class="anchored" data-anchor-id="demand-as-the-anchor">Demand as the Anchor</h3>
+<p>If profit uncertainty before revenue is primarily demand uncertainty, then demand becomes the anchor of profit evaluation. Learning about demand—how many customers exist, what they value, and what they are willing to pay—is the most powerful way to reduce uncertainty about whether a business is worth doing.</p>
+<p>This does not mean that costs and competition are unimportant. They shape profit in important ways, and later chapters will address them carefully. But without a credible understanding of demand, refinements to cost structure or competitive positioning are premature.</p>
+<p>The logic of this book follows directly from this insight. We begin by clarifying what demand is and what it is not. We then turn to how demand can be estimated before sales occur. Only after that foundation is in place do we examine how costs, competition, and strategic interaction modify profit.</p>
+<p>The structure of profit tells us where to focus first. The next step is to understand demand itself.</p>
+</section>
+</section>
+<section id="profit-feels-impossible-before-revenue" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="profit-feels-impossible-before-revenue"><span class="header-section-number">2.3</span> Profit Feels Impossible Before Revenue</h2>
+<p>As Chapter 1 showed, the pre-revenue decision often feels impossible. People experience pressure to act, discomfort with waiting, and a sense that guessing is unavoidable. The reason this false choice feels so compelling lies in how profit is commonly understood.</p>
+<p>Profit feels impossible to evaluate early not because it is inherently unknowable, but because the signals people are trained to associate with profit are missing.</p>
+<section id="the-missing-signals" class="level3">
+<h3 class="anchored" data-anchor-id="the-missing-signals">The Missing Signals</h3>
+<p>Before revenue exists, the artifacts normally used to reason about profit are absent. There are no sales reports, no realized margins, no customer cohorts, and no financial statements to inspect. Accounting provides no foothold because there is nothing yet to record.</p>
+<p>In the absence of these signals, profit can feel abstract and speculative—disconnected from anything concrete. This leads many people to conclude that profit simply cannot be assessed until transactions occur.</p>
+<p>That conclusion confuses <em>measurement</em> with <em>evaluation</em>.</p>
+</section>
+<section id="substituting-proxies-for-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="substituting-proxies-for-evidence">Substituting Proxies for Evidence</h3>
+<p>When direct signals are missing, people substitute proxies. They look to market size, industry characteristics, growth trends, comparable companies, or narratives about execution quality. These proxies can provide context, but they do not evaluate profit.</p>
+<p>Proxies describe environments. They do not estimate outcomes.</p>
+<p>Relying on them creates a sense of rigor without grounding judgments in evidence about demand, price sensitivity, or quantity sold. The result is confidence without clarity.</p>
+</section>
+<section id="confusing-uncertainty-with-unknowability" class="level3">
+<h3 class="anchored" data-anchor-id="confusing-uncertainty-with-unknowability">Confusing Uncertainty with Unknowability</h3>
+<p>A deeper source of difficulty is the tendency to treat uncertainty as unknowability.</p>
+<p>Before revenue exists, profit is uncertain. But uncertainty does not imply that all outcomes are equally plausible, nor that learning is impossible. It means that outcomes fall within a range rather than at a single point.</p>
+<p>Treating profit as unknowable because it is uncertain mistakes the nature of the problem. It turns a question about ranges and plausibility into a claim about ignorance.</p>
+<p>Once this mistake is made, evaluation is abandoned. Action becomes the only perceived path to learning, and failure is reframed as inevitable rather than potentially avoidable.</p>
+</section>
+<section id="profit-as-an-evaluative-question-not-a-forecast" class="level3">
+<h3 class="anchored" data-anchor-id="profit-as-an-evaluative-question-not-a-forecast">Profit as an Evaluative Question, Not a Forecast</h3>
+<p>Part of what makes early profit evaluation feel impossible is the belief that evaluation requires prediction. If profit can only be assessed by forecasting exact outcomes, then uncertainty becomes paralyzing.</p>
+<p>But evaluation does not require prediction. It requires comparison.</p>
+<p>Evaluating whether a business is worth doing involves asking whether plausible outcomes justify the commitments required, given what is known and what can reasonably be learned next. It involves ranges, scenarios, and robustness—not point estimates.</p>
+<p>Profit before revenue exists cannot be measured. But it can be evaluated.</p>
+</section>
+<section id="reframing-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="reframing-the-problem">Reframing the Problem</h3>
+<p>Once profit is understood as an evaluative object rather than a realized outcome, the problem changes. The question is no longer whether certainty is available, but whether uncertainty can be reduced enough to support responsible judgment.</p>
+<p>This reframing opens the door to a different approach—one that focuses on where uncertainty actually lives and how it can be reduced before commitment.</p>
+<p>As the profit equation makes clear, that work begins with demand.</p>
+</section>
+</section>
+<section id="common-tools-mislead-rather-than-help" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="common-tools-mislead-rather-than-help"><span class="header-section-number">2.4</span> Common Tools Mislead Rather Than Help</h2>
+<p>When people struggle to evaluate profit before revenue exists, they rarely do so because they lack tools. In fact, most entrepreneurs, managers, and analysts are surrounded by tools. The problem is that the tools they reach for were not designed for the decision they are trying to make.</p>
+<p>Used in the wrong context, these tools do more than fall short. They actively mislead.</p>
+<section id="accounting-data-correct-but-unavailable" class="level3">
+<h3 class="anchored" data-anchor-id="accounting-data-correct-but-unavailable">Accounting Data: Correct but Unavailable</h3>
+<p>Accounting is the most familiar way people reason about profit. Income statements, balance sheets, margins, and cash flows are the standard language of business performance. When revenue exists, these tools are indispensable.</p>
+<p>Before revenue exists, they are irrelevant.</p>
+<p>This is not a criticism of accounting. It is a recognition of its purpose. Accounting records realized outcomes. It does not evaluate hypothetical ones. Before a business operates, there are no transactions to record, no margins to compute, and no profits to observe.</p>
+<p>Attempts to “do accounting early” typically amount to inventing numbers that look like accounting outputs. These numbers borrow the authority of accounting without its empirical foundation. They create the appearance of rigor while substituting assumption for evidence.</p>
+<p>The absence of accounting data before revenue is not a temporary inconvenience. It is a structural fact of entrepreneurship.</p>
+</section>
+<section id="pro-forma-cash-flows-and-discounted-cash-flow-precision-without-knowledge" class="level3">
+<h3 class="anchored" data-anchor-id="pro-forma-cash-flows-and-discounted-cash-flow-precision-without-knowledge">Pro Forma Cash Flows and Discounted Cash Flow: Precision Without Knowledge</h3>
+<p>Pro forma financial statements and discounted cash flow (DCF) analysis are often presented as rigorous ways to evaluate future profitability. In established businesses with stable histories, they can be useful.</p>
+<p>Before revenue exists, they are largely exercises in disciplined guessing.</p>
+<p>Every pro forma cash flow requires assumptions about prices, quantities, costs, growth rates, and timing. When these assumptions are not grounded in evidence, the resulting analysis does not become more reliable because it is discounted, summed, or expressed with decimal precision.</p>
+<p>Discounting future cash flows does not solve the problem of uncertainty. It hides it behind the math</p>
+<p>The issue is not that these models are mathematically incorrect. It is that they require inputs that are unknowable at the moment they are most often used. When inputs are guessed, the outputs merely reflect the guess.</p>
+</section>
+<section id="five-forces-structure-without-quantification" class="level3">
+<h3 class="anchored" data-anchor-id="five-forces-structure-without-quantification">Five Forces: Structure Without Quantification</h3>
+<p>Porter’s Five Forces framework is widely taught as a way to assess industry attractiveness. It organizes thinking around rivalry, entry, substitutes, buyer power, and supplier power. As a descriptive tool, it can be useful.</p>
+<p>As a tool for evaluating profit before revenue, it fails.</p>
+<p>Five Forces describes competitive pressures, but it does not quantify their economic consequences. It does not tell you how much demand will exist, how sensitive that demand will be to price, or how those forces translate into profit. Two industries can score similarly on Five Forces and have radically different profit potential for a specific venture.</p>
+<p>Most importantly, Five Forces treats structure as destiny. It encourages entrepreneurs to infer outcomes from categories rather than evaluate them through evidence. In doing so, it replaces analysis with classification.</p>
+</section>
+<section id="business-model-canvas-description-without-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="business-model-canvas-description-without-evaluation">Business Model Canvas: Description Without Evaluation</h3>
+<p>The Business Model Canvas is often used to clarify how a business works. It lays out customers, value propositions, channels, activities, resources, and revenue streams in a single view. This can be helpful for communication and alignment.</p>
+<p>It does not answer whether the business is worth doing.</p>
+<p>The canvas describes a system, but it does not evaluate that system economically. Filling in the boxes does not reveal willingness to pay, price sensitivity, adoption rates, or profit margins. Two canvases that look equally coherent can imply very different profit outcomes.</p>
+<p>The danger of the canvas is not that it is wrong, but that it feels complete. It encourages people to believe that once the boxes are filled, the hard thinking is done. In reality, the hardest questions—those that determine profit—remain unanswered.</p>
+</section>
+<section id="tam-sam-som-scale-without-value" class="level3">
+<h3 class="anchored" data-anchor-id="tam-sam-som-scale-without-value">TAM, SAM, SOM: Scale Without Value</h3>
+<p>Market sizing frameworks—Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Market (SOM)—are among the most common tools used in early-stage evaluation. They are relatively easy to compute, easy to present, and easy to believe.</p>
+<p>They do not estimate profit.</p>
+<p>Market size says nothing about willingness to pay, price sensitivity, cost structure, or market share. A large market does not imply a profitable opportunity, and a small market does not preclude one. TAM calculations often assume that capturing a small fraction of a large market is equivalent to creating value. It is not.</p>
+<p>These frameworks encourage entrepreneurs to focus on scale before understanding demand. They substitute arithmetic for economics and magnitude for meaning.</p>
+</section>
+<section id="the-common-failure-mode" class="level3">
+<h3 class="anchored" data-anchor-id="the-common-failure-mode">The Common Failure Mode</h3>
+<p>What unites these tools is not that they are useless, but that they answer different questions than the one entrepreneurs are facing.</p>
+<p>They describe industries, articulate systems, organize assumptions, or extrapolate imagined futures. None of them are designed to evaluate profit under pre-revenue uncertainty. When they are used for that purpose, they create confidence without clarity.</p>
+<p>The result is a familiar pattern: decisions are made on the basis of stories supported by numbers that look rigorous but are not anchored in evidence about demand.</p>
+<p>This book begins from a different premise. Profit before revenue exists is difficult, but it is not inaccessible. Evaluating it requires tools and methods that are explicitly designed to learn about demand, bound uncertainty, and connect evidence to economic consequences.</p>
+<p>To do that, we must first be clear about what demand is—and what it is not.</p>
+</section>
+</section>
+<section id="reducible-and-irreducible-profit-uncertainty" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="reducible-and-irreducible-profit-uncertainty"><span class="header-section-number">2.5</span> Reducible and Irreducible Profit Uncertainty</h2>
+<p>At this point, it should be clear why evaluating profit before revenue exists feels so difficult. Familiar tools do not apply. Accounting data is unavailable. Common strategy frameworks describe without evaluating. Financial models require inputs that cannot yet be known.</p>
+<p>From this, many people draw a further conclusion: that profit uncertainty before revenue exists is fundamentally irreducible.</p>
+<p>That conclusion is widespread. It is also mistaken.</p>
+<section id="two-kinds-of-uncertainty" class="level3">
+<h3 class="anchored" data-anchor-id="two-kinds-of-uncertainty">Two Kinds of Uncertainty</h3>
+<p>Not all uncertainty is the same. Some uncertainty cannot be resolved before action is taken. Other uncertainty can be reduced substantially through deliberate effort.</p>
+<p>The distinction matters.</p>
+<p><strong>Irreducible uncertainty</strong> refers to aspects of the future that cannot be known in advance, no matter how much effort is invested. Competitor reactions, macroeconomic shocks, regulatory changes, and long-term preference shifts fall into this category. These uncertainties must be accepted and managed through judgment, flexibility, and resilience.</p>
+<p><strong>Reducible uncertainty</strong>, by contrast, concerns unknowns that can be clarified through evidence. Customer interest, willingness to pay, price sensitivity, usage intensity, and adoption likelihood are not matters of fate. They are questions that can be investigated.</p>
+<p>Entrepreneurs routinely treat reducible uncertainty as if it were irreducible. When they do, they substitute guessing for learning and intuition for inquiry.</p>
+</section>
+<section id="why-demand-uncertainty-is-often-reducible" class="level3">
+<h3 class="anchored" data-anchor-id="why-demand-uncertainty-is-often-reducible">Why Demand Uncertainty Is Often Reducible</h3>
+<p>As the profit equation makes clear, profit uncertainty before revenue exists is largely demand uncertainty. Demand is uncertain because it has not yet been observed—not because it cannot be learned.</p>
+<p>Customers exist before products are launched. Preferences exist before transactions occur. Willingness to pay exists before prices are posted. The fact that these quantities have not yet been measured does not mean they are inaccessible.</p>
+<p>What is required is a willingness to seek evidence rather than assume ignorance.</p>
+<p>This does not mean demand can be known with certainty. It means that the range of plausible outcomes can be narrowed, bounded, and structured. Some demand curves can be ruled out. Others can be treated as more or less likely. The result is not a prediction, but an informed evaluation.</p>
+<p>That evaluation is often sufficient to answer the question of whether a business is worth doing.</p>
+</section>
+<section id="the-cost-of-treating-reducible-uncertainty-as-irreducible" class="level3">
+<h3 class="anchored" data-anchor-id="the-cost-of-treating-reducible-uncertainty-as-irreducible">The Cost of Treating Reducible Uncertainty as Irreducible</h3>
+<p>When entrepreneurs assume that profit uncertainty is irreducible, a predictable pattern follows.</p>
+<p>They delay evaluation and emphasize execution. They frame learning as something that happens only after launch. They justify early decisions with narratives rather than evidence. When results disappoint, failure is reinterpreted as unavoidable rather than preventable.</p>
+<p>This mindset is often celebrated as realism. In practice, it is a failure to distinguish what must be accepted from what could have been learned.</p>
+<p>Treating reducible uncertainty as irreducible does not make entrepreneurship more honest. It makes it more wasteful.</p>
+</section>
+<section id="evaluation-before-commitment" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-before-commitment">Evaluation Before Commitment</h3>
+<p>Reducing uncertainty before revenue exists is not about eliminating risk. It is about making commitments in proportion to what is known.</p>
+<p>Some ventures will still fail. Some uncertainty will remain. Judgment will always be required. But the range of outcomes can often be narrowed enough to make meaningful distinctions between opportunities that are plausibly worth doing and those that are not.</p>
+<p>This is the core promise of evaluating profit before revenue exists: not certainty, but clarity.</p>
+</section>
+<section id="a-different-starting-point" class="level3">
+<h3 class="anchored" data-anchor-id="a-different-starting-point">A Different Starting Point</h3>
+<p>This book begins from a simple but demanding premise: much of the uncertainty that surrounds early profit decisions is reducible, and it is reducible in systematic ways.</p>
+<p>Reducing that uncertainty requires shifting attention away from abstract frameworks and imagined futures, and toward evidence about demand. It requires learning how customers value what is being offered, how sensitive they are to price and alternatives, and how those patterns translate into quantity sold.</p>
+<p>The next chapters take up that task directly. We begin by clarifying what demand actually is—and what it is not.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ei\.nilehatch\.com\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch1_is_this_worth_doing.html" class="pagination-link" aria-label="Is This Worth Doing?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Is This Worth Doing?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./uncertainty_entrepreneurship.html" class="pagination-link" aria-label="Navigating Uncertainty in Entrepreneurship">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating Uncertainty in Entrepreneurship</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><em>Is This Worth Doing?</em> was written by Nile Hatch (2026).</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; Undifferentiated Bertrand Competition – Profit Analytics for Entrepreneurs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./competition_diff_bertrand.html" rel="next">
+<link href="./competition.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-eb4725d83ca4e00fd685f6af566d6c15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Profit Analytics for Entrepreneurs</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./competition_undiff_bertrand.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Uncertainty</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_entrepreneurship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Navigating Uncertainty in Entrepreneurship</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Uncertainty</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Demand</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
+  <li><a href="#conditions-of-undifferentiated-bertrand-competition" id="toc-conditions-of-undifferentiated-bertrand-competition" class="nav-link" data-scroll-target="#conditions-of-undifferentiated-bertrand-competition"><span class="header-section-number">11.2</span> Conditions of Undifferentiated Bertrand Competition</a></li>
+  <li><a href="#price-wars-are-rational-but-mutually-destructive" id="toc-price-wars-are-rational-but-mutually-destructive" class="nav-link" data-scroll-target="#price-wars-are-rational-but-mutually-destructive"><span class="header-section-number">11.3</span> Price Wars Are Rational but Mutually Destructive</a></li>
+  <li><a href="#strategies-to-avoid-the-price-war-trap" id="toc-strategies-to-avoid-the-price-war-trap" class="nav-link" data-scroll-target="#strategies-to-avoid-the-price-war-trap"><span class="header-section-number">11.4</span> Strategies to Avoid the Price War Trap</a>
+  <ul class="collapse">
+  <li><a href="#gaining-a-cost-advantage" id="toc-gaining-a-cost-advantage" class="nav-link" data-scroll-target="#gaining-a-cost-advantage">Gaining a Cost Advantage</a></li>
+  <li><a href="#exploiting-capacity-constraints" id="toc-exploiting-capacity-constraints" class="nav-link" data-scroll-target="#exploiting-capacity-constraints">Exploiting Capacity Constraints</a></li>
+  <li><a href="#demonstrative-example-capacity-constraints-in-action" id="toc-demonstrative-example-capacity-constraints-in-action" class="nav-link" data-scroll-target="#demonstrative-example-capacity-constraints-in-action">Demonstrative Example: Capacity Constraints in Action</a></li>
+  <li><a href="#mini-mills-in-the-steel-industry-a-case-study-in-undifferentiated-bertrand-competition" id="toc-mini-mills-in-the-steel-industry-a-case-study-in-undifferentiated-bertrand-competition" class="nav-link" data-scroll-target="#mini-mills-in-the-steel-industry-a-case-study-in-undifferentiated-bertrand-competition">Mini-mills in the Steel Industry: A Case Study in Undifferentiated Bertrand Competition</a></li>
+  </ul></li>
+  <li><a href="#quantitative-case-drop-shipping" id="toc-quantitative-case-drop-shipping" class="nav-link" data-scroll-target="#quantitative-case-drop-shipping"><span class="header-section-number">11.5</span> Quantitative Case: Drop-Shipping</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#with-different-costs" id="toc-with-different-costs" class="nav-link" data-scroll-target="#with-different-costs">With different costs</a></li>
+  <li><a href="#with-capacity-constraints-and-different-costs" id="toc-with-capacity-constraints-and-different-costs" class="nav-link" data-scroll-target="#with-capacity-constraints-and-different-costs">With capacity constraints and different costs</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  <li><a href="#low-price-guarantees" id="toc-low-price-guarantees" class="nav-link" data-scroll-target="#low-price-guarantees"><span class="header-section-number">11.6</span> Low Price Guarantees</a>
+  <ul class="collapse">
+  <li><a href="#the-idea-behind-low-price-guarantees" id="toc-the-idea-behind-low-price-guarantees" class="nav-link" data-scroll-target="#the-idea-behind-low-price-guarantees">The Idea Behind Low-Price Guarantees</a></li>
+  <li><a href="#impact-on-price-competition" id="toc-impact-on-price-competition" class="nav-link" data-scroll-target="#impact-on-price-competition">Impact on Price Competition</a></li>
+  <li><a href="#why-arent-low-price-guarantees-universal" id="toc-why-arent-low-price-guarantees-universal" class="nav-link" data-scroll-target="#why-arent-low-price-guarantees-universal">Why Aren’t Low-Price Guarantees Universal?</a></li>
+  </ul></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">11.7</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./competition_undiff_bertrand.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-undiff-bertrand-chapter" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">11.1</span> Introduction</h2>
+<p>Competing in business is rarely about having a unique product with no rivals. In many industries, firms offer nearly identical products and find themselves competing on price alone. This is the essence of undifferentiated Bertrand competition—a brutal pricing battle where firms repeatedly undercut each other until profit margins are razor-thin.</p>
+<p>For entrepreneurs, understanding undifferentiated Bertrand competition is critical for two reasons: 1. It explains why competing on price alone is dangerous. If you enter a market where customers see no difference between products, price wars will push profits toward zero. 2. It highlights strategic ways to escape the price-cutting trap. Entrepreneurs who manage costs better, leverage capacity constraints, or find creative pricing strategies can still carve out profitable opportunities.</p>
+<p>This chapter examines the dynamics of undifferentiated Bertrand oligopoly, why price wars happen, and what strategies can help entrepreneurs avoid the race to the bottom.</p>
+</section>
+<section id="conditions-of-undifferentiated-bertrand-competition" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="conditions-of-undifferentiated-bertrand-competition"><span class="header-section-number">11.2</span> Conditions of Undifferentiated Bertrand Competition</h2>
+<p>Oligopolies, which lie between perfect competition and monopoly, present unique competitive dynamics. In undifferentiated Bertrand competition, a few key conditions prevail:</p>
+<ol type="1">
+<li><strong>A Few, Powerful Firms:</strong> These firms can influence market equilibrium and each other’s behaviors.</li>
+<li><strong>Undifferentiated Products:</strong> Customers see no difference between products from different firms.</li>
+<li><strong>Entry Barriers:</strong> These maintain industry concentration.</li>
+<li><strong>Many Powerless Customers:</strong> Customers lack influence over market dynamics.</li>
+<li><strong>Perfect Information:</strong> Everyone knows all prices and product availabilities.</li>
+<li><strong>Price-Based Competition:</strong> Firms compete primarily through pricing strategies.</li>
+<li><strong>Unlimited Capacity:</strong> Firms can meet any market demand.</li>
+</ol>
+<hr>
+</section>
+<section id="price-wars-are-rational-but-mutually-destructive" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="price-wars-are-rational-but-mutually-destructive"><span class="header-section-number">11.3</span> Price Wars Are Rational but Mutually Destructive</h2>
+<p>Imagine a market with just two firms (a duopoly) where products and costs are identical. When one firm sets a price, the other has three options: match it, price higher, or undercut it. The logical move is to undercut, capturing the entire market at a slightly reduced price. This, however, prompts the first firm to respond with its own price cut to regain the market, leading to a continuous undercutting cycle.</p>
+<p>This strategic price reduction leads to a price war, with both firms lowering their prices in tandem. Equilibrium is eventually reached when prices fall to the leveo of costs. At this point, lowering prices further would mean operating at a loss, so no incentive remains for either firm to change their pricing strategy. This situation, where firms end up earning zero economic profit, represents the epitome of fierce price competition.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Economic Profit vs.&nbsp;Accounting Profit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zero economic profit doesn’t imply the absence of accounting profit. It means the business is viable—it covers all expenses and compensates for the entrepreneur’s time and capital—but doesn’t generate surplus profits beyond what could be earned elsewhere with the same investment of time and resources.</p>
+</div>
+</div>
+<p>The equilibrium where a firm’s best response is to set price equal to cost is competition at its worst.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It highlights the need to avoid competing solely on prices. What can a company do in this situation to avoid price wars and zero profit?</p>
+<hr>
+</section>
+<section id="strategies-to-avoid-the-price-war-trap" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="strategies-to-avoid-the-price-war-trap"><span class="header-section-number">11.4</span> Strategies to Avoid the Price War Trap</h2>
+<section id="gaining-a-cost-advantage" class="level3">
+<h3 class="anchored" data-anchor-id="gaining-a-cost-advantage">Gaining a Cost Advantage</h3>
+<p>One effective strategy to steer clear of price wars in undifferentiated Bertrand competition is to establish a cost advantage. Consider firms with varying costs due to different technologies. The firm with the lowest marginal cost (Firm 1) and the next lowest (Firm 2) set the stage for market dynamics.</p>
+<ul>
+<li><p><strong>Market Dynamics with Varied Costs:</strong> When the market price equates to the cost of the higher-cost firm, that firm can’t gain by reducing its price. However, the lower-cost firm (Firm 1) continues to have the incentive to undercut. This process drives the higher-cost firm out of the market, with the price cutting halting at the cost level of Firm 2.</p></li>
+<li><p><strong>Position of the Lowest-Cost Firm:</strong> Firm 1, with the lowest cost, doesn’t become a monopolist but instead dominates the market share, constrained by the cost structure of its closest competitor (Firm 2). Its pricing power is limited, capping just below the cost of Firm 2.</p></li>
+</ul>
+</section>
+<section id="exploiting-capacity-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="exploiting-capacity-constraints">Exploiting Capacity Constraints</h3>
+<p>Typically, in undifferentiated Bertrand oligopolies, it’s assumed that firms can satisfy total market demand at the lowest price. However, adding capacity constraints changes this assumption and the resultant market behavior. Firms can only sell as much as they can produce, even if they offer the lowest price, altering the usual trajectory of a price war and offering some protection against it.</p>
+</section>
+<section id="demonstrative-example-capacity-constraints-in-action" class="level3">
+<h3 class="anchored" data-anchor-id="demonstrative-example-capacity-constraints-in-action">Demonstrative Example: Capacity Constraints in Action</h3>
+<section id="setting-the-market-scene" class="level4 unnumbered unlisted">
+<h4 class="unnumbered unlisted anchored" data-anchor-id="setting-the-market-scene">Setting the Market Scene</h4>
+<p>Imagine a scenario in a market where no single firm can satisfy more than 40% of the total demand at the equilibrium price. In such a setup, a minimum of three firms is necessary to fully meet market demand. Let’s consider three firms with the following variable costs:</p>
+<ul>
+<li><strong>Firm 1’s variable unit cost:</strong> <span class="math inline">\(\mathsf{\quad c_1 = \$10}\)</span></li>
+<li><strong>Firm 2’s variable unit cost:</strong> <span class="math inline">\(\mathsf{\quad c_2 = \$20}\)</span></li>
+<li><strong>Firm 3’s variable unit cost:</strong> <span class="math inline">\(\mathsf{\quad c_3 = \$30}\)</span></li>
+</ul>
+<section id="market-dynamics-and-pricing" class="level5">
+<h5 class="anchored" data-anchor-id="market-dynamics-and-pricing">Market Dynamics and Pricing</h5>
+<p>In this market structure, the pricing will stabilize at <span class="math inline">\(\mathsf{\$30}\)</span>, aligning with the highest variable unit cost among the firms. Here’s how the market share gets distributed: Firms 1 and 2, with their cost advantages, capture 40% of the market each and Firm 3, with the highest cost, caters to the remaining 20%.</p>
+<ul>
+<li><strong>Firm 1’s market share:</strong> 40% of the market</li>
+<li><strong>Firm 2’s market share:</strong> 40% of the market</li>
+<li><strong>Firm 3’s market share:</strong> 20% of the market</li>
+</ul>
+<p>When Firm 3 attempts to expand its market share beyond this 20%, Firms 1 and 2 have the leeway to reduce their prices below <span class="math inline">\(\mathsf{\$30}\)</span>. Their lower costs enable them to do so while maintaining profitability. As a result, Firm 3, operating at the brink of its cost, can only break even and finds itself unable to compete with the lowered prices.</p>
+</section>
+</section>
+<section id="impact-of-a-new-entrant" class="level4">
+<h4 class="anchored" data-anchor-id="impact-of-a-new-entrant">Impact of a New Entrant</h4>
+<p>Now, introduce a twist in the market with the entry of Firm 4, which has a marginal cost of <span class="math inline">\(\mathsf{\$25}\)</span>. This new competitive dynamic would push the market price down to <span class="math inline">\(\mathsf{\$25,}\)</span> effectively ousting Firm 3 from the market. Firms 1 and 2, despite experiencing a dip in their profits due to the new lower market price, remain profitable. Firm 4, with its cost aligning with the new market price, manages to break even and captures the market share previously held by Firm 3.</p>
+</section>
+<section id="strategic-implications" class="level4">
+<h4 class="anchored" data-anchor-id="strategic-implications">Strategic Implications</h4>
+<p>This example highlights how capacity constraints and varying cost structures among firms can significantly influence market pricing and distribution of market shares. It illustrates the strategic complexity in an undifferentiated Bertrand oligopoly and underscores the importance of cost management and capacity considerations in competitive positioning.</p>
+</section>
+</section>
+<section id="mini-mills-in-the-steel-industry-a-case-study-in-undifferentiated-bertrand-competition" class="level3">
+<h3 class="anchored" data-anchor-id="mini-mills-in-the-steel-industry-a-case-study-in-undifferentiated-bertrand-competition">Mini-mills in the Steel Industry: A Case Study in Undifferentiated Bertrand Competition</h3>
+<p>The emergence of mini-mills in steel production offers a compelling illustration of the dynamics of an undifferentiated Bertrand oligopoly, particularly in the context of heterogeneous variable costs and capacity constraints.</p>
+<section id="innovation-and-cost-advantage" class="level4">
+<h4 class="anchored" data-anchor-id="innovation-and-cost-advantage">Innovation and Cost Advantage</h4>
+<p>Mini-mills, an innovative approach to steel production, utilize scrap metal as their primary raw material, contrasting with the traditional integrated steel mills that begin with iron ore. The mini-mills’ process, which starts with already-refined metal, grants them a significant cost advantage over integrated mills. This advantage becomes pronounced in the production of lower-end steel products, such as rebar for construction.</p>
+</section>
+<section id="market-dynamics-and-price-impact" class="level4">
+<h4 class="anchored" data-anchor-id="market-dynamics-and-price-impact">Market Dynamics and Price Impact</h4>
+<p>As mini-mills proliferated, they systematically undercut the integrated mills in the rebar market, leveraging their lower costs. This competitive pressure gradually forced the integrated mills to retreat from this segment. Following their exit, rebar prices experienced a notable 20% decline, equal to the cost advantage of the mini-mills. This pattern—a period of stable prices disrupted by the entry of low-cost innovations and subsequent exit of higher-cost incumbents—consistently resulted in price collapses, aligning with the cost level of the most efficient mini-mills.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="the-commodity-nature-of-steel-and-market-evolution" class="level4">
+<h4 class="anchored" data-anchor-id="the-commodity-nature-of-steel-and-market-evolution">The Commodity Nature of Steel and Market Evolution</h4>
+<p>Steel, being a commodity product, exhibits minimal differentiation within each category. Initially, the presence of low-cost mini-mills prompted a shift in market pricing to the level of the highest-cost integrated mills. The mini-mills, with their limited capacity, were able to fill their production to the brim, leaving the remainder of the market demand to the integrated mills.</p>
+<p>However, as more mini-mills entered the market, attracted by the potential profits, they brought additional capacity. This increasing capacity from low-cost producers gradually diminished the market share of the higher-cost incumbents. Once the collective capacity of the mini-mills was sufficient to meet market demand, the integrated mills found themselves redundant and exited the market. Subsequently, the price plummeted to the level of the costliest mini-mill.</p>
+</section>
+<section id="conclusion-the-bertrand-trap-for-mini-mills" class="level4">
+<h4 class="anchored" data-anchor-id="conclusion-the-bertrand-trap-for-mini-mills">Conclusion: The Bertrand Trap for Mini-mills</h4>
+<p>The mini-mills initially enjoyed attractive profits when their capacity was insufficient to meet total market demand. Yet, as their capacity expanded and their costs converged, they found themselves in a classic undifferentiated Bertrand competition scenario. With similar cost structures, the mini-mills faced intense price competition, leading to the inevitable outcome of such markets: prices equalizing to marginal costs and the erosion of extraordinary profits.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="quantitative-case-drop-shipping" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="quantitative-case-drop-shipping"><span class="header-section-number">11.5</span> Quantitative Case: Drop-Shipping</h2>
+<section id="background" class="level3">
+<h3 class="anchored" data-anchor-id="background">Background</h3>
+<p>In the dynamic e-commerce landscape, drop-shipping has become a common business model. Companies partner with manufacturers, often in China, to sell products on platforms like Amazon or Shopify. The products are shipped directly from the manufacturer to the customer upon order. This model, while efficient, often leads to intense price competition, especially for undifferentiated products.</p>
+</section>
+<section id="with-different-costs" class="level3">
+<h3 class="anchored" data-anchor-id="with-different-costs">With different costs</h3>
+<section id="scenario" class="level4">
+<h4 class="anchored" data-anchor-id="scenario">Scenario</h4>
+<p>Imagine a drop-shipping market with four companies: QuickShip, SpeedyDelivery, FastDrop, and RapidSend. They all sell a similar, popular gadget but have different cost structures due to varying agreements with manufacturers.</p>
+<ul>
+<li><p><strong>Market Demand:</strong> The daily market demand for the gadget is given by <span class="math inline">\(\mathsf{Q=1600−5P}\)</span>, where <span class="math inline">\(\mathsf{Q}\)</span> is the quantity of gadgets and <span class="math inline">\(\mathsf{P}\)</span> is the selling price.</p></li>
+<li><p><strong>Cost Structures:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Company</th>
+<th style="text-align: center;">Fixed Cost (per day)</th>
+<th style="text-align: center;">Variable Cost (per unit)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>QuickShip</td>
+<td style="text-align: center;">\$2000</td>
+<td style="text-align: center;">\$60</td>
+</tr>
+<tr class="even">
+<td>SpeedyDelivery</td>
+<td style="text-align: center;">\$2200</td>
+<td style="text-align: center;">\$50</td>
+</tr>
+<tr class="odd">
+<td>FastDrop</td>
+<td style="text-align: center;">\$2800</td>
+<td style="text-align: center;">\$35</td>
+</tr>
+<tr class="even">
+<td>RapidSend</td>
+<td style="text-align: center;">\$3000</td>
+<td style="text-align: center;">\$25</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</section>
+<section id="competitive-dynamics" class="level4">
+<h4 class="anchored" data-anchor-id="competitive-dynamics">Competitive Dynamics</h4>
+<p>In this highly competitive market, companies will undercut each other’s prices. RapidSend, with the lowest variable cost of $25, can profitably offer the gadget at lower prices than competitors. To maximize profits, RapidSend will set a price just low enough to out-compete SpeedyDelivery, the next cheapest competitor.</p>
+<ul>
+<li><p><strong>Optimal Pricing:</strong> RapidSend sets the price at $34, undercutting SpeedyDelivery. At this price, RapidSend becomes the sole supplier in the market.</p></li>
+<li><p><strong>Demand and Profit Calculation:</strong></p>
+<ul>
+<li>At a price of $34, daily demand is <span class="math inline">\(\mathsf{Q = 1600 − 5 \cdot 34 = 1430}\)</span> units.</li>
+<li>RapidSend’s daily profit is <span class="math display">\[\begin{align}
+
+  \mathsf{\pi} &amp;= \mathsf{(P − c) Q − f} \\
+               &amp;= \mathsf{(34 − 25) \cdot 1430 − 3000} \\
+               &amp;= \mathsf{\$9870}.
+  \end{align}\]</span></li>
+<li>QuickShip’s daily profit is $0 if they have not yet entered and can avoid their fixed costs and -$2000 if they have already entered.</li>
+<li>SpeedyDelivery’s daily profit is $0 if they have not yet entered and -$2200 if they have.</li>
+<li>FastDrop’s daily profit is $0 if they have not yet entered and and -$2800 if they have.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="with-capacity-constraints-and-different-costs" class="level3">
+<h3 class="anchored" data-anchor-id="with-capacity-constraints-and-different-costs">With capacity constraints and different costs</h3>
+<section id="scenario-1" class="level4">
+<h4 class="anchored" data-anchor-id="scenario-1">Scenario</h4>
+<p>Suppose each company can only handle a maximum of 390 orders per day. Their cost structures are unchanged from above.</p>
+</section>
+<section id="competitive-dynamics-1" class="level4">
+<h4 class="anchored" data-anchor-id="competitive-dynamics-1">Competitive Dynamics</h4>
+<p>With this capacity constraint, the market dynamics change.</p>
+<ul>
+<li><strong>Market Structure:</strong> The market can accommodate up to four firms, with each firm having a maximum capacity of 390 units. Three firms will sell at their capacity of 390 with the fourth selling enough to cover the rest of demand at the equilibrium price.</li>
+<li><strong>Equilibrium Price:</strong> The price will adjust to a level where four firms can operate profitably in the market – at the highest-cost firm’s variable unit cost ($60).</li>
+</ul>
+</section>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>This case demonstrates the competitive nature of drop-shipping in an undifferentiated Bertrand market. The key takeaway is the importance of cost management and capacity constraints in determining market dynamics and profitability. Drop-shipping companies often must navigate intense price competition, where having a cost advantage is crucial for survival and profitability.</p>
+<hr>
+</section>
+</section>
+<section id="low-price-guarantees" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="low-price-guarantees"><span class="header-section-number">11.6</span> Low Price Guarantees</h2>
+<p>So far, the methods for avoiding price competition have had more to do with variable cost and fixed cost (capacity) than with pricing. <em>Low-price guarantees</em> represent a pricing strategy aimed at avoiding constant price wars.</p>
+<section id="the-idea-behind-low-price-guarantees" class="level3">
+<h3 class="anchored" data-anchor-id="the-idea-behind-low-price-guarantees">The Idea Behind Low-Price Guarantees</h3>
+<p>Low-price guarantees are promises made to customers that a firm will match or beat the prices of its competitors. While appearing as a customer-centric approach, these guarantees can actually serve as a strategic tool for the firms themselves.</p>
+</section>
+<section id="impact-on-price-competition" class="level3">
+<h3 class="anchored" data-anchor-id="impact-on-price-competition">Impact on Price Competition</h3>
+<p>In a typical Bertrand scenario, a small price cut by one firm can lead to it capturing the entire market. This triggers a race to the bottom, with firms continually undercutting each other. However, with a low-price guarantee in place, this dynamic changes:</p>
+<ul>
+<li><strong>Deterrent to Undercutting:</strong> If a competitor lowers its price, the firm with the guarantee can simply match it, retaining its customers. The competing firm gains no additional market share but suffers a reduction in revenue, removing the incentive to undercut prices.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li><strong>Maintaining Prices Above Cost:</strong> These guarantees can help maintain prices at a level above cost, benefiting the firms more than their customers.</li>
+</ul>
+</section>
+<section id="why-arent-low-price-guarantees-universal" class="level3">
+<h3 class="anchored" data-anchor-id="why-arent-low-price-guarantees-universal">Why Aren’t Low-Price Guarantees Universal?</h3>
+<p>Despite their theoretical effectiveness, low-price guarantees are not universally adopted. The reasons include:</p>
+<ul>
+<li><strong>Limited Effectiveness in Differentiated Markets:</strong> Firms engaged in differentiated competition find these guarantees less effective and necessary.</li>
+<li><strong>Customer Hassle Factor:</strong> The onus is often on the customer to claim the guarantee, which can be a hassle. Not all customers will go through the process, reducing the effectiveness of the guarantee.</li>
+<li><strong>Branding Over Deterrence:</strong> Recent studies suggest that low-price guarantees are often used more for branding and advertising than as a genuine pricing strategy.</li>
+</ul>
+<p>While low-price guarantees offer some respite from relentless price competition, they are not foolproof. A more sustainable approach for entrepreneurs is to identify a niche market with unmet needs and innovate to provide differentiated solutions. Catering to a heterogeneous group of customers with unique demands can be a more effective path to profitability than relying on pricing strategies alone in an undifferentiated market.</p>
+<hr>
+</section>
+</section>
+<section id="conclusion-1" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">11.7</span> Conclusion</h2>
+<p>Undifferentiated Bertrand competition reveals a harsh truth: when firms sell identical products, price wars are inevitable, and profits disappear. But this does not mean entrepreneurs are doomed. Instead, this chapter has shown several ways to compete strategically:</p>
+<ul>
+<li><strong>Cost Advantages Matter</strong> – If your business has lower costs than competitors, you can outlast them in a price war and maintain a sustainable profit margin.</li>
+<li><strong>Capacity Constraints Change the Game</strong> – When no single firm can meet total market demand, even higher-cost firms can survive, keeping prices above marginal cost.</li>
+<li><strong>Industry Case Studies Prove the Pattern</strong> – From mini-mills in steel to drop-shipping in e-commerce, firms that don’t manage costs or differentiate eventually see their margins collapse.</li>
+<li><strong>Low-Price Guarantees Can Prevent Destructive Price Wars</strong> – While not a perfect solution, these strategies can deter excessive undercutting and help maintain pricing discipline.</li>
+</ul>
+<p>The key lesson for entrepreneurs is clear: competing on price alone is rarely a winning strategy. The next logical step for entrepreneurs is to find ways to differentiate—to create value beyond just offering the lowest price.</p>
+<p>The next chapter explores differentiated Bertrand oligopoly, where branding, product features, and strategic positioning give firms pricing power and a path to sustainable profitability.</p>
+<!-- from the old chapter reading quiz 
+
+- previous chapter
+How do customer preferences influence pricing and price competition?
+  Lowering prices is the most effective way to attract all customer segments. 
+  Price competition leads to higher profits by increasing market demand. 
+Correct Answer
+  Heterogeneity in customer preferences makes the lowest price not always the most desirable option. 
+  Product innovation and branding are less important than price competition. 
+  Engaging in price wars is the most sustainable strategy for long-term growth. 
+  All firms should focus solely on price to outcompete rivals. 
+General answer comments
+While competing on price is an unavoidable aspect of business, it should not be the sole focus of a company’s strategy. It emphasizes that the lure of lowering prices can lead to detrimental price wars, where similar quantities are sold but at continually decreasing prices, ultimately eroding profits. Furthermore, it points out the importance of recognizing customer heterogeneity - customers have diverse preferences and often value product variety and specificity over the lowest price. This understanding underlines why a strategy focused solely on price reduction is not always the most attractive or effective in meeting the varied needs of a customer base.
+
+++ 
+What is the primary outcome when firms engage in a price war in an undifferentiated Bertrand Oligopoly?
+  Firms achieve higher profits due to increased market share. 
+  The market price stabilizes at a level above the cost of production. 
+  Only the highest-cost competitor remaining in the market earns zero profit when there are different costs and capacity constraints. 
+  Price wars lead to significant product innovation. 
+  Firms develop stronger brand loyalty among customers. 
+Correct Answer
+  Firms end up earning zero economic profit as prices fall to the level of costs. 
+General answer comments
+In an undifferentiated Bertrand Oligopoly, firms often engage in price wars, continuously undercutting each other's prices. This process ultimately leads to an equilibrium where prices fall to the level of the firms' production costs. At this point, further price reductions would result in losses, so firms have no incentive to change their pricing strategy. The consequence is that all competing firms earn zero economic profit, which means they cover their costs and compensate for the risk and effort, but do not generate surplus profits.
+
+++ 
+Low-price guarantees
+  protect customers from price gouging competitors. 
+Correct Answer
+  protect competitors from undercutting each others' prices. 
+  ensure that markets are efficient in delivering what customers want. 
+  are a hassle free way for customers to manage their budgets. 
+General answer comments
+if a firm has a low-price guarantee in place, if its rival undercuts its price, its customers do not go to the rival but rather come to the firm and ask for the guarantee to be fulfilled. Since the rival gets no additional quantity but suffers a loss in price, the rival has no incentive to undercut price and the firms maintain price above cost in equilibrium. This deterrent to price cutting would probably surprise many customers who think the guarantee is a protection device offered by a caring company rather than a mechanism to keep prices high.
+ 
+-- next chapter
+What differentiates a market operating under Differentiated Bertrand Competition from one under Undifferentiated Bertrand Competition?
+Correct Answer
+  Products in Differentiated Bertrand are distinct, influencing customer preferences and choices. 
+  In Differentiated Bertrand, products are identical across different firms. 
+  Firms in Differentiated Bertrand do not compete on price. 
+  Differentiated Bertrand markets have no entry barriers. 
+  In Differentiated Bertrand, firms cannot influence market equilibrium. 
+General answer comments
+Differentiated Bertrand Competition is characterized by the presence of unique product characteristics across different firms. Unlike in Undifferentiated Bertrand Competition, where products are seen as identical by customers, Differentiated Bertrand markets have products that are distinct in the eyes of consumers. This differentiation allows firms to have some degree of pricing power and lessens the intensity of price competition, as customers may show loyalty or preference for specific product attributes.
+ 
+-- next chapter
+How do firms in a Differentiated Bertrand market reach equilibrium pricing?
+  Firms set prices based on costs alone, ignoring competitor pricing. 
+  Equilibrium is achieved through government regulation of prices. 
+  The essence of competition in business is to navigate between extremes of monopoly and perfect competition. 
+  Firms reach equilibrium by engaging in non-stop price wars. 
+  Equilibrium is reached when all firms offer their products for free. 
+Correct Answer
+  Equilibrium pricing is determined through the intersection of each firm’s reaction function to competitor pricing. 
+General answer comments
+In a Differentiated Bertrand market, each firm considers its competitor's pricing when determining its own optimal price. This mutual dependency is captured in what are known as reaction functions. The reaction function of each firm shows how it should adjust its prices in response to the pricing of its competitors. The point where these reaction functions intersect represents the optimal pricing for both firms, where neither has an incentive to deviate from their chosen price. This intersection point is where the Bertrand-Nash equilibrium is established, ensuring that both firms can simultaneously choose their best responses in terms of pricing.
+-->
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-christensen-raynor03" class="csl-entry" role="listitem">
+Christensen, Clayton M., and Michael E. Raynor. 2003. <em>The Innovator’s Solution: Creating and Sustaining Successful Growth</em>. Boston, Massachusetts: Harvard Business School Press.
+</div>
+<div id="ref-edlin97" class="csl-entry" role="listitem">
+Edlin, Aaron S. 1997. <span>“Do Guaranteed-Low-Price Policies Guarantee High Prices, and Can Antitrust Rise to the Challenge?”</span> <em>Harvard Law Review</em>, 528–75.
+</div>
+<div id="ref-hviid-shaffer99" class="csl-entry" role="listitem">
+Hviid, Morten, and Greg Shaffer. 1999. <span>“Hassle Costs: The Achilles’ Heel of Price-Matching Guarantees.”</span> <em>Journal of Economics &amp; Management Strategy</em> 8 (4): 489–521.
+</div>
+<div id="ref-manez06" class="csl-entry" role="listitem">
+Mañez, Juan A. 2006. <span>“Unbeatable Value Low-Price Guarantee: Collusive Mechanism or Advertising Strategy?”</span> <em>Journal of Economics &amp; Management Strategy</em> 15 (1): 143–66.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>There are cases where it is rational to set price below cost which are nightmarish pricing scenarios of economic and accounting losses. We will not cover those cases here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><span class="citation" data-cites="christensen-raynor03">Christensen and Raynor (<a href="cost.html#ref-christensen-raynor03" role="doc-biblioref">2003</a>)</span> point out what appears to be a puzzle that when high cost competitors (integrated steel mills) are driven out of an industry by innovative lower-cost competitors, the price collapses. This puzzle is easily explained by the competitive dynamics of undifferentiated Bertrand competition.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For more detail on how low-price guarantees work as well as their limitations, see <span class="citation" data-cites="edlin97">Edlin (<a href="cost.html#ref-edlin97" role="doc-biblioref">1997</a>)</span>, <span class="citation" data-cites="hviid-shaffer99">Hviid and Shaffer (<a href="cost.html#ref-hviid-shaffer99" role="doc-biblioref">1999</a>)</span>, and <span class="citation" data-cites="manez06">Mañez (<a href="cost.html#ref-manez06" role="doc-biblioref">2006</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./competition.html" class="pagination-link" aria-label="Competition">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Competition</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./competition_diff_bertrand.html" class="pagination-link" aria-label="Differentiated Bertrand Competition">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

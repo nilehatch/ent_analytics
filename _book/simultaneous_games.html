@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>16&nbsp; Simultaneous Games – Profit Analytics for Entrepreneurs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sequential_games.html" rel="next">
+<link href="./game_theory.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-eb4725d83ca4e00fd685f6af566d6c15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Profit Analytics for Entrepreneurs</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_competitive_dynamics.html">Competitive Dynamics</a></li><li class="breadcrumb-item"><a href="./simultaneous_games.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Uncertainty</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_entrepreneurship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Navigating Uncertainty in Entrepreneurship</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Uncertainty</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Demand</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">16.1</span> Introduction</a></li>
+  <li><a href="#pricing-game-with-a-single-nash-equilibrium" id="toc-pricing-game-with-a-single-nash-equilibrium" class="nav-link" data-scroll-target="#pricing-game-with-a-single-nash-equilibrium"><span class="header-section-number">16.2</span> Pricing Game with a Single Nash Equilibrium</a>
+  <ul class="collapse">
+  <li><a href="#step-1-identify-the-players" id="toc-step-1-identify-the-players" class="nav-link" data-scroll-target="#step-1-identify-the-players">Step 1: Identify the Players</a></li>
+  <li><a href="#step-2-outline-possible-actions" id="toc-step-2-outline-possible-actions" class="nav-link" data-scroll-target="#step-2-outline-possible-actions">Step 2: Outline Possible Actions</a></li>
+  <li><a href="#step-3-determine-payoffs" id="toc-step-3-determine-payoffs" class="nav-link" data-scroll-target="#step-3-determine-payoffs">Step 3: Determine Payoffs</a></li>
+  <li><a href="#step-4-identify-player-strategies" id="toc-step-4-identify-player-strategies" class="nav-link" data-scroll-target="#step-4-identify-player-strategies">Step 4: Identify Player Strategies</a></li>
+  <li><a href="#step-5-solve-for-equilibrium" id="toc-step-5-solve-for-equilibrium" class="nav-link" data-scroll-target="#step-5-solve-for-equilibrium">Step 5: Solve for Equilibrium</a></li>
+  <li><a href="#practical-application-navigating-competitive-strategy" id="toc-practical-application-navigating-competitive-strategy" class="nav-link" data-scroll-target="#practical-application-navigating-competitive-strategy">Practical Application: Navigating Competitive Strategy</a></li>
+  </ul></li>
+  <li><a href="#sec-partnerships" id="toc-sec-partnerships" class="nav-link" data-scroll-target="#sec-partnerships"><span class="header-section-number">16.3</span> Strategic Partnerships to Address Multiple Equilibria</a>
+  <ul class="collapse">
+  <li><a href="#identifying-the-players-and-actions" id="toc-identifying-the-players-and-actions" class="nav-link" data-scroll-target="#identifying-the-players-and-actions">Identifying the Players and Actions</a></li>
+  <li><a href="#determining-payoffs" id="toc-determining-payoffs" class="nav-link" data-scroll-target="#determining-payoffs">Determining Payoffs</a></li>
+  <li><a href="#constructing-the-game-in-normal-form" id="toc-constructing-the-game-in-normal-form" class="nav-link" data-scroll-target="#constructing-the-game-in-normal-form">Constructing the Game in Normal Form</a></li>
+  <li><a href="#strategy-and-equilibria" id="toc-strategy-and-equilibria" class="nav-link" data-scroll-target="#strategy-and-equilibria">Strategy and Equilibria</a></li>
+  <li><a href="#application-to-strategic-partnerships" id="toc-application-to-strategic-partnerships" class="nav-link" data-scroll-target="#application-to-strategic-partnerships">Application to Strategic Partnerships</a></li>
+  <li><a href="#strengthening-strategic-partnerships-alliances-and-coordination-mechanisms" id="toc-strengthening-strategic-partnerships-alliances-and-coordination-mechanisms" class="nav-link" data-scroll-target="#strengthening-strategic-partnerships-alliances-and-coordination-mechanisms">Strengthening Strategic Partnerships: Alliances and Coordination Mechanisms</a></li>
+  </ul></li>
+  <li><a href="#navigating-uncertainty-with-mixed-strategies-rock-paper-scissors" id="toc-navigating-uncertainty-with-mixed-strategies-rock-paper-scissors" class="nav-link" data-scroll-target="#navigating-uncertainty-with-mixed-strategies-rock-paper-scissors"><span class="header-section-number">16.4</span> Navigating Uncertainty with Mixed Strategies: Rock-Paper-Scissors</a>
+  <ul class="collapse">
+  <li><a href="#constructing-the-game" id="toc-constructing-the-game" class="nav-link" data-scroll-target="#constructing-the-game">Constructing the Game</a></li>
+  <li><a href="#solving-the-game" id="toc-solving-the-game" class="nav-link" data-scroll-target="#solving-the-game">Solving the Game</a></li>
+  <li><a href="#mixed-strategies-equilibrium" id="toc-mixed-strategies-equilibrium" class="nav-link" data-scroll-target="#mixed-strategies-equilibrium">Mixed-strategies Equilibrium</a></li>
+  <li><a href="#real-world-examples-of-mixed-strategies-in-entrepreneurship" id="toc-real-world-examples-of-mixed-strategies-in-entrepreneurship" class="nav-link" data-scroll-target="#real-world-examples-of-mixed-strategies-in-entrepreneurship">Real-World Examples of Mixed Strategies in Entrepreneurship</a></li>
+  <li><a href="#probabilistic-decision-making-in-entrepreneurship" id="toc-probabilistic-decision-making-in-entrepreneurship" class="nav-link" data-scroll-target="#probabilistic-decision-making-in-entrepreneurship">Probabilistic Decision-Making in Entrepreneurship</a></li>
+  <li><a href="#strategic-benefits-of-mixed-strategies" id="toc-strategic-benefits-of-mixed-strategies" class="nav-link" data-scroll-target="#strategic-benefits-of-mixed-strategies">Strategic Benefits of Mixed Strategies</a></li>
+  </ul></li>
+  <li><a href="#build-custom-games" id="toc-build-custom-games" class="nav-link" data-scroll-target="#build-custom-games"><span class="header-section-number">16.5</span> Build Custom Games</a>
+  <ul class="collapse">
+  <li><a href="#ordinal-payoffs-a-logical-approach" id="toc-ordinal-payoffs-a-logical-approach" class="nav-link" data-scroll-target="#ordinal-payoffs-a-logical-approach">Ordinal Payoffs: A Logical Approach</a></li>
+  <li><a href="#cardinal-payoffs-a-competition-analytics-approach" id="toc-cardinal-payoffs-a-competition-analytics-approach" class="nav-link" data-scroll-target="#cardinal-payoffs-a-competition-analytics-approach">Cardinal Payoffs: A Competition Analytics Approach</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">16.6</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_competitive_dynamics.html">Competitive Dynamics</a></li><li class="breadcrumb-item"><a href="./simultaneous_games.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-simultaneous-games-chapter" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">16.1</span> Introduction</h2>
+<p>We begin our study of creating and solving games by considering simultaneous games:</p>
+<ul>
+<li><p>Players are tasked with predicting their competitors’ strategies without the benefit of observing their actions first. Simultaneity here means that all players make their decisions concurrently.</p></li>
+<li><p>They choose strategies that encompass the comprehensive set of responses to every potential move a competitor might make. Thus, the focus shifts from reacting to actual actions to preparing for all conceivable ones.</p></li>
+<li><p>They arrive at an equilibrium (expected outcome) where no players want to deviate because every player’s decision has been accurately forecasted and counteracted with the best response.</p></li>
+</ul>
+<p>We will construct and analyze simultaneous games using the <strong>normal form</strong> representation, which organizes a game into a matrix format. This approach serves as an excellent foundation for understanding the core principles involved in creating and solving games. It’s essential for effectively applying game theory to real-world business challenges, offering a structured method to visualize and assess the strategic options and outcomes available to all players involved.</p>
+</section>
+<section id="pricing-game-with-a-single-nash-equilibrium" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="pricing-game-with-a-single-nash-equilibrium"><span class="header-section-number">16.2</span> Pricing Game with a Single Nash Equilibrium</h2>
+<p>Let’s begin with a variation on the Prisoner’s Dilemma, tailored to an entrepreneurial context. Two startups, selling basically the same product through an online retail platform, are considering whether to cut prices to gain market share. The startups face the challenge of making their decisions in tandem, without the luxury of knowing the other’s choice ahead of time. The consequences of their decisions are heavily dependent on the combination of actions they each take, showcasing the strategic complexity and uncertainty inherent in competitive markets.</p>
+<p>We build and solve the game working systematically through the five stages:</p>
+<section id="step-1-identify-the-players" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-1-identify-the-players">Step 1: Identify the Players</h3>
+<p><strong>Players:</strong> The two competing startups contemplating price reductions are the players in this particular game:</p>
+<ul>
+<li>Startup A (You), and</li>
+<li>Startup B (Your Competitor).</li>
+</ul>
+</section>
+<section id="step-2-outline-possible-actions" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-2-outline-possible-actions">Step 2: Outline Possible Actions</h3>
+<p><strong>Actions:</strong> Each startup has two options:</p>
+<ul>
+<li>to cut prices (<code>Cut</code>) or</li>
+<li>to maintain current prices (<code>Hold</code>).</li>
+</ul>
+</section>
+<section id="step-3-determine-payoffs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-3-determine-payoffs">Step 3: Determine Payoffs</h3>
+<p><strong>Payoffs</strong> represent the outcomes of different combinations of actions, defined here as <em>ordinal</em> values. These values rank the preferences of the players without specifying exact monetary benefits, where a payoff of 2 is more desirable than a payoff of 1, but is not necessarily twice as good.</p>
+<ul>
+<li>When both choose to <code>hold</code>: Margins remain stable, leading to moderate gains for each, scored as a 1.</li>
+<li>When one <code>cuts</code> while the other <code>holds</code>: The startup that cuts price captures additional market share, earning a payoff of 2, while the other, maintaining its prices, faces a disadvantage, incurring a payoff of -2.</li>
+<li>When both decide to <code>cut</code>: a price war ensues, diminishing profits for both parties, reflected by payoffs of -1 each.</li>
+</ul>
+<p>Armed with an understanding of the players, their possible actions, and the associated payoffs, we’re equipped to layout the game in a normal form matrix:</p>
+<div id="fig-pd-1" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pd-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/PD-entrep-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;16.1: Players, actions, and payoffs of the startup pricing (prisoner’s dilemma) game."><img src="images/PD-entrep-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pd-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.1: Players, actions, and payoffs of the startup pricing (prisoner’s dilemma) game.
+</figcaption>
+</figure>
+</div>
+<p>In this representation:</p>
+<ul>
+<li>The “row player” (Startup A), shown in blue, faces the decision to <code>hold</code> or <code>cut</code> prices.</li>
+<li>Similarly, the “column player” (Startup B), illustrated in green, navigates the same choices.</li>
+<li>The matrix delineates the ordinal payoffs for Startup A (row player) in the bottom left of each cell and for Startup B (column player) in the upper right, corresponding to every possible action pairing.</li>
+</ul>
+<p>This visual and structured approach to defining the game scenario illuminates the strategic interplay at hand, setting the stage for further analysis to discern optimal strategies and anticipate potential equilibrium outcomes.</p>
+</section>
+<section id="step-4-identify-player-strategies" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-4-identify-player-strategies">Step 4: Identify Player Strategies</h3>
+<p>In game theory, a player’s <em>strategy</em> encompasses the suite of actions they would select as their <em>best response</em> to every potential move their competitor might make. An action qualifies as a best response when it secures the highest payoff among the available options.</p>
+<p>For Startup A, strategic decisions hinge on Startup B’s pricing actions:</p>
+<ul>
+<li><p>If Startup B opts to <code>hold</code> its prices, Startup A can maximize its benefit by <code>cutting</code> its own prices. This aggressive pricing strategy yields a higher payoff of 2, as opposed to the moderate gain of 1 that comes with maintaining price levels.</p></li>
+<li><p>If Startup B <code>cuts</code> its prices, Startup A finds its most favorable outcome (-1) in reciprocating the price <code>cut</code>, aligning with Startup B’s aggressive strategy.</p></li>
+</ul>
+<p>Startup A’s strategic pattern can be visually represented using directional arrows pointing towards actions yielding the highest payoffs, based on Startup B’s decisions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> As illustrated in <a href="#fig-pd-2" class="quarto-xref">Figure&nbsp;<span>16.2</span></a>, both arrows for Startup A direct towards a price <code>cut</code>, indicating a strategy for Startup A to always opt for a price reduction, irrespective of Startup B’s choice.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div id="fig-pd-2" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pd-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/PD-entrep-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;16.2: Startup A’s strategy in the (prisoner’s dilemma) pricing game – cut if Startup B chooses hold and cut if Startup B chooses cut."><img src="images/PD-entrep-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pd-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.2: Startup A’s strategy in the (prisoner’s dilemma) pricing game – <code>cut</code> if Startup B chooses <code>hold</code> and <code>cut</code> if Startup B chooses <code>cut</code>.
+</figcaption>
+</figure>
+</div>
+<p>Startup B’s strategy mirrors this approach:</p>
+<ul>
+<li>Facing a price <code>hold</code> from Startup A, Startup B’s advantageous move is to <code>cut</code> prices.</li>
+<li>Similarly, when Startup A <code>cuts</code> prices, Startup B’s best strategy remains to <code>cut</code>, maintaining competitive parity.</li>
+</ul>
+<p>This analysis reveals a pivotal insight: both startups are inclined towards a dominant strategy of price reduction under all circumstances, setting the stage for a potential price war. This is a normal form representation of undifferentiated Bertrand competition that eventually descends into price wars and zero profits. Such a scenario underscores the strategic intricacies inherent in competitive markets, where anticipating and countering the moves of rivals can define the contours of business success.</p>
+</section>
+<section id="step-5-solve-for-equilibrium" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="step-5-solve-for-equilibrium">Step 5: Solve for Equilibrium</h3>
+<p>The <strong>Nash equilibrium</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> is the strategic point where all players in a game settle on choices that leave them with no incentive to pursue a different course of action, provided that every other player remains constant in their strategy. This state of mutual best responses occurs when each player’s strategy is the best they can opt for, considering the strategies chosen by their competitors.</p>
+<p>The game’s matrix, illustrated in <a href="#fig-pd-3" class="quarto-xref">Figure&nbsp;<span>16.3</span></a>, highlights strategies through arrows pointing towards actions that garner the highest payoffs. The Nash Equilibrium is achieved when both startups opt to reduce prices, a strategy represented by arrows converging on the cut/cut decision. This scenario not only instigates a price war, diminishing profits for both entities but also exemplifies a dominant strategies equilibrium, where each firm’s unilateral decision to cut prices reflects the optimal response to the anticipated action of the other.</p>
+<div id="fig-pd-3" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pd-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/PD-entrep-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;16.3: The Nash Equilibrium in this entrepreneurial pricing game arises at cut/cut, signifying simultaneous best responses leading to potentially suboptimal collective outcomes."><img src="images/PD-entrep-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pd-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.3: The Nash Equilibrium in this entrepreneurial pricing game arises at <code>cut</code>/<code>cut</code>, signifying simultaneous best responses leading to potentially suboptimal collective outcomes.
+</figcaption>
+</figure>
+</div>
+<p>This real-world rendition of the Prisoner’s Dilemma epitomizes a broader class of strategic games where players, driven by dominant strategies, inadvertently converge on outcomes that might not serve their collective best interests. Through this lens, the dilemma doesn’t just offer a theoretical exercise but rather a practical reflection on the dynamics of competitive strategy, underscoring the critical importance of strategic foresight and the potential consequences of uncoordinated competitive aggression.</p>
+</section>
+<section id="practical-application-navigating-competitive-strategy" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="practical-application-navigating-competitive-strategy">Practical Application: Navigating Competitive Strategy</h3>
+<p>The Prisoner’s Dilemma isn’t just a theoretical concept; it’s a vivid illustration of the strategic decisions entrepreneurs face daily. It highlights the importance of considering both the immediate impact of your actions and how competitors might respond.</p>
+<p>Aggressive strategies, like price cuts, may offer quick wins but understanding the broader dynamics of competition can guide you towards strategies that ensure long-term market stability and profitability.</p>
+<p>Mastering game theory’s principles, as demonstrated through the Prisoner’s Dilemma and its Nash equilibrium, empowers entrepreneurs to:</p>
+<ul>
+<li><strong>Forecast Competitor Behavior:</strong> Identifying dominant strategies helps predict competitor moves, giving you a strategic edge.</li>
+<li><strong>Look Beyond the Short Term:</strong> It encourages strategies that safeguard against potential market disruptions, favoring sustainable success.</li>
+<li><strong>Find Collaboration Opportunities:</strong> Understanding mutual dependencies can reveal partnerships that amplify your competitive advantage.</li>
+<li><strong>Clarify Decision-Making:</strong> Game theory models offer a clear visual framework to assess strategies and their outcomes, making complex decisions more manageable.</li>
+</ul>
+<p>While pricing competition is a crucial element of game theory, entrepreneurs must consider a broader range of strategic interactions. Real-world business dynamics often involve multiple levers beyond simple price cuts. Here are some additional competitive responses that shape market positioning:</p>
+<section id="competitive-responses-beyond-pricing" class="level4">
+<h4 class="anchored" data-anchor-id="competitive-responses-beyond-pricing"><strong>Competitive Responses Beyond Pricing</strong></h4>
+<p>Entrepreneurs often compete on dimensions other than price. Some key alternative competitive responses include:</p>
+<ul>
+<li><strong>Marketing Campaigns:</strong> Startups may strategically allocate marketing budgets to influence consumer perception and demand. For example, a well-timed social media blitz or influencer partnership can capture attention and shift market share without resorting to price cuts.</li>
+<li><strong>New Product Launches:</strong> Firms may introduce differentiated products or expanded service offerings as a way to compete. Unlike price reductions, which erode margins, product innovation can create sustained competitive advantages.</li>
+<li><strong>Branding and Customer Loyalty:</strong> Strong branding can reduce price sensitivity among customers. Apple, for instance, maintains premium pricing due to its brand equity and loyal customer base.</li>
+<li><strong>Customer Experience and Service:</strong> Exceptional service, seamless user experiences, and personalized engagement can create differentiation that justifies premium pricing.</li>
+<li><strong>Product Differentiation:</strong> Unique features, superior design, or proprietary technology can shift competition away from pure price wars and toward value-based competition.</li>
+<li><strong>Exclusive Partnerships:</strong> Aligning with key distribution channels, supply chain partners, or complementary brands can provide an advantage that competitors may struggle to replicate.</li>
+</ul>
+<p>These responses illustrate how strategic competition is more than just a pricing game—it involves actively shaping market dynamics through innovation, visibility, and differentiation. For startups, these strategies are especially valuable because they allow for growth without engaging in destructive price-based competition that erodes profitability.</p>
+</section>
+<section id="regulatory-and-ethical-considerations" class="level4">
+<h4 class="anchored" data-anchor-id="regulatory-and-ethical-considerations"><strong>Regulatory and Ethical Considerations</strong></h4>
+<p>Entrepreneurs must also navigate the external constraints imposed by regulations and ethical norms. Game theory assumes rational decision-making, but legal and reputational factors often add complexity:</p>
+<ul>
+<li><strong>Regulatory Constraints:</strong> Price-fixing laws, antitrust regulations, and advertising restrictions can shape the feasible strategies available to startups. Understanding these legal considerations is crucial in competitive decision-making.</li>
+<li><strong>Ethical Considerations:</strong> Beyond legality, ethical business practices influence long-term success. Aggressive undercutting may generate short-term gains but damage brand reputation or invite retaliatory actions from competitors.</li>
+<li><strong>Industry Standards and Reputation:</strong> In some industries, informal agreements and industry standards may act as stabilizing forces, discouraging price wars and promoting cooperation.</li>
+</ul>
+<p>These factors highlight that competitive strategy is not purely a mathematical exercise—it requires a nuanced understanding of external forces, incentives, and long-term consequences. By considering a diverse set of strategic responses beyond price cuts, entrepreneurs can position their businesses for sustainable success in competitive markets.</p>
+</section>
+</section>
+</section>
+<section id="sec-partnerships" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="sec-partnerships"><span class="header-section-number">16.3</span> Strategic Partnerships to Address Multiple Equilibria</h2>
+<p>The dynamics of strategic partnerships often mirror those found in coordination games, characterized by the presence of multiple equilibria. These scenarios challenge firms to make decisions that not only serve their own interests but are also critical for the collective success of the alliance.</p>
+<p>Imagine two startups, each with its own specialized technology, considering a strategic alliance. The effectiveness of their partnership is contingent on selecting operational standards or development trajectories that are mutually compatible. This decision-making process is akin to navigating a coordination game, where the most favorable outcomes are achieved through synchronized choices.</p>
+<section id="identifying-the-players-and-actions" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="identifying-the-players-and-actions">Identifying the Players and Actions</h3>
+<p>The players in this scenario are:</p>
+<ul>
+<li>Startup A, with a specialization in software development,</li>
+<li>Startup B, specializing in hardware production.</li>
+</ul>
+<p>Their actions involve choosing between two operational standards or development paths: <code>Standard X</code> or <code>Standard Y</code>.</p>
+</section>
+<section id="determining-payoffs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="determining-payoffs">Determining Payoffs</h3>
+<p>The payoffs reflect the compatibility of operational standards and the synergy effect on the partnership:</p>
+<ul>
+<li>Both choose <code>Standard X</code>: High compatibility and synergy, leading to significant mutual benefits.</li>
+<li>Both choose <code>Standard Y</code>: Similar to <code>X</code>, but with nuances that slightly favor Startup B’s hardware orientation.</li>
+<li>Disparate choices lead to compatibility issues, diminishing the potential benefits of the partnership.</li>
+</ul>
+</section>
+<section id="constructing-the-game-in-normal-form" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="constructing-the-game-in-normal-form">Constructing the Game in Normal Form</h3>
+<p>The game matrix, visualized in <a href="#fig-coordination-a" class="quarto-xref">Figure&nbsp;<span>16.4</span></a>, elucidates the outcomes based on the combinations of choices by the startups.</p>
+<div id="fig-coordination-a" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coordination-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/Coordination-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;16.4: Construction of the partnership coordination game."><img src="images/Coordination-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordination-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.4: Construction of the partnership coordination game.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="strategy-and-equilibria" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="strategy-and-equilibria">Strategy and Equilibria</h3>
+<p>In this partnership game, both startups aim to align on a standard, understanding that compatibility maximizes the partnership’s value. The game is solved in <a href="#fig-coordination-b" class="quarto-xref">Figure&nbsp;<span>16.5</span></a> where the presence of multiple Nash equilibria reflects the possible outcomes where each startup’s choice complements the other’s, ensuring mutual benefit.</p>
+<div id="fig-coordination-b" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coordination-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/Coordination-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;16.5: Strategies and equilibrium outcome."><img src="images/Coordination-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordination-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.5: Strategies and equilibrium outcome.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="application-to-strategic-partnerships" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="application-to-strategic-partnerships">Application to Strategic Partnerships</h3>
+<p>The presence of multiple equilibria in such a strategic decision-making context underscores the need for mechanisms that can guide the startups toward a single, mutually beneficial equilibrium. This could involve pre-negotiation agreements, shared vision sessions, or adopting a sequential decision-making approach where one startup’s choice informs the other’s decision, akin to moves in a sequential game.</p>
+<p>Such strategies not only help align the startups’ decisions but also build a foundation for trust and cooperation, essential elements for the success of any strategic partnership. By effectively navigating these coordination challenges, startups can leverage their alliance as a competitive advantage, driving innovation and capturing greater market share.</p>
+<p>Strategic partnerships, through the lens of game theory, reveal the complexities and opportunities inherent in collaboration. By understanding and applying the principles of coordination games, firms can more effectively navigate the intricacies of partnership dynamics, steering towards decisions that enhance both their individual prospects and collective success.</p>
+</section>
+<section id="strengthening-strategic-partnerships-alliances-and-coordination-mechanisms" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="strengthening-strategic-partnerships-alliances-and-coordination-mechanisms">Strengthening Strategic Partnerships: Alliances and Coordination Mechanisms</h3>
+<p>Strategic partnerships are crucial in entrepreneurial settings, where startups often rely on collaborations to navigate resource constraints, enter new markets, or accelerate innovation. Unlike direct price-based competition, partnerships introduce <strong>coordination challenges</strong>, where multiple equilibria exist, and firms must align on mutually beneficial decisions.</p>
+<section id="real-world-startup-alliances" class="level4">
+<h4 class="anchored" data-anchor-id="real-world-startup-alliances"><strong>Real-World Startup Alliances</strong></h4>
+<p>In many industries, startups and incumbents must coordinate on technology choices, supply chain integrations, and market positioning. Some examples include:</p>
+<ul>
+<li><strong>Tech Stack and Platform Compatibility:</strong> Startups developing software or digital products often must align on technology choices to ensure interoperability. Choosing a cloud provider (e.g., AWS vs.&nbsp;Azure) or adopting an industry-standard API format can create coordination challenges, where an early misalignment can lead to costly integration issues.</li>
+<li><strong>Supply Chain and Logistics Partnerships:</strong> E-commerce startups may face coordination dilemmas in logistics. Partnering with a fulfillment provider like Amazon FBA or developing a direct-to-consumer (DTC) logistics network each presents strategic trade-offs that impact long-term efficiency.</li>
+<li><strong>Industry Ecosystems and Standardization:</strong> Some industries rely on agreed-upon protocols to ensure compatibility. For example, electric vehicle (EV) startups must decide whether to adopt Tesla’s charging standard or align with broader industry standards like CCS (Combined Charging System).</li>
+</ul>
+<p>In each case, multiple equilibria exist, and firms must navigate these coordination dilemmas to ensure mutual success.</p>
+</section>
+<section id="pre-negotiation-and-commitment-mechanisms" class="level4">
+<h4 class="anchored" data-anchor-id="pre-negotiation-and-commitment-mechanisms"><strong>Pre-Negotiation and Commitment Mechanisms</strong></h4>
+<p>Coordination games often suffer from <strong>equilibrium selection problems</strong>—there may be multiple stable outcomes, but the challenge is ensuring all players choose the same one. Entrepreneurs can use <strong>commitment mechanisms</strong> and <strong>pre-negotiation strategies</strong> to resolve these dilemmas.</p>
+<ul>
+<li><strong>Pre-Negotiation Agreements:</strong> Before finalizing strategic choices, startups can engage in pre-negotiation discussions to align expectations. For example, a startup entering a new market may negotiate distribution partnerships ahead of time to signal commitment to a particular channel.</li>
+<li><strong>Public Commitments and Announcements:</strong> Declaring a choice publicly can serve as a strategic commitment. For instance, when Apple announces support for a particular wireless standard or payment technology, it influences suppliers and app developers to follow suit.</li>
+<li><strong>Long-Term Contracts and Exclusivity Deals:</strong> Startups can lock in key partnerships through contractual commitments. An early-stage fintech company might secure an exclusive banking partnership to create a stable foundation before competitors can respond.</li>
+<li><strong>Regulatory or Industry-Guided Standardization:</strong> Sometimes, external entities help resolve coordination issues. Government policies or industry consortia (e.g., the USB-IF for USB standards) can enforce a particular equilibrium, reducing strategic uncertainty.</li>
+</ul>
+<p>By leveraging <strong>commitment mechanisms</strong>, startups can guide competitors, suppliers, and partners toward an outcome that maximizes collective benefits rather than leaving the equilibrium selection to chance.</p>
+</section>
+<section id="application-to-entrepreneurial-strategy" class="level4">
+<h4 class="anchored" data-anchor-id="application-to-entrepreneurial-strategy"><strong>Application to Entrepreneurial Strategy</strong></h4>
+<p>Understanding coordination games enables entrepreneurs to: - Recognize <strong>when collaboration is more beneficial than competition</strong>. - Influence equilibrium selection through <strong>pre-commitment and strategic signaling</strong>. - Avoid misalignment pitfalls that <strong>increase costs or reduce market opportunities</strong>.</p>
+<p>As markets evolve, game theory provides entrepreneurs with powerful tools to structure alliances, negotiate agreements, and shape industry standards. Mastering these concepts allows startups to gain competitive advantages not just through direct competition, but by <strong>strategically orchestrating partnerships</strong> that define the future of their industries. “)</p>
+</section>
+</section>
+</section>
+<section id="navigating-uncertainty-with-mixed-strategies-rock-paper-scissors" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="navigating-uncertainty-with-mixed-strategies-rock-paper-scissors"><span class="header-section-number">16.4</span> Navigating Uncertainty with Mixed Strategies: Rock-Paper-Scissors</h2>
+<p>Rock-paper-scissors, beyond being a childhood game, exemplifies strategic decisions in scenarios lacking a clear Nash Equilibrium. This game illustrates that sometimes, business strategies don’t lead to straightforward outcomes and that embracing flexibility and unpredictability can be advantageous.</p>
+<section id="constructing-the-game" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="constructing-the-game">Constructing the Game</h3>
+<p>In constructing payoffs for rock-paper-scissors, we use ordinal payoffs to signify preferences rather than exact values. For instance, tying might have a payoff of 0, a win 1, and a loss -1, setting a baseline for evaluating outcomes. The formal game is represented in <a href="#fig-rps-a" class="quarto-xref">Figure&nbsp;<span>16.6</span></a>.</p>
+<div id="fig-rps-a" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rps-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/RPS-01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;16.6: Construction of the rock-paper-scissors game."><img src="images/RPS-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rps-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.6: Construction of the rock-paper-scissors game.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="solving-the-game" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="solving-the-game">Solving the Game</h3>
+<p>The solution to the rock-paper-scissors game is given in <a href="#fig-rps-b" class="quarto-xref">Figure&nbsp;<span>16.7</span></a> with curious results. The strategies of both players are not hard to find but there is no Nash equilibrium. Analysis reveals no single strategy guarantees a win, because there is every cell has an arrow leaving meaning that there is no outcome that is simultaneously a best response for both players. When you build and solve bespoke games for your context, you may not find a <em>pure strategies equilibrium</em>.</p>
+<div id="fig-rps-b" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rps-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/RPS-02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;16.7: Strategies with no Nash equilibrium outcome that can be shown in normal form."><img src="images/RPS-02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rps-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.7: Strategies with no Nash equilibrium outcome that can be shown in normal form.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="mixed-strategies-equilibrium" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="mixed-strategies-equilibrium">Mixed-strategies Equilibrium</h3>
+<p>When the game has no Nash equilibrium, you may turn to the concept of mixed-strategies, randomizing decisions for direction in decision-making. The problem for players of rock-paper-scissors is that any action can be countered with an action that will always win. It doesn’t take long for players (often children) to learn that they must randomize their choice or they will always lose. If they place <span class="math inline">\(\mathsf{\frac{1}{3}}\)</span> probability on each choice to avoid predictability, they will lose one-third of the games, win one-third, and tie one-third.</p>
+<p>This approach is a <em>mixed-strategy</em> and leads to a <em>mixed-strategies equilibrium</em>. It does not tell you what action to take but it does help you choose randomization. The equilibrium does not allow us to predict the outcome that will happen but it does predict the the probability of any outcome. This is an equilibrium because no player has an incentive to deviate.</p>
+<p>This approach underscores the importance of adaptability and the potential to incorporate randomness into strategic planning, especially in highly competitive or uncertain markets. While Rock-Paper-Scissors is a simple illustrative example, mixed strategies play a significant role in high-stakes entrepreneurial and strategic decisions.</p>
+</section>
+<section id="real-world-examples-of-mixed-strategies-in-entrepreneurship" class="level3">
+<h3 class="anchored" data-anchor-id="real-world-examples-of-mixed-strategies-in-entrepreneurship">Real-World Examples of Mixed Strategies in Entrepreneurship</h3>
+<p>Entrepreneurs and startups frequently encounter situations where randomization is an optimal strategy:</p>
+<ul>
+<li><p><strong>Online Advertising Bidding Wars:</strong> Many digital advertising platforms (e.g., Google Ads, Facebook Ads) operate on auction-based pricing models. If a company repeatedly bids on the same keywords with a fixed strategy, competitors can exploit this predictability to drive up costs. A mixed strategy—randomly varying bid amounts and timing—prevents being undercut or outmaneuvered by rivals.</p></li>
+<li><p><strong>Startup Funding and Investor Competition:</strong> In venture capital (VC) funding rounds, investors must decide which startups to back, and startups must strategically signal their valuation. If a VC always follows the same decision criteria, founders can game the system. A mixed-strategy approach (diversifying investments across different verticals or adjusting deal structures probabilistically) can mitigate bias and enhance portfolio resilience.</p></li>
+<li><p><strong>Competitive Pricing in Dynamic Markets:</strong> Ride-sharing companies like Uber and Lyft often adjust pricing dynamically based on supply and demand. If pricing were static, competitors could respond predictably, leading to price wars. Instead, using mixed strategies—varying price surges and discounts unpredictably—helps maintain profitability while avoiding exploitative competitor behavior.</p></li>
+<li><p><strong>Cybersecurity and Fraud Prevention:</strong> Online platforms must prevent fraudulent activities and cyberattacks, yet attackers adapt quickly to static defenses. By randomizing fraud detection measures or security updates, companies create an unpredictable barrier that makes it harder for adversaries to anticipate vulnerabilities.</p></li>
+</ul>
+</section>
+<section id="probabilistic-decision-making-in-entrepreneurship" class="level3">
+<h3 class="anchored" data-anchor-id="probabilistic-decision-making-in-entrepreneurship">Probabilistic Decision-Making in Entrepreneurship</h3>
+<p>Entrepreneurs often operate under <em>high uncertainty</em>, where traditional deterministic decision-making is insufficient. Mixed strategies provide a systematic way to <em>embrace uncertainty and optimize decisions probabilistically</em>.</p>
+<ul>
+<li><p><strong>Avoiding Exploitable Predictability:</strong> If competitors, customers, or investors can perfectly anticipate a startup’s next move, they may exploit this knowledge. Introducing randomness into pricing, promotions, or feature rollouts can prevent strategic manipulation.</p></li>
+<li><p><strong>Balancing Risk and Innovation:</strong> Startups frequently face choices between pursuing a <em>risky innovation</em> or a <em>safer, incremental improvement</em>. By allocating resources probabilistically—testing multiple ideas in parallel or investing in a mix of short-term and long-term projects—entrepreneurs hedge against failure while maintaining innovation momentum.</p></li>
+<li><p><strong>Market Entry and Expansion Timing:</strong> Startups entering new markets must decide when to launch. If competitors can predict the exact timing, they may preemptively launch competing products or block access to key suppliers. A <em>mixed-strategy launch schedule</em>, with staggered or randomized market entry timing, can help mitigate competitive responses.</p></li>
+</ul>
+</section>
+<section id="strategic-benefits-of-mixed-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="strategic-benefits-of-mixed-strategies">Strategic Benefits of Mixed Strategies</h3>
+<p>Entrepreneurs leveraging mixed strategies can:</p>
+<ul>
+<li>Disrupt competitor expectations by making decisions less predictable.</li>
+<li>Optimize decision-making under uncertainty, particularly in zero-sum or adversarial markets.</li>
+<li>Enhance long-term resilience by diversifying strategic actions rather than relying on a single deterministic path.</li>
+</ul>
+<p>Mastering mixed strategies allows entrepreneurs to thrive in uncertain and competitive environments, leveraging probabilistic thinking to gain strategic advantages in dynamic markets.</p>
+</section>
+</section>
+<section id="build-custom-games" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="build-custom-games"><span class="header-section-number">16.5</span> Build Custom Games</h2>
+<p>Diving into the practical application of game theory, we aim to equip you with the ability to craft and solve games tailored to the unique strategic challenges of your business environment. This approach ensures that insights are directly applicable, guiding you toward informed strategic decisions in real scenarios.”</p>
+<p>A pivotal step in applying game theory is defining payoffs—the outcomes of strategic decisions. We’ll explore both ordinal and cardinal payoffs: ordinal payoffs simplify strategic preferences without specific values, offering a clear view of options, while cardinal payoffs provide a detailed, quantitative analysis of decisions’ impacts. By mastering these methods, you’ll be equipped to use game theory effectively, leveraging strategic insights for competitive advantage.</p>
+<section id="ordinal-payoffs-a-logical-approach" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ordinal-payoffs-a-logical-approach">Ordinal Payoffs: A Logical Approach</h3>
+<p>Identifying payoffs is a crucial yet challenging step in game theory, particularly when the strategic scenario defines players and actions clearly, but payoffs remain ambiguous. For <em>ordinal payoffs</em>, the key is to ensure they represent a clear ranking of outcomes without necessitating specific values or units. Start by selecting a baseline scenario and assigning payoffs that mirror the expected order of preferences. For instance, in a rock-paper-scissors game, a tie scenario like Rock/Rock might be assigned a payoff of 0/0. This sets a foundation to then value a win at one point and a loss at negative one, simplifying the construction of the game matrix based on these relative rankings.</p>
+<p>Ordinal payoffs expedite game building by sidestepping detailed financial calculations, provided they accurately reflect the preference order. By methodically considering the relative merits of different strategic outcomes, you not only craft a clearer game structure but also enhance your strategic insights, enabling informed decision-making and predictable outcomes.</p>
+</section>
+<section id="cardinal-payoffs-a-competition-analytics-approach" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="cardinal-payoffs-a-competition-analytics-approach">Cardinal Payoffs: A Competition Analytics Approach</h3>
+<!-- Ordinal payoffs house an implicit assumption that we know what will result from the chosen actions so we can set the order of our preferences.  It is often the case that we cannot determine the outcome or our preferences for it just from a thought experiment.  When the outcomes are ambiguous, we need a deeper understanding that we get from the profit analytics that run throughout this book.
+
+When working with *cardinal payoffs*, it is best if they are computed profits that we calculate through analtyics.  They may be the profits from differentiated Bertrand competition in a one-shot game.  If the competition is repeated over time, the payoffs are constructed as the net present value (NPV) of the profits from Bertrand competition over time.  In other words, cardinal payoffs should include the total impact on the game throughout the time that the players are interdependent. -->
+<p>While ordinal payoffs rank outcomes based on preferences, <em>cardinal payoffs</em> require quantifiable insights often not evident through mere speculation. These payoffs, crucial for understanding the tangible outcomes of strategic choices, are derived from profit analytics. Whether it’s profits from a one-time differentiated Bertrand competition or the net present value (NPV) of ongoing competitive profits, cardinal payoffs quantify the financial impact of decisions over the duration of interdependence between players. This depth of analysis, rooted in profit calculations, provides a comprehensive view of potential strategic outcomes.</p>
+<section id="a-demonstration-case-of-airbus-and-boeing-choosing-to-develop-a-new-aircraft" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="a-demonstration-case-of-airbus-and-boeing-choosing-to-develop-a-new-aircraft">A Demonstration Case of Airbus and Boeing Choosing to Develop a New Aircraft</h4>
+<p>Consider Airbus and Boeing, evaluating whether to develop a new, technologically advanced aircraft. This strategic decision is influenced by potential market responses, competitive actions, and financial implications. Here’s how we break down their game using cardinal payoffs derived from profit analytics.</p>
+<p><strong>Players</strong>: Airbus and Boeing</p>
+<p><strong>Actions</strong>: Each can either <code>Innovate</code> or <code>Not Innovate</code>.</p>
+<p><strong>Payoffs</strong>: Derived from a discounted cash flow (DCF) analysis, reflecting the net present value (NPV) of the calculated Bertrand oligopoly profits over 20 years. These are hypothetical yet realistic figures based on competitive analytics and demand forecasts:</p>
+<ul>
+<li>Both <code>not innovate</code>: Airbus NPV = $30B; Boeing NPV = $40B.</li>
+<li>Airbus <code>innovate</code>, Boeing <code>not innovate</code>: Airbus NPV = $40B; Boeing NPV = $20B.</li>
+<li>Boeing <code>innovate</code>, Airbus <code>not innovate</code>: Airbus NPV = $20B; Boeing NPV = $30B.</li>
+<li>Both <code>innovate</code>: Airbus NPV = -$10B; Boeing NPV = -$20B.</li>
+</ul>
+<p>The determination of these payoffs involves extensive data collection and demand analysis. For instance, we estimate demand curves for each scenario, accounting for variable and fixed costs—including R&amp;D investments. This process, while data-intensive, is crucial for major strategic decisions that could define the company’s future.</p>
+<p><strong>Strategies and Equilibrium:</strong></p>
+<p>The game matrix, illustrated in <a href="#fig-airbus-boeing-2" class="quarto-xref">Figure&nbsp;<span>16.8</span></a>, reveals that Boeing has a dominant strategy not to innovate, allowing Airbus to launch the new aircraft and secure an enhanced competitive position in the advanced technology market.</p>
+<div id="fig-airbus-boeing-2" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-airbus-boeing-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/Airbus-Boeing-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;16.8: Construction and solution of a game in normal form where Airbus and Boeing decide whether to launch a new aircraft: Boeing has a dominant strategy not to launch so Airbus launches and profits from a newly achieved competitive advantage."><img src="images/Airbus-Boeing-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-airbus-boeing-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.8: Construction and solution of a game in normal form where Airbus and Boeing decide whether to launch a new aircraft: Boeing has a dominant strategy not to launch so Airbus launches and profits from a newly achieved competitive advantage.
+</figcaption>
+</figure>
+</div>
+<p>This example underscores the significance of grounding strategic decisions in solid analytics. While ordinal payoffs offer quick strategic insights, cardinal payoffs provide the depth necessary for high-stakes decision-making, ensuring strategies are not just intuitive but analytically sound.</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">16.6</span> Conclusion</h2>
+<p><strong>Strategic Decision-Making in Competitive Markets</strong></p>
+<p>Simultaneous games provide a foundational tool for understanding competition. Entrepreneurs must anticipate and counter rival moves, often without knowing their strategies in advance. Through normal form representation, we can model strategic interactions and identify Nash equilibria that reveal stable competitive outcomes.</p>
+<p>However, real-world business decisions extend beyond simple price wars:</p>
+<ul>
+<li>Some markets involve coordination dilemmas, where firms must align on standards or collaborate.</li>
+<li>Others require randomized strategies to avoid predictability in adversarial settings.</li>
+<li>Entrepreneurs can shape outcomes by leveraging commitments, pre-negotiations, or differentiating their offerings.</li>
+</ul>
+<p>Mastering game theory enables entrepreneurs to outthink competitors, recognize exploitable patterns, and anticipate market dynamics. As we transition into sequential games, we will see how timing, commitment, and foresight can further refine strategic decision-making.</p>
+<!--
+## Workout Problems
+
+1.  Several years ago, college football programs began evaluating upgrades to their workout and training facilities as a means to recruit better athletes. Better facilities were shown to improve the likelihood that a recruit would sign. When some top recruits signed with less prestigious schools with better facilities, rival programs were enticed to invest in upgrades to improve their recruiting. With better athletes, performance improves on the field which improves ticket sales and donations.
+
+    Assume that BYU and the University of Utah (the U) are the only schools recruiting a particular group of athletes---this is wrong but it dramatically simplifies the game. If neither school invests in facilities, the annual return to the sports department is \$20M for BYU and \$15M for the U. If BYU invests but the U does not, BYU earns \$25M and the U earns \$7M. If the U invests but BYU does not, BYU earns \$15M and the U earns \$25M. If both invest, they get the same recruits they had in the past but must pay for the facilities to do it such that BYU earns \$17M and the U earns \$12M. Construct and solve the normal form game.
+
+    a.  Which schools have a dominant strategy?
+    b.  What is BYU's strategy?
+    c.  What is the equilibrium outcome?
+-->
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-nash50" class="csl-entry" role="listitem">
+Nash, John Forbes. 1950. <span>“The Bargaining Problem.”</span> <em>Econometrica</em> 18: 155–62.
+</div>
+<div id="ref-nash51" class="csl-entry" role="listitem">
+———. 1951. <span>“Non-Cooperative Games.”</span> <em>Annals of Mathematics</em> 54: 286–95.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>There are many ways to represent normal form games and their payoffs and strategies. None seems to be be completely superior. Thomas Schelling, 2005 Nobel prize winner in economics, introduced this method of placing payoffs in the corners of each cell and using arrows to describe best responses. The best-response arrows are cousins to the reaction functions we saw in Bertrand oligopolies.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>When the best response of one player is always the same action, like Startup A choosing to <code>cut</code> price in both cases, that player has a <strong>dominant strategy</strong>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>John Nash won a Nobel prize in economic sciences for his research on the problem of bargaining over the value created through cooperation <span class="citation" data-cites="nash50">(<a href="cost.html#ref-nash50" role="doc-biblioref">Nash 1950</a>)</span>. If a group collaborates to create new value, how should they split the value? Nash overcame the mathematical “indeterminacy” that was a roadblock to earlier mathematicians by focusing on individuals that choose their best response to the choices of others <span class="citation" data-cites="nash51">(<a href="cost.html#ref-nash51" role="doc-biblioref">Nash 1951</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./game_theory.html" class="pagination-link" aria-label="Game Theory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Game Theory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sequential_games.html" class="pagination-link" aria-label="Sequential Games">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Sequential Games</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

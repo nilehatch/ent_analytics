@@ -368,6 +368,69 @@ One of the most robust ways to gauge the viability of an innovation is by calcul
 
 In seeking evidence for the key decisions in a startup, demand isn't just a concept; it's the catalyst that enables us to predict the decisions that lead to success.
 
+<!-- 
+Question1 pts
+Edit this Question Delete this Question
+Which dimension of successful innovations encompasses the other two and is the measure of success as measured through entrepreneurial analytics?
+Correct Answer
+  Viability 
+  Desirability 
+  Feasibility 
+  Salability 
+  Confirmability 
+General answer comments
+"This interdependence between desirability, feasibility, and viability means that innovation, and the entrepreneurship that follows, is an economic activity where we can measure success as the value that is created and the long-term profitability (viability) that results." (pg 1)
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+A demand curve represents
+Correct Answer
+  the quantity customers will buy given the price Q(P). 
+  the price customers will pay given the quantity P(Q). 
+  the quantity customers will buy given their income Q(Y). 
+  the sensitivity of customer purchases to changes in the price (b*P/Q) 
+General answer comments
+A demand curve is a “schedule” of prices and quantities that reveals the willingness of customers to buy. In other words, it is a view of how much customers value a product. This relationship is typically given as a mathematical equation of quantity consumed as a function of price, Q = a - bP or Q = 2000 - 2P.  [page 5]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+If customers' income rises, the new level of consumption will represent
+Correct Answer
+  a change in demand. 
+  a change in cross-price elasticity. 
+  a change in income elasticity. 
+  a change in quantity demanded. 
+General answer comments
+Economists refer to movements along the demand curve (due to changes in the price) as a change in quantity demanded.  Movements from one demand curve to another shifted demand curve are known as a change in demand.  A change in income is not a change in price so it will necessarily shift the demand curve -- a change in demand.  We see this graphically as a shift in the demand curve to a higher or lower intercept.
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+Which of the following represents best practice to avoid sampling bias when collecting willingness-to-pay data for estimating demand curves?
+Correct Answer
+  Sampling of targeted individuals who have the hypothesized problem 
+  Sampling of friends, relatives, classmates, and co-workers 
+  Convenience sampling 
+  Sampling the widest possible set of people to get maximum variety 
+General answer comments
+Minimize Sampling Bias: Collect data from respondents who are actually your target customers...[Convenience samples] may also be completely unrelated to your actual customers and your sampling bias may lead to bias in the evidence you use for judgement...Good sampling requires that you have a clear understanding of who your customers are and where you can find them. [page 15]
+ 
+Move To...This element is a more accessible alternative to drag & drop reordering. Press Enter or Space to move this question.
+Question1 pts
+Edit this Question Delete this Question
+If the data show a nonlinear relationship between quantity and price, the first thing you should try is to
+Correct Answer
+  transform the data to linearize it and then estimate the demand curve with linear regression. 
+  leave the data as is and estimate the demand curve with linear regression. 
+  collect new data. 
+  estimate the demand curve with nonlinear regression. 
+General answer comments
+"If we assume an exponential demand curve, we can transform it to linearize it and check that it is indeed linear. To do this transformation, we take the natural log of the quantity variable and regress it on the price variable." [p. 22]
+-->
+
+<!-- 
 ## Workout Problems
 
 ### Dorsal Packs
@@ -436,6 +499,9 @@ summary(dp)
 
     b.  What is the level of demand when price is P = 200?
 
+-->
+
+<!--
 ------------------------------------------------------------------------
 
 {{< pagebreak >}}
@@ -516,3 +582,5 @@ The exponential demand curve has the form $\mathsf{Q = ae^{-bP}}$. The own-price
 \end{align}
 
 This means that the own-price elasticity of the exponential demand curve is negative one when $\mathsf{P= -\frac{1}{b}}$.
+
+-->

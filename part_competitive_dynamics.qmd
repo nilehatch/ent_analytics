@@ -1,0 +1,50 @@
+
+# Competitive Dynamics {#sec-competitive-dynamics-book-part}
+
+## Competing on Things other than Price
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+In a perfectly competitive world, businesses would focus solely on cost efficiency and price competition, with the market ensuring that every firm’s self-interest leads to the common good. But the reality of entrepreneurial competition is much more complex. Entrepreneurs don’t just participate in markets—they shape them, making strategic choices that *redefine value*, *influence rivals*, and *shift industry dynamics*.
+
+## Why Competitive Dynamics Matter to Entrepreneurs
+
+Entrepreneurs don’t simply set prices; they make strategic moves that change the game itself. These moves include:
+
+- __Differentiation__: Creating unique products that influence demand and reduce direct price competition.
+- __Market Positioning__: Deciding when, where, and how to enter a market.
+- __Strategic Commitment__: Making long-term decisions that reshape competitive responses.
+
+In these interdependent decisions, success depends not just on your choices, but also on how competitors, customers, and partners respond. This strategic interplay—the heart of competitive dynamics—requires anticipating and influencing the decisions of others.
+
+## Game Theory: A Toolkit for Strategic Decision-Making
+
+Game theory provides a structured way to analyze competitive interactions where multiple players make strategic decisions that affect each other’s outcomes. Rather than reacting blindly, entrepreneurs who understand game theory can:
+
+- Predict competitor behavior to avoid surprises.
+- Find hidden strategic opportunities in partnerships and alliances.
+- Make preemptive moves that shape industry dynamics in their favor.
+
+Competitive dynamics involve more than just competing within existing market rules—they offer the ability to reshape the game itself.
+
+
+## Overview of Competitive Dynamics
+
+This section of the book explores four key areas of competitive dynamics using game theory:
+
+1. __Game Theory__ – The foundation of strategic competition. We introduce key concepts and the structured approach used to analyze competitive situations.
+2. __Simultaneous Games__ – Situations where competitors make decisions at the same time, requiring entrepreneurs to anticipate rival strategies without direct observation.
+3. __Sequential Games__ – Markets where firms make decisions one after another, allowing for strategic moves like deterrence, signaling, and adaptation.
+4. __Strategic Commitment__ – The power of irreversible decisions that shape competitive responses, locking in advantages and influencing industry evolution.
+
+By understanding these concepts, entrepreneurs gain a competitive edge—not just in reacting to market conditions, but in actively shaping the competitive landscape in their favor.
+
