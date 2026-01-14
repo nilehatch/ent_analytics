@@ -1,0 +1,238 @@
+#  Types of Uncertainty in Pre-Revenue Profit Decisions {#sec-uncertainty-types-chapter}
+
+The decision introduced in @sec-intro-chapter—*Is this worth doing?*—is an economic one. It asks whether an initiative justifies commitment before outcomes are known and before revenue exists. To answer it responsibly, we need to be clear about what kind of profit we are evaluating.
+
+This chapter is concerned with *profit potential*, not profit realization. Profit potential asks whether an initiative is economically worth pursuing *if executed competently*. Profit realization depends on execution, operations, management, and discipline over time. Those uncertainties matter, but they are downstream of the decision this book addresses. An initiative that is not worth doing economically cannot be rescued by excellent execution; one that is worth doing may still fail if executed poorly.
+
+Evaluating profit potential before revenue exists requires understanding *why* profit is uncertain and *where* that uncertainty comes from. Entrepreneurship involves many forms of uncertainty, but not all of them are relevant to this early evaluative question. This chapter focuses only on the uncertainty types that are structurally present whenever profit must be assessed before revenue exists.
+
+Disaggregating these uncertainties makes it possible to distinguish what must be accepted from what can be learned, and what should guide judgment before resources are committed. With that clarity, we can approach profit not as a mystery to be endured, but as an object that can be examined with discipline.
+
+## Why Profit Uncertainty Must Be Disaggregated
+
+Entrepreneurs often describe early-stage decisions with a single phrase: *“It’s uncertain.”* While accurate, this description is too coarse to support good judgment.
+
+Uncertainty before revenue exists is not a single condition. It is a collection of distinct unknowns that behave differently, can be investigated in different ways, and matter at different moments in the decision process. Treating them as interchangeable obscures what can be learned, what cannot, and where effort is best spent.
+
+This chapter disaggregates profit uncertainty into its constituent parts.
+
+### Uncertainty, Not Risk
+
+In this book, *uncertainty* refers to situations where outcomes are unknown and probabilities may not be well defined. *Risk* is reserved for cases where probabilities can be meaningfully assigned. Most pre-revenue decisions involve uncertainty rather than risk, even though everyday language often blurs the distinction.
+
+This distinction matters because the tools appropriate for managing risk are often ill-suited for reducing uncertainty.
+
+### Why Disaggregation Matters
+
+When uncertainty is treated as a single undifferentiated condition, several problems follow.
+
+First, learning becomes unfocused. Entrepreneurs gather information without clarity about which unknown they are trying to reduce. Second, intuition substitutes for analysis because no structure exists to guide inquiry. Third, genuinely irreducible uncertainty is often confused with uncertainty that could have been reduced before committing resources.
+
+Disaggregating uncertainty makes it possible to ask sharper questions: *What exactly is unknown? How does this uncertainty affect profit? And can it be reduced before a decision must be made?*
+
+### Four Interrelated Sources of Uncertainty
+
+Entrepreneurship involves many forms of uncertainty. Regulatory environments can change. Technologies can fail. Teams can underperform. Capital markets can tighten. These uncertainties matter, but they are not the focus of this book.
+
+This chapter addresses only the uncertainties that are *structurally present in every pre-revenue profit evaluation*—the uncertainties that must be confronted in order to answer the question introduced in Chapter 1: *Is this worth doing?*
+
+Those uncertainties concern:
+
+- **Customer uncertainty**: uncertainty about who the relevant customer is and which group’s behavior should anchor the analysis.
+- **Demand uncertainty**: uncertainty about how much customers value the offering, how sensitive they are to price, and how much they would purchase.
+- **Profit uncertainty**: uncertainty about economic outcomes that arises from demand interacting with prices and costs.
+- **Strategic uncertainty**: uncertainty introduced by the actions and responses of others once demand exists.
+
+These uncertainties are distinct but not independent. Customer choices shape demand. Demand shapes profit. Strategic interaction reshapes all three.
+
+Understanding how these uncertainties differ—and how they relate—is a prerequisite for disciplined evaluation before revenue exists. The sections that follow examine each in turn.
+
+
+## Customer Uncertainty
+
+Before profit can be evaluated, there must be clarity about whose profit is being evaluated. This is the role of customer uncertainty.
+
+Customer uncertainty refers to uncertainty about *which group of people or organizations should anchor the analysis*. It concerns identification, not behavior. Until the relevant customer is specified, questions about demand, pricing, and profit remain ill-defined.
+
+### Who Is the Customer?
+
+Entrepreneurs often speak casually about “the customer,” as if the answer were obvious. In practice, many initiatives fail not because demand was misunderstood, but because it was evaluated for the wrong group.
+
+A product may appeal weakly to a broad population or strongly to a narrow one. It may solve an acute problem for a fringe group or a mild inconvenience for a mainstream one. It may be purchased by one party but paid for by another. Each of these possibilities implies a different economic reality.
+
+Customer uncertainty arises whenever it is unclear:
+
+- which group’s preferences matter,
+- whose willingness to pay should be measured,
+- and whose adoption behavior will determine outcomes.
+
+Until these questions are resolved, profit evaluation cannot begin.
+
+### Customer Uncertainty Is Not Demand Uncertainty
+
+Customer uncertainty is often confused with demand uncertainty, but they are distinct.
+
+Customer uncertainty asks *who* the relevant customer is.  
+Demand uncertainty asks *how much* that customer values the offering and how much they would purchase at a given price.
+
+These uncertainties interact, but they should not be collapsed. Evaluating demand for the wrong customer group can produce precise estimates that are economically meaningless. Clarity about the customer is a prerequisite for learning about demand.
+
+### Why Customer Uncertainty Matters for Profit Evaluation
+
+Profit potential depends on concentrating resources on the customers for whom value creation is strongest. When customer uncertainty remains unresolved, entrepreneurs tend to average across groups, dilute value propositions, or rely on generic market descriptions.
+
+These moves reduce apparent uncertainty while obscuring economic reality.
+
+A smaller group with intense need may support a profitable initiative that a larger group with weak interest cannot. Conversely, a large population may be irrelevant if willingness to pay is low or adoption barriers are high. Profit potential is shaped not by population size alone, but by *which* population is being served.
+
+### Reducing Customer Uncertainty
+
+Customer uncertainty is often reducible before revenue exists. It can be reduced through observation, conversation, segmentation, and disciplined comparison of potential customer groups. Importantly, this reduction does not require committing to a full product or business model.
+
+The goal at this stage is not to optimize a solution, but to *anchor the analysis* to a clearly defined customer group whose behavior can be meaningfully studied.
+
+Once the relevant customer is specified, the next uncertainty becomes unavoidable: how that customer values the offering, at what price, and in what quantity.
+
+<!-- That uncertainty—demand uncertainty—is the focus of the next section. -->
+
+
+## Demand Uncertainty
+
+Once the relevant customer has been identified, the question usually shifts—and becomes harder.
+
+*How much do they actually value this?*  
+*At what price?*  
+*And how many of them would really buy?*
+
+This is the domain of demand uncertainty.
+
+Demand uncertainty refers to uncertainty about *how customers behave economically*: how much they value an offering, how sensitive they are to price, and how much they would purchase under different conditions. It is not uncertainty about whether customers exist, but about how their preferences translate into economic outcomes.
+
+For pre-revenue profit evaluation, this uncertainty is unavoidable—and central.
+
+### What Demand Is (and Is Not)
+
+In everyday conversation, demand is often treated loosely. People talk about interest, excitement, engagement, or positive feedback. Those signals feel reassuring, especially early on.
+
+Economically, demand is more precise—and more demanding.
+
+Demand describes the relationship between *price and quantity purchased*, holding other factors constant. It answers a specific question: *how many units will be purchased at a given price?*
+
+This means demand is not:
+
+- market size,
+- awareness,
+- enthusiasm,
+- or stated intent.
+
+A large market does not imply strong demand. High interest does not imply willingness to pay. Positive interviews do not imply purchase at a profitable price. These confusions are common, and they explain why demand uncertainty often feels opaque.
+
+### Why Demand Uncertainty Dominates Early Decisions
+
+Before revenue exists, many aspects of a business can be chosen or approximated. Prices can be set. Costs can be estimated. Fixed investments can be planned.
+
+Quantity cannot.
+
+No matter how carefully a venture is designed, customers ultimately decide how much they buy. Small errors in estimating that behavior can overwhelm reasonable assumptions about pricing or costs. As a result, uncertainty about demand often determines whether an initiative is plausibly profitable at all.
+
+This is why early decisions feel so speculative. It is not because everything is unknown, but because the *most important thing* is.
+
+### Demand Exists Before Revenue
+
+It is easy to conclude that demand can only be known after launch, through sales and iteration. Many entrepreneurs accept this as a fact of life.
+
+It is not.
+
+Customers have preferences, constraints, and tradeoffs even when no product is offered for sale. While demand cannot be measured with certainty before revenue exists, it can often be **bounded, structured, and compared**. Some demand scenarios can be ruled out. Others can be treated as more or less plausible.
+
+Learning demand early does not require perfect prediction. It requires disciplined effort to reduce uncertainty where it matters most.
+
+### Demand in Context
+
+Demand uncertainty sits between other uncertainties.
+
+Customer uncertainty asks *whose behavior matters*.  
+Demand uncertainty asks *how that customer behaves economically*.  
+Profit uncertainty reflects how that behavior interacts with prices and costs.
+
+When these uncertainties are blurred together, effort is often misallocated. Entrepreneurs refine customer descriptions without learning about willingness to pay, or build detailed cost models without anchoring quantity. In both cases, work is done without reducing the uncertainty that drives the decision.
+
+### A Question to Carry Forward
+
+At this point, you may notice a tension.
+
+Demand feels essential, but also difficult to learn without committing resources. Yet treating it as unknowable pushes decisions toward guessing. The chapters that follow take up this tension directly.
+
+For now, a simpler question is enough:
+
+*What would you need to learn about demand for this decision to feel responsible rather than hopeful?*
+
+
+
+##  Demand Uncertainty
+
+Once the relevant customer has been identified, the central uncertainty becomes demand.
+
+Demand uncertainty refers to uncertainty about **how much value customers place on an offering, how sensitive they are to price, and how much they would purchase under different conditions**. It is not uncertainty about whether customers exist, but about how they behave economically.
+
+For pre-revenue profit evaluation, demand uncertainty is the most consequential uncertainty—and the one most often misunderstood.
+
+### What Demand Is (and Is Not)
+
+In everyday language, demand is often treated as interest, enthusiasm, or stated preference. In economic terms, demand is more precise. It describes the relationship between **price and quantity purchased**, holding other factors constant.
+
+Demand is not:
+
+- market size,
+- awareness,
+- intent,
+- or expressed liking.
+
+A large market does not imply strong demand. High interest does not imply willingness to pay. Positive feedback does not imply purchase at a profitable price.
+
+Demand uncertainty exists because these distinctions are easy to overlook and difficult to infer without deliberate effort.
+
+### Why Demand Uncertainty Dominates Pre-Revenue Profit Evaluation
+
+Before revenue exists, profit uncertainty arises primarily from uncertainty about demand. Prices can be chosen. Costs can be estimated. Fixed investments can be planned. But quantity sold—the number of units customers will purchase at a given price—cannot be set by the firm.
+
+This asymmetry matters.
+
+Profit depends on price, quantity, and cost. Of these, quantity is the least controllable and the most uncertain. Small errors in demand estimates can overwhelm reasonable assumptions about pricing or costs. As a result, demand uncertainty often determines whether an initiative is plausibly profitable or not.
+
+This is why many early-stage decisions feel speculative: demand is unknown, and demand matters most.
+
+### Demand Uncertainty Is Often Reducible
+
+Despite its importance, demand uncertainty is frequently treated as irreducible. Entrepreneurs assume that demand can only be known after launch, through sales and iteration.
+
+This assumption is incorrect.
+
+Demand exists before transactions occur. Customers have preferences, constraints, and tradeoffs even when no product is offered for sale. While demand cannot be measured with certainty before revenue exists, it can often be bounded, structured, and compared.
+
+Reducing demand uncertainty does not require perfect prediction. It requires ruling out implausible demand scenarios, identifying plausible ranges, and understanding how sensitive outcomes are to different assumptions.
+
+This kind of learning is often possible before significant resources are committed.
+
+### Demand Uncertainty Versus Customer and Profit Uncertainty
+
+Demand uncertainty sits between customer uncertainty and profit uncertainty.
+
+Customer uncertainty asks *whose behavior matters*.  
+Demand uncertainty asks *how that customer behaves economically*.  
+Profit uncertainty reflects how that behavior interacts with prices and costs.
+
+Confusing these uncertainties leads to common errors. Entrepreneurs may refine customer segments without learning about willingness to pay, or build detailed cost models without anchoring quantity. In both cases, effort is expended without reducing the uncertainty that matters most.
+
+### Why This Book Centers on Demand
+
+This book centers on demand not because it is the only uncertainty that matters, but because it is the one that most directly links evidence to profit before revenue exists.
+
+Understanding demand allows entrepreneurs to:
+
+- evaluate pricing decisions,
+- assess scale and market reach,
+- compare strategic options,
+- and judge whether further investment is warranted.
+
+The remaining sections of this chapter examine how demand uncertainty propagates into profit uncertainty and how strategic interaction reshapes outcomes. The chapters that follow focus on how demand can be learned, modeled, and used to support judgment before revenue exists.

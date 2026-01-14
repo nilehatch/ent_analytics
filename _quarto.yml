@@ -18,7 +18,7 @@ book:
       _Is This Worth Doing?_ was written by Nile Hatch (2026).
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
-# cover-image: cassia_crossbill_2.jpg
+# cover-image: 
   site-url: https://ei.nilehatch.com/
   repo-url: https://github.com/nilehatch/exp_innov/
   page-navigation: true
@@ -31,7 +31,8 @@ book:
     - part: The Decision and the Object
       chapters:
         - ch1_is_this_worth_doing.qmd
-        - ch2_profit_before_revenue.qmd    
+        - ch2_uncertainty_types.qmd
+        - ch3_profit_before_revenue.qmd    
 #    - intro.qmd
     - part: Uncertainty
       chapters:
