@@ -4,23 +4,30 @@ project:
 
 book:
   title: "Is This Worth Doing?"
-  subtitle: "How to Evaluate Profit Before Revenue Exists"
-#  author: "Nile Hatch"
+  subtitle: "How to Evaluate Profit Before Revenue Exists"  
+#  author: "Nile Hatch"  
 #  date: "1/1/2026"
-  
-  navbar:
-    background: primary
-    search: true
   reader-mode: true
+  site-url: https://ei.nilehatch.com/
+  repo-url: https://github.com/nilehatch/exp_innov/
 
   page-footer:
     left: |
-      _Is This Worth Doing?_ was written by Nile Hatch (2026).
+       _Is This Worth Doing?_ was written by Nile Hatch (2026).
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
-# cover-image: 
-  site-url: https://ei.nilehatch.com/
-  repo-url: https://github.com/nilehatch/exp_innov/
+
+  sidebar:
+    style: "docked"   # or "floating"
+    collapse-level: 1
+    
+
+## from ent analytics version
+#  navbar:
+#    background: primary
+#    search: true
+#  reader-mode: true
+
   page-navigation: true
   bread-crumbs: true
   search: true
@@ -28,18 +35,19 @@ book:
   
   chapters:
     - index.qmd
-    - part: The Decision and the Object
+    - part: The Pre-Revenue Decision
       chapters:
         - ch1_is_this_worth_doing.qmd
         - ch2_uncertainty_types.qmd
         - ch3_profit_before_revenue.qmd    
 #    - intro.qmd
-    - part: Uncertainty
+#    - part: Uncertainty
+#      chapters:
+#        - uncertainty_entrepreneurship.qmd
+#        - uncertainty_profit.qmd
+    - part: Learning Demand
       chapters:
-        - uncertainty_entrepreneurship.qmd
-        - uncertainty_profit.qmd
-    - part: Demand
-      chapters:
+        - ch4_demand.qmd
         - demand.qmd
         - durable_demand.qmd
         - nondurable_demand.qmd
@@ -70,12 +78,15 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    toc: true
+#    include-after-body: collapse-parts.html
+    css:
+      - base.css
+      - custom_itwd.css
+    number-sections: true
     number-depth: 2
-    css: custom.css
-
-#  pdf:
-#    documentclass: scrreprt
+    fig-cap-location: margin
+    tbl-cap-location: margin
+#    embed-resources: true
 
 editor: source
 
@@ -83,13 +94,3 @@ execute:
   echo: false
   warning: false
   error: false
-  setup: |
-    library(tidyverse)
-    library(scales)
-    library(ggthemes)
-    library(gt)
-    library(janitor)
-    library(vroom)
-    library(readxl)
-    library(here)
-    library(plotly)  

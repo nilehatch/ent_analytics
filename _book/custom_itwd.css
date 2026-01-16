@@ -1,0 +1,165 @@
+/* ===============================
+   Profit Analytics — custom-profit.css
+   Profit → clarity → confident decisions
+   =============================== */
+
+/* ---------- Brand Colors ---------- */
+:root {
+  --pa-primary: #0F5132;        /* Deep evergreen */
+  --pa-primary-dark: #0B3D26;   /* Darker evergreen */
+  --pa-secondary: #1F9D8A;      /* Green-teal */
+  --pa-accent: #E3A008;         /* Optional gold (reuse across books) */
+  --pa-muted: #6B7280;          /* Gray for secondary text */
+  --pa-bg-tint: #E9F7F3;        /* Pale mint/teal tint */
+  --pa-text: #1F2937;           /* Rich gray text */
+}
+
+/* ---------- Base Body & Headings ---------- */
+body { color: var(--pa-text); }
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--pa-text);
+  scroll-margin-top: 90px;
+}
+
+/* Paragraph rhythm */
+p + p { margin-top: 0.6em; }
+
+/* ---------- Chapter Banner (Evergreen → Teal) ---------- */
+.quarto-title-block {
+  background: linear-gradient(90deg, var(--pa-primary) 0%, var(--pa-secondary) 100%);
+  color: white;
+  padding: 1.2rem 1.2rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.quarto-title-block h1.title,
+.quarto-title-block .subtitle {
+  color: white;
+  border-bottom: none !important;
+  margin: 0 !important;
+}
+
+/* Subtitle style (muted but readable on banner) */
+.subtitle {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-top: -0.25em;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+/* ---------- Breadcrumbs inside banner (single canonical block) ---------- */
+.quarto-title-block .quarto-title-breadcrumbs {
+  position: static;
+  margin-bottom: 0.35rem;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.9rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.20);
+}
+.quarto-title-block .quarto-title-breadcrumbs a {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+}
+.quarto-title-block .quarto-title-breadcrumbs a:hover,
+.quarto-title-block .quarto-title-breadcrumbs a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.quarto-title-block .quarto-title-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255,255,255,0.65);
+  padding: 0 0.35rem;
+}
+/* Hide current chapter item */
+.quarto-title-block .quarto-title-breadcrumbs .breadcrumb-item:last-child {
+  display: none;
+}
+.quarto-title-block .quarto-title-breadcrumbs .breadcrumb-item:last-child::before {
+  content: none;
+}
+
+/* ---------- Section Divider (Asterism) ---------- */
+.asterism {
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--pa-primary), transparent);
+  margin: 1.75rem 0;
+  border: 0;
+}
+
+/* ---------- Branded Callouts ---------- */
+.callout {
+  border-left-width: 4px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.callout-note     { border-left-color: var(--pa-primary);   background: var(--pa-bg-tint); }
+.callout-tip      { border-left-color: #16A34A;             background: #EAF7EF; }
+.callout-important{ border-left-color: #EA580C;             background: #FFF1E9; }
+.callout-caution  { border-left-color: #DC2626;             background: #FDECEC; }
+.callout-warning  { border-left-color: #ED8936;             background: #FFF5F0; }
+
+.callout .callout-title-container {
+  font-weight: 600;
+  color: var(--pa-text);
+}
+
+/* Optional depth cue (use this consistently for academic extras) */
+.callout.callout-depth {
+  border-left-color: var(--pa-secondary);
+  background: linear-gradient(to right, var(--pa-bg-tint), transparent);
+}
+
+/* ---------- Links ---------- */
+a, .link-secondary {
+  color: var(--pa-primary);
+  text-decoration-thickness: 0.06em;
+}
+a:hover, a:focus {
+  color: var(--pa-primary-dark);
+  text-decoration-color: var(--pa-primary-dark);
+}
+
+/* ---------- Code Blocks ---------- */
+pre code {
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+  border-radius: 6px;
+  display: block;
+  padding: 0.75rem 1rem;
+}
+
+p code, li code, table code {
+  background: #f3f6fb;
+  border: 1px solid #e9eef7;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* ---------- Block Quotes ---------- */
+blockquote {
+  border-left: 4px solid var(--pa-primary);
+  padding-left: 1rem;
+  color: var(--pa-muted);
+  background: linear-gradient(to right, var(--pa-bg-tint), transparent);
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+/* ---------- App Boundary / Method Divider ---------- */
+hr.method-divider {
+  border: 0;
+  height: 6px;
+  margin: 2rem 0 1.25rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--pa-primary), var(--pa-secondary));
+}
+
+@media (max-width: 640px), print {
+  hr.method-divider { height: 4px; }
+  .callout { background: #fff !important; }
+}
