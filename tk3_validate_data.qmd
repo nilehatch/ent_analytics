@@ -1,0 +1,156 @@
+# Validating and Stress-Testing Demand Evidence {#sec-toolkit-validate-demand-data-chapter .unnumbered}
+<!-- *Guide* -->
+
+This toolkit helps you assess whether your demand evidence is strong enough to inform a real decision—or whether it needs to be challenged, refined, or rebuilt.
+
+Demand curves are not discovered. They are inferred.
+Inference can be more or less credible.
+
+The purpose of this toolkit is not to prove that your demand estimate is correct. Its purpose is to help you determine whether your evidence is *trustworthy enough* to act on—and where it might be fragile.
+
+
+
+## How to Use This Toolkit
+
+This toolkit assumes you have:
+
+- completed the [problem framing toolkit](tk1_frame_problem.qmd),
+- designed and executed a survey using the [survey design toolkit](tk2_survey_design),
+- `and generated an initial demand estimate or curve`.
+
+You should work through this toolkit *before* optimizing price, projecting profit, or making irreversible commitments.
+
+If the evidence fails these checks, that is not a failure. It is a signal to learn more.
+
+
+
+## Treat Demand as an Experiment, Not a Fact
+
+The most common mistake entrepreneurs make is treating early demand estimates as if they were measurements rather than experiments.
+
+Demand evidence is provisional. It reflects:
+
+- assumptions embedded in question wording,
+- the population sampled,
+- the framing of the decision,
+- and the realism of the scenario.
+
+For this reason, demand curves should be treated like experimental results:
+
+- subject to replication,
+- sensitive to design choices,
+- and open to challenge.
+
+Confidence should come from *consistency across evidence*, not from a single clean output.
+
+
+
+## Internal Coherence Checks
+
+Begin by asking whether the evidence makes sense on its own terms.
+
+**Questions to Ask**
+
+- Do higher prices generally correspond to lower quantities?
+- Are responses monotonic in the expected direction?
+- Are there obvious contradictions in individual responses?
+- Do appeal ratings align loosely with willingness to pay?
+
+**Design Insight**
+Perfect smoothness is not expected. But demand evidence that violates basic intuition without explanation should be treated cautiously.
+
+If the data requires heroic interpretation to be plausible, something is wrong.
+
+
+
+## Segment Consistency Checks
+
+Next, examine whether differences in demand align with customer characteristics.
+
+**Questions to Ask**
+
+- Do respondents who experience the problem more intensely show higher WTP?
+- Are frequent users more price tolerant than occasional users?
+- Are certain segments driving most of the apparent demand?
+
+**Why This Matters**
+If variation in willingness to pay is systematic, it strengthens confidence that you are observing real structure rather than noise.
+
+If variation appears random or unrelated to meaningful characteristics, the evidence may be fragile—or the customer definition may be wrong.
+
+
+
+## Boundary and Plausibility Checks
+
+Demand evidence is especially useful for identifying boundaries.
+
+**Questions to Ask**
+
+- Are there prices at which demand plausibly falls to zero?
+- Are there prices that appear implausibly high given the context?
+- Does estimated demand imply volumes that strain operational reality?
+
+These checks are not about pessimism. They are about realism.
+
+Demand estimates that imply implausible outcomes should be re-examined before being used to justify commitments.
+
+
+
+## Replication Through a Follow-Up Test
+
+One of the most powerful validation techniques is simple replication.
+
+Select one or two prices implied by your demand estimate and ask a *new* sample a focused question:
+
+- “At a price of X, would you buy one unit in the next [period]?”
+
+The goal is not precision. The goal is alignment.
+
+If the fraction of “yes” responses is broadly consistent with what your demand curve predicts at that price, confidence increases.
+
+If the results diverge substantially, something in the original design or transformation deserves scrutiny.
+
+
+
+## Sensitivity to Assumptions
+
+Demand estimates often rely on assumptions—especially when quantity is inferred rather than directly observed.
+
+Ask explicitly:
+
+- What assumptions did we make to construct this curve?
+- How sensitive are conclusions to those assumptions?
+- Would the decision change under reasonable alternative interpretations?
+
+Evidence that supports a decision across a range of plausible assumptions is far more valuable than evidence that only supports it under one narrow reading.
+
+
+
+## Knowing When Evidence Is “Enough”
+
+There is no rule that determines when demand evidence is sufficient.
+
+Instead, ask a disciplined question:
+
+- Does additional data have a reasonable chance of changing the decision?
+
+If the answer is yes, learning should continue.
+If the answer is no, further precision may be unnecessary.
+
+Good demand learning does not eliminate uncertainty. It reduces uncertainty to the point where judgment can be exercised responsibly.
+
+
+
+## Acting Without Illusions
+
+Validated demand evidence does not guarantee success.
+
+It does something more important: it protects you from acting on false confidence.
+
+Entrepreneurs still make judgment calls. Markets still surprise. Execution still matters.
+
+But decisions informed by disciplined demand learning are different from guesses dressed up as analysis.
+
+They are decisions you can stand behind—even when outcomes are uncertain.
+
+That is the standard this toolkit is meant to support.

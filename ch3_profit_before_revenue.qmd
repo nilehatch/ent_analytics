@@ -182,7 +182,7 @@ This book begins from that recognition and takes a different starting point.
 
 
 
-## Profit before Revenue Feels Impossible
+## Profit before Revenue May Feel Impossible
 
 At first glance, talking about profit before revenue exists can sound contradictory. If nothing has been sold, how can profit be evaluated at all?
 
@@ -208,3 +208,31 @@ The logic of this book follows directly from this insight. We begin with demand.
 The structure of profit tells us where to focus first.
 
 The next step is to understand demand itself.
+
+
+## From Structure to Focus
+
+Recognizing that demand anchors profit evaluation does not yet tell an entrepreneur what to study next.
+
+Early-stage ventures and mature companies face the same unknowns when facing a decision about a new initiative:
+
+- who the customer really is,
+- what problem matters most,
+- how price-sensitive demand might be,
+- whether demand is large enough to justify entry.
+
+The profit equation helps locate uncertainty, but it does not prioritize it.
+
+Before gathering data or running analysis, entrepreneurs must make a more basic move:
+they must decide which uncertainty matters most for the decision they are facing right now.
+
+Without that focus, analysis can be careful and still miss the point.
+
+Data does not tell entrepreneurs what to do.
+Questions do.
+
+Evidence becomes useful only when answering a question would actually change the action taken.
+
+Clarifying the decision, the uncertainty that blocks it, and the question whose answer would reduce that uncertainty is the step that makes learning demand possible rather than accidental.
+
+That step comes next.

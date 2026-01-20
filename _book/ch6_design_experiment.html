@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Designing Experiments to Learn Demand – Is This Worth Doing?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch7_execute_experiment.html" rel="next">
+<link href="./ch5_demand.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1ba4f5830de1b2e7b8cf0f0ffee6cc6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="custom_itwd.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5_demand.html">Learning Demand</a></li><li class="breadcrumb-item"><a href="./ch6_design_experiment.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Is This Worth Doing?</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/nilehatch/exp_innov/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">The Pre-Revenue Decision</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_is_this_worth_doing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Is This Worth Doing?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_uncertainty_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of Uncertainty in Pre-Revenue Profit Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3_profit_before_revenue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4_need_to_know.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Learning Demand</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What Demand Is (and Is Not)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6_design_experiment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7_execute_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Executing Demand Experiments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Toolkit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framing a Demand Learning Problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk2_survey_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Designing a Demand Survey</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk3_validate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validating and Stress-Testing Demand Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Code-centric version</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-question-behind-the-questions" id="toc-the-question-behind-the-questions" class="nav-link active" data-scroll-target="#the-question-behind-the-questions"><span class="header-section-number">6.1</span> The Question Behind the Questions</a></li>
+  <li><a href="#what-kind-of-demand-are-you-measuring" id="toc-what-kind-of-demand-are-you-measuring" class="nav-link" data-scroll-target="#what-kind-of-demand-are-you-measuring"><span class="header-section-number">6.2</span> What Kind of Demand Are You Measuring?</a>
+  <ul class="collapse">
+  <li><a href="#yesno-demand" id="toc-yesno-demand" class="nav-link" data-scroll-target="#yesno-demand">Yes/No Demand</a></li>
+  <li><a href="#how-many-demand" id="toc-how-many-demand" class="nav-link" data-scroll-target="#how-many-demand">How-Many Demand</a></li>
+  </ul></li>
+  <li><a href="#willingness-to-pay-as-demand-evidence" id="toc-willingness-to-pay-as-demand-evidence" class="nav-link" data-scroll-target="#willingness-to-pay-as-demand-evidence"><span class="header-section-number">6.3</span> Willingness to Pay as Demand Evidence</a></li>
+  <li><a href="#what-willingness-to-pay-isand-is-not" id="toc-what-willingness-to-pay-isand-is-not" class="nav-link" data-scroll-target="#what-willingness-to-pay-isand-is-not"><span class="header-section-number">6.4</span> What Willingness to Pay Is—and Is Not</a></li>
+  <li><a href="#willingness-to-pay-requires-context" id="toc-willingness-to-pay-requires-context" class="nav-link" data-scroll-target="#willingness-to-pay-requires-context"><span class="header-section-number">6.5</span> Willingness to Pay Requires Context</a></li>
+  <li><a href="#what-willingness-to-pay-can-tell-you" id="toc-what-willingness-to-pay-can-tell-you" class="nav-link" data-scroll-target="#what-willingness-to-pay-can-tell-you"><span class="header-section-number">6.6</span> What Willingness to Pay Can Tell You</a></li>
+  <li><a href="#poor-wtp-questions-create-false-confidence" id="toc-poor-wtp-questions-create-false-confidence" class="nav-link" data-scroll-target="#poor-wtp-questions-create-false-confidence"><span class="header-section-number">6.7</span> Poor WTP Questions Create False Confidence</a></li>
+  <li><a href="#survey-design-principles-that-keep-the-data-honest" id="toc-survey-design-principles-that-keep-the-data-honest" class="nav-link" data-scroll-target="#survey-design-principles-that-keep-the-data-honest"><span class="header-section-number">6.8</span> Survey Design Principles That Keep the Data Honest</a></li>
+  <li><a href="#a-structure-that-reduces-transactional-bias" id="toc-a-structure-that-reduces-transactional-bias" class="nav-link" data-scroll-target="#a-structure-that-reduces-transactional-bias"><span class="header-section-number">6.9</span> A Structure That Reduces Transactional Bias</a></li>
+  <li><a href="#why-this-structure-works" id="toc-why-this-structure-works" class="nav-link" data-scroll-target="#why-this-structure-works"><span class="header-section-number">6.10</span> Why This Structure Works</a></li>
+  <li><a href="#a-note-on-scope-and-applicability" id="toc-a-note-on-scope-and-applicability" class="nav-link" data-scroll-target="#a-note-on-scope-and-applicability"><span class="header-section-number">6.11</span> A Note on Scope and Applicability</a></li>
+  <li><a href="#hypothetical-bias-introduced-not-buried" id="toc-hypothetical-bias-introduced-not-buried" class="nav-link" data-scroll-target="#hypothetical-bias-introduced-not-buried"><span class="header-section-number">6.12</span> Hypothetical Bias (Introduced, Not Buried)</a></li>
+  <li><a href="#a-simple-design-checklist" id="toc-a-simple-design-checklist" class="nav-link" data-scroll-target="#a-simple-design-checklist"><span class="header-section-number">6.13</span> A Simple Design Checklist</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5_demand.html">Learning Demand</a></li><li class="breadcrumb-item"><a href="./ch6_design_experiment.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-experiment-design-chapter" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter is about getting the <em>right evidence</em>, not doing math.</p>
+<p>If the experiment is designed well, the analytics that follow are straightforward. If it is designed poorly, the analytics will faithfully produce nonsense.</p>
+<p>Learning demand is not a statistical problem first. It is an experimental design problem. Before asking what customers would pay—or how much they would buy—we need to be clear about what question we are trying to answer, and what kind of demand that question implies.</p>
+<section id="the-question-behind-the-questions" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="the-question-behind-the-questions"><span class="header-section-number">6.1</span> The Question Behind the Questions</h2>
+<p>Entrepreneurs usually begin with a decision, not a dataset.</p>
+<p>They want to know whether to build something, how to price it, whether to invest further, or whether to walk away. These are entrepreneurial questions. They are about action.</p>
+<p>Demand experiments, however, require translating those entrepreneurial questions into factual questions that can be answered with evidence.</p>
+<p>This translation step is easy to skip and costly to ignore.</p>
+<p>For example, an entrepreneur may ask:</p>
+<ul>
+<li>“Is demand strong enough to justify launching?”</li>
+<li>“What price range makes sense?”</li>
+<li>“Could this support a profitable business?”</li>
+</ul>
+<p>These are legitimate questions, but they are not yet questions an experiment can answer. To design a demand experiment, they must be sharpened.</p>
+<p>At a minimum, this requires making four commitments explicit:</p>
+<ul>
+<li><p><strong>Who is the customer?</strong><br>
+Whose decision are we trying to understand?</p></li>
+<li><p><strong>What is one unit?</strong><br>
+What exactly is being bought or chosen?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
+<li><p><strong>What is the decision period?</strong><br>
+Over what span of time does the customer make this choice?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p><strong>What evidence would change the decision?</strong><br>
+What would you do differently if the answer were higher, lower, or more uncertain than expected?</p></li>
+</ul>
+<p>These are not technical details. They define what demand <em>means</em> in the context of the decision.</p>
+<p>Without them, willingness-to-pay questions float free of any real choice, and quantity responses cannot be interpreted consistently.</p>
+<p>A well-designed demand experiment begins by answering these questions clearly—even if only approximately. Precision can come later. Coherence cannot.</p>
+<p>For readers who want concrete tools—example wording, sequencing templates, and annotated survey designs—the accompanying <a href="./tk1_frame_problem.html"><strong>problem framing toolkit</strong></a> walks through these preliminary decisions step by step. The toolkit helps frame the entrepreneurial decision and the most urgent unknown, then shows how to define unit and period, and finally how to choose the appropriate demand type.</p>
+<p>These tools are not required to follow the argument of this chapter. They are provided so that when you are ready to design a demand experiment, you can do so deliberately rather than by improvisation.</p>
+</section>
+<section id="what-kind-of-demand-are-you-measuring" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="what-kind-of-demand-are-you-measuring"><span class="header-section-number">6.2</span> What Kind of Demand Are You Measuring?</h2>
+<p>Once the unit and decision period are defined, an important distinction becomes unavoidable.</p>
+<p>In some decisions, quantity is fixed by construction.<br>
+In others, quantity is part of what must be learned.</p>
+<p>This distinction changes how demand must be measured, how questions must be asked, and how the resulting data can be used.</p>
+<section id="yesno-demand" class="level3">
+<h3 class="anchored" data-anchor-id="yesno-demand">Yes/No Demand</h3>
+<p>In some settings, the customer’s decision is essentially binary.</p>
+<p>They either buy or they do not.</p>
+<p>This occurs when:</p>
+<ul>
+<li>the customer makes at most one purchase per decision period, and</li>
+<li>the quantity purchased, if they buy, is always one unit.</li>
+</ul>
+<p>Examples include:</p>
+<ul>
+<li>subscribing to a service</li>
+<li>purchasing a license</li>
+<li>adopting a new tool</li>
+<li>choosing a single plan or package</li>
+</ul>
+<p>In these cases, the experiment is not about “how many units” a customer would buy. That answer is fixed. The relevant uncertainty is <em>who buys at which prices</em>.</p>
+<p>Yes/no demand experiments focus on:</p>
+<ul>
+<li>willingness to pay thresholds</li>
+<li>the share of customers who would buy at different prices</li>
+<li>how sensitive adoption is to price changes</li>
+</ul>
+<p>This structure simplifies both survey design and data transformation. But it only works when the underlying decision really is binary.</p>
+<p>Treating a repeated or consumptive decision as yes/no demand hides important variation and produces misleading results.</p>
+</section>
+<section id="how-many-demand" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-demand">How-Many Demand</h3>
+<p>In other settings, quantity is not fixed.</p>
+<p>Customers may buy, use, or consume multiple units within the decision period. How much they consume is part of the unknown.</p>
+<p>This occurs when:</p>
+<ul>
+<li>purchases repeat over time, or</li>
+<li>usage intensity varies meaningfully across customers.</li>
+</ul>
+<p>Examples include:</p>
+<ul>
+<li>meals per week</li>
+<li>rides per month</li>
+<li>sessions per year</li>
+<li>items consumed or replaced regularly</li>
+</ul>
+<p>In these cases, learning demand requires learning <em>quantity</em>, not just willingness to pay. The experiment must elicit a quantity response that is explicitly tied to the defined period.</p>
+<p>This changes everything:</p>
+<ul>
+<li>question wording becomes more demanding</li>
+<li>respondent fatigue becomes a real risk</li>
+<li>assumptions about aggregation must be made carefully</li>
+</ul>
+<p>The goal here is not to choose a method yet. It is to recognize which kind of demand the decision implies.</p>
+<p>Designing a yes/no experiment for how-many demand—or vice versa—does not just reduce accuracy. It changes the meaning of the evidence entirely.</p>
+<p>Before asking how much customers would pay, the entrepreneur must first answer a simpler question:</p>
+<p><em>Is quantity fixed, or is quantity itself what I need to learn?</em></p>
+</section>
+</section>
+<section id="willingness-to-pay-as-demand-evidence" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="willingness-to-pay-as-demand-evidence"><span class="header-section-number">6.3</span> Willingness to Pay as Demand Evidence</h2>
+<p>Once the unit, decision period, and type of demand are clear, a natural question follows:</p>
+<p><em>What kind of evidence can actually tell us something about demand?</em></p>
+<p>One of the most common—and most misunderstood—answers is willingness to pay.</p>
+<p>Entrepreneurs often talk about willingness to pay as if it were a price recommendation: <em>what customers would pay</em>, or <em>what the product is worth</em>. Used this way, willingness to pay invites disappointment and false confidence.</p>
+<p>Used properly, willingness to pay plays a different role.</p>
+<p>It is not a price to charge.<br>
+It is evidence about tradeoffs and constraints.</p>
+</section>
+<section id="what-willingness-to-pay-isand-is-not" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="what-willingness-to-pay-isand-is-not"><span class="header-section-number">6.4</span> What Willingness to Pay Is—and Is Not</h2>
+<p>Willingness to pay describes the highest price at which a customer would still choose the product, given a specific unit and a specific decision context.</p>
+<p>That definition matters.</p>
+<p>WTP is not:</p>
+<ul>
+<li>the price a customer hopes to pay</li>
+<li>the price they think is fair</li>
+<li>the price they expect in the market</li>
+<li>the price that will maximize profit</li>
+</ul>
+<p>It is a boundary.</p>
+<p>At prices above a customer’s willingness to pay, purchase does not occur. At prices below it, purchase becomes possible—though not guaranteed.</p>
+<p>This is why willingness to pay is useful even when it is imperfect. It helps rule out prices that cannot work and identify ranges where demand might plausibly exist.</p>
+</section>
+<section id="willingness-to-pay-requires-context" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="willingness-to-pay-requires-context"><span class="header-section-number">6.5</span> Willingness to Pay Requires Context</h2>
+<p>Willingness to pay is not a stable trait of a customer. It is a response to a specific decision scenario.</p>
+<p>The same customer may have very different willingness to pay depending on:</p>
+<ul>
+<li>what exactly is being purchased</li>
+<li>how often the decision repeats</li>
+<li>what alternatives are available</li>
+<li>what constraints they face</li>
+</ul>
+<p>This is why willingness-to-pay questions that lack context often produce answers that feel encouraging but fail to hold up later.</p>
+<p>Without a clearly defined unit, customers may imagine different things when answering the same question.</p>
+<p>Without a defined decision period, customers may implicitly assume one-time use, occasional use, or unlimited use—each of which implies a different valuation.</p>
+<p>When context is missing, willingness-to-pay responses cannot be compared, aggregated, or interpreted coherently.</p>
+</section>
+<section id="what-willingness-to-pay-can-tell-you" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="what-willingness-to-pay-can-tell-you"><span class="header-section-number">6.6</span> What Willingness to Pay Can Tell You</h2>
+<p>When designed carefully, willingness-to-pay evidence can answer questions that interest, adoption, and usage data cannot.</p>
+<p>It can reveal:</p>
+<ul>
+<li>which prices are clearly too high</li>
+<li>which prices are clearly acceptable to many customers</li>
+<li>how sharply demand may fall as price increases</li>
+<li>whether demand exists at prices that cover costs</li>
+</ul>
+<p>Importantly, willingness to pay does not answer these questions with certainty. It answers them with <em>structure</em>.</p>
+<p>It turns vague optimism or pessimism into bounded uncertainty—uncertainty that can be reasoned about.</p>
+<p>This is why willingness to pay is so central to pre-revenue demand learning. It engages directly with the tradeoff at the heart of the decision: value versus price.</p>
+</section>
+<section id="poor-wtp-questions-create-false-confidence" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="poor-wtp-questions-create-false-confidence"><span class="header-section-number">6.7</span> Poor WTP Questions Create False Confidence</h2>
+<p>Because willingness to pay sounds concrete, it is easy to ask WTP questions too casually.</p>
+<p>Questions like “What would you be willing to pay?” or “What is a reasonable price?” often produce confident answers that feel informative. In reality, they conflate preferences, norms, and aspirations with actual tradeoffs.</p>
+<p>When willingness-to-pay questions are poorly framed, the resulting data do not simply become noisy. They become misleading.</p>
+<p>They suggest demand where none exists, or obscure demand that might be viable. They narrow attention prematurely or encourage unjustified optimism.</p>
+<p>This is not a reason to avoid willingness to pay. It is a reason to treat it with care.</p>
+<p>In the sections that follow, we turn to the design principles that make willingness-to-pay evidence meaningful—and to the common sources of bias that must be anticipated rather than ignored.</p>
+</section>
+<section id="survey-design-principles-that-keep-the-data-honest" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="survey-design-principles-that-keep-the-data-honest"><span class="header-section-number">6.8</span> Survey Design Principles That Keep the Data Honest</h2>
+<p>Learning demand from surveys is not primarily a statistical challenge. It is a human one.</p>
+<p>Respondents are not adversaries, but they are not neutral measuring instruments either. They bring incentives, assumptions, and social instincts into every question they answer. If those forces are ignored, willingness-to-pay data can look precise while being systematically wrong.</p>
+<p>Good survey design does not eliminate bias. It <em>redirects</em> it.</p>
+<p>The goal is not to trick respondents into revealing “true” values, but to create a context in which their answers reflect realistic tradeoffs rather than abstract preferences.</p>
+<p>Over time, a consistent survey structure has proven especially effective for this purpose.</p>
+</section>
+<section id="a-structure-that-reduces-transactional-bias" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="a-structure-that-reduces-transactional-bias"><span class="header-section-number">6.9</span> A Structure That Reduces Transactional Bias</h2>
+<p>One of the easiest ways to bias a willingness-to-pay question is to make it feel like a transaction.</p>
+<p>If a respondent is shown a product description and immediately asked what they would pay, the interaction is framed as a negotiation. Many respondents will instinctively understate their valuation, even if they like the product, because doing so feels costless.</p>
+<p>Other respondents respond in the opposite direction. Wanting to be helpful or encouraging, they overstate what they would pay, imagining themselves as supporters rather than buyers.</p>
+<p>Neither response is dishonest. Both are human.</p>
+<p>A more reliable approach is to separate <em>evaluation</em> from <em>valuation</em>.</p>
+<p>This can be done by structuring the survey so that respondents are first asked to help judge the quality and appeal of the offering, and only later asked to express that judgment in monetary terms.</p>
+<p>A typical sequence looks like this:</p>
+<ol type="1">
+<li><p><strong>Screening the population</strong><br>
+Establish that the respondent is actually part of the intended customer group. This protects the integrity of the data before any valuation occurs.</p></li>
+<li><p><strong>Establishing context and purpose</strong><br>
+Explain what is being considered and why the respondent’s honest input matters. When respondents understand that the product may or may not be built depending on the answers, their responses tend to reflect real tradeoffs rather than casual opinion.</p></li>
+<li><p><strong>Ensuring informed evaluation</strong><br>
+Describe the problem and the proposed solution with enough clarity that the respondent can imagine encountering it in a real decision context. This is not marketing; it is making the decision cognitively real.</p></li>
+<li><p><strong>Assessing appeal before price</strong><br>
+Ask respondents to evaluate the offering using non-monetary judgments:</p>
+<ul>
+<li>overall appeal or “wow” factor</li>
+<li>what they like most</li>
+<li>what concerns them</li>
+<li>what could be improved</li>
+</ul>
+<p>These questions allow respondents to express enthusiasm, skepticism, or ambivalence without immediately anchoring on price.</p></li>
+<li><p><strong>Eliciting willingness to pay</strong><br>
+Only after appeal has been assessed is willingness to pay introduced—as another way of expressing value, this time in financial terms rather than ratings or words.</p></li>
+<li><p><strong>Collecting customer characteristics</strong><br>
+Finally, gather information that helps interpret variation in responses and refine the target customer definition.</p></li>
+</ol>
+<p>This structure does not remove bias. It reduces the most damaging forms of it by changing how respondents interpret the task they are being asked to perform.</p>
+<p>The structure described here is not merely a set of principles. It can be implemented directly.</p>
+<p>The <a href="./tk2_survey_design.html"><strong>survey design toolkit</strong></a> will walk you through the key survey design decisions to implement a survey structure that reduces transactional bias in practice.</p>
+</section>
+<section id="why-this-structure-works" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="why-this-structure-works"><span class="header-section-number">6.10</span> Why This Structure Works</h2>
+<p>This sequencing changes the respondent’s mental frame.</p>
+<p>Early questions invite judgment rather than negotiation. Respondents are asked to help evaluate whether something has merit, not to decide whether they personally want a discount.</p>
+<p>By the time willingness to pay is introduced, respondents have already expressed their evaluation in other ways. The price question becomes a consistency check rather than a standalone transaction.</p>
+<p>In effect, willingness to pay becomes a <em>monetary rating</em> layered on top of earlier judgments, rather than the sole measure of value.</p>
+<p>This does not make willingness-to-pay responses perfectly accurate. But it makes them more interpretable—and more aligned with real decision behavior.</p>
+</section>
+<section id="a-note-on-scope-and-applicability" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="a-note-on-scope-and-applicability"><span class="header-section-number">6.11</span> A Note on Scope and Applicability</h2>
+<p>A single willingness-to-pay question is most appropriate when demand is yes/no—when the customer’s decision is whether to buy one unit in the defined period.</p>
+<p>When quantity itself is part of the uncertainty, willingness to pay must be paired with quantity information, and survey design becomes more demanding. The principles above still apply, but the structure must accommodate additional cognitive load.</p>
+<p>For now, the important point is this: willingness-to-pay evidence is only as good as the context in which it is elicited.</p>
+<p>In the next section, we turn directly to the most important remaining challenge—why even well-designed surveys tend to misstate demand, and what can be done to anticipate that bias rather than be surprised by it.</p>
+</section>
+<section id="hypothetical-bias-introduced-not-buried" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="hypothetical-bias-introduced-not-buried"><span class="header-section-number">6.12</span> Hypothetical Bias (Introduced, Not Buried)</h2>
+<p>One final issue deserves to be acknowledged openly before moving on.</p>
+<p>When people answer hypothetical questions—especially about products that do not yet exist—their answers are imperfect.</p>
+<p>This is not because respondents are dishonest. It is because human judgment changes when consequences are abstract rather than immediate.</p>
+<p>People tend to:</p>
+<ul>
+<li>overstate interest in ideas they find appealing,</li>
+<li>express generosity toward creators they want to support,</li>
+<li>imagine themselves behaving more decisively than they often do in real life.</li>
+</ul>
+<p>Willingness-to-pay questions are particularly vulnerable. Asking someone what they would pay is not the same as asking them to pay. The psychological distance matters.</p>
+<p>Ignoring this fact leads to false confidence. Overemphasizing it leads to paralysis. The goal here is neither.</p>
+<p>Instead, treat hypothetical bias as a kind of friction in the measurement process—a predictable distortion that can be reduced, but not eliminated.</p>
+<p>That is why this book emphasizes design over correction.</p>
+<p>Careful framing, clear definition of the unit and period, realistic descriptions of the offering, and separating appeal from valuation all help keep responses grounded. Asking respondents for help with a real decision—rather than treating the survey as a transaction—also matters.</p>
+<p>Later chapters will show how demand evidence can be validated and stress-tested. For now, the key point is simple:</p>
+<p>Hypothetical bias is not a reason to avoid learning demand. It is a reason to learn demand deliberately.</p>
+<p>Well-designed evidence is not perfect—but it is far better than guessing.</p>
+</section>
+<section id="a-simple-design-checklist" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="a-simple-design-checklist"><span class="header-section-number">6.13</span> A Simple Design Checklist</h2>
+<p>Before moving on to estimation and modeling, it is worth pausing to ensure that the foundation is solid.</p>
+<p>The goal of this checklist is not to enforce rigid rules. It is to make sure that key design commitments have been made consciously rather than accidentally.</p>
+<p>Before analyzing demand data, you should be able to answer “yes” to each of the following:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Customer defined:</strong> Do you know exactly whose decision you are trying to learn about?</label></li>
+<li><label><input type="checkbox"><strong>Unit defined:</strong> Is it clear what counts as one unit in the customer’s mind?</label></li>
+<li><label><input type="checkbox"><strong>Decision period defined:</strong> Have you specified when and how often this decision occurs?</label></li>
+<li><label><input type="checkbox"><strong>Demand type identified:</strong> Is demand yes/no or how-many given the unit and period?</label></li>
+<li><label><input type="checkbox"><strong>Willingness-to-pay approach chosen:</strong> Does your WTP question match the type of demand you are measuring?</label></li>
+<li><label><input type="checkbox"><strong>Bias risks acknowledged:</strong> Have you considered how framing, sympathy, or abstraction might affect responses?</label></li>
+<li><label><input type="checkbox"><strong>Plan for transformation later:</strong> Do you know how these responses will eventually be converted into price–quantity data?</label></li>
+</ul>
+<p>If any of these feel unclear, that is not a problem—it is a signal.</p>
+<p>Return to the framing and design tools before proceeding. Demand estimation is only as credible as the evidence it is built on.</p>
+<p>With these pieces in place, we are finally ready to move from design to analysis—to turn structured responses into demand curves that can inform real profit decisions.</p>
+<!-- 
+---
+---
+---
+
+
+## 5.5 Hypothetical Bias (Introduced, Not Buried)
+A short, candid section:
+- why people overstate interest and purchasing
+- why WTP is vulnerable
+- what we do about it (design tactics, not econometrics)
+
+This section should not feel like a scolding.
+It should feel like “here’s the physics of human answers.”
+
+## 5.6 A Simple Design Checklist
+A short end-of-chapter checklist that aligns with the app workflow:
+- customer definition
+- unit + period
+- demand type (yes/no vs how-many)
+- WTP approach chosen
+- bias risks identified
+- plan for transformation later
+-->
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>By “unit,” we mean whatever the customer mentally counts when deciding whether to buy.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>By “period,” we mean how often and on what interval that decision can repeat.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ei\.nilehatch\.com\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch5_demand.html" class="pagination-link" aria-label="What Demand Is (and Is Not)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What Demand Is (and Is Not)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch7_execute_experiment.html" class="pagination-link" aria-label="Executing Demand Experiments">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Executing Demand Experiments</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><em>Is This Worth Doing?</em> was written by Nile Hatch (2026).</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

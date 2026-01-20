@@ -39,7 +39,8 @@ book:
       chapters:
         - ch1_is_this_worth_doing.qmd
         - ch2_uncertainty_types.qmd
-        - ch3_profit_before_revenue.qmd    
+        - ch3_profit_before_revenue.qmd
+        - ch4_need_to_know.qmd
 #    - intro.qmd
 #    - part: Uncertainty
 #      chapters:
@@ -47,7 +48,16 @@ book:
 #        - uncertainty_profit.qmd
     - part: Learning Demand
       chapters:
-        - ch4_demand.qmd
+        - ch5_demand.qmd
+        - ch6_design_experiment.qmd
+        - ch7_execute_experiment.qmd
+    - part: Toolkit
+      chapters:
+        - tk1_frame_problem.qmd
+        - tk2_survey_design.qmd
+        - tk3_validate_data.qmd
+    - part: Code-centric version
+      chapters:
         - demand.qmd
         - durable_demand.qmd
         - nondurable_demand.qmd

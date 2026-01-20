@@ -1,0 +1,282 @@
+# Designing a Demand Survey {#sec-toolkit-design-survey-chapter .unnumbered}
+<!-- *Template + Annotated Guide* -->
+
+This toolkit provides a practical structure for designing a demand survey.
+
+It assumes you have already completed [Toolkit — Framing a Demand Learning Problem](tk1_frame_problem.qmd), including:
+
+- a clear decision,
+- a defined customer,
+- a defined unit,
+- a defined decision period,
+- and a choice between yes/no and how-many demand.
+
+If those elements are not yet clear, return to the [problem framing toolkit](tk1_frame_problem.qmd) before proceeding.
+
+The goal of this toolkit is not to guarantee accurate demand estimates. Its goal is to help you design a survey that produces *interpretable* demand evidence rather than misleading confidence.
+
+
+
+
+
+## How to Use This Toolkit
+
+This toolkit is organized as a sequence of survey sections.
+
+Each section includes:
+
+- its purpose,
+- example question types or wording,
+- and notes on common failure modes.
+
+You should be able to translate each section directly into your preferred survey tool.
+
+
+
+
+
+## Screening the Population
+
+**Purpose**  
+Ensure that respondents belong to the customer population whose demand you are trying to learn.
+
+Demand evidence is only meaningful if it comes from people who could plausibly face the decision you are studying.
+
+**What to Include**
+
+- One or more screening questions that establish eligibility
+- Clear exclusion of respondents who do not fit the target customer definition
+
+**Example Prompts**
+
+- “Do you currently [engage in X / face Y problem / purchase Z]?”
+- “Which of the following best describes your role or situation?”
+
+**Design Notes**
+
+- Screen early. Do not ask valuation questions before eligibility is confirmed.
+- Avoid overly permissive screens. Broad samples dilute demand signals.
+- If many respondents fail the screen, that is useful information—not a failure.
+
+
+
+
+
+## Establishing Context and Purpose
+
+**Purpose**  
+Frame the survey as a request for informed judgment, not a transaction or a pitch.
+
+This section sets expectations and reduces both strategic lowballing and sympathetic overstatement.
+
+**What to Include**
+
+- A brief description of what is being considered
+- Why the respondent’s honest input matters
+- An implicit sense of scarcity or consequence
+
+**Example Language (Adapt, Do Not Copy)**
+
+- “We are evaluating whether to move forward with a new offering.”
+- “Your answers will help determine whether this is built and how it is priced.”
+- “Honest answers matter more than encouraging ones.”
+
+**Design Notes**
+
+- Do not oversell the product.
+- Do not promise that the product will exist.
+- The goal is to make the decision feel real, not promotional.
+
+
+
+
+
+## Grounding the Problem and Solution
+
+**Purpose**  
+Ensure that respondents understand the problem and proposed solution well enough to imagine a real decision.
+
+Willingness-to-pay responses are meaningless if respondents are guessing about what is being offered.
+
+**What to Include**
+
+- A clear description of the problem being addressed
+- A concrete description of the proposed solution
+- Enough detail to approximate a checkout-level understanding
+
+**Design Notes**
+
+- This is not marketing copy.
+- Avoid aspirational language.
+- If respondents would need more information before buying in real life, include it here.
+
+
+
+
+
+## Evaluating Appeal Before Price
+
+**Purpose**  
+Allow respondents to express judgment about quality and appeal *without anchoring on price*.
+
+This separates evaluation from valuation and reduces transactional bias.
+
+**What to Include**
+
+- A general appeal or “wow factor” rating
+- Open-ended questions about strengths and concerns
+
+**Example Prompts**
+
+- “On a scale from 1–10, how appealing is this offering overall?”
+- “What do you like most about this?”
+- “What concerns you or gives you pause?”
+- “What could be improved?”
+
+**Design Notes**
+
+- Average appeal scores below the mid-range often indicate weak demand regardless of price.
+- Open-ended responses are as valuable as numeric ratings.
+- Do not interpret high appeal as proof of demand.
+
+
+
+
+
+## Willingness to Pay
+
+##### Purpose
+Elicit monetary valuation as evidence about demand boundaries, not as a pricing recommendation.
+
+This section should come *after* appeal has been assessed.
+
+##### What to Include
+
+- A willingness-to-pay question appropriate to the demand type
+- Clear reference to the defined unit and decision period
+
+---
+
+### For Yes/No Demand
+
+Ask for the maximum price at which the respondent would still choose to buy one unit in the defined period.
+
+##### Design Notes
+
+- Avoid asking for a “reasonable” or “fair” price.
+- Make sure respondents know exactly what one unit represents.
+- Treat responses as boundaries, not promises.
+
+---
+
+### For How-Many Demand
+
+Designing surveys for **how-many demand** requires additional care.
+
+When customers may consume multiple units within a decision period, demand is not just about whether they buy—it is about *how much* they buy at different prices. That means quantity must be elicited explicitly rather than inferred.
+
+There are two practical ways to gather this information. Both can work. Each involves tradeoffs between respondent burden, realism, and bias.
+
+The key is to choose deliberately.
+
+#### Approach 1: Name a Sequence of Prices and Ask Quantity at Each
+
+In this approach, respondents are shown a small set of prices and asked how many units they would consume at each price.
+
+*Example framing:*  
+“At a price of \$X, how many units would you consume per [period]?”
+
+##### Design Notes
+
+- This approach is intuitive. It mirrors how people often encounter prices in the real world and make purchase decisions.
+- It produces direct quantity responses at specific prices, which can feel reassuring.
+- The main risk is *survey fatigue*. Respondents are asked essentially the same question repeatedly, differing only in price. As attention declines, later responses may become less thoughtful.
+- To mitigate this, the number of prices should be kept small—typically no more than 4–8.
+- This structure can also make the interaction feel transactional rather than collaborative, which may affect how carefully respondents engage.
+
+This approach is best used when simplicity and transparency are priorities and respondent burden can be kept low.
+
+---
+
+#### Approach 2: Anchor at Zero Price and Maximum Willingness to Pay
+
+In this approach, quantity is elicited at two meaningful anchors rather than across many prices.
+
+The sequence is:
+
+1. Ask how many units the respondent would consume if the price were permanently \$0.
+2. Ask for the respondent’s maximum willingness to pay for one unit.
+3. Ask how many units they would consume at that maximum price.
+
+##### Design Notes
+
+- This approach uses fewer questions, reducing fatigue and maintaining engagement.
+- Each question asks the respondent to think in a different way, which helps re-engage attention.
+- Beginning with a zero-price scenario emphasizes *need and usage* rather than transaction, reinforcing a collaborative frame.
+- This method requires extrapolating quantities at intermediate prices rather than observing them directly.
+- In the companion `Profit Analytics app`, this extrapolation is handled automatically, allowing entrepreneurs to focus on design rather than mechanics.
+
+This approach is often less biased and more cognitively realistic, but it relies on the analyst to be comfortable treating demand as inferred rather than directly reported at every price.
+
+---
+
+#### Choosing Between the Two
+
+There is no universally correct choice.
+
+The first approach favors directness and familiarity at the cost of respondent burden.  
+The second favors engagement and realism at the cost of requiring extrapolation.
+
+What matters is not which approach is “better” in the abstract, but whether the data generated is:
+
+- interpretable,
+- consistent with the defined unit and period,
+- and suitable for the analysis that follows.
+
+Whichever approach is used, the goal remains the same: to gather quantity evidence that reflects how customers actually think about consumption, not just how surveys are easiest to administer.
+
+If you are using the `Profit Analytics app`, these are the two supported data structures for how-many demand.
+
+#### A Final Reminder
+
+A single willingness-to-pay question is sufficient only when demand is yes/no.
+
+When quantity varies, it must be learned deliberately.
+
+How-many demand requires more structure—not more complexity, but more care.
+
+See the [problem framing toolkit](tk1_frame_problem) for demand-type guidance and `later toolkits for transformation approaches`.
+
+
+
+
+
+## Customer Characteristics
+
+**Purpose**  
+Enable interpretation of variation in responses and refinement of the target customer definition.
+
+Differences in willingness to pay are often systematic rather than random.
+
+**What to Include**
+
+- Characteristics plausibly related to demand or valuation
+- Information that helps distinguish high- and low-value segments
+
+**Design Notes**
+
+- Collect only what you expect to use.
+- Avoid demographic fishing.
+- These questions should come last to avoid priming earlier responses.
+
+
+
+
+
+## Interpreting the Results (A Caution)
+
+Completing a well-designed survey does not mean demand has been “measured.”
+
+It means you have gathered structured evidence that can be analyzed, stress-tested, and challenged.
+
+In the next toolkit, we turn to ways of validating demand evidence and identifying when results are robust enough to inform real decisions—or fragile enough to require redesign.

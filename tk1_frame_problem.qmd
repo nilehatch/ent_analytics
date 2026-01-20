@@ -1,0 +1,128 @@
+# Framing a Demand Learning Problem {#sec-toolkit-framing-problem-chapter .unnumbered}
+<!-- *Guide* -->
+
+This toolkit helps you determine whether you are ready to design a demand experiment.
+
+It is not about surveys, pricing, or analytics. Its purpose is to clarify the decision you are facing and the uncertainty that stands in the way of making that decision responsibly.
+
+If this guide feels difficult to complete, that is useful information. It means the learning problem has not yet been framed clearly enough.
+
+
+
+## The Decision You Are Trying to Make
+
+Begin with a concrete decision.
+
+This should be a real choice with consequences, not a general aspiration or exploration. Good decisions to anchor demand learning include:
+
+- whether to launch or not
+- whether to proceed at a particular price range
+- whether to invest in capacity or scale
+- whether to continue, pause, or abandon an initiative
+
+State the decision in a single sentence.
+
+If different answers would not change what you do next, the decision is not yet specific enough.
+
+
+
+## Your Most Urgent Unknown
+
+Next, identify the most urgent unknown blocking that decision.
+
+There are always many things you do not know. The goal here is not to list them all. The goal is to identify the one uncertainty that must be reduced before you can act responsibly.
+
+Ask yourself:
+
+- What would I need to understand better to make this decision with integrity?
+- What uncertainty makes acting now feel reckless—or waiting feel costly?
+- If I could learn only one thing next, what would matter most?
+
+State the most urgent unknown as a short, plain-language sentence.
+
+This unknown should be directly tied to the decision above. If learning more about it would not affect the decision, it is not the right focus yet.
+
+
+
+## Who the Customer Is (and Is Not)
+
+Demand learning is always about a specific customer’s decision.
+
+Define the customer you are trying to learn about clearly enough that someone else could identify whether a respondent belongs in this group.
+
+Be explicit about:
+
+- who is included
+- who is excluded
+- what makes someone a plausible buyer rather than merely interested
+
+Avoid overly broad definitions. A survey of “anyone who might like this” rarely produces useful demand evidence.
+
+
+
+## What Counts as One Unit
+
+Define what counts as one unit of demand.
+
+This is not an accounting definition. It is a cognitive one.
+
+A unit is whatever the customer mentally counts when deciding whether to buy. It might be:
+
+- one subscription
+- one visit
+- one meal
+- one license
+- one session
+- one item or package
+
+If a customer would be unsure what “one” means when answering a question, willingness-to-pay responses will be difficult to interpret later.
+
+State the unit clearly and consistently. All demand evidence will be interpreted relative to this choice.
+
+
+
+## The Decision Period
+
+Define the time frame over which the customer makes this decision.
+
+Demand is never timeless. A customer may be willing to buy once, occasionally, or repeatedly—and those are different decisions.
+
+Clarify:
+
+- how often the decision can occur
+- whether the choice is one-time or repeatable
+- what period feels natural to the customer (e.g., per month, per year)
+
+The decision period anchors quantity and prevents accidental overstatement of demand.
+
+
+
+## What Kind of Demand This Implies
+
+With the unit and decision period defined, determine whether quantity is fixed or variable.
+
+- If the customer either buys one unit or does not buy at all, demand is **yes/no**.
+- If the customer may buy or consume multiple units within the period, demand is **how-many**.
+
+This distinction determines how demand must be measured later. Choosing the wrong type does not just reduce accuracy—it changes the meaning of the evidence.
+
+
+
+##  Readiness Check
+
+Before moving on, review your framing.
+
+You should be able to answer all of the following clearly:
+
+- [ ] What decision am I trying to make?
+- [ ] What is my most urgent unknown?
+- [ ] Who is the customer?
+- [ ] What counts as one unit?
+- [ ] What is the decision period?
+- [ ] Is quantity fixed at one (yes/no demand) or variable (how-many demand)?
+
+If any of these feel vague or contested, pause here. Refining the framing will save time and prevent misleading results later.
+
+Once these commitments are clear, you are ready to design a demand survey.
+
+The next toolkit provides a structured way to do that.
