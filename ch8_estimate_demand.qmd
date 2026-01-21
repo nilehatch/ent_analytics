@@ -1,0 +1,711 @@
+# Estimating Demand {#sec-demand-estimation-chapter}
+
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+
+Up to this point, the focus of this book has been on *learning*—how to frame the right question, design evidence that could answer it, and execute demand experiments responsibly.
+
+At some point, however, evidence must be turned into something usable.
+
+Decisions about pricing, investment, and scale require an object that can be reasoned about. Raw survey responses, interview notes, and scattered observations are not enough. They must be organized, structured, and interpreted.
+
+That is the role of demand estimation.
+
+This chapter explains what it means to estimate demand, what assumptions are being made when we do so, and how judgment enters the process. We are not teaching statistical technique here. We are clarifying what estimation *is*—and what it is not—so that the results can be used responsibly rather than reverently.
+
+
+
+## From Responses to a Demand Object
+
+Estimating demand is often described as “finding” a demand curve.
+
+This language is misleading.
+
+Demand curves do not exist in the world waiting to be uncovered. They are not measured the way temperature or distance is measured. They are *constructed*—inferred from evidence using assumptions about behavior, aggregation, and continuity.
+
+Understanding this is essential, because estimation is not a neutral mechanical step. It is an interpretive act.
+
+
+
+### What Estimation Actually Does
+
+Before estimation, demand evidence usually looks like this:
+
+- individual responses to willingness-to-pay questions,
+- yes/no purchase intentions at specific prices,
+- reported quantities tied to a period,
+- variation across respondents.
+
+None of this is yet a demand curve.
+
+Estimation takes these scattered pieces of evidence and imposes structure on them. It answers questions like:
+
+- How should individual responses be combined?
+- How should quantity be expected to change as price changes?
+- What smooth relationship best summarizes this behavior?
+
+The result is not “the truth about demand.”  It is a *demand object*—a structured representation that makes reasoning possible. This object allows us to:
+
+- compare prices,
+- rule out implausible scenarios,
+- and connect demand to cost and profit.
+
+But it only earns this role because of the assumptions embedded in it.
+
+
+
+### Assumptions You Are Making (Whether You Name Them or Not)
+
+Any estimated demand curve assumes, at a minimum, that:
+
+- customer behavior can be summarized at the market level,
+- higher prices do not increase quantity demanded,
+- responses vary smoothly rather than erratically,
+- and unobserved prices would produce intermediate outcomes.
+
+These assumptions are rarely stated explicitly. They are nonetheless present.
+
+Estimation does not eliminate uncertainty. It reshapes it—turning many small unknowns into a smaller number of structured ones that can be reasoned about.
+
+Demand estimation is powerful precisely because it is forgiving.
+
+Given almost any dataset, a model can be fit and a curve can be drawn. That is a feature — and a risk. Before estimating anything, it is essential to verify that the data actually corresponds to a coherent demand question.
+
+The toolkit [Preparing Data for Demand Estimation](tk4_preparing_data.qmd) provides a short set of checks to ensure that unit, period, demand type, and variation are aligned before modeling begins. Readers are strongly encouraged to work through it before proceeding.
+
+
+
+### Where the [**Profit Analytics App**](https://rconnect.byu.edu/ProfitAnalytics/) Fits—and Where It Does Not
+
+In this book, the mechanical aspects of estimation are handled by a companion [profit analytics app](https://rconnect.byu.edu/ProfitAnalytics/).
+
+This is a deliberate choice.
+
+Estimating demand requires computation. Interpreting an estimated demand curve requires judgment. The app exists to perform the former so that attention can remain on the latter.
+
+The app fits demand models, compares their fit, and produces estimated demand curves from the evidence you provide. It does not decide whether the data are trustworthy, whether the assumptions are reasonable, or how much confidence the result deserves.
+
+Those decisions remain yours.
+
+The app will fit demand models and compare results automatically. It does not — and cannot — determine whether the data is appropriate for estimation.^[If you have not already done so, complete the toolkit [Preparing Data for Demand Estimation](tk4_preparing_data.qmd) before using the app.]
+
+
+### Estimation as Translation, Not Revelation
+
+It is helpful to think of estimation as a translation step.
+
+You begin with evidence expressed in the language of respondents: ratings, prices, quantities, intentions. Estimation translates that evidence into the language of decision-making: price–quantity relationships.
+
+Like any translation, something is gained and something is lost.
+
+The gain is coherence.  
+The loss is detail.
+
+The purpose of this chapter is to help you understand that tradeoff—so that when you look at an estimated demand curve, you know what kind of object it is, what it summarizes, and where judgment must still be exercised.
+
+Only then does it make sense to ask how individual responses become market demand, how different models tell different behavioral stories, and how fit should be interpreted.
+
+That is where we turn next.
+
+
+
+
+
+
+## Individual Demand vs. Market Demand
+
+Most demand evidence begins at the individual level.
+
+A respondent states a willingness to pay.  
+A customer indicates whether they would buy at a given price.  
+A user reports how many units they would consume in a period.
+
+These responses are real, informative, and necessary. But they are not yet the object that entrepreneurial decisions require.
+
+Entrepreneurs do not usually price for one person.  
+They price for a market.
+
+Understanding the difference—and the relationship—between individual demand and market demand is essential for using estimated demand curves responsibly.
+
+
+
+### Individual Demand Is About Preference
+
+At the individual level, demand reflects a single person’s tradeoffs.
+
+An individual’s willingness to pay summarizes:
+
+- how much they value the offering,
+- relative to alternatives,
+- under the constraints they perceive.
+
+This information is useful. It tells you something about appeal, variation, and heterogeneity across people.
+
+But individual demand, on its own, does not answer questions like:
+
+- “How many units would we sell at this price?”
+- “Is demand large enough to justify entry?”
+- “What price could support a profitable business?”
+
+Those questions are inherently collective.
+
+
+
+### Market Demand Is About Aggregation
+
+Market demand describes how quantity demanded varies with price **across a population**, not within a single mind.
+
+An estimated market demand curve answers a different question:
+
+> *At this price, how many units would be purchased in total by the relevant group of customers?*
+
+To answer that question, individual responses must be combined.
+
+That combination is not automatic. It requires decisions about:
+
+- which individuals belong in the population,
+- how their responses should be weighted,
+- and how variation across people translates into total quantity.
+
+These choices are where estimation quietly intersects with sampling.
+
+
+
+### Why Representativeness Matters Here
+
+When you estimate market demand, you are implicitly making a claim about a population.
+
+If your sample overrepresents people who care intensely about the problem, market demand will be overstated.  
+If it underrepresents likely buyers, demand will be understated.  
+If it includes people who are not part of the target population at all, the resulting curve may be distorted in unpredictable ways.
+
+This is why the execution choices discussed in the previous chapter matter so much at this stage.
+
+Individual demand can be interesting even in a narrow or convenience sample.  
+Market demand cannot.
+
+Once you aggregate, sampling assumptions stop being background conditions and become central to interpretation.
+
+
+
+### Why You Rarely Want “Perfect” Individual Information
+
+It is tempting to imagine that learning demand means learning everyone’s willingness to pay precisely.
+
+In practice, this is neither possible nor necessary.
+
+Entrepreneurial decisions do not require knowing exactly who would buy at every price. They require knowing whether *enough* people would buy at *plausible* prices to justify action.
+
+Market demand estimation trades individual precision for collective insight. It sacrifices detail in order to gain relevance.
+
+This is not a weakness. It is the point.
+
+
+
+### What Estimation Adds at the Market Level
+
+By aggregating individual responses into a market demand curve, estimation allows you to:
+
+- reason about total quantity rather than isolated preferences,
+- compare pricing scenarios at the population level,
+- connect demand to costs and profit,
+- and evaluate whether uncertainty is small enough to proceed responsibly.
+
+The resulting curve does not describe any one person’s behavior perfectly. It describes a market well enough to inform a decision.
+
+That distinction is easy to forget—and costly to ignore.
+
+
+
+### A Caution About Interpretation
+
+Because estimated demand curves look smooth and authoritative, it is easy to treat them as objective facts.
+
+They are not.
+
+They are summaries of evidence filtered through:
+
+- sampling choices,
+- aggregation assumptions,
+- and modeling decisions.
+
+Used carefully, they reduce uncertainty in a disciplined way.  
+Used casually, they can obscure where uncertainty still lives.
+
+The next step, then, is not to ask whether an estimated demand curve is “right,” but to ask what kind of behavioral story it tells—and whether that story makes sense for the decision at hand.
+
+That is where model choice enters.
+
+
+
+
+
+## Choosing a Functional Form
+
+Once individual responses have been aggregated into a sample-level demand object, another choice becomes unavoidable.
+
+How should demand be *modeled*?
+
+This is sometimes described as choosing an equation. That description is technically correct—and conceptually unhelpful.
+
+A better way to think about model choice is this:
+
+> A demand model is a story about how customers respond to price.
+
+Different functional forms tell different stories. The role of estimation is not to discover which story is “true,” but to identify which story is most consistent with the evidence and the decision context.
+
+
+
+### Models as Behavioral Hypotheses
+
+Every demand model embeds assumptions about behavior.
+
+Some assume customers respond smoothly and proportionally to price changes.  
+Others assume sensitivity accelerates or decelerates.  
+Others assume adoption saturates as price falls.
+
+These assumptions are rarely stated explicitly, but they are always present.
+
+Choosing a functional form is therefore not a technical detail. It is a behavioral hypothesis.
+
+```{r}
+#| label: fig-demand-model-shapes
+#| echo: false
+#| warning: false
+#| fig-cap: "Three common demand model shapes (linear, exponential, sigmoid). These curves are not fitted to data; they illustrate different behavioral assumptions about how quantity responds to price."
+#| fig-align: center
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(tidyverse)
+
+# Price grid
+P_grid <- seq(0, 1250, length.out = 400)
+Q_max  <- 2500
+
+# Linear
+b_lin <- -Q_max / 1250
+fQ_lin <- function(P) pmax(0, Q_max + b_lin * P)
+
+# Exponential
+k_exp <- log(1 / 0.05) / 1250
+fQ_exp <- function(P) Q_max * exp(-k_exp * P)
+
+# Sigmoid
+P_mid <- 500
+s_sig <- 120
+fQ_sig <- function(P) Q_max / (1 + exp((P - P_mid) / s_sig))
+
+df <- tibble(
+  Price = rep(P_grid, 3),
+  Quantity = c(fQ_lin(P_grid), fQ_exp(P_grid), fQ_sig(P_grid)),
+  Model = rep(c("Linear", "Exponential", "Sigmoid"), each = length(P_grid))
+)
+
+ggplot(df, aes(x = Price, y = Quantity)) +
+  geom_line(data = filter(df, Model == "Linear"),
+            linewidth = 1.8, linetype = "solid", color = "#2563EB") +
+  geom_line(data = filter(df, Model == "Exponential"),
+            linewidth = 1.8, linetype = "solid", color = "#1E3A8A") + # dashed
+  geom_line(data = filter(df, Model == "Sigmoid"),
+            linewidth = 2, linetype = "solid", color = "#78b7fa") + # dotdash
+
+  # Direct labels
+  annotate("text", x = 950, y = fQ_lin(900),
+           label = "Linear", color = "#2563eb", hjust = 0, size = 5) +
+  annotate("text", x = 250, y = fQ_exp(250) - 120,
+           label = "Exponential", color = "#1e3a8a", hjust = 1, size = 5) +
+  annotate("text", x = 340, y = fQ_sig(400) + 350,
+           label = "Sigmoid", color = "#78b7fa", hjust = 0, size = 5) +
+  
+#  geom_label(x = 950, y = fQ_lin(950), 
+#             label = "Linear", color = "#2563EB", fill = "white",
+#             size = 5, label.size = 0.0, label.padding = unit(0.15, "lines")) +
+
+  labs(x = "Price", y = "Quantity") +
+  coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
+  scale_x_continuous(labels = label_dollar()) +
+  scale_y_continuous(labels = label_comma()) +
+  theme_hc()
+```
+
+
+### Linear Demand: Constant Sensitivity
+
+A linear demand model assumes that quantity changes at a constant rate as price changes.
+
+Each increase in price reduces quantity by the same amount, regardless of where you are on the curve.
+
+This story is simple and sometimes useful, especially over narrow price ranges. But it implies behavior that is often unrealistic for new or differentiated offerings.
+
+In particular, linear models:
+
+- imply negative quantity at sufficiently high prices,
+- and unlimited demand at sufficiently low prices.
+
+These implications do not make the model useless. They do, however, limit how literally it should be interpreted.
+
+
+
+### Exponential Demand: Increasing Sensitivity
+
+Exponential demand models assume that quantity responds proportionally rather than additively.
+
+As price rises, quantity falls at an increasing rate.  
+As price falls, quantity grows rapidly.
+
+This captures situations where customers become much more sensitive to price changes as prices increase—often a reasonable assumption for discretionary or substitutable products.
+
+The behavioral story here is one of *amplification*: small price changes can have large effects.
+
+As with all models, this is not a claim about truth. It is a claim about plausibility given the evidence.
+
+
+
+### Sigmoid Demand: Saturation and Adoption
+
+Sigmoid demand models tell a different story.
+
+They assume that:
+
+- at very high prices, almost no one buys,
+- at very low prices, almost everyone who could buy does buy,
+- and most of the action happens in between.
+
+This shape reflects two common features of real markets:
+- limited population size,
+- and diminishing returns to price cuts once adoption is widespread.
+
+For many new products and services, this behavioral story is especially compelling. Demand grows slowly at first, accelerates as prices enter a viable range, and then saturates.
+
+This does not make sigmoid models “better” in general. It makes them appropriate for certain kinds of decisions.
+
+
+
+### Why the App Fits Multiple Models
+
+Because different models tell different behavioral stories, relying on a single functional form is risky.
+
+This is why the companion analytics app estimates multiple demand models from the same evidence and allows them to be compared.
+
+The purpose is not to select the model with the highest fit mechanically. It is to surface how sensitive conclusions are to the behavioral assumptions embedded in the model.
+
+The app reports standard measures of fit to help you assess whether a model is consistent with the data. These measures are aids to judgment, not decision rules. A model that fits slightly worse but tells a more plausible behavioral story may be the better guide for action.
+
+When different models tell similar stories, confidence increases.  
+When they diverge, judgment is required.
+
+
+
+### Model Choice Is a Judgment Call
+
+<!--
+No statistical test can tell you which demand model is “correct.”
+
+Model choice involves weighing:
+
+- fit to the available evidence,
+- plausibility of the implied behavior,
+- and relevance to the decision you are trying to make.
+
+This is where entrepreneurial judgment re-enters the process.
+
+Estimation narrows uncertainty.  
+Model choice interprets it.
+-->
+
+At this point, it may be tempting to ask a simple question:
+
+*Which demand model is best?*
+
+That question sounds technical, but it is not. It is a judgment question disguised as a statistical one.
+
+When we estimate demand, we are not uncovering a law of nature. We are choosing a functional form that imposes structure on limited evidence. Different models can often fit the same data reasonably well—and yet imply very different behavior outside the observed range.
+
+This is why model choice cannot be automated away. It requires thinking carefully about what demand can and cannot do in the real world.
+
+
+The profit analytics app estimates three common demand models:
+
+- Linear demand, where quantity falls at a constant rate as price rises
+- Exponential demand, where quantity falls proportionally as price rises
+- Sigmoid demand, where demand is high and relatively insensitive at low prices, then falls rapidly over a middle range, and finally flattens near zero at high prices
+
+Each of these models can appear plausible when viewed only through the lens of observed data. The difference lies in what they assume about customer behavior outside that data.
+
+#### Why Linear and Exponential Models Often Struggle
+
+Linear demand is attractive because it is simple and familiar. But it carries a strong and often unrealistic implication: that customers reduce quantity at the same rate no matter where price starts.
+
+Taken literally, a linear model suggests that:
+
+- demand can become arbitrarily large at low prices, and
+- demand becomes negative at sufficiently high prices.
+
+Both implications violate how real customers behave.
+
+Exponential demand avoids negative quantities, but introduces a different issue. It implies that demand is always shrinking proportionally, even at very low prices. This often exaggerates sensitivity where customers are, in reality, relatively indifferent.
+
+In practice, both linear and exponential models tend to misrepresent demand at the extremes—precisely where pricing and profit decisions are most sensitive.
+
+#### Sigmoid Demand Often Fits Entrepreneurial Reality
+
+Sigmoid demand behaves differently.
+
+At low prices, quantity changes slowly. Customers who already value the product do not suddenly consume much more just because the price drops slightly.
+
+At high prices, demand flattens near zero. Most customers have a reservation point beyond which they simply opt out.
+
+Between those extremes, there is a middle region where price changes matter a great deal. This is where most real pricing decisions live.
+
+This shape aligns naturally with how customers make tradeoffs:
+
+- limited attention
+- budget constraints
+- diminishing marginal value
+- and realistic saturation
+
+The sigmoid model does not win because it fits better by default. It often wins because it respects these economic constraints without forcing them through ad hoc fixes.
+
+#### Seeing the Difference
+
+The figure below fits the same set of demand evidence with all three models.
+
+Each model can appear reasonable over the observed price range. But as price moves beyond that range, their implications diverge sharply.
+
+One model preserves economic plausibility across the full decision space. The others do not.
+
+This is the heart of model choice.
+
+#### Judgment Before Metrics
+
+It is possible to rank models using statistical criteria. The app reports these diagnostics to support analysis.
+
+But those metrics answer a different question:
+
+> *Which curve passes closest to the observed points?*
+
+Entrepreneurs must answer a broader one:
+
+> *Which model implies behavior that makes sense for this decision?*
+
+Model choice is not about finding the “true” demand curve. It is about choosing a structure you are willing to reason with when making irreversible commitments.
+
+That choice cannot be delegated to a statistic.
+
+```{r}
+#| label: fig-model-fits-simulated
+#| echo: false
+#| warning: false
+#| fig-cap: "Simulated demand data with three fitted models.\nThe data were generated to reflect realistic consumer behavior with noise and saturation. Linear and exponential models capture parts of the pattern but miss systematic structure. The sigmoid model aligns with behavior across the full price range."
+#| fig-align: center
+
+
+#Simulated demand evidence (points) with three fitted model shapes (linear, exponential, sigmoid). The data are noisy and saturate at low prices—patterns that some models capture better than others."
+
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(ggthemes)
+
+set.seed(8)
+
+# ---------------------------
+# 1) Simulate "plausible" demand evidence
+# ---------------------------
+
+n <- 120
+P <- sort(runif(n, 0, 1250))
+
+Q_max <- 2500
+P_mid <- 520
+s_sig <- 140
+
+# Latent sigmoid "true" curve
+Q_true <- Q_max / (1 + exp((P - P_mid) / s_sig))
+
+# Heteroskedastic noise: more variance where slope is steepest (mid prices)
+# Scale noise by a simple bell-ish function of price around the midpoint
+noise_scale <- 20 + 220 * exp(-((P - P_mid) / 260)^2)
+
+Q_obs <- Q_true + rnorm(n, mean = 0, sd = noise_scale)
+
+# Keep nonnegative and make it feel survey-like (integers)
+Q_obs <- pmax(0, round(Q_obs))
+
+df <- tibble(Price = P, Quantity = Q_obs)
+
+# ---------------------------
+# 2) Fit three model shapes to the same data
+#    (simple, readable fits—not maximum rigor)
+# ---------------------------
+
+# Linear: Q = a + bP (clip at 0 for prediction)
+fit_lin <- lm(Quantity ~ Price, data = df)
+
+pred_lin <- function(Pnew) {
+  pmax(0, as.numeric(predict(fit_lin, newdata = data.frame(Price = Pnew))))
+}
+
+# Exponential: Q = A * exp(-kP)
+# (avoid log(0) by filtering to positive quantities)
+df_pos <- df %>% filter(Quantity > 0)
+
+start_A <- max(df_pos$Quantity)
+start_k <- log(start_A / max(1, min(df_pos$Quantity))) / (max(df_pos$Price) - min(df_pos$Price))
+
+fit_exp <- nls(
+  Quantity ~ A * exp(-k * Price),
+  data = df_pos,
+  start = list(A = start_A, k = max(1e-6, start_k)),
+  control = nls.control(maxiter = 200, warnOnly = TRUE)
+)
+
+pred_exp <- function(Pnew) {
+  co <- coef(fit_exp)
+  as.numeric(co[["A"]] * exp(-co[["k"]] * Pnew))
+}
+
+# Sigmoid (logistic): Q = L / (1 + exp((P - P0)/s))
+# Use reasonable starts based on data range
+start_L  <- max(df$Quantity)
+start_P0 <- median(df$Price)
+start_s  <- 150
+
+fit_sig <- nls(
+  Quantity ~ L / (1 + exp((Price - P0) / s)),
+  data = df,
+  start = list(L = start_L, P0 = start_P0, s = start_s),
+  control = nls.control(maxiter = 300, warnOnly = TRUE)
+)
+
+pred_sig <- function(Pnew) {
+  co <- coef(fit_sig)
+  as.numeric(co[["L"]] / (1 + exp((Pnew - co[["P0"]]) / co[["s"]])))
+}
+
+# ---------------------------
+# 3) Build prediction grid + plot
+# ---------------------------
+
+P_grid <- seq(0, 1250, length.out = 400)
+
+df_fit <- tibble(
+  Price = rep(P_grid, 3),
+  Quantity = c(pred_lin(P_grid), pred_exp(P_grid), pred_sig(P_grid)),
+  Model = rep(c("Linear fit", "Exponential fit", "Sigmoid fit"), each = length(P_grid))
+)
+
+# Helpful y-values for direct labels
+lab_x1 <- 750
+lab_x2 <- 400
+lab_x3 <- 400
+
+ggplot(df, aes(x = Price, y = Quantity)) +
+  geom_point(color = "gray60", size = .8, alpha = 0.75) +
+
+  # Three fitted curves (same color, distinct linetypes)
+  geom_line(data = df_fit %>% filter(Model == "Linear fit"),
+            aes(y = Quantity), color = "#2563EB", linewidth = 1.2, linetype = "solid") +
+  geom_line(data = df_fit %>% filter(Model == "Exponential fit"),
+            aes(y = Quantity), color = "#1E3A8A", linewidth = 1.2, linetype = "solid") +
+  geom_line(data = df_fit %>% filter(Model == "Sigmoid fit"),
+            aes(y = Quantity), color = "#78B7FA", linewidth = 2, linetype = "solid") +
+
+  # Direct labels (avoids tiny legend keys)
+  annotate("text", x = lab_x1, y = pred_lin(lab_x1) + 100,
+           label = "Linear fit", hjust = 0, size = 4) +
+  annotate("text", x = lab_x2, y = pred_exp(lab_x2) - 120,
+           label = "Exponential fit", hjust = 1, size = 4) +
+  annotate("text", x = lab_x3, y = pred_sig(lab_x3) + 140,
+           label = "Sigmoid fit", hjust = 0, size = 5) +
+
+  labs(x = "Price", y = "Quantity") +
+  coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
+  scale_x_continuous(labels = label_dollar(), n.breaks = 6) +
+  scale_y_continuous(labels = label_comma()) +
+  theme_hc()
+```
+
+The next section turns to a common temptation at this stage—treating good fit as proof—and explains why that move is more dangerous than it looks.
+
+
+
+
+
+## From Demand Curves to Decisions {#sec-demand-to-decisions}
+
+By this point, we have done something important—but incomplete.
+
+We have taken structured demand evidence and translated it into a demand curve. We have chosen a model that reflects how customers plausibly behave across a range of prices, not just at the points we observed.
+
+What we have *not* done yet is make a decision.
+
+This distinction matters. Estimating demand is not the goal. It is a means.
+
+A demand curve does not tell you what to do. It tells you what *could* happen under different choices.
+
+### What a Demand Curve Makes Possible
+
+Once demand is represented as a price–quantity relationship, questions that were previously vague become concrete:
+
+- At what prices does demand meaningfully exist?
+- How quickly does quantity fall as price increases?
+- Where are prices clearly too low to matter?
+- Where are prices clearly too high to work?
+
+These are not optimization questions. They are questions of *feasibility* and *plausibility*.
+
+This is why demand estimation comes before profit maximization.
+
+Before asking “What price should we choose?” the entrepreneur must first understand which prices are even viable—and how sensitive outcomes are to that choice.
+
+Demand curves provide that structure.
+
+### Demand Curves Do Not Choose Prices
+
+It is tempting to think that once a demand curve is estimated, the “right” price will reveal itself.
+
+That is not how this works.
+
+Demand curves describe customer behavior. Prices are chosen by firms.
+
+Choosing a price involves costs, positioning, competition, capacity, and risk tolerance. Demand estimation does not resolve these considerations. It disciplines them.
+
+It rules out prices that cannot work and highlights regions where tradeoffs become meaningful. Within those regions, judgment still matters.
+
+### Why We Delay Profit Until Demand Is Clear
+
+Profit depends on demand, costs, and scale. But demand is the only one of these that must be learned from customers.
+
+Until demand is understood—even roughly—profit calculations are fragile. Small changes in assumed quantity can overwhelm careful cost modeling.
+
+This is why this book insists on learning demand first.
+
+Only after demand has been estimated does it make sense to layer in costs, consider fixed investments, examine competition, and reason explicitly about profit.
+
+Demand estimation is not the end of analysis. It is the foundation.
+
+### What Comes Next
+
+In the chapters that follow, we use estimated demand curves to reason directly about profit.
+
+We examine how price choices translate into revenue, how costs interact with demand, and how pricing decisions emerge under uncertainty.
+
+The profit analytics app supports this next step mechanically. The logic remains the same.
+
+First, understand demand.  
+Then, reason carefully about what to do with it.
+
+Only then does the question *“Is this worth doing?”* become answerable in a disciplined way.

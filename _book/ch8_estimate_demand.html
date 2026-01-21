@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Estimating Demand – Is This Worth Doing?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./part_cost_profit.html" rel="next">
+<link href="./ch7_execute_experiment.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1ba4f5830de1b2e7b8cf0f0ffee6cc6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="custom_itwd.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5_demand.html">Learning Demand</a></li><li class="breadcrumb-item"><a href="./ch8_estimate_demand.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Is This Worth Doing?</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/nilehatch/exp_innov/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">The Pre-Revenue Decision</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_is_this_worth_doing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Is This Worth Doing?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_uncertainty_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of Uncertainty in Pre-Revenue Profit Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3_profit_before_revenue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4_need_to_know.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Learning Demand</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What Demand Is (and Is Not)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6_design_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7_execute_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Executing Demand Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch8_estimate_demand.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_cost_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From Demand to Profit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch9_cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_toolkits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Profit Toolkit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framing a Demand Learning Problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk2_survey_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing a Demand Survey</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk3_validate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Validating and Stress-Testing Demand Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk4_preparing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing Data for Demand Estimation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk5_estimated_demand_check.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Toolkit 8B — Sanity-Check Your Estimated Demand Curve</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#from-responses-to-a-demand-object" id="toc-from-responses-to-a-demand-object" class="nav-link active" data-scroll-target="#from-responses-to-a-demand-object"><span class="header-section-number">8.1</span> From Responses to a Demand Object</a>
+  <ul class="collapse">
+  <li><a href="#what-estimation-actually-does" id="toc-what-estimation-actually-does" class="nav-link" data-scroll-target="#what-estimation-actually-does">What Estimation Actually Does</a></li>
+  <li><a href="#assumptions-you-are-making-whether-you-name-them-or-not" id="toc-assumptions-you-are-making-whether-you-name-them-or-not" class="nav-link" data-scroll-target="#assumptions-you-are-making-whether-you-name-them-or-not">Assumptions You Are Making (Whether You Name Them or Not)</a></li>
+  <li><a href="#where-the-profit-analytics-app-fitsand-where-it-does-not" id="toc-where-the-profit-analytics-app-fitsand-where-it-does-not" class="nav-link" data-scroll-target="#where-the-profit-analytics-app-fitsand-where-it-does-not">Where the <strong>Profit Analytics App</strong> Fits—and Where It Does Not</a></li>
+  <li><a href="#estimation-as-translation-not-revelation" id="toc-estimation-as-translation-not-revelation" class="nav-link" data-scroll-target="#estimation-as-translation-not-revelation">Estimation as Translation, Not Revelation</a></li>
+  </ul></li>
+  <li><a href="#individual-demand-vs.-market-demand" id="toc-individual-demand-vs.-market-demand" class="nav-link" data-scroll-target="#individual-demand-vs.-market-demand"><span class="header-section-number">8.2</span> Individual Demand vs.&nbsp;Market Demand</a>
+  <ul class="collapse">
+  <li><a href="#individual-demand-is-about-preference" id="toc-individual-demand-is-about-preference" class="nav-link" data-scroll-target="#individual-demand-is-about-preference">Individual Demand Is About Preference</a></li>
+  <li><a href="#market-demand-is-about-aggregation" id="toc-market-demand-is-about-aggregation" class="nav-link" data-scroll-target="#market-demand-is-about-aggregation">Market Demand Is About Aggregation</a></li>
+  <li><a href="#why-representativeness-matters-here" id="toc-why-representativeness-matters-here" class="nav-link" data-scroll-target="#why-representativeness-matters-here">Why Representativeness Matters Here</a></li>
+  <li><a href="#why-you-rarely-want-perfect-individual-information" id="toc-why-you-rarely-want-perfect-individual-information" class="nav-link" data-scroll-target="#why-you-rarely-want-perfect-individual-information">Why You Rarely Want “Perfect” Individual Information</a></li>
+  <li><a href="#what-estimation-adds-at-the-market-level" id="toc-what-estimation-adds-at-the-market-level" class="nav-link" data-scroll-target="#what-estimation-adds-at-the-market-level">What Estimation Adds at the Market Level</a></li>
+  <li><a href="#a-caution-about-interpretation" id="toc-a-caution-about-interpretation" class="nav-link" data-scroll-target="#a-caution-about-interpretation">A Caution About Interpretation</a></li>
+  </ul></li>
+  <li><a href="#choosing-a-functional-form" id="toc-choosing-a-functional-form" class="nav-link" data-scroll-target="#choosing-a-functional-form"><span class="header-section-number">8.3</span> Choosing a Functional Form</a>
+  <ul class="collapse">
+  <li><a href="#models-as-behavioral-hypotheses" id="toc-models-as-behavioral-hypotheses" class="nav-link" data-scroll-target="#models-as-behavioral-hypotheses">Models as Behavioral Hypotheses</a></li>
+  <li><a href="#linear-demand-constant-sensitivity" id="toc-linear-demand-constant-sensitivity" class="nav-link" data-scroll-target="#linear-demand-constant-sensitivity">Linear Demand: Constant Sensitivity</a></li>
+  <li><a href="#exponential-demand-increasing-sensitivity" id="toc-exponential-demand-increasing-sensitivity" class="nav-link" data-scroll-target="#exponential-demand-increasing-sensitivity">Exponential Demand: Increasing Sensitivity</a></li>
+  <li><a href="#sigmoid-demand-saturation-and-adoption" id="toc-sigmoid-demand-saturation-and-adoption" class="nav-link" data-scroll-target="#sigmoid-demand-saturation-and-adoption">Sigmoid Demand: Saturation and Adoption</a></li>
+  <li><a href="#why-the-app-fits-multiple-models" id="toc-why-the-app-fits-multiple-models" class="nav-link" data-scroll-target="#why-the-app-fits-multiple-models">Why the App Fits Multiple Models</a></li>
+  <li><a href="#model-choice-is-a-judgment-call" id="toc-model-choice-is-a-judgment-call" class="nav-link" data-scroll-target="#model-choice-is-a-judgment-call">Model Choice Is a Judgment Call</a></li>
+  </ul></li>
+  <li><a href="#sec-demand-to-decisions" id="toc-sec-demand-to-decisions" class="nav-link" data-scroll-target="#sec-demand-to-decisions"><span class="header-section-number">8.4</span> From Demand Curves to Decisions</a>
+  <ul class="collapse">
+  <li><a href="#what-a-demand-curve-makes-possible" id="toc-what-a-demand-curve-makes-possible" class="nav-link" data-scroll-target="#what-a-demand-curve-makes-possible">What a Demand Curve Makes Possible</a></li>
+  <li><a href="#demand-curves-do-not-choose-prices" id="toc-demand-curves-do-not-choose-prices" class="nav-link" data-scroll-target="#demand-curves-do-not-choose-prices">Demand Curves Do Not Choose Prices</a></li>
+  <li><a href="#why-we-delay-profit-until-demand-is-clear" id="toc-why-we-delay-profit-until-demand-is-clear" class="nav-link" data-scroll-target="#why-we-delay-profit-until-demand-is-clear">Why We Delay Profit Until Demand Is Clear</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What Comes Next</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5_demand.html">Learning Demand</a></li><li class="breadcrumb-item"><a href="./ch8_estimate_demand.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-demand-estimation-chapter" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Up to this point, the focus of this book has been on <em>learning</em>—how to frame the right question, design evidence that could answer it, and execute demand experiments responsibly.</p>
+<p>At some point, however, evidence must be turned into something usable.</p>
+<p>Decisions about pricing, investment, and scale require an object that can be reasoned about. Raw survey responses, interview notes, and scattered observations are not enough. They must be organized, structured, and interpreted.</p>
+<p>That is the role of demand estimation.</p>
+<p>This chapter explains what it means to estimate demand, what assumptions are being made when we do so, and how judgment enters the process. We are not teaching statistical technique here. We are clarifying what estimation <em>is</em>—and what it is not—so that the results can be used responsibly rather than reverently.</p>
+<section id="from-responses-to-a-demand-object" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="from-responses-to-a-demand-object"><span class="header-section-number">8.1</span> From Responses to a Demand Object</h2>
+<p>Estimating demand is often described as “finding” a demand curve.</p>
+<p>This language is misleading.</p>
+<p>Demand curves do not exist in the world waiting to be uncovered. They are not measured the way temperature or distance is measured. They are <em>constructed</em>—inferred from evidence using assumptions about behavior, aggregation, and continuity.</p>
+<p>Understanding this is essential, because estimation is not a neutral mechanical step. It is an interpretive act.</p>
+<section id="what-estimation-actually-does" class="level3">
+<h3 class="anchored" data-anchor-id="what-estimation-actually-does">What Estimation Actually Does</h3>
+<p>Before estimation, demand evidence usually looks like this:</p>
+<ul>
+<li>individual responses to willingness-to-pay questions,</li>
+<li>yes/no purchase intentions at specific prices,</li>
+<li>reported quantities tied to a period,</li>
+<li>variation across respondents.</li>
+</ul>
+<p>None of this is yet a demand curve.</p>
+<p>Estimation takes these scattered pieces of evidence and imposes structure on them. It answers questions like:</p>
+<ul>
+<li>How should individual responses be combined?</li>
+<li>How should quantity be expected to change as price changes?</li>
+<li>What smooth relationship best summarizes this behavior?</li>
+</ul>
+<p>The result is not “the truth about demand.” It is a <em>demand object</em>—a structured representation that makes reasoning possible. This object allows us to:</p>
+<ul>
+<li>compare prices,</li>
+<li>rule out implausible scenarios,</li>
+<li>and connect demand to cost and profit.</li>
+</ul>
+<p>But it only earns this role because of the assumptions embedded in it.</p>
+</section>
+<section id="assumptions-you-are-making-whether-you-name-them-or-not" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions-you-are-making-whether-you-name-them-or-not">Assumptions You Are Making (Whether You Name Them or Not)</h3>
+<p>Any estimated demand curve assumes, at a minimum, that:</p>
+<ul>
+<li>customer behavior can be summarized at the market level,</li>
+<li>higher prices do not increase quantity demanded,</li>
+<li>responses vary smoothly rather than erratically,</li>
+<li>and unobserved prices would produce intermediate outcomes.</li>
+</ul>
+<p>These assumptions are rarely stated explicitly. They are nonetheless present.</p>
+<p>Estimation does not eliminate uncertainty. It reshapes it—turning many small unknowns into a smaller number of structured ones that can be reasoned about.</p>
+<p>Demand estimation is powerful precisely because it is forgiving.</p>
+<p>Given almost any dataset, a model can be fit and a curve can be drawn. That is a feature — and a risk. Before estimating anything, it is essential to verify that the data actually corresponds to a coherent demand question.</p>
+<p>The toolkit <a href="./tk4_preparing_data.html">Preparing Data for Demand Estimation</a> provides a short set of checks to ensure that unit, period, demand type, and variation are aligned before modeling begins. Readers are strongly encouraged to work through it before proceeding.</p>
+</section>
+<section id="where-the-profit-analytics-app-fitsand-where-it-does-not" class="level3">
+<h3 class="anchored" data-anchor-id="where-the-profit-analytics-app-fitsand-where-it-does-not">Where the <a href="https://rconnect.byu.edu/ProfitAnalytics/"><strong>Profit Analytics App</strong></a> Fits—and Where It Does Not</h3>
+<p>In this book, the mechanical aspects of estimation are handled by a companion <a href="https://rconnect.byu.edu/ProfitAnalytics/">profit analytics app</a>.</p>
+<p>This is a deliberate choice.</p>
+<p>Estimating demand requires computation. Interpreting an estimated demand curve requires judgment. The app exists to perform the former so that attention can remain on the latter.</p>
+<p>The app fits demand models, compares their fit, and produces estimated demand curves from the evidence you provide. It does not decide whether the data are trustworthy, whether the assumptions are reasonable, or how much confidence the result deserves.</p>
+<p>Those decisions remain yours.</p>
+<p>The app will fit demand models and compare results automatically. It does not — and cannot — determine whether the data is appropriate for estimation.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+<section id="estimation-as-translation-not-revelation" class="level3">
+<h3 class="anchored" data-anchor-id="estimation-as-translation-not-revelation">Estimation as Translation, Not Revelation</h3>
+<p>It is helpful to think of estimation as a translation step.</p>
+<p>You begin with evidence expressed in the language of respondents: ratings, prices, quantities, intentions. Estimation translates that evidence into the language of decision-making: price–quantity relationships.</p>
+<p>Like any translation, something is gained and something is lost.</p>
+<p>The gain is coherence.<br>
+The loss is detail.</p>
+<p>The purpose of this chapter is to help you understand that tradeoff—so that when you look at an estimated demand curve, you know what kind of object it is, what it summarizes, and where judgment must still be exercised.</p>
+<p>Only then does it make sense to ask how individual responses become market demand, how different models tell different behavioral stories, and how fit should be interpreted.</p>
+<p>That is where we turn next.</p>
+</section>
+</section>
+<section id="individual-demand-vs.-market-demand" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="individual-demand-vs.-market-demand"><span class="header-section-number">8.2</span> Individual Demand vs.&nbsp;Market Demand</h2>
+<p>Most demand evidence begins at the individual level.</p>
+<p>A respondent states a willingness to pay.<br>
+A customer indicates whether they would buy at a given price.<br>
+A user reports how many units they would consume in a period.</p>
+<p>These responses are real, informative, and necessary. But they are not yet the object that entrepreneurial decisions require.</p>
+<p>Entrepreneurs do not usually price for one person.<br>
+They price for a market.</p>
+<p>Understanding the difference—and the relationship—between individual demand and market demand is essential for using estimated demand curves responsibly.</p>
+<section id="individual-demand-is-about-preference" class="level3">
+<h3 class="anchored" data-anchor-id="individual-demand-is-about-preference">Individual Demand Is About Preference</h3>
+<p>At the individual level, demand reflects a single person’s tradeoffs.</p>
+<p>An individual’s willingness to pay summarizes:</p>
+<ul>
+<li>how much they value the offering,</li>
+<li>relative to alternatives,</li>
+<li>under the constraints they perceive.</li>
+</ul>
+<p>This information is useful. It tells you something about appeal, variation, and heterogeneity across people.</p>
+<p>But individual demand, on its own, does not answer questions like:</p>
+<ul>
+<li>“How many units would we sell at this price?”</li>
+<li>“Is demand large enough to justify entry?”</li>
+<li>“What price could support a profitable business?”</li>
+</ul>
+<p>Those questions are inherently collective.</p>
+</section>
+<section id="market-demand-is-about-aggregation" class="level3">
+<h3 class="anchored" data-anchor-id="market-demand-is-about-aggregation">Market Demand Is About Aggregation</h3>
+<p>Market demand describes how quantity demanded varies with price <strong>across a population</strong>, not within a single mind.</p>
+<p>An estimated market demand curve answers a different question:</p>
+<blockquote class="blockquote">
+<p><em>At this price, how many units would be purchased in total by the relevant group of customers?</em></p>
+</blockquote>
+<p>To answer that question, individual responses must be combined.</p>
+<p>That combination is not automatic. It requires decisions about:</p>
+<ul>
+<li>which individuals belong in the population,</li>
+<li>how their responses should be weighted,</li>
+<li>and how variation across people translates into total quantity.</li>
+</ul>
+<p>These choices are where estimation quietly intersects with sampling.</p>
+</section>
+<section id="why-representativeness-matters-here" class="level3">
+<h3 class="anchored" data-anchor-id="why-representativeness-matters-here">Why Representativeness Matters Here</h3>
+<p>When you estimate market demand, you are implicitly making a claim about a population.</p>
+<p>If your sample overrepresents people who care intensely about the problem, market demand will be overstated.<br>
+If it underrepresents likely buyers, demand will be understated.<br>
+If it includes people who are not part of the target population at all, the resulting curve may be distorted in unpredictable ways.</p>
+<p>This is why the execution choices discussed in the previous chapter matter so much at this stage.</p>
+<p>Individual demand can be interesting even in a narrow or convenience sample.<br>
+Market demand cannot.</p>
+<p>Once you aggregate, sampling assumptions stop being background conditions and become central to interpretation.</p>
+</section>
+<section id="why-you-rarely-want-perfect-individual-information" class="level3">
+<h3 class="anchored" data-anchor-id="why-you-rarely-want-perfect-individual-information">Why You Rarely Want “Perfect” Individual Information</h3>
+<p>It is tempting to imagine that learning demand means learning everyone’s willingness to pay precisely.</p>
+<p>In practice, this is neither possible nor necessary.</p>
+<p>Entrepreneurial decisions do not require knowing exactly who would buy at every price. They require knowing whether <em>enough</em> people would buy at <em>plausible</em> prices to justify action.</p>
+<p>Market demand estimation trades individual precision for collective insight. It sacrifices detail in order to gain relevance.</p>
+<p>This is not a weakness. It is the point.</p>
+</section>
+<section id="what-estimation-adds-at-the-market-level" class="level3">
+<h3 class="anchored" data-anchor-id="what-estimation-adds-at-the-market-level">What Estimation Adds at the Market Level</h3>
+<p>By aggregating individual responses into a market demand curve, estimation allows you to:</p>
+<ul>
+<li>reason about total quantity rather than isolated preferences,</li>
+<li>compare pricing scenarios at the population level,</li>
+<li>connect demand to costs and profit,</li>
+<li>and evaluate whether uncertainty is small enough to proceed responsibly.</li>
+</ul>
+<p>The resulting curve does not describe any one person’s behavior perfectly. It describes a market well enough to inform a decision.</p>
+<p>That distinction is easy to forget—and costly to ignore.</p>
+</section>
+<section id="a-caution-about-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="a-caution-about-interpretation">A Caution About Interpretation</h3>
+<p>Because estimated demand curves look smooth and authoritative, it is easy to treat them as objective facts.</p>
+<p>They are not.</p>
+<p>They are summaries of evidence filtered through:</p>
+<ul>
+<li>sampling choices,</li>
+<li>aggregation assumptions,</li>
+<li>and modeling decisions.</li>
+</ul>
+<p>Used carefully, they reduce uncertainty in a disciplined way.<br>
+Used casually, they can obscure where uncertainty still lives.</p>
+<p>The next step, then, is not to ask whether an estimated demand curve is “right,” but to ask what kind of behavioral story it tells—and whether that story makes sense for the decision at hand.</p>
+<p>That is where model choice enters.</p>
+</section>
+</section>
+<section id="choosing-a-functional-form" class="level2 page-columns page-full" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="choosing-a-functional-form"><span class="header-section-number">8.3</span> Choosing a Functional Form</h2>
+<p>Once individual responses have been aggregated into a sample-level demand object, another choice becomes unavoidable.</p>
+<p>How should demand be <em>modeled</em>?</p>
+<p>This is sometimes described as choosing an equation. That description is technically correct—and conceptually unhelpful.</p>
+<p>A better way to think about model choice is this:</p>
+<blockquote class="blockquote">
+<p>A demand model is a story about how customers respond to price.</p>
+</blockquote>
+<p>Different functional forms tell different stories. The role of estimation is not to discover which story is “true,” but to identify which story is most consistent with the evidence and the decision context.</p>
+<section id="models-as-behavioral-hypotheses" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="models-as-behavioral-hypotheses">Models as Behavioral Hypotheses</h3>
+<p>Every demand model embeds assumptions about behavior.</p>
+<p>Some assume customers respond smoothly and proportionally to price changes.<br>
+Others assume sensitivity accelerates or decelerates.<br>
+Others assume adoption saturates as price falls.</p>
+<p>These assumptions are rarely stated explicitly, but they are always present.</p>
+<p>Choosing a functional form is therefore not a technical detail. It is a behavioral hypothesis.</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-demand-model-shapes" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-demand-model-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch8_estimate_demand_files/figure-html/fig-demand-model-shapes-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-demand-model-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Three common demand model shapes (linear, exponential, sigmoid). These curves are not fitted to data; they illustrate different behavioral assumptions about how quantity responds to price.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="linear-demand-constant-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="linear-demand-constant-sensitivity">Linear Demand: Constant Sensitivity</h3>
+<p>A linear demand model assumes that quantity changes at a constant rate as price changes.</p>
+<p>Each increase in price reduces quantity by the same amount, regardless of where you are on the curve.</p>
+<p>This story is simple and sometimes useful, especially over narrow price ranges. But it implies behavior that is often unrealistic for new or differentiated offerings.</p>
+<p>In particular, linear models:</p>
+<ul>
+<li>imply negative quantity at sufficiently high prices,</li>
+<li>and unlimited demand at sufficiently low prices.</li>
+</ul>
+<p>These implications do not make the model useless. They do, however, limit how literally it should be interpreted.</p>
+</section>
+<section id="exponential-demand-increasing-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="exponential-demand-increasing-sensitivity">Exponential Demand: Increasing Sensitivity</h3>
+<p>Exponential demand models assume that quantity responds proportionally rather than additively.</p>
+<p>As price rises, quantity falls at an increasing rate.<br>
+As price falls, quantity grows rapidly.</p>
+<p>This captures situations where customers become much more sensitive to price changes as prices increase—often a reasonable assumption for discretionary or substitutable products.</p>
+<p>The behavioral story here is one of <em>amplification</em>: small price changes can have large effects.</p>
+<p>As with all models, this is not a claim about truth. It is a claim about plausibility given the evidence.</p>
+</section>
+<section id="sigmoid-demand-saturation-and-adoption" class="level3">
+<h3 class="anchored" data-anchor-id="sigmoid-demand-saturation-and-adoption">Sigmoid Demand: Saturation and Adoption</h3>
+<p>Sigmoid demand models tell a different story.</p>
+<p>They assume that:</p>
+<ul>
+<li>at very high prices, almost no one buys,</li>
+<li>at very low prices, almost everyone who could buy does buy,</li>
+<li>and most of the action happens in between.</li>
+</ul>
+<p>This shape reflects two common features of real markets: - limited population size, - and diminishing returns to price cuts once adoption is widespread.</p>
+<p>For many new products and services, this behavioral story is especially compelling. Demand grows slowly at first, accelerates as prices enter a viable range, and then saturates.</p>
+<p>This does not make sigmoid models “better” in general. It makes them appropriate for certain kinds of decisions.</p>
+</section>
+<section id="why-the-app-fits-multiple-models" class="level3">
+<h3 class="anchored" data-anchor-id="why-the-app-fits-multiple-models">Why the App Fits Multiple Models</h3>
+<p>Because different models tell different behavioral stories, relying on a single functional form is risky.</p>
+<p>This is why the companion analytics app estimates multiple demand models from the same evidence and allows them to be compared.</p>
+<p>The purpose is not to select the model with the highest fit mechanically. It is to surface how sensitive conclusions are to the behavioral assumptions embedded in the model.</p>
+<p>The app reports standard measures of fit to help you assess whether a model is consistent with the data. These measures are aids to judgment, not decision rules. A model that fits slightly worse but tells a more plausible behavioral story may be the better guide for action.</p>
+<p>When different models tell similar stories, confidence increases.<br>
+When they diverge, judgment is required.</p>
+</section>
+<section id="model-choice-is-a-judgment-call" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="model-choice-is-a-judgment-call">Model Choice Is a Judgment Call</h3>
+<!--
+No statistical test can tell you which demand model is “correct.”
+
+Model choice involves weighing:
+
+- fit to the available evidence,
+- plausibility of the implied behavior,
+- and relevance to the decision you are trying to make.
+
+This is where entrepreneurial judgment re-enters the process.
+
+Estimation narrows uncertainty.  
+Model choice interprets it.
+-->
+<p>At this point, it may be tempting to ask a simple question:</p>
+<p><em>Which demand model is best?</em></p>
+<p>That question sounds technical, but it is not. It is a judgment question disguised as a statistical one.</p>
+<p>When we estimate demand, we are not uncovering a law of nature. We are choosing a functional form that imposes structure on limited evidence. Different models can often fit the same data reasonably well—and yet imply very different behavior outside the observed range.</p>
+<p>This is why model choice cannot be automated away. It requires thinking carefully about what demand can and cannot do in the real world.</p>
+<p>The profit analytics app estimates three common demand models:</p>
+<ul>
+<li>Linear demand, where quantity falls at a constant rate as price rises</li>
+<li>Exponential demand, where quantity falls proportionally as price rises</li>
+<li>Sigmoid demand, where demand is high and relatively insensitive at low prices, then falls rapidly over a middle range, and finally flattens near zero at high prices</li>
+</ul>
+<p>Each of these models can appear plausible when viewed only through the lens of observed data. The difference lies in what they assume about customer behavior outside that data.</p>
+<section id="why-linear-and-exponential-models-often-struggle" class="level4">
+<h4 class="anchored" data-anchor-id="why-linear-and-exponential-models-often-struggle">Why Linear and Exponential Models Often Struggle</h4>
+<p>Linear demand is attractive because it is simple and familiar. But it carries a strong and often unrealistic implication: that customers reduce quantity at the same rate no matter where price starts.</p>
+<p>Taken literally, a linear model suggests that:</p>
+<ul>
+<li>demand can become arbitrarily large at low prices, and</li>
+<li>demand becomes negative at sufficiently high prices.</li>
+</ul>
+<p>Both implications violate how real customers behave.</p>
+<p>Exponential demand avoids negative quantities, but introduces a different issue. It implies that demand is always shrinking proportionally, even at very low prices. This often exaggerates sensitivity where customers are, in reality, relatively indifferent.</p>
+<p>In practice, both linear and exponential models tend to misrepresent demand at the extremes—precisely where pricing and profit decisions are most sensitive.</p>
+</section>
+<section id="sigmoid-demand-often-fits-entrepreneurial-reality" class="level4">
+<h4 class="anchored" data-anchor-id="sigmoid-demand-often-fits-entrepreneurial-reality">Sigmoid Demand Often Fits Entrepreneurial Reality</h4>
+<p>Sigmoid demand behaves differently.</p>
+<p>At low prices, quantity changes slowly. Customers who already value the product do not suddenly consume much more just because the price drops slightly.</p>
+<p>At high prices, demand flattens near zero. Most customers have a reservation point beyond which they simply opt out.</p>
+<p>Between those extremes, there is a middle region where price changes matter a great deal. This is where most real pricing decisions live.</p>
+<p>This shape aligns naturally with how customers make tradeoffs:</p>
+<ul>
+<li>limited attention</li>
+<li>budget constraints</li>
+<li>diminishing marginal value</li>
+<li>and realistic saturation</li>
+</ul>
+<p>The sigmoid model does not win because it fits better by default. It often wins because it respects these economic constraints without forcing them through ad hoc fixes.</p>
+</section>
+<section id="seeing-the-difference" class="level4">
+<h4 class="anchored" data-anchor-id="seeing-the-difference">Seeing the Difference</h4>
+<p>The figure below fits the same set of demand evidence with all three models.</p>
+<p>Each model can appear reasonable over the observed price range. But as price moves beyond that range, their implications diverge sharply.</p>
+<p>One model preserves economic plausibility across the full decision space. The others do not.</p>
+<p>This is the heart of model choice.</p>
+</section>
+<section id="judgment-before-metrics" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="judgment-before-metrics">Judgment Before Metrics</h4>
+<p>It is possible to rank models using statistical criteria. The app reports these diagnostics to support analysis.</p>
+<p>But those metrics answer a different question:</p>
+<blockquote class="blockquote">
+<p><em>Which curve passes closest to the observed points?</em></p>
+</blockquote>
+<p>Entrepreneurs must answer a broader one:</p>
+<blockquote class="blockquote">
+<p><em>Which model implies behavior that makes sense for this decision?</em></p>
+</blockquote>
+<p>Model choice is not about finding the “true” demand curve. It is about choosing a structure you are willing to reason with when making irreversible commitments.</p>
+<p>That choice cannot be delegated to a statistic.</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-model-fits-simulated" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-model-fits-simulated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch8_estimate_demand_files/figure-html/fig-model-fits-simulated-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-model-fits-simulated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Simulated demand data with three fitted models. The data were generated to reflect realistic consumer behavior with noise and saturation. Linear and exponential models capture parts of the pattern but miss systematic structure. The sigmoid model aligns with behavior across the full price range.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The next section turns to a common temptation at this stage—treating good fit as proof—and explains why that move is more dangerous than it looks.</p>
+</section>
+</section>
+</section>
+<section id="sec-demand-to-decisions" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sec-demand-to-decisions"><span class="header-section-number">8.4</span> From Demand Curves to Decisions</h2>
+<p>By this point, we have done something important—but incomplete.</p>
+<p>We have taken structured demand evidence and translated it into a demand curve. We have chosen a model that reflects how customers plausibly behave across a range of prices, not just at the points we observed.</p>
+<p>What we have <em>not</em> done yet is make a decision.</p>
+<p>This distinction matters. Estimating demand is not the goal. It is a means.</p>
+<p>A demand curve does not tell you what to do. It tells you what <em>could</em> happen under different choices.</p>
+<section id="what-a-demand-curve-makes-possible" class="level3">
+<h3 class="anchored" data-anchor-id="what-a-demand-curve-makes-possible">What a Demand Curve Makes Possible</h3>
+<p>Once demand is represented as a price–quantity relationship, questions that were previously vague become concrete:</p>
+<ul>
+<li>At what prices does demand meaningfully exist?</li>
+<li>How quickly does quantity fall as price increases?</li>
+<li>Where are prices clearly too low to matter?</li>
+<li>Where are prices clearly too high to work?</li>
+</ul>
+<p>These are not optimization questions. They are questions of <em>feasibility</em> and <em>plausibility</em>.</p>
+<p>This is why demand estimation comes before profit maximization.</p>
+<p>Before asking “What price should we choose?” the entrepreneur must first understand which prices are even viable—and how sensitive outcomes are to that choice.</p>
+<p>Demand curves provide that structure.</p>
+</section>
+<section id="demand-curves-do-not-choose-prices" class="level3">
+<h3 class="anchored" data-anchor-id="demand-curves-do-not-choose-prices">Demand Curves Do Not Choose Prices</h3>
+<p>It is tempting to think that once a demand curve is estimated, the “right” price will reveal itself.</p>
+<p>That is not how this works.</p>
+<p>Demand curves describe customer behavior. Prices are chosen by firms.</p>
+<p>Choosing a price involves costs, positioning, competition, capacity, and risk tolerance. Demand estimation does not resolve these considerations. It disciplines them.</p>
+<p>It rules out prices that cannot work and highlights regions where tradeoffs become meaningful. Within those regions, judgment still matters.</p>
+</section>
+<section id="why-we-delay-profit-until-demand-is-clear" class="level3">
+<h3 class="anchored" data-anchor-id="why-we-delay-profit-until-demand-is-clear">Why We Delay Profit Until Demand Is Clear</h3>
+<p>Profit depends on demand, costs, and scale. But demand is the only one of these that must be learned from customers.</p>
+<p>Until demand is understood—even roughly—profit calculations are fragile. Small changes in assumed quantity can overwhelm careful cost modeling.</p>
+<p>This is why this book insists on learning demand first.</p>
+<p>Only after demand has been estimated does it make sense to layer in costs, consider fixed investments, examine competition, and reason explicitly about profit.</p>
+<p>Demand estimation is not the end of analysis. It is the foundation.</p>
+</section>
+<section id="what-comes-next" class="level3">
+<h3 class="anchored" data-anchor-id="what-comes-next">What Comes Next</h3>
+<p>In the chapters that follow, we use estimated demand curves to reason directly about profit.</p>
+<p>We examine how price choices translate into revenue, how costs interact with demand, and how pricing decisions emerge under uncertainty.</p>
+<p>The profit analytics app supports this next step mechanically. The logic remains the same.</p>
+<p>First, understand demand.<br>
+Then, reason carefully about what to do with it.</p>
+<p>Only then does the question <em>“Is this worth doing?”</em> become answerable in a disciplined way.</p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>If you have not already done so, complete the toolkit <a href="./tk4_preparing_data.html">Preparing Data for Demand Estimation</a> before using the app.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ei\.nilehatch\.com\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch7_execute_experiment.html" class="pagination-link" aria-label="Executing Demand Experiments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Executing Demand Experiments</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./part_cost_profit.html" class="pagination-link" aria-label="From Demand to Profit">
+        <span class="nav-page-text">From Demand to Profit</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><em>Is This Worth Doing?</em> was written by Nile Hatch (2026).</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

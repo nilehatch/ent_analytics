@@ -46,24 +46,29 @@ book:
 #      chapters:
 #        - uncertainty_entrepreneurship.qmd
 #        - uncertainty_profit.qmd
+
     - part: Learning Demand
       chapters:
         - ch5_demand.qmd
         - ch6_design_experiment.qmd
         - ch7_execute_experiment.qmd
-    - part: Toolkit
+        - ch8_estimate_demand.qmd
+        
+    - part: part_cost_profit.qmd
+      chapters:
+        - ch9_cost.qmd
+        
+    - part: part_toolkits.qmd # Toolkit
       chapters:
         - tk1_frame_problem.qmd
         - tk2_survey_design.qmd
         - tk3_validate_data.qmd
-    - part: Code-centric version
-      chapters:
-        - demand.qmd
-        - durable_demand.qmd
-        - nondurable_demand.qmd
+        - tk4_preparing_data.qmd
+        - tk5_estimated_demand_check.qmd
+        
     - part: Profit
       chapters:
-        - cost.qmd
+#        - cost.qmd
         - cost_dynamics.qmd
         - profit.qmd
     - part: Competition

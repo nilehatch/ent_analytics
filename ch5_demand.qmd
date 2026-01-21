@@ -60,7 +60,10 @@ Implicit in this question are two choices that matter later: what counts as one 
 ```{r}
 #| label: fig-basic-demand
 #| echo: false
+#| warning: false
 #| fig-cap: "A Basic Demand Curve: Q = 2000 - 2P"
+#| fig-align: center
+
 
 library(ggplot2)
 library(scales)

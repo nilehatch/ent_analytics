@@ -1,0 +1,164 @@
+# Sanity-Check Your Estimated Demand Curve {#sec-toolkit-sanity-check-demand-chapter .unnumbered}
+
+#### *A fast way to catch curves you shouldn’t trust*
+
+
+This toolkit is a practical companion to Chapter 8.
+
+The profit analytics app can fit a demand curve from almost any dataset. That is a feature—and a risk. A smooth curve can look authoritative even when it is summarizing confused evidence, misaligned units, or a sample that cannot support market inference.
+
+The goal here is not to prove your curve is “true.”  
+The goal is to catch the curves that are *not safe to use* for decisions.
+
+You can do this in five minutes.
+
+
+
+## Start With the Decision (One Sentence)
+
+Write the decision you are trying to support as one sentence:
+
+- “We are deciding whether to enter.”
+- “We are deciding whether this price range can support our costs.”
+- “We are deciding whether to invest in fixed capacity.”
+
+If you cannot write that sentence, stop.  
+A demand curve without a decision frame becomes an art project.
+
+
+
+##  Unit + Period: The Two Silent Failure Modes
+
+Before you look at the curve, confirm these two definitions in plain language.
+
+**Unit (what counts as “one”):**  
+What is the thing the customer imagines choosing?
+
+Examples:
+
+- one subscription
+- one visit
+- one meal
+- one session
+- one item
+
+**Period (how often the decision repeats):**  
+How often can the customer make that choice?
+
+Examples:
+
+- per month
+- per semester
+- per year
+- per week
+
+If unit or period is ambiguous, the curve may still fit—but it will not mean what you think it means.
+
+
+##  Does the Shape Pass the “Human Behavior” Test?
+
+Before any fit statistic, ask whether the curve behaves like real customers.
+
+A demand curve should usually satisfy three sanity conditions:
+
+1. **Quantity is never negative**  
+   If your model implies negative quantity in the relevant range, treat it as a warning sign.
+
+2. **Demand does not explode at low prices**  
+   If the model implies absurdly high quantities at very low prices, it may be extrapolating beyond what your evidence can justify.
+
+3. **Demand approaches zero at high prices**  
+   At some sufficiently high price, almost no one should buy.  
+   If the model implies substantial demand at very high prices, something is off—or your unit/period is inconsistent.
+
+You do not need economics training for this.  
+You just need to ask: *would a real customer behave like this?*
+
+
+
+##  Compare the Curve to Your Raw Evidence (Visually)
+
+A fitted curve should not surprise you when you overlay it on the evidence.
+
+Look for these red flags:
+
+- The curve sits consistently above most points (systematic overstatement)
+- The curve sits consistently below most points (systematic understatement)
+- The curve fits the middle but fails badly at the ends
+- A handful of points appear to “drag” the curve dramatically
+
+One of the most useful sanity checks is simple:
+
+> If you hide the curve and look at the points, would you expect a curve like this?
+
+If the fitted curve feels like it has a different story than the data, treat that as information.
+
+
+
+##  “Does This Predict Something I Already Know?”
+
+Pick one price that you have some intuitive anchor for—based on the market, a comparable product, or your own purchasing experience.
+
+Then ask:
+
+- At that price, does the predicted quantity feel plausible *for your defined unit and period*?
+
+This is not a test of truth.  
+It is a test of *interpretability*.
+
+If the curve produces predictions you cannot even reason about, you do not yet have a usable demand object.
+
+
+
+##  A Simple Anchor Test (One-Point Validation)
+
+If you can do one validation step, do this:
+
+Choose one price, \$X, and ask a fresh sample:
+
+> “If the price were \$X, would you buy one unit in the next [period]?”
+
+Then compare:
+
+- the predicted adoption/quantity at \$X from your curve
+- the observed adoption/quantity from the fresh sample
+
+You are not trying to “prove” the curve.  
+You are checking whether the evidence is coherent.
+
+If the validation result is wildly different, the most likely culprit is not the model. It is the upstream evidence: sampling, framing, or unit/period confusion.
+
+(Chapter 7 and Toolkit 6C cover how to interpret this responsibly.)
+
+
+
+##  What to Do If It Fails a Sanity Check
+
+If your curve fails one of these checks, do not “fix” it by forcing a different model.
+
+Instead, go upstream:
+
+- Re-check unit and period
+- Re-check whether demand is yes/no or how-many
+- Inspect whether non-customers leaked into the sample
+- Look for framing that made the WTP question feel transactional
+- Consider whether you need a validation step before modeling again
+
+A demand curve is only as credible as the evidence beneath it.
+
+
+
+##  The Goal: A Curve You Can Reason With
+
+A usable demand curve is not one that looks smooth.
+
+A usable demand curve is one that:
+
+- aligns with your unit and period,
+- behaves like real customers,
+- is consistent with the evidence,
+- and produces predictions you can interpret in the context of a decision.
+
+If you have that, you have something rare in entrepreneurship: *a structured object you can argue with.*
+
+That is what makes disciplined decisions possible.

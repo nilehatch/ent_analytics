@@ -1,0 +1,31 @@
+# From Demand to Profit {#sec-demand-profit}
+
+Up to this point, the work of this book has been deliberately asymmetrical.
+
+We have spent substantial time learning demand—what it is, how to design experiments to study it, how to execute those experiments responsibly, and how to estimate demand curves with judgment rather than blind automation.
+
+This emphasis is intentional.
+
+Before revenue exists, profit uncertainty is overwhelmingly demand uncertainty. Until demand is understood—even roughly—careful reasoning about costs, pricing, and competition rests on fragile assumptions.
+
+Demand is not the whole story.  
+But it is the part of the story that must be learned from the world rather than chosen by the firm.
+
+With demand now on firmer ground, the analysis can change character.
+
+In this part of the book, we reintroduce costs, scale, and strategic choice—not as abstract concepts, but as elements that interact with the demand you have learned.
+
+We will examine:
+
+- how costs shape which prices are viable,
+- how fixed and variable costs alter profit sensitivity,
+- how demand curves translate into revenue and profit,
+- and how pricing decisions emerge from these relationships under uncertainty.
+
+The goal is not to eliminate judgment.  
+It is to give judgment something solid to work with.
+
+Demand learning made the problem visible.  
+Profit reasoning makes the decision concrete.
+
+This is where evidence meets commitment.

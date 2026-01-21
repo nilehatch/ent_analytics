@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Cost – Is This Worth Doing?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./part_toolkits.html" rel="next">
+<link href="./part_cost_profit.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1ba4f5830de1b2e7b8cf0f0ffee6cc6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="custom_itwd.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_cost_profit.html">From Demand to Profit</a></li><li class="breadcrumb-item"><a href="./ch9_cost.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Is This Worth Doing?</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/nilehatch/exp_innov/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">The Pre-Revenue Decision</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_is_this_worth_doing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Is This Worth Doing?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_uncertainty_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of Uncertainty in Pre-Revenue Profit Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3_profit_before_revenue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4_need_to_know.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learning Demand</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What Demand Is (and Is Not)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6_design_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7_execute_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Executing Demand Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch8_estimate_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_cost_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From Demand to Profit</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch9_cost.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_toolkits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Profit Toolkit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framing a Demand Learning Problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk2_survey_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing a Demand Survey</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk3_validate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Validating and Stress-Testing Demand Evidence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Code-centric version</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Customer Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./durable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estimating Demand of Durable Goods Using R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nondurable_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Estimating Demand of Non-durable Goods Using R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Profit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Cost Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-cost-after-demand" id="toc-sec-cost-after-demand" class="nav-link active" data-scroll-target="#sec-cost-after-demand"><span class="header-section-number">9.1</span> Why Cost Comes After Demand</a></li>
+  <li><a href="#sec-variable-costs" id="toc-sec-variable-costs" class="nav-link" data-scroll-target="#sec-variable-costs"><span class="header-section-number">9.2</span> Variable Costs: Costs That Scale with Demand</a>
+  <ul class="collapse">
+  <li><a href="#what-variable-really-means-in-practice" id="toc-what-variable-really-means-in-practice" class="nav-link" data-scroll-target="#what-variable-really-means-in-practice">What “Variable” Really Means in Practice</a></li>
+  <li><a href="#why-variable-cost-matters-for-pricing-feasibility" id="toc-why-variable-cost-matters-for-pricing-feasibility" class="nav-link" data-scroll-target="#why-variable-cost-matters-for-pricing-feasibility">Why Variable Cost Matters for Pricing Feasibility</a></li>
+  <li><a href="#estimating-variable-costs-before-revenue-exists" id="toc-estimating-variable-costs-before-revenue-exists" class="nav-link" data-scroll-target="#estimating-variable-costs-before-revenue-exists">Estimating Variable Costs Before Revenue Exists</a></li>
+  <li><a href="#variable-costs-are-often-chosen-not-given" id="toc-variable-costs-are-often-chosen-not-given" class="nav-link" data-scroll-target="#variable-costs-are-often-chosen-not-given">Variable Costs Are Often Chosen, Not Given</a></li>
+  </ul></li>
+  <li><a href="#sec-fixed-costs" id="toc-sec-fixed-costs" class="nav-link" data-scroll-target="#sec-fixed-costs"><span class="header-section-number">9.3</span> Fixed Costs: Commitments, Not Expenses</a>
+  <ul class="collapse">
+  <li><a href="#what-makes-a-cost-fixed-in-decision-terms" id="toc-what-makes-a-cost-fixed-in-decision-terms" class="nav-link" data-scroll-target="#what-makes-a-cost-fixed-in-decision-terms">What Makes a Cost “Fixed” in Decision Terms</a></li>
+  <li><a href="#fixed-costs-raise-the-bar-for-demand" id="toc-fixed-costs-raise-the-bar-for-demand" class="nav-link" data-scroll-target="#fixed-costs-raise-the-bar-for-demand">Fixed Costs Raise the Bar for Demand</a></li>
+  <li><a href="#timing-matters-more-than-magnitude" id="toc-timing-matters-more-than-magnitude" class="nav-link" data-scroll-target="#timing-matters-more-than-magnitude">Timing Matters More Than Magnitude</a></li>
+  <li><a href="#fixed-costs-are-chosen-not-discovered" id="toc-fixed-costs-are-chosen-not-discovered" class="nav-link" data-scroll-target="#fixed-costs-are-chosen-not-discovered">Fixed Costs Are Chosen, Not Discovered</a></li>
+  </ul></li>
+  <li><a href="#sec-cost-structure-risk" id="toc-sec-cost-structure-risk" class="nav-link" data-scroll-target="#sec-cost-structure-risk"><span class="header-section-number">9.4</span> Cost Structure Shapes Risk, Not Just Profit</a>
+  <ul class="collapse">
+  <li><a href="#same-demand-different-risk" id="toc-same-demand-different-risk" class="nav-link" data-scroll-target="#same-demand-different-risk">Same Demand, Different Risk</a></li>
+  <li><a href="#why-break-even-is-about-risk-not-targets" id="toc-why-break-even-is-about-risk-not-targets" class="nav-link" data-scroll-target="#why-break-even-is-about-risk-not-targets">Why Break-Even Is About Risk, Not Targets</a></li>
+  <li><a href="#cost-structure-determines-which-errors-matter-most" id="toc-cost-structure-determines-which-errors-matter-most" class="nav-link" data-scroll-target="#cost-structure-determines-which-errors-matter-most">Cost Structure Determines Which Errors Matter Most</a></li>
+  <li><a href="#cost-choices-as-part-of-the-decision" id="toc-cost-choices-as-part-of-the-decision" class="nav-link" data-scroll-target="#cost-choices-as-part-of-the-decision">Cost Choices as Part of the Decision</a></li>
+  </ul></li>
+  <li><a href="#break-even-is-a-constraint-not-a-target" id="toc-break-even-is-a-constraint-not-a-target" class="nav-link" data-scroll-target="#break-even-is-a-constraint-not-a-target"><span class="header-section-number">9.5</span> Break-Even Is a Constraint, Not a Target</a></li>
+  <li><a href="#why-cost-alone-cannot-decide-anything" id="toc-why-cost-alone-cannot-decide-anything" class="nav-link" data-scroll-target="#why-cost-alone-cannot-decide-anything"><span class="header-section-number">9.6</span> Why Cost Alone Cannot Decide Anything</a></li>
+  <li><a href="#looking-ahead-cost-inside-the-profit-decision" id="toc-looking-ahead-cost-inside-the-profit-decision" class="nav-link" data-scroll-target="#looking-ahead-cost-inside-the-profit-decision"><span class="header-section-number">9.7</span> Looking Ahead: Cost Inside the Profit Decision</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_cost_profit.html">From Demand to Profit</a></li><li class="breadcrumb-item"><a href="./ch9_cost.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost</span></h1>
+<p class="subtitle lead">What You Choose, What You Commit</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Once demand has been learned, the analysis can finally change.</p>
+<p>Until now, the central uncertainty has been external: how customers respond to price. That uncertainty had to be learned from evidence rather than assumed.</p>
+<p>Costs are different.</p>
+<p>Costs are not revealed by the market in the same way demand is. They are largely the result of design choices and strategic commitments made by the firm.</p>
+<p>This does not make costs trivial. It makes them <em>decisional</em>.</p>
+<p>In this chapter, we bring costs back into the picture—not as accounting detail, but as the second pillar of pre-revenue profit reasoning. The goal is not to predict expenses with precision. It is to understand how different cost structures interact with demand to shape what is worth doing.</p>
+<section id="sec-cost-after-demand" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-cost-after-demand"><span class="header-section-number">9.1</span> Why Cost Comes After Demand</h2>
+<p>Entrepreneurs often try to reason about costs early. This is understandable. Costs feel concrete, controllable, and familiar.</p>
+<p>The problem is not that cost matters too little.<br>
+The problem is that it matters <em>differently</em> once demand is understood.</p>
+<p>Before demand is learned, cost analysis tends to float. Variable costs are estimated without knowing how much will be sold. Fixed costs are debated without knowing whether any price can support them. Precision accumulates in spreadsheets, while the core uncertainty remains untouched.</p>
+<p>Learning demand changes this.</p>
+<p>Once demand is represented as a price–quantity relationship, cost questions become anchored. Some costs matter a great deal. Others matter hardly at all. Many decisions that previously felt open-ended become constrained.</p>
+<p>This is why cost comes after demand in the logic of this book.</p>
+<p>Demand tells you whether revenue is possible.<br>
+Cost tells you whether that revenue can support the commitments you are considering.</p>
+<p>Only when both are present does the question “Is this worth doing?” become concrete in an economic sense.</p>
+<p>The sections that follow separate costs into two broad categories—variable and fixed—not because accounting requires it, but because decision-making does.</p>
+</section>
+<section id="sec-variable-costs" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-variable-costs"><span class="header-section-number">9.2</span> Variable Costs: Costs That Scale with Demand</h2>
+<p>Once demand has been learned, the first cost question that matters is deceptively simple:</p>
+<p><em>What does it cost to serve one more unit of demand?</em></p>
+<p>This is the essence of variable cost.</p>
+<p>Variable costs are costs that scale with quantity. They increase as more units are sold and decrease as fewer units are sold. In pre-revenue decisions, they are often easier to reason about than fixed costs—but also easier to misunderstand.</p>
+<section id="what-variable-really-means-in-practice" class="level3">
+<h3 class="anchored" data-anchor-id="what-variable-really-means-in-practice">What “Variable” Really Means in Practice</h3>
+<p>In principle, a variable cost is any cost that changes with the number of units sold.</p>
+<p>In practice, the relevant question is narrower:</p>
+<blockquote class="blockquote">
+<p><em>If one additional customer buys one additional unit, what additional cost does the firm incur?</em></p>
+</blockquote>
+<p>This framing matters because not all costs that feel “operational” are meaningfully variable at the margin. Some costs change only in steps. Others are fixed over wide ranges and then jump suddenly.</p>
+<p>For early decision-making, the goal is not to classify every expense perfectly. It is to identify the costs that materially affect the feasibility of serving demand at different prices.</p>
+<p>Examples of variable costs often include:</p>
+<ul>
+<li>materials or inputs consumed per unit,</li>
+<li>fulfillment, delivery, or transaction costs,</li>
+<li>usage-based fees paid to partners or platforms,</li>
+<li>incremental labor required per unit sold.</li>
+</ul>
+<p>What matters is not accounting labels, but economic behavior.</p>
+</section>
+<section id="why-variable-cost-matters-for-pricing-feasibility" class="level3">
+<h3 class="anchored" data-anchor-id="why-variable-cost-matters-for-pricing-feasibility">Why Variable Cost Matters for Pricing Feasibility</h3>
+<p>Variable cost plays a special role because it sets a hard lower bound on viable pricing.</p>
+<p>If the price charged does not exceed variable cost, selling more units makes the situation worse, not better. Demand may exist, but it is economically irrelevant.</p>
+<p>This is why variable cost is the first cost to reintroduce after demand.</p>
+<p>Demand curves tell you how quantity responds to price. Variable cost tells you which parts of that curve are even worth considering.</p>
+<p>Before asking <em>which price maximizes profit</em>, the entrepreneur must first ask:</p>
+<p><em>Which prices are even feasible given the cost of serving one more unit?</em></p>
+<p>This question can often be answered approximately—and that is sometimes enough.</p>
+</section>
+<section id="estimating-variable-costs-before-revenue-exists" class="level3">
+<h3 class="anchored" data-anchor-id="estimating-variable-costs-before-revenue-exists">Estimating Variable Costs Before Revenue Exists</h3>
+<p>Like demand, variable costs cannot be measured before operations begin. But unlike demand, they are not primarily learned from customers.</p>
+<p>They are learned from design choices, supplier terms, process assumptions, and benchmarks.</p>
+<p>Early variable cost estimates should be treated as ranges, not point values.</p>
+<p>The goal is not precision. It is discrimination:</p>
+<ul>
+<li>costs that are clearly low enough to support demand at plausible prices,</li>
+<li>costs that are clearly too high,</li>
+<li>and costs where small changes would materially affect the decision.</li>
+</ul>
+<p>If variable cost uncertainty overwhelms demand uncertainty, that is a signal that the business model itself is underspecified.</p>
+</section>
+<section id="variable-costs-are-often-chosen-not-given" class="level3">
+<h3 class="anchored" data-anchor-id="variable-costs-are-often-chosen-not-given">Variable Costs Are Often Chosen, Not Given</h3>
+<p>One final caution is important.</p>
+<p>Entrepreneurs sometimes treat variable cost as an external constraint—something imposed by technology or the market.</p>
+<p>In reality, variable costs are often the result of design decisions:</p>
+<ul>
+<li>how the product is built,</li>
+<li>how it is delivered,</li>
+<li>what is outsourced versus internal,</li>
+<li>what quality level is targeted.</li>
+</ul>
+<p>Different choices lead to different variable cost structures, even for the same demand.</p>
+<p>This is why variable cost analysis is not about discovering the “true” cost. It is about understanding how cost choices interact with demand to shape what is worth doing.</p>
+<p>Only after this interaction is understood does it make sense to ask whether fixed costs are justified.</p>
+</section>
+</section>
+<section id="sec-fixed-costs" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-fixed-costs"><span class="header-section-number">9.3</span> Fixed Costs: Commitments, Not Expenses</h2>
+<p>If variable costs determine whether selling one more unit makes sense, fixed costs determine whether the venture itself makes sense.</p>
+<p>Fixed costs are costs that do not change with the number of units sold—at least over the relevant range of decisions. They must be paid whether demand is high or low, or even if demand turns out to be zero.</p>
+<p>Because of this, fixed costs are best understood not as expenses, but as <em>commitments</em>.</p>
+<section id="what-makes-a-cost-fixed-in-decision-terms" class="level3">
+<h3 class="anchored" data-anchor-id="what-makes-a-cost-fixed-in-decision-terms">What Makes a Cost “Fixed” in Decision Terms</h3>
+<p>In accounting, fixed costs are often defined mechanically: costs that do not vary with output.</p>
+<p>For decision-making, a more useful definition is this:</p>
+<blockquote class="blockquote">
+<p>A fixed cost is a cost you incur <em>because you decided to proceed</em>, not because a customer chose to buy.</p>
+</blockquote>
+<p>Examples commonly include:</p>
+<ul>
+<li>long-term leases or contracts,</li>
+<li>salaried labor that cannot be scaled down quickly,</li>
+<li>specialized equipment or infrastructure,</li>
+<li>platform or software commitments,</li>
+<li>upfront investments in brand, compliance, or systems.</li>
+</ul>
+<p>What matters is not whether a cost is technically fixed forever, but whether it is difficult or costly to reverse once incurred.</p>
+</section>
+<section id="fixed-costs-raise-the-bar-for-demand" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-costs-raise-the-bar-for-demand">Fixed Costs Raise the Bar for Demand</h3>
+<p>Fixed costs change the nature of the decision.</p>
+<p>Once a fixed cost is incurred, the venture must generate <em>enough</em> contribution from demand to justify that commitment. This introduces a threshold effect that does not exist with variable costs alone.</p>
+<p>Low fixed costs create flexibility:</p>
+<ul>
+<li>demand can be tested,</li>
+<li>pricing can be adjusted,</li>
+<li>the venture can be abandoned with limited loss.</li>
+</ul>
+<p>High fixed costs reduce flexibility:</p>
+<ul>
+<li>demand must be large enough and reliable enough,</li>
+<li>pricing mistakes become more costly,</li>
+<li>early errors are harder to undo.</li>
+</ul>
+<p>This is why fixed costs are often the real source of risk in pre-revenue decisions—not uncertainty about variable costs.</p>
+</section>
+<section id="timing-matters-more-than-magnitude" class="level3">
+<h3 class="anchored" data-anchor-id="timing-matters-more-than-magnitude">Timing Matters More Than Magnitude</h3>
+<p>Entrepreneurs often focus on how large fixed costs are.</p>
+<p>Equally important is <em>when</em> they must be incurred.</p>
+<p>Some fixed costs are required immediately. Others can be delayed until demand is better understood. Some can be staged or scaled.</p>
+<p>From a decision perspective, this timing is critical.</p>
+<p>Delaying fixed commitments preserves option value. It allows demand uncertainty to be reduced before irreversible choices are made.</p>
+<p>This is why experienced entrepreneurs are often less concerned with minimizing fixed costs than with <em>postponing</em> them.</p>
+</section>
+<section id="fixed-costs-are-chosen-not-discovered" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-costs-are-chosen-not-discovered">Fixed Costs Are Chosen, Not Discovered</h3>
+<p>Like variable costs, fixed costs are often treated as constraints imposed by the environment.</p>
+<p>In reality, they are frequently the result of strategic choices:</p>
+<ul>
+<li>how fast to scale,</li>
+<li>what level of quality or capability to build,</li>
+<li>whether to own or rent,</li>
+<li>whether to automate or rely on manual processes.</li>
+</ul>
+<p>Different choices imply different fixed cost structures—even with the same demand.</p>
+<p>This means that fixed cost analysis is not about uncovering the “true” cost of a business. It is about understanding which commitments you are willing to make, given what you know about demand.</p>
+<p>Only once that relationship is clear does it make sense to ask whether the expected rewards justify the commitments.</p>
+<p>Before looking at cost structures graphically, it helps to name the relationship we’ve been describing.</p>
+<p>For many entrepreneurial decisions, total cost can be written as:</p>
+<p><span class="math display">\[ \mathsf{C(q)} = \mathsf{f + cq}\]</span></p>
+<p>This is not a theory of cost. It is a way of separating two different kinds of commitment.</p>
+<ul>
+<li><span class="math inline">\(\mathsf{C(q)}\)</span> represents <strong>total cost</strong> as a function of output or sales.</li>
+<li><span class="math inline">\(\mathsf{f}\)</span> represents <strong>fixed cost</strong> — what you commit to before knowing how much you will sell.</li>
+<li><span class="math inline">\(\mathsf{c}\)</span> represents <strong>variable cost</strong> per unit — what you incur each time you produce or sell one more unit.</li>
+<li><span class="math inline">\(\mathsf{q}\)</span> is the level of output or sales.</li>
+</ul>
+<p>This equation does not tell you what costs <em>should</em> be. It simply makes explicit what is already true: some costs depend on scale, and some do not.</p>
+<p>Different cost structures are different choices of <span class="math inline">\(\mathsf{F}\)</span> and <span class="math inline">\(\mathsf{c}\)</span>. Those choices determine how risky the business becomes as demand turns out higher or lower than expected.</p>
+</section>
+</section>
+<section id="sec-cost-structure-risk" class="level2 page-columns page-full" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-cost-structure-risk"><span class="header-section-number">9.4</span> Cost Structure Shapes Risk, Not Just Profit</h2>
+<p>At this point, it is tempting to think about cost only in terms of profit.</p>
+<p>Lower costs mean higher profit. Higher costs mean lower profit. This framing is familiar—and incomplete.</p>
+<p>Cost structure does more than shape expected profit. It shapes <em>risk</em>.</p>
+<p>Two ventures can face the same demand and the same prices, and yet present very different decisions because their cost structures are different.</p>
+<section id="same-demand-different-risk" class="level3">
+<h3 class="anchored" data-anchor-id="same-demand-different-risk">Same Demand, Different Risk</h3>
+<p>Consider two ways of serving the same demand:</p>
+<ul>
+<li>One relies on low fixed costs and higher variable costs.</li>
+<li>The other relies on high fixed costs and lower variable costs.</li>
+</ul>
+<p>At first glance, the second option may look more attractive. If demand materializes, margins are higher and profits grow quickly.</p>
+<p>But that upside comes with a condition: demand must be sufficiently large and sufficiently reliable.</p>
+<p>High fixed costs concentrate risk. They make outcomes more sensitive to errors in demand estimation, pricing, or timing. If demand is weaker than expected, losses accumulate quickly.</p>
+<p>Low fixed costs distribute risk. They reduce upside, but they also limit downside. Mistakes are survivable. Learning can continue.</p>
+<p>This is why cost structure is not just a technical detail. It is a strategic choice about <em>how much uncertainty you are willing to absorb</em>.</p>
+</section>
+<section id="why-break-even-is-about-risk-not-targets" class="level3">
+<h3 class="anchored" data-anchor-id="why-break-even-is-about-risk-not-targets">Why Break-Even Is About Risk, Not Targets</h3>
+<p>Entrepreneurs often talk about “breaking even” as a milestone or goal.</p>
+<p>In decision terms, break-even is something else entirely.</p>
+<p>It is the point at which demand becomes sufficient to justify the fixed commitments that have been made.</p>
+<p>Before that point, each unit sold may reduce losses, but the venture as a whole remains unsupported. After that point, additional demand begins to create surplus rather than simply covering commitments.</p>
+<p>This is why fixed costs raise the stakes of demand learning. They do not just affect profitability; they determine how much demand must exist <em>before the venture is viable at all</em>.</p>
+<p>Understanding this threshold matters more than predicting the exact level of profit.</p>
+</section>
+<section id="cost-structure-determines-which-errors-matter-most" class="level3">
+<h3 class="anchored" data-anchor-id="cost-structure-determines-which-errors-matter-most">Cost Structure Determines Which Errors Matter Most</h3>
+<p>Every early venture makes mistakes. What differs is which mistakes are fatal.</p>
+<p>With low fixed costs, errors in demand estimation are often tolerable. Prices can be adjusted. Offerings can be refined. The venture can retreat or pivot.</p>
+<p>With high fixed costs, the same errors can be decisive. There may be no room to wait, revise, or learn further. The venture must succeed quickly—or fail.</p>
+<p>This is why experienced entrepreneurs often appear conservative about fixed commitments, even when they are optimistic about demand.</p>
+<p>They are not pessimistic. They are managing risk.</p>
+</section>
+<section id="cost-choices-as-part-of-the-decision" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="cost-choices-as-part-of-the-decision">Cost Choices as Part of the Decision</h3>
+<p>Seen this way, cost structure is not something to be optimized after the fact.</p>
+<p>It is part of the decision itself.</p>
+<p>Choosing a cost structure is choosing:</p>
+<ul>
+<li>how much uncertainty you can tolerate,</li>
+<li>how much learning you need before committing,</li>
+<li>and how much downside you are willing to accept if demand disappoints.</li>
+</ul>
+<p>These choices cannot be evaluated independently of demand. They only make sense together.</p>
+<p>In the next section, we turn to a final principle that ties this chapter together: why early cost analysis should remain deliberately coarse—and why more precision is not always better.</p>
+<p>It helps to see how cost structure translates into risk.<br>
+In <a href="cost.html#fig-cost-structures" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>, multiple ways of serving the same demand are shown. Each reflects a different commitment profile. Higher fixed costs only make sense if demand materializes at sufficient scale; until then, they increase downside exposure rather than efficiency.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-cost-structures" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-cost-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch9_cost_files/figure-html/fig-cost-structures-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-cost-structures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Cost Structure Is a Choice About Risk: Each curve shows total cost C(q) = f + cq for a different combination of fixed and variable costs. No structure is universally better — each becomes preferable only at sufficient scale.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A crossing point is not a goal. It is a condition. Choosing a high–fixed-cost structure is a bet that demand will reach and remain above this level. Choosing a low–fixed-cost structure preserves flexibility if it does not.</p>
+</section>
+</section>
+<section id="break-even-is-a-constraint-not-a-target" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="break-even-is-a-constraint-not-a-target"><span class="header-section-number">9.5</span> Break-Even Is a Constraint, Not a Target</h2>
+<p>One concept often introduced early in cost discussions is break-even.</p>
+<p>Break-even answers a narrow but important question: <em>how much must be sold for this cost structure not to lose money?</em> It identifies the quantity at which revenue just covers fixed and variable costs.</p>
+<p>That makes break-even a constraint, not a goal.</p>
+<p>Reaching break-even does not mean a venture is attractive, scalable, or worth the risk it requires. It simply means losses stop increasing. A business that barely breaks even has not succeeded; it has only survived.</p>
+<p>The entrepreneurial value of break-even analysis lies elsewhere. It clarifies how demanding a cost structure is. High fixed costs push the break-even quantity higher, increasing exposure to demand uncertainty. Low fixed costs lower the bar, but often at the expense of higher variable costs later.</p>
+<p>Seen this way, break-even is not something to aim for. It is something to inspect.</p>
+<p>It tells you what demand <em>must</em> exist before profit becomes possible—and therefore how fragile or robust the decision is given what you currently know about demand.</p>
+</section>
+<section id="why-cost-alone-cannot-decide-anything" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="why-cost-alone-cannot-decide-anything"><span class="header-section-number">9.6</span> Why Cost Alone Cannot Decide Anything</h2>
+<p>It is tempting to treat cost analysis as decisive.</p>
+<p>Lower costs feel safer. Leaner operations feel prudent. Reducing fixed commitments often feels like progress. But cost analysis by itself cannot answer the entrepreneurial question that matters most.</p>
+<p>Cost does not create value. Cost does not generate demand. Cost does not determine whether customers will buy.</p>
+<p>Cost only tells you what it takes to serve demand if it appears.</p>
+<p>This is why cost reductions that ignore demand can be misleading. A lower-cost structure can still be the wrong choice if demand is small, price-sensitive, or uncertain. Conversely, a higher-cost structure can be the right choice if demand is strong enough to support it.</p>
+<p>Cost narrows the space of viable decisions. It does not choose among them.</p>
+<p>Until cost is considered together with demand, analysis remains incomplete. You may know what is cheaper—but not what is better.</p>
+</section>
+<section id="looking-ahead-cost-inside-the-profit-decision" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="looking-ahead-cost-inside-the-profit-decision"><span class="header-section-number">9.7</span> Looking Ahead: Cost Inside the Profit Decision</h2>
+<p>At this point, the structure of the problem should be coming into focus.</p>
+<p>Demand tells us what the market might do. Cost tells us what we must commit to serve it.</p>
+<p>Neither is sufficient on its own.</p>
+<p>The entrepreneurial decision is not about demand in isolation, and it is not about cost in isolation. It is about whether the combination of demand and cost can plausibly generate enough surplus to justify moving forward.</p>
+<p>That question is a profit question.</p>
+<p>Profit is where demand uncertainty and cost commitments meet. It is where pricing, scale, and structure interact. And it is where the original question—<em>“Is this worth doing?”</em>—finally becomes answerable in a disciplined way.</p>
+<p>The next chapter brings these elements together. It shows how demand evidence and cost choices combine to evaluate profit before revenue exists—and how entrepreneurs can make that evaluation explicit rather than implicit.</p>
+<p>Only then is it time to make the call.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ei\.nilehatch\.com\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./part_cost_profit.html" class="pagination-link" aria-label="From Demand to Profit">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">From Demand to Profit</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./part_toolkits.html" class="pagination-link" aria-label="Profit Toolkit">
+        <span class="nav-page-text">Profit Toolkit</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><em>Is This Worth Doing?</em> was written by Nile Hatch (2026).</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

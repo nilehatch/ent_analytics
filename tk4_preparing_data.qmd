@@ -1,0 +1,190 @@
+# Preparing Data for Demand Estimation {#sec-toolkit-prepare-data-for-estimation-chapter .unnumbered}
+
+
+Demand estimation is not fragile because the math is difficult.
+It is fragile because it will happily operate on data that should never have been estimated in the first place.
+
+This toolkit exists to prevent that mistake.
+
+Before fitting models, comparing curves, or optimizing anything, you should pause and ask a simpler question:
+
+Is this data actually fit for estimation?
+
+This toolkit helps you answer that question deliberately.
+
+It does not teach estimation.
+It teaches when estimation makes sense at all.
+
+
+
+## The Goal of This Toolkit
+
+The goal here is not to perfect your data. That is impossible at this stage.
+
+The goal is to ensure that:
+
+- the data means what you think it means,
+- it aligns with the entrepreneurial question you are trying to answer,
+- and estimation will clarify uncertainty rather than disguise it.
+
+If you cannot confidently answer the questions in this toolkit, the correct response is not to “try the model anyway.”
+It is to return to design, execution, or validation before proceeding.
+
+
+
+## Step 1 — Confirm the Decision Context (Again)
+
+Before looking at the data, restate the decision it is meant to inform.
+
+- What decision are you trying to make now?
+- What would you do differently if demand were higher, lower, or more uncertain than expected?
+
+If you cannot answer this cleanly, stop here.
+
+Demand curves do not create decisions.
+They only inform decisions that already exist.
+
+
+
+## Step 2 — Verify Unit and Period Consistency
+
+Estimation only makes sense if every observation refers to the same decision.
+
+Ask yourself:
+ 
+- Is the unit consistent across all responses?
+- One subscription?
+- One visit?
+- One meal?
+- One license?
+- Is the decision period consistent?
+- Per month?
+- Per year?
+- One-time?
+- Repeating?
+
+If different respondents were implicitly answering different versions of the question, the data cannot be meaningfully aggregated.
+
+This is not a minor flaw.
+It is a category error.
+
+If unit or period ambiguity exists, estimation will produce a curve — but the curve will not correspond to any real decision.
+
+
+
+## Step 3 — Confirm the Type of Demand Being Estimated
+
+Before estimation, you must know which kind of demand your data represents.
+
+Yes/No Demand
+
+- Quantity is fixed at one unit per period.
+- Variation comes from who buys at which prices.
+- Estimation is about adoption probability across prices.
+
+How-Many Demand
+
+- Quantity varies across customers.
+- Estimation must reflect both price sensitivity and usage intensity.
+- Quantity responses must be explicitly tied to the defined period.
+
+If your data mixes these unintentionally — for example, treating repeated consumption as yes/no demand — estimation will be misleading even if the model fits well.
+
+This is a design problem, not a modeling one.
+
+
+
+## Step 4 — Inspect the Raw Price–Quantity Structure
+
+Before fitting anything, look at the data in its most basic form.
+
+Ask:
+
+- Are prices within a plausible range?
+- Are quantities non-negative and realistic?
+- Are there obvious outliers that dominate the scale?
+- Is there enough variation in price to identify a relationship at all?
+
+Estimation cannot recover information that was never collected.
+
+If all respondents faced essentially the same price, the problem is not statistical. There is nothing to estimate.
+
+
+
+## Step 5 — Check Effective Sample Size
+
+Demand estimation depends on informative variation, not just respondent count.
+
+A dataset with:
+
+- 200 respondents
+- but only 3 distinct price points
+- or only a handful of non-zero quantities
+
+… may have far less effective information than it appears.
+
+Ask:
+
+- How many distinct price–quantity relationships are actually present?
+- How much of the data survives basic cleaning and filtering?
+
+Small effective samples do not make estimation impossible — but they do limit what can be inferred responsibly.
+
+Treat results accordingly.
+
+
+
+## Step 6 — Identify What Estimation Can and Cannot Do Here
+
+Before running the app, be explicit about what you expect estimation to provide.
+
+Estimation can help:
+
+- summarize noisy responses into a coherent relationship,
+- rule out implausible prices,
+- compare broad demand shapes.
+
+Estimation cannot:
+
+- fix poor survey design,
+- recover missing context,
+- validate demand on its own,
+- eliminate uncertainty.
+
+If you are hoping estimation will “settle” the decision, pause. That is not its role.
+
+
+
+## Step 7 — Decide Whether to Proceed
+
+At this point, make an explicit choice.
+
+You should proceed to estimation only if:
+
+- [ ] unit and period are clear,
+- [ ] demand type matches the data,
+- [ ] price and quantity variation exists,
+- [ ] and the decision context is well defined.
+
+If any of these fail, the right next step is not modeling.
+
+It is to:
+
+- refine the survey,
+- gather additional data,
+- validate earlier responses,
+- or narrow the decision.
+
+Estimation is powerful — but only when used at the right moment.
+
+
+## How This Toolkit Fits the Larger Process
+
+This toolkit sits deliberately between executing demand experiments and estimating demand.
+
+It prevents the most common failure mode in early analytics:
+producing confident outputs from incoherent inputs.
+
+Once these checks are satisfied, estimation becomes meaningful — not because it is precise, but because it is anchored.
+
+Only then does it make sense to fit demand curves, compare models, and bring cost back into the picture.
