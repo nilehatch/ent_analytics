@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch4_need_to_know.html</loc>
-    <lastmod>2026-01-16T20:14:44.397Z</lastmod>
+    <lastmod>2026-01-21T14:44:16.832Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch5_demand.html</loc>
@@ -33,6 +33,26 @@
     <lastmod>2026-01-21T13:03:35.590Z</lastmod>
   </url>
   <url>
+    <loc>https://ei.nilehatch.com/ch8_estimate_demand.html</loc>
+    <lastmod>2026-01-21T13:38:07.834Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/part_cost_profit.html</loc>
+    <lastmod>2026-01-20T20:44:40.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/ch9_cost.html</loc>
+    <lastmod>2026-01-21T12:39:38.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/ch10_population.html</loc>
+    <lastmod>2026-01-22T02:27:25.555Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/part_toolkits.html</loc>
+    <lastmod>2026-01-20T17:58:47.488Z</lastmod>
+  </url>
+  <url>
     <loc>https://ei.nilehatch.com/tk1_frame_problem.html</loc>
     <lastmod>2026-01-17T01:42:16.323Z</lastmod>
   </url>
@@ -42,23 +62,15 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/tk3_validate_data.html</loc>
-    <lastmod>2026-01-17T01:43:46.754Z</lastmod>
+    <lastmod>2026-01-21T14:05:56.435Z</lastmod>
   </url>
   <url>
-    <loc>https://ei.nilehatch.com/demand.html</loc>
-    <lastmod>2025-03-25T18:13:26.291Z</lastmod>
+    <loc>https://ei.nilehatch.com/tk4_preparing_data.html</loc>
+    <lastmod>2026-01-21T12:59:22.173Z</lastmod>
   </url>
   <url>
-    <loc>https://ei.nilehatch.com/durable_demand.html</loc>
-    <lastmod>2023-11-01T21:34:44.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/nondurable_demand.html</loc>
-    <lastmod>2023-11-01T21:42:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/cost.html</loc>
-    <lastmod>2025-02-13T21:13:23.041Z</lastmod>
+    <loc>https://ei.nilehatch.com/tk5_estimated_demand_check.html</loc>
+    <lastmod>2026-01-21T14:03:15.573Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/cost_dynamics.html</loc>
@@ -115,29 +127,5 @@
   <url>
     <loc>https://ei.nilehatch.com/references.html</loc>
     <lastmod>2025-01-02T02:01:52.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/part_toolkits.html</loc>
-    <lastmod>2026-01-20T17:58:47.488Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/ch8_estimate_demand.html</loc>
-    <lastmod>2026-01-21T13:38:07.834Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/part_cost_profit.html</loc>
-    <lastmod>2026-01-20T20:44:40.169Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/ch9_cost.html</loc>
-    <lastmod>2026-01-21T12:39:38.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/tk4_preparing_data.html</loc>
-    <lastmod>2026-01-21T12:59:22.173Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/tk5_estimated_demand_check.html</loc>
-    <lastmod>2026-01-21T13:52:53.192Z</lastmod>
   </url>
 </urlset>

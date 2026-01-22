@@ -16,7 +16,7 @@ This toolkit assumes you have:
 
 - completed the [problem framing toolkit](tk1_frame_problem.qmd),
 - designed and executed a survey using the [survey design toolkit](tk2_survey_design),
-- `and generated an initial demand estimate or curve`.
+- and generated an initial demand estimate or curve using the [profit analytics app](https://rconnect.byu.edu/ProfitAnalytics).
 
 You should work through this toolkit *before* optimizing price, projecting profit, or making irreversible commitments.
 

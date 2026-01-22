@@ -103,11 +103,9 @@ A question can be answered accurately and still be useless if it does not connec
 
 The distinction becomes clear when uncertainty is viewed through the lens of action.
 
-If the most urgent unknown is about demand, then questions about population size, customer characteristics, or interest levels are only useful insofar as they help determine whether demand is strong enough at viable prices to justify proceeding.
-
-If the most urgent unknown is about pricing, then questions about willingness to pay and price sensitivity matter. Questions about features or branding may not—yet.
-
-If the most urgent unknown is about scale, then questions about repeat purchasing, usage intensity, or capacity constraints become relevant.
+- If the most urgent unknown is about demand, then questions about population size, customer characteristics, or interest levels are only useful insofar as they help determine whether demand is strong enough at viable prices to justify proceeding.
+- If the most urgent unknown is about pricing, then questions about willingness to pay and price sensitivity matter. Questions about features or branding may not—yet.
+- If the most urgent unknown is about scale, then questions about repeat purchasing, usage intensity, or capacity constraints become relevant.
 
 In each case, the entrepreneurial question does not stand alone. It is derived from the decision and shaped by the uncertainty that blocks it.
 
@@ -122,7 +120,7 @@ Only at that point does it make sense to ask how the question can be answered re
 
 
 
-## Why Demand Is Often the First Urgent Unknown
+## Demand Is Often the First Urgent Unknown
 
 Once the decision, the uncertainty, and the entrepreneurial question are made explicit, a pattern usually emerges.
 

@@ -3,7 +3,7 @@
 #### *A fast way to catch curves you shouldn’t trust*
 
 
-This toolkit is a practical companion to Chapter 8.
+This toolkit is a practical companion to [Chapter 8 Estimating Demand](ch8_estimate_demand.qmd). It does not explain how to operate the [profit analytics app](https://rconnect.byu.edu/ProfitAnalytics). It explains how to interpret the results it produces
 
 The profit analytics app can fit a demand curve from almost any dataset. That is a feature—and a risk. A smooth curve can look authoritative even when it is summarizing confused evidence, misaligned units, or a sample that cannot support market inference.
 

@@ -41,11 +41,6 @@ book:
         - ch2_uncertainty_types.qmd
         - ch3_profit_before_revenue.qmd
         - ch4_need_to_know.qmd
-#    - intro.qmd
-#    - part: Uncertainty
-#      chapters:
-#        - uncertainty_entrepreneurship.qmd
-#        - uncertainty_profit.qmd
 
     - part: Learning Demand
       chapters:
@@ -57,6 +52,7 @@ book:
     - part: part_cost_profit.qmd
       chapters:
         - ch9_cost.qmd
+        - ch10_population.qmd
         
     - part: part_toolkits.qmd # Toolkit
       chapters:
