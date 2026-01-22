@@ -117,6 +117,22 @@ Only then does it make sense to ask how individual responses become market deman
 
 That is where we turn next.
 
+::: {.callout-tip icon=false collapse=true}
+## Estimates Are Not Predictions
+
+When we estimate a demand curve, it is tempting to read it as a forecast of what customers will do.
+
+That is not what it is.
+
+An estimate summarizes what your current data implies *if the underlying assumptions hold*.  
+It does not claim that those assumptions are correct, complete, or stable.
+
+This demand curve is a *lens*, not a prophecy.  
+It helps you see how price and quantity are related *given what you know so far*.
+
+As new evidence arrives, the curve should change.  
+That is not failure. It is learning.
+:::
 
 
 

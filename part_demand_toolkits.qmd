@@ -1,4 +1,4 @@
-# Profit Toolkit {#sec-toolkit-part .unnumbered}
+# Demand Toolkits {#sec-demand_toolkit-part .unnumbered}
 
 Up to this point, the book has focused on how to think about pre-revenue decisions:  
 what makes them difficult, where uncertainty actually lives, and why demand must be learned deliberately rather than assumed.

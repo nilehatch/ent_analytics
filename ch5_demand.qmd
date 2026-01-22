@@ -172,6 +172,7 @@ Revenue multiplies price by quantity. Demand explains how quantity responds to p
 
 
 
+
 ## Changes Along a Curve vs. Changes in the Curve
 
 One final visual distinction is worth seeing early, even if we do not dwell on terminology.
@@ -222,7 +223,7 @@ plot_demand_change_along <- ggplot() +
 plot_demand_change_between <- ggplot() + 
   geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = "RoyalBlue") +
   geom_function(fun = fQ2, xlim = c(0, 1250), linewidth = 2, color = "RoyalBlue") +
-  geom_segment(aes(x = A$P, y = A$Q, xend = C$P, yend = C$Q+60),
+  geom_segment(aes(x = A$P, y = A$Q, xend = C$P, yend = C$Q+75),
                arrow = arrow(length = unit(0.16, "inches")),
                linewidth = 3, color = "black") +
   geom_point(data = rbind(A, C), aes(x = P, y = Q), size = 4.5, color = "black") +

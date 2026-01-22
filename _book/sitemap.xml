@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch5_demand.html</loc>
-    <lastmod>2026-01-20T19:40:23.164Z</lastmod>
+    <lastmod>2026-01-22T15:40:48.347Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch6_design_experiment.html</loc>
@@ -34,23 +34,11 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch8_estimate_demand.html</loc>
-    <lastmod>2026-01-21T13:38:07.834Z</lastmod>
+    <lastmod>2026-01-22T15:41:48.627Z</lastmod>
   </url>
   <url>
-    <loc>https://ei.nilehatch.com/part_cost_profit.html</loc>
-    <lastmod>2026-01-20T20:44:40.169Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/ch9_cost.html</loc>
-    <lastmod>2026-01-21T12:39:38.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/ch10_population.html</loc>
-    <lastmod>2026-01-22T02:27:25.555Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ei.nilehatch.com/part_toolkits.html</loc>
-    <lastmod>2026-01-20T17:58:47.488Z</lastmod>
+    <loc>https://ei.nilehatch.com/part_demand_toolkits.html</loc>
+    <lastmod>2026-01-22T21:47:25.996Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/tk1_frame_problem.html</loc>
@@ -71,6 +59,30 @@
   <url>
     <loc>https://ei.nilehatch.com/tk5_estimated_demand_check.html</loc>
     <lastmod>2026-01-21T14:03:15.573Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/part_cost_profit.html</loc>
+    <lastmod>2026-01-20T20:44:40.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/ch9_cost.html</loc>
+    <lastmod>2026-01-21T12:39:38.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/ch10_scale.html</loc>
+    <lastmod>2026-01-22T02:32:40.287Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/ch11_profit.html</loc>
+    <lastmod>2026-01-22T16:05:02.130Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/ch12_profit_reasoning.html</loc>
+    <lastmod>2026-01-22T21:23:06.691Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/part_profit_toolkits.html</loc>
+    <lastmod>2026-01-22T21:49:47.056Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/cost_dynamics.html</loc>

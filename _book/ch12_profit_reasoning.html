@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Profit Reasoning – Is This Worth Doing?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./part_profit_toolkits.html" rel="next">
+<link href="./ch11_profit.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1ba4f5830de1b2e7b8cf0f0ffee6cc6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="custom_itwd.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_cost_profit.html">From Demand to Profit</a></li><li class="breadcrumb-item"><a href="./ch12_profit_reasoning.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Profit Reasoning</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Is This Worth Doing?</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/nilehatch/exp_innov/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">The Pre-Revenue Decision</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_is_this_worth_doing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Is This Worth Doing?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_uncertainty_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of Uncertainty in Pre-Revenue Profit Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3_profit_before_revenue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4_need_to_know.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learning Demand</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What Demand Is (and Is Not)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6_design_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Designing Experiments to Learn Demand</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7_execute_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Executing Demand Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch8_estimate_demand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_demand_toolkits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demand Toolkits</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framing a Demand Learning Problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk2_survey_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing a Demand Survey</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk3_validate_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Validating and Stress-Testing Demand Evidence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk4_preparing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing Data for Demand Estimation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk5_estimated_demand_check.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sanity-Check Your Estimated Demand Curve</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_cost_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From Demand to Profit</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch9_cost.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Cost</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch10_scale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Scale and Population</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch11_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch12_profit_reasoning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Profit Reasoning</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_profit_toolkits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Profit Toolkits</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framing a Demand Learning Problem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Old Econ Profit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cost_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Cost Dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Profit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Competition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./entry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part_competitive_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Competitive Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Competing to Sell to Businesses</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#when-profit-is-impossible" id="toc-when-profit-is-impossible" class="nav-link active" data-scroll-target="#when-profit-is-impossible"><span class="header-section-number">12.1</span> When Profit Is Impossible</a>
+  <ul class="collapse">
+  <li><a href="#what-impossible-really-means" id="toc-what-impossible-really-means" class="nav-link" data-scroll-target="#what-impossible-really-means">What “Impossible” Really Means</a></li>
+  <li><a href="#the-three-most-common-causes" id="toc-the-three-most-common-causes" class="nav-link" data-scroll-target="#the-three-most-common-causes">The Three Most Common Causes</a></li>
+  <li><a href="#why-this-result-is-often-a-gift" id="toc-why-this-result-is-often-a-gift" class="nav-link" data-scroll-target="#why-this-result-is-often-a-gift">Why This Result Is Often a Gift</a></li>
+  <li><a href="#what-not-to-do-next" id="toc-what-not-to-do-next" class="nav-link" data-scroll-target="#what-not-to-do-next">What Not to Do Next</a></li>
+  <li><a href="#what-this-result-actually-invites" id="toc-what-this-result-actually-invites" class="nav-link" data-scroll-target="#what-this-result-actually-invites">What This Result Actually Invites</a></li>
+  </ul></li>
+  <li><a href="#when-profit-exists-but-is-fragile" id="toc-when-profit-exists-but-is-fragile" class="nav-link" data-scroll-target="#when-profit-exists-but-is-fragile"><span class="header-section-number">12.2</span> When Profit Exists but Is Fragile</a>
+  <ul class="collapse">
+  <li><a href="#what-fragile-profit-looks-like" id="toc-what-fragile-profit-looks-like" class="nav-link" data-scroll-target="#what-fragile-profit-looks-like">What Fragile Profit Looks Like</a></li>
+  <li><a href="#why-fragile-profit-is-often-more-dangerous-than-impossible-profit" id="toc-why-fragile-profit-is-often-more-dangerous-than-impossible-profit" class="nav-link" data-scroll-target="#why-fragile-profit-is-often-more-dangerous-than-impossible-profit">Why Fragile Profit Is Often More Dangerous Than Impossible Profit</a></li>
+  <li><a href="#fragility-is-about-sensitivity-not-sign" id="toc-fragility-is-about-sensitivity-not-sign" class="nav-link" data-scroll-target="#fragility-is-about-sensitivity-not-sign">Fragility Is About Sensitivity, Not Sign</a></li>
+  <li><a href="#the-temptation-to-optimize-too-early" id="toc-the-temptation-to-optimize-too-early" class="nav-link" data-scroll-target="#the-temptation-to-optimize-too-early">The Temptation to Optimize Too Early</a></li>
+  <li><a href="#what-fragile-profit-actually-invites" id="toc-what-fragile-profit-actually-invites" class="nav-link" data-scroll-target="#what-fragile-profit-actually-invites">What Fragile Profit Actually Invites</a></li>
+  </ul></li>
+  <li><a href="#sensitivity-and-robustness" id="toc-sensitivity-and-robustness" class="nav-link" data-scroll-target="#sensitivity-and-robustness"><span class="header-section-number">12.3</span> Sensitivity and Robustness</a>
+  <ul class="collapse">
+  <li><a href="#sensitivity-is-about-fragile-assumptions" id="toc-sensitivity-is-about-fragile-assumptions" class="nav-link" data-scroll-target="#sensitivity-is-about-fragile-assumptions">Sensitivity Is About Fragile Assumptions</a></li>
+  <li><a href="#robustness-is-about-decision-survivability" id="toc-robustness-is-about-decision-survivability" class="nav-link" data-scroll-target="#robustness-is-about-decision-survivability">Robustness Is About Decision Survivability</a></li>
+  <li><a href="#why-most-sensitive-is-not-always-most-important" id="toc-why-most-sensitive-is-not-always-most-important" class="nav-link" data-scroll-target="#why-most-sensitive-is-not-always-most-important">Why “Most Sensitive” Is Not Always “Most Important”</a></li>
+  <li><a href="#what-the-analytics-is-actually-doing-here" id="toc-what-the-analytics-is-actually-doing-here" class="nav-link" data-scroll-target="#what-the-analytics-is-actually-doing-here">What the Analytics Is Actually Doing Here</a></li>
+  <li><a href="#sensitivity-as-a-guide-for-learning-not-optimization" id="toc-sensitivity-as-a-guide-for-learning-not-optimization" class="nav-link" data-scroll-target="#sensitivity-as-a-guide-for-learning-not-optimization">Sensitivity as a Guide for Learning, Not Optimization</a></li>
+  <li><a href="#robustness-and-the-willingness-to-commit" id="toc-robustness-and-the-willingness-to-commit" class="nav-link" data-scroll-target="#robustness-and-the-willingness-to-commit">Robustness and the Willingness to Commit</a></li>
+  </ul></li>
+  <li><a href="#is-this-worth-doing" id="toc-is-this-worth-doing" class="nav-link" data-scroll-target="#is-this-worth-doing"><span class="header-section-number">12.4</span> Is This Worth Doing?</a>
+  <ul class="collapse">
+  <li><a href="#what-this-decision-isand-is-not" id="toc-what-this-decision-isand-is-not" class="nav-link" data-scroll-target="#what-this-decision-isand-is-not">What This Decision Is—and Is Not</a></li>
+  <li><a href="#the-core-question-made-precise" id="toc-the-core-question-made-precise" class="nav-link" data-scroll-target="#the-core-question-made-precise">The Core Question, Made Precise</a></li>
+  <li><a href="#how-profit-reasoning-supports-the-call" id="toc-how-profit-reasoning-supports-the-call" class="nav-link" data-scroll-target="#how-profit-reasoning-supports-the-call">How Profit Reasoning Supports the Call</a></li>
+  <li><a href="#commitment-is-the-real-irreversibility" id="toc-commitment-is-the-real-irreversibility" class="nav-link" data-scroll-target="#commitment-is-the-real-irreversibility">Commitment Is the Real Irreversibility</a></li>
+  <li><a href="#acting-without-illusion" id="toc-acting-without-illusion" class="nav-link" data-scroll-target="#acting-without-illusion">Acting Without Illusion</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What Comes Next</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_cost_profit.html">From Demand to Profit</a></li><li class="breadcrumb-item"><a href="./ch12_profit_reasoning.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Profit Reasoning</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Profit Reasoning</span></h1>
+<p class="subtitle lead">Seeing the Pre-Revenue Decision Clearly</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In the previous chapter, profit was treated as a decision object.</p>
+<p>This chapter treats it as something that can be <em>reasoned about</em>.</p>
+<p>The goal is to make the implications of the decision visible enough to judge deliberately. <!-- The goal here is not to compute profit more precisely. It is to make the implications of a decision more visible—so judgment can be exercised deliberately rather than implicitly. --></p>
+<p>This is where analytics enters the picture most directly.</p>
+<section id="what-this-chapter-is-and-is-not" class="level4">
+<h4 class="anchored" data-anchor-id="what-this-chapter-is-and-is-not">What This Chapter Is (and Is Not)</h4>
+<p>This chapter is about <em>interpretation</em>, not execution.</p>
+<p>It does not teach statistics.<br>
+It does not teach optimization techniques.<br>
+It does not teach software interfaces.</p>
+<p>Those tasks are handled by tools.</p>
+<p>What this chapter does is show how profit reasoning:</p>
+<ul>
+<li>reveals feasibility,</li>
+<li>exposes fragility,</li>
+<li>and clarifies tradeoffs.</li>
+</ul>
+<p>The app supports this process by translating demand, cost, and scale into visual and comparable forms. It does not decide. It does not validate. It does not replace judgment.</p>
+</section>
+<section id="why-seeing-profit-matters" class="level4">
+<h4 class="anchored" data-anchor-id="why-seeing-profit-matters">Why Seeing Profit Matters</h4>
+<p>Up to this point, much of the analysis has been abstract.</p>
+<p>We have talked about:</p>
+<ul>
+<li>demand curves,</li>
+<li>cost structures,</li>
+<li>population constraints,</li>
+<li>and conditional expectations.</li>
+</ul>
+<p>Profit reasoning brings these elements together in a way that can be <em>seen</em>.</p>
+<p>Seeing matters.</p>
+<p>A single number can obscure fragility.<br>
+<!-- A table can hide sensitivity.  --> A verbal description can understate tradeoffs.</p>
+<p>A profit curve makes structure visible.</p>
+<p>It shows:</p>
+<ul>
+<li>whether profit is even possible,</li>
+<li>where it becomes possible,</li>
+<li>how sensitive it is to assumptions,</li>
+<li>and how quickly it deteriorates when those assumptions are violated.</li>
+</ul>
+<p>This is not about finding “the answer.”<br>
+It is about understanding the shape of the decision.</p>
+</section>
+<section id="profit-curves-are-maps-not-targets" class="level4">
+<h4 class="anchored" data-anchor-id="profit-curves-are-maps-not-targets">Profit Curves Are Maps, Not Targets</h4>
+<p>A profit curve shows profit as a function of price.</p>
+<p>That framing is deliberate.</p>
+<p>Throughout this book, price has been treated as a choice variable. Demand responds to price. Costs are incurred to support prices. Scale requirements emerge from price–quantity relationships.</p>
+<p>A profit curve makes those dependencies explicit.</p>
+<p>But a profit curve is not an instruction.</p>
+<p>It does not tell you what price to choose.<br>
+<!-- It does not guarantee that any price will work.  --> It does not remove uncertainty.</p>
+<p>Like all maps, it is a simplification.<br>
+And like all useful maps, it is meant to be interpreted.</p>
+</section>
+<section id="the-role-of-the-profit-analytics-app" class="level4">
+<h4 class="anchored" data-anchor-id="the-role-of-the-profit-analytics-app">The Role of the <a href="https://rconnect.byu.edu/ProfitAnalytics"><strong>Profit Analytics App</strong></a></h4>
+<p>The <a href="https://rconnect.byu.edu/ProfitAnalytics">profit analytics app</a> exists to do one thing well:<br>
+to make the implications of a decision legible.</p>
+<p>It:</p>
+<ul>
+<li>rescales demand appropriately,</li>
+<li>incorporates cost commitments,</li>
+<li>and computes profit across prices consistently.</li>
+</ul>
+<p>What it does <em>not</em> do is decide whether the venture is worth pursuing.</p>
+<p>That responsibility remains with the entrepreneur.</p>
+<p>The sections that follow explain how to read profit curves, how to recognize fragile decisions, and how to use sensitivity and robustness to guide judgment—without pretending that uncertainty can be eliminated.</p>
+</section>
+<section id="when-profit-is-impossible" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="when-profit-is-impossible"><span class="header-section-number">12.1</span> When Profit Is Impossible</h2>
+<p>One of the most common—and most unsettling—results entrepreneurs encounter is a profit curve that is negative everywhere.</p>
+<p>No matter the price, profit never crosses zero.</p>
+<p>This outcome is easy to misinterpret. It often triggers a rush to fix something: adjust the model, revisit the data, or search for a better price. But before reacting, it is important to understand what this result actually means.</p>
+<p>A profit curve that is everywhere negative is not a failure of analytics.<br>
+It is a diagnosis.</p>
+<section id="what-impossible-really-means" class="level3">
+<h3 class="anchored" data-anchor-id="what-impossible-really-means">What “Impossible” Really Means</h3>
+<p>When profit is impossible, the analysis is saying something very specific:</p>
+<p><em>Given the current assumptions about demand, cost, and scale, there is no price at which the venture can support its commitments.</em></p>
+<p>This is not a claim about the future.<br>
+It is not a prediction of failure.<br>
+It is a statement about feasibility <em>under the current design</em>.</p>
+<p>That distinction matters.</p>
+<p>Profit impossibility is not a verdict on the idea. It is a signal that something structural must change for the decision to make sense.</p>
+</section>
+<section id="the-three-most-common-causes" class="level3">
+<h3 class="anchored" data-anchor-id="the-three-most-common-causes">The Three Most Common Causes</h3>
+<p>When profit is negative everywhere, the cause almost always lies in one of three places.</p>
+<p><strong>First, demand may be too weak at feasible prices.</strong><br>
+Customers may be price-sensitive, the willingness to pay may be low, or demand may fall off too quickly as price rises.</p>
+<p><strong>Second, costs may be too high relative to demand.</strong><br>
+Variable costs may leave too little contribution, or fixed costs may be too large for the scale that demand can plausibly support.</p>
+<p><strong>Third, scale may be misaligned.</strong><br>
+Demand may have been learned correctly at the sample level, but the accessible population may be too small—or the penetration required too high—to carry the commitments being assumed.</p>
+<p>It is worth noting how the three common causes of impossible profit appear in the figures below.</p>
+<p>“Weak demand” never appears on its own. It only matters insofar as it fails to clear variable costs or fails to scale enough to support fixed commitments. In other words, weak demand shows up <em>through</em> margins or <em>through</em> scale—not as a separate case.</p>
+<!-- 
+The two figures that follow therefore capture all three causes:
+
+- the first shows cases where willingness to pay is insufficient to generate positive contribution at any price, and
+- the second shows cases where contribution exists but cannot support the fixed costs implied by the decision. 
+
+Both reflect demand that is too weak—but in fundamentally different ways.-->
+<div data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-cap-location="bottom">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-profit-impossible-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-profit-impossible-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch12_profit_reasoning_files/figure-html/fig-profit-impossible-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-profit-impossible-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Impossible profit (negative margins): revenue never exceeds variable cost, so no price can generate positive contribution. Selling any units under these conditions only deepens losses.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-profit-impossible-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-profit-impossible-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch12_profit_reasoning_files/figure-html/fig-profit-impossible-2.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-profit-impossible-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Impossible profit (fixed costs too large): contribution exists, but total cost never falls below revenue, so fixed commitments cannot be supported at any price.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Each of these causes points to a different kind of response.</p>
+</section>
+<section id="why-this-result-is-often-a-gift" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-result-is-often-a-gift">Why This Result Is Often a Gift</h3>
+<p>It is tempting to view impossible profit as discouraging.</p>
+<p>In reality, it is often one of the most valuable outcomes analytics can deliver.</p>
+<p>It prevents entrepreneurs from:</p>
+<ul>
+<li>mistaking activity for viability,</li>
+<li>committing to cost structures that cannot be supported,</li>
+<li>or relying on growth narratives that never reconcile with economics.</li>
+</ul>
+<p>Seeing that profit is impossible <em>before</em> making irreversible commitments is exactly the kind of uncertainty reduction this book has been advocating.</p>
+</section>
+<section id="what-not-to-do-next" class="level3">
+<h3 class="anchored" data-anchor-id="what-not-to-do-next">What Not to Do Next</h3>
+<p>When faced with impossible profit, there are a few reflexive responses that are rarely helpful.</p>
+<p>Do not:</p>
+<ul>
+<li>treat the result as a prediction that the venture will fail,</li>
+<li>assume the model must be wrong simply because it is inconvenient,</li>
+<li>or search for a single “fix” that magically restores feasibility.</li>
+</ul>
+<p>Profit impossibility is rarely resolved by tweaking one number. It reflects a misalignment among demand, cost, and scale.</p>
+<p>Understanding that misalignment comes before attempting to change it.</p>
+</section>
+<section id="what-this-result-actually-invites" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-result-actually-invites">What This Result Actually Invites</h3>
+<p>An impossible profit curve invites questions, not conclusions.</p>
+<p>It asks:</p>
+<ul>
+<li><em>Which assumption is doing the most damage?</em></li>
+<li><em>What would need to change for profit to become possible?</em></li>
+<li><em>Are those changes within our control—or even desirable?</em></li>
+</ul>
+<p>Sometimes the answer is to redesign the offering.<br>
+Sometimes it is to delay fixed commitments.<br>
+Sometimes it is to redefine the target population.<br>
+And sometimes it is to stop.</p>
+<p>None of those responses are failures. They are disciplined outcomes.</p>
+<p>Impossible profit is only one of the outcomes profit reasoning can reveal.</p>
+<p>In many cases, profit is not impossible—it is merely fragile.</p>
+<p>In those situations, the profit curve does cross zero. There is at least one price at which the venture appears viable. But that apparent viability often depends on a narrow range of assumptions, precise execution, or optimistic beliefs about scale and access.</p>
+<p>These cases are more subtle—and often more dangerous—than outright impossibility.</p>
+<p>The next section examines what it means when profit exists, but only barely.</p>
+<!-- The next sections show how profit reasoning helps distinguish between fragile opportunities and robust ones—once profit becomes possible at all. -->
+</section>
+</section>
+<section id="when-profit-exists-but-is-fragile" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="when-profit-exists-but-is-fragile"><span class="header-section-number">12.2</span> When Profit Exists but Is Fragile</h2>
+<p>In many cases, profit is not impossible.</p>
+<p>The profit curve crosses zero. There is at least one price at which the venture appears viable.</p>
+<p>At first glance, this feels encouraging. After the stark clarity of impossible profit, fragile profitability can look like progress. But this reaction is often mistaken.</p>
+<p>Fragile profit is not a relief from judgment.<br>
+It is an invitation to deeper judgment.</p>
+<section id="what-fragile-profit-looks-like" class="level3">
+<h3 class="anchored" data-anchor-id="what-fragile-profit-looks-like">What Fragile Profit Looks Like</h3>
+<p>Fragile profit usually appears in one of two ways.</p>
+<p>In some cases, profit is positive only over a very narrow range of prices. A small deviation—caused by competitive pressure, execution error, or misestimated demand—pushes profit back below zero.</p>
+<p>In other cases, profit is technically positive but very small relative to the commitments required. The venture survives on paper, but only barely, leaving little room for error or learning.</p>
+<p>The figures below show these two forms of fragile profit.</p>
+<p>In the first, costs are relatively low, but demand is thin. Profit exists, but only within a narrow range of prices and assumptions.</p>
+<p>In the second, demand is strong, but fixed commitments are large. Contribution is real, yet the scale required to justify those commitments leaves little room for error.</p>
+<div data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-cap-location="bottom">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-profit-fragile-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-profit-fragile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch12_profit_reasoning_files/figure-html/fig-profit-fragile-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-profit-fragile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.3: Fragile profit (thin demand, low commitments): profit is positive only in a narrow price window, leaving little room for error.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-profit-fragile-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-profit-fragile-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch12_profit_reasoning_files/figure-html/fig-profit-fragile-2.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-profit-fragile-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: Fragile profit (strong demand, heavy commitments): contribution exists, but large fixed costs make viability highly sensitive to scale and assumptions.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>In both cases, the curve sends the same message: <em>The decision works only if many things go right at once.</em><br>
+The question is not whether the peak is positive. It’s whether the decision survives being a little wrong.</p>
+</section>
+<section id="why-fragile-profit-is-often-more-dangerous-than-impossible-profit" class="level3">
+<h3 class="anchored" data-anchor-id="why-fragile-profit-is-often-more-dangerous-than-impossible-profit">Why Fragile Profit Is Often More Dangerous Than Impossible Profit</h3>
+<p>Impossible profit is clear.</p>
+<p>It tells you that the current design does not work. The decision must change—or stop.</p>
+<p>Fragile profit is ambiguous.</p>
+<p>It offers a plausible story of success while quietly amplifying risk. Because profit exists somewhere, it becomes tempting to focus on finding and defending that point rather than questioning whether the underlying structure is robust enough to support commitment.</p>
+<p>This is where entrepreneurs are most likely to overinterpret analytics.</p>
+<p>A single positive region on the profit curve can be mistaken for validation. In reality, it may represent little more than a knife-edge condition.</p>
+</section>
+<section id="fragility-is-about-sensitivity-not-sign" class="level3">
+<h3 class="anchored" data-anchor-id="fragility-is-about-sensitivity-not-sign">Fragility Is About Sensitivity, Not Sign</h3>
+<p>The key distinction in this section is not whether profit is positive or negative.</p>
+<p>It is how sensitive profit is to error.</p>
+<p>When profit is fragile:</p>
+<ul>
+<li>small changes in demand assumptions matter a great deal,</li>
+<li>small cost overruns erase surplus,</li>
+<li>small shortfalls in scale undermine feasibility.</li>
+</ul>
+<p>None of these errors are unusual. All are common in early ventures.</p>
+<p>Fragile profit does not fail because entrepreneurs are careless.<br>
+It fails because uncertainty is unavoidable.</p>
+</section>
+<section id="the-temptation-to-optimize-too-early" class="level3">
+<h3 class="anchored" data-anchor-id="the-temptation-to-optimize-too-early">The Temptation to Optimize Too Early</h3>
+<p>Fragile profit often triggers an instinct to optimize.</p>
+<p>If profit is positive at one price, why not fine-tune the model to find the best one?</p>
+<p>This instinct is understandable—and premature.</p>
+<p>Optimization sharpens the knife’s edge. It does not widen it.</p>
+<p>Before worrying about where profit is maximized, the more important question is whether profit exists over a <em>wide enough range</em> of assumptions to justify commitment.</p>
+<p>That question is about robustness, not optimization.</p>
+</section>
+<section id="what-fragile-profit-actually-invites" class="level3">
+<h3 class="anchored" data-anchor-id="what-fragile-profit-actually-invites">What Fragile Profit Actually Invites</h3>
+<p>When profit exists but is fragile, the analysis is not telling you to proceed.</p>
+<p>It is asking you to reflect.</p>
+<p>It asks:</p>
+<ul>
+<li><em>Which assumptions must hold exactly for this to work?</em></li>
+<li><em>How much error can we tolerate before the decision fails?</em></li>
+<li><em>Are we willing to accept that level of exposure?</em></li>
+</ul>
+<p>Sometimes fragile profit can be strengthened:</p>
+<ul>
+<li>by delaying fixed commitments,</li>
+<li>by redesigning cost structure,</li>
+<li>by narrowing focus to a more accessible population.</li>
+</ul>
+<p>Other times, fragility is a warning that the venture is too exposed to proceed responsibly.</p>
+<p>Profit reasoning does not answer these questions.<br>
+It makes them unavoidable.</p>
+<p>The next section shows how sensitivity and robustness help identify which assumptions deserve the most attention before a decision is made.</p>
+</section>
+</section>
+<section id="sensitivity-and-robustness" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sensitivity-and-robustness"><span class="header-section-number">12.3</span> Sensitivity and Robustness</h2>
+<p>Once profit exists—but only narrowly—the decision shifts again.</p>
+<p>The question is no longer <em>whether</em> profit is possible.<br>
+It is <em>how easily</em> that possibility disappears.</p>
+<p>This is where sensitivity and robustness matter.</p>
+<section id="sensitivity-is-about-fragile-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="sensitivity-is-about-fragile-assumptions">Sensitivity Is About Fragile Assumptions</h3>
+<p>Sensitivity asks a simple question: <em>Which assumptions, if wrong, would reverse the decision?</em></p>
+<p>Every profit estimate rests on assumptions:</p>
+<ul>
+<li>about demand shape,</li>
+<li>about willingness to pay,</li>
+<li>about costs,</li>
+<li>about scale and access.</li>
+</ul>
+<p>Sensitivity analysis examines how profit responds when those assumptions change.</p>
+<p>If a small change in one assumption causes profit to vanish, the decision is highly sensitive to that belief. If profit remains positive across a wide range of plausible values, the decision is less sensitive.</p>
+<p>Importantly, sensitivity is not about likelihood.<br>
+It is about <em>consequence</em>.</p>
+<p>An assumption can be unlikely to be wrong and still dangerous if being wrong would be catastrophic.</p>
+</section>
+<section id="robustness-is-about-decision-survivability" class="level3">
+<h3 class="anchored" data-anchor-id="robustness-is-about-decision-survivability">Robustness Is About Decision Survivability</h3>
+<p>Robustness takes a broader view.</p>
+<p>Rather than asking whether profit is maximized at a particular point, robustness asks: <em>Does this decision survive reasonable error?</em></p>
+<p>A robust decision is one that remains acceptable even when:</p>
+<ul>
+<li>demand is weaker than expected,</li>
+<li>costs run higher than planned,</li>
+<li>adoption is slower than hoped,</li>
+<li>or execution is imperfect.</li>
+</ul>
+<p>Robustness does not require certainty. It requires resilience.</p>
+<p>This is why robust profit often matters more than maximal profit. A slightly lower expected profit that survives error can dominate a higher expected profit that fails under mild deviation.</p>
+</section>
+<section id="why-most-sensitive-is-not-always-most-important" class="level3">
+<h3 class="anchored" data-anchor-id="why-most-sensitive-is-not-always-most-important">Why “Most Sensitive” Is Not Always “Most Important”</h3>
+<p>Sensitivity analysis often produces rankings: which variable matters most.</p>
+<p>These rankings are easy to misread.</p>
+<p>An assumption can be highly sensitive but largely uncontrollable. Another can be moderately sensitive but actionable. Treating all sensitivity equally can lead entrepreneurs to focus on the wrong risks.</p>
+<p>What matters is not just <em>how much</em> profit changes, but:</p>
+<ul>
+<li>whether the assumption can be tested further,</li>
+<li>whether it can be influenced by design,</li>
+<li>and whether it can be insured, delayed, or avoided.</li>
+</ul>
+<p>Sensitivity reveals exposure. Judgment decides response.</p>
+</section>
+<section id="what-the-analytics-is-actually-doing-here" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-analytics-is-actually-doing-here">What the Analytics Is Actually Doing Here</h3>
+<p>At this stage, analytics is not predicting outcomes.</p>
+<p>It is mapping fragility.</p>
+<p>By varying one assumption at a time and observing how profit responds, the analysis shows:</p>
+<ul>
+<li>where the knife’s edge lies,</li>
+<li>how wide the margin for error is,</li>
+<li>and which beliefs deserve the most scrutiny before committing.</li>
+</ul>
+<p>The app helps by making these relationships visible. It does not tell you which assumptions are true. It shows you which ones matter.</p>
+<p>That distinction is critical.</p>
+</section>
+<section id="sensitivity-as-a-guide-for-learning-not-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="sensitivity-as-a-guide-for-learning-not-optimization">Sensitivity as a Guide for Learning, Not Optimization</h3>
+<p>One of the most valuable uses of sensitivity analysis is deciding <em>what to learn next</em>.</p>
+<p>Highly sensitive assumptions are prime candidates for:</p>
+<ul>
+<li>additional experimentation,</li>
+<li>targeted data collection,</li>
+<li>staged commitment.</li>
+</ul>
+<p>Low-sensitivity assumptions, even if uncertain, may not warrant further effort.</p>
+<p>This reframes learning as a strategic choice. Time and attention are scarce. Sensitivity helps allocate them.</p>
+</section>
+<section id="robustness-and-the-willingness-to-commit" class="level3">
+<h3 class="anchored" data-anchor-id="robustness-and-the-willingness-to-commit">Robustness and the Willingness to Commit</h3>
+<p>Ultimately, sensitivity and robustness return the analysis to its original purpose.</p>
+<p>The decision is not:</p>
+<ul>
+<li>“What is the best price?”</li>
+<li>“What is the highest expected profit?”</li>
+</ul>
+<p>The decision is: <em>Am I willing to commit resources to this design, given how fragile or robust it appears to be?</em></p>
+<p>Analytics can clarify that tradeoff. It cannot resolve it.</p>
+<p>Choosing to proceed with a fragile opportunity may still be rational—but only if the risk is understood and accepted. Choosing to wait, redesign, or walk away may be equally rational.</p>
+<p>Sensitivity and robustness do not eliminate judgment.<br>
+They discipline it.</p>
+<p>The final section of this chapter brings these ideas together and shows how profit reasoning supports—not replaces—the decision to commit.</p>
+</section>
+</section>
+<section id="is-this-worth-doing" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="is-this-worth-doing"><span class="header-section-number">12.4</span> Is This Worth Doing?</h2>
+<p>By this point, the analysis has done everything it can.</p>
+<p>Demand has been learned as evidence, not assumed.<br>
+Costs have been treated as design choices and commitments.<br>
+Scale has been made explicit rather than imagined.<br>
+Profit has been examined for feasibility, fragility, and robustness.</p>
+<p>What remains is not an analytical problem.</p>
+<p>It is a judgment.</p>
+<section id="what-this-decision-isand-is-not" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-decision-isand-is-not">What This Decision Is—and Is Not</h3>
+<p>The question <em>“Is this worth doing?”</em> is often misunderstood.</p>
+<p>It is not:</p>
+<ul>
+<li>a prediction of success,</li>
+<li>a claim about future dominance,</li>
+<li>or a guarantee of profit.</li>
+</ul>
+<p>It is a disciplined assessment of whether the <em>structure of the opportunity</em> plausibly justifies commitment <em>before revenue exists</em>.</p>
+<p>This is why profit reasoning matters here. It forces that assessment to be explicit.</p>
+</section>
+<section id="the-core-question-made-precise" class="level3">
+<h3 class="anchored" data-anchor-id="the-core-question-made-precise">The Core Question, Made Precise</h3>
+<p>At this stage, the entrepreneurial question can be stated clearly: <em>Given what we know about demand, cost, and scale, is there a plausible path to profit that survives reasonable error—and are we willing to commit to it?</em></p>
+<p>Notice what this question does not ask:</p>
+<ul>
+<li>It does not ask for certainty.</li>
+<li>It does not ask for maximization.</li>
+<li>It does not ask whether the idea is exciting.</li>
+</ul>
+<p>It asks whether the economics are strong enough to justify moving from exploration to commitment.</p>
+</section>
+<section id="how-profit-reasoning-supports-the-call" class="level3">
+<h3 class="anchored" data-anchor-id="how-profit-reasoning-supports-the-call">How Profit Reasoning Supports the Call</h3>
+<p>Profit reasoning does not tell you what to do.</p>
+<p>What it does is narrow the space of responsible choices.</p>
+<p>It makes clear:</p>
+<ul>
+<li>when profit is impossible and the design must change,</li>
+<li>when profit exists but is too fragile to justify commitment,</li>
+<li>and when profit appears robust enough to proceed deliberately.</li>
+</ul>
+<p>This clarity is valuable even when the answer is “not yet” or “not like this.”</p>
+<p>Avoiding premature commitment is not failure. It is good decision-making.</p>
+</section>
+<section id="commitment-is-the-real-irreversibility" class="level3">
+<h3 class="anchored" data-anchor-id="commitment-is-the-real-irreversibility">Commitment Is the Real Irreversibility</h3>
+<p>Up to this point, most decisions have been reversible:</p>
+<ul>
+<li>prices can change,</li>
+<li>experiments can be rerun,</li>
+<li>designs can be adjusted.</li>
+</ul>
+<p>What makes this decision different is commitment.</p>
+<p>Fixed costs, infrastructure, hiring, and scale introduce irreversibility. They convert uncertainty into exposure.</p>
+<p>This is why the profit question must be answered <em>before</em> those commitments are made—not after.</p>
+<p>Profit reasoning helps ensure that when commitment happens, it is intentional rather than accidental.</p>
+</section>
+<section id="acting-without-illusion" class="level3">
+<h3 class="anchored" data-anchor-id="acting-without-illusion">Acting Without Illusion</h3>
+<p>Choosing to proceed does not mean uncertainty disappears.</p>
+<p>Demand may disappoint.<br>
+Costs may rise.<br>
+Scale may be slower than hoped.</p>
+<p>The goal of profit reasoning is not to eliminate these risks. It is to ensure that they are <em>understood and accepted</em> rather than ignored.</p>
+<p>Likewise, choosing not to proceed is not a rejection of entrepreneurship. It is often a sign that learning has done its job.</p>
+</section>
+<section id="what-comes-next" class="level3">
+<h3 class="anchored" data-anchor-id="what-comes-next">What Comes Next</h3>
+<p>If the decision is to proceed, the next phase looks different:</p>
+<ul>
+<li>profit assumptions become hypotheses,</li>
+<li>sensitivity points become monitoring priorities,</li>
+<li>and robustness becomes an ongoing concern rather than a one-time test.</li>
+</ul>
+<p>If the decision is to wait, redesign, or stop, the analysis has still succeeded. It has prevented commitment to a structure that could not plausibly support it.</p>
+<p>In either case, the question <em>“Is this worth doing?”</em> has been answered more honestly than intuition alone would allow.</p>
+<p>That is the contribution of profit analytics at this stage—not certainty, but clarity.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ei\.nilehatch\.com\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch11_profit.html" class="pagination-link" aria-label="Profit">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Profit</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./part_profit_toolkits.html" class="pagination-link" aria-label="Profit Toolkits">
+        <span class="nav-page-text">Profit Toolkits</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><em>Is This Worth Doing?</em> was written by Nile Hatch (2026).</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
