@@ -66,14 +66,10 @@ book:
 
     - part: part_profit_toolkits.qmd # Toolkit
       chapters:
-        - tk1_frame_problem.qmd
+        - tk6_variable_cost.qmd
+        - tk7_fixed_cost.qmd
         
-    - part: Old Econ Profit
-      chapters:
-#        - cost.qmd
-        - cost_dynamics.qmd
-        - profit.qmd
-    - part: Competition
+    - part: Old Econ Competition
       chapters:
         - competition.qmd
         - competition_undiff_bertrand.qmd

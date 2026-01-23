@@ -1,0 +1,294 @@
+# Esimtate Fixed Costs as Commitments {#sec-toolkit-fixed-cost-chapter .unnumbered}
+
+#### *What You Commit to Before Knowing What Will Sell*
+
+
+This toolkit supports one narrow but critical task:
+
+> *Making fixed cost commitments explicit—well enough to reason about exposure and risk.*
+
+The goal is not to predict expenses precisely.  
+The goal is to understand what you are committing to *before* demand is known.
+
+Early ventures rarely fail because fixed costs were miscalculated by a few percent.  
+They fail because commitments were made implicitly, too early, or without recognizing their consequences.
+
+This toolkit exists to surface those commitments deliberately.
+
+::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
+This toolkit is a practical companion to [Chapter 9: Cost](ch9_cost.qmd).  
+It helps you estimate variable cost per unit—the quantity that feeds directly into profit reasoning and into the [Profit Analytics app](https://rconnect.byu.edu/ProfitAnalytics).
+
+The goal is not accounting accuracy.  
+The goal is decision-grade feasibility.
+:::
+
+
+
+
+## What This Toolkit Is (and Is Not)
+
+This toolkit is about **commitment**, not accounting.
+
+It does not assume:
+
+- that fixed costs are permanent,
+- that they are unavoidable,
+- or that they must be minimized at all costs.
+
+It does assume that:
+
+- some costs are triggered by *your decision to proceed*, not by customer purchases,
+- those costs create exposure when demand disappoints,
+- and reversing them is often slow, costly, or impossible.
+
+This toolkit helps you see those commitments clearly.
+
+
+
+
+
+
+## The Core Question
+
+Every fixed cost estimate begins with a different question than variable cost:
+
+> *What do I have to commit to before knowing how many customers will buy?*
+
+If a cost is incurred because a customer buys, it is not fixed.  
+If a cost is incurred because *you decided to move forward*, it probably is.
+
+This distinction matters more than accounting labels.
+
+
+
+
+
+
+## Fixed Cost Is About Commitments, Not Categories
+
+In accounting, fixed costs are defined mechanically.
+
+For decision-making, a more useful definition is this:
+
+> *A fixed cost is any cost you incur because you decided to proceed, regardless of how many units are sold.*
+
+What matters most is not whether a cost is technically fixed forever, but whether it is:
+
+- difficult to reverse,
+- slow to unwind,
+- or binding over the relevant decision horizon.
+
+To surface these commitments, the sections below describe **common ways fixed costs enter a venture**.
+
+These are *commitment mechanisms*, not requirements.
+
+If a mechanism does not apply, leave it blank.
+
+*Blank means “not committed,” not “overlooked.”*
+
+
+
+
+
+
+## Common Fixed Cost Commitment Triggers
+
+The categories below are prompts designed to surface exposure—not to force costs where they do not belong.
+
+
+### 1. Capacity Commitments
+
+> *What capacity am I building before demand is known?*
+
+Examples include:
+
+- salaried labor,
+- facilities or office space,
+- server capacity or infrastructure,
+- equipment, vehicles, or tooling.
+
+Many capacity costs are **step-fixed**:
+
+- they support demand up to a limit,
+- then require another commitment to grow further.
+
+These costs are fixed over the relevant range—even if they scale in steps.
+
+
+### 2. Access and Channel Commitments
+
+> *What access do I pay for in advance?*
+
+Examples include:
+
+- distribution agreements,
+- platform or marketplace access,
+- compliance requirements,
+- certifications or regulatory approvals.
+
+These costs do not depend on how many customers buy.
+They depend on whether you choose to play.
+
+
+### 3. Capability Commitments
+
+> *What capabilities must exist before I can sell at all?*
+
+Examples include:
+- internal systems and tooling,
+- software subscriptions (including AI),
+- brand development,
+- intellectual property filings.
+
+These costs are often rationalized as “investments.”
+They are still commitments.
+
+
+### 4. Time-Bound Commitments
+
+> *What am I locked into for a period of time?*
+
+Examples include:
+
+- leases,
+- employment contracts,
+- minimum service agreements,
+- insurance premiums.
+
+Time is often the binding constraint—not dollars.
+A short-term commitment may be far less risky than a long one at the same cost.
+
+
+### 5. Foundational Compensation and Overhead
+
+> *Who gets paid even if nothing sells?*
+
+Examples include:
+
+- founder compensation,
+- executive or management salaries,
+- benefits and payroll overhead,
+- legal and administrative support.
+
+Omitting these costs does not make them disappear.
+It only hides the exposure.
+
+
+
+
+
+
+## A Discipline for Surfacing Commitments
+
+One effective way to practice this discipline is to keep a working commitment table.
+
+This is not a budget.
+It is a thinking aid.
+
+Columns might represent:
+
+- commitment triggers (like the categories above),
+- and rows the specific commitments you believe you are making.
+
+For each commitment, record:
+
+- an estimate or range,
+- the timing of the commitment,
+- and how reversible it is.
+
+Some commitments may be clear.
+Others may be fuzzy or conditional.
+
+That is fine.
+
+The danger is not uncertainty.  
+The danger is pretending a commitment does not exist.
+
+If a category does not apply, leave it blank—and say why.
+
+
+### Example: A Working Fixed Cost Commitment Table (Illustrative)
+
+The table below shows one way to surface fixed cost commitments.
+It is not complete, correct, or prescriptive.
+Its purpose is to make exposure visible.
+
+| Commitment Category | Cost Element | Estimate (per period) | Reversibility | Notes |
+|---------------------|--------------|------------------------|---------------|-------|
+| Capacity | Core team salaries | \$45k / month | Low | Hard to unwind quickly |
+| Capacity | Cloud infrastructure (base) | \$6k / month | Medium | Can downscale slowly |
+| Access | Regulatory certification | \$80k (one-time) | None | Required to operate |
+| Capability | Software subscriptions | \$1.2k / month | High | Cancelable |
+| Time-Bound | Office lease | \$3.5k / month | Low | 12-month lock-in |
+| Compensation | Founder pay | — | — | Deferred by choice |
+
+Some entries are monthly.  
+Some are one-time.  
+Some are blank.
+
+That is intentional.
+
+Blank means *not committed*, not *forgotten*.
+
+
+
+
+
+
+## From Commitments to Decision-Grade Fixed Cost
+
+This table is not meant to produce a single “correct” fixed cost number.
+
+Its purpose is to clarify exposure—so you can see which commitments dominate risk, which are reversible, and which assumptions matter most.
+
+A fixed cost estimate becomes *decision-grade* when you can reasonably answer three questions:
+
+- Which commitments create the greatest exposure if demand disappoints?
+- Which commitments are hardest to reverse?
+- Which commitments can be delayed until uncertainty is reduced?
+
+If one early commitment determines survival, it deserves scrutiny.
+If another can be staged or deferred, it may be less urgent.
+
+At this stage, understanding *irreversibility* matters more than minimizing cost.
+
+
+
+
+
+
+## Common Red Flags
+
+If your fixed cost assessment feels optimistic, pause.
+
+Common warning signs include:
+
+- assuming founder or executive labor is “free,”
+- ignoring the duration of commitments,
+- treating compliance or access costs as minor,
+- assuming scale will arrive before commitments bind.
+
+These are not errors of intent.
+They are predictable blind spots.
+
+This toolkit exists to surface them early—before they become irreversible.
+
+
+
+
+
+
+## Why This Matters for Profit Reasoning
+
+Fixed costs determine how much demand must exist *before* profit becomes possible.
+
+They create thresholds, break-even points, and exposure to error.
+They are the primary source of downside risk in early ventures.
+
+Estimating fixed costs carefully does not eliminate uncertainty.
+But estimating them implicitly guarantees surprise.
+
+Once fixed commitments are explicit, profit reasoning can honestly assess whether the expected rewards justify the exposure.
+
+That is the role fixed cost plays in the pre-revenue decision.
