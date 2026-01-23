@@ -1564,6 +1564,204 @@
     ]
   },
   {
+    "objectID": "tk6_variable_cost.html",
+    "href": "tk6_variable_cost.html",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "",
+    "text": "What It Really Costs to Serve One More Customer\nThis toolkit supports one narrow but critical task:\nThe goal is not precision.\nThe goal is to avoid missing costs that matter.\nEarly ventures rarely fail because variable costs were estimated imprecisely.\nThey fail because key costs were never noticed at all.\nThis toolkit exists to prevent that kind of failure.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#what-this-toolkit-is-and-is-not",
+    "href": "tk6_variable_cost.html#what-this-toolkit-is-and-is-not",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "What This Toolkit Is (and Is Not)",
+    "text": "What This Toolkit Is (and Is Not)\nThis toolkit is about discipline, not accounting.\nIt does not assume:\n\na particular business type,\na particular revenue model,\nor a particular level of operational maturity.\n\nIt does assume that:\n\nserving one more customer triggers real activity,\nthat activity consumes resources,\nand those resources have costs—even when they are uncertain.\n\nThis toolkit will help you surface those costs deliberately.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#the-core-question",
+    "href": "tk6_variable_cost.html#the-core-question",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "The Core Question",
+    "text": "The Core Question\nEvery variable cost estimate begins with a single question:\n\nWhat has to happen, operationally, for one more customer to be served?\n\nNot what might happen eventually.\nNot what should happen in a mature firm.\nWhat actually has to happen now, given your current design.\nIf nothing happens when a customer buys, your variable cost is close to zero.\nIf many things happen, variable cost is real—even if hard to estimate.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#variable-cost-is-about-triggers-not-labels",
+    "href": "tk6_variable_cost.html#variable-cost-is-about-triggers-not-labels",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "Variable Cost Is About Triggers, Not Labels",
+    "text": "Variable Cost Is About Triggers, Not Labels\nIn accounting, variable cost is defined mechanically.\nFor decision-making, a better definition is this:\n\nA variable cost is any cost triggered by serving one more unit of demand.\n\nThis framing matters because many costs that feel fixed are actually triggered by scale—and many costs that feel “minor” become decisive when multiplied.\nTo help surface these triggers, the sections below describe common ways variable costs enter a venture.\nThese are mechanisms, not requirements.\nIf a mechanism does not apply to your venture, leave it blank.\nBlank means “not triggered,” not “forgotten.”\nThat distinction matters.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#common-variable-cost-triggers",
+    "href": "tk6_variable_cost.html#common-variable-cost-triggers",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "Common Variable Cost Triggers",
+    "text": "Common Variable Cost Triggers\nThe categories below are prompts.\nThey are designed to make it hard to accidentally ignore costs—not to force them where they don’t belong.\n\n1. Production or Creation\n\nWhat must be created or produced when one more customer is served?\n\nExamples include:\n\nmaterials and components,\ncompute or API usage,\ncontent generation,\nlabor time directly tied to delivery.\n\nFor physical products, this may resemble a bill of materials.\nFor software or services, it may be time, computation, or setup effort.\nThe form differs.\nThe trigger is the same.\n\n\n2. Delivery or Fulfillment\n\nWhat must be delivered, hosted, shipped, or made accessible?\n\nExamples include:\n\nshipping and handling,\ncloud hosting or bandwidth,\nonboarding or setup,\nlogistics and returns.\n\nMany delivery costs are step-variable:\n\nthey are flat until capacity is reached,\nthen jump when new capacity is required.\n\nThese costs are still variable in decision terms—even if they do not change smoothly.\n\n\n3. Transactions\n\nWhat costs are incurred when a sale occurs?\n\nExamples include: - payment processing fees, - platform or marketplace fees, - per-transaction sales incentives, - discounts that reduce realized revenue.\nPrice discounts belong here.\nThey are not “strategy”—they are negative revenue triggered by transactions.\n\n\n4. Support and Maintenance\n\nWhat happens after the customer is served?\n\nExamples include:\n\ncustomer support,\nrework or retries,\nwarranty claims, returns, or replacements,\nservice recovery when things go wrong.\n\nMany of these costs are probabilistic. They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.\n\n\n5. Acquisition (When Truly Per-Unit)\n\nDoes acquiring one more customer reliably incur cost?\n\nExamples include:\n\nperformance advertising,\ncommissions,\nreferral payments.\n\nNot all marketing spend is variable. Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.\nBe explicit when you make that choice.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#a-discipline-for-surfacing-costs",
+    "href": "tk6_variable_cost.html#a-discipline-for-surfacing-costs",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "A Discipline for Surfacing Costs",
+    "text": "A Discipline for Surfacing Costs\nOne effective way to practice this discipline is to keep a working cost table.\nThis is not an accounting statement. It is a thinking aid.\nColumns might represent:\n\ncost triggers (like the categories above),\nand rows the specific cost elements you believe are involved.\n\nFor each element, record:\n\nan estimate or range,\nand your confidence in that estimate.\n\nSome entries may be well-known.\nOthers may be weak guesses.\nThat is fine.\nThe danger is not guessing. The danger is omitting.\nIf a category does not apply, leave it blank—and say why.\n\nExample: A Working Variable Cost Table (Illustrative)\nThe table below shows one way to surface variable cost components. It is not complete, correct, or prescriptive. Its purpose is to make the discipline concrete.\n\n\n\n\n\n\n\n\n\n\nTrigger Category\nCost Element\nEstimate (per unit)\nConfidence\nNotes\n\n\n\n\nProduction / Creation\nComponent materials\n$42–$55\nMedium\nSupplier quotes vary by volume\n\n\nProduction / Creation\nAssembly labor\n$18\nLow\nBased on time estimate, not observed\n\n\nDelivery / Fulfillment\nShipping\n$12–$20\nMedium\nDepends on zone and carrier\n\n\nTransaction\nPayment processing\n~3% of price\nHigh\nPlatform fee schedule\n\n\nSupport / Maintenance\nReturns / replacements\n$0–$8 (expected)\nLow\nProbabilistic; rough guess\n\n\nAcquisition\nPerformance advertising\n—\n—\nNot triggered (organic acquisition)\n\n\n\nSome entries are ranges.\nSome are guesses.\nSome are blank.\nThat is intentional.\nBlank means not triggered, not forgotten.\nThis table is not meant to produce a single “correct” variable cost.\nIts purpose is to make the structure of cost visible—so you can see which components matter, which are uncertain, and which assumptions are doing the most work.\nA variable cost estimate becomes decision-grade when you can reasonably answer three questions:\n\nWhich cost components dominate the total?\nWhich components are most uncertain?\nHow wrong could these estimates be before feasibility changes?\n\nIf small errors in one row would reverse your conclusion, that row deserves attention. If large uncertainty in another row barely matters, further precision is unnecessary.\nAt this stage, clarity about sensitivity matters more than numerical precision.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#from-components-to-a-decision-grade-cost",
+    "href": "tk6_variable_cost.html#from-components-to-a-decision-grade-cost",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "From Components to a Decision-Grade Cost",
+    "text": "From Components to a Decision-Grade Cost\nOnce cost components are surfaced, the goal is not to collapse them into a single “correct” number.\nInstead:\n\ngroup them into plausible scenarios,\nidentify conservative and optimistic cases,\nand ask how much error would change the decision.\n\nA variable cost estimate is decision-grade when:\n\nyou know which components matter most,\nyou know which are uncertain,\nand you know how wrong you could be before feasibility changes.\n\nThat is enough.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#common-red-flags",
+    "href": "tk6_variable_cost.html#common-red-flags",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "Common Red Flags",
+    "text": "Common Red Flags\nIf your variable cost estimate feels clean, confident, and simple, pause.\nCommon warning signs include:\n\ncounting only product or production cost,\nassuming zero support or post-sale effort,\nignoring returns, failures, or exceptions,\ntreating discounts as “marketing” rather than cost,\nor assuming scale will solve margins automatically.\n\nThese are not moral failures. They are predictable blind spots.\nThis toolkit exists to surface them early—when they are still cheap to fix.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk6_variable_cost.html#why-this-matters-for-profit-reasoning",
+    "href": "tk6_variable_cost.html#why-this-matters-for-profit-reasoning",
+    "title": "Esimtate Variable Cost per Unit",
+    "section": "Why This Matters for Profit Reasoning",
+    "text": "Why This Matters for Profit Reasoning\nVariable cost sets a hard boundary on feasibility.\nIf price does not exceed variable cost, selling more makes the situation worse.\nThis is why variable cost is reintroduced before fixed costs and profit. It determines which parts of the demand curve are even worth considering.\nEstimating variable cost carefully does not guarantee success. But estimating it carelessly can guarantee failure.\nOnce variable cost is understood, attention can turn to fixed costs—where commitment, irreversibility, and risk truly enter the decision.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Variable Cost per Unit"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html",
+    "href": "tk7_fixed_cost.html",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "",
+    "text": "What You Commit to Before Knowing What Will Sell\nThis toolkit supports one narrow but critical task:\nThe goal is not to predict expenses precisely.\nThe goal is to understand what you are committing to before demand is known.\nEarly ventures rarely fail because fixed costs were miscalculated by a few percent.\nThey fail because commitments were made implicitly, too early, or without recognizing their consequences.\nThis toolkit exists to surface those commitments deliberately.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#what-this-toolkit-is-and-is-not",
+    "href": "tk7_fixed_cost.html#what-this-toolkit-is-and-is-not",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "What This Toolkit Is (and Is Not)",
+    "text": "What This Toolkit Is (and Is Not)\nThis toolkit is about commitment, not accounting.\nIt does not assume:\n\nthat fixed costs are permanent,\nthat they are unavoidable,\nor that they must be minimized at all costs.\n\nIt does assume that:\n\nsome costs are triggered by your decision to proceed, not by customer purchases,\nthose costs create exposure when demand disappoints,\nand reversing them is often slow, costly, or impossible.\n\nThis toolkit helps you see those commitments clearly.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#the-core-question",
+    "href": "tk7_fixed_cost.html#the-core-question",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "The Core Question",
+    "text": "The Core Question\nEvery fixed cost estimate begins with a different question than variable cost:\n\nWhat do I have to commit to before knowing how many customers will buy?\n\nIf a cost is incurred because a customer buys, it is not fixed.\nIf a cost is incurred because you decided to move forward, it probably is.\nThis distinction matters more than accounting labels.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#fixed-cost-is-about-commitments-not-categories",
+    "href": "tk7_fixed_cost.html#fixed-cost-is-about-commitments-not-categories",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "Fixed Cost Is About Commitments, Not Categories",
+    "text": "Fixed Cost Is About Commitments, Not Categories\nIn accounting, fixed costs are defined mechanically.\nFor decision-making, a more useful definition is this:\n\nA fixed cost is any cost you incur because you decided to proceed, regardless of how many units are sold.\n\nWhat matters most is not whether a cost is technically fixed forever, but whether it is:\n\ndifficult to reverse,\nslow to unwind,\nor binding over the relevant decision horizon.\n\nTo surface these commitments, the sections below describe common ways fixed costs enter a venture.\nThese are commitment mechanisms, not requirements.\nIf a mechanism does not apply, leave it blank.\nBlank means “not committed,” not “overlooked.”",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#common-fixed-cost-commitment-triggers",
+    "href": "tk7_fixed_cost.html#common-fixed-cost-commitment-triggers",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "Common Fixed Cost Commitment Triggers",
+    "text": "Common Fixed Cost Commitment Triggers\nThe categories below are prompts designed to surface exposure—not to force costs where they do not belong.\n\n1. Capacity Commitments\n\nWhat capacity am I building before demand is known?\n\nExamples include:\n\nsalaried labor,\nfacilities or office space,\nserver capacity or infrastructure,\nequipment, vehicles, or tooling.\n\nMany capacity costs are step-fixed:\n\nthey support demand up to a limit,\nthen require another commitment to grow further.\n\nThese costs are fixed over the relevant range—even if they scale in steps.\n\n\n2. Access and Channel Commitments\n\nWhat access do I pay for in advance?\n\nExamples include:\n\ndistribution agreements,\nplatform or marketplace access,\ncompliance requirements,\ncertifications or regulatory approvals.\n\nThese costs do not depend on how many customers buy. They depend on whether you choose to play.\n\n\n3. Capability Commitments\n\nWhat capabilities must exist before I can sell at all?\n\nExamples include: - internal systems and tooling, - software subscriptions (including AI), - brand development, - intellectual property filings.\nThese costs are often rationalized as “investments.” They are still commitments.\n\n\n4. Time-Bound Commitments\n\nWhat am I locked into for a period of time?\n\nExamples include:\n\nleases,\nemployment contracts,\nminimum service agreements,\ninsurance premiums.\n\nTime is often the binding constraint—not dollars. A short-term commitment may be far less risky than a long one at the same cost.\n\n\n5. Foundational Compensation and Overhead\n\nWho gets paid even if nothing sells?\n\nExamples include:\n\nfounder compensation,\nexecutive or management salaries,\nbenefits and payroll overhead,\nlegal and administrative support.\n\nOmitting these costs does not make them disappear. It only hides the exposure.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#a-discipline-for-surfacing-commitments",
+    "href": "tk7_fixed_cost.html#a-discipline-for-surfacing-commitments",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "A Discipline for Surfacing Commitments",
+    "text": "A Discipline for Surfacing Commitments\nOne effective way to practice this discipline is to keep a working commitment table.\nThis is not a budget. It is a thinking aid.\nColumns might represent:\n\ncommitment triggers (like the categories above),\nand rows the specific commitments you believe you are making.\n\nFor each commitment, record:\n\nan estimate or range,\nthe timing of the commitment,\nand how reversible it is.\n\nSome commitments may be clear. Others may be fuzzy or conditional.\nThat is fine.\nThe danger is not uncertainty.\nThe danger is pretending a commitment does not exist.\nIf a category does not apply, leave it blank—and say why.\n\nExample: A Working Fixed Cost Commitment Table (Illustrative)\nThe table below shows one way to surface fixed cost commitments. It is not complete, correct, or prescriptive. Its purpose is to make exposure visible.\n\n\n\n\n\n\n\n\n\n\nCommitment Category\nCost Element\nEstimate (per period)\nReversibility\nNotes\n\n\n\n\nCapacity\nCore team salaries\n$45k / month\nLow\nHard to unwind quickly\n\n\nCapacity\nCloud infrastructure (base)\n$6k / month\nMedium\nCan downscale slowly\n\n\nAccess\nRegulatory certification\n$80k (one-time)\nNone\nRequired to operate\n\n\nCapability\nSoftware subscriptions\n$1.2k / month\nHigh\nCancelable\n\n\nTime-Bound\nOffice lease\n$3.5k / month\nLow\n12-month lock-in\n\n\nCompensation\nFounder pay\n—\n—\nDeferred by choice\n\n\n\nSome entries are monthly.\nSome are one-time.\nSome are blank.\nThat is intentional.\nBlank means not committed, not forgotten.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#from-commitments-to-decision-grade-fixed-cost",
+    "href": "tk7_fixed_cost.html#from-commitments-to-decision-grade-fixed-cost",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "From Commitments to Decision-Grade Fixed Cost",
+    "text": "From Commitments to Decision-Grade Fixed Cost\nThis table is not meant to produce a single “correct” fixed cost number.\nIts purpose is to clarify exposure—so you can see which commitments dominate risk, which are reversible, and which assumptions matter most.\nA fixed cost estimate becomes decision-grade when you can reasonably answer three questions:\n\nWhich commitments create the greatest exposure if demand disappoints?\nWhich commitments are hardest to reverse?\nWhich commitments can be delayed until uncertainty is reduced?\n\nIf one early commitment determines survival, it deserves scrutiny. If another can be staged or deferred, it may be less urgent.\nAt this stage, understanding irreversibility matters more than minimizing cost.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#common-red-flags",
+    "href": "tk7_fixed_cost.html#common-red-flags",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "Common Red Flags",
+    "text": "Common Red Flags\nIf your fixed cost assessment feels optimistic, pause.\nCommon warning signs include:\n\nassuming founder or executive labor is “free,”\nignoring the duration of commitments,\ntreating compliance or access costs as minor,\nassuming scale will arrive before commitments bind.\n\nThese are not errors of intent. They are predictable blind spots.\nThis toolkit exists to surface them early—before they become irreversible.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
+    "objectID": "tk7_fixed_cost.html#why-this-matters-for-profit-reasoning",
+    "href": "tk7_fixed_cost.html#why-this-matters-for-profit-reasoning",
+    "title": "Esimtate Fixed Costs as Commitments",
+    "section": "Why This Matters for Profit Reasoning",
+    "text": "Why This Matters for Profit Reasoning\nFixed costs determine how much demand must exist before profit becomes possible.\nThey create thresholds, break-even points, and exposure to error. They are the primary source of downside risk in early ventures.\nEstimating fixed costs carefully does not eliminate uncertainty. But estimating them implicitly guarantees surprise.\nOnce fixed commitments are explicit, profit reasoning can honestly assess whether the expected rewards justify the exposure.\nThat is the role fixed cost plays in the pre-revenue decision.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Esimtate Fixed Costs as Commitments"
+    ]
+  },
+  {
     "objectID": "competition.html",
     "href": "competition.html",
     "title": "13  Competition",
@@ -2328,245 +2526,102 @@
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html",
-    "href": "tk6_variable_cost.html",
-    "title": "Esimtate Variable Cost per Unit",
+    "objectID": "tk8_scaling.html",
+    "href": "tk8_scaling.html",
+    "title": "Making Scale Explicit",
     "section": "",
-    "text": "What It Really Costs to Serve One More Customer\nThis toolkit supports one narrow but critical task:\nThe goal is not precision.\nThe goal is to avoid missing costs that matter.\nEarly ventures rarely fail because variable costs were estimated imprecisely.\nThey fail because key costs were never noticed at all.\nThis toolkit exists to prevent that kind of failure.",
+    "text": "Estimating Target Population Without Pretending to Know the Market\nProfit reasoning requires demand, cost, and scale to be expressed at the same level.\nDemand is usually learned from a sample.\nCosts—especially fixed costs—are often incurred to serve a population.\nScale is the bridge between the two.\nThis toolkit exists to help you make that bridge explicit.\nIt does not ask you to predict growth.\nIt does not ask you to estimate market share.\nIt does not assume you are building a large company.\nInstead, it helps you answer a narrower but unavoidable question:\nSometimes the answer is:\nAll three are valid outcomes.\nWhat matters is that scale assumptions are visible, deliberate, and testable—not implicit.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#what-this-toolkit-is-and-is-not",
-    "href": "tk6_variable_cost.html#what-this-toolkit-is-and-is-not",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "What This Toolkit Is (and Is Not)",
-    "text": "What This Toolkit Is (and Is Not)\nThis toolkit is about discipline, not accounting.\nIt does not assume:\n\na particular business type,\na particular revenue model,\nor a particular level of operational maturity.\n\nIt does assume that:\n\nserving one more customer triggers real activity,\nthat activity consumes resources,\nand those resources have costs—even when they are uncertain.\n\nThis toolkit will help you surface those costs deliberately.",
+    "objectID": "tk8_scaling.html#step-1-identify-the-unit-mismatch",
+    "href": "tk8_scaling.html#step-1-identify-the-unit-mismatch",
+    "title": "Making Scale Explicit",
+    "section": "Step 1: Identify the Unit Mismatch",
+    "text": "Step 1: Identify the Unit Mismatch\nBegin with a simple diagnostic.\n\nAt what unit was demand learned—and at what unit are costs incurred?\n\nExamples:\n\nDemand learned from 80 survey respondents; costs assume a regional operation.\nDemand learned from early adopters; costs assume a staffed organization.\nDemand and costs both expressed per unit (no mismatch).\n\nIf demand and cost are already aligned, no scaling is required.\nIf they are not, scaling is unavoidable.\nThis step prevents a common error: asking a small sample of customers to carry population-level commitments.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#the-core-question",
-    "href": "tk6_variable_cost.html#the-core-question",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "The Core Question",
-    "text": "The Core Question\nEvery variable cost estimate begins with a single question:\n\nWhat has to happen, operationally, for one more customer to be served?\n\nNot what might happen eventually.\nNot what should happen in a mature firm.\nWhat actually has to happen now, given your current design.\nIf nothing happens when a customer buys, your variable cost is close to zero.\nIf many things happen, variable cost is real—even if hard to estimate.",
+    "objectID": "tk8_scaling.html#step-2-define-the-service-population-not-the-market",
+    "href": "tk8_scaling.html#step-2-define-the-service-population-not-the-market",
+    "title": "Making Scale Explicit",
+    "section": "Step 2: Define the Service Population (Not the Market)",
+    "text": "Step 2: Define the Service Population (Not the Market)\nInstead of asking “How big is the market?”, ask:\n\nWho could this design realistically serve, given how it is built and accessed?\n\nThe service population is defined by constraints, not aspirations.\nConsider:\n\ngeography,\ndistribution channels,\nregulatory or eligibility limits,\norganizational capacity,\nawareness and discoverability.\n\nThis population may be:\n\nsmall and local,\nprofessional and niche,\nor broad but hard to reach.\n\nIf a constraint does not apply, leave it blank—and say why.\nBlank means not triggered, not forgotten.\nThe easiest way to make these constraints explicit is to write them down.\nThe table below shows what this looks like in practice.\n\nDemonstration of Defining the Service Population (Scaling Demand Up)\nThis table is used when demand is learned from a sample, but costs bind at a population level.\nIts purpose is not to size a market, but to make population constraints explicit.\n\n\n\n\n\n\n\n\n\n\nPopulation Layer\nConstraint Applied\nEstimated Count\nConfidence\nNotes / Rationale\n\n\n\n\nTotal people who exist\nGeographic boundary\n75,000\nHigh\nResidents of Springville, UT\n\n\nPeople reachable\nDistribution / access\n12,000\nMedium\nOnly those near retail locations\n\n\nPeople eligible\nRegulatory / eligibility\n12,000\nHigh\nNo additional constraints\n\n\nPeople likely to encounter the offer\nAwareness / discoverability\n4,000\nLow\nDepends on marketing effectiveness\n\n\nService population\nAll constraints combined\n4,000\nLow–Medium\nPopulation this design could plausibly serve\n\n\n\nInterpretation:\nThis population is not a prediction of adoption.\nIt is the population to which demand may be scaled when evaluating fixed commitments.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#variable-cost-is-about-triggers-not-labels",
-    "href": "tk6_variable_cost.html#variable-cost-is-about-triggers-not-labels",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "Variable Cost Is About Triggers, Not Labels",
-    "text": "Variable Cost Is About Triggers, Not Labels\nIn accounting, variable cost is defined mechanically.\nFor decision-making, a better definition is this:\n\nA variable cost is any cost triggered by serving one more unit of demand.\n\nThis framing matters because many costs that feel fixed are actually triggered by scale—and many costs that feel “minor” become decisive when multiplied.\nTo help surface these triggers, the sections below describe common ways variable costs enter a venture.\nThese are mechanisms, not requirements.\nIf a mechanism does not apply to your venture, leave it blank.\nBlank means “not triggered,” not “forgotten.”\nThat distinction matters.",
+    "objectID": "tk8_scaling.html#step-3-separate-population-from-adoption",
+    "href": "tk8_scaling.html#step-3-separate-population-from-adoption",
+    "title": "Making Scale Explicit",
+    "section": "Step 3: Separate Population from Adoption",
+    "text": "Step 3: Separate Population from Adoption\nPopulation answers who could buy.\nAdoption answers who chooses to buy.\nDo not estimate adoption directly.\nAdoption emerges later from:\n\nprice,\ndemand shape,\nand competition.\n\nAt this stage, your task is only to define the population that demand will eventually be scaled to—if the design is pursued.\nThis keeps scale assumptions disciplined and avoids market-share guessing.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#common-variable-cost-triggers",
-    "href": "tk6_variable_cost.html#common-variable-cost-triggers",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "Common Variable Cost Triggers",
-    "text": "Common Variable Cost Triggers\nThe categories below are prompts.\nThey are designed to make it hard to accidentally ignore costs—not to force them where they don’t belong.\n\n1. Production or Creation\n\nWhat must be created or produced when one more customer is served?\n\nExamples include:\n\nmaterials and components,\ncompute or API usage,\ncontent generation,\nlabor time directly tied to delivery.\n\nFor physical products, this may resemble a bill of materials.\nFor software or services, it may be time, computation, or setup effort.\nThe form differs.\nThe trigger is the same.\n\n\n2. Delivery or Fulfillment\n\nWhat must be delivered, hosted, shipped, or made accessible?\n\nExamples include:\n\nshipping and handling,\ncloud hosting or bandwidth,\nonboarding or setup,\nlogistics and returns.\n\nMany delivery costs are step-variable:\n\nthey are flat until capacity is reached,\nthen jump when new capacity is required.\n\nThese costs are still variable in decision terms—even if they do not change smoothly.\n\n\n3. Transactions\n\nWhat costs are incurred when a sale occurs?\n\nExamples include: - payment processing fees, - platform or marketplace fees, - per-transaction sales incentives, - discounts that reduce realized revenue.\nPrice discounts belong here.\nThey are not “strategy”—they are negative revenue triggered by transactions.\n\n\n4. Support and Maintenance\n\nWhat happens after the customer is served?\n\nExamples include:\n\ncustomer support,\nrework or retries,\nwarranty claims, returns, or replacements,\nservice recovery when things go wrong.\n\nMany of these costs are probabilistic. They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.\n\n\n5. Acquisition (When Truly Per-Unit)\n\nDoes acquiring one more customer reliably incur cost?\n\nExamples include:\n\nperformance advertising,\ncommissions,\nreferral payments.\n\nNot all marketing spend is variable. Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.\nBe explicit when you make that choice.",
+    "objectID": "tk8_scaling.html#step-4-choose-a-scaling-strategy-explicitly",
+    "href": "tk8_scaling.html#step-4-choose-a-scaling-strategy-explicitly",
+    "title": "Making Scale Explicit",
+    "section": "Step 4: Choose a Scaling Strategy Explicitly",
+    "text": "Step 4: Choose a Scaling Strategy Explicitly\nThere are three legitimate ways to reconcile sample demand with cost:\n\nScale demand up to the population level\n\nScale fixed costs down to the sample level\n\nReframe costs per unit so scaling disappears\n\nEach corresponds to a different entrepreneurial posture.\n\nEarly-stage, low-commitment ventures often use (2).\nVentures planning infrastructure commitments must use (1).\nSome businesses (e.g., contract manufacturing) can use (3).\n\nThe mistake is not choosing the “wrong” one.\nThe mistake is mixing them without noticing.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#a-discipline-for-surfacing-costs",
-    "href": "tk6_variable_cost.html#a-discipline-for-surfacing-costs",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "A Discipline for Surfacing Costs",
-    "text": "A Discipline for Surfacing Costs\nOne effective way to practice this discipline is to keep a working cost table.\nThis is not an accounting statement. It is a thinking aid.\nColumns might represent:\n\ncost triggers (like the categories above),\nand rows the specific cost elements you believe are involved.\n\nFor each element, record:\n\nan estimate or range,\nand your confidence in that estimate.\n\nSome entries may be well-known.\nOthers may be weak guesses.\nThat is fine.\nThe danger is not guessing. The danger is omitting.\nIf a category does not apply, leave it blank—and say why.\n\nExample: A Working Variable Cost Table (Illustrative)\nThe table below shows one way to surface variable cost components. It is not complete, correct, or prescriptive. Its purpose is to make the discipline concrete.\n\n\n\n\n\n\n\n\n\n\nTrigger Category\nCost Element\nEstimate (per unit)\nConfidence\nNotes\n\n\n\n\nProduction / Creation\nComponent materials\n$42–$55\nMedium\nSupplier quotes vary by volume\n\n\nProduction / Creation\nAssembly labor\n$18\nLow\nBased on time estimate, not observed\n\n\nDelivery / Fulfillment\nShipping\n$12–$20\nMedium\nDepends on zone and carrier\n\n\nTransaction\nPayment processing\n~3% of price\nHigh\nPlatform fee schedule\n\n\nSupport / Maintenance\nReturns / replacements\n$0–$8 (expected)\nLow\nProbabilistic; rough guess\n\n\nAcquisition\nPerformance advertising\n—\n—\nNot triggered (organic acquisition)\n\n\n\nSome entries are ranges.\nSome are guesses.\nSome are blank.\nThat is intentional.\nBlank means not triggered, not forgotten.\nThis table is not meant to produce a single “correct” variable cost.\nIts purpose is to make the structure of cost visible—so you can see which components matter, which are uncertain, and which assumptions are doing the most work.\nA variable cost estimate becomes decision-grade when you can reasonably answer three questions:\n\nWhich cost components dominate the total?\nWhich components are most uncertain?\nHow wrong could these estimates be before feasibility changes?\n\nIf small errors in one row would reverse your conclusion, that row deserves attention. If large uncertainty in another row barely matters, further precision is unnecessary.\nAt this stage, clarity about sensitivity matters more than numerical precision.",
+    "objectID": "tk8_scaling.html#step-5-acknowledge-staged-commitment-paths",
+    "href": "tk8_scaling.html#step-5-acknowledge-staged-commitment-paths",
+    "title": "Making Scale Explicit",
+    "section": "Step 5: Acknowledge Staged Commitment Paths",
+    "text": "Step 5: Acknowledge Staged Commitment Paths\nSome ventures are intentionally designed to operate with:\n\nzero or near-zero fixed costs,\nfounder labor substituted for infrastructure,\nand narrow scale.\n\nThis is not a flaw.\nIt is a strategy.\nIn these cases, the scale question becomes:\n\nCan this design generate sufficient margin at small scale to sustain the venture long enough to justify the next commitment?\n\nThis reframes scale as a path, not a destination.\nSensitivity analysis then becomes a tool for asking:\n\nhow long that stage can be sustained,\nwhat breaks first,\nand what must be true to advance responsibly.\n\nLow commitment does not mean no commitment.\nThe table below shows how to name fixed costs honestly at the stage you are actually operating.\n\nDemonstration of Fixed Costs at the Current Commitment Stage\nThis table is used to name fixed costs honestly at the stage you are actually operating, including low- or no-infrastructure designs.\nIts purpose is to clarify what must be supported before revenue is known.\n\n\n\n\n\n\n\n\n\n\nFixed Cost Component\nWhy It Exists at This Stage\nWhat It Enables\nWhat Breaks If It Increases\nConfidence\n\n\n\n\nFounder compensation\nSustain full-time effort\nContinuous learning and execution\nFounder burnout / exit\nMedium\n\n\nBasic software tools\nCoordination and delivery\nReliable operations\nManual workarounds\nHigh\n\n\nMinimal marketing spend\nInitial awareness\nDemand learning\nNo inbound interest\nLow\n\n\nLegal / compliance\nAbility to operate\nReduced legal risk\nForced shutdown\nMedium\n\n\nTotal fixed commitment\n—\nEnables current design\nRequires scaled demand\nMedium\n\n\n\nInterpretation:\nThese costs are not “temporary” because they are small.\nThey are deliberate commitments whose justification depends on scaled demand.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#from-components-to-a-decision-grade-cost",
-    "href": "tk6_variable_cost.html#from-components-to-a-decision-grade-cost",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "From Components to a Decision-Grade Cost",
-    "text": "From Components to a Decision-Grade Cost\nOnce cost components are surfaced, the goal is not to collapse them into a single “correct” number.\nInstead:\n\ngroup them into plausible scenarios,\nidentify conservative and optimistic cases,\nand ask how much error would change the decision.\n\nA variable cost estimate is decision-grade when:\n\nyou know which components matter most,\nyou know which are uncertain,\nand you know how wrong you could be before feasibility changes.\n\nThat is enough.",
+    "objectID": "tk8_scaling.html#step-6-produce-decision-grade-scale-bounds",
+    "href": "tk8_scaling.html#step-6-produce-decision-grade-scale-bounds",
+    "title": "Making Scale Explicit",
+    "section": "Step 6: Produce Decision-Grade Scale Bounds",
+    "text": "Step 6: Produce Decision-Grade Scale Bounds\nYour output should not be a single number.\nIt should be:\n\na conservative lower bound,\na plausible base case,\nand an optimistic upper bound.\n\nEach bound should be accompanied by:\n\nthe assumptions that generate it,\nand where those assumptions could fail.\n\nA scale estimate is decision-grade when:\n\nyou know which constraints matter most,\nyou know which assumptions are fragile,\nand you know how wrong you could be before profit reasoning changes.\n\nThat is enough.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#common-red-flags",
-    "href": "tk6_variable_cost.html#common-red-flags",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "Common Red Flags",
-    "text": "Common Red Flags\nIf your variable cost estimate feels clean, confident, and simple, pause.\nCommon warning signs include:\n\ncounting only product or production cost,\nassuming zero support or post-sale effort,\nignoring returns, failures, or exceptions,\ntreating discounts as “marketing” rather than cost,\nor assuming scale will solve margins automatically.\n\nThese are not moral failures. They are predictable blind spots.\nThis toolkit exists to surface them early—when they are still cheap to fix.",
+    "objectID": "tk8_scaling.html#step-7-connect-scale-to-profit-reasoning",
+    "href": "tk8_scaling.html#step-7-connect-scale-to-profit-reasoning",
+    "title": "Making Scale Explicit",
+    "section": "Step 7: Connect Scale to Profit Reasoning",
+    "text": "Step 7: Connect Scale to Profit Reasoning\nThe final question this toolkit supports is not “How big could this be?” It is:\n\nDoes this level of demand plausibly support the commitments implied by this design—given how uncertain we still are?\n\nIf the answer is:\n\nyes, even under error → proceed deliberately.\nonly if everything goes right → redesign or delay.\nno, under any reasonable assumption → stop or rethink.\n\nScale does not validate ideas.\nIt disciplines commitment.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
+      "Making Scale Explicit"
     ]
   },
   {
-    "objectID": "tk6_variable_cost.html#why-this-matters-for-profit-reasoning",
-    "href": "tk6_variable_cost.html#why-this-matters-for-profit-reasoning",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "Why This Matters for Profit Reasoning",
-    "text": "Why This Matters for Profit Reasoning\nVariable cost sets a hard boundary on feasibility.\nIf price does not exceed variable cost, selling more makes the situation worse.\nThis is why variable cost is reintroduced before fixed costs and profit. It determines which parts of the demand curve are even worth considering.\nEstimating variable cost carefully does not guarantee success. But estimating it carelessly can guarantee failure.\nOnce variable cost is understood, attention can turn to fixed costs—where commitment, irreversibility, and risk truly enter the decision.",
+    "objectID": "tk8_scaling.html#step-4-align-demand-to-the-cost-commitments-being-evaluated",
+    "href": "tk8_scaling.html#step-4-align-demand-to-the-cost-commitments-being-evaluated",
+    "title": "Making Scale Explicit",
+    "section": "Step 4: Align Demand to the Cost Commitments Being Evaluated",
+    "text": "Step 4: Align Demand to the Cost Commitments Being Evaluated\nOnce demand and cost are expressed at different levels, they must be aligned.\nIn practice, this almost always means scaling demand to the level implied by the cost commitments you are evaluating.\nThat is the default move.\nFixed costs—whether large or small—are not artifacts to be allocated.\nThey are commitments that define the scale at which the venture must work.\nThe task, therefore, is not to “choose a scaling trick,” but to be clear about which commitments are under consideration.\n\nThe Dominant Case: Scale Demand Up\nIn most entrepreneurial decisions, fixed costs are incurred to serve a population larger than the original sample. In these cases, demand must be scaled up to that population before profit can be evaluated meaningfully.\nThis applies whether fixed costs are:\n\nlarge and infrastructure-heavy, or\nintentionally small and founder-driven.\n\nIn both cases, the question is the same:\n\nCan demand—scaled to the relevant population—plausibly support this level of commitment?\n\n\n\nLow-Commitment Designs Are Not “Scaled-Down” Analyses\nSome ventures deliberately operate with very low fixed costs in early stages.\nThis is not a case of “scaling fixed costs down to the sample.”\nIt is a case of choosing a design with minimal commitments.\nThose commitments should still be named honestly, and demand should still be evaluated at the population the design can realistically serve.\nThe analysis does not shrink costs to fit the data.\nIt asks whether the data—appropriately scaled—can justify the design as it exists.\n\n\nA Rare Exception: When Scaling Disappears\nIn a small number of businesses, both demand and cost are already expressed per unit at market scale.\nThis occurs when:\n\nproduction is handled through contract manufacturing,\ncosts are usage-based or per-transaction,\nor infrastructure and capacity are embedded upstream.\n\nIn these cases, demand evidence and cost structure are already aligned. No explicit population scaling is required, because the scale assumption is built into the unit cost itself.\nThis does not mean scale is irrelevant.\nIt means scale has been assumed earlier—through the cost model rather than through population estimates.\nBecause this case is rare and easy to misapply, it should be stated explicitly when it applies and avoided otherwise.\n\n\nThe Real Mistake to Avoid\nThe danger is not choosing the “wrong” scaling approach.\nThe danger is allowing:\n\nfixed commitments to imply scale silently, or\ndemand evidence to be interpreted at the wrong level.\n\nProfit reasoning only works when demand, cost, and scale are aligned deliberately.",
     "crumbs": [
       "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html",
-    "href": "tk7_fixed_cost.html",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "",
-    "text": "What You Commit to Before Knowing What Will Sell\nThis toolkit supports one narrow but critical task:\nThe goal is not to predict expenses precisely.\nThe goal is to understand what you are committing to before demand is known.\nEarly ventures rarely fail because fixed costs were miscalculated by a few percent.\nThey fail because commitments were made implicitly, too early, or without recognizing their consequences.\nThis toolkit exists to surface those commitments deliberately.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#what-this-toolkit-is-and-is-not",
-    "href": "tk7_fixed_cost.html#what-this-toolkit-is-and-is-not",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "What This Toolkit Is (and Is Not)",
-    "text": "What This Toolkit Is (and Is Not)\nThis toolkit is about commitment, not accounting.\nIt does not assume:\n\nthat fixed costs are permanent,\nthat they are unavoidable,\nor that they must be minimized at all costs.\n\nIt does assume that:\n\nsome costs are triggered by your decision to proceed, not by customer purchases,\nthose costs create exposure when demand disappoints,\nand reversing them is often slow, costly, or impossible.\n\nThis toolkit helps you see those commitments clearly.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#the-core-question",
-    "href": "tk7_fixed_cost.html#the-core-question",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "The Core Question",
-    "text": "The Core Question\nEvery fixed cost estimate begins with a different question than variable cost:\n\nWhat do I have to commit to before knowing how many customers will buy?\n\nIf a cost is incurred because a customer buys, it is not fixed.\nIf a cost is incurred because you decided to move forward, it probably is.\nThis distinction matters more than accounting labels.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#variable-cost-is-about-triggers-not-labels",
-    "href": "tk7_fixed_cost.html#variable-cost-is-about-triggers-not-labels",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "Variable Cost Is About Triggers, Not Labels",
-    "text": "Variable Cost Is About Triggers, Not Labels\nIn accounting, variable cost is defined mechanically.\nFor decision-making, a better definition is this:\n\nA variable cost is any cost triggered by serving one more unit of demand.\n\nThis framing matters because many costs that feel fixed are actually triggered by scale—and many costs that feel “minor” become decisive when multiplied.\nTo help surface these triggers, the sections below describe common ways variable costs enter a venture.\nThese are mechanisms, not requirements.\nIf a mechanism does not apply to your venture, leave it blank.\nBlank means “not triggered,” not “forgotten.”\nThat distinction matters.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#common-variable-cost-triggers",
-    "href": "tk7_fixed_cost.html#common-variable-cost-triggers",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "Common Variable Cost Triggers",
-    "text": "Common Variable Cost Triggers\nThe categories below are prompts.\nThey are designed to make it hard to accidentally ignore costs—not to force them where they don’t belong.\n\n1. Production or Creation\n\nWhat must be created or produced when one more customer is served?\n\nExamples include:\n\nmaterials and components,\ncompute or API usage,\ncontent generation,\nlabor time directly tied to delivery.\n\nFor physical products, this may resemble a bill of materials.\nFor software or services, it may be time, computation, or setup effort.\nThe form differs.\nThe trigger is the same.\n\n\n2. Delivery or Fulfillment\n\nWhat must be delivered, hosted, shipped, or made accessible?\n\nExamples include:\n\nshipping and handling,\ncloud hosting or bandwidth,\nonboarding or setup,\nlogistics and returns.\n\nMany delivery costs are step-variable:\n\nthey are flat until capacity is reached,\nthen jump when new capacity is required.\n\nThese costs are still variable in decision terms—even if they do not change smoothly.\n\n\n3. Transactions\n\nWhat costs are incurred when a sale occurs?\n\nExamples include: - payment processing fees, - platform or marketplace fees, - per-transaction sales incentives, - discounts that reduce realized revenue.\nPrice discounts belong here.\nThey are not “strategy”—they are negative revenue triggered by transactions.\n\n\n4. Support and Maintenance\n\nWhat happens after the customer is served?\n\nExamples include:\n\ncustomer support,\nrework or retries,\nwarranty claims, returns, or replacements,\nservice recovery when things go wrong.\n\nMany of these costs are probabilistic. They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.\n\n\n5. Acquisition (When Truly Per-Unit)\n\nDoes acquiring one more customer reliably incur cost?\n\nExamples include:\n\nperformance advertising,\ncommissions,\nreferral payments.\n\nNot all marketing spend is variable. Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.\nBe explicit when you make that choice.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#a-discipline-for-surfacing-costs",
-    "href": "tk7_fixed_cost.html#a-discipline-for-surfacing-costs",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "A Discipline for Surfacing Costs",
-    "text": "A Discipline for Surfacing Costs\nOne effective way to practice this discipline is to keep a working cost table.\nThis is not an accounting statement. It is a thinking aid.\nColumns might represent:\n\ncost triggers (like the categories above),\nand rows the specific cost elements you believe are involved.\n\nFor each element, record:\n\nan estimate or range,\nand your confidence in that estimate.\n\nSome entries may be well-known.\nOthers may be weak guesses.\nThat is fine.\nThe danger is not guessing. The danger is omitting.\nIf a category does not apply, leave it blank—and say why.\n\nExample: A Working Variable Cost Table (Illustrative)\nThe table below shows one way to surface variable cost components. It is not complete, correct, or prescriptive. Its purpose is to make the discipline concrete.\n\n\n\n\n\n\n\n\n\n\nTrigger Category\nCost Element\nEstimate (per unit)\nConfidence\nNotes\n\n\n\n\nProduction / Creation\nComponent materials\n$42–$55\nMedium\nSupplier quotes vary by volume\n\n\nProduction / Creation\nAssembly labor\n$18\nLow\nBased on time estimate, not observed\n\n\nDelivery / Fulfillment\nShipping\n$12–$20\nMedium\nDepends on zone and carrier\n\n\nTransaction\nPayment processing\n~3% of price\nHigh\nPlatform fee schedule\n\n\nSupport / Maintenance\nReturns / replacements\n$0–$8 (expected)\nLow\nProbabilistic; rough guess\n\n\nAcquisition\nPerformance advertising\n—\n—\nNot triggered (organic acquisition)\n\n\n\nSome entries are ranges.\nSome are guesses.\nSome are blank.\nThat is intentional.\nBlank means not triggered, not forgotten.\nThis table is not meant to produce a single “correct” variable cost.\nIts purpose is to make the structure of cost visible—so you can see which components matter, which are uncertain, and which assumptions are doing the most work.\nA variable cost estimate becomes decision-grade when you can reasonably answer three questions:\n\nWhich cost components dominate the total?\nWhich components are most uncertain?\nHow wrong could these estimates be before feasibility changes?\n\nIf small errors in one row would reverse your conclusion, that row deserves attention. If large uncertainty in another row barely matters, further precision is unnecessary.\nAt this stage, clarity about sensitivity matters more than numerical precision.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#from-components-to-a-decision-grade-cost",
-    "href": "tk7_fixed_cost.html#from-components-to-a-decision-grade-cost",
-    "title": "Esimtate Variable Cost per Unit",
-    "section": "From Components to a Decision-Grade Cost",
-    "text": "From Components to a Decision-Grade Cost\nOnce cost components are surfaced, the goal is not to collapse them into a single “correct” number.\nInstead:\n\ngroup them into plausible scenarios,\nidentify conservative and optimistic cases,\nand ask how much error would change the decision.\n\nA variable cost estimate is decision-grade when:\n\nyou know which components matter most,\nyou know which are uncertain,\nand you know how wrong you could be before feasibility changes.\n\nThat is enough.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Variable Cost per Unit"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#common-red-flags",
-    "href": "tk7_fixed_cost.html#common-red-flags",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "Common Red Flags",
-    "text": "Common Red Flags\nIf your fixed cost assessment feels optimistic, pause.\nCommon warning signs include:\n\nassuming founder or executive labor is “free,”\nignoring the duration of commitments,\ntreating compliance or access costs as minor,\nassuming scale will arrive before commitments bind.\n\nThese are not errors of intent. They are predictable blind spots.\nThis toolkit exists to surface them early—before they become irreversible.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#why-this-matters-for-profit-reasoning",
-    "href": "tk7_fixed_cost.html#why-this-matters-for-profit-reasoning",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "Why This Matters for Profit Reasoning",
-    "text": "Why This Matters for Profit Reasoning\nFixed costs determine how much demand must exist before profit becomes possible.\nThey create thresholds, break-even points, and exposure to error. They are the primary source of downside risk in early ventures.\nEstimating fixed costs carefully does not eliminate uncertainty. But estimating them implicitly guarantees surprise.\nOnce fixed commitments are explicit, profit reasoning can honestly assess whether the expected rewards justify the exposure.\nThat is the role fixed cost plays in the pre-revenue decision.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#fixed-cost-is-about-commitments-not-categories",
-    "href": "tk7_fixed_cost.html#fixed-cost-is-about-commitments-not-categories",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "Fixed Cost Is About Commitments, Not Categories",
-    "text": "Fixed Cost Is About Commitments, Not Categories\nIn accounting, fixed costs are defined mechanically.\nFor decision-making, a more useful definition is this:\n\nA fixed cost is any cost you incur because you decided to proceed, regardless of how many units are sold.\n\nWhat matters most is not whether a cost is technically fixed forever, but whether it is:\n\ndifficult to reverse,\nslow to unwind,\nor binding over the relevant decision horizon.\n\nTo surface these commitments, the sections below describe common ways fixed costs enter a venture.\nThese are commitment mechanisms, not requirements.\nIf a mechanism does not apply, leave it blank.\nBlank means “not committed,” not “overlooked.”",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#common-fixed-cost-commitment-triggers",
-    "href": "tk7_fixed_cost.html#common-fixed-cost-commitment-triggers",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "Common Fixed Cost Commitment Triggers",
-    "text": "Common Fixed Cost Commitment Triggers\nThe categories below are prompts designed to surface exposure—not to force costs where they do not belong.\n\n1. Capacity Commitments\n\nWhat capacity am I building before demand is known?\n\nExamples include:\n\nsalaried labor,\nfacilities or office space,\nserver capacity or infrastructure,\nequipment, vehicles, or tooling.\n\nMany capacity costs are step-fixed:\n\nthey support demand up to a limit,\nthen require another commitment to grow further.\n\nThese costs are fixed over the relevant range—even if they scale in steps.\n\n\n2. Access and Channel Commitments\n\nWhat access do I pay for in advance?\n\nExamples include:\n\ndistribution agreements,\nplatform or marketplace access,\ncompliance requirements,\ncertifications or regulatory approvals.\n\nThese costs do not depend on how many customers buy. They depend on whether you choose to play.\n\n\n3. Capability Commitments\n\nWhat capabilities must exist before I can sell at all?\n\nExamples include: - internal systems and tooling, - software subscriptions (including AI), - brand development, - intellectual property filings.\nThese costs are often rationalized as “investments.” They are still commitments.\n\n\n4. Time-Bound Commitments\n\nWhat am I locked into for a period of time?\n\nExamples include:\n\nleases,\nemployment contracts,\nminimum service agreements,\ninsurance premiums.\n\nTime is often the binding constraint—not dollars. A short-term commitment may be far less risky than a long one at the same cost.\n\n\n5. Foundational Compensation and Overhead\n\nWho gets paid even if nothing sells?\n\nExamples include:\n\nfounder compensation,\nexecutive or management salaries,\nbenefits and payroll overhead,\nlegal and administrative support.\n\nOmitting these costs does not make them disappear. It only hides the exposure.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#a-discipline-for-surfacing-commitments",
-    "href": "tk7_fixed_cost.html#a-discipline-for-surfacing-commitments",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "A Discipline for Surfacing Commitments",
-    "text": "A Discipline for Surfacing Commitments\nOne effective way to practice this discipline is to keep a working commitment table.\nThis is not a budget. It is a thinking aid.\nColumns might represent:\n\ncommitment triggers (like the categories above),\nand rows the specific commitments you believe you are making.\n\nFor each commitment, record:\n\nan estimate or range,\nthe timing of the commitment,\nand how reversible it is.\n\nSome commitments may be clear. Others may be fuzzy or conditional.\nThat is fine.\nThe danger is not uncertainty.\nThe danger is pretending a commitment does not exist.\nIf a category does not apply, leave it blank—and say why.\n\nExample: A Working Fixed Cost Commitment Table (Illustrative)\nThe table below shows one way to surface fixed cost commitments. It is not complete, correct, or prescriptive. Its purpose is to make exposure visible.\n\n\n\n\n\n\n\n\n\n\nCommitment Category\nCost Element\nEstimate (per period)\nReversibility\nNotes\n\n\n\n\nCapacity\nCore team salaries\n$45k / month\nLow\nHard to unwind quickly\n\n\nCapacity\nCloud infrastructure (base)\n$6k / month\nMedium\nCan downscale slowly\n\n\nAccess\nRegulatory certification\n$80k (one-time)\nNone\nRequired to operate\n\n\nCapability\nSoftware subscriptions\n$1.2k / month\nHigh\nCancelable\n\n\nTime-Bound\nOffice lease\n$3.5k / month\nLow\n12-month lock-in\n\n\nCompensation\nFounder pay\n—\n—\nDeferred by choice\n\n\n\nSome entries are monthly.\nSome are one-time.\nSome are blank.\nThat is intentional.\nBlank means not committed, not forgotten.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
-    ]
-  },
-  {
-    "objectID": "tk7_fixed_cost.html#from-commitments-to-decision-grade-fixed-cost",
-    "href": "tk7_fixed_cost.html#from-commitments-to-decision-grade-fixed-cost",
-    "title": "Esimtate Fixed Costs as Commitments",
-    "section": "From Commitments to Decision-Grade Fixed Cost",
-    "text": "From Commitments to Decision-Grade Fixed Cost\nThis table is not meant to produce a single “correct” fixed cost number.\nIts purpose is to clarify exposure—so you can see which commitments dominate risk, which are reversible, and which assumptions matter most.\nA fixed cost estimate becomes decision-grade when you can reasonably answer three questions:\n\nWhich commitments create the greatest exposure if demand disappoints?\nWhich commitments are hardest to reverse?\nWhich commitments can be delayed until uncertainty is reduced?\n\nIf one early commitment determines survival, it deserves scrutiny. If another can be staged or deferred, it may be less urgent.\nAt this stage, understanding irreversibility matters more than minimizing cost.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Esimtate Fixed Costs as Commitments"
+      "Making Scale Explicit"
     ]
   }
 ]

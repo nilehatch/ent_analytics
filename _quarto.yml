@@ -68,6 +68,7 @@ book:
       chapters:
         - tk6_variable_cost.qmd
         - tk7_fixed_cost.qmd
+        - tk8_scaling.qmd
         
     - part: Old Econ Competition
       chapters:

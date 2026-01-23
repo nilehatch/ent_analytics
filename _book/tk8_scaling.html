@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Esimtate Variable Cost per Unit – Is This Worth Doing?</title>
+<title>Making Scale Explicit – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./tk7_fixed_cost.html" rel="next">
-<link href="./part_profit_toolkits.html" rel="prev">
+<link href="./competition.html" rel="next">
+<link href="./tk7_fixed_cost.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk6_variable_cost.html">Esimtate Variable Cost per Unit</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk8_scaling.html">Making Scale Explicit</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -280,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link active">
+  <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Esimtate Variable Cost per Unit</span></a>
   </div>
 </li>
@@ -288,6 +288,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./tk7_fixed_cost.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Esimtate Fixed Costs as Commitments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk8_scaling.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Making Scale Explicit</span></a>
   </div>
 </li>
       </ul>
@@ -394,33 +400,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-this-toolkit-is-and-is-not" id="toc-what-this-toolkit-is-and-is-not" class="nav-link active" data-scroll-target="#what-this-toolkit-is-and-is-not">What This Toolkit Is (and Is Not)</a></li>
-  <li><a href="#the-core-question" id="toc-the-core-question" class="nav-link" data-scroll-target="#the-core-question">The Core Question</a></li>
-  <li><a href="#variable-cost-is-about-triggers-not-labels" id="toc-variable-cost-is-about-triggers-not-labels" class="nav-link" data-scroll-target="#variable-cost-is-about-triggers-not-labels">Variable Cost Is About Triggers, Not Labels</a></li>
-  <li><a href="#common-variable-cost-triggers" id="toc-common-variable-cost-triggers" class="nav-link" data-scroll-target="#common-variable-cost-triggers">Common Variable Cost Triggers</a>
+  <li><a href="#step-1-identify-the-unit-mismatch" id="toc-step-1-identify-the-unit-mismatch" class="nav-link active" data-scroll-target="#step-1-identify-the-unit-mismatch">Step 1: Identify the Unit Mismatch</a></li>
+  <li><a href="#step-2-define-the-service-population-not-the-market" id="toc-step-2-define-the-service-population-not-the-market" class="nav-link" data-scroll-target="#step-2-define-the-service-population-not-the-market">Step 2: Define the Service Population (Not the Market)</a></li>
+  <li><a href="#step-3-separate-population-from-adoption" id="toc-step-3-separate-population-from-adoption" class="nav-link" data-scroll-target="#step-3-separate-population-from-adoption">Step 3: Separate Population from Adoption</a></li>
+  <li><a href="#step-4-align-demand-to-the-cost-commitments-being-evaluated" id="toc-step-4-align-demand-to-the-cost-commitments-being-evaluated" class="nav-link" data-scroll-target="#step-4-align-demand-to-the-cost-commitments-being-evaluated">Step 4: Align Demand to the Cost Commitments Being Evaluated</a>
   <ul class="collapse">
-  <li><a href="#production-or-creation" id="toc-production-or-creation" class="nav-link" data-scroll-target="#production-or-creation">1. Production or Creation</a></li>
-  <li><a href="#delivery-or-fulfillment" id="toc-delivery-or-fulfillment" class="nav-link" data-scroll-target="#delivery-or-fulfillment">2. Delivery or Fulfillment</a></li>
-  <li><a href="#transactions" id="toc-transactions" class="nav-link" data-scroll-target="#transactions">3. Transactions</a></li>
-  <li><a href="#support-and-maintenance" id="toc-support-and-maintenance" class="nav-link" data-scroll-target="#support-and-maintenance">4. Support and Maintenance</a></li>
-  <li><a href="#acquisition-when-truly-per-unit" id="toc-acquisition-when-truly-per-unit" class="nav-link" data-scroll-target="#acquisition-when-truly-per-unit">5. Acquisition (When Truly Per-Unit)</a></li>
+  <li><a href="#the-dominant-case-scale-demand-up" id="toc-the-dominant-case-scale-demand-up" class="nav-link" data-scroll-target="#the-dominant-case-scale-demand-up">The Dominant Case: Scale Demand Up</a></li>
+  <li><a href="#low-commitment-designs-are-not-scaled-down-analyses" id="toc-low-commitment-designs-are-not-scaled-down-analyses" class="nav-link" data-scroll-target="#low-commitment-designs-are-not-scaled-down-analyses">Low-Commitment Designs Are Not “Scaled-Down” Analyses</a></li>
+  <li><a href="#a-rare-exception-when-scaling-disappears" id="toc-a-rare-exception-when-scaling-disappears" class="nav-link" data-scroll-target="#a-rare-exception-when-scaling-disappears">A Rare Exception: When Scaling Disappears</a></li>
+  <li><a href="#the-real-mistake-to-avoid" id="toc-the-real-mistake-to-avoid" class="nav-link" data-scroll-target="#the-real-mistake-to-avoid">The Real Mistake to Avoid</a></li>
   </ul></li>
-  <li><a href="#a-discipline-for-surfacing-costs" id="toc-a-discipline-for-surfacing-costs" class="nav-link" data-scroll-target="#a-discipline-for-surfacing-costs">A Discipline for Surfacing Costs</a>
-  <ul class="collapse">
-  <li><a href="#example-a-working-variable-cost-table-illustrative" id="toc-example-a-working-variable-cost-table-illustrative" class="nav-link" data-scroll-target="#example-a-working-variable-cost-table-illustrative">Example: A Working Variable Cost Table (Illustrative)</a></li>
-  </ul></li>
-  <li><a href="#from-components-to-a-decision-grade-cost" id="toc-from-components-to-a-decision-grade-cost" class="nav-link" data-scroll-target="#from-components-to-a-decision-grade-cost">From Components to a Decision-Grade Cost</a></li>
-  <li><a href="#common-red-flags" id="toc-common-red-flags" class="nav-link" data-scroll-target="#common-red-flags">Common Red Flags</a></li>
-  <li><a href="#why-this-matters-for-profit-reasoning" id="toc-why-this-matters-for-profit-reasoning" class="nav-link" data-scroll-target="#why-this-matters-for-profit-reasoning">Why This Matters for Profit Reasoning</a></li>
+  <li><a href="#step-5-acknowledge-staged-commitment-paths" id="toc-step-5-acknowledge-staged-commitment-paths" class="nav-link" data-scroll-target="#step-5-acknowledge-staged-commitment-paths">Step 5: Acknowledge Staged Commitment Paths</a></li>
+  <li><a href="#step-6-produce-decision-grade-scale-bounds" id="toc-step-6-produce-decision-grade-scale-bounds" class="nav-link" data-scroll-target="#step-6-produce-decision-grade-scale-bounds">Step 6: Produce Decision-Grade Scale Bounds</a></li>
+  <li><a href="#step-7-connect-scale-to-profit-reasoning" id="toc-step-7-connect-scale-to-profit-reasoning" class="nav-link" data-scroll-target="#step-7-connect-scale-to-profit-reasoning">Step 7: Connect Scale to Profit Reasoning</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk6_variable_cost.html">Esimtate Variable Cost per Unit</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk8_scaling.html">Making Scale Explicit</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-toolkit-variable-cost-chapter" class="quarto-section-identifier">Esimtate Variable Cost per Unit</span></h1>
+<h1 class="title"><span id="sec-toolkit-scale-chapter" class="quarto-section-identifier">Making Scale Explicit</span></h1>
 </div>
 
 
@@ -437,17 +438,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-it-really-costs-to-serve-one-more-customer" class="level4">
-<h4 class="anchored" data-anchor-id="what-it-really-costs-to-serve-one-more-customer"><em>What It Really Costs to Serve One More Customer</em></h4>
-<p>This toolkit supports one narrow but critical task:</p>
+<section id="estimating-target-population-without-pretending-to-know-the-market" class="level4">
+<h4 class="anchored" data-anchor-id="estimating-target-population-without-pretending-to-know-the-market"><em>Estimating Target Population Without Pretending to Know the Market</em></h4>
+<p>Profit reasoning requires demand, cost, and scale to be expressed at the same level.</p>
+<p>Demand is usually learned from a <strong>sample</strong>.<br>
+Costs—especially fixed costs—are often incurred to serve a <strong>population</strong>.</p>
+<p>Scale is the bridge between the two.</p>
+<p>This toolkit exists to help you make that bridge explicit.</p>
+<p>It does <em>not</em> ask you to predict growth.<br>
+It does <em>not</em> ask you to estimate market share.<br>
+It does <em>not</em> assume you are building a large company.</p>
+<p>Instead, it helps you answer a narrower but unavoidable question:</p>
 <blockquote class="blockquote">
-<p><em>Estimating what it costs to serve one additional unit of demand—well enough to reason about feasibility.</em></p>
+<p><em>What scale of demand is this design being asked to support—and is that scale plausible given what we know?</em></p>
 </blockquote>
-<p>The goal is not precision.<br>
-The goal is to avoid missing costs that matter.</p>
-<p>Early ventures rarely fail because variable costs were estimated imprecisely.<br>
-They fail because key costs were never noticed at all.</p>
-<p>This toolkit exists to prevent that kind of failure.</p>
+<p>Sometimes the answer is:</p>
+<ul>
+<li>a small, self-sustaining venture,<br>
+</li>
+<li>a staged path toward larger commitments, or<br>
+</li>
+<li>a design that only works at scale.</li>
+</ul>
+<p>All three are valid outcomes.</p>
+<p>What matters is that scale assumptions are <em>visible, deliberate, and testable</em>—not implicit.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="How this toolkit fits">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -460,274 +474,315 @@ How this toolkit fits
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This toolkit is a practical companion to <a href="./ch9_cost.html">Chapter 9: Cost</a>.<br>
-It helps you estimate variable cost per unit—the quantity that feeds directly into profit reasoning and into the <a href="https://rconnect.byu.edu/ProfitAnalytics">Profit Analytics app</a>.</p>
-<p>The goal is not accounting accuracy.<br>
-The goal is decision-grade feasibility.</p>
+<p>This toolkit supports the transition from cost to <a href="./ch11_profit.html">profit reasoning</a>.</p>
+<p>It helps you align:</p>
+<ul>
+<li>demand learned from a sample,</li>
+<li>cost commitments implied by your design,</li>
+<li>and the population those commitments are meant to serve.</li>
+</ul>
+<p>Its output feeds directly into profit reasoning and into the <a href="https://rconnect.byu.edu/ProfitAnalytics">Profit Analytics app</a>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="what-this-toolkit-is-and-is-not" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-toolkit-is-and-is-not">What This Toolkit Is (and Is Not)</h2>
-<p>This toolkit is about <em>discipline</em>, not accounting.</p>
-<p>It does not assume:</p>
-<ul>
-<li>a particular business type,</li>
-<li>a particular revenue model,</li>
-<li>or a particular level of operational maturity.</li>
-</ul>
-<p>It does assume that:</p>
-<ul>
-<li>serving one more customer <em>triggers real activity</em>,</li>
-<li>that activity consumes resources,</li>
-<li>and those resources have costs—even when they are uncertain.</li>
-</ul>
-<p>This toolkit will help you surface those costs deliberately.</p>
-</section>
-<section id="the-core-question" class="level2">
-<h2 class="anchored" data-anchor-id="the-core-question">The Core Question</h2>
-<p>Every variable cost estimate begins with a single question:</p>
+<section id="step-1-identify-the-unit-mismatch" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-identify-the-unit-mismatch">Step 1: Identify the Unit Mismatch</h2>
+<p>Begin with a simple diagnostic.</p>
 <blockquote class="blockquote">
-<p><em>What has to happen, operationally, for one more customer to be served?</em></p>
+<p><em>At what unit was demand learned—and at what unit are costs incurred?</em></p>
 </blockquote>
-<p>Not what <em>might</em> happen eventually.<br>
-Not what <em>should</em> happen in a mature firm.</p>
-<p>What actually has to happen <em>now</em>, given your current design.</p>
-<p>If nothing happens when a customer buys, your variable cost is close to zero.<br>
-If many things happen, variable cost is real—even if hard to estimate.</p>
+<p>Examples:</p>
+<ul>
+<li>Demand learned from 80 survey respondents; costs assume a regional operation.</li>
+<li>Demand learned from early adopters; costs assume a staffed organization.</li>
+<li>Demand and costs both expressed per unit (no mismatch).</li>
+</ul>
+<p>If demand and cost are already aligned, no scaling is required.</p>
+<p>If they are not, scaling is unavoidable.</p>
+<p>This step prevents a common error: <em>asking a small sample of customers to carry population-level commitments.</em></p>
 </section>
-<section id="variable-cost-is-about-triggers-not-labels" class="level2">
-<h2 class="anchored" data-anchor-id="variable-cost-is-about-triggers-not-labels">Variable Cost Is About Triggers, Not Labels</h2>
-<p>In accounting, variable cost is defined mechanically.</p>
-<p>For decision-making, a better definition is this:</p>
+<section id="step-2-define-the-service-population-not-the-market" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-define-the-service-population-not-the-market">Step 2: Define the Service Population (Not the Market)</h2>
+<p>Instead of asking <em>“How big is the market?”</em>, ask:</p>
 <blockquote class="blockquote">
-<p><em>A variable cost is any cost triggered by serving one more unit of demand.</em></p>
+<p><em>Who could this design realistically serve, given how it is built and accessed?</em></p>
 </blockquote>
-<p>This framing matters because many costs that <em>feel</em> fixed are actually triggered by scale—and many costs that feel “minor” become decisive when multiplied.</p>
-<p>To help surface these triggers, the sections below describe common ways variable costs enter a venture.</p>
-<p>These are <em>mechanisms</em>, not requirements.</p>
-<p>If a mechanism does not apply to your venture, leave it blank.</p>
-<p><em>Blank means “not triggered,” not “forgotten.”</em></p>
-<p>That distinction matters.</p>
-</section>
-<section id="common-variable-cost-triggers" class="level2">
-<h2 class="anchored" data-anchor-id="common-variable-cost-triggers">Common Variable Cost Triggers</h2>
-<p>The categories below are prompts.<br>
-They are designed to make it hard to accidentally ignore costs—not to force them where they don’t belong.</p>
-<section id="production-or-creation" class="level3">
-<h3 class="anchored" data-anchor-id="production-or-creation">1. Production or Creation</h3>
-<blockquote class="blockquote">
-<p><em>What must be created or produced when one more customer is served?</em></p>
-</blockquote>
-<p>Examples include:</p>
+<p>The service population is defined by constraints, not aspirations.</p>
+<p>Consider:</p>
 <ul>
-<li>materials and components,</li>
-<li>compute or API usage,</li>
-<li>content generation,</li>
-<li>labor time directly tied to delivery.</li>
+<li>geography,</li>
+<li>distribution channels,</li>
+<li>regulatory or eligibility limits,</li>
+<li>organizational capacity,</li>
+<li>awareness and discoverability.</li>
 </ul>
-<p>For physical products, this may resemble a bill of materials.<br>
-For software or services, it may be time, computation, or setup effort.</p>
-<p>The form differs.<br>
-The trigger is the same.</p>
-</section>
-<section id="delivery-or-fulfillment" class="level3">
-<h3 class="anchored" data-anchor-id="delivery-or-fulfillment">2. Delivery or Fulfillment</h3>
-<blockquote class="blockquote">
-<p><em>What must be delivered, hosted, shipped, or made accessible?</em></p>
-</blockquote>
-<p>Examples include:</p>
+<p>This population may be:</p>
 <ul>
-<li>shipping and handling,</li>
-<li>cloud hosting or bandwidth,</li>
-<li>onboarding or setup,</li>
-<li>logistics and returns.</li>
+<li>small and local,</li>
+<li>professional and niche,</li>
+<li>or broad but hard to reach.</li>
 </ul>
-<p>Many delivery costs are <em>step-variable</em>:</p>
-<ul>
-<li>they are flat until capacity is reached,</li>
-<li>then jump when new capacity is required.</li>
-</ul>
-<p>These costs are still variable in decision terms—even if they do not change smoothly.</p>
-</section>
-<section id="transactions" class="level3">
-<h3 class="anchored" data-anchor-id="transactions">3. Transactions</h3>
-<blockquote class="blockquote">
-<p><em>What costs are incurred when a sale occurs?</em></p>
-</blockquote>
-<p>Examples include: - payment processing fees, - platform or marketplace fees, - per-transaction sales incentives, - discounts that reduce realized revenue.</p>
-<p>Price discounts belong here.<br>
-They are not “strategy”—they are negative revenue triggered by transactions.</p>
-</section>
-<section id="support-and-maintenance" class="level3">
-<h3 class="anchored" data-anchor-id="support-and-maintenance">4. Support and Maintenance</h3>
-<blockquote class="blockquote">
-<p><em>What happens after the customer is served?</em></p>
-</blockquote>
-<p>Examples include:</p>
-<ul>
-<li>customer support,</li>
-<li>rework or retries,</li>
-<li>warranty claims, returns, or replacements,</li>
-<li>service recovery when things go wrong.</li>
-</ul>
-<p>Many of these costs are <strong>probabilistic</strong>. They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.</p>
-</section>
-<section id="acquisition-when-truly-per-unit" class="level3">
-<h3 class="anchored" data-anchor-id="acquisition-when-truly-per-unit">5. Acquisition (When Truly Per-Unit)</h3>
-<blockquote class="blockquote">
-<p><em>Does acquiring one more customer reliably incur cost?</em></p>
-</blockquote>
-<p>Examples include:</p>
-<ul>
-<li>performance advertising,</li>
-<li>commissions,</li>
-<li>referral payments.</li>
-</ul>
-<p>Not all marketing spend is variable. Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.</p>
-<p>Be explicit when you make that choice.</p>
-</section>
-</section>
-<section id="a-discipline-for-surfacing-costs" class="level2">
-<h2 class="anchored" data-anchor-id="a-discipline-for-surfacing-costs">A Discipline for Surfacing Costs</h2>
-<p>One effective way to practice this discipline is to keep a working cost table.</p>
-<p>This is not an accounting statement. It is a thinking aid.</p>
-<p>Columns might represent:</p>
-<ul>
-<li>cost triggers (like the categories above),</li>
-<li>and rows the specific cost elements you believe are involved.</li>
-</ul>
-<p>For each element, record:</p>
-<ul>
-<li>an estimate or range,</li>
-<li>and your confidence in that estimate.</li>
-</ul>
-<p>Some entries may be well-known.<br>
-Others may be weak guesses.</p>
-<p>That is fine.</p>
-<p>The danger is not guessing. The danger is omitting.</p>
-<p>If a category does not apply, leave it blank—and say why.</p>
-<section id="example-a-working-variable-cost-table-illustrative" class="level3">
-<h3 class="anchored" data-anchor-id="example-a-working-variable-cost-table-illustrative">Example: A Working Variable Cost Table (Illustrative)</h3>
-<p>The table below shows <strong>one way</strong> to surface variable cost components. It is not complete, correct, or prescriptive. Its purpose is to make the discipline concrete.</p>
+<p>If a constraint does not apply, leave it blank—and say why.</p>
+<p>Blank means <em>not triggered</em>, not <em>forgotten</em>.</p>
+<p>The easiest way to make these constraints explicit is to write them down.</p>
+<p>The table below shows what this looks like in practice.</p>
+<section id="demonstration-of-defining-the-service-population-scaling-demand-up" class="level4">
+<h4 class="anchored" data-anchor-id="demonstration-of-defining-the-service-population-scaling-demand-up">Demonstration of Defining the Service Population (Scaling Demand Up)</h4>
+<p>This table is used when demand is learned from a <strong>sample</strong>, but costs bind at a <strong>population level</strong>.</p>
+<p>Its purpose is not to size a market, but to make population constraints explicit.</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 19%">
-<col style="width: 29%">
-<col style="width: 16%">
-<col style="width: 9%">
+<col style="width: 21%">
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 14%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Trigger Category</th>
-<th>Cost Element</th>
-<th>Estimate (per unit)</th>
+<th>Population Layer</th>
+<th>Constraint Applied</th>
+<th>Estimated Count</th>
 <th>Confidence</th>
-<th>Notes</th>
+<th>Notes / Rationale</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Production / Creation</td>
-<td>Component materials</td>
-<td>$42–$55</td>
-<td>Medium</td>
-<td>Supplier quotes vary by volume</td>
-</tr>
-<tr class="even">
-<td>Production / Creation</td>
-<td>Assembly labor</td>
-<td>$18</td>
-<td>Low</td>
-<td>Based on time estimate, not observed</td>
-</tr>
-<tr class="odd">
-<td>Delivery / Fulfillment</td>
-<td>Shipping</td>
-<td>$12–$20</td>
-<td>Medium</td>
-<td>Depends on zone and carrier</td>
-</tr>
-<tr class="even">
-<td>Transaction</td>
-<td>Payment processing</td>
-<td>~3% of price</td>
+<td>Total people who exist</td>
+<td>Geographic boundary</td>
+<td>75,000</td>
 <td>High</td>
-<td>Platform fee schedule</td>
-</tr>
-<tr class="odd">
-<td>Support / Maintenance</td>
-<td>Returns / replacements</td>
-<td>$0–$8 (expected)</td>
-<td>Low</td>
-<td>Probabilistic; rough guess</td>
+<td>Residents of Springville, UT</td>
 </tr>
 <tr class="even">
-<td>Acquisition</td>
-<td>Performance advertising</td>
-<td>—</td>
-<td>—</td>
-<td>Not triggered (organic acquisition)</td>
+<td>People reachable</td>
+<td>Distribution / access</td>
+<td>12,000</td>
+<td>Medium</td>
+<td>Only those near retail locations</td>
+</tr>
+<tr class="odd">
+<td>People eligible</td>
+<td>Regulatory / eligibility</td>
+<td>12,000</td>
+<td>High</td>
+<td>No additional constraints</td>
+</tr>
+<tr class="even">
+<td>People likely to encounter the offer</td>
+<td>Awareness / discoverability</td>
+<td>4,000</td>
+<td>Low</td>
+<td>Depends on marketing effectiveness</td>
+</tr>
+<tr class="odd">
+<td><strong>Service population</strong></td>
+<td><strong>All constraints combined</strong></td>
+<td><strong>4,000</strong></td>
+<td><strong>Low–Medium</strong></td>
+<td>Population this design could plausibly serve</td>
 </tr>
 </tbody>
 </table>
-<p>Some entries are ranges.<br>
-Some are guesses.<br>
-Some are blank.</p>
-<p>That is intentional.</p>
-<p>Blank means <em>not triggered</em>, not <em>forgotten</em>.</p>
-<p>This table is not meant to produce a single “correct” variable cost.</p>
-<p>Its purpose is to make the structure of cost visible—so you can see which components matter, which are uncertain, and which assumptions are doing the most work.</p>
-<p>A variable cost estimate becomes <em>decision-grade</em> when you can reasonably answer three questions:</p>
-<ul>
-<li>Which cost components dominate the total?</li>
-<li>Which components are most uncertain?</li>
-<li>How wrong could these estimates be before feasibility changes?</li>
-</ul>
-<p>If small errors in one row would reverse your conclusion, that row deserves attention. If large uncertainty in another row barely matters, further precision is unnecessary.</p>
-<p>At this stage, clarity about <em>sensitivity</em> matters more than numerical precision.</p>
+<p><strong>Interpretation:</strong><br>
+This population is not a prediction of adoption.<br>
+It is the population to which demand may be <em>scaled</em> when evaluating fixed commitments.</p>
 </section>
 </section>
-<section id="from-components-to-a-decision-grade-cost" class="level2">
-<h2 class="anchored" data-anchor-id="from-components-to-a-decision-grade-cost">From Components to a Decision-Grade Cost</h2>
-<p>Once cost components are surfaced, the goal is not to collapse them into a single “correct” number.</p>
-<p>Instead:</p>
+<section id="step-3-separate-population-from-adoption" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-separate-population-from-adoption">Step 3: Separate Population from Adoption</h2>
+<p>Population answers <em>who could buy</em>.<br>
+Adoption answers <em>who chooses to buy</em>.</p>
+<p>Do <em>not</em> estimate adoption directly.</p>
+<p>Adoption emerges later from:</p>
 <ul>
-<li>group them into plausible scenarios,</li>
-<li>identify conservative and optimistic cases,</li>
-<li>and ask how much error would change the decision.</li>
+<li>price,</li>
+<li>demand shape,</li>
+<li>and competition.</li>
 </ul>
-<p>A variable cost estimate is <em>decision-grade</em> when:</p>
+<p>At this stage, your task is only to define the population that demand will eventually be scaled to—<em>if the design is pursued</em>.</p>
+<p>This keeps scale assumptions disciplined and avoids market-share guessing.</p>
+</section>
+<section id="step-4-align-demand-to-the-cost-commitments-being-evaluated" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-align-demand-to-the-cost-commitments-being-evaluated">Step 4: Align Demand to the Cost Commitments Being Evaluated</h2>
+<p>Once demand and cost are expressed at different levels, they must be aligned.</p>
+<p>In practice, this almost always means <em>scaling demand to the level implied by the cost commitments you are evaluating</em>.</p>
+<p>That is the default move.</p>
+<p>Fixed costs—whether large or small—are not artifacts to be allocated.<br>
+They are commitments that define the scale at which the venture must work.</p>
+<p>The task, therefore, is not to “choose a scaling trick,” but to be clear about <em>which commitments are under consideration</em>.</p>
+<section id="the-dominant-case-scale-demand-up" class="level3">
+<h3 class="anchored" data-anchor-id="the-dominant-case-scale-demand-up">The Dominant Case: Scale Demand Up</h3>
+<p>In most entrepreneurial decisions, fixed costs are incurred to serve a population larger than the original sample. In these cases, demand must be scaled up to that population before profit can be evaluated meaningfully.</p>
+<p>This applies whether fixed costs are:</p>
 <ul>
-<li>you know which components matter most,</li>
-<li>you know which are uncertain,</li>
-<li>and you know how wrong you could be before feasibility changes.</li>
+<li>large and infrastructure-heavy, or</li>
+<li>intentionally small and founder-driven.</li>
+</ul>
+<p>In both cases, the question is the same:</p>
+<blockquote class="blockquote">
+<p><em>Can demand—scaled to the relevant population—plausibly support this level of commitment?</em></p>
+</blockquote>
+</section>
+<section id="low-commitment-designs-are-not-scaled-down-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="low-commitment-designs-are-not-scaled-down-analyses">Low-Commitment Designs Are Not “Scaled-Down” Analyses</h3>
+<p>Some ventures deliberately operate with very low fixed costs in early stages.</p>
+<p>This is not a case of “scaling fixed costs down to the sample.”<br>
+It is a case of <em>choosing a design with minimal commitments</em>.</p>
+<p>Those commitments should still be named honestly, and demand should still be evaluated at the population the design can realistically serve.</p>
+<p>The analysis does not shrink costs to fit the data.<br>
+It asks whether the data—appropriately scaled—can justify the design as it exists.</p>
+</section>
+<section id="a-rare-exception-when-scaling-disappears" class="level3">
+<h3 class="anchored" data-anchor-id="a-rare-exception-when-scaling-disappears">A Rare Exception: When Scaling Disappears</h3>
+<p>In a small number of businesses, both demand and cost are already expressed <em>per unit at market scale</em>.</p>
+<p>This occurs when:</p>
+<ul>
+<li>production is handled through contract manufacturing,</li>
+<li>costs are usage-based or per-transaction,</li>
+<li>or infrastructure and capacity are embedded upstream.</li>
+</ul>
+<p>In these cases, demand evidence and cost structure are already aligned. No explicit population scaling is required, because the scale assumption is built into the unit cost itself.</p>
+<p>This does <em>not</em> mean scale is irrelevant.<br>
+It means scale has been assumed earlier—through the cost model rather than through population estimates.</p>
+<p>Because this case is rare and easy to misapply, it should be stated explicitly when it applies and avoided otherwise.</p>
+</section>
+<section id="the-real-mistake-to-avoid" class="level3">
+<h3 class="anchored" data-anchor-id="the-real-mistake-to-avoid">The Real Mistake to Avoid</h3>
+<p>The danger is not choosing the “wrong” scaling approach.</p>
+<p>The danger is allowing:</p>
+<ul>
+<li>fixed commitments to imply scale silently, or</li>
+<li>demand evidence to be interpreted at the wrong level.</li>
+</ul>
+<p>Profit reasoning only works when demand, cost, and scale are aligned <em>deliberately</em>.</p>
+</section>
+</section>
+<section id="step-5-acknowledge-staged-commitment-paths" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-acknowledge-staged-commitment-paths">Step 5: Acknowledge Staged Commitment Paths</h2>
+<p>Some ventures are intentionally designed to operate with:</p>
+<ul>
+<li>zero or near-zero fixed costs,</li>
+<li>founder labor substituted for infrastructure,</li>
+<li>and narrow scale.</li>
+</ul>
+<p>This is not a flaw.</p>
+<p>It is a <em>strategy</em>.</p>
+<p>In these cases, the scale question becomes:</p>
+<blockquote class="blockquote">
+<p><em>Can this design generate sufficient margin at small scale to sustain the venture long enough to justify the next commitment?</em></p>
+</blockquote>
+<p>This reframes scale as a <em>path</em>, not a destination.</p>
+<p>Sensitivity analysis then becomes a tool for asking:</p>
+<ul>
+<li>how long that stage can be sustained,</li>
+<li>what breaks first,</li>
+<li>and what must be true to advance responsibly.</li>
+</ul>
+<p>Low commitment does not mean no commitment.</p>
+<p>The table below shows how to name fixed costs honestly at the stage you are actually operating.</p>
+<section id="demonstration-of-fixed-costs-at-the-current-commitment-stage" class="level4">
+<h4 class="anchored" data-anchor-id="demonstration-of-fixed-costs-at-the-current-commitment-stage">Demonstration of Fixed Costs at the Current Commitment Stage</h4>
+<p>This table is used to name <strong>fixed costs honestly at the stage you are actually operating</strong>, including low- or no-infrastructure designs.</p>
+<p>Its purpose is to clarify what must be supported <em>before</em> revenue is known.</p>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 16%">
+<col style="width: 26%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fixed Cost Component</th>
+<th>Why It Exists at This Stage</th>
+<th>What It Enables</th>
+<th>What Breaks If It Increases</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Founder compensation</td>
+<td>Sustain full-time effort</td>
+<td>Continuous learning and execution</td>
+<td>Founder burnout / exit</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Basic software tools</td>
+<td>Coordination and delivery</td>
+<td>Reliable operations</td>
+<td>Manual workarounds</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Minimal marketing spend</td>
+<td>Initial awareness</td>
+<td>Demand learning</td>
+<td>No inbound interest</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Legal / compliance</td>
+<td>Ability to operate</td>
+<td>Reduced legal risk</td>
+<td>Forced shutdown</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td><strong>Total fixed commitment</strong></td>
+<td>—</td>
+<td>Enables current design</td>
+<td>Requires scaled demand</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpretation:</strong><br>
+These costs are not “temporary” because they are small.<br>
+They are <em>deliberate commitments</em> whose justification depends on scaled demand.</p>
+</section>
+</section>
+<section id="step-6-produce-decision-grade-scale-bounds" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-produce-decision-grade-scale-bounds">Step 6: Produce Decision-Grade Scale Bounds</h2>
+<p>Your output should not be a single number.</p>
+<p>It should be:</p>
+<ul>
+<li>a <em>conservative lower bound</em>,</li>
+<li>a <em>plausible base case</em>,</li>
+<li>and an <em>optimistic upper bound</em>.</li>
+</ul>
+<p>Each bound should be accompanied by:</p>
+<ul>
+<li>the assumptions that generate it,</li>
+<li>and where those assumptions could fail.</li>
+</ul>
+<p>A scale estimate is decision-grade when:</p>
+<ul>
+<li>you know which constraints matter most,</li>
+<li>you know which assumptions are fragile,</li>
+<li>and you know how wrong you could be before profit reasoning changes.</li>
 </ul>
 <p>That is enough.</p>
 </section>
-<section id="common-red-flags" class="level2">
-<h2 class="anchored" data-anchor-id="common-red-flags">Common Red Flags</h2>
-<p>If your variable cost estimate feels clean, confident, and simple, pause.</p>
-<p>Common warning signs include:</p>
+<section id="step-7-connect-scale-to-profit-reasoning" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-connect-scale-to-profit-reasoning">Step 7: Connect Scale to Profit Reasoning</h2>
+<p>The final question this toolkit supports is not <em>“How big could this be?”</em> It is:</p>
+<blockquote class="blockquote">
+<p><em>Does this level of demand plausibly support the commitments implied by this design—given how uncertain we still are?</em></p>
+</blockquote>
+<p>If the answer is:</p>
 <ul>
-<li>counting only product or production cost,</li>
-<li>assuming zero support or post-sale effort,</li>
-<li>ignoring returns, failures, or exceptions,</li>
-<li>treating discounts as “marketing” rather than cost,</li>
-<li>or assuming scale will solve margins automatically.</li>
+<li><em>yes, even under error</em> → proceed deliberately.</li>
+<li><em>only if everything goes right</em> → redesign or delay.</li>
+<li><em>no, under any reasonable assumption</em> → stop or rethink.</li>
 </ul>
-<p>These are not moral failures. They are predictable blind spots.</p>
-<p>This toolkit exists to surface them early—when they are still cheap to fix.</p>
-</section>
-<section id="why-this-matters-for-profit-reasoning" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-matters-for-profit-reasoning">Why This Matters for Profit Reasoning</h2>
-<p>Variable cost sets a hard boundary on feasibility.</p>
-<p>If price does not exceed variable cost, selling more makes the situation worse.</p>
-<p>This is why variable cost is reintroduced before fixed costs and profit. It determines which parts of the demand curve are even worth considering.</p>
-<p>Estimating variable cost carefully does not guarantee success. But estimating it carelessly can guarantee failure.</p>
-<p>Once variable cost is understood, attention can turn to fixed costs—where commitment, irreversibility, and risk truly enter the decision.</p>
+<p>Scale does not validate ideas.<br>
+It disciplines commitment.</p>
 
 
 </section>
@@ -1134,13 +1189,13 @@ Some are blank.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./part_profit_toolkits.html" class="pagination-link" aria-label="Profit Toolkits">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Profit Toolkits</span>
+      <a href="./tk7_fixed_cost.html" class="pagination-link" aria-label="Esimtate Fixed Costs as Commitments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Esimtate Fixed Costs as Commitments</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./tk7_fixed_cost.html" class="pagination-link" aria-label="Esimtate Fixed Costs as Commitments">
-        <span class="nav-page-text">Esimtate Fixed Costs as Commitments</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./competition.html" class="pagination-link" aria-label="Competition">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
