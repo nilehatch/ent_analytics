@@ -1,4 +1,4 @@
-# Esimtate Variable Cost per Unit {#sec-toolkit-variable-cost-chapter .unnumbered}
+# Estimate Variable Cost per Unit {#sec-toolkit-variable-cost-chapter .unnumbered}
 
 #### *What It Really Costs to Serve One More Customer*
 
@@ -23,7 +23,6 @@ The goal is decision-grade feasibility.
 :::
 
 
-
 ## What This Toolkit Is (and Is Not)
 
 This toolkit is about *discipline*, not accounting.
@@ -43,9 +42,6 @@ It does assume that:
 This toolkit will help you surface those costs deliberately.
 
 
-
-
-
 ## The Core Question
 
 Every variable cost estimate begins with a single question:
@@ -59,10 +55,6 @@ What actually has to happen *now*, given your current design.
 
 If nothing happens when a customer buys, your variable cost is close to zero.  
 If many things happen, variable cost is real—even if hard to estimate.
-
-
-
-
 
 
 ## Variable Cost Is About Triggers, Not Labels
@@ -84,10 +76,6 @@ If a mechanism does not apply to your venture, leave it blank.
 *Blank means “not triggered,” not “forgotten.”*
 
 That distinction matters.
-
-
-
-
 
 
 ## Common Variable Cost Triggers
@@ -138,6 +126,7 @@ These costs are still variable in decision terms—even if they do not change sm
 > *What costs are incurred when a sale occurs?*
 
 Examples include:
+
 - payment processing fees,
 - platform or marketplace fees,
 - per-transaction sales incentives,
@@ -145,6 +134,7 @@ Examples include:
 
 Price discounts belong here.  
 They are not “strategy”—they are negative revenue triggered by transactions.
+
 
 ### 4. Support and Maintenance
 
@@ -157,8 +147,9 @@ Examples include:
 - warranty claims, returns, or replacements,
 - service recovery when things go wrong.
 
-Many of these costs are **probabilistic**.
+Many of these costs are **probabilistic**.  
 They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.
+
 
 ### 5. Acquisition (When Truly Per-Unit)
 
@@ -170,21 +161,17 @@ Examples include:
 - commissions,
 - referral payments.
 
-Not all marketing spend is variable.
+Not all marketing spend is variable.  
 Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.
 
 Be explicit when you make that choice.
-
-
-
-
 
 
 ## A Discipline for Surfacing Costs
 
 One effective way to practice this discipline is to keep a working cost table.
 
-This is not an accounting statement.
+This is not an accounting statement.  
 It is a thinking aid.
 
 Columns might represent:
@@ -202,15 +189,16 @@ Others may be weak guesses.
 
 That is fine.
 
-The danger is not guessing.
+The danger is not guessing.  
 The danger is omitting.
 
 If a category does not apply, leave it blank—and say why.
 
+
 ### Example: A Working Variable Cost Table (Illustrative)
 
-The table below shows **one way** to surface variable cost components.
-It is not complete, correct, or prescriptive.
+The table below shows **one way** to surface variable cost components.  
+It is not complete, correct, or prescriptive.  
 Its purpose is to make the discipline concrete.
 
 | Trigger Category | Cost Element | Estimate (per unit) | Confidence | Notes |
@@ -230,6 +218,7 @@ That is intentional.
 
 Blank means *not triggered*, not *forgotten*.
 
+
 This table is not meant to produce a single “correct” variable cost.
 
 Its purpose is to make the structure of cost visible—so you can see which components matter, which are uncertain, and which assumptions are doing the most work.
@@ -240,16 +229,10 @@ A variable cost estimate becomes *decision-grade* when you can reasonably answer
 - Which components are most uncertain?
 - How wrong could these estimates be before feasibility changes?
 
-If small errors in one row would reverse your conclusion, that row deserves attention.
+If small errors in one row would reverse your conclusion, that row deserves attention.  
 If large uncertainty in another row barely matters, further precision is unnecessary.
 
 At this stage, clarity about *sensitivity* matters more than numerical precision.
-
-
-
-
-
-
 
 
 ## From Components to a Decision-Grade Cost
@@ -271,10 +254,6 @@ A variable cost estimate is *decision-grade* when:
 That is enough.
 
 
-
-
-
-
 ## Common Red Flags
 
 If your variable cost estimate feels clean, confident, and simple, pause.
@@ -287,15 +266,10 @@ Common warning signs include:
 - treating discounts as “marketing” rather than cost,
 - or assuming scale will solve margins automatically.
 
-These are not moral failures.
+These are not moral failures.  
 They are predictable blind spots.
 
 This toolkit exists to surface them early—when they are still cheap to fix.
-
-
-
-
-
 
 
 ## Why This Matters for Profit Reasoning
@@ -304,11 +278,10 @@ Variable cost sets a hard boundary on feasibility.
 
 If price does not exceed variable cost, selling more makes the situation worse.
 
-This is why variable cost is reintroduced before fixed costs and profit.
+This is why variable cost is reintroduced before fixed costs and profit.  
 It determines which parts of the demand curve are even worth considering.
 
-Estimating variable cost carefully does not guarantee success.
+Estimating variable cost carefully does not guarantee success.  
 But estimating it carelessly can guarantee failure.
 
 Once variable cost is understood, attention can turn to fixed costs—where commitment, irreversibility, and risk truly enter the decision.
-

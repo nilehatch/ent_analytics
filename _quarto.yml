@@ -69,6 +69,8 @@ book:
         - tk6_variable_cost.qmd
         - tk7_fixed_cost.qmd
         - tk8_scaling.qmd
+        - tk9_read_profit.qmd
+        - tk10_sensitivity_decide.qmd
         
     - part: Old Econ Competition
       chapters:

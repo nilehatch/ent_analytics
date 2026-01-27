@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Esimtate Fixed Costs as Commitments – Is This Worth Doing?</title>
+<title>Estimate Fixed Costs as Commitments – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./competition.html" rel="next">
+<link href="./tk8_scaling.html" rel="next">
 <link href="./tk6_variable_cost.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk7_fixed_cost.html">Esimtate Fixed Costs as Commitments</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk7_fixed_cost.html">Estimate Fixed Costs as Commitments</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,13 +281,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Esimtate Variable Cost per Unit</span></a>
+ <span class="menu-text">Estimate Variable Cost per Unit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk7_fixed_cost.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Esimtate Fixed Costs as Commitments</span></a>
+ <span class="menu-text">Estimate Fixed Costs as Commitments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk8_scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Scale Explicit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk9_read_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Read a Profit Curve for Feasibility and Fragility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
       </ul>
@@ -418,9 +436,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk7_fixed_cost.html">Esimtate Fixed Costs as Commitments</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk7_fixed_cost.html">Estimate Fixed Costs as Commitments</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-toolkit-fixed-cost-chapter" class="quarto-section-identifier">Esimtate Fixed Costs as Commitments</span></h1>
+<h1 class="title"><span id="sec-toolkit-fixed-cost-chapter" class="quarto-section-identifier">Estimate Fixed Costs as Commitments</span></h1>
 </div>
 
 
@@ -461,7 +479,7 @@ How this toolkit fits
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This toolkit is a practical companion to <a href="./ch9_cost.html">Chapter 9: Cost</a>.<br>
-It helps you estimate variable cost per unit—the quantity that feeds directly into profit reasoning and into the <a href="https://rconnect.byu.edu/ProfitAnalytics">Profit Analytics app</a>.</p>
+It helps you surface fixed cost commitments—the obligations that shape exposure, break-even, and downside risk in profit reasoning and in the <a href="https://rconnect.byu.edu/ProfitAnalytics">Profit Analytics app</a>.</p>
 <p>The goal is not accounting accuracy.<br>
 The goal is decision-grade feasibility.</p>
 </div>
@@ -483,7 +501,7 @@ The goal is decision-grade feasibility.</p>
 <li>those costs create exposure when demand disappoints,</li>
 <li>and reversing them is often slow, costly, or impossible.</li>
 </ul>
-<p>This toolkit helps you see those commitments clearly.</p>
+<p>This toolkit helps you see those commitments clearly—<em>before</em> they bind.</p>
 </section>
 <section id="the-core-question" class="level2">
 <h2 class="anchored" data-anchor-id="the-core-question">The Core Question</h2>
@@ -493,7 +511,7 @@ The goal is decision-grade feasibility.</p>
 </blockquote>
 <p>If a cost is incurred because a customer buys, it is not fixed.<br>
 If a cost is incurred because <em>you decided to move forward</em>, it probably is.</p>
-<p>This distinction matters more than accounting labels.</p>
+<p>This distinction matters more than accounting labels, because it determines <em>who bears the risk</em> when demand falls short.</p>
 </section>
 <section id="fixed-cost-is-about-commitments-not-categories" class="level2">
 <h2 class="anchored" data-anchor-id="fixed-cost-is-about-commitments-not-categories">Fixed Cost Is About Commitments, Not Categories</h2>
@@ -547,15 +565,23 @@ If a cost is incurred because <em>you decided to move forward</em>, it probably 
 <li>compliance requirements,</li>
 <li>certifications or regulatory approvals.</li>
 </ul>
-<p>These costs do not depend on how many customers buy. They depend on whether you choose to play.</p>
+<p>These costs do not depend on how many customers buy.<br>
+They depend on whether you choose to play.</p>
 </section>
 <section id="capability-commitments" class="level3">
 <h3 class="anchored" data-anchor-id="capability-commitments">3. Capability Commitments</h3>
 <blockquote class="blockquote">
 <p><em>What capabilities must exist before I can sell at all?</em></p>
 </blockquote>
-<p>Examples include: - internal systems and tooling, - software subscriptions (including AI), - brand development, - intellectual property filings.</p>
-<p>These costs are often rationalized as “investments.” They are still commitments.</p>
+<p>Examples include:</p>
+<ul>
+<li>internal systems and tooling,</li>
+<li>software subscriptions (including AI),</li>
+<li>brand development,</li>
+<li>intellectual property filings.</li>
+</ul>
+<p>These costs are often rationalized as “investments.”<br>
+They are still commitments.</p>
 </section>
 <section id="time-bound-commitments" class="level3">
 <h3 class="anchored" data-anchor-id="time-bound-commitments">4. Time-Bound Commitments</h3>
@@ -569,7 +595,8 @@ If a cost is incurred because <em>you decided to move forward</em>, it probably 
 <li>minimum service agreements,</li>
 <li>insurance premiums.</li>
 </ul>
-<p>Time is often the binding constraint—not dollars. A short-term commitment may be far less risky than a long one at the same cost.</p>
+<p>Time is often the binding constraint—not dollars.<br>
+A short-term commitment may be far less risky than a long one at the same cost.</p>
 </section>
 <section id="foundational-compensation-and-overhead" class="level3">
 <h3 class="anchored" data-anchor-id="foundational-compensation-and-overhead">5. Foundational Compensation and Overhead</h3>
@@ -583,13 +610,15 @@ If a cost is incurred because <em>you decided to move forward</em>, it probably 
 <li>benefits and payroll overhead,</li>
 <li>legal and administrative support.</li>
 </ul>
-<p>Omitting these costs does not make them disappear. It only hides the exposure.</p>
+<p>Omitting these costs does not make them disappear.<br>
+It only hides the exposure.</p>
 </section>
 </section>
 <section id="a-discipline-for-surfacing-commitments" class="level2">
 <h2 class="anchored" data-anchor-id="a-discipline-for-surfacing-commitments">A Discipline for Surfacing Commitments</h2>
 <p>One effective way to practice this discipline is to keep a working commitment table.</p>
-<p>This is not a budget. It is a thinking aid.</p>
+<p>This is not a budget.<br>
+It is a thinking aid.</p>
 <p>Columns might represent:</p>
 <ul>
 <li>commitment triggers (like the categories above),</li>
@@ -601,14 +630,17 @@ If a cost is incurred because <em>you decided to move forward</em>, it probably 
 <li>the timing of the commitment,</li>
 <li>and how reversible it is.</li>
 </ul>
-<p>Some commitments may be clear. Others may be fuzzy or conditional.</p>
+<p>Some commitments may be clear.<br>
+Others may be fuzzy or conditional.</p>
 <p>That is fine.</p>
 <p>The danger is not uncertainty.<br>
 The danger is pretending a commitment does not exist.</p>
 <p>If a category does not apply, leave it blank—and say why.</p>
 <section id="example-a-working-fixed-cost-commitment-table-illustrative" class="level3">
 <h3 class="anchored" data-anchor-id="example-a-working-fixed-cost-commitment-table-illustrative">Example: A Working Fixed Cost Commitment Table (Illustrative)</h3>
-<p>The table below shows one way to surface fixed cost commitments. It is not complete, correct, or prescriptive. Its purpose is to make exposure visible.</p>
+<p>The table below shows one way to surface fixed cost commitments.<br>
+It is not complete, correct, or prescriptive.<br>
+Its purpose is to make exposure visible.</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -681,14 +713,18 @@ Some are blank.</p>
 <section id="from-commitments-to-decision-grade-fixed-cost" class="level2">
 <h2 class="anchored" data-anchor-id="from-commitments-to-decision-grade-fixed-cost">From Commitments to Decision-Grade Fixed Cost</h2>
 <p>This table is not meant to produce a single “correct” fixed cost number.</p>
-<p>Its purpose is to clarify exposure—so you can see which commitments dominate risk, which are reversible, and which assumptions matter most.</p>
+<p>Its purpose is to clarify exposure—so you can see:</p>
+<ul>
+<li>which commitments dominate risk,</li>
+<li>which are hardest to reverse,</li>
+<li>and which can be delayed until uncertainty is reduced.</li>
+</ul>
 <p>A fixed cost estimate becomes <em>decision-grade</em> when you can reasonably answer three questions:</p>
 <ul>
 <li>Which commitments create the greatest exposure if demand disappoints?</li>
 <li>Which commitments are hardest to reverse?</li>
-<li>Which commitments can be delayed until uncertainty is reduced?</li>
+<li>Which commitments can be delayed without undermining learning?</li>
 </ul>
-<p>If one early commitment determines survival, it deserves scrutiny. If another can be staged or deferred, it may be less urgent.</p>
 <p>At this stage, understanding <em>irreversibility</em> matters more than minimizing cost.</p>
 </section>
 <section id="common-red-flags" class="level2">
@@ -701,14 +737,17 @@ Some are blank.</p>
 <li>treating compliance or access costs as minor,</li>
 <li>assuming scale will arrive before commitments bind.</li>
 </ul>
-<p>These are not errors of intent. They are predictable blind spots.</p>
+<p>These are not errors of intent.<br>
+They are predictable blind spots.</p>
 <p>This toolkit exists to surface them early—before they become irreversible.</p>
 </section>
 <section id="why-this-matters-for-profit-reasoning" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters-for-profit-reasoning">Why This Matters for Profit Reasoning</h2>
 <p>Fixed costs determine how much demand must exist <em>before</em> profit becomes possible.</p>
-<p>They create thresholds, break-even points, and exposure to error. They are the primary source of downside risk in early ventures.</p>
-<p>Estimating fixed costs carefully does not eliminate uncertainty. But estimating them implicitly guarantees surprise.</p>
+<p>They create thresholds, break-even points, and exposure to error.<br>
+They are the primary source of downside risk in early ventures.</p>
+<p>Estimating fixed costs carefully does not eliminate uncertainty.<br>
+But estimating them implicitly guarantees surprise.</p>
 <p>Once fixed commitments are explicit, profit reasoning can honestly assess whether the expected rewards justify the exposure.</p>
 <p>That is the role fixed cost plays in the pre-revenue decision.</p>
 
@@ -1117,13 +1156,13 @@ Some are blank.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./tk6_variable_cost.html" class="pagination-link" aria-label="Esimtate Variable Cost per Unit">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Esimtate Variable Cost per Unit</span>
+      <a href="./tk6_variable_cost.html" class="pagination-link" aria-label="Estimate Variable Cost per Unit">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Estimate Variable Cost per Unit</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./competition.html" class="pagination-link" aria-label="Competition">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tk8_scaling.html" class="pagination-link" aria-label="Making Scale Explicit">
+        <span class="nav-page-text">Making Scale Explicit</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

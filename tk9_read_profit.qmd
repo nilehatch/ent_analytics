@@ -1,0 +1,468 @@
+# Read a Profit Curve for Feasibility and Fragility {#sec-toolkit-read-profit .unnumbered}
+
+#### *Interpreting What the Analysis Is Actually Telling You*
+
+Profit analytics produces curves, numbers, and apparent “answers.”
+
+This toolkit teaches you how to read those outputs without mistaking them for conclusions.
+
+It does not compute profit.  
+It does not optimize profit.  
+It does not predict outcomes.
+
+Instead, it helps you answer a prior and more fundamental question:
+
+> *What kind of decision is this, given what the profit curve actually shows?*
+
+Before asking *what to do*, you must first understand *what you are seeing*.
+
+
+::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
+This toolkit is a companion to [Chapter 11: Profit](ch11_profit.qmd) and [Chapter 12: Profit Reasoning](ch12_profit_reasoning.qmd).
+
+It focuses on *interpretation*, not execution:
+
+- how to read profit curves produced by the analysis or the app,
+- how to recognize feasibility, fragility, and robustness,
+- and how to avoid mistaking a visual result for a recommendation.
+
+It pairs directly with the default outputs of the [**Profit Analytics app**](https://rconnect.byu.edu/ProfitAnalytics).
+:::
+
+
+## What This Toolkit Is (and Is Not)
+
+This toolkit teaches recognition, not action.
+
+It helps you learn to see:
+
+- when profit is impossible,
+- when profit exists but is fragile,
+- and when profit appears robust enough to justify commitment.
+
+It does *not* tell you:
+
+- which price to choose,
+- whether to proceed,
+- or what experiment to run next.
+
+Those decisions come later.
+
+If you skip this interpretive step, everything that follows—optimization, sensitivity analysis, even intuition—rests on a misreading of the situation.
+
+
+## A Profit Curve Is a Map, Not a Verdict
+
+A profit curve shows profit as a function of price, given:
+
+- a demand curve learned from evidence,
+- a cost structure defined by commitments,
+- and a scale assumption made explicit.
+
+It is a conditional object.
+
+Every point on the curve answers the same conditional question:
+
+> *If demand behaves like this,  
+> and costs are structured like this,  
+> and if scale is what we’ve assumed,  
+> then profit would look like this.*
+
+That is all it claims.
+
+A profit curve does *not*:
+
+- assert that any price will be chosen,
+- guarantee that demand will materialize,
+- or validate the venture as “good” or “bad.”
+
+Like any map, it simplifies reality in order to make structure visible.
+
+
+## What You’ll See in the App
+
+The Profit Analytics app visualizes profit as a function of price.
+
+This toolkit assumes you are looking at a profit curve that looks *like this*.
+
+::: {layout-ncol=2}
+
+```{r}
+#| label: fig-tk-read-profit-app-baseline
+#| echo: false
+#| warning: false
+#| message: false
+#| layout-ncol: 2
+#| cap-location: bottom
+#| fig-cap:
+#|   - "A baseline profit curve: profit π(P) across prices with a clear zero-profit reference line."
+#|   - "Three common shapes: impossible profit, fragile profit, and robust profit (illustrative)."
+
+library(tibble)
+library(ggplot2)
+library(scales)
+library(ggthemes)
+
+base_theme <- theme_hc()
+
+col_pi  <- "#2F855A"   # profit green (your choice)
+col_ref <- "grey40"
+
+P_min <- 0
+P_max <- 1300
+
+# ----------------------------
+# Helper constructors
+# ----------------------------
+make_Q <- function(a, b){
+  function(P) pmax(0, a + b * P)
+}
+make_R <- function(Qfun){
+  function(P) P * Qfun(P)
+}
+make_TC <- function(Qfun, c, F){
+  function(P) F + c * Qfun(P)
+}
+make_Pi <- function(Rfun, TCfun){
+  function(P) Rfun(P) - TCfun(P)
+}
+
+# ----------------------------
+# Panel A: A baseline profit curve (one “app-like” output)
+# ----------------------------
+Q0  <- make_Q(a = 2500, b = -2.0)
+R0  <- make_R(Q0)
+TC0 <- make_TC(Q0, c = 200, F = 250000)
+Pi0 <- make_Pi(R0, TC0)
+
+# Find approximate argmax for a simple marker
+P_grid <- seq(P_min, P_max, length.out = 400)
+pi_vals <- Pi0(P_grid)
+P_star <- P_grid[which.max(pi_vals)]
+Pi_star <- max(pi_vals)
+
+plot_profit_baseline <- ggplot() +
+  geom_hline(yintercept = 0, linewidth = 0.6, color = col_ref) +
+  
+  # Dotted read-off guides (tied to the highlighted point)
+  geom_segment(aes(x = 0,   y = Pi_star, xend = P_star, yend = Pi_star),
+               linetype = "dotted", linewidth = 0.5, color = "black") +
+  geom_segment(aes(x = P_star,  y = 0,  xend = P_star, yend = Pi_star),
+               linetype = "dotted", linewidth = 0.5, color = "black") +
+  
+  geom_function(fun = Pi0, xlim = c(P_min, P_max), linewidth = 2.2, color = col_pi) +
+  
+  geom_point(aes(x = P_star, y = Pi_star), size = 3.2, color = "black") +
+#  annotate("label",
+#           x = P_star, y = Pi_star,
+#           label = "Highest point\n(not a recommendation)",
+#           vjust = -1.0, size = 3.2,
+#           label.size = 0.2, fill = "white", alpha = 0.9) +
+  labs(x = "Price", y = "Profit") +
+  scale_x_continuous(labels = label_dollar(), n.breaks = 5, limits = c(0, 1249)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(-750000,330000)) +
+  coord_cartesian(xlim = c(P_min, P_max), expand = FALSE) +
+  base_theme
+
+# ----------------------------
+# Panel B: Three regime shapes (impossible / fragile / robust)
+# ----------------------------
+
+# Impossible: profit always below zero (high F or high c)
+Q_imp  <- make_Q(a = 2500, b = -2.0)
+R_imp  <- make_R(Q_imp)
+TC_imp <- make_TC(Q_imp, c = 260, F = 1200000)
+Pi_imp <- make_Pi(R_imp, TC_imp)
+
+# Fragile: crosses zero only narrowly
+Q_fra  <- make_Q(a = 1300, b = -1.4)
+R_fra  <- make_R(Q_fra)
+TC_fra <- make_TC(Q_fra, c = 220, F = 120000)
+Pi_fra <- make_Pi(R_fra, TC_fra)
+
+# Robust: profit positive across a wide range
+Q_rob  <- make_Q(a = 3200, b = -1.6)
+R_rob  <- make_R(Q_rob)
+TC_rob <- make_TC(Q_rob, c = 160, F = 120000)
+Pi_rob <- make_Pi(R_rob, TC_rob)
+
+df_shapes <- tibble(
+  P = rep(P_grid, 3),
+  pi = c(Pi_imp(P_grid), Pi_fra(P_grid), Pi_rob(P_grid)),
+  case = factor(rep(c("Impossible", "Fragile", "Robust"), each = length(P_grid)),
+                levels = c("Impossible", "Fragile", "Robust"))
+)
+
+# consistent y-lims so readers “see” the differences
+y_min <- min(df_shapes$pi)
+y_max <- max(df_shapes$pi)
+pad <- 0.08 * (y_max - y_min)
+y_min <- y_min - pad
+y_max <- y_max + pad
+
+plot_profit_shapes <- ggplot(df_shapes, aes(x = P, y = pi)) +
+  geom_hline(yintercept = 0, linewidth = 0.6, color = col_ref) +
+  geom_line(linewidth = 2.0, color = col_pi) +
+  facet_wrap(~ case, ncol = 1) +
+  labs(x = "Price", y = "Profit  π(P)") +
+  scale_x_continuous(labels = label_dollar(), n.breaks = 5, limits = c(0, 1249)) +
+  scale_y_continuous(labels = label_dollar()) +
+  coord_cartesian(xlim = c(P_min, P_max), ylim = c(y_min, y_max), expand = FALSE) +
+  base_theme
+
+plot_profit_baseline
+plot_profit_shapes
+```
+:::
+
+
+
+
+
+
+## The First Question to Ask: Is Profit Even Possible?
+
+Before looking for a “best” price, ask a simpler question:
+
+> *Does the profit curve ever cross zero?*
+
+This divides all outcomes into two fundamentally different cases:
+
+1. **Profit is impossible**  
+   Profit is negative at every price.
+
+2. **Profit is possible**  
+   Profit becomes positive at least somewhere on the curve.
+
+Everything else in this toolkit builds on that distinction.
+
+If profit is impossible, optimization is meaningless.  
+If profit is possible, interpretation still matters.
+
+
+
+
+
+
+## Case 1: When Profit Is Impossible
+
+Profit is impossible when the curve never rises above zero.
+
+This is not an error.  
+It is a diagnosis.
+
+It means:
+
+> *Given the current assumptions about demand, cost, and scale,  
+> there is no price at which this design can support its commitments.*
+
+This result is often emotionally jarring, especially for entrepreneurs who have invested time, energy, or identity into the idea.
+
+But analytically, it is one of the most valuable outcomes profit reasoning can produce.
+
+Impossible profit typically arises from one of two structural problems:
+
+- **Negative margins**  
+  Revenue never exceeds variable cost. Selling more only deepens losses.
+
+- **Unsupportable fixed costs**  
+  Contribution exists, but scaled demand cannot support the commitments being assumed.
+
+Importantly, “weak demand” does not appear as a separate case.  
+Weak demand matters only insofar as it fails to clear costs or scale.
+
+If profit is impossible, the correct response is *not* to search for a better price.
+
+The correct response is to ask:
+
+- *Which assumption is doing the damage?*
+- *What would need to change for profit to become possible?*
+- *Are those changes within our control—or even desirable?*
+
+Sometimes the answer is redesign.  
+Sometimes it is delay.  
+Sometimes it is to stop.
+
+None of those outcomes represent analytical failure.
+
+
+
+
+
+## Case 2: When Profit Exists but Is Fragile
+
+When the profit curve crosses zero, the immediate reaction is often relief.
+
+There is at least one price at which the venture appears viable.
+
+But this relief is often premature.
+
+Profit that exists *somewhere* is not the same as profit that can *support commitment*.
+
+
+### What Fragile Profit Means
+
+Profit is fragile when it depends on:
+
+- a very narrow range of prices,
+- highly specific demand assumptions,
+- precise execution with little room for error,
+- or optimistic beliefs about scale and access.
+
+In these cases, profit is technically possible—but structurally exposed.
+
+Fragile profit is not rare.  
+It is the most common outcome in early entrepreneurial analysis.
+
+
+### Two Common Forms of Fragility
+
+Fragile profit typically appears in one of two visual patterns.
+
+**1. Thin Demand, Low Commitments**
+
+In this case:
+
+- variable and fixed costs are relatively low,
+- demand exists but is shallow,
+- profit is positive only within a narrow price window.
+
+A small change in price, competition, or customer behavior pushes profit back below zero.
+
+The venture survives only if many things go right at once.
+
+**2. Strong Demand, Heavy Commitments**
+
+In this case:
+
+- contribution margins are positive,
+- demand appears strong at scale,
+- but fixed costs are large.
+
+Profit exists only if demand materializes at or above the assumed scale.  
+Any shortfall quickly erases surplus.
+
+These two cases *look different*, but they share the same logic:
+
+> *The decision works only if error is small.*
+
+
+### Why Fragile Profit Is More Dangerous Than Impossible Profit
+
+Impossible profit is clear.
+
+It tells you the design does not work *as structured*.
+
+Fragile profit is deceptive.
+
+Because profit exists somewhere, it invites 
+
+- confidence precisely where caution is warranted,
+- selective attention to favorable assumptions,
+- and pressure to “optimize” rather than rethink.
+
+This is where entrepreneurs are most likely to mistake analytics for validation.
+
+A thin positive region on the curve can feel like permission—when it is actually a warning.
+
+
+### The Key Distinction: Sign vs. Sensitivity
+
+At this stage, the most important question is *not*:
+
+> *Is profit positive?*
+
+It is:
+
+> *How sensitive is profit to being wrong?*
+
+Fragile profit is not defined by the sign of profit, but by its **exposure to error**.
+
+When profit is fragile:
+
+- small demand errors matter a lot,
+- small cost overruns matter a lot,
+- small scaling shortfalls matter a lot.
+
+None of these errors are unusual.
+
+Fragility fails not because entrepreneurs are careless, but because uncertainty is unavoidable.
+
+
+
+
+
+## Case 3: When Profit Appears Robust
+
+Robust profit is not common—but it is distinctive.
+
+A profit curve appears robust when:
+
+- profit is positive across a wide range of prices,
+- reasonable demand error does not reverse feasibility,
+- cost overruns reduce profit but do not eliminate it,
+- and scale assumptions can be missed without collapse.
+
+This does *not* mean success is guaranteed.
+
+It means the decision can survive being wrong.
+
+
+### What Robust Profit Does—and Does Not—Mean
+
+Robust profit does *not* mean:
+
+- the business will dominate the market,
+- competition will not respond,
+- or execution will be easy.
+
+It means something more modest and more important:
+
+> *The economics of the design are strong enough to justify commitment despite uncertainty.*
+
+Robust profit widens the margin for learning.  
+It gives the venture time to adapt.
+
+That is often the most valuable feature of all.
+
+
+
+
+
+## What Not to Do When Reading a Profit Curve
+
+Before moving on, it is worth naming a few common misinterpretations.
+
+Do *not*:
+
+- treat the highest point on the curve as a recommendation,
+- assume the curve predicts future outcomes,
+- read precision into estimates that are inherently uncertain,
+- or equate a positive region with validation.
+
+A profit curve is an **input to judgment**, not a substitute for it.
+
+
+## What This Toolkit Deliberately Stops Short Of
+
+This toolkit ends once you can correctly recognize:
+
+- impossible profit,
+- fragile profit,
+- and robust profit.
+
+It does *not* tell you:
+
+- what to change,
+- what to test next,
+- or whether to proceed.
+
+Those questions require a different move.
+
+Once you can see fragility clearly, the next question becomes:
+
+> *Which assumptions deserve attention before committing further?*
+
+That is the role of sensitivity—not as an optimization tool, but as a guide for learning and staging commitment.
+
+The [next toolkit](tk10_sensitivity_decide.qmd) begins exactly there.

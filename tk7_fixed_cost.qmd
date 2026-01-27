@@ -1,7 +1,6 @@
-# Esimtate Fixed Costs as Commitments {#sec-toolkit-fixed-cost-chapter .unnumbered}
+# Estimate Fixed Costs as Commitments {#sec-toolkit-fixed-cost-chapter .unnumbered}
 
 #### *What You Commit to Before Knowing What Will Sell*
-
 
 This toolkit supports one narrow but critical task:
 
@@ -17,12 +16,11 @@ This toolkit exists to surface those commitments deliberately.
 
 ::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
 This toolkit is a practical companion to [Chapter 9: Cost](ch9_cost.qmd).  
-It helps you estimate variable cost per unit—the quantity that feeds directly into profit reasoning and into the [Profit Analytics app](https://rconnect.byu.edu/ProfitAnalytics).
+It helps you surface fixed cost commitments—the obligations that shape exposure, break-even, and downside risk in profit reasoning and in the [Profit Analytics app](https://rconnect.byu.edu/ProfitAnalytics).
 
 The goal is not accounting accuracy.  
 The goal is decision-grade feasibility.
 :::
-
 
 
 
@@ -42,10 +40,7 @@ It does assume that:
 - those costs create exposure when demand disappoints,
 - and reversing them is often slow, costly, or impossible.
 
-This toolkit helps you see those commitments clearly.
-
-
-
+This toolkit helps you see those commitments clearly—*before* they bind.
 
 
 
@@ -58,10 +53,7 @@ Every fixed cost estimate begins with a different question than variable cost:
 If a cost is incurred because a customer buys, it is not fixed.  
 If a cost is incurred because *you decided to move forward*, it probably is.
 
-This distinction matters more than accounting labels.
-
-
-
+This distinction matters more than accounting labels, because it determines *who bears the risk* when demand falls short.
 
 
 
@@ -86,9 +78,6 @@ These are *commitment mechanisms*, not requirements.
 If a mechanism does not apply, leave it blank.
 
 *Blank means “not committed,” not “overlooked.”*
-
-
-
 
 
 
@@ -127,7 +116,7 @@ Examples include:
 - compliance requirements,
 - certifications or regulatory approvals.
 
-These costs do not depend on how many customers buy.
+These costs do not depend on how many customers buy.  
 They depend on whether you choose to play.
 
 
@@ -136,12 +125,13 @@ They depend on whether you choose to play.
 > *What capabilities must exist before I can sell at all?*
 
 Examples include:
+
 - internal systems and tooling,
 - software subscriptions (including AI),
 - brand development,
 - intellectual property filings.
 
-These costs are often rationalized as “investments.”
+These costs are often rationalized as “investments.”  
 They are still commitments.
 
 
@@ -156,7 +146,7 @@ Examples include:
 - minimum service agreements,
 - insurance premiums.
 
-Time is often the binding constraint—not dollars.
+Time is often the binding constraint—not dollars.  
 A short-term commitment may be far less risky than a long one at the same cost.
 
 
@@ -171,11 +161,8 @@ Examples include:
 - benefits and payroll overhead,
 - legal and administrative support.
 
-Omitting these costs does not make them disappear.
+Omitting these costs does not make them disappear.  
 It only hides the exposure.
-
-
-
 
 
 
@@ -183,7 +170,7 @@ It only hides the exposure.
 
 One effective way to practice this discipline is to keep a working commitment table.
 
-This is not a budget.
+This is not a budget.  
 It is a thinking aid.
 
 Columns might represent:
@@ -197,7 +184,7 @@ For each commitment, record:
 - the timing of the commitment,
 - and how reversible it is.
 
-Some commitments may be clear.
+Some commitments may be clear.  
 Others may be fuzzy or conditional.
 
 That is fine.
@@ -210,8 +197,8 @@ If a category does not apply, leave it blank—and say why.
 
 ### Example: A Working Fixed Cost Commitment Table (Illustrative)
 
-The table below shows one way to surface fixed cost commitments.
-It is not complete, correct, or prescriptive.
+The table below shows one way to surface fixed cost commitments.  
+It is not complete, correct, or prescriptive.  
 Its purpose is to make exposure visible.
 
 | Commitment Category | Cost Element | Estimate (per period) | Reversibility | Notes |
@@ -233,28 +220,23 @@ Blank means *not committed*, not *forgotten*.
 
 
 
-
-
-
 ## From Commitments to Decision-Grade Fixed Cost
 
 This table is not meant to produce a single “correct” fixed cost number.
 
-Its purpose is to clarify exposure—so you can see which commitments dominate risk, which are reversible, and which assumptions matter most.
+Its purpose is to clarify exposure—so you can see:
+
+- which commitments dominate risk,
+- which are hardest to reverse,
+- and which can be delayed until uncertainty is reduced.
 
 A fixed cost estimate becomes *decision-grade* when you can reasonably answer three questions:
 
 - Which commitments create the greatest exposure if demand disappoints?
 - Which commitments are hardest to reverse?
-- Which commitments can be delayed until uncertainty is reduced?
-
-If one early commitment determines survival, it deserves scrutiny.
-If another can be staged or deferred, it may be less urgent.
+- Which commitments can be delayed without undermining learning?
 
 At this stage, understanding *irreversibility* matters more than minimizing cost.
-
-
-
 
 
 
@@ -269,13 +251,10 @@ Common warning signs include:
 - treating compliance or access costs as minor,
 - assuming scale will arrive before commitments bind.
 
-These are not errors of intent.
+These are not errors of intent.  
 They are predictable blind spots.
 
 This toolkit exists to surface them early—before they become irreversible.
-
-
-
 
 
 
@@ -283,10 +262,10 @@ This toolkit exists to surface them early—before they become irreversible.
 
 Fixed costs determine how much demand must exist *before* profit becomes possible.
 
-They create thresholds, break-even points, and exposure to error.
+They create thresholds, break-even points, and exposure to error.  
 They are the primary source of downside risk in early ventures.
 
-Estimating fixed costs carefully does not eliminate uncertainty.
+Estimating fixed costs carefully does not eliminate uncertainty.  
 But estimating them implicitly guarantees surprise.
 
 Once fixed commitments are explicit, profit reasoning can honestly assess whether the expected rewards justify the exposure.

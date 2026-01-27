@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./competition.html" rel="next">
+<link href="./tk9_read_profit.html" rel="next">
 <link href="./tk7_fixed_cost.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -281,19 +281,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Esimtate Variable Cost per Unit</span></a>
+ <span class="menu-text">Estimate Variable Cost per Unit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk7_fixed_cost.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Esimtate Fixed Costs as Commitments</span></a>
+ <span class="menu-text">Estimate Fixed Costs as Commitments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk8_scaling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Making Scale Explicit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk9_read_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Read a Profit Curve for Feasibility and Fragility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
       </ul>
@@ -440,28 +452,18 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="estimating-target-population-without-pretending-to-know-the-market" class="level4">
 <h4 class="anchored" data-anchor-id="estimating-target-population-without-pretending-to-know-the-market"><em>Estimating Target Population Without Pretending to Know the Market</em></h4>
-<p>Profit reasoning requires demand, cost, and scale to be expressed at the same level.</p>
-<p>Demand is usually learned from a <strong>sample</strong>.<br>
-Costs—especially fixed costs—are often incurred to serve a <strong>population</strong>.</p>
-<p>Scale is the bridge between the two.</p>
-<p>This toolkit exists to help you make that bridge explicit.</p>
-<p>It does <em>not</em> ask you to predict growth.<br>
-It does <em>not</em> ask you to estimate market share.<br>
-It does <em>not</em> assume you are building a large company.</p>
+<p>Profit reasoning only works when demand, cost, and scale are expressed at the same level.</p>
+<p>Demand is almost always learned from a <strong>sample</strong>. Costs—especially fixed costs—are usually incurred to serve a <strong>population</strong>.</p>
+<p>Scale is what connects those two facts.</p>
+<p>This toolkit exists to make that connection explicit.</p>
+<p>It does not ask you to forecast growth. It does not ask you to estimate market share. It does not assume you are building a large company.</p>
 <p>Instead, it helps you answer a narrower but unavoidable question:</p>
 <blockquote class="blockquote">
-<p><em>What scale of demand is this design being asked to support—and is that scale plausible given what we know?</em></p>
+<p><em>What scale of demand is this design being asked to support—and is that scale plausible given what we know right now?</em></p>
 </blockquote>
-<p>Sometimes the answer is:</p>
-<ul>
-<li>a small, self-sustaining venture,<br>
-</li>
-<li>a staged path toward larger commitments, or<br>
-</li>
-<li>a design that only works at scale.</li>
-</ul>
+<p>Sometimes the answer points to a small, self-sustaining venture. Sometimes it suggests a staged path toward larger commitments. Sometimes it reveals a design that only works at scale.</p>
 <p>All three are valid outcomes.</p>
-<p>What matters is that scale assumptions are <em>visible, deliberate, and testable</em>—not implicit.</p>
+<p>What matters is that scale assumptions are visible, deliberate, and testable—rather than implicit and accidental.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="How this toolkit fits">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -498,9 +500,9 @@ How this toolkit fits
 <li>Demand learned from early adopters; costs assume a staffed organization.</li>
 <li>Demand and costs both expressed per unit (no mismatch).</li>
 </ul>
-<p>If demand and cost are already aligned, no scaling is required.</p>
-<p>If they are not, scaling is unavoidable.</p>
-<p>This step prevents a common error: <em>asking a small sample of customers to carry population-level commitments.</em></p>
+<p>If demand and cost are already aligned, no scaling is required.<br>
+If they are not, scaling is unavoidable.</p>
+<p>This step prevents a common and dangerous error: <em>asking a small sample of customers to carry the cost of population-level commitments.</em></p>
 </section>
 <section id="step-2-define-the-service-population-not-the-market" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-define-the-service-population-not-the-market">Step 2: Define the Service Population (Not the Market)</h2>
@@ -523,13 +525,12 @@ How this toolkit fits
 <li>professional and niche,</li>
 <li>or broad but hard to reach.</li>
 </ul>
-<p>If a constraint does not apply, leave it blank—and say why.</p>
-<p>Blank means <em>not triggered</em>, not <em>forgotten</em>.</p>
+<p>If a constraint does not apply, leave it blank—and say why. Blank means <em>“not triggered”</em>, not <em>“forgotten”</em>.</p>
 <p>The easiest way to make these constraints explicit is to write them down.</p>
 <p>The table below shows what this looks like in practice.</p>
 <section id="demonstration-of-defining-the-service-population-scaling-demand-up" class="level4">
 <h4 class="anchored" data-anchor-id="demonstration-of-defining-the-service-population-scaling-demand-up">Demonstration of Defining the Service Population (Scaling Demand Up)</h4>
-<p>This table is used when demand is learned from a <strong>sample</strong>, but costs bind at a <strong>population level</strong>.</p>
+<p>This table is used when demand is learned from a sample, but costs bind at a population level.</p>
 <p>Its purpose is not to size a market, but to make population constraints explicit.</p>
 <table class="table">
 <colgroup>
@@ -554,7 +555,7 @@ How this toolkit fits
 <td>Geographic boundary</td>
 <td>75,000</td>
 <td>High</td>
-<td>Residents of Springville, UT</td>
+<td>Residents of Lehi, UT</td>
 </tr>
 <tr class="even">
 <td>People reachable</td>
@@ -595,24 +596,22 @@ It is the population to which demand may be <em>scaled</em> when evaluating fixe
 <h2 class="anchored" data-anchor-id="step-3-separate-population-from-adoption">Step 3: Separate Population from Adoption</h2>
 <p>Population answers <em>who could buy</em>.<br>
 Adoption answers <em>who chooses to buy</em>.</p>
-<p>Do <em>not</em> estimate adoption directly.</p>
-<p>Adoption emerges later from:</p>
+<p>These are different questions, and confusing them is one of the fastest ways to introduce false precision.</p>
+<p>Do <em>not</em> estimate adoption directly. Adoption emerges later from:</p>
 <ul>
 <li>price,</li>
 <li>demand shape,</li>
 <li>and competition.</li>
 </ul>
-<p>At this stage, your task is only to define the population that demand will eventually be scaled to—<em>if the design is pursued</em>.</p>
+<p>At this stage, your task is only to define the population demand would be scaled to <em>if the design is pursued</em>—not to guess how much of that population will convert.</p>
 <p>This keeps scale assumptions disciplined and avoids market-share guessing.</p>
 </section>
 <section id="step-4-align-demand-to-the-cost-commitments-being-evaluated" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-align-demand-to-the-cost-commitments-being-evaluated">Step 4: Align Demand to the Cost Commitments Being Evaluated</h2>
-<p>Once demand and cost are expressed at different levels, they must be aligned.</p>
-<p>In practice, this almost always means <em>scaling demand to the level implied by the cost commitments you are evaluating</em>.</p>
-<p>That is the default move.</p>
-<p>Fixed costs—whether large or small—are not artifacts to be allocated.<br>
-They are commitments that define the scale at which the venture must work.</p>
-<p>The task, therefore, is not to “choose a scaling trick,” but to be clear about <em>which commitments are under consideration</em>.</p>
+<p>Once demand and cost are expressed at different levels, they must be aligned before profit can be evaluated.</p>
+<p>In practice, this almost always means <em>scaling demand to the level implied by the cost commitments under consideration</em>.</p>
+<p>That is not a modeling trick. It is a consequence of taking commitments seriously.</p>
+<p>Fixed costs—large or small—are not artifacts to be allocated. They are decisions that define the scale at which the venture must work.</p>
 <section id="the-dominant-case-scale-demand-up" class="level3">
 <h3 class="anchored" data-anchor-id="the-dominant-case-scale-demand-up">The Dominant Case: Scale Demand Up</h3>
 <p>In most entrepreneurial decisions, fixed costs are incurred to serve a population larger than the original sample. In these cases, demand must be scaled up to that population before profit can be evaluated meaningfully.</p>
@@ -638,7 +637,7 @@ It asks whether the data—appropriately scaled—can justify the design as it e
 <section id="a-rare-exception-when-scaling-disappears" class="level3">
 <h3 class="anchored" data-anchor-id="a-rare-exception-when-scaling-disappears">A Rare Exception: When Scaling Disappears</h3>
 <p>In a small number of businesses, both demand and cost are already expressed <em>per unit at market scale</em>.</p>
-<p>This occurs when:</p>
+<p>This may occur when:</p>
 <ul>
 <li>production is handled through contract manufacturing,</li>
 <li>costs are usage-based or per-transaction,</li>
@@ -662,14 +661,8 @@ It means scale has been assumed earlier—through the cost model rather than thr
 </section>
 <section id="step-5-acknowledge-staged-commitment-paths" class="level2">
 <h2 class="anchored" data-anchor-id="step-5-acknowledge-staged-commitment-paths">Step 5: Acknowledge Staged Commitment Paths</h2>
-<p>Some ventures are intentionally designed to operate with:</p>
-<ul>
-<li>zero or near-zero fixed costs,</li>
-<li>founder labor substituted for infrastructure,</li>
-<li>and narrow scale.</li>
-</ul>
-<p>This is not a flaw.</p>
-<p>It is a <em>strategy</em>.</p>
+<p>Some ventures are intentionally designed to operate with very low fixed costs in their early stages.</p>
+<p>This is not a loophole. It is a deliberate strategic choice.</p>
 <p>In these cases, the scale question becomes:</p>
 <blockquote class="blockquote">
 <p><em>Can this design generate sufficient margin at small scale to sustain the venture long enough to justify the next commitment?</em></p>
@@ -681,7 +674,7 @@ It means scale has been assumed earlier—through the cost model rather than thr
 <li>what breaks first,</li>
 <li>and what must be true to advance responsibly.</li>
 </ul>
-<p>Low commitment does not mean no commitment.</p>
+<p>Low commitment does not mean <em>no</em> commitment—it means <em>different exposure.</em></p>
 <p>The table below shows how to name fixed costs honestly at the stage you are actually operating.</p>
 <section id="demonstration-of-fixed-costs-at-the-current-commitment-stage" class="level4">
 <h4 class="anchored" data-anchor-id="demonstration-of-fixed-costs-at-the-current-commitment-stage">Demonstration of Fixed Costs at the Current Commitment Stage</h4>
@@ -749,7 +742,7 @@ They are <em>deliberate commitments</em> whose justification depends on scaled d
 </section>
 <section id="step-6-produce-decision-grade-scale-bounds" class="level2">
 <h2 class="anchored" data-anchor-id="step-6-produce-decision-grade-scale-bounds">Step 6: Produce Decision-Grade Scale Bounds</h2>
-<p>Your output should not be a single number.</p>
+<p>The output of this toolkit should not be a single number.</p>
 <p>It should be:</p>
 <ul>
 <li>a <em>conservative lower bound</em>,</li>
@@ -767,7 +760,7 @@ They are <em>deliberate commitments</em> whose justification depends on scaled d
 <li>you know which assumptions are fragile,</li>
 <li>and you know how wrong you could be before profit reasoning changes.</li>
 </ul>
-<p>That is enough.</p>
+<p>That level of clarity is sufficient for responsible profit reasoning.</p>
 </section>
 <section id="step-7-connect-scale-to-profit-reasoning" class="level2">
 <h2 class="anchored" data-anchor-id="step-7-connect-scale-to-profit-reasoning">Step 7: Connect Scale to Profit Reasoning</h2>
@@ -777,12 +770,12 @@ They are <em>deliberate commitments</em> whose justification depends on scaled d
 </blockquote>
 <p>If the answer is:</p>
 <ul>
-<li><em>yes, even under error</em> → proceed deliberately.</li>
-<li><em>only if everything goes right</em> → redesign or delay.</li>
-<li><em>no, under any reasonable assumption</em> → stop or rethink.</li>
+<li><em>yes, even under error,</em> proceed deliberately.</li>
+<li><em>only if everything goes right,</em> redesign or delay.</li>
+<li><em>no, under any reasonable assumption,</em> stop or rethink.</li>
 </ul>
-<p>Scale does not validate ideas.<br>
-It disciplines commitment.</p>
+<p>Scale does not validate ideas.</p>
+<p>It disciplines commitment.</p>
 
 
 </section>
@@ -1189,13 +1182,13 @@ It disciplines commitment.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./tk7_fixed_cost.html" class="pagination-link" aria-label="Esimtate Fixed Costs as Commitments">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Esimtate Fixed Costs as Commitments</span>
+      <a href="./tk7_fixed_cost.html" class="pagination-link" aria-label="Estimate Fixed Costs as Commitments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Estimate Fixed Costs as Commitments</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./competition.html" class="pagination-link" aria-label="Competition">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tk9_read_profit.html" class="pagination-link" aria-label="Read a Profit Curve for Feasibility and Fragility">
+        <span class="nav-page-text">Read a Profit Curve for Feasibility and Fragility</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

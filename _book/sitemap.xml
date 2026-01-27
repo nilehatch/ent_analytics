@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch5_demand.html</loc>
-    <lastmod>2026-01-22T15:40:48.347Z</lastmod>
+    <lastmod>2026-01-26T14:28:03.138Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch6_design_experiment.html</loc>
@@ -70,7 +70,7 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch10_scale.html</loc>
-    <lastmod>2026-01-22T02:32:40.287Z</lastmod>
+    <lastmod>2026-01-23T22:51:49.352Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/ch11_profit.html</loc>
@@ -82,15 +82,23 @@
   </url>
   <url>
     <loc>https://ei.nilehatch.com/part_profit_toolkits.html</loc>
-    <lastmod>2026-01-22T21:49:47.056Z</lastmod>
+    <lastmod>2026-01-27T17:06:16.122Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/tk6_variable_cost.html</loc>
-    <lastmod>2026-01-23T17:18:27.783Z</lastmod>
+    <lastmod>2026-01-27T15:37:34.144Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/tk7_fixed_cost.html</loc>
-    <lastmod>2026-01-23T17:25:52.891Z</lastmod>
+    <lastmod>2026-01-27T15:53:11.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/tk8_scaling.html</loc>
+    <lastmod>2026-01-27T16:07:46.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ei.nilehatch.com/tk9_read_profit.html</loc>
+    <lastmod>2026-01-27T17:59:08.388Z</lastmod>
   </url>
   <url>
     <loc>https://ei.nilehatch.com/competition.html</loc>
@@ -141,7 +149,7 @@
     <lastmod>2025-01-02T02:01:52.000Z</lastmod>
   </url>
   <url>
-    <loc>https://ei.nilehatch.com/tk8_scaling.html</loc>
-    <lastmod>2026-01-23T22:48:12.932Z</lastmod>
+    <loc>https://ei.nilehatch.com/tk10_sensitivity_decide.html</loc>
+    <lastmod>2026-01-27T15:37:56.245Z</lastmod>
   </url>
 </urlset>

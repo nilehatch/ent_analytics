@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Esimtate Variable Cost per Unit – Is This Worth Doing?</title>
+<title>Estimate Variable Cost per Unit – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk6_variable_cost.html">Esimtate Variable Cost per Unit</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk6_variable_cost.html">Estimate Variable Cost per Unit</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,13 +281,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Esimtate Variable Cost per Unit</span></a>
+ <span class="menu-text">Estimate Variable Cost per Unit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk7_fixed_cost.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Esimtate Fixed Costs as Commitments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk8_scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Scale Explicit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk9_read_profit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Read a Profit Curve for Feasibility and Fragility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
       </ul>
@@ -418,9 +436,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk6_variable_cost.html">Esimtate Variable Cost per Unit</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk6_variable_cost.html">Estimate Variable Cost per Unit</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-toolkit-variable-cost-chapter" class="quarto-section-identifier">Esimtate Variable Cost per Unit</span></h1>
+<h1 class="title"><span id="sec-toolkit-variable-cost-chapter" class="quarto-section-identifier">Estimate Variable Cost per Unit</span></h1>
 </div>
 
 
@@ -556,7 +574,13 @@ The trigger is the same.</p>
 <blockquote class="blockquote">
 <p><em>What costs are incurred when a sale occurs?</em></p>
 </blockquote>
-<p>Examples include: - payment processing fees, - platform or marketplace fees, - per-transaction sales incentives, - discounts that reduce realized revenue.</p>
+<p>Examples include:</p>
+<ul>
+<li>payment processing fees,</li>
+<li>platform or marketplace fees,</li>
+<li>per-transaction sales incentives,</li>
+<li>discounts that reduce realized revenue.</li>
+</ul>
 <p>Price discounts belong here.<br>
 They are not “strategy”—they are negative revenue triggered by transactions.</p>
 </section>
@@ -572,7 +596,8 @@ They are not “strategy”—they are negative revenue triggered by transaction
 <li>warranty claims, returns, or replacements,</li>
 <li>service recovery when things go wrong.</li>
 </ul>
-<p>Many of these costs are <strong>probabilistic</strong>. They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.</p>
+<p>Many of these costs are <strong>probabilistic</strong>.<br>
+They occur only for some customers—but ignoring them is equivalent to assuming the probability is zero.</p>
 </section>
 <section id="acquisition-when-truly-per-unit" class="level3">
 <h3 class="anchored" data-anchor-id="acquisition-when-truly-per-unit">5. Acquisition (When Truly Per-Unit)</h3>
@@ -585,14 +610,16 @@ They are not “strategy”—they are negative revenue triggered by transaction
 <li>commissions,</li>
 <li>referral payments.</li>
 </ul>
-<p>Not all marketing spend is variable. Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.</p>
+<p>Not all marketing spend is variable.<br>
+Treating fixed branding costs as per-unit costs is a modeling choice—not a fact.</p>
 <p>Be explicit when you make that choice.</p>
 </section>
 </section>
 <section id="a-discipline-for-surfacing-costs" class="level2">
 <h2 class="anchored" data-anchor-id="a-discipline-for-surfacing-costs">A Discipline for Surfacing Costs</h2>
 <p>One effective way to practice this discipline is to keep a working cost table.</p>
-<p>This is not an accounting statement. It is a thinking aid.</p>
+<p>This is not an accounting statement.<br>
+It is a thinking aid.</p>
 <p>Columns might represent:</p>
 <ul>
 <li>cost triggers (like the categories above),</li>
@@ -606,11 +633,14 @@ They are not “strategy”—they are negative revenue triggered by transaction
 <p>Some entries may be well-known.<br>
 Others may be weak guesses.</p>
 <p>That is fine.</p>
-<p>The danger is not guessing. The danger is omitting.</p>
+<p>The danger is not guessing.<br>
+The danger is omitting.</p>
 <p>If a category does not apply, leave it blank—and say why.</p>
 <section id="example-a-working-variable-cost-table-illustrative" class="level3">
 <h3 class="anchored" data-anchor-id="example-a-working-variable-cost-table-illustrative">Example: A Working Variable Cost Table (Illustrative)</h3>
-<p>The table below shows <strong>one way</strong> to surface variable cost components. It is not complete, correct, or prescriptive. Its purpose is to make the discipline concrete.</p>
+<p>The table below shows <strong>one way</strong> to surface variable cost components.<br>
+It is not complete, correct, or prescriptive.<br>
+Its purpose is to make the discipline concrete.</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -686,7 +716,8 @@ Some are blank.</p>
 <li>Which components are most uncertain?</li>
 <li>How wrong could these estimates be before feasibility changes?</li>
 </ul>
-<p>If small errors in one row would reverse your conclusion, that row deserves attention. If large uncertainty in another row barely matters, further precision is unnecessary.</p>
+<p>If small errors in one row would reverse your conclusion, that row deserves attention.<br>
+If large uncertainty in another row barely matters, further precision is unnecessary.</p>
 <p>At this stage, clarity about <em>sensitivity</em> matters more than numerical precision.</p>
 </section>
 </section>
@@ -718,15 +749,18 @@ Some are blank.</p>
 <li>treating discounts as “marketing” rather than cost,</li>
 <li>or assuming scale will solve margins automatically.</li>
 </ul>
-<p>These are not moral failures. They are predictable blind spots.</p>
+<p>These are not moral failures.<br>
+They are predictable blind spots.</p>
 <p>This toolkit exists to surface them early—when they are still cheap to fix.</p>
 </section>
 <section id="why-this-matters-for-profit-reasoning" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters-for-profit-reasoning">Why This Matters for Profit Reasoning</h2>
 <p>Variable cost sets a hard boundary on feasibility.</p>
 <p>If price does not exceed variable cost, selling more makes the situation worse.</p>
-<p>This is why variable cost is reintroduced before fixed costs and profit. It determines which parts of the demand curve are even worth considering.</p>
-<p>Estimating variable cost carefully does not guarantee success. But estimating it carelessly can guarantee failure.</p>
+<p>This is why variable cost is reintroduced before fixed costs and profit.<br>
+It determines which parts of the demand curve are even worth considering.</p>
+<p>Estimating variable cost carefully does not guarantee success.<br>
+But estimating it carelessly can guarantee failure.</p>
 <p>Once variable cost is understood, attention can turn to fixed costs—where commitment, irreversibility, and risk truly enter the decision.</p>
 
 

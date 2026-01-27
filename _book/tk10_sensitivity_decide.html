@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Demand Toolkits – Is This Worth Doing?</title>
+<title>Use Sensitivity to Decide What to Learn Next – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./tk1_frame_problem.html" rel="next">
-<link href="./ch8_estimate_demand.html" rel="prev">
+<link href="./competition.html" rel="next">
+<link href="./tk9_read_profit.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_demand_toolkits.html">Demand Toolkits</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk10_sensitivity_decide.html">Use Sensitivity to Decide What to Learn Next</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,13 +195,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part_demand_toolkits.html" class="sidebar-item-text sidebar-link active">
+            <a href="./part_demand_toolkits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Demand Toolkits</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
@@ -273,15 +273,15 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./part_profit_toolkits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profit Toolkits</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Esimtate Variable Cost per Unit</span></a>
+ <span class="menu-text">Estimate Variable Cost per Unit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -300,6 +300,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./tk9_read_profit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Read a Profit Curve for Feasibility and Fragility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
       </ul>
@@ -406,19 +412,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-the-toolkits-are" id="toc-what-the-toolkits-are" class="nav-link active" data-scroll-target="#what-the-toolkits-are">What the Toolkits Are</a></li>
-  <li><a href="#how-the-toolkits-are-meant-to-be-used" id="toc-how-the-toolkits-are-meant-to-be-used" class="nav-link" data-scroll-target="#how-the-toolkits-are-meant-to-be-used">How the Toolkits Are Meant to Be Used</a></li>
-  <li><a href="#a-note-on-discipline" id="toc-a-note-on-discipline" class="nav-link" data-scroll-target="#a-note-on-discipline">A Note on Discipline</a></li>
-  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward">Moving Forward</a></li>
+  <li><a href="#step-1-treat-every-input-as-a-belief-not-a-fact" id="toc-step-1-treat-every-input-as-a-belief-not-a-fact" class="nav-link active" data-scroll-target="#step-1-treat-every-input-as-a-belief-not-a-fact">Step 1: Treat Every Input as a Belief, Not a Fact</a></li>
+  <li><a href="#step-2-ask-the-right-sensitivity-question" id="toc-step-2-ask-the-right-sensitivity-question" class="nav-link" data-scroll-target="#step-2-ask-the-right-sensitivity-question">Step 2: Ask the Right Sensitivity Question</a></li>
+  <li><a href="#step-3-vary-one-assumption-at-a-timedeliberately" id="toc-step-3-vary-one-assumption-at-a-timedeliberately" class="nav-link" data-scroll-target="#step-3-vary-one-assumption-at-a-timedeliberately">Step 3: Vary One Assumption at a Time—Deliberately</a></li>
+  <li><a href="#step-4-identify-decision-critical-assumptions" id="toc-step-4-identify-decision-critical-assumptions" class="nav-link" data-scroll-target="#step-4-identify-decision-critical-assumptions">Step 4: Identify Decision-Critical Assumptions</a></li>
+  <li><a href="#step-5-sort-assumptions-by-actionability" id="toc-step-5-sort-assumptions-by-actionability" class="nav-link" data-scroll-target="#step-5-sort-assumptions-by-actionability">Step 5: Sort Assumptions by Actionability</a></li>
+  <li><a href="#step-6-decide-the-next-responsible-move" id="toc-step-6-decide-the-next-responsible-move" class="nav-link" data-scroll-target="#step-6-decide-the-next-responsible-move">Step 6: Decide the Next Responsible Move</a></li>
+  <li><a href="#step-7-use-sensitivity-to-allocate-attention-not-precision" id="toc-step-7-use-sensitivity-to-allocate-attention-not-precision" class="nav-link" data-scroll-target="#step-7-use-sensitivity-to-allocate-attention-not-precision">Step 7: Use Sensitivity to Allocate Attention, Not Precision</a></li>
+  <li><a href="#what-this-toolkit-refuses-to-do" id="toc-what-this-toolkit-refuses-to-do" class="nav-link" data-scroll-target="#what-this-toolkit-refuses-to-do">What This Toolkit Refuses to Do</a></li>
+  <li><a href="#where-this-leaves-the-decision" id="toc-where-this-leaves-the-decision" class="nav-link" data-scroll-target="#where-this-leaves-the-decision">Where This Leaves the Decision</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk10_sensitivity_decide.html">Use Sensitivity to Decide What to Learn Next</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-demand_toolkit-part" class="quarto-section-identifier">Demand Toolkits</span></h1>
+<h1 class="title"><span id="sec-toolkit-sensitivity" class="quarto-section-identifier">Use Sensitivity to Decide What to Learn Next</span></h1>
 </div>
 
 
@@ -435,53 +446,171 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Up to this point, the book has focused on how to think about pre-revenue decisions:<br>
-what makes them difficult, where uncertainty actually lives, and why demand must be learned deliberately rather than assumed.</p>
-<p>The sections that follow shift the emphasis.</p>
-<p>This part of the book contains <em>toolkits</em>—practical guides designed to help you apply the ideas from the chapters to real decisions. They are not optional add-ons. They are where disciplined reasoning becomes usable action.</p>
-<section id="what-the-toolkits-are" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-toolkits-are">What the Toolkits Are</h2>
-<p>Each toolkit is designed to support a specific stage of demand learning:</p>
+<section id="turning-fragility-into-learning-priorities" class="level4">
+<h4 class="anchored" data-anchor-id="turning-fragility-into-learning-priorities"><em>Turning Fragility Into Learning Priorities</em></h4>
+<p>Once profit has been correctly interpreted, the question changes.</p>
+<p>The question is no longer whether profit is possible or fragile.</p>
+<p>It becomes:</p>
+<blockquote class="blockquote">
+<p><em>Which assumptions matter enough to justify learning, delay, or redesign—before committing further?</em></p>
+</blockquote>
+<p>This toolkit exists to answer that question.</p>
+<p>It does not help you optimize profit.<br>
+It helps you <strong>decide what to pay attention to next</strong>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="How this toolkit fits">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How this toolkit fits
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This toolkit builds directly on the toolkit for <a href="./tk9_read_profit.html"><em>reading a profit curve</em></a>.</p>
+<p>It assumes you can already recognize:</p>
 <ul>
-<li>framing the decision and the uncertainty that matters,</li>
-<li>designing evidence that could plausibly reduce that uncertainty,</li>
-<li>and validating whether the evidence you gathered deserves your confidence.</li>
+<li>impossible profit,</li>
+<li>fragile profit,</li>
+<li>and robust profit.</li>
 </ul>
-<p>The toolkits are intentionally concrete. They include checklists, structures, and guidance that can be used directly in practice.</p>
-<p>They do <em>not</em> promise certainty. They help you avoid unnecessary ignorance.</p>
+<p>Sensitivity does not replace that judgment. It sharpens it by revealing <em>where being wrong would matter most</em>.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="how-the-toolkits-are-meant-to-be-used" class="level2">
-<h2 class="anchored" data-anchor-id="how-the-toolkits-are-meant-to-be-used">How the Toolkits Are Meant to Be Used</h2>
-<p>The toolkits are not meant to be read straight through.</p>
-<p>You will often move:</p>
+<section id="step-1-treat-every-input-as-a-belief-not-a-fact" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-treat-every-input-as-a-belief-not-a-fact">Step 1: Treat Every Input as a Belief, Not a Fact</h2>
+<p>Profit estimates rest on assumptions.</p>
+<p>Some are well supported.<br>
+Others are weak guesses.<br>
+All are uncertain.</p>
+<p>Sensitivity analysis begins by reframing inputs as beliefs rather than facts:</p>
 <ul>
-<li>from a chapter to a toolkit,</li>
-<li>back to a chapter,</li>
-<li>and forward again once clarity improves.</li>
+<li>demand shape,</li>
+<li>willingness to pay,</li>
+<li>variable cost per unit,</li>
+<li>fixed commitments,</li>
+<li>scale and access assumptions.</li>
 </ul>
-<p>This is by design.</p>
-<p>If a toolkit feels difficult to complete, that usually means the decision or learning problem has not yet been framed clearly enough. That is not a failure. It is a signal to slow down and revisit earlier choices.</p>
+<p>The goal is not to eliminate uncertainty.<br>
+It is to understand <em>which uncertainty matters</em>.</p>
 </section>
-<section id="a-note-on-discipline" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-discipline">A Note on Discipline</h2>
-<p>It can be tempting to skip directly to surveys, models, or apps.</p>
-<p>Resist that impulse.</p>
-<p>Each toolkit exists to protect you from a specific kind of mistake:</p>
+<section id="step-2-ask-the-right-sensitivity-question" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-ask-the-right-sensitivity-question">Step 2: Ask the Right Sensitivity Question</h2>
+<p>Sensitivity is often misunderstood.</p>
+<p>The question is <em>not</em>:</p>
+<blockquote class="blockquote">
+<p><em>Which variable moves profit the most?</em></p>
+</blockquote>
+<p>The correct question is:</p>
+<blockquote class="blockquote">
+<p><em>Which assumption, if wrong, would change the decision?</em></p>
+</blockquote>
+<p>An assumption can be</p>
 <ul>
-<li>answering the wrong question,</li>
-<li>collecting evidence that cannot be interpreted,</li>
-<li>or acting confidently on fragile results.</li>
+<li>highly uncertain but low consequence, or</li>
+<li>fairly certain but catastrophic if wrong.</li>
 </ul>
-<p>Using the toolkits does not guarantee success.<br>
-Skipping them makes failure more likely—and harder to diagnose.</p>
+<p>Sensitivity focuses on consequence, not likelihood.</p>
 </section>
-<section id="moving-forward" class="level2">
-<h2 class="anchored" data-anchor-id="moving-forward">Moving Forward</h2>
-<p>The chapters and toolkits are designed to work together.</p>
-<p>The chapters explain <em>why</em> something matters.<br>
-The toolkits show <em>how</em> to act on it responsibly.</p>
-<p>If you find yourself wondering, “What should I do next?”<br>
-you are probably in the right place.</p>
+<section id="step-3-vary-one-assumption-at-a-timedeliberately" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-vary-one-assumption-at-a-timedeliberately">Step 3: Vary One Assumption at a Time—Deliberately</h2>
+<p>To learn from sensitivity, change one assumption at a time while holding others fixed.</p>
+<p>Typical candidates include:</p>
+<ul>
+<li>demand slope (price sensitivity),</li>
+<li>maximum willingness to pay,</li>
+<li>variable cost per unit,</li>
+<li>fixed cost magnitude or timing,</li>
+<li>achievable scale or access.</li>
+</ul>
+<p>For each variation, observe:</p>
+<ul>
+<li>whether profit disappears,</li>
+<li>whether fragility worsens,</li>
+<li>or whether robustness remains.</li>
+</ul>
+<p>The goal is not realism. The goal is exposure.</p>
+</section>
+<section id="step-4-identify-decision-critical-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-identify-decision-critical-assumptions">Step 4: Identify Decision-Critical Assumptions</h2>
+<p>An assumption is <em>decision-critical</em> if:</p>
+<ul>
+<li>small changes reverse feasibility, or</li>
+<li>reasonable error collapses profit, or</li>
+<li>robustness depends heavily on it being “just right.”</li>
+</ul>
+<p>These assumptions deserve attention.</p>
+<p>Others—even if uncertain—may not.</p>
+</section>
+<section id="step-5-sort-assumptions-by-actionability" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-sort-assumptions-by-actionability">Step 5: Sort Assumptions by Actionability</h2>
+<p>Not all sensitive assumptions should be treated the same.</p>
+<p>Ask:</p>
+<ul>
+<li><em>Can this assumption be tested further?</em></li>
+<li><em>Can it be influenced by design?</em></li>
+<li><em>Can commitment be delayed until it is clearer?</em></li>
+<li><em>Is it largely outside our control?</em></li>
+</ul>
+<p>This step prevents wasted effort.</p>
+<p>Sensitivity without judgment leads to anxiety. Sensitivity with judgment leads to strategy.</p>
+</section>
+<section id="step-6-decide-the-next-responsible-move" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-decide-the-next-responsible-move">Step 6: Decide the Next Responsible Move</h2>
+<p>Sensitivity analysis does not tell you what to do.<br>
+It tells you what it would be irresponsible to ignore.</p>
+<p>Common responses include:</p>
+<ul>
+<li><p><strong>Experiment</strong><br>
+When a sensitive assumption can be tested cheaply.</p></li>
+<li><p><strong>Delay commitment</strong><br>
+When fragility is high but learning is ongoing.</p></li>
+<li><p><strong>Redesign</strong><br>
+When the structure itself creates unnecessary exposure.</p></li>
+<li><p><strong>Proceed deliberately</strong><br>
+When robustness exists despite uncertainty.</p></li>
+<li><p><strong>Stop</strong><br>
+When the decision fails under any reasonable assumption.</p></li>
+</ul>
+<p>Each response is valid. What matters is that it is chosen consciously.</p>
+</section>
+<section id="step-7-use-sensitivity-to-allocate-attention-not-precision" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-use-sensitivity-to-allocate-attention-not-precision">Step 7: Use Sensitivity to Allocate Attention, Not Precision</h2>
+<p>Sensitivity analysis is not about fine-tuning numbers.</p>
+<p>It is about deciding:</p>
+<ul>
+<li>what deserves more evidence,</li>
+<li>what can be tolerated as uncertain,</li>
+<li>and what must be resolved before commitment.</li>
+</ul>
+<p>Time, money, and focus are scarce.</p>
+<p>Sensitivity helps you spend them where they matter most.</p>
+</section>
+<section id="what-this-toolkit-refuses-to-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-toolkit-refuses-to-do">What This Toolkit Refuses to Do</h2>
+<p>This toolkit does <em>not</em>: - forecast future outcomes, - or guarantee success.</p>
+<p>It exists for a narrower—and more important—purpose:</p>
+<blockquote class="blockquote">
+<p><em>To prevent commitment based on fragile assumptions that have not earned that privilege.</em></p>
+</blockquote>
+</section>
+<section id="where-this-leaves-the-decision" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-leaves-the-decision">Where This Leaves the Decision</h2>
+<p>By the end of this toolkit, you should be able to say:</p>
+<ul>
+<li>which assumptions your decision depends on most,</li>
+<li>how much error you can tolerate,</li>
+<li>and whether further learning is warranted before committing.</li>
+</ul>
+<p>At that point, analytics has done its job.</p>
+<p>What remains is judgment.</p>
+<p>Sensitivity does not remove uncertainty.<br>
+It ensures you know <em>where uncertainty still matters</em>.</p>
+<p>That is the discipline that makes pre-revenue decisions responsible rather than hopeful.</p>
 
 
 </section>
@@ -888,13 +1017,13 @@ you are probably in the right place.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch8_estimate_demand.html" class="pagination-link" aria-label="Estimating Demand">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></span>
+      <a href="./tk9_read_profit.html" class="pagination-link" aria-label="Read a Profit Curve for Feasibility and Fragility">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Read a Profit Curve for Feasibility and Fragility</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./tk1_frame_problem.html" class="pagination-link" aria-label="Framing a Demand Learning Problem">
-        <span class="nav-page-text">Framing a Demand Learning Problem</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./competition.html" class="pagination-link" aria-label="Competition">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

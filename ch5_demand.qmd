@@ -61,7 +61,7 @@ Implicit in this question are two choices that matter later: what counts as one 
 #| label: fig-basic-demand
 #| echo: false
 #| warning: false
-#| fig-cap: "A Basic Demand Curve: Q = 2000 - 2P"
+#| fig-cap: "A Basic Demand Curve: Q = 2500 - 2P"
 #| fig-align: center
 
 

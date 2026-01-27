@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Demand Toolkits – Is This Worth Doing?</title>
+<title>Read a Profit Curve for Feasibility and Fragility – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./tk1_frame_problem.html" rel="next">
-<link href="./ch8_estimate_demand.html" rel="prev">
+<link href="./tk10_sensitivity_decide.html" rel="next">
+<link href="./tk8_scaling.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_demand_toolkits.html">Demand Toolkits</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk9_read_profit.html">Read a Profit Curve for Feasibility and Fragility</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,13 +195,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part_demand_toolkits.html" class="sidebar-item-text sidebar-link active">
+            <a href="./part_demand_toolkits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Demand Toolkits</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk1_frame_problem.html" class="sidebar-item-text sidebar-link">
@@ -273,21 +273,21 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./part_profit_toolkits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Profit Toolkits</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Esimtate Variable Cost per Unit</span></a>
+ <span class="menu-text">Estimate Variable Cost per Unit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk7_fixed_cost.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Esimtate Fixed Costs as Commitments</span></a>
+ <span class="menu-text">Estimate Fixed Costs as Commitments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -298,8 +298,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tk9_read_profit.html" class="sidebar-item-text sidebar-link">
+  <a href="./tk9_read_profit.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Read a Profit Curve for Feasibility and Fragility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
       </ul>
@@ -406,19 +412,33 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-the-toolkits-are" id="toc-what-the-toolkits-are" class="nav-link active" data-scroll-target="#what-the-toolkits-are">What the Toolkits Are</a></li>
-  <li><a href="#how-the-toolkits-are-meant-to-be-used" id="toc-how-the-toolkits-are-meant-to-be-used" class="nav-link" data-scroll-target="#how-the-toolkits-are-meant-to-be-used">How the Toolkits Are Meant to Be Used</a></li>
-  <li><a href="#a-note-on-discipline" id="toc-a-note-on-discipline" class="nav-link" data-scroll-target="#a-note-on-discipline">A Note on Discipline</a></li>
-  <li><a href="#moving-forward" id="toc-moving-forward" class="nav-link" data-scroll-target="#moving-forward">Moving Forward</a></li>
+  <li><a href="#what-this-toolkit-is-and-is-not" id="toc-what-this-toolkit-is-and-is-not" class="nav-link active" data-scroll-target="#what-this-toolkit-is-and-is-not">What This Toolkit Is (and Is Not)</a></li>
+  <li><a href="#a-profit-curve-is-a-map-not-a-verdict" id="toc-a-profit-curve-is-a-map-not-a-verdict" class="nav-link" data-scroll-target="#a-profit-curve-is-a-map-not-a-verdict">A Profit Curve Is a Map, Not a Verdict</a></li>
+  <li><a href="#what-youll-see-in-the-app" id="toc-what-youll-see-in-the-app" class="nav-link" data-scroll-target="#what-youll-see-in-the-app">What You’ll See in the App</a></li>
+  <li><a href="#the-first-question-to-ask-is-profit-even-possible" id="toc-the-first-question-to-ask-is-profit-even-possible" class="nav-link" data-scroll-target="#the-first-question-to-ask-is-profit-even-possible">The First Question to Ask: Is Profit Even Possible?</a></li>
+  <li><a href="#case-1-when-profit-is-impossible" id="toc-case-1-when-profit-is-impossible" class="nav-link" data-scroll-target="#case-1-when-profit-is-impossible">Case 1: When Profit Is Impossible</a></li>
+  <li><a href="#case-2-when-profit-exists-but-is-fragile" id="toc-case-2-when-profit-exists-but-is-fragile" class="nav-link" data-scroll-target="#case-2-when-profit-exists-but-is-fragile">Case 2: When Profit Exists but Is Fragile</a>
+  <ul class="collapse">
+  <li><a href="#what-fragile-profit-means" id="toc-what-fragile-profit-means" class="nav-link" data-scroll-target="#what-fragile-profit-means">What Fragile Profit Means</a></li>
+  <li><a href="#two-common-forms-of-fragility" id="toc-two-common-forms-of-fragility" class="nav-link" data-scroll-target="#two-common-forms-of-fragility">Two Common Forms of Fragility</a></li>
+  <li><a href="#why-fragile-profit-is-more-dangerous-than-impossible-profit" id="toc-why-fragile-profit-is-more-dangerous-than-impossible-profit" class="nav-link" data-scroll-target="#why-fragile-profit-is-more-dangerous-than-impossible-profit">Why Fragile Profit Is More Dangerous Than Impossible Profit</a></li>
+  <li><a href="#the-key-distinction-sign-vs.-sensitivity" id="toc-the-key-distinction-sign-vs.-sensitivity" class="nav-link" data-scroll-target="#the-key-distinction-sign-vs.-sensitivity">The Key Distinction: Sign vs.&nbsp;Sensitivity</a></li>
+  </ul></li>
+  <li><a href="#case-3-when-profit-appears-robust" id="toc-case-3-when-profit-appears-robust" class="nav-link" data-scroll-target="#case-3-when-profit-appears-robust">Case 3: When Profit Appears Robust</a>
+  <ul class="collapse">
+  <li><a href="#what-robust-profit-doesand-does-notmean" id="toc-what-robust-profit-doesand-does-notmean" class="nav-link" data-scroll-target="#what-robust-profit-doesand-does-notmean">What Robust Profit Does—and Does Not—Mean</a></li>
+  </ul></li>
+  <li><a href="#what-not-to-do-when-reading-a-profit-curve" id="toc-what-not-to-do-when-reading-a-profit-curve" class="nav-link" data-scroll-target="#what-not-to-do-when-reading-a-profit-curve">What Not to Do When Reading a Profit Curve</a></li>
+  <li><a href="#what-this-toolkit-deliberately-stops-short-of" id="toc-what-this-toolkit-deliberately-stops-short-of" class="nav-link" data-scroll-target="#what-this-toolkit-deliberately-stops-short-of">What This Toolkit Deliberately Stops Short Of</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Profit Toolkits</a></li><li class="breadcrumb-item"><a href="./tk9_read_profit.html">Read a Profit Curve for Feasibility and Fragility</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-demand_toolkit-part" class="quarto-section-identifier">Demand Toolkits</span></h1>
+<h1 class="title"><span id="sec-toolkit-read-profit" class="quarto-section-identifier">Read a Profit Curve for Feasibility and Fragility</span></h1>
 </div>
 
 
@@ -435,53 +455,312 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Up to this point, the book has focused on how to think about pre-revenue decisions:<br>
-what makes them difficult, where uncertainty actually lives, and why demand must be learned deliberately rather than assumed.</p>
-<p>The sections that follow shift the emphasis.</p>
-<p>This part of the book contains <em>toolkits</em>—practical guides designed to help you apply the ideas from the chapters to real decisions. They are not optional add-ons. They are where disciplined reasoning becomes usable action.</p>
-<section id="what-the-toolkits-are" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-toolkits-are">What the Toolkits Are</h2>
-<p>Each toolkit is designed to support a specific stage of demand learning:</p>
+<section id="interpreting-what-the-analysis-is-actually-telling-you" class="level4">
+<h4 class="anchored" data-anchor-id="interpreting-what-the-analysis-is-actually-telling-you"><em>Interpreting What the Analysis Is Actually Telling You</em></h4>
+<p>Profit analytics produces curves, numbers, and apparent “answers.”</p>
+<p>This toolkit teaches you how to read those outputs without mistaking them for conclusions.</p>
+<p>It does not compute profit.<br>
+It does not optimize profit.<br>
+It does not predict outcomes.</p>
+<p>Instead, it helps you answer a prior and more fundamental question:</p>
+<blockquote class="blockquote">
+<p><em>What kind of decision is this, given what the profit curve actually shows?</em></p>
+</blockquote>
+<p>Before asking <em>what to do</em>, you must first understand <em>what you are seeing</em>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="How this toolkit fits">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How this toolkit fits
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This toolkit is a companion to <a href="./ch11_profit.html">Chapter 11: Profit</a> and <a href="./ch12_profit_reasoning.html">Chapter 12: Profit Reasoning</a>.</p>
+<p>It focuses on <em>interpretation</em>, not execution:</p>
 <ul>
-<li>framing the decision and the uncertainty that matters,</li>
-<li>designing evidence that could plausibly reduce that uncertainty,</li>
-<li>and validating whether the evidence you gathered deserves your confidence.</li>
+<li>how to read profit curves produced by the analysis or the app,</li>
+<li>how to recognize feasibility, fragility, and robustness,</li>
+<li>and how to avoid mistaking a visual result for a recommendation.</li>
 </ul>
-<p>The toolkits are intentionally concrete. They include checklists, structures, and guidance that can be used directly in practice.</p>
-<p>They do <em>not</em> promise certainty. They help you avoid unnecessary ignorance.</p>
+<p>It pairs directly with the default outputs of the <a href="https://rconnect.byu.edu/ProfitAnalytics"><strong>Profit Analytics app</strong></a>.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="how-the-toolkits-are-meant-to-be-used" class="level2">
-<h2 class="anchored" data-anchor-id="how-the-toolkits-are-meant-to-be-used">How the Toolkits Are Meant to Be Used</h2>
-<p>The toolkits are not meant to be read straight through.</p>
-<p>You will often move:</p>
+<section id="what-this-toolkit-is-and-is-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-toolkit-is-and-is-not">What This Toolkit Is (and Is Not)</h2>
+<p>This toolkit teaches recognition, not action.</p>
+<p>It helps you learn to see:</p>
 <ul>
-<li>from a chapter to a toolkit,</li>
-<li>back to a chapter,</li>
-<li>and forward again once clarity improves.</li>
+<li>when profit is impossible,</li>
+<li>when profit exists but is fragile,</li>
+<li>and when profit appears robust enough to justify commitment.</li>
 </ul>
-<p>This is by design.</p>
-<p>If a toolkit feels difficult to complete, that usually means the decision or learning problem has not yet been framed clearly enough. That is not a failure. It is a signal to slow down and revisit earlier choices.</p>
-</section>
-<section id="a-note-on-discipline" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-discipline">A Note on Discipline</h2>
-<p>It can be tempting to skip directly to surveys, models, or apps.</p>
-<p>Resist that impulse.</p>
-<p>Each toolkit exists to protect you from a specific kind of mistake:</p>
+<p>It does <em>not</em> tell you:</p>
 <ul>
-<li>answering the wrong question,</li>
-<li>collecting evidence that cannot be interpreted,</li>
-<li>or acting confidently on fragile results.</li>
+<li>which price to choose,</li>
+<li>whether to proceed,</li>
+<li>or what experiment to run next.</li>
 </ul>
-<p>Using the toolkits does not guarantee success.<br>
-Skipping them makes failure more likely—and harder to diagnose.</p>
+<p>Those decisions come later.</p>
+<p>If you skip this interpretive step, everything that follows—optimization, sensitivity analysis, even intuition—rests on a misreading of the situation.</p>
 </section>
-<section id="moving-forward" class="level2">
-<h2 class="anchored" data-anchor-id="moving-forward">Moving Forward</h2>
-<p>The chapters and toolkits are designed to work together.</p>
-<p>The chapters explain <em>why</em> something matters.<br>
-The toolkits show <em>how</em> to act on it responsibly.</p>
-<p>If you find yourself wondering, “What should I do next?”<br>
-you are probably in the right place.</p>
+<section id="a-profit-curve-is-a-map-not-a-verdict" class="level2">
+<h2 class="anchored" data-anchor-id="a-profit-curve-is-a-map-not-a-verdict">A Profit Curve Is a Map, Not a Verdict</h2>
+<p>A profit curve shows profit as a function of price, given:</p>
+<ul>
+<li>a demand curve learned from evidence,</li>
+<li>a cost structure defined by commitments,</li>
+<li>and a scale assumption made explicit.</li>
+</ul>
+<p>It is a conditional object.</p>
+<p>Every point on the curve answers the same conditional question:</p>
+<blockquote class="blockquote">
+<p><em>If demand behaves like this,<br>
+and costs are structured like this,<br>
+and if scale is what we’ve assumed,<br>
+then profit would look like this.</em></p>
+</blockquote>
+<p>That is all it claims.</p>
+<p>A profit curve does <em>not</em>:</p>
+<ul>
+<li>assert that any price will be chosen,</li>
+<li>guarantee that demand will materialize,</li>
+<li>or validate the venture as “good” or “bad.”</li>
+</ul>
+<p>Like any map, it simplifies reality in order to make structure visible.</p>
+</section>
+<section id="what-youll-see-in-the-app" class="level2">
+<h2 class="anchored" data-anchor-id="what-youll-see-in-the-app">What You’ll See in the App</h2>
+<p>The Profit Analytics app visualizes profit as a function of price.</p>
+<p>This toolkit assumes you are looking at a profit curve that looks <em>like this</em>.</p>
+<div data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-cap-location="bottom" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tk-read-profit-app-baseline-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tk-read-profit-app-baseline-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="tk9_read_profit_files/figure-html/fig-tk-read-profit-app-baseline-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tk-read-profit-app-baseline-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A baseline profit curve: profit π(P) across prices with a clear zero-profit reference line.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tk-read-profit-app-baseline-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tk-read-profit-app-baseline-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="tk9_read_profit_files/figure-html/fig-tk-read-profit-app-baseline-2.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tk-read-profit-app-baseline-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Three common shapes: impossible profit, fragile profit, and robust profit (illustrative).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-first-question-to-ask-is-profit-even-possible" class="level2">
+<h2 class="anchored" data-anchor-id="the-first-question-to-ask-is-profit-even-possible">The First Question to Ask: Is Profit Even Possible?</h2>
+<p>Before looking for a “best” price, ask a simpler question:</p>
+<blockquote class="blockquote">
+<p><em>Does the profit curve ever cross zero?</em></p>
+</blockquote>
+<p>This divides all outcomes into two fundamentally different cases:</p>
+<ol type="1">
+<li><p><strong>Profit is impossible</strong><br>
+Profit is negative at every price.</p></li>
+<li><p><strong>Profit is possible</strong><br>
+Profit becomes positive at least somewhere on the curve.</p></li>
+</ol>
+<p>Everything else in this toolkit builds on that distinction.</p>
+<p>If profit is impossible, optimization is meaningless.<br>
+If profit is possible, interpretation still matters.</p>
+</section>
+<section id="case-1-when-profit-is-impossible" class="level2">
+<h2 class="anchored" data-anchor-id="case-1-when-profit-is-impossible">Case 1: When Profit Is Impossible</h2>
+<p>Profit is impossible when the curve never rises above zero.</p>
+<p>This is not an error.<br>
+It is a diagnosis.</p>
+<p>It means:</p>
+<blockquote class="blockquote">
+<p><em>Given the current assumptions about demand, cost, and scale,<br>
+there is no price at which this design can support its commitments.</em></p>
+</blockquote>
+<p>This result is often emotionally jarring, especially for entrepreneurs who have invested time, energy, or identity into the idea.</p>
+<p>But analytically, it is one of the most valuable outcomes profit reasoning can produce.</p>
+<p>Impossible profit typically arises from one of two structural problems:</p>
+<ul>
+<li><p><strong>Negative margins</strong><br>
+Revenue never exceeds variable cost. Selling more only deepens losses.</p></li>
+<li><p><strong>Unsupportable fixed costs</strong><br>
+Contribution exists, but scaled demand cannot support the commitments being assumed.</p></li>
+</ul>
+<p>Importantly, “weak demand” does not appear as a separate case.<br>
+Weak demand matters only insofar as it fails to clear costs or scale.</p>
+<p>If profit is impossible, the correct response is <em>not</em> to search for a better price.</p>
+<p>The correct response is to ask:</p>
+<ul>
+<li><em>Which assumption is doing the damage?</em></li>
+<li><em>What would need to change for profit to become possible?</em></li>
+<li><em>Are those changes within our control—or even desirable?</em></li>
+</ul>
+<p>Sometimes the answer is redesign.<br>
+Sometimes it is delay.<br>
+Sometimes it is to stop.</p>
+<p>None of those outcomes represent analytical failure.</p>
+</section>
+<section id="case-2-when-profit-exists-but-is-fragile" class="level2">
+<h2 class="anchored" data-anchor-id="case-2-when-profit-exists-but-is-fragile">Case 2: When Profit Exists but Is Fragile</h2>
+<p>When the profit curve crosses zero, the immediate reaction is often relief.</p>
+<p>There is at least one price at which the venture appears viable.</p>
+<p>But this relief is often premature.</p>
+<p>Profit that exists <em>somewhere</em> is not the same as profit that can <em>support commitment</em>.</p>
+<section id="what-fragile-profit-means" class="level3">
+<h3 class="anchored" data-anchor-id="what-fragile-profit-means">What Fragile Profit Means</h3>
+<p>Profit is fragile when it depends on:</p>
+<ul>
+<li>a very narrow range of prices,</li>
+<li>highly specific demand assumptions,</li>
+<li>precise execution with little room for error,</li>
+<li>or optimistic beliefs about scale and access.</li>
+</ul>
+<p>In these cases, profit is technically possible—but structurally exposed.</p>
+<p>Fragile profit is not rare.<br>
+It is the most common outcome in early entrepreneurial analysis.</p>
+</section>
+<section id="two-common-forms-of-fragility" class="level3">
+<h3 class="anchored" data-anchor-id="two-common-forms-of-fragility">Two Common Forms of Fragility</h3>
+<p>Fragile profit typically appears in one of two visual patterns.</p>
+<p><strong>1. Thin Demand, Low Commitments</strong></p>
+<p>In this case:</p>
+<ul>
+<li>variable and fixed costs are relatively low,</li>
+<li>demand exists but is shallow,</li>
+<li>profit is positive only within a narrow price window.</li>
+</ul>
+<p>A small change in price, competition, or customer behavior pushes profit back below zero.</p>
+<p>The venture survives only if many things go right at once.</p>
+<p><strong>2. Strong Demand, Heavy Commitments</strong></p>
+<p>In this case:</p>
+<ul>
+<li>contribution margins are positive,</li>
+<li>demand appears strong at scale,</li>
+<li>but fixed costs are large.</li>
+</ul>
+<p>Profit exists only if demand materializes at or above the assumed scale.<br>
+Any shortfall quickly erases surplus.</p>
+<p>These two cases <em>look different</em>, but they share the same logic:</p>
+<blockquote class="blockquote">
+<p><em>The decision works only if error is small.</em></p>
+</blockquote>
+</section>
+<section id="why-fragile-profit-is-more-dangerous-than-impossible-profit" class="level3">
+<h3 class="anchored" data-anchor-id="why-fragile-profit-is-more-dangerous-than-impossible-profit">Why Fragile Profit Is More Dangerous Than Impossible Profit</h3>
+<p>Impossible profit is clear.</p>
+<p>It tells you the design does not work <em>as structured</em>.</p>
+<p>Fragile profit is deceptive.</p>
+<p>Because profit exists somewhere, it invites</p>
+<ul>
+<li>confidence precisely where caution is warranted,</li>
+<li>selective attention to favorable assumptions,</li>
+<li>and pressure to “optimize” rather than rethink.</li>
+</ul>
+<p>This is where entrepreneurs are most likely to mistake analytics for validation.</p>
+<p>A thin positive region on the curve can feel like permission—when it is actually a warning.</p>
+</section>
+<section id="the-key-distinction-sign-vs.-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="the-key-distinction-sign-vs.-sensitivity">The Key Distinction: Sign vs.&nbsp;Sensitivity</h3>
+<p>At this stage, the most important question is <em>not</em>:</p>
+<blockquote class="blockquote">
+<p><em>Is profit positive?</em></p>
+</blockquote>
+<p>It is:</p>
+<blockquote class="blockquote">
+<p><em>How sensitive is profit to being wrong?</em></p>
+</blockquote>
+<p>Fragile profit is not defined by the sign of profit, but by its <strong>exposure to error</strong>.</p>
+<p>When profit is fragile:</p>
+<ul>
+<li>small demand errors matter a lot,</li>
+<li>small cost overruns matter a lot,</li>
+<li>small scaling shortfalls matter a lot.</li>
+</ul>
+<p>None of these errors are unusual.</p>
+<p>Fragility fails not because entrepreneurs are careless, but because uncertainty is unavoidable.</p>
+</section>
+</section>
+<section id="case-3-when-profit-appears-robust" class="level2">
+<h2 class="anchored" data-anchor-id="case-3-when-profit-appears-robust">Case 3: When Profit Appears Robust</h2>
+<p>Robust profit is not common—but it is distinctive.</p>
+<p>A profit curve appears robust when:</p>
+<ul>
+<li>profit is positive across a wide range of prices,</li>
+<li>reasonable demand error does not reverse feasibility,</li>
+<li>cost overruns reduce profit but do not eliminate it,</li>
+<li>and scale assumptions can be missed without collapse.</li>
+</ul>
+<p>This does <em>not</em> mean success is guaranteed.</p>
+<p>It means the decision can survive being wrong.</p>
+<section id="what-robust-profit-doesand-does-notmean" class="level3">
+<h3 class="anchored" data-anchor-id="what-robust-profit-doesand-does-notmean">What Robust Profit Does—and Does Not—Mean</h3>
+<p>Robust profit does <em>not</em> mean:</p>
+<ul>
+<li>the business will dominate the market,</li>
+<li>competition will not respond,</li>
+<li>or execution will be easy.</li>
+</ul>
+<p>It means something more modest and more important:</p>
+<blockquote class="blockquote">
+<p><em>The economics of the design are strong enough to justify commitment despite uncertainty.</em></p>
+</blockquote>
+<p>Robust profit widens the margin for learning.<br>
+It gives the venture time to adapt.</p>
+<p>That is often the most valuable feature of all.</p>
+</section>
+</section>
+<section id="what-not-to-do-when-reading-a-profit-curve" class="level2">
+<h2 class="anchored" data-anchor-id="what-not-to-do-when-reading-a-profit-curve">What Not to Do When Reading a Profit Curve</h2>
+<p>Before moving on, it is worth naming a few common misinterpretations.</p>
+<p>Do <em>not</em>:</p>
+<ul>
+<li>treat the highest point on the curve as a recommendation,</li>
+<li>assume the curve predicts future outcomes,</li>
+<li>read precision into estimates that are inherently uncertain,</li>
+<li>or equate a positive region with validation.</li>
+</ul>
+<p>A profit curve is an <strong>input to judgment</strong>, not a substitute for it.</p>
+</section>
+<section id="what-this-toolkit-deliberately-stops-short-of" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-toolkit-deliberately-stops-short-of">What This Toolkit Deliberately Stops Short Of</h2>
+<p>This toolkit ends once you can correctly recognize:</p>
+<ul>
+<li>impossible profit,</li>
+<li>fragile profit,</li>
+<li>and robust profit.</li>
+</ul>
+<p>It does <em>not</em> tell you:</p>
+<ul>
+<li>what to change,</li>
+<li>what to test next,</li>
+<li>or whether to proceed.</li>
+</ul>
+<p>Those questions require a different move.</p>
+<p>Once you can see fragility clearly, the next question becomes:</p>
+<blockquote class="blockquote">
+<p><em>Which assumptions deserve attention before committing further?</em></p>
+</blockquote>
+<p>That is the role of sensitivity—not as an optimization tool, but as a guide for learning and staging commitment.</p>
+<p>The <a href="./tk10_sensitivity_decide.html">next toolkit</a> begins exactly there.</p>
 
 
 </section>
@@ -888,13 +1167,13 @@ you are probably in the right place.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch8_estimate_demand.html" class="pagination-link" aria-label="Estimating Demand">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estimating Demand</span></span>
+      <a href="./tk8_scaling.html" class="pagination-link" aria-label="Making Scale Explicit">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Making Scale Explicit</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./tk1_frame_problem.html" class="pagination-link" aria-label="Framing a Demand Learning Problem">
-        <span class="nav-page-text">Framing a Demand Learning Problem</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tk10_sensitivity_decide.html" class="pagination-link" aria-label="Use Sensitivity to Decide What to Learn Next">
+        <span class="nav-page-text">Use Sensitivity to Decide What to Learn Next</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

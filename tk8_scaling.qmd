@@ -2,33 +2,31 @@
 
 #### *Estimating Target Population Without Pretending to Know the Market*
 
+Profit reasoning only works when demand, cost, and scale are expressed at the same level.
 
-Profit reasoning requires demand, cost, and scale to be expressed at the same level.
+Demand is almost always learned from a **sample**.
+Costs—especially fixed costs—are usually incurred to serve a **population**.
 
-Demand is usually learned from a **sample**.  
-Costs—especially fixed costs—are often incurred to serve a **population**.
+Scale is what connects those two facts.
 
-Scale is the bridge between the two.
+This toolkit exists to make that connection explicit.
 
-This toolkit exists to help you make that bridge explicit.
-
-It does *not* ask you to predict growth.  
-It does *not* ask you to estimate market share.  
-It does *not* assume you are building a large company.
+It does not ask you to forecast growth.
+It does not ask you to estimate market share.
+It does not assume you are building a large company.
 
 Instead, it helps you answer a narrower but unavoidable question:
 
-> *What scale of demand is this design being asked to support—and is that scale plausible given what we know?*
+> *What scale of demand is this design being asked to support—and is that scale plausible given what we know right now?*
 
-Sometimes the answer is:
-
-- a small, self-sustaining venture,  
-- a staged path toward larger commitments, or  
-- a design that only works at scale.
+Sometimes the answer points to a small, self-sustaining venture.
+Sometimes it suggests a staged path toward larger commitments.
+Sometimes it reveals a design that only works at scale.
 
 All three are valid outcomes.
 
-What matters is that scale assumptions are *visible, deliberate, and testable*—not implicit.
+What matters is that scale assumptions are visible, deliberate, and testable—rather than implicit and accidental.
+
 
 
 ::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
@@ -60,12 +58,10 @@ Examples:
 - Demand learned from early adopters; costs assume a staffed organization.
 - Demand and costs both expressed per unit (no mismatch).
 
-If demand and cost are already aligned, no scaling is required.
-
+If demand and cost are already aligned, no scaling is required.  
 If they are not, scaling is unavoidable.
 
-This step prevents a common error: *asking a small sample of customers to carry population-level commitments.*
-
+This step prevents a common and dangerous error: *asking a small sample of customers to carry the cost of population-level commitments.*
 
 
 
@@ -93,8 +89,7 @@ This population may be:
 - or broad but hard to reach.
 
 If a constraint does not apply, leave it blank—and say why.
-
-Blank means *not triggered*, not *forgotten*.
+Blank means *"not triggered"*, not *"forgotten"*.
 
 The easiest way to make these constraints explicit is to write them down.
 
@@ -102,13 +97,13 @@ The table below shows what this looks like in practice.
 
 #### Demonstration of Defining the Service Population (Scaling Demand Up)
 
-This table is used when demand is learned from a **sample**, but costs bind at a **population level**.
+This table is used when demand is learned from a sample, but costs bind at a population level.
 
 Its purpose is not to size a market, but to make population constraints explicit.
 
 | Population Layer | Constraint Applied | Estimated Count | Confidence | Notes / Rationale |
 |------------------|-------------------|-----------------|------------|-------------------|
-| Total people who exist | Geographic boundary | 75,000 | High | Residents of Springville, UT |
+| Total people who exist | Geographic boundary | 75,000 | High | Residents of Lehi, UT |
 | People reachable | Distribution / access | 12,000 | Medium | Only those near retail locations |
 | People eligible | Regulatory / eligibility | 12,000 | High | No additional constraints |
 | People likely to encounter the offer | Awareness / discoverability | 4,000 | Low | Depends on marketing effectiveness |
@@ -128,15 +123,16 @@ It is the population to which demand may be *scaled* when evaluating fixed commi
 Population answers *who could buy*.  
 Adoption answers *who chooses to buy*.
 
-Do *not* estimate adoption directly.
+These are different questions, and confusing them is one of the fastest ways to introduce false precision.
 
+Do *not* estimate adoption directly.
 Adoption emerges later from:
 
 - price,
 - demand shape,
 - and competition.
 
-At this stage, your task is only to define the population that demand will eventually be scaled to—*if the design is pursued*.
+At this stage, your task is only to define the population demand would be scaled to *if the design is pursued*—not to guess how much of that population will convert.
 
 This keeps scale assumptions disciplined and avoids market-share guessing.
 
@@ -148,16 +144,15 @@ This keeps scale assumptions disciplined and avoids market-share guessing.
 
 ## Step 4: Align Demand to the Cost Commitments Being Evaluated
 
-Once demand and cost are expressed at different levels, they must be aligned.
+Once demand and cost are expressed at different levels, they must be aligned before profit can be evaluated.
 
-In practice, this almost always means *scaling demand to the level implied by the cost commitments you are evaluating*.
+In practice, this almost always means *scaling demand to the level implied by the cost commitments under consideration*.
 
-That is the default move.
+That is not a modeling trick.
+It is a consequence of taking commitments seriously.
 
-Fixed costs—whether large or small—are not artifacts to be allocated.  
-They are commitments that define the scale at which the venture must work.
-
-The task, therefore, is not to “choose a scaling trick,” but to be clear about *which commitments are under consideration*.
+Fixed costs—large or small—are not artifacts to be allocated.
+They are decisions that define the scale at which the venture must work.
 
 
 ### The Dominant Case: Scale Demand Up
@@ -193,7 +188,7 @@ It asks whether the data—appropriately scaled—can justify the design as it e
 
 In a small number of businesses, both demand and cost are already expressed *per unit at market scale*.
 
-This occurs when:
+This may occur when:
 
 - production is handled through contract manufacturing,
 - costs are usage-based or per-transaction,
@@ -227,15 +222,10 @@ Profit reasoning only works when demand, cost, and scale are aligned *deliberate
 
 ## Step 5: Acknowledge Staged Commitment Paths
 
-Some ventures are intentionally designed to operate with:
+Some ventures are intentionally designed to operate with very low fixed costs in their early stages.
 
-- zero or near-zero fixed costs,
-- founder labor substituted for infrastructure,
-- and narrow scale.
-
-This is not a flaw.
-
-It is a *strategy*.
+This is not a loophole.
+It is a deliberate strategic choice.
 
 In these cases, the scale question becomes:
 
@@ -249,7 +239,7 @@ Sensitivity analysis then becomes a tool for asking:
 - what breaks first,
 - and what must be true to advance responsibly.
 
-Low commitment does not mean no commitment.
+Low commitment does not mean *no* commitment—it means *different exposure.*
 
 The table below shows how to name fixed costs honestly at the stage you are actually operating.
 
@@ -277,7 +267,7 @@ They are *deliberate commitments* whose justification depends on scaled demand.
 
 ## Step 6: Produce Decision-Grade Scale Bounds
 
-Your output should not be a single number.
+The output of this toolkit should not be a single number.
 
 It should be:
 
@@ -296,7 +286,7 @@ A scale estimate is decision-grade when:
 - you know which assumptions are fragile,
 - and you know how wrong you could be before profit reasoning changes.
 
-That is enough.
+That level of clarity is sufficient for responsible profit reasoning.
 
 
 
@@ -313,9 +303,11 @@ The final question this toolkit supports is not *“How big could this be?”* I
 
 If the answer is:
 
-- *yes, even under error* → proceed deliberately.
-- *only if everything goes right* → redesign or delay.
-- *no, under any reasonable assumption* → stop or rethink.
+- *yes, even under error,* proceed deliberately.
+- *only if everything goes right,* redesign or delay.
+- *no, under any reasonable assumption,* stop or rethink.
 
-Scale does not validate ideas.  
+Scale does not validate ideas.
+
 It disciplines commitment.
+

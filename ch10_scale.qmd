@@ -546,8 +546,7 @@ plot_scaled_correctly <- ggplot() +
 plot_scaling_mistake
 plot_scaled_correctly
 ```
-
-
+:::
 
 ## Bringing Scale Into the Decision
 

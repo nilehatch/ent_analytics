@@ -1,0 +1,219 @@
+# Use Sensitivity to Decide What to Learn Next {#sec-toolkit-sensitivity .unnumbered}
+
+#### *Turning Fragility Into Learning Priorities*
+
+Once profit has been correctly interpreted, the question changes.
+
+The question is no longer whether profit is possible or fragile.
+
+It becomes:
+
+> *Which assumptions matter enough to justify learning, delay, or redesign—before committing further?*
+
+This toolkit exists to answer that question.
+
+It does not help you optimize profit.  
+It helps you **decide what to pay attention to next**.
+
+
+::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
+This toolkit builds directly on the toolkit for [*reading a profit curve*](tk9_read_profit.qmd).
+
+It assumes you can already recognize:
+
+- impossible profit,
+- fragile profit,
+- and robust profit.
+
+Sensitivity does not replace that judgment.
+It sharpens it by revealing *where being wrong would matter most*.
+:::
+
+
+## Step 1: Treat Every Input as a Belief, Not a Fact
+
+Profit estimates rest on assumptions.
+
+Some are well supported.  
+Others are weak guesses.  
+All are uncertain.
+
+Sensitivity analysis begins by reframing inputs as beliefs rather than facts:
+
+- demand shape,
+- willingness to pay,
+- variable cost per unit,
+- fixed commitments,
+- scale and access assumptions.
+
+The goal is not to eliminate uncertainty.  
+It is to understand *which uncertainty matters*.
+
+
+
+
+
+
+## Step 2: Ask the Right Sensitivity Question
+
+Sensitivity is often misunderstood.
+
+The question is *not*:
+
+> *Which variable moves profit the most?*
+
+The correct question is:
+
+> *Which assumption, if wrong, would change the decision?*
+
+An assumption can be
+
+- highly uncertain but low consequence, or
+- fairly certain but catastrophic if wrong.
+
+Sensitivity focuses on consequence, not likelihood.
+
+
+
+
+
+
+## Step 3: Vary One Assumption at a Time—Deliberately
+
+To learn from sensitivity, change one assumption at a time while holding others fixed.
+
+Typical candidates include:
+
+- demand slope (price sensitivity),
+- maximum willingness to pay,
+- variable cost per unit,
+- fixed cost magnitude or timing,
+- achievable scale or access.
+
+For each variation, observe:
+
+- whether profit disappears,
+- whether fragility worsens,
+- or whether robustness remains.
+
+The goal is not realism.
+The goal is exposure.
+
+
+
+
+
+
+## Step 4: Identify Decision-Critical Assumptions
+
+An assumption is *decision-critical* if:
+
+- small changes reverse feasibility, or
+- reasonable error collapses profit, or
+- robustness depends heavily on it being “just right.”
+
+These assumptions deserve attention.
+
+Others—even if uncertain—may not.
+
+
+
+
+
+
+## Step 5: Sort Assumptions by Actionability
+
+Not all sensitive assumptions should be treated the same.
+
+Ask:
+
+- *Can this assumption be tested further?*
+- *Can it be influenced by design?*
+- *Can commitment be delayed until it is clearer?*
+- *Is it largely outside our control?*
+
+This step prevents wasted effort.
+
+Sensitivity without judgment leads to anxiety.
+Sensitivity with judgment leads to strategy.
+
+
+
+
+
+
+## Step 6: Decide the Next Responsible Move
+
+Sensitivity analysis does not tell you what to do.  
+It tells you what it would be irresponsible to ignore.
+
+Common responses include:
+
+- **Experiment**  
+  When a sensitive assumption can be tested cheaply.
+
+- **Delay commitment**  
+  When fragility is high but learning is ongoing.
+
+- **Redesign**  
+  When the structure itself creates unnecessary exposure.
+
+- **Proceed deliberately**  
+  When robustness exists despite uncertainty.
+
+- **Stop**  
+  When the decision fails under any reasonable assumption.
+
+Each response is valid.
+What matters is that it is chosen consciously.
+
+
+
+
+
+
+## Step 7: Use Sensitivity to Allocate Attention, Not Precision
+
+Sensitivity analysis is not about fine-tuning numbers.
+
+It is about deciding:
+
+- what deserves more evidence,
+- what can be tolerated as uncertain,
+- and what must be resolved before commitment.
+
+Time, money, and focus are scarce.
+
+Sensitivity helps you spend them where they matter most.
+
+
+## What This Toolkit Refuses to Do
+
+This toolkit does *not*:
+- forecast future outcomes,
+- or guarantee success.
+
+It exists for a narrower—and more important—purpose:
+
+> *To prevent commitment based on fragile assumptions that have not earned that privilege.*
+
+
+
+
+
+## Where This Leaves the Decision
+
+By the end of this toolkit, you should be able to say:
+
+- which assumptions your decision depends on most,
+- how much error you can tolerate,
+- and whether further learning is warranted before committing.
+
+At that point, analytics has done its job.
+
+What remains is judgment.
+
+Sensitivity does not remove uncertainty.  
+It ensures you know *where uncertainty still matters*.
+
+That is the discipline that makes pre-revenue decisions responsible rather than hopeful.
