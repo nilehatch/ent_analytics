@@ -215,8 +215,93 @@ plot_profit_shapes
 ```
 :::
 
+*“The app also shows revenue and cost curves, but this toolkit is focused on the profit curve because it is the decision object. In the sections below, you’ll learn to classify the curve first (impossible / fragile / robust) before you worry about what to change.”*
 
 
+::: {layout-ncol=2}
+
+```{r}
+#| label: fig-tk-profit-app-clean
+#| echo: false
+#| warning: false
+#| message: false
+#| layout-ncol: 2
+#| cap-location: bottom
+#| fig-cap:
+#|   - "Profit curve (π(P)) with a clear zero-profit reference line. The shape is what you interpret first."
+#|   - "Same scenario with revenue and cost overlaid. This helps explain *why* profit has its shape."
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+
+theme_use <- theme_hc()
+
+# ---- Example functions (stand-ins for your app's funcs) ----
+max_price <- 1300
+
+Q <- function(P) pmax(0, 2500 - 2*P)
+revenue_func <- function(P) P * Q(P)
+cost_func    <- function(P) 250000 + 200 * Q(P)     # F + cQ(P)
+profit_func  <- function(P) revenue_func(P) - cost_func(P)
+
+price_seq <- seq(0, max_price, length.out = 300)
+
+df <- data.frame(
+  Price  = price_seq,
+  Revenue = sapply(price_seq, revenue_func),
+  Cost    = sapply(price_seq, cost_func),
+  Profit  = sapply(price_seq, profit_func)
+)
+
+# "Optimal" marker (argmax over grid; good enough for illustration)
+i_star <- which.max(df$Profit)
+P_star <- df$Price[i_star]
+Pi_star <- df$Profit[i_star]
+
+# y-lims that *show negative profit*
+y_min <- min(df$Profit, 0)
+y_max <- max(df$Revenue, df$Cost, 0)
+pad   <- 0.06 * (y_max - y_min)
+y_min <- y_min - pad
+y_max <- y_max + pad
+
+# ---- Panel A: Profit-only ----
+p_profit_only <- ggplot(df, aes(x = Price)) +
+  geom_hline(yintercept = 0, linewidth = 0.7, color = "grey35") +
+  geom_line(aes(y = Profit), color = "forestgreen", linewidth = 2) +
+  geom_vline(xintercept = P_star, linetype = "dashed", color = "black") +
+  annotate("point", x = P_star, y = Pi_star, color = "black",
+           shape = 21, fill = "white", size = 3.5) +
+  annotate("label", x = P_star, y = Pi_star,
+           label = "Highest point\n(not a recommendation)",
+           vjust = -1.0, size = 3.3,
+           fill = "white", alpha = 0.85, label.size = 0.2) +
+  labs(x = "Price", y = "Profit  π(P)") +
+  scale_x_continuous(labels = dollar_format(), limits = c(0, max_price)) +
+  scale_y_continuous(labels = dollar_format(), limits = c(y_min, y_max)) +
+  coord_cartesian(expand = FALSE) +
+  theme_use
+
+# ---- Panel B: Overlay (Revenue, Cost, Profit) ----
+p_overlay <- ggplot(df, aes(x = Price)) +
+  geom_hline(yintercept = 0, linewidth = 0.7, color = "grey35") +
+  geom_line(aes(y = Revenue), color = "royalblue", linewidth = 2) +
+  geom_line(aes(y = Cost),    color = "tomato",   linewidth = 2) +
+  geom_line(aes(y = Profit),  color = "forestgreen", linewidth = 2) +
+  geom_vline(xintercept = P_star, linetype = "dashed", color = "black") +
+  annotate("point", x = P_star, y = Pi_star, color = "black",
+           shape = 21, fill = "white", size = 3.5) +
+  labs(x = "Price", y = "Dollars") +
+  scale_x_continuous(labels = dollar_format(), limits = c(0, max_price)) +
+  scale_y_continuous(labels = dollar_format(), limits = c(y_min, y_max)) +
+  coord_cartesian(expand = FALSE) +
+  theme_use
+
+p_profit_only
+p_overlay
+```
+:::
 
 
 

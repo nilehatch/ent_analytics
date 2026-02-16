@@ -35,22 +35,24 @@ p + p { margin-top: 0.6em; }
 }
 
 .quarto-title-block h1.title,
-.quarto-title-block .subtitle {
-  color: white;
-  border-bottom: none !important;
-  margin: 0 !important;
-}
 
 /* Subtitle style (muted but readable on banner) */
-.subtitle {
+/* Subtitle tuned for banner readability */
+.quarto-title-block .subtitle {
   display: block;
   font-size: 1.1rem;
   font-weight: 400;
   color: rgba(255,255,255,0.85);
-  margin-top: -0.25em;
-  margin-bottom: 1em;
+  border-bottom: none !important;
+  margin: 0 !important;
+
+  /* your spacing preferences */
+  margin-top: -0.25em !important;
+  margin-bottom: 1em !important;
+
   font-style: italic;
 }
+
 
 /* ---------- Breadcrumbs inside banner (single canonical block) ---------- */
 .quarto-title-block .quarto-title-breadcrumbs {

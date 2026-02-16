@@ -1883,6 +1883,17 @@
     ]
   },
   {
+    "objectID": "tk9_read_profit.html#what-youll-see-in-the-app",
+    "href": "tk9_read_profit.html#what-youll-see-in-the-app",
+    "title": "Read a Profit Curve for Feasibility and Fragility",
+    "section": "What You’ll See in the App",
+    "text": "What You’ll See in the App\nThe Profit Analytics app visualizes profit as a function of price.\nThis toolkit assumes you are looking at a profit curve that looks like this.\n\n\n\n\n\n\n\n\n\n\nFigure 1: A baseline profit curve: profit π(P) across prices with a clear zero-profit reference line.\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Three common shapes: impossible profit, fragile profit, and robust profit (illustrative).\n\n\n\n\n\n\n\n“The app also shows revenue and cost curves, but this toolkit is focused on the profit curve because it is the decision object. In the sections below, you’ll learn to classify the curve first (impossible / fragile / robust) before you worry about what to change.”\n\n\n\n\n\n\n\n\n\n\nFigure 3: Profit curve (π(P)) with a clear zero-profit reference line. The shape is what you interpret first.\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Same scenario with revenue and cost overlaid. This helps explain why profit has its shape.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Read a Profit Curve for Feasibility and Fragility"
+    ]
+  },
+  {
     "objectID": "tk9_read_profit.html#the-first-question-to-ask-is-profit-even-possible",
     "href": "tk9_read_profit.html#the-first-question-to-ask-is-profit-even-possible",
     "title": "Read a Profit Curve for Feasibility and Fragility",
@@ -1902,6 +1913,160 @@
     "crumbs": [
       "Profit Toolkits",
       "Read a Profit Curve for Feasibility and Fragility"
+    ]
+  },
+  {
+    "objectID": "tk9_read_profit.html#case-2-when-profit-exists-but-is-fragile",
+    "href": "tk9_read_profit.html#case-2-when-profit-exists-but-is-fragile",
+    "title": "Read a Profit Curve for Feasibility and Fragility",
+    "section": "Case 2: When Profit Exists but Is Fragile",
+    "text": "Case 2: When Profit Exists but Is Fragile\nWhen the profit curve crosses zero, the immediate reaction is often relief.\nThere is at least one price at which the venture appears viable.\nBut this relief is often premature.\nProfit that exists somewhere is not the same as profit that can support commitment.\n\nWhat Fragile Profit Means\nProfit is fragile when it depends on:\n\na very narrow range of prices,\nhighly specific demand assumptions,\nprecise execution with little room for error,\nor optimistic beliefs about scale and access.\n\nIn these cases, profit is technically possible—but structurally exposed.\nFragile profit is not rare.\nIt is the most common outcome in early entrepreneurial analysis.\n\n\nTwo Common Forms of Fragility\nFragile profit typically appears in one of two visual patterns.\n1. Thin Demand, Low Commitments\nIn this case:\n\nvariable and fixed costs are relatively low,\ndemand exists but is shallow,\nprofit is positive only within a narrow price window.\n\nA small change in price, competition, or customer behavior pushes profit back below zero.\nThe venture survives only if many things go right at once.\n2. Strong Demand, Heavy Commitments\nIn this case:\n\ncontribution margins are positive,\ndemand appears strong at scale,\nbut fixed costs are large.\n\nProfit exists only if demand materializes at or above the assumed scale.\nAny shortfall quickly erases surplus.\nThese two cases look different, but they share the same logic:\n\nThe decision works only if error is small.\n\n\n\nWhy Fragile Profit Is More Dangerous Than Impossible Profit\nImpossible profit is clear.\nIt tells you the design does not work as structured.\nFragile profit is deceptive.\nBecause profit exists somewhere, it invites\n\nconfidence precisely where caution is warranted,\nselective attention to favorable assumptions,\nand pressure to “optimize” rather than rethink.\n\nThis is where entrepreneurs are most likely to mistake analytics for validation.\nA thin positive region on the curve can feel like permission—when it is actually a warning.\n\n\nThe Key Distinction: Sign vs. Sensitivity\nAt this stage, the most important question is not:\n\nIs profit positive?\n\nIt is:\n\nHow sensitive is profit to being wrong?\n\nFragile profit is not defined by the sign of profit, but by its exposure to error.\nWhen profit is fragile:\n\nsmall demand errors matter a lot,\nsmall cost overruns matter a lot,\nsmall scaling shortfalls matter a lot.\n\nNone of these errors are unusual.\nFragility fails not because entrepreneurs are careless, but because uncertainty is unavoidable.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Read a Profit Curve for Feasibility and Fragility"
+    ]
+  },
+  {
+    "objectID": "tk9_read_profit.html#case-3-when-profit-appears-robust",
+    "href": "tk9_read_profit.html#case-3-when-profit-appears-robust",
+    "title": "Read a Profit Curve for Feasibility and Fragility",
+    "section": "Case 3: When Profit Appears Robust",
+    "text": "Case 3: When Profit Appears Robust\nRobust profit is not common—but it is distinctive.\nA profit curve appears robust when:\n\nprofit is positive across a wide range of prices,\nreasonable demand error does not reverse feasibility,\ncost overruns reduce profit but do not eliminate it,\nand scale assumptions can be missed without collapse.\n\nThis does not mean success is guaranteed.\nIt means the decision can survive being wrong.\n\nWhat Robust Profit Does—and Does Not—Mean\nRobust profit does not mean:\n\nthe business will dominate the market,\ncompetition will not respond,\nor execution will be easy.\n\nIt means something more modest and more important:\n\nThe economics of the design are strong enough to justify commitment despite uncertainty.\n\nRobust profit widens the margin for learning.\nIt gives the venture time to adapt.\nThat is often the most valuable feature of all.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Read a Profit Curve for Feasibility and Fragility"
+    ]
+  },
+  {
+    "objectID": "tk9_read_profit.html#what-not-to-do-when-reading-a-profit-curve",
+    "href": "tk9_read_profit.html#what-not-to-do-when-reading-a-profit-curve",
+    "title": "Read a Profit Curve for Feasibility and Fragility",
+    "section": "What Not to Do When Reading a Profit Curve",
+    "text": "What Not to Do When Reading a Profit Curve\nBefore moving on, it is worth naming a few common misinterpretations.\nDo not:\n\ntreat the highest point on the curve as a recommendation,\nassume the curve predicts future outcomes,\nread precision into estimates that are inherently uncertain,\nor equate a positive region with validation.\n\nA profit curve is an input to judgment, not a substitute for it.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Read a Profit Curve for Feasibility and Fragility"
+    ]
+  },
+  {
+    "objectID": "tk9_read_profit.html#what-this-toolkit-deliberately-stops-short-of",
+    "href": "tk9_read_profit.html#what-this-toolkit-deliberately-stops-short-of",
+    "title": "Read a Profit Curve for Feasibility and Fragility",
+    "section": "What This Toolkit Deliberately Stops Short Of",
+    "text": "What This Toolkit Deliberately Stops Short Of\nThis toolkit ends once you can correctly recognize:\n\nimpossible profit,\nfragile profit,\nand robust profit.\n\nIt does not tell you:\n\nwhat to change,\nwhat to test next,\nor whether to proceed.\n\nThose questions require a different move.\nOnce you can see fragility clearly, the next question becomes:\n\nWhich assumptions deserve attention before committing further?\n\nThat is the role of sensitivity—not as an optimization tool, but as a guide for learning and staging commitment.\nThe next toolkit begins exactly there.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Read a Profit Curve for Feasibility and Fragility"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html",
+    "href": "tk10_sensitivity_decide.html",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "",
+    "text": "Turning Fragility Into Learning Priorities\nOnce profit has been correctly interpreted, the question changes.\nThe question is no longer whether profit is possible or fragile.\nIt becomes:\nThis toolkit exists to answer that question.\nIt does not help you optimize profit.\nIt helps you decide what to pay attention to next.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-1-treat-every-input-as-a-belief-not-a-fact",
+    "href": "tk10_sensitivity_decide.html#step-1-treat-every-input-as-a-belief-not-a-fact",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 1: Treat Every Input as a Belief, Not a Fact",
+    "text": "Step 1: Treat Every Input as a Belief, Not a Fact\nProfit estimates rest on assumptions.\nSome are well supported.\nOthers are weak guesses.\nAll are uncertain.\nSensitivity analysis begins by reframing inputs as beliefs rather than facts:\n\ndemand shape,\nwillingness to pay,\nvariable cost per unit,\nfixed commitments,\nscale and access assumptions.\n\nThe goal is not to eliminate uncertainty.\nIt is to understand which uncertainty matters.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-2-ask-the-right-sensitivity-question",
+    "href": "tk10_sensitivity_decide.html#step-2-ask-the-right-sensitivity-question",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 2: Ask the Right Sensitivity Question",
+    "text": "Step 2: Ask the Right Sensitivity Question\nSensitivity is often misunderstood.\nThe question is not:\n\nWhich variable moves profit the most?\n\nThe correct question is:\n\nWhich assumption, if wrong, would change the decision?\n\nAn assumption can be\n\nhighly uncertain but low consequence, or\nfairly certain but catastrophic if wrong.\n\nSensitivity focuses on consequence, not likelihood.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-3-vary-one-assumption-at-a-timedeliberately",
+    "href": "tk10_sensitivity_decide.html#step-3-vary-one-assumption-at-a-timedeliberately",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 3: Vary One Assumption at a Time—Deliberately",
+    "text": "Step 3: Vary One Assumption at a Time—Deliberately\nTo learn from sensitivity, change one assumption at a time while holding others fixed.\nTypical candidates include:\n\ndemand slope (price sensitivity),\nmaximum willingness to pay,\nvariable cost per unit,\nfixed cost magnitude or timing,\nachievable scale or access.\n\nFor each variation, observe:\n\nwhether profit disappears,\nwhether fragility worsens,\nor whether robustness remains.\n\nThe goal is not realism. The goal is exposure.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-4-identify-decision-critical-assumptions",
+    "href": "tk10_sensitivity_decide.html#step-4-identify-decision-critical-assumptions",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 4: Identify Decision-Critical Assumptions",
+    "text": "Step 4: Identify Decision-Critical Assumptions\nAn assumption is decision-critical if:\n\nsmall changes reverse feasibility, or\nreasonable error collapses profit, or\nrobustness depends heavily on it being “just right.”\n\nThese assumptions deserve attention.\nOthers—even if uncertain—may not.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-5-sort-assumptions-by-actionability",
+    "href": "tk10_sensitivity_decide.html#step-5-sort-assumptions-by-actionability",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 5: Sort Assumptions by Actionability",
+    "text": "Step 5: Sort Assumptions by Actionability\nNot all sensitive assumptions should be treated the same.\nAsk:\n\nCan this assumption be tested further?\nCan it be influenced by design?\nCan commitment be delayed until it is clearer?\nIs it largely outside our control?\n\nThis step prevents wasted effort.\nSensitivity without judgment leads to anxiety. Sensitivity with judgment leads to strategy.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-6-decide-the-next-responsible-move",
+    "href": "tk10_sensitivity_decide.html#step-6-decide-the-next-responsible-move",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 6: Decide the Next Responsible Move",
+    "text": "Step 6: Decide the Next Responsible Move\nSensitivity analysis does not tell you what to do.\nIt tells you what it would be irresponsible to ignore.\nCommon responses include:\n\nExperiment\nWhen a sensitive assumption can be tested cheaply.\nDelay commitment\nWhen fragility is high but learning is ongoing.\nRedesign\nWhen the structure itself creates unnecessary exposure.\nProceed deliberately\nWhen robustness exists despite uncertainty.\nStop\nWhen the decision fails under any reasonable assumption.\n\nEach response is valid. What matters is that it is chosen consciously.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#step-7-use-sensitivity-to-allocate-attention-not-precision",
+    "href": "tk10_sensitivity_decide.html#step-7-use-sensitivity-to-allocate-attention-not-precision",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Step 7: Use Sensitivity to Allocate Attention, Not Precision",
+    "text": "Step 7: Use Sensitivity to Allocate Attention, Not Precision\nSensitivity analysis is not about fine-tuning numbers.\nIt is about deciding:\n\nwhat deserves more evidence,\nwhat can be tolerated as uncertain,\nand what must be resolved before commitment.\n\nTime, money, and focus are scarce.\nSensitivity helps you spend them where they matter most.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#what-this-toolkit-refuses-to-do",
+    "href": "tk10_sensitivity_decide.html#what-this-toolkit-refuses-to-do",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "What This Toolkit Refuses to Do",
+    "text": "What This Toolkit Refuses to Do\nThis toolkit does not: - forecast future outcomes, - or guarantee success.\nIt exists for a narrower—and more important—purpose:\n\nTo prevent commitment based on fragile assumptions that have not earned that privilege.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
+    ]
+  },
+  {
+    "objectID": "tk10_sensitivity_decide.html#where-this-leaves-the-decision",
+    "href": "tk10_sensitivity_decide.html#where-this-leaves-the-decision",
+    "title": "Use Sensitivity to Decide What to Learn Next",
+    "section": "Where This Leaves the Decision",
+    "text": "Where This Leaves the Decision\nBy the end of this toolkit, you should be able to say:\n\nwhich assumptions your decision depends on most,\nhow much error you can tolerate,\nand whether further learning is warranted before committing.\n\nAt that point, analytics has done its job.\nWhat remains is judgment.\nSensitivity does not remove uncertainty.\nIt ensures you know where uncertainty still matters.\nThat is the discipline that makes pre-revenue decisions responsible rather than hopeful.",
+    "crumbs": [
+      "Profit Toolkits",
+      "Use Sensitivity to Decide What to Learn Next"
     ]
   },
   {
@@ -2666,259 +2831,6 @@
     "text": "Bryce, David J, and Jeffrey H Dyer. 2007. “Strategies to Crack\nWell-Guarded Markets.” Harvard Business Review 85 (5):\n84–92.\n\n\nChristensen, Clayton M., and Michael E. Raynor. 2003. The\nInnovator’s Solution: Creating and Sustaining Successful Growth.\nBoston, Massachusetts: Harvard Business School Press.\n\n\nEdlin, Aaron S. 1997. “Do Guaranteed-Low-Price Policies Guarantee\nHigh Prices, and Can Antitrust Rise to the Challenge?”\nHarvard Law Review, 528–75.\n\n\nGasmi, Farid, Quang Vuong, and J. J. Laffont. 1992. “Econometric\nAnalysis of Collusive Behavior in a Soft-Drink Market.”\nJournal of Economics and Management Strategy 1 (2): 277–311.\n\n\nHviid, Morten, and Greg Shaffer. 1999. “Hassle Costs: The\nAchilles’ Heel of Price-Matching Guarantees.” Journal of\nEconomics & Management Strategy 8 (4): 489–521.\n\n\nMañez, Juan A. 2006. “Unbeatable Value Low-Price Guarantee:\nCollusive Mechanism or Advertising Strategy?” Journal of\nEconomics & Management Strategy 15 (1): 143–66.\n\n\nNash, John Forbes. 1950. “The Bargaining Problem.”\nEconometrica 18: 155–62.\n\n\n———. 1951. “Non-Cooperative Games.” Annals of\nMathematics 54: 286–95.\n\n\nThiel, Peter. 2014. “Competition Is for Losers.” Wall\nStreet Journal, September.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "tk9_read_profit.html#case-2-when-profit-exists-but-is-fragile",
-    "href": "tk9_read_profit.html#case-2-when-profit-exists-but-is-fragile",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "Case 2: When Profit Exists but Is Fragile",
-    "text": "Case 2: When Profit Exists but Is Fragile\nWhen the profit curve crosses zero, the immediate reaction is often relief.\nThere is at least one price at which the venture appears viable.\nBut this relief is often premature.\nProfit that exists somewhere is not the same as profit that can support commitment.\n\nWhat Fragile Profit Means\nProfit is fragile when it depends on:\n\na very narrow range of prices,\nhighly specific demand assumptions,\nprecise execution with little room for error,\nor optimistic beliefs about scale and access.\n\nIn these cases, profit is technically possible—but structurally exposed.\nFragile profit is not rare.\nIt is the most common outcome in early entrepreneurial analysis.\n\n\nTwo Common Forms of Fragility\nFragile profit typically appears in one of two visual patterns.\n1. Thin Demand, Low Commitments\nIn this case:\n\nvariable and fixed costs are relatively low,\ndemand exists but is shallow,\nprofit is positive only within a narrow price window.\n\nA small change in price, competition, or customer behavior pushes profit back below zero.\nThe venture survives only if many things go right at once.\n2. Strong Demand, Heavy Commitments\nIn this case:\n\ncontribution margins are positive,\ndemand appears strong at scale,\nbut fixed costs are large.\n\nProfit exists only if demand materializes at or above the assumed scale.\nAny shortfall quickly erases surplus.\nThese two cases look different, but they share the same logic:\n\nThe decision works only if error is small.\n\n\n\nWhy Fragile Profit Is More Dangerous Than Impossible Profit\nImpossible profit is clear.\nIt tells you the design does not work as structured.\nFragile profit is deceptive.\nBecause profit exists somewhere, it invites\n\nconfidence precisely where caution is warranted,\nselective attention to favorable assumptions,\nand pressure to “optimize” rather than rethink.\n\nThis is where entrepreneurs are most likely to mistake analytics for validation.\nA thin positive region on the curve can feel like permission—when it is actually a warning.\n\n\nThe Key Distinction: Sign vs. Sensitivity\nAt this stage, the most important question is not:\n\nIs profit positive?\n\nIt is:\n\nHow sensitive is profit to being wrong?\n\nFragile profit is not defined by the sign of profit, but by its exposure to error.\nWhen profit is fragile:\n\nsmall demand errors matter a lot,\nsmall cost overruns matter a lot,\nsmall scaling shortfalls matter a lot.\n\nNone of these errors are unusual.\nFragility fails not because entrepreneurs are careless, but because uncertainty is unavoidable.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk9_read_profit.html#case-3-when-profit-appears-robust",
-    "href": "tk9_read_profit.html#case-3-when-profit-appears-robust",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "Case 3: When Profit Appears Robust",
-    "text": "Case 3: When Profit Appears Robust\nRobust profit is not common—but it is distinctive.\nA profit curve appears robust when:\n\nprofit is positive across a wide range of prices,\nreasonable demand error does not reverse feasibility,\ncost overruns reduce profit but do not eliminate it,\nand scale assumptions can be missed without collapse.\n\nThis does not mean success is guaranteed.\nIt means the decision can survive being wrong.\n\nWhat Robust Profit Does—and Does Not—Mean\nRobust profit does not mean:\n\nthe business will dominate the market,\ncompetition will not respond,\nor execution will be easy.\n\nIt means something more modest and more important:\n\nThe economics of the design are strong enough to justify commitment despite uncertainty.\n\nRobust profit widens the margin for learning.\nIt gives the venture time to adapt.\nThat is often the most valuable feature of all.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk9_read_profit.html#what-not-to-do-when-reading-a-profit-curve",
-    "href": "tk9_read_profit.html#what-not-to-do-when-reading-a-profit-curve",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "What Not to Do When Reading a Profit Curve",
-    "text": "What Not to Do When Reading a Profit Curve\nBefore moving on, it is worth naming a few common misinterpretations.\nDo not:\n\ntreat the highest point on the curve as a recommendation,\nassume the curve predicts future outcomes,\nread precision into estimates that are inherently uncertain,\nor equate a positive region with validation.\n\nA profit curve is an input to judgment, not a substitute for it.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk9_read_profit.html#what-this-toolkit-deliberately-stops-short-of",
-    "href": "tk9_read_profit.html#what-this-toolkit-deliberately-stops-short-of",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "What This Toolkit Deliberately Stops Short Of",
-    "text": "What This Toolkit Deliberately Stops Short Of\nThis toolkit ends once you can correctly recognize:\n\nimpossible profit,\nfragile profit,\nand robust profit.\n\nIt does not tell you:\n\nwhat to change,\nwhat to test next,\nor whether to proceed.\n\nThose questions require a different move.\nOnce you can see fragility clearly, the next question becomes:\n\nWhich assumptions deserve attention before committing further?\n\nThat is the role of sensitivity—not as an optimization tool, but as a guide for learning and staging commitment.\nThe next toolkit begins exactly there.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html",
-    "href": "tk10_sensitivity_decide.html",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "",
-    "text": "Turning Fragility Into Learning Priorities\nOnce profit has been correctly interpreted, the question changes.\nThe question is no longer whether profit is possible or fragile.\nIt becomes:\nThis toolkit exists to answer that question.\nIt does not help you optimize profit.\nIt helps you decide what to pay attention to next.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#what-this-toolkit-is-and-is-not",
-    "href": "tk10_sensitivity_decide.html#what-this-toolkit-is-and-is-not",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "What This Toolkit Is (and Is Not)",
-    "text": "What This Toolkit Is (and Is Not)\nThis toolkit teaches recognition, not action.\nIt helps you learn to see:\n\nwhen profit is impossible,\nwhen profit exists but is fragile,\nand when profit appears robust enough to justify commitment.\n\nIt does not tell you:\n\nwhich price to choose,\nwhether to proceed,\nor what experiment to run next.\n\nThose decisions come later.\nIf you skip this interpretive step, everything that follows—optimization, sensitivity analysis, even intuition—rests on a misreading of the situation.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#a-profit-curve-is-a-map-not-a-verdict",
-    "href": "tk10_sensitivity_decide.html#a-profit-curve-is-a-map-not-a-verdict",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "A Profit Curve Is a Map, Not a Verdict",
-    "text": "A Profit Curve Is a Map, Not a Verdict\nA profit curve shows profit as a function of price, given:\n\na demand curve learned from evidence,\na cost structure defined by commitments,\nand a scale assumption made explicit.\n\nIt is a conditional object.\nEvery point on the curve answers the question:\n\nIf demand behaves like this,\nand costs are structured like this,\nand scale is what we’ve assumed,\nthen profit would look like this.\n\nThat is all it claims.\nA profit curve does not:\n\nassert that any price will be chosen,\nguarantee that demand will materialize,\nor validate the venture as “good” or “bad.”\n\nLike any map, it simplifies reality in order to make structure visible.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#the-first-question-to-ask-is-profit-even-possible",
-    "href": "tk10_sensitivity_decide.html#the-first-question-to-ask-is-profit-even-possible",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "The First Question to Ask: Is Profit Even Possible?",
-    "text": "The First Question to Ask: Is Profit Even Possible?\nBefore looking for a “best” price, ask a simpler question:\n\nDoes the profit curve ever cross zero?\n\nThis divides all outcomes into two fundamentally different cases:\n\nProfit is impossible\nProfit is negative at every price.\nProfit is possible\nProfit becomes positive at least somewhere on the curve.\n\nEverything else in this toolkit builds on that distinction.\nIf profit is impossible, optimization is meaningless.\nIf profit is possible, interpretation still matters.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#case-1-when-profit-is-impossible",
-    "href": "tk10_sensitivity_decide.html#case-1-when-profit-is-impossible",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "Case 1: When Profit Is Impossible",
-    "text": "Case 1: When Profit Is Impossible\nProfit is impossible when the curve never rises above zero.\nThis is not an error.\nIt is a diagnosis.\nIt means:\n\nGiven the current assumptions about demand, cost, and scale,\nthere is no price at which this design can support its commitments.\n\nThis result is often emotionally jarring, especially for entrepreneurs who have invested time, energy, or identity into the idea.\nBut analytically, it is one of the most valuable outcomes profit reasoning can produce.\nImpossible profit typically arises from one of two structural problems:\n\nNegative margins\nRevenue never exceeds variable cost. Selling more only deepens losses.\nUnsupportable fixed costs\nContribution exists, but scaled demand cannot support the commitments being assumed.\n\nImportantly, “weak demand” does not appear as a separate case.\nWeak demand matters only insofar as it fails to clear costs or scale.\nIf profit is impossible, the correct response is not to search for a better price.\nThe correct response is to ask:\n\nWhich assumption is doing the damage?\nWhat would need to change for profit to become possible?\nAre those changes within our control—or even desirable?\n\nSometimes the answer is redesign.\nSometimes it is delay.\nSometimes it is to stop.\nNone of those outcomes represent analytical failure.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#case-2-when-profit-exists-but-is-fragile",
-    "href": "tk10_sensitivity_decide.html#case-2-when-profit-exists-but-is-fragile",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "Case 2: When Profit Exists but Is Fragile",
-    "text": "Case 2: When Profit Exists but Is Fragile\nWhen the profit curve crosses zero, the immediate reaction is often relief.\nThere is at least one price at which the venture appears viable.\nBut this relief is often premature.\nProfit that exists somewhere is not the same as profit that can support commitment.\n\nWhat Fragile Profit Means\nProfit is fragile when it depends on:\n\na very narrow range of prices,\nhighly specific demand assumptions,\nprecise execution with little room for error,\nor optimistic beliefs about scale and access.\n\nIn these cases, profit is technically possible—but structurally exposed.\nFragile profit is not rare.\nIt is the most common outcome in early entrepreneurial analysis.\n\n\nTwo Common Forms of Fragility\nFragile profit typically appears in one of two visual patterns.\n1. Thin Demand, Low Commitments\nIn this case:\n\nvariable and fixed costs are relatively low,\ndemand exists but is shallow,\nprofit is positive only within a narrow price window.\n\nA small change in price, competition, or customer behavior pushes profit back below zero.\nThe venture survives only if many things go right at once.\n2. Strong Demand, Heavy Commitments\nIn this case:\n\ncontribution margins are positive,\ndemand appears strong at scale,\nbut fixed costs are large.\n\nProfit exists only if demand materializes at or above the assumed scale.\nAny shortfall quickly erases surplus.\nThese two cases look different, but they share the same logic:\n\nThe decision works only if error is small.\n\n\n\nWhy Fragile Profit Is More Dangerous Than Impossible Profit\nImpossible profit is clear.\nIt tells you the design does not work as structured.\nFragile profit is deceptive.\nBecause profit exists somewhere, it invites:\n\npremature confidence,\nselective attention to favorable assumptions,\nand pressure to “optimize” rather than rethink.\n\nThis is where entrepreneurs are most likely to mistake analytics for validation.\nA thin positive region on the curve can feel like permission—when it is actually a warning.\n\n\nThe Key Distinction: Sign vs. Sensitivity\nAt this stage, the most important question is not:\n\nIs profit positive?\n\nIt is:\n\nHow sensitive is profit to being wrong?\n\nFragile profit is not defined by the sign of profit, but by its exposure to error.\nWhen profit is fragile:\n\nsmall demand errors matter a lot,\nsmall cost overruns matter a lot,\nsmall scaling shortfalls matter a lot.\n\nNone of these errors are unusual.\nFragility fails not because entrepreneurs are careless, but because uncertainty is unavoidable.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#case-3-when-profit-appears-robust",
-    "href": "tk10_sensitivity_decide.html#case-3-when-profit-appears-robust",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "Case 3: When Profit Appears Robust",
-    "text": "Case 3: When Profit Appears Robust\nRobust profit is not common—but it is distinctive.\nA profit curve appears robust when:\n\nprofit is positive across a wide range of prices,\nreasonable demand error does not reverse feasibility,\ncost overruns reduce profit but do not eliminate it,\nand scale assumptions can be missed without collapse.\n\nThis does not mean success is guaranteed.\nIt means the decision can survive being wrong.\n\nWhat Robust Profit Does—and Does Not—Mean\nRobust profit does not mean:\n\nthe business will dominate the market,\ncompetition will not respond,\nor execution will be easy.\n\nIt means something more modest and more important:\n\nThe economics of the design are strong enough to justify commitment despite uncertainty.\n\nRobust profit widens the margin for learning.\nIt gives the venture time to adapt.\nThat is often the most valuable feature of all.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#what-not-to-do-when-reading-a-profit-curve",
-    "href": "tk10_sensitivity_decide.html#what-not-to-do-when-reading-a-profit-curve",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "What Not to Do When Reading a Profit Curve",
-    "text": "What Not to Do When Reading a Profit Curve\nBefore moving on, it is worth naming a few common misinterpretations.\nDo not:\n\ntreat the highest point on the curve as a recommendation,\nassume the curve predicts future outcomes,\nread precision into estimates that are inherently uncertain,\nor equate a positive region with validation.\n\nA profit curve is an input to judgment, not a substitute for it.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#what-this-toolkit-deliberately-stops-short-of",
-    "href": "tk10_sensitivity_decide.html#what-this-toolkit-deliberately-stops-short-of",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "What This Toolkit Deliberately Stops Short Of",
-    "text": "What This Toolkit Deliberately Stops Short Of\nThis toolkit ends once you can correctly recognize:\n\nimpossible profit,\nfragile profit,\nand robust profit.\n\nIt does not tell you:\n\nwhat to change,\nwhat to test next,\nor whether to proceed.\n\nThose questions require a different move.\nOnce you can see fragility clearly, the next question becomes:\n\nWhich assumptions deserve attention before committing further?\n\nThat is the role of sensitivity—not as an optimization tool, but as a guide for learning and staging commitment.\nThat is the focus of the next toolkit.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-1-treat-every-input-as-a-belief-not-a-fact",
-    "href": "tk10_sensitivity_decide.html#step-1-treat-every-input-as-a-belief-not-a-fact",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 1: Treat Every Input as a Belief, Not a Fact",
-    "text": "Step 1: Treat Every Input as a Belief, Not a Fact\nProfit estimates rest on assumptions.\nSome are well supported.\nOthers are weak guesses.\nAll are uncertain.\nSensitivity analysis begins by reframing inputs as beliefs rather than facts:\n\ndemand shape,\nwillingness to pay,\nvariable cost per unit,\nfixed commitments,\nscale and access assumptions.\n\nThe goal is not to eliminate uncertainty.\nIt is to understand which uncertainty matters.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-2-ask-the-right-sensitivity-question",
-    "href": "tk10_sensitivity_decide.html#step-2-ask-the-right-sensitivity-question",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 2: Ask the Right Sensitivity Question",
-    "text": "Step 2: Ask the Right Sensitivity Question\nSensitivity is often misunderstood.\nThe question is not:\n\nWhich variable moves profit the most?\n\nThe correct question is:\n\nWhich assumption, if wrong, would change the decision?\n\nAn assumption can be\n\nhighly uncertain but low consequence, or\nfairly certain but catastrophic if wrong.\n\nSensitivity focuses on consequence, not likelihood.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-3-vary-one-assumption-at-a-timedeliberately",
-    "href": "tk10_sensitivity_decide.html#step-3-vary-one-assumption-at-a-timedeliberately",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 3: Vary One Assumption at a Time—Deliberately",
-    "text": "Step 3: Vary One Assumption at a Time—Deliberately\nTo learn from sensitivity, change one assumption at a time while holding others fixed.\nTypical candidates include:\n\ndemand slope (price sensitivity),\nmaximum willingness to pay,\nvariable cost per unit,\nfixed cost magnitude or timing,\nachievable scale or access.\n\nFor each variation, observe:\n\nwhether profit disappears,\nwhether fragility worsens,\nor whether robustness remains.\n\nThe goal is not realism. The goal is exposure.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-4-identify-decision-critical-assumptions",
-    "href": "tk10_sensitivity_decide.html#step-4-identify-decision-critical-assumptions",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 4: Identify Decision-Critical Assumptions",
-    "text": "Step 4: Identify Decision-Critical Assumptions\nAn assumption is decision-critical if:\n\nsmall changes reverse feasibility, or\nreasonable error collapses profit, or\nrobustness depends heavily on it being “just right.”\n\nThese assumptions deserve attention.\nOthers—even if uncertain—may not.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-5-sort-assumptions-by-actionability",
-    "href": "tk10_sensitivity_decide.html#step-5-sort-assumptions-by-actionability",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 5: Sort Assumptions by Actionability",
-    "text": "Step 5: Sort Assumptions by Actionability\nNot all sensitive assumptions should be treated the same.\nAsk:\n\nCan this assumption be tested further?\nCan it be influenced by design?\nCan commitment be delayed until it is clearer?\nIs it largely outside our control?\n\nThis step prevents wasted effort.\nSensitivity without judgment leads to anxiety. Sensitivity with judgment leads to strategy.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-6-decide-the-next-responsible-move",
-    "href": "tk10_sensitivity_decide.html#step-6-decide-the-next-responsible-move",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 6: Decide the Next Responsible Move",
-    "text": "Step 6: Decide the Next Responsible Move\nSensitivity analysis does not tell you what to do.\nIt tells you what it would be irresponsible to ignore.\nCommon responses include:\n\nExperiment\nWhen a sensitive assumption can be tested cheaply.\nDelay commitment\nWhen fragility is high but learning is ongoing.\nRedesign\nWhen the structure itself creates unnecessary exposure.\nProceed deliberately\nWhen robustness exists despite uncertainty.\nStop\nWhen the decision fails under any reasonable assumption.\n\nEach response is valid. What matters is that it is chosen consciously.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#step-7-use-sensitivity-to-allocate-attention-not-precision",
-    "href": "tk10_sensitivity_decide.html#step-7-use-sensitivity-to-allocate-attention-not-precision",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Step 7: Use Sensitivity to Allocate Attention, Not Precision",
-    "text": "Step 7: Use Sensitivity to Allocate Attention, Not Precision\nSensitivity analysis is not about fine-tuning numbers.\nIt is about deciding:\n\nwhat deserves more evidence,\nwhat can be tolerated as uncertain,\nand what must be resolved before commitment.\n\nTime, money, and focus are scarce.\nSensitivity helps you spend them where they matter most.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#what-this-toolkit-refuses-to-do",
-    "href": "tk10_sensitivity_decide.html#what-this-toolkit-refuses-to-do",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "What This Toolkit Refuses to Do",
-    "text": "What This Toolkit Refuses to Do\nThis toolkit does not: - forecast future outcomes, - or guarantee success.\nIt exists for a narrower—and more important—purpose:\n\nTo prevent commitment based on fragile assumptions that have not earned that privilege.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk10_sensitivity_decide.html#where-this-leaves-the-decision",
-    "href": "tk10_sensitivity_decide.html#where-this-leaves-the-decision",
-    "title": "Use Sensitivity to Decide What to Learn Next",
-    "section": "Where This Leaves the Decision",
-    "text": "Where This Leaves the Decision\nBy the end of this toolkit, you should be able to say:\n\nwhich assumptions your decision depends on most,\nhow much error you can tolerate,\nand whether further learning is warranted before committing.\n\nAt that point, analytics has done its job.\nWhat remains is judgment.\nSensitivity does not remove uncertainty.\nIt ensures you know where uncertainty still matters.\nThat is the discipline that makes pre-revenue decisions responsible rather than hopeful.",
-    "crumbs": [
-      "Profit Toolkits",
-      "Use Sensitivity to Decide What to Learn Next"
-    ]
-  },
-  {
-    "objectID": "tk9_read_profit.html#what-youll-see-in-the-app",
-    "href": "tk9_read_profit.html#what-youll-see-in-the-app",
-    "title": "Read a Profit Curve for Feasibility and Fragility",
-    "section": "What You’ll See in the App",
-    "text": "What You’ll See in the App\nThe Profit Analytics app visualizes profit as a function of price.\nThis toolkit assumes you are looking at a profit curve that looks like this.\n\n\n\n\n\n\n\n\n\n\nFigure 1: A baseline profit curve: profit π(P) across prices with a clear zero-profit reference line.\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Three common shapes: impossible profit, fragile profit, and robust profit (illustrative).",
-    "crumbs": [
-      "Profit Toolkits",
-      "Read a Profit Curve for Feasibility and Fragility"
     ]
   }
 ]

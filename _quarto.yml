@@ -72,6 +72,11 @@ book:
         - tk9_read_profit.qmd
         - tk10_sensitivity_decide.qmd
         
+        
+    - part: Competition
+      chapters:
+        - ch13_competition.qmd
+        
     - part: Old Econ Competition
       chapters:
         - competition.qmd

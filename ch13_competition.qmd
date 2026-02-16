@@ -1,0 +1,175 @@
+---
+title: "Profit under Rivalry"
+#subtitle: "Seeing the Pre-Revenue Decision Clearly"
+---
+
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+
+Up to this point, profit depended on three things:
+
+- Your price  
+- Your demand  
+- Your costs  
+
+You could estimate demand.  
+You could discipline cost.  
+You could study sensitivity.  
+You could stage commitment.  
+
+Even under uncertainty, the structure was stable.
+
+Now we introduce something different.
+
+A rival.
+
+And the rival optimizes.
+
+
+
+
+## Profit Is No Longer a Curve
+
+Previously, profit looked like this:
+
+$$ 
+\mathsf{\pi(P)} = \mathsf{(P - c)Q- f}
+$$
+
+You chose a price.  
+Customers responded with their demand.  
+You optimized.  
+
+Now profit looks like this:
+
+$$ 
+\mathsf{\pi_i(P_i\, P_j)}
+$$
+
+Your profit depends on your price ($\mathsf{P_i}$) *and* your rival’s price ($\mathsf{P_j}$).
+
+Your demand is no longer stable.
+It is conditional.
+
+If they lower price, your demand shifts.  
+If they raise price, your demand shifts.  
+If they enter, your demand splits.  
+
+Your profit curve is no longer a curve.
+
+It is a moving surface.
+
+
+
+
+## A New Source of Uncertainty
+
+Earlier, uncertainty came from:
+
+- Demand estimation  
+- Cost estimation  
+- Scaling assumptions  
+
+Now there is a new source:
+
+**Strategic response.**
+
+The rival is not noise.  
+The rival is not random.  
+
+The rival is optimizing profit at the same time you are.
+
+This changes how feasibility must be evaluated.
+
+
+
+
+
+## The Entrepreneurial Mistake
+
+Many founders calculate profit as if they were alone.
+
+They:
+
+- Estimate willingness-to-pay.
+- Choose a price.
+- Calculate margin.
+- Project scale.
+
+Then they conclude:
+
+> “This is worth doing.”
+
+But they have evaluated profit at their preferred price —
+not at the price that survives competition.
+
+Under rivalry, the relevant question is not:
+
+> What is my optimal price?
+
+It is:
+
+> What price survives when others optimize too?
+
+
+
+
+
+
+
+## Feasibility Under Rivalry
+
+A business that is feasible in isolation
+may be infeasible under competition.
+
+A business that appears robust
+may become fragile when margins compress.
+
+Fixed costs that were recoverable alone
+may become unrecoverable when demand splits.
+
+Competition does not change the logic of profit.
+
+It changes the constraints.
+
+Everything you learned still applies:
+
+- Contribution margin  
+- Fixed cost commitment  
+- Scaling discipline  
+- Sensitivity  
+
+But now they must be evaluated at a competitive outcome.
+
+
+
+
+
+
+## The Decision Lens
+
+From this chapter forward, profit must always be asked in this form:
+
+> Is this worth doing *given that others will respond*?
+
+If your profit only exists  
+when competitors remain passive,  
+you do not have a business.
+
+You have a temporary condition.
+
+Competition is not a separate topic from profit reasoning.
+
+It is profit reasoning under intelligent response.
+
+And that changes everything.
