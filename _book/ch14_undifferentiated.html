@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; What Do You Need to Know to Decide? – Is This Worth Doing?</title>
+<title>14&nbsp; When Price Competition Eliminates Profit – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ch5_demand.html" rel="next">
-<link href="./ch3_profit_before_revenue.html" rel="prev">
+<link href="./competition.html" rel="next">
+<link href="./ch13_competition.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="custom_itwd.css">
@@ -84,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch1_is_this_worth_doing.html">The Pre-Revenue Decision</a></li><li class="breadcrumb-item"><a href="./ch4_need_to_know.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch14_undifferentiated.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">When Price Competition Eliminates Profit</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,13 +154,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">The Pre-Revenue Decision</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch1_is_this_worth_doing.html" class="sidebar-item-text sidebar-link">
@@ -152,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch4_need_to_know.html" class="sidebar-item-text sidebar-link active">
+  <a href="./ch4_need_to_know.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></span></a>
   </div>
 </li>
@@ -312,17 +341,23 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Competition</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch13_competition.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Profit under Rivalry</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch14_undifferentiated.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">When Price Competition Eliminates Profit</span></span></a>
   </div>
 </li>
       </ul>
@@ -339,31 +374,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./competition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Competition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./competition_undiff_bertrand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Undifferentiated Bertrand Competition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./competition_diff_bertrand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./competitive_advantage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Competitive Advantage</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./entry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Entry and Entry Barriers</span></span></a>
   </div>
 </li>
       </ul>
@@ -380,25 +415,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./game_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Game Theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simultaneous_games.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Simultaneous Games</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sequential_games.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Sequential Games</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./strategic_commitment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Strategic Commitment</span></span></a>
   </div>
 </li>
       </ul>
@@ -410,7 +445,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -429,21 +464,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#knowing-that-something-matters-is-not-the-same-as-knowing-what-to-learn" id="toc-knowing-that-something-matters-is-not-the-same-as-knowing-what-to-learn" class="nav-link active" data-scroll-target="#knowing-that-something-matters-is-not-the-same-as-knowing-what-to-learn"><span class="header-section-number">4.1</span> Knowing That Something Matters Is Not the Same as Knowing What to Learn</a></li>
-  <li><a href="#decisions-do-not-require-answers-to-every-question" id="toc-decisions-do-not-require-answers-to-every-question" class="nav-link" data-scroll-target="#decisions-do-not-require-answers-to-every-question"><span class="header-section-number">4.2</span> Decisions Do Not Require Answers to Every Question</a></li>
-  <li><a href="#many-unknowns-one-that-matters-now" id="toc-many-unknowns-one-that-matters-now" class="nav-link" data-scroll-target="#many-unknowns-one-that-matters-now"><span class="header-section-number">4.3</span> Many Unknowns, One That Matters Now</a></li>
-  <li><a href="#from-urgent-unknowns-to-entrepreneurial-questions" id="toc-from-urgent-unknowns-to-entrepreneurial-questions" class="nav-link" data-scroll-target="#from-urgent-unknowns-to-entrepreneurial-questions"><span class="header-section-number">4.4</span> From Urgent Unknowns to Entrepreneurial Questions</a></li>
-  <li><a href="#demand-is-often-the-first-urgent-unknown" id="toc-demand-is-often-the-first-urgent-unknown" class="nav-link" data-scroll-target="#demand-is-often-the-first-urgent-unknown"><span class="header-section-number">4.5</span> Demand Is Often the First Urgent Unknown</a></li>
-  <li><a href="#looking-ahead-learning-demand-deliberately" id="toc-looking-ahead-learning-demand-deliberately" class="nav-link" data-scroll-target="#looking-ahead-learning-demand-deliberately"><span class="header-section-number">4.6</span> Looking Ahead: Learning Demand Deliberately</a></li>
+  <li><a href="#the-undifferentiated-case" id="toc-the-undifferentiated-case" class="nav-link active" data-scroll-target="#the-undifferentiated-case"><span class="header-section-number">14.1</span> The Undifferentiated Case</a></li>
+  <li><a href="#structural-collapse" id="toc-structural-collapse" class="nav-link" data-scroll-target="#structural-collapse"><span class="header-section-number">14.2</span> Structural Collapse</a></li>
+  <li><a href="#implication-for-feasibility" id="toc-implication-for-feasibility" class="nav-link" data-scroll-target="#implication-for-feasibility"><span class="header-section-number">14.3</span> Implication for Feasibility</a></li>
+  <li><a href="#the-only-escapes" id="toc-the-only-escapes" class="nav-link" data-scroll-target="#the-only-escapes"><span class="header-section-number">14.4</span> The Only Escapes</a></li>
+  <li><a href="#the-decision-lens" id="toc-the-decision-lens" class="nav-link" data-scroll-target="#the-decision-lens"><span class="header-section-number">14.5</span> The Decision Lens</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch1_is_this_worth_doing.html">The Pre-Revenue Decision</a></li><li class="breadcrumb-item"><a href="./ch4_need_to_know.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch14_undifferentiated.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">When Price Competition Eliminates Profit</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Do You Need to Know to Decide?</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">When Price Competition Eliminates Profit</span></h1>
 </div>
 
 
@@ -460,96 +494,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>By this point, one thing should be clear: recognizing that a decision is difficult does not yet tell you how to make it.</p>
-<p>Understanding that profit is uncertain, or that demand matters, is not enough. Many entrepreneurs reach this point with a sharpened sense of risk but no clearer sense of direction.</p>
-<p>They know the decision matters.<br>
-They know uncertainty is unavoidable.<br>
-They know they should not proceed blindly.</p>
-<p>And still, the next step remains unclear.</p>
-<p>This is not because the problem is too complex. It is because the question has not yet been made specific enough.</p>
-<section id="knowing-that-something-matters-is-not-the-same-as-knowing-what-to-learn" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="knowing-that-something-matters-is-not-the-same-as-knowing-what-to-learn"><span class="header-section-number">4.1</span> Knowing That Something Matters Is Not the Same as Knowing What to Learn</h2>
-<p>Early-stage decisions often feel overwhelming because too many things appear unknown at once.</p>
-<p>Who exactly the customer is.<br>
-What problem matters most.<br>
-How price-sensitive demand might be.<br>
-Whether demand is large enough to matter.<br>
-Whether competition will respond aggressively.</p>
-<p>All of these questions feel relevant. None feels decisive on its own.</p>
-<p>As a result, entrepreneurs often default to one of two moves: gathering information opportunistically, or postponing learning altogether. Neither approach brings clarity, because neither begins with a clear sense of <em>what must be known in order to decide</em>.</p>
-<p>The problem is not a lack of data.<br>
-It is a lack of focus.</p>
+<p>In the previous chapter, we saw that profit becomes conditional under rivalry.</p>
+<p>Now we examine a special case.</p>
+<p>Two firms. Identical products. Customers care only about price.</p>
+<p>No differentiation. No loyalty. No switching friction.</p>
+<p>What happens to profit?</p>
+<section id="the-undifferentiated-case" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="the-undifferentiated-case"><span class="header-section-number">14.1</span> The Undifferentiated Case</h2>
+<p>Suppose two firms sell the same product at the same cost.</p>
+<p>If one firm sets a higher price, customers switch immediately.</p>
+<p>If one firm sets a lower price, it captures the entire market.</p>
+<p>If both firms charge the same price, they split demand.</p>
+<p>Under these conditions, pricing becomes a race downward.</p>
+<p>If your rival prices at <span class="math inline">\(P\)</span>, you can take the whole market by pricing slightly below <span class="math inline">\(P\)</span>.</p>
+<p>Your rival can respond the same way.</p>
+<p>Undercutting continues until price equals marginal (variable) cost.</p>
+<p>At that point:</p>
+<p><span class="math display">\[ \mathsf{P = c}\]</span></p>
+<p>Contribution margin disappears.</p>
+<p>Profit becomes:</p>
+<p><span class="math display">\[
+\mathsf{\pi = (P - c)Q - f = -f}
+\]</span></p>
+<p>Fixed cost cannot be recovered.</p>
+<hr>
 </section>
-<section id="decisions-do-not-require-answers-to-every-question" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="decisions-do-not-require-answers-to-every-question"><span class="header-section-number">4.2</span> Decisions Do Not Require Answers to Every Question</h2>
-<p>It is tempting to believe that good decisions require comprehensive understanding. That if enough questions are answered, the right action will become obvious.</p>
-<p>In practice, decisions are made under constraint. Time, attention, and resources are limited. Not every uncertainty can be resolved, and not every unknown needs to be.</p>
-<p>What matters is not whether uncertainty exists, but which uncertainty stands in the way of acting responsibly right now.</p>
-<p>Until that distinction is made, learning remains diffuse and effort remains unfocused.</p>
+<section id="structural-collapse" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="structural-collapse"><span class="header-section-number">14.2</span> Structural Collapse</h2>
+<p>This is not bad management. It is not poor execution. It is not lack of marketing.</p>
+<p>It is structure.</p>
+<p>If products are identical and customers respond only to price, economic profit collapses.</p>
+<p>Even if demand is strong. Even if scale is large. Even if both firms are competent.</p>
+<p>Contribution margin is competed away.</p>
+<hr>
 </section>
-<section id="many-unknowns-one-that-matters-now" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="many-unknowns-one-that-matters-now"><span class="header-section-number">4.3</span> Many Unknowns, One That Matters Now</h2>
-<p>At any moment, entrepreneurs face many unknowns.</p>
-<p>Some are obvious. Others only become visible once work begins. New information often reveals additional uncertainty rather than eliminating it. This is not a failure of planning. It is a feature of acting in unfamiliar territory.</p>
-<p>The mistake is not acknowledging uncertainty.<br>
-The mistake is treating all unknowns as equally important.</p>
-<p>Decisions are made one at a time. Each decision is blocked by a different kind of uncertainty. The uncertainty that matters is not the one that is most interesting, most frightening, or most discussed. It is the one that prevents responsible action <em>now</em>.</p>
-<p>This is the entrepreneur’s most <em>urgent unknown</em>.</p>
-<p>The most urgent unknown is the question that must be better understood before the next decision can be made with integrity. Until it is addressed, action is either reckless or stalled.</p>
-<p>Other uncertainties may still exist. They may even be larger in an absolute sense. But if they do not affect the decision immediately at hand, they are not yet the right focus.</p>
-<p>Identifying the most urgent unknown does not eliminate uncertainty. It creates order within it. It also suggests what comes next: once this unknown is reduced, the next most urgent unknown takes its place.</p>
-<p>Once one uncertainty is reduced, another often takes its place. Learning does not shrink the space of unknowns so much as it rearranges them. New questions emerge. Old concerns recede. Attention shifts.</p>
-<p>This is not a problem to be solved once. It is a discipline to be practiced repeatedly.</p>
-<p>Entrepreneurs who fail to make this distinction often work hard without making progress. They collect information that does not change what they do. They mistake motion for learning.</p>
-<p>Entrepreneurs who can identify their most urgent unknown, even imperfectly, gain something more valuable than certainty: direction.</p>
-<p>What matters is not whether uncertainty exists, but which uncertainty stands in the way of acting responsibly right now.</p>
-<p>That distinction is easy to name and hard to make—because it requires choosing one unknown to treat as primary.</p>
+<section id="implication-for-feasibility" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="implication-for-feasibility"><span class="header-section-number">14.3</span> Implication for Feasibility</h2>
+<p>Return to the feasibility question:</p>
+<blockquote class="blockquote">
+<p>Is this worth doing?</p>
+</blockquote>
+<p>If you enter an undifferentiated market without cost advantage, the answer is no.</p>
+<p>Your earlier profit curve assumed: - Stable demand - A chosen price - A recoverable margin</p>
+<p>In undifferentiated competition, margin cannot survive.</p>
+<p>Feasibility must be evaluated at the price that survives rivalry.</p>
+<p>And in this structure, that price equals cost.</p>
+<hr>
 </section>
-<section id="from-urgent-unknowns-to-entrepreneurial-questions" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="from-urgent-unknowns-to-entrepreneurial-questions"><span class="header-section-number">4.4</span> From Urgent Unknowns to Entrepreneurial Questions</h2>
-<p>Identifying the most urgent unknown is only a beginning.</p>
-<p>An unknown becomes actionable only when it is translated into a question that can guide learning. This translation is where many entrepreneurs struggle—not because they lack curiosity, but because not all questions serve the same purpose.</p>
-<p>Some questions describe the world.<br>
-Others inform decisions.</p>
-<p>Both can be interesting. Only one reduces uncertainty about what to do next.</p>
-<p>An entrepreneurial question is not defined by the kind of data it uses, but by the role it plays. It is a question whose answer would change the action taken—or increase confidence in the action already under consideration.</p>
-<p>This is why clarity matters more than precision at this stage.</p>
-<p>A question can be answered accurately and still be useless if it does not connect back to a decision. Conversely, a question can be answered imperfectly and still be valuable if it reduces the uncertainty that matters most.</p>
-<p>The distinction becomes clear when uncertainty is viewed through the lens of action.</p>
+<section id="the-only-escapes" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="the-only-escapes"><span class="header-section-number">14.4</span> The Only Escapes</h2>
+<p>There are only two structural ways out:</p>
+<ol type="1">
+<li>Lower cost than rivals.</li>
+<li>Differentiate so customers do not switch purely on price.</li>
+</ol>
+<p>Everything else is storytelling.</p>
+<p>Branding without differentiation. Hope without insulation. Marketing without structural shift.</p>
+<p>None of it restores margin in a pure price war.</p>
+<hr>
+</section>
+<section id="the-decision-lens" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="the-decision-lens"><span class="header-section-number">14.5</span> The Decision Lens</h2>
+<p>Before entering a market, ask:</p>
 <ul>
-<li>If the most urgent unknown is about demand, then questions about population size, customer characteristics, or interest levels are only useful insofar as they help determine whether demand is strong enough at viable prices to justify proceeding.</li>
-<li>If the most urgent unknown is about pricing, then questions about willingness to pay and price sensitivity matter. Questions about features or branding may not—yet.</li>
-<li>If the most urgent unknown is about scale, then questions about repeat purchasing, usage intensity, or capacity constraints become relevant.</li>
+<li>Are we undifferentiated?</li>
+<li>Are we competing primarily on price?</li>
+<li>Do we have a structural cost advantage?</li>
 </ul>
-<p>In each case, the entrepreneurial question does not stand alone. It is derived from the decision and shaped by the uncertainty that blocks it.</p>
-<p>This is why entrepreneurial questions are often broader than factual questions, but narrower than strategic aspirations. They sit between action and evidence.</p>
-<p>A common failure mode is to begin with questions that are easy to answer rather than questions that matter. Data availability quietly substitutes for decision relevance. Learning occurs, but uncertainty remains.</p>
-<p>When the entrepreneurial question is clear, learning gains a natural stopping rule. Evidence is sufficient when it no longer changes the decision under consideration.</p>
-<p>Only at that point does it make sense to ask how the question can be answered responsibly.</p>
-</section>
-<section id="demand-is-often-the-first-urgent-unknown" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="demand-is-often-the-first-urgent-unknown"><span class="header-section-number">4.5</span> Demand Is Often the First Urgent Unknown</h2>
-<p>Once the decision, the uncertainty, and the entrepreneurial question are made explicit, a pattern usually emerges.</p>
-<p>In many pre-revenue decisions, the most urgent unknown turns out to involve demand.</p>
-<p>This is not because demand is the only uncertainty that matters. It is because demand is the uncertainty that most often determines whether a venture is worth doing at all.</p>
-<p>Questions about costs, competition, and execution matter. They can meaningfully affect profit. But in early decisions, they rarely block action in the same way demand does.</p>
-<p>Costs can often be estimated within a usable range. Competitive responses can sometimes be bracketed. Operational challenges can be anticipated, even if imperfectly.</p>
-<p>Demand is different.</p>
-<p>Demand determines whether revenue exists at all, whether prices that cover costs are plausible, and whether refinements to cost structure or competitive positioning are worth pursuing in the first place.</p>
-<p>For this reason, many entrepreneurial questions ultimately reduce to some version of the same concern: <em>is there enough demand, at viable prices, to justify moving forward?</em></p>
-<p>This does not mean demand is always the most urgent unknown. There are decisions where regulatory uncertainty, technological feasibility, or organizational constraints dominate. But in pre-revenue profit decisions, demand is often the uncertainty that matters first.</p>
-<p>Recognizing this is not a commitment to any particular method. It is a prioritization move.</p>
-<p>Once demand becomes the most urgent unknown, the task is no longer to speculate about it, but to learn it deliberately.</p>
-</section>
-<section id="looking-ahead-learning-demand-deliberately" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="looking-ahead-learning-demand-deliberately"><span class="header-section-number">4.6</span> Looking Ahead: Learning Demand Deliberately</h2>
-<p>Identifying demand as the most urgent unknown does not resolve it.</p>
-<p>Demand is not revealed automatically, and it is not learned by observation alone. It must be inferred from evidence, gathered intentionally and interpreted carefully.</p>
-<p>Poorly designed learning creates false confidence. Well-designed learning reduces uncertainty in ways that actually inform decisions.</p>
-<p>This distinction matters because learning is never neutral. The questions asked, the data collected, and the assumptions embedded in measurement all shape what can be concluded.</p>
-<p>Without clarity about the decision and the question, it is easy to collect information that looks relevant but does not change what is done next.</p>
-<p>The chapters that follow focus on learning demand in a disciplined way—beginning with what demand is and is not, and then turning to how evidence about demand can be generated responsibly.</p>
-<p>Only then does it make sense to design the experiment.</p>
+<p>If the answer is no to all three, profit will not survive.</p>
+<p>This is not pessimism.</p>
+<p>It is disciplined pre-revenue reasoning.</p>
+<p>Some markets eliminate profit by design.</p>
+<p>Your job is to recognize them before committing fixed cost.</p>
 
 
 </section>
@@ -956,13 +972,13 @@ Others inform decisions.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch3_profit_before_revenue.html" class="pagination-link" aria-label="Profit Before Revenue">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Profit Before Revenue</span></span>
+      <a href="./ch13_competition.html" class="pagination-link" aria-label="Profit under Rivalry">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Profit under Rivalry</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ch5_demand.html" class="pagination-link" aria-label="What Demand Is (and Is Not)">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What Demand Is (and Is Not)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./competition.html" class="pagination-link" aria-label="Competition">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

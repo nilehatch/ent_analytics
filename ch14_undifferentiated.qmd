@@ -1,0 +1,141 @@
+---
+title: "When Price Competition Eliminates Profit"
+#subtitle: "Seeing the Pre-Revenue Decision Clearly"
+---
+
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+
+In the previous chapter, we saw that profit becomes conditional under rivalry.
+
+Now we examine a special case.
+
+Two firms.
+Identical products.
+Customers care only about price.
+
+No differentiation.
+No loyalty.
+No switching friction.
+
+What happens to profit?
+
+
+
+## The Undifferentiated Case
+
+Suppose two firms sell the same product at the same cost.
+
+If one firm sets a higher price, customers switch immediately.
+
+If one firm sets a lower price, it captures the entire market.
+
+If both firms charge the same price, they split demand.
+
+Under these conditions, pricing becomes a race downward.
+
+If your rival prices at $P$, you can take the whole market by pricing slightly below $P$.
+
+Your rival can respond the same way.
+
+Undercutting continues until price equals marginal (variable) cost.
+
+At that point:
+
+$$ \mathsf{P = c}$$
+
+Contribution margin disappears.
+
+Profit becomes:
+
+$$
+\mathsf{\pi = (P - c)Q - f = -f}
+$$
+
+Fixed cost cannot be recovered.
+
+---
+
+## Structural Collapse
+
+This is not bad management.
+It is not poor execution.
+It is not lack of marketing.
+
+It is structure.
+
+If products are identical and customers respond only to price, economic profit collapses.
+
+Even if demand is strong.
+Even if scale is large.
+Even if both firms are competent.
+
+Contribution margin is competed away.
+
+---
+
+## Implication for Feasibility
+
+Return to the feasibility question:
+
+> Is this worth doing?
+
+If you enter an undifferentiated market without cost advantage, the answer is no.
+
+Your earlier profit curve assumed:
+- Stable demand
+- A chosen price
+- A recoverable margin
+
+In undifferentiated competition, margin cannot survive.
+
+Feasibility must be evaluated at the price that survives rivalry.
+
+And in this structure, that price equals cost.
+
+---
+
+## The Only Escapes
+
+There are only two structural ways out:
+
+1. Lower cost than rivals.
+2. Differentiate so customers do not switch purely on price.
+
+Everything else is storytelling.
+
+Branding without differentiation.
+Hope without insulation.
+Marketing without structural shift.
+
+None of it restores margin in a pure price war.
+
+---
+
+## The Decision Lens
+
+Before entering a market, ask:
+
+- Are we undifferentiated?
+- Are we competing primarily on price?
+- Do we have a structural cost advantage?
+
+If the answer is no to all three, profit will not survive.
+
+This is not pessimism.
+
+It is disciplined pre-revenue reasoning.
+
+Some markets eliminate profit by design.
+
+Your job is to recognize them before committing fixed cost.

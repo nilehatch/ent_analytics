@@ -29,11 +29,7 @@ You could stage commitment.
 
 Even under uncertainty, the structure was stable.
 
-Now we introduce something different.
-
-A rival.
-
-And the rival optimizes.
+Now we introduce something different. A rival who also optimizes.
 
 
 
@@ -53,7 +49,7 @@ You optimized.
 Now profit looks like this:
 
 $$ 
-\mathsf{\pi_i(P_i\, P_j)}
+\mathsf{\pi_i(P_i, P_j)}
 $$
 
 Your profit depends on your price ($\mathsf{P_i}$) *and* your rival’s price ($\mathsf{P_j}$).
@@ -61,14 +57,111 @@ Your profit depends on your price ($\mathsf{P_i}$) *and* your rival’s price ($
 Your demand is no longer stable.
 It is conditional.
 
-If they lower price, your demand shifts.  
+If your rival lowers price, your demand shifts.  
 If they raise price, your demand shifts.  
-If they enter, your demand splits.  
+If they enter your market, your demand splits.  
 
 Your profit curve is no longer a curve.
 
 It is a moving surface.
 
+
+
+
+
+## From Curve to Surface
+
+In earlier chapters, profit was a curve.
+
+When we add a rival: 
+
+The rival chooses a price.  
+You respond.  
+They respond to your response... 
+
+Profit is no longer a single curve. It becomes a surface shaped by mutual optimization.
+
+```{r}
+#| label: fig-ch13-curve-shift
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "The profit curve shifts when the rival’s price changes."
+#| cap-location: bottom
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(dplyr)
+
+base_theme <- theme_hc()
+col_zero <- "grey30"
+col_pi  <- "#2F855A"
+
+# Parameters (same as before)
+a <- 2600
+b <- 2.0
+d <- 1.1
+c <- 230
+f <- 450000
+
+Q_i <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
+Pi_fun <- function(Pi, Pj) (Pi - c) * Q_i(Pi, Pj) - f
+
+Pi_grid <- seq(0, 2000, length.out = 260)
+
+Pj_levels <- c(300, 800, 1300)
+
+df_curves <- expand.grid(
+  Pi = Pi_grid,
+  Pj = Pj_levels
+) |>
+  as_tibble() |>
+  mutate(
+    profit = Pi_fun(Pi, Pj),
+    Pj_lab = paste0("Rival price = ", dollar(Pj))
+  )
+
+df_opt <- df_curves |>
+  group_by(Pj, Pj_lab) |>
+  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+ggplot(df_curves, aes(x = Pi, y = profit, group = Pj_lab)) +
+  geom_hline(yintercept = 0, linewidth = 0.8, color = col_zero) +
+  
+  annotate("segment", x = 847.5, y = 0, xend = 847.5, yend = Pi_fun(847.5,300), linetype="dotted", color = "black", linewidth=0.5) +
+  annotate("segment", x = 985, y = 0, xend = 985, yend = Pi_fun(985,800), linetype="dotted", color = "black", linewidth=0.5) +  
+  annotate("segment", x = 1122.5, y = 0, xend = 1122.5, yend = Pi_fun(1122.5,1300), linetype="dotted", color = "black", linewidth=0.5) +    
+  
+  geom_line(linewidth = 2, color = col_pi) +
+  labs(
+    x = "Your price",
+    y = "Profit (dollars)",
+    color = ""
+  ) +
+  
+  annotate("label", x = 690, y = 120000, #1030
+           label = "Rival price = $300\nBest price (given rival) = $847.50", fill = "white", alpha = .8, size = 3) +
+  annotate("label", x = 812, y = 500000,
+           label = "Rival price = $800\nOptimal price (given rival) = $985.00", fill = "white", alpha = .8, size = 3) +
+  annotate("label", x = 942, y = 950000,
+           label = "Rival price = $1300\nOptimal price (given rival) = $1122.50", fill = "white", alpha = .8, size = 3) +
+
+  
+  coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
+  scale_x_continuous(labels = label_dollar()) +
+  scale_y_continuous(labels = label_dollar()) +
+  base_theme +
+  theme(legend.position = "none")
+```
+
+
+Each colored curve is your profit curve holding the rival’s price fixed.
+If we draw one curve for every possible rival price, those curves “stack up” into a profit surface $\mathsf{\pi(P_i, P_j)}$.
+
+Profit is no longer a single curve you optimize in isolation.
+It depends on how others respond.
 
 
 
@@ -82,14 +175,12 @@ Earlier, uncertainty came from:
 
 Now there is a new source:
 
-**Strategic response.**
+*Strategic responses of rivals.*
 
 The rival is not noise.  
 The rival is not random.  
 
-The rival is optimizing profit at the same time you are.
-
-This changes how feasibility must be evaluated.
+The rival is optimizing profit at the same time you are and this changes how feasibility must be evaluated.
 
 
 
@@ -110,8 +201,7 @@ Then they conclude:
 
 > “This is worth doing.”
 
-But they have evaluated profit at their preferred price —
-not at the price that survives competition.
+But they have evaluated profit at their preferred price — not at the price that survives competition.
 
 Under rivalry, the relevant question is not:
 
@@ -129,14 +219,9 @@ It is:
 
 ## Feasibility Under Rivalry
 
-A business that is feasible in isolation
-may be infeasible under competition.
-
-A business that appears robust
-may become fragile when margins compress.
-
-Fixed costs that were recoverable alone
-may become unrecoverable when demand splits.
+A business that is feasible in isolation may be infeasible under competition.  
+A business that appears robust may become fragile when margins compress.  
+Fixed costs that were recoverable alone may become unrecoverable when demand splits.
 
 Competition does not change the logic of profit.
 
@@ -162,14 +247,9 @@ From this chapter forward, profit must always be asked in this form:
 
 > Is this worth doing *given that others will respond*?
 
-If your profit only exists  
-when competitors remain passive,  
-you do not have a business.
+If your profit only exists when competitors remain passive, you do not have a business. You have a temporary condition.
 
-You have a temporary condition.
-
-Competition is not a separate topic from profit reasoning.
-
+Competition is not a separate topic from profit reasoning.  
 It is profit reasoning under intelligent response.
 
 And that changes everything.

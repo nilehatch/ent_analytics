@@ -76,6 +76,7 @@ book:
     - part: Competition
       chapters:
         - ch13_competition.qmd
+        - ch14_undifferentiated.qmd
         
     - part: Old Econ Competition
       chapters:
