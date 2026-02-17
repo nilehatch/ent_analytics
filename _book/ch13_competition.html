@@ -104,7 +104,7 @@ window.Quarto = {
 <link rel="stylesheet" href="custom_itwd.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -474,7 +474,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch13_competition.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Profit under Rivalry</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -530,30 +530,53 @@ If they enter your market, your demand splits.</p>
 <p>Your profit curve is no longer a curve.</p>
 <p>It is a moving surface.</p>
 </section>
-<section id="from-curve-to-surface" class="level2" data-number="13.2">
+<section id="from-curve-to-surface" class="level2 page-columns page-full" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="from-curve-to-surface"><span class="header-section-number">13.2</span> From Curve to Surface</h2>
-<p>In earlier chapters, profit was a curve.</p>
-<p>When we add a rival:</p>
+<p>In earlier chapters, profit was a curve: profit as a function of <em>your</em> price.</p>
+<p>When we add a rival, your profit depends on <em>two</em> prices:</p>
 <p>The rival chooses a price.<br>
-You respond.<br>
-They respond to your response…</p>
-<p>Profit is no longer a single curve. It becomes a surface shaped by mutual optimization.</p>
-<div class="cell" data-cap-location="bottom">
-<div class="cell-output-display">
-<div id="fig-ch13-curve-shift" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
-<figure class="quarto-float quarto-float-fig figure">
+You choose a price.<br>
+And each of you can adjust in response.</p>
+<p>Profit is no longer a single curve you optimize in isolation. It becomes a surface: <span class="math inline">\(\mathsf{\pi(P_i, P_j)}\)</span>.</p>
+<div class="cell page-columns page-full" data-cap-location="margin">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-ch13-curve-shift" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch13-curve-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="ch13_competition_files/figure-html/fig-ch13-curve-shift-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch13-curve-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.1: The profit curve shifts when the rival’s price changes.
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch13-curve-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.1: The profit curve and the best price shifts when the rival’s price changes. This is illustrated here with three profit curves holding rival price fixed at a different level.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Each colored curve is your profit curve holding the rival’s price fixed. If we draw one curve for every possible rival price, those curves “stack up” into a profit surface <span class="math inline">\(\mathsf{\pi(P_i, P_j)}\)</span>.</p>
-<p>Profit is no longer a single curve you optimize in isolation. It depends on how others respond.</p>
+<p>First, we hold the rival’s price fixed and look at a few slices of that surface.<br>
+Next we fill in many more slices, revealing the surface.</p>
+<div class="cell page-columns page-full" data-cap-location="margin">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-ch13-ribbed-surface" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-cap-location="margin">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-ch13-ribbed-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch13_competition_files/figure-html/fig-ch13-ribbed-surface-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch13-ribbed-surface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.2: A profit surface can be seen as a dense family of profit curves: each curve holds the rival’s price fixed at a different level.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Then we fill in many more slices. The faint curves show profit across many possible rival prices, and the highlighted points mark the peak of each featured curve (your best price <em>given</em> that rival price).</p>
+<p>Profit is still profit reasoning. But it is profit reasoning under response.</p>
+<!-- 
+Each colored curve is your profit curve holding the rival’s price fixed.
+If we draw one curve for every possible rival price, those curves “stack up” into a profit surface $\mathsf{\pi(P_i, P_j)}$. The ridge traces the peak of each profit curve as rival price varies.
+
+Profit is no longer a single curve you optimize in isolation.
+It depends on how others respond.
+-->
 </section>
 <section id="a-new-source-of-uncertainty" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="a-new-source-of-uncertainty"><span class="header-section-number">13.3</span> A New Source of Uncertainty</h2>

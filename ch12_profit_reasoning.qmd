@@ -16,6 +16,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+
+<!-- 
+
 In the previous chapter, profit was treated as a decision object.
 
 This chapter treats it as something that can be *reasoned about*.

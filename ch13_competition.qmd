@@ -71,23 +71,24 @@ It is a moving surface.
 
 ## From Curve to Surface
 
-In earlier chapters, profit was a curve.
+In earlier chapters, profit was a curve: profit as a function of *your* price.
 
-When we add a rival: 
+When we add a rival, your profit depends on *two* prices:
 
 The rival chooses a price.  
-You respond.  
-They respond to your response... 
+You choose a price.  
+And each of you can adjust in response.
 
-Profit is no longer a single curve. It becomes a surface shaped by mutual optimization.
+Profit is no longer a single curve you optimize in isolation. It becomes a surface: $\mathsf{\pi(P_i, P_j)}$.
+
 
 ```{r}
 #| label: fig-ch13-curve-shift
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-cap: "The profit curve shifts when the rival’s price changes."
-#| cap-location: bottom
+#| fig-cap: "The profit curve and the best price shifts when the rival’s price changes. This is illustrated here with three profit curves holding rival price fixed at a different level."
+#| cap-location: margin
 
 library(ggplot2)
 library(scales)
@@ -130,9 +131,19 @@ df_opt <- df_curves |>
 ggplot(df_curves, aes(x = Pi, y = profit, group = Pj_lab)) +
   geom_hline(yintercept = 0, linewidth = 0.8, color = col_zero) +
   
-  annotate("segment", x = 847.5, y = 0, xend = 847.5, yend = Pi_fun(847.5,300), linetype="dotted", color = "black", linewidth=0.5) +
-  annotate("segment", x = 985, y = 0, xend = 985, yend = Pi_fun(985,800), linetype="dotted", color = "black", linewidth=0.5) +  
-  annotate("segment", x = 1122.5, y = 0, xend = 1122.5, yend = Pi_fun(1122.5,1300), linetype="dotted", color = "black", linewidth=0.5) +    
+  geom_segment(
+  data = df_opt,
+  aes(x = Pi, xend = Pi, y = 0, yend = profit),
+  inherit.aes = FALSE,
+  linetype = "dotted",
+  color = "black",
+  linewidth = 0.5,
+  alpha = .5
+  ) +
+  
+  # annotate("segment", x = 847.5, y = 0, xend = 847.5, yend = Pi_fun(847.5,300), linetype="dotted", color = "black", linewidth=0.5) +
+  # annotate("segment", x = 985, y = 0, xend = 985, yend = Pi_fun(985,800), linetype="dotted", color = "black", linewidth=0.5) +  
+  # annotate("segment", x = 1122.5, y = 0, xend = 1122.5, yend = Pi_fun(1122.5,1300), linetype="dotted", color = "black", linewidth=0.5) +    
   
   geom_line(linewidth = 2, color = col_pi) +
   labs(
@@ -143,10 +154,10 @@ ggplot(df_curves, aes(x = Pi, y = profit, group = Pj_lab)) +
   
   annotate("label", x = 690, y = 120000, #1030
            label = "Rival price = $300\nBest price (given rival) = $847.50", fill = "white", alpha = .8, size = 3) +
-  annotate("label", x = 812, y = 500000,
-           label = "Rival price = $800\nOptimal price (given rival) = $985.00", fill = "white", alpha = .8, size = 3) +
-  annotate("label", x = 942, y = 950000,
-           label = "Rival price = $1300\nOptimal price (given rival) = $1122.50", fill = "white", alpha = .8, size = 3) +
+  annotate("label", x = 825, y = 500000,
+           label = "Rival price = $800\nBest price (given rival) = $985.00", fill = "white", alpha = .8, size = 3) +
+  annotate("label", x = 957, y = 950000,
+           label = "Rival price = $1300\nBest price (given rival) = $1122.50", fill = "white", alpha = .8, size = 3) +
 
   
   coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
@@ -156,12 +167,192 @@ ggplot(df_curves, aes(x = Pi, y = profit, group = Pj_lab)) +
   theme(legend.position = "none")
 ```
 
+First, we hold the rival’s price fixed and look at a few slices of that surface.  
+Next we fill in many more slices, revealing the surface.
 
+```{r}
+#| label: fig-ch13-ribbed-surface
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "A profit surface can be seen as a dense family of profit curves: each curve holds the rival’s price fixed at a different level."
+#| cap-location: margin
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(dplyr)
+
+base_theme <- theme_hc()
+col_zero <- "grey40"
+col_pi   <- "#2F855A"
+
+# -----------------------------
+# Parameters (same structure as your chapter)
+# -----------------------------
+a <- 2600
+b <- 2.0
+d <- 1.1
+c <- 230
+f <- 450000
+
+Q_i   <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
+Pi_fun <- function(Pi, Pj) (Pi - c) * Q_i(Pi, Pj) - f
+
+Pi_grid <- seq(0, 1300, length.out = 260)
+
+# Featured rival prices (the ones you label)
+Pj_feature <- c(300, 800, 1300)
+
+# Many rival prices (ribs) to suggest the surface
+Pj_ribs <- seq(300, 1300, by = 20)
+
+# -----------------------------
+# Build data
+# -----------------------------
+df_ribs <- expand.grid(
+  Pi = Pi_grid,
+  Pj = Pj_ribs
+) |>
+  as_tibble() |>
+  mutate(
+    profit = Pi_fun(Pi, Pj),
+    kind = "rib"
+  )
+
+df_feat <- expand.grid(
+  Pi = Pi_grid,
+  Pj = Pj_feature
+) |>
+  as_tibble() |>
+  mutate(
+    profit = Pi_fun(Pi, Pj),
+    kind = "featured",
+    Pj_lab = paste0("Rival price = ", dollar(Pj))
+  )
+
+# Compute best price within the grid for the featured curves (no calculus needed)
+df_opt <- df_feat |>
+  group_by(Pj, Pj_lab) |>
+  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+df_ridge <- df_ribs |>
+  group_by(Pj) |>
+  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+# -----------------------------
+# Plot
+# -----------------------------
+ggplot() +
+  geom_hline(yintercept = 0, linewidth = 0.6, color = col_zero) +
+
+  #   # vertical lines at best price for the featured curves
+  # geom_segment(
+  #   data = df_opt,
+  #   aes(x = Pi, xend = Pi, y = 0, yend = profit),
+  #   inherit.aes = FALSE,
+  #   linetype = "dotted",
+  #   color = "black",
+  #   linewidth = 0.6
+  # ) +
+
+  # faint ribs (many curves)
+  geom_line(
+    data = df_ribs,
+    aes(x = Pi, y = profit, group = Pj),
+    color = col_pi,
+    linewidth = 1.6,
+    alpha = 0.18
+  ) +
+
+  # bold featured curves (three curves)
+  # optional "outline": draw black underneath first for clarity
+  geom_line(
+    data = df_feat,
+    aes(x = Pi, y = profit, group = Pj),
+    color = "black",
+    linewidth = 2.6,
+    alpha = 1
+  ) +
+  geom_line(
+    data = df_feat,
+    aes(x = Pi, y = profit, group = Pj),
+    color = col_pi,
+    linewidth = 2.2
+  ) +
+
+#   # ridge line: the peak of each curve (best price for each rival price)
+# geom_line(
+#   data = df_ridge,
+#   aes(x = Pi, y = profit),
+#   inherit.aes = FALSE,
+#   color = "gray20",
+#   linewidth = .6,
+#   linetype = "dotted",
+#   alpha = .5
+# ) +
+  
+#   geom_smooth(
+#   data = df_ridge,
+#   aes(x = Pi, y = profit),
+#   inherit.aes = FALSE,
+#   se = FALSE,
+#   method = "loess",
+#   span = 0.35,
+#   color = "gray20",
+#   linewidth = 0.9,
+#   linetype = "dotted",
+#   alpha = 0.3
+# ) +
+  
+  geom_point(
+  data = df_opt,
+  aes(x = Pi, y = profit),
+  inherit.aes = FALSE,
+  color = "black",
+  size = 1.5
+) +
+  
+  annotate("text", x = df_opt$Pi[2], y = df_opt$profit[2] + 10000,
+         label = "peak", vjust = -1, size = 3) +
+
+  # Labels (edit x/y placements to avoid overlaps in your cropped view)
+  # annotate("label", x = 690, y = 120000,
+  #          label = "Rival price = $300\nBest price (given rival) = $847.50",
+  #          fill = "white", alpha = .85, size = 3) +
+  # annotate("label", x = 820, y = 520000,
+  #          label = "Rival price = $800\nBest price (given rival) = $985.00",
+  #          fill = "white", alpha = .85, size = 3) +
+  # annotate("label", x = 950, y = 1020000,
+  #          label = "Rival price = $1300\nBest price (given rival) = $1122.50",
+  #          fill = "white", alpha = .85, size = 3) +
+
+  labs(
+    x = "Your price",
+    y = "Profit (dollars)"
+  ) +
+
+  coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
+  scale_x_continuous(labels = label_dollar()) +
+  scale_y_continuous(labels = label_dollar()) +
+  base_theme +
+  theme(legend.position = "none")
+```
+
+Then we fill in many more slices. The faint curves show profit across many possible rival prices, and the highlighted points mark the peak of each featured curve (your best price *given* that rival price).
+
+Profit is still profit reasoning.
+But it is profit reasoning under response.
+
+<!-- 
 Each colored curve is your profit curve holding the rival’s price fixed.
-If we draw one curve for every possible rival price, those curves “stack up” into a profit surface $\mathsf{\pi(P_i, P_j)}$.
+If we draw one curve for every possible rival price, those curves “stack up” into a profit surface $\mathsf{\pi(P_i, P_j)}$. The ridge traces the peak of each profit curve as rival price varies.
 
 Profit is no longer a single curve you optimize in isolation.
 It depends on how others respond.
+-->
 
 
 
