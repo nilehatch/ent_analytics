@@ -87,7 +87,7 @@ Profit is no longer a single curve you optimize in isolation. It becomes a surfa
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-cap: "The profit curve and the best price shifts when the rival’s price changes. This is illustrated here with three profit curves holding rival price fixed at a different level."
+#| fig-cap: "Profit curves holding the rival’s price fixed at three different levels. The best price shifts as the rival’s price changes."
 #| cap-location: margin
 
 library(ggplot2)
@@ -175,7 +175,7 @@ Next we fill in many more slices, revealing the surface.
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-cap: "A profit surface can be seen as a dense family of profit curves: each curve holds the rival’s price fixed at a different level."
+#| fig-cap: 'Many profit curves across rival prices. Together, they form the profit surface $\mathsf{\pi(P_i, P_j)}$.'
 #| cap-location: margin
 
 library(ggplot2)
@@ -248,16 +248,6 @@ df_ridge <- df_ribs |>
 ggplot() +
   geom_hline(yintercept = 0, linewidth = 0.6, color = col_zero) +
 
-  #   # vertical lines at best price for the featured curves
-  # geom_segment(
-  #   data = df_opt,
-  #   aes(x = Pi, xend = Pi, y = 0, yend = profit),
-  #   inherit.aes = FALSE,
-  #   linetype = "dotted",
-  #   color = "black",
-  #   linewidth = 0.6
-  # ) +
-
   # faint ribs (many curves)
   geom_line(
     data = df_ribs,
@@ -283,30 +273,6 @@ ggplot() +
     linewidth = 2.2
   ) +
 
-#   # ridge line: the peak of each curve (best price for each rival price)
-# geom_line(
-#   data = df_ridge,
-#   aes(x = Pi, y = profit),
-#   inherit.aes = FALSE,
-#   color = "gray20",
-#   linewidth = .6,
-#   linetype = "dotted",
-#   alpha = .5
-# ) +
-  
-#   geom_smooth(
-#   data = df_ridge,
-#   aes(x = Pi, y = profit),
-#   inherit.aes = FALSE,
-#   se = FALSE,
-#   method = "loess",
-#   span = 0.35,
-#   color = "gray20",
-#   linewidth = 0.9,
-#   linetype = "dotted",
-#   alpha = 0.3
-# ) +
-  
   geom_point(
   data = df_opt,
   aes(x = Pi, y = profit),
@@ -317,17 +283,6 @@ ggplot() +
   
   annotate("text", x = df_opt$Pi[2], y = df_opt$profit[2] + 10000,
          label = "peak", vjust = -1, size = 3) +
-
-  # Labels (edit x/y placements to avoid overlaps in your cropped view)
-  # annotate("label", x = 690, y = 120000,
-  #          label = "Rival price = $300\nBest price (given rival) = $847.50",
-  #          fill = "white", alpha = .85, size = 3) +
-  # annotate("label", x = 820, y = 520000,
-  #          label = "Rival price = $800\nBest price (given rival) = $985.00",
-  #          fill = "white", alpha = .85, size = 3) +
-  # annotate("label", x = 950, y = 1020000,
-  #          label = "Rival price = $1300\nBest price (given rival) = $1122.50",
-  #          fill = "white", alpha = .85, size = 3) +
 
   labs(
     x = "Your price",
@@ -346,13 +301,7 @@ Then we fill in many more slices. The faint curves show profit across many possi
 Profit is still profit reasoning.
 But it is profit reasoning under response.
 
-<!-- 
-Each colored curve is your profit curve holding the rival’s price fixed.
-If we draw one curve for every possible rival price, those curves “stack up” into a profit surface $\mathsf{\pi(P_i, P_j)}$. The ridge traces the peak of each profit curve as rival price varies.
 
-Profit is no longer a single curve you optimize in isolation.
-It depends on how others respond.
--->
 
 
 

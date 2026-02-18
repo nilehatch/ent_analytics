@@ -1,0 +1,733 @@
+---
+title: "Differentiated Bertrand Competition"
+subtitle: "*How differentiation preserves margin under rivalry*"
+---
+
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+
+
+In the previous chapter, we saw what happens when products are indistinguishable.
+
+Price collapses to cost.  
+Contribution margin disappears.  
+Profit cannot survive.
+
+But most real markets are not perfectly undifferentiated.  
+Customers do not all move instantly for a one-dollar price difference.
+
+Some prefer your brand.  
+Some value your service.  
+Some trust your delivery.  
+Some simply do not notice small price changes.
+
+Differentiation does not eliminate competition. It softens it.
+
+
+
+## When Customers Do Not Switch Completely
+
+To model differentiation, suppose demand for your product depends on both prices:
+
+$$
+\mathsf{Q_i = a - bP_i + dP_j }
+$$
+
+- The term $\mathsf{-bP_i}$ captures how your own price reduces your demand.
+- The term $\mathsf{+dP_j}$ captures how a higher rival price shifts customers toward you.
+
+When $\mathsf{d > 0}$, customers are not perfectly loyal—but they do not switch completely either.
+
+Your demand responds gradually to price differences.
+
+Profit becomes:
+
+$$
+\mathsf{\pi_i = (P_i - c)(a - bP_i + dP_j) - f}
+$$
+
+This is the same profit logic as before.
+
+But now demand shifts partially, not entirely.
+
+
+
+
+
+## From Surface to Best Response
+
+In [Chapter 13 Competition](ch13_competition.qmd), we visualized profit as a surface.
+
+For each rival price, there was a profit curve.  
+Each curve had a peak: your best price given that rival price.
+
+If we trace the peak of every slice of that surface, we obtain a new curve.
+
+```{r}
+#| label: fig-ch14-best-response-surface
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: 'The ridge of the profit surface traces the best-response function $P_i^*(P_j)$ — the profit-maximizing price for each rival price.'
+#| cap-location: margin
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(dplyr)
+
+base_theme <- theme_hc()
+col_zero <- "grey40"
+col_pi   <- "#2F855A"
+
+# -----------------------------
+# Parameters (same structure as your chapter)
+# -----------------------------
+a <- 2600
+b <- 2.0
+d <- 1.1
+c <- 230
+f <- 450000
+
+Q_i   <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
+Pi_fun <- function(Pi, Pj) (Pi - c) * Q_i(Pi, Pj) - f
+
+r_i_fun <- function(Pj) (a + d*Pj + b*c) / (2*b)
+
+# r_i_fun(1300) # (756,0) and (1122.5,1300)
+# optima calculated
+#Pi_fun(765,0) # 122 450
+#Pi_fun(1122.5,1300) # 1 143 113
+
+Pi_grid <- seq(0, 1300, length.out = 260)
+
+# Featured rival prices (the ones you label)
+#Pj_feature <- c(0, 300, 800, 1300)
+Pj_feature <- c(0, 1300)
+
+# Many rival prices (ribs) to suggest the surface
+Pj_ribs <- seq(0, 1300, by = 20)
+
+# -----------------------------
+# Build data
+# -----------------------------
+
+# ---- Analytic best-response ridge (smooth, no kinks) ----
+Pj_ridge <- seq(0, 1300, by = 5)
+
+df_ridge_analytic <- tibble(
+  Pj = Pj_ridge,
+  Pi = r_i_fun(Pj)
+) |>
+  mutate(
+    profit = Pi_fun(Pi, Pj)
+  )
+
+df_ribs <- expand.grid(
+  Pi = Pi_grid,
+  Pj = Pj_ribs
+) |>
+  as_tibble() |>
+  mutate(
+    profit = Pi_fun(Pi, Pj),
+    kind = "rib"
+  )
+
+df_feat <- expand.grid(
+  Pi = Pi_grid,
+  Pj = Pj_feature
+) |>
+  as_tibble() |>
+  mutate(
+    profit = Pi_fun(Pi, Pj),
+    kind = "featured",
+    Pj_lab = paste0("Rival price = ", dollar(Pj))
+  )
+
+# Compute best price within the grid for the featured curves (no calculus needed)
+df_opt <- df_feat |>
+  group_by(Pj, Pj_lab) |>
+  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+df_ridge <- df_ribs |>
+  group_by(Pj) |>
+  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+# -----------------------------
+# Plot
+# -----------------------------
+ggplot() +
+  geom_hline(yintercept = 0, linewidth = 0.6, color = col_zero) +
+
+  geom_line(
+    data = df_ribs,
+    aes(x = Pi, y = profit, group = Pj),
+    color = col_pi,
+    linewidth = 1.6,
+    alpha = 0.18
+  ) +
+  
+    geom_line(
+    data = df_ridge_analytic,
+    aes(x = Pi, y = profit),
+    inherit.aes = FALSE,
+    color = "black",
+    linewidth = 2.4,
+    alpha = 0.8
+  ) +
+  geom_line(
+    data = df_ridge_analytic,
+    aes(x = Pi, y = profit),
+    inherit.aes = FALSE,
+    color = "darkseagreen3",
+    linewidth = 2,
+    alpha = 0.9
+  ) +
+
+  geom_line(
+    data = df_feat,
+    aes(x = Pi, y = profit, group = Pj),
+    color = "black",
+    linewidth = 3.2,
+    alpha = 1
+  ) +
+  geom_line(
+    data = df_feat,
+    aes(x = Pi, y = profit, group = Pj),
+    color = col_pi,
+    linewidth = 2.6
+  ) +
+
+  labs(x = "Your price", y = "Profit (dollars)") +
+  
+  annotate("label",
+         x = 1080,
+         y = 500000,
+         label = "atop('Best response function:',
+                        P[i]^'*' == 765 + 0.275*P[j])",
+         parse = TRUE,
+         fill = "white",
+         alpha = 0.7,
+         size = 3.7) +
+
+  coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
+  scale_x_continuous(labels = label_dollar()) +
+  scale_y_continuous(labels = label_dollar()) +
+  base_theme +
+  theme(legend.position = "none")
+```
+
+That curve tells us: *Your best price for every possible rival price.*  
+It is your **best-response function**.
+
+It describes how you optimally adjust when the rival adjusts.
+
+
+
+
+
+
+## The Best-Response Function
+
+The ridge in the figure traces your optimal price for every rival price.
+
+In this numerical example, that ridge is linear:
+
+$$
+\mathsf{P_i^* = 765 + 0.275 P_j}
+$$
+
+Two things are immediately visible.
+
+First, your best price increases when the rival raises their price.
+
+Competition is still present.  
+But it is no longer destructive.
+
+Second, the slope is less than one.
+
+When the rival raises price by one dollar, your best price rises by only about 28 cents.
+
+Your response is disciplined.  
+Not explosive.
+
+Differentiation softens rivalry.
+
+--- 
+
+
+In general, with demand
+
+$$
+\mathsf{Q_i = a - bP_i + dP_j},
+$$
+
+the best-response function is:
+$$
+\mathsf{P_i^*(P_j) = \frac{a + dP_j + bc}{2b}}
+$$
+
+This expression tells us several important things.
+
+First, your best price increases when the rival raises their price.
+
+Competition is still present.
+But it is no longer destructive.
+
+Second, the strength of your response depends on the degree of differentiation.
+
+The slope of the best-response function is:
+
+$$
+\mathsf{\frac{d}{2b}}
+$$
+
+- When $\mathsf{d}$ is small, customers do not shift much toward you when the rival raises price. Your best response is relatively flat.
+- When $\mathsf{d}$ is large, customers shift more strongly. Your pricing becomes more interdependent.
+
+If $\mathsf{d = 0}$ the best-response function becomes independent of the rival’s price.
+This moves us back toward the undifferentiated collapse of [Chapter 14 When Price Competition Eliminates Profit](ch14_undifferentiated.qmd).
+
+Differentiation does not eliminate rivalry.  
+It changes the slope of response.
+
+
+
+
+::: {.callout-tip collapse="true" icon = "false"}
+## Best Response Function Derivation [optional math note]
+
+Maximizing
+
+\begin{align}
+\mathsf{\pi_i} &= \mathsf{(P_i - c)Q_i(P_i,P_j) - f} \\
+               &= \mathsf{(P_i - c)(a - bP_i + dP_j) - f}
+\end{align}
+
+with respect to $\mathsf{P_i}$ yields:
+
+$$
+\mathsf{P_i^*(P_j) = \frac{a + dP_j + bc}{2b}}
+$$
+
+This is the best-response function: the price that maximizes profit for any given rival price.
+:::
+
+
+
+
+## Mutual Best Response
+
+So far, we have described your optimal response to a given rival price.
+
+But the rival is solving the same problem.
+
+By symmetry, their best-response function has the same structure:
+
+$$
+\mathsf{P_j^*(P_i) = \frac{a + dP_i + bc}{2b}}
+$$
+
+Each firm adjusts optimally given the other’s price.
+
+When we plot both best-response functions on the same axes, there is a single intersection point.
+
+```{r}
+#| label: fig-ch15-reaction-functions
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: 'Best-response functions for both firms. Their intersection is the equilibrium price pair: each firm is optimizing given the other’s price.'
+#| cap-location: margin
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+
+base_theme <- theme_hc()
+col_pi <- "#2F855A"
+
+# -----------------------------
+# Parameters (same as chapter)
+# -----------------------------
+a <- 2600
+b <- 2.0
+d <- 1.1
+c <- 230
+
+# Best-response functions
+BR_i <- function(Pj) (a + d*Pj + b*c) / (2*b)
+BR_j <- function(Pi) (a + d*Pi + b*c) / (2*b)
+
+# Equilibrium price (symmetric case)
+P_star <- (a + b*c) / (2*b - d)
+
+# Axis grid
+P_grid <- seq(0, 1500, length.out = 200)
+
+# Data
+df_i <- data.frame(
+  Pj = P_grid,
+  Pi = BR_i(P_grid)
+)
+
+df_j <- data.frame(
+  Pj = BR_j(P_grid),
+  Pi = P_grid
+)
+
+# -----------------------------
+# Plot
+# -----------------------------
+ggplot() +
+  
+  geom_segment(aes(x = P_star, y = 0,
+                 xend = P_star, yend = P_star),
+             linetype = "dotted",
+             color = "grey50",
+             linewidth = 0.6) +
+  geom_segment(aes(x = 0, y = P_star,
+                 xend = P_star, yend = P_star),
+             linetype = "dotted",
+             color = "grey50",
+             linewidth = 0.6) +
+  
+  geom_line(data = df_i,
+            aes(x = Pj, y = Pi),
+            color = "mediumblue",
+            linewidth = 2) +
+  
+  geom_line(data = df_j,
+            aes(x = Pj, y = Pi),
+            color = "dodgerblue",
+            linewidth = 1.8,
+            linetype = "solid") +
+  
+  geom_point(aes(x = P_star, y = P_star),
+             size = 3,
+             color = "black") +
+  
+  annotate("label",
+           x = P_star + 100,
+           y = P_star - 75,
+           label = "Equilibrium",
+           alpha = .7,
+           size = 3.7) +
+  
+  annotate("label", x = 700, y = BR_i(700)+25,
+         label = "Your best response",
+         size = 3, hjust = 1,
+         alpha = .85,) +
+  
+  annotate("label", x = BR_j(400), y = 400,
+         label = "Rival best response",
+         size = 3, hjust = 1,
+         alpha = .85,
+         ) +
+  
+  labs(
+    x = "Rival price",
+    y = "Your price"
+  ) +
+  
+  scale_x_continuous(labels = label_dollar()) +
+  scale_y_continuous(labels = label_dollar()) +
+  
+  coord_cartesian(xlim = c(0, 1500),
+                  ylim = c(0, 1500)) +
+  
+  base_theme +
+  theme(legend.position = "none")
+```
+
+
+At that point:
+
+- Your price is optimal given theirs.
+- Their price is optimal given yours.
+- Neither firm has an incentive to change price unilaterally.
+
+This is a stable outcome.
+
+Game theory calls it a Nash equilibrium.  
+But the logic is simpler than that: it is the price pair where both firms are doing the best they can, given what the other is doing.
+
+
+
+
+
+## Solving for the Equilibrium Price
+
+Because the firms are symmetric, equilibrium occurs where:
+
+$$
+\mathsf{P_i^* = P_j^* = P^*}
+$$
+
+Substituting into the best-response formula:
+
+$$
+\mathsf{P^* = \frac{a + dP^* + bc}{2b}}
+$$
+
+and then solving, yields:
+
+$$
+\mathsf{P^* = \frac{a + bc}{2b - d}}
+$$
+
+This is the equilibrium price under differentiated Bertrand competition.
+
+<!-- Several insights follow immediately.-->
+
+### A Note on Symmetry
+
+In this chapter, we assumed the firms were structurally identical: same cost, same demand sensitivity, same degree of differentiation.  
+That is why equilibrium resulted in the same price for both firms.  
+But symmetry is not required for equilibrium.
+
+If firms differ in cost, demand strength, or differentiation, their best-response functions shift. The intersection still determines equilibrium — but the prices need not be equal.
+ 
+[Chapter 16 Competitive Advantage](ch16_competitive_advantage.qmd) explores what happens when firms are structurally different. That is where competitive advantage appears.
+
+
+
+
+
+## What Determines the Equilibrium Price?
+
+Three structural forces shape the equilibrium price.
+
+#### Differentiation
+The denominator $\mathsf{2b - d}$ governs competitive intensity.
+
+- When differentiation is weak (small $\mathsf{d}$), the denominator is large. Price is lower.
+- When differentiation is strong (larger $\mathsf{d}$), the denominator shrinks. Price rises.
+
+Differentiation increases pricing power.
+
+#### Cost
+Higher variable cost $\mathsf{c}$ shifts equilibrium price upward.
+
+#### Demand strength
+Stronger baseline demand $\mathsf{a}$ raises equilibrium price.
+
+Equilibrium is not arbitrary.
+
+It is a structural consequence of demand, cost, and substitution.
+
+
+
+
+
+## Differentiation Softens Competition
+
+
+Compare three structural cases:
+
+- Monopoly without rivals ([Chapter 12](ch12_profit_reasoning.qmd))
+- Undifferentiated collapse ([Chapter 14](ch14_undifferentiated.qmd))
+- Differentiated rivalry (this chapter)
+
+In monopoly, price is highest.
+
+In undifferentiated price competition, price falls to cost.
+
+In differentiated rivalry, price lies between those extremes.  
+Profit survives.  
+But it is disciplined.
+
+Competition is present.   
+Response is mutual.  
+Margin is determined by structure.
+
+Differentiation does not eliminate rivalry.  
+It prevents collapse.
+
+
+
+
+## Why the Intersection Matters
+
+Equilibrium is not cooperation.
+
+It is not agreement.  
+It is not collusion.  
+It is simply the point where both firms are optimizing at the same time.
+
+Each firm sits on its best-response line.  
+Neither can improve profit by moving alone.
+
+That is what makes the outcome stable.
+
+
+
+
+
+## What This Means for Feasibility
+
+Return to the core question:
+
+> Is this worth doing?
+
+Under differentiation, profit does not disappear automatically.
+
+But it depends on structure.
+
+Three parameters matter:
+
+- Differentiation (the size of $\mathsf{d}$)
+- Price sensitivity (the size of $\mathsf{b}$)
+- Variable cost (the size of $\mathsf{c}$)
+
+If differentiation is weak and price sensitivity is strong, equilibrium price will be close to cost.  
+Profit may be fragile.
+
+A small cost disadvantage can eliminate margin.
+
+If differentiation is meaningful, equilibrium price will be higher.    
+Profit can be durable.
+
+Feasibility is no longer about finding *any* positive profit curve.
+
+It is about whether structure protects margin under response.
+
+
+::: {.callout-tip collapse="true" icon = "false"}
+## Degree of Differentiation [optional math note]
+
+The parameter $\mathsf{d}$ measures how strongly customers shift toward you when the rival raises price.
+
+Recall the equilibrium price:
+
+$$ 
+\mathsf{P^* = \frac{a + bc}{2b - d} }
+$$
+
+To see what this means, hold demand and cost fixed:
+
+- $\mathsf{a = 2600}$
+- $\mathsf{b = 2}$
+- $\mathsf{c = 230}$
+
+Then:
+
+$$ 
+\mathsf{a + bc = 2600 + (2)(230) = 3060}
+$$
+
+So equilibrium price becomes:
+
+$$ 
+\mathsf{P^* = \frac{3060}{4 - d}}
+$$
+
+Now vary $\mathsf{d}$.
+
+When differentiation is weak (small $\mathsf{d}$), equilibrium price is relatively low.
+
+As differentiation strengthens (larger $\mathsf{d}$), equilibrium price rises.
+
+Differentiation increases pricing power.
+
+But it also increases interdependence.
+
+The slope of the best-response function is:
+
+$$ 
+\mathsf{\frac{d}{2b}}
+$$
+
+When $\mathsf{d}$ is large, your optimal price moves more strongly when the rival moves.
+
+Differentiation does not eliminate competition.
+
+It changes its intensity.
+
+The figure below shows how equilibrium price changes as differentiation increases.
+
+```{r}
+#| label: fig-ch15-differentiation
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Equilibrium price rises as differentiation (d) increases."
+#| cap-location: margin
+
+library(ggplot2)
+library(scales)
+library(ggthemes)
+
+base_theme <- theme_hc()
+col_pi <- "purple"
+
+# Parameters (consistent with chapter)
+a <- 2600
+b <- 2
+c <- 230
+
+# Range of differentiation values (must stay below 2b = 4)
+d_vals <- seq(0.1, 3.5, length.out = 200)
+
+# Equilibrium price function
+P_star <- (a + b*c) / (2*b - d_vals)
+
+df_d <- data.frame(
+  d = d_vals,
+  P_star = P_star
+)
+
+ggplot(df_d, aes(x = d, y = P_star)) +
+  geom_line(color = col_pi, linewidth = 2) +
+  labs(
+    x = "Differentiation (d)",
+    y = "Equilibrium price"
+  ) +
+  scale_y_continuous(labels = label_dollar()) +
+  coord_cartesian(ylim = c(0, max(P_star))) +
+  base_theme
+```
+
+As differentiation approaches $\mathsf{2b}$, pricing becomes highly interdependent and equilibrium price rises sharply. Structural insulation from pure price competition becomes decisive.
+
+:::
+
+## The Decision Lens
+
+From this point forward, feasibility must be evaluated under response.
+
+It is not enough to ask:
+
+> Is there a price that makes profit positive?
+
+You must ask:
+
+> What price survives mutual optimization?
+
+Under differentiated rivalry, profit does not disappear automatically.  
+But equilibrium disciplines it.
+
+Margin is compressed relative to monopoly.  
+Price depends on cost, demand, and substitution.  
+Small structural disadvantages are exposed.  
+
+If your profit only exists because competitors are passive, you do not have a business.  
+You have a temporary condition.
+
+Differentiation softens competition.  
+It does not suspend it.
+
+The next question is no longer whether equilibrium exists.  
+It is whether your structure is strong enough to win at equilibrium.

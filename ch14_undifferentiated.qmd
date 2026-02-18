@@ -30,8 +30,7 @@ No switching cost.
 No inconvenience in moving from one seller to another.
 
 In this setting, even a small price difference redirects demand entirely.
-
----
+<br><br>
 
 ## Why the Price Falls
 
@@ -251,3 +250,38 @@ But durable profit will not.
 This is not pessimism.
 
 It is disciplined pre-revenue reasoning.
+
+
+
+
+
+## Beyond the Price War
+
+Undifferentiated price competition is the most unforgiving form of rivalry.
+
+When products are identical and customers switch freely, price moves toward cost and extraordinary profit disappears.  
+But most real markets are not perfectly undifferentiated.
+
+Customers notice differences.  
+They value features differently.  
+They weigh brand, convenience, trust, timing, service, and experience.
+
+When those differences matter, even slightly, price no longer determines demand perfectly.  
+And when price no longer determines demand perfectly, margin can survive.
+
+The question is not whether differentiation exists in theory.  
+The question is whether differentiation meaningfully changes customers’ willingness to switch.
+
+If it does, rivalry changes.
+
+Price still matters.
+Competitors still respond.
+Profit remains conditional.  
+But contribution no longer collapses automatically.
+
+In the next chapter, we examine what happens when firms are differentiated — when customers do not move instantly for a one-dollar price difference.
+
+The logic of rivalry becomes more complex.  
+And more interesting.  
+Because now profit does not disappear by design.  
+It depends on how strong your structural differences really are.
