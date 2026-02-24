@@ -1,5 +1,10 @@
-# Profit Toolkits {#sec-profit_toolkit-part .unnumbered}
-##### *Supporting the Pre-Revenue Profit Decision*
+---
+title: "Toolkit II: Profit" 
+subtitle: "Supporting the pre-revenue profit decision"
+---
+
+<!--# Toolkit II: Profit {#sec-profit_toolkit-part .unnumbered}
+##### *Supporting the Pre-Revenue Profit Decision* -->
 
 
 The chapters in this part of the book were about *reasoning.*

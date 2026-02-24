@@ -22,6 +22,14 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 90px;
 }
 
+/* --- Section heading weight override --- */
+h2 {
+  font-weight: 500;
+}
+h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
 /* Paragraph rhythm */
 p + p { margin-top: 0.6em; }
 
@@ -34,10 +42,25 @@ p + p { margin-top: 0.6em; }
   margin-bottom: 1.25rem;
 }
 
-.quarto-title-block h1.title,
 
 /* Subtitle style (muted but readable on banner) */
 /* Subtitle tuned for banner readability */
+/*.quarto-title-block h1.title,*/
+.quarto-title-block h1.title { 
+  color: white;
+  font-weight: 500; 
+  border-bottom: none !important;
+  margin: 0 !important;
+  margin-bottom: .25em !important;
+  }
+.quarto-title-block .subtitle {
+  color: white;
+  font-weight: 400;
+  font-style: italic;
+  border-bottom: none !important;
+  margin: 0 !important;
+}
+
 .quarto-title-block .subtitle {
   display: block;
   font-size: 1.1rem;
@@ -45,11 +68,8 @@ p + p { margin-top: 0.6em; }
   color: rgba(255,255,255,0.85);
   border-bottom: none !important;
   margin: 0 !important;
-
-  /* your spacing preferences */
   margin-top: -0.25em !important;
-  margin-bottom: 1em !important;
-
+  margin-bottom: .35em !important;
   font-style: italic;
 }
 
@@ -81,6 +101,14 @@ p + p { margin-top: 0.6em; }
 }
 .quarto-title-block .quarto-title-breadcrumbs .breadcrumb-item:last-child::before {
   content: none;
+}
+/* Subtle separator line below breadcrumbs (optional) */
+.quarto-title-block .quarto-title-breadcrumbs::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 0.35rem;
+  background: linear-gradient(to right, rgba(255,255,255,0.25), rgba(255,255,255,0));
 }
 
 /* ---------- Section Divider (Asterism) ---------- */

@@ -1,5 +1,5 @@
-# Estimate Variable Cost per Unit {#sec-toolkit-variable-cost-chapter .unnumbered}
 
+# Estimate Variable Cost per Unit {#sec-toolkit-variable-cost-chapter .unnumbered}
 #### *What It Really Costs to Serve One More Customer*
 
 This toolkit supports one narrow but critical task:

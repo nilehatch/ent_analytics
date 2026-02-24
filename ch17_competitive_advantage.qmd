@@ -1,0 +1,124 @@
+---
+title: "Competitive Advantage as Structure"
+subtitle: "*How parameter differences shift equilibrium*"
+---
+
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+
+In [Chapter 15](ch15_differentiated.qmd), we assumed symmetry with the rival.
+
+Same cost.  
+Same demand sensitivity.  
+Same differentiation.
+
+That is why equilibrium produced the same price for both firms.
+But symmetry is not the goal of entrepreneurship.
+
+Difference is.
+
+Competitive advantage does not mean “trying harder.”  
+It does not mean “believing more strongly.”  
+It does not mean “marketing louder.”
+
+It means changing structure.
+
+
+
+
+
+## Breaking Symmetry
+
+Return to the equilibrium price:
+
+$$
+\mathsf{P^* = \frac{a + bc}{2b - d}.}
+$$
+
+That expression contains everything.
+
+If two firms differ in:
+
+- Variable cost $\mathsf{c}$,
+- Demand strength $\mathsf{a}$,
+- Differentiation $\mathsf{d}$,
+
+their best-response functions shift.
+
+The intersection shifts.  
+Equilibrium prices diverge.  
+Profit diverges.  
+*Advantage appears.*
+
+Not because one firm chose differently at the same structure.  
+But because the competitive profit structure itself is different.
+
+
+
+
+
+## Three Structural Sources of Advantage
+
+There are only three ways to shift equilibrium in your favor.
+
+### 1. Lower Cost
+
+A lower variable cost shifts your best-response function downward.
+
+You can profitably set a lower price.  
+You can survive price pressure others cannot.
+
+Cost advantage does not eliminate rivalry.  
+It makes you more durable within it.
+
+
+
+### 2. Stronger Demand
+
+If customers value your product more highly (higher $\mathsf{a}$), your demand curve shifts outward.
+
+Your best-response line shifts upward.  
+You charge more at equilibrium.
+
+Revenue advantage becomes structural.
+
+
+
+### 3. Greater Differentiation
+
+If customers are less willing to switch away from you (lower effective substitution), the parameter governing rivalry changes.
+
+Your equilibrium margin increases.
+
+Differentiation does not remove competition.  
+It reduces how tightly your price is pinned to the rival’s.
+
+
+
+
+
+
+## Advantage Is a Shift, Not a Story
+
+Competitive advantage is not a slogan.
+
+It is a shift in parameters.
+
+It moves the best-response function.  
+It moves the intersection.  
+It changes the equilibrium outcome.
+
+That is why advantage must be structural.
+
+Not rhetorical.
+

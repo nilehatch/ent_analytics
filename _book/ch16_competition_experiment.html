@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Use Sensitivity to Decide What to Learn Next – Is This Worth Doing?</title>
+<title>16&nbsp; Measuring Demand Under Rivalry – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ch13_competition.html" rel="next">
-<link href="./tk9_read_profit.html" rel="prev">
+<link href="./ch17_competitive_advantage.html" rel="next">
+<link href="./ch15_differentiated.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="custom_itwd.css">
@@ -84,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Toolkit II: Profit</a></li><li class="breadcrumb-item"><a href="./tk10_sensitivity_decide.html">Use Sensitivity to Decide What to Learn Next</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch16_competition_experiment.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Measuring Demand Under Rivalry</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">The Pre-Revenue Decision</span></a>
+ <span class="menu-text">Pre-Revenue Decisions</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -273,11 +302,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./part_profit_toolkits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Toolkit II: Profit</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
@@ -304,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link active">
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
@@ -312,13 +341,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Competition</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch13_competition.html" class="sidebar-item-text sidebar-link">
@@ -339,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch16_competition_experiment.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch16_competition_experiment.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Measuring Demand Under Rivalry</span></span></a>
   </div>
 </li>
@@ -453,24 +482,41 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#step-1-treat-every-input-as-a-belief-not-a-fact" id="toc-step-1-treat-every-input-as-a-belief-not-a-fact" class="nav-link active" data-scroll-target="#step-1-treat-every-input-as-a-belief-not-a-fact">Step 1: Treat Every Input as a Belief, Not a Fact</a></li>
-  <li><a href="#step-2-ask-the-right-sensitivity-question" id="toc-step-2-ask-the-right-sensitivity-question" class="nav-link" data-scroll-target="#step-2-ask-the-right-sensitivity-question">Step 2: Ask the Right Sensitivity Question</a></li>
-  <li><a href="#step-3-vary-one-assumption-at-a-timedeliberately" id="toc-step-3-vary-one-assumption-at-a-timedeliberately" class="nav-link" data-scroll-target="#step-3-vary-one-assumption-at-a-timedeliberately">Step 3: Vary One Assumption at a Time—Deliberately</a></li>
-  <li><a href="#step-4-identify-decision-critical-assumptions" id="toc-step-4-identify-decision-critical-assumptions" class="nav-link" data-scroll-target="#step-4-identify-decision-critical-assumptions">Step 4: Identify Decision-Critical Assumptions</a></li>
-  <li><a href="#step-5-sort-assumptions-by-actionability" id="toc-step-5-sort-assumptions-by-actionability" class="nav-link" data-scroll-target="#step-5-sort-assumptions-by-actionability">Step 5: Sort Assumptions by Actionability</a></li>
-  <li><a href="#step-6-decide-the-next-responsible-move" id="toc-step-6-decide-the-next-responsible-move" class="nav-link" data-scroll-target="#step-6-decide-the-next-responsible-move">Step 6: Decide the Next Responsible Move</a></li>
-  <li><a href="#step-7-use-sensitivity-to-allocate-attention-not-precision" id="toc-step-7-use-sensitivity-to-allocate-attention-not-precision" class="nav-link" data-scroll-target="#step-7-use-sensitivity-to-allocate-attention-not-precision">Step 7: Use Sensitivity to Allocate Attention, Not Precision</a></li>
-  <li><a href="#what-this-toolkit-refuses-to-do" id="toc-what-this-toolkit-refuses-to-do" class="nav-link" data-scroll-target="#what-this-toolkit-refuses-to-do">What This Toolkit Refuses to Do</a></li>
-  <li><a href="#where-this-leaves-the-decision" id="toc-where-this-leaves-the-decision" class="nav-link" data-scroll-target="#where-this-leaves-the-decision">Where This Leaves the Decision</a></li>
+  <li><a href="#demand-under-rivalry-is-two-dimensional" id="toc-demand-under-rivalry-is-two-dimensional" class="nav-link active" data-scroll-target="#demand-under-rivalry-is-two-dimensional"><span class="header-section-number">16.1</span> Demand Under Rivalry Is Two-Dimensional</a>
+  <ul class="collapse">
+  <li><a href="#dimensionality-increases-fragility" id="toc-dimensionality-increases-fragility" class="nav-link" data-scroll-target="#dimensionality-increases-fragility">Dimensionality Increases Fragility</a></li>
+  <li><a href="#move-from-optimization-to-strategic-interaction" id="toc-move-from-optimization-to-strategic-interaction" class="nav-link" data-scroll-target="#move-from-optimization-to-strategic-interaction">Move from Optimization to Strategic Interaction</a></li>
+  </ul></li>
+  <li><a href="#designing-experiments-under-rivalry" id="toc-designing-experiments-under-rivalry" class="nav-link" data-scroll-target="#designing-experiments-under-rivalry"><span class="header-section-number">16.2</span> Designing Experiments Under Rivalry</a>
+  <ul class="collapse">
+  <li><a href="#rival-price-is-now-an-experimental-variable" id="toc-rival-price-is-now-an-experimental-variable" class="nav-link" data-scroll-target="#rival-price-is-now-an-experimental-variable">Rival Price Is Now an Experimental Variable</a></li>
+  <li><a href="#identification-requires-independent-variation" id="toc-identification-requires-independent-variation" class="nav-link" data-scroll-target="#identification-requires-independent-variation">Identification Requires Independent Variation</a></li>
+  <li><a href="#the-cost-of-combinatorial-explosion" id="toc-the-cost-of-combinatorial-explosion" class="nav-link" data-scroll-target="#the-cost-of-combinatorial-explosion">The Cost of Combinatorial Explosion</a></li>
+  </ul></li>
+  <li><a href="#estimating-cross-price-effects" id="toc-estimating-cross-price-effects" class="nav-link" data-scroll-target="#estimating-cross-price-effects"><span class="header-section-number">16.3</span> Estimating Cross-Price Effects</a>
+  <ul class="collapse">
+  <li><a href="#interpreting-the-coefficients" id="toc-interpreting-the-coefficients" class="nav-link" data-scroll-target="#interpreting-the-coefficients">Interpreting the Coefficients</a></li>
+  <li><a href="#functional-form-and-flexibility" id="toc-functional-form-and-flexibility" class="nav-link" data-scroll-target="#functional-form-and-flexibility">Functional Form and Flexibility</a></li>
+  <li><a href="#from-estimation-to-strategy" id="toc-from-estimation-to-strategy" class="nav-link" data-scroll-target="#from-estimation-to-strategy">From Estimation to Strategy</a></li>
+  </ul></li>
+  <li><a href="#from-estimated-demand-to-competitive-profit" id="toc-from-estimated-demand-to-competitive-profit" class="nav-link" data-scroll-target="#from-estimated-demand-to-competitive-profit"><span class="header-section-number">16.4</span> From Estimated Demand to Competitive Profit</a>
+  <ul class="collapse">
+  <li><a href="#step-1-construct-the-profit-function" id="toc-step-1-construct-the-profit-function" class="nav-link" data-scroll-target="#step-1-construct-the-profit-function">Step 1: Construct the Profit Function</a></li>
+  <li><a href="#step-2-solve-for-mutual-best-response" id="toc-step-2-solve-for-mutual-best-response" class="nav-link" data-scroll-target="#step-2-solve-for-mutual-best-response">Step 2: Solve for Mutual Best Response</a></li>
+  <li><a href="#step-3-evaluate-equilibrium-profit" id="toc-step-3-evaluate-equilibrium-profit" class="nav-link" data-scroll-target="#step-3-evaluate-equilibrium-profit">Step 3: Evaluate Equilibrium Profit</a></li>
+  <li><a href="#the-analytics-spine-restored" id="toc-the-analytics-spine-restored" class="nav-link" data-scroll-target="#the-analytics-spine-restored">The Analytics Spine Restored</a></li>
+  </ul></li>
+  <li><a href="#diagnosing-structural-position" id="toc-diagnosing-structural-position" class="nav-link" data-scroll-target="#diagnosing-structural-position"><span class="header-section-number">16.5</span> Diagnosing Structural Position</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Toolkit II: Profit</a></li><li class="breadcrumb-item"><a href="./tk10_sensitivity_decide.html">Use Sensitivity to Decide What to Learn Next</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch16_competition_experiment.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Measuring Demand Under Rivalry</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-toolkit-sensitivity" class="quarto-section-identifier">Use Sensitivity to Decide What to Learn Next</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Measuring Demand Under Rivalry</span></h1>
+<p class="subtitle lead"><em>Substitution, price sensitivity, and experimental design in competitive markets</em></p>
 </div>
 
 
@@ -487,171 +533,321 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="turning-fragility-into-learning-priorities" class="level4">
-<h4 class="anchored" data-anchor-id="turning-fragility-into-learning-priorities"><em>Turning Fragility Into Learning Priorities</em></h4>
-<p>Once profit has been correctly interpreted, the question changes.</p>
-<p>The question is no longer whether profit is possible or fragile.</p>
-<p>It becomes:</p>
+<p>In the previous chapters on competition, we analyzed profit by assuming a demand structure.</p>
+<p>We showed how profit becomes a surface defined by two prices.<br>
+We derived best-response functions.<br>
+We identified equilibrium.</p>
+<p>But all of those results depend on the shape of demand.</p>
+<p>Until now, demand was given. In practice, it must be measured.</p>
+<p>Under rivalry, demand is no longer one-dimensional. It depends on both your price and your rival’s price.</p>
+<p><span class="math display">\[ \mathsf{Q_i = f(P_i, P_j)}\]</span></p>
+<p>That single change — adding a second price — transforms how experiments must be designed and how demand must be estimated.</p>
+<p>This chapter extends the experimental discipline developed earlier to competitive settings.<br>
+The goal is not to add complexity.<br>
+The goal is to measure substitution directly.</p>
+<p>Once competitive demand is estimated, cost and scale can be layered on top to evaluate profit under rivalry. That step comes next.</p>
+<p>First, we must measure the structure that makes competition possible.</p>
+<section id="demand-under-rivalry-is-two-dimensional" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="demand-under-rivalry-is-two-dimensional"><span class="header-section-number">16.1</span> Demand Under Rivalry Is Two-Dimensional</h2>
+<p>When demand depended only on your price, estimation focused on one question:</p>
 <blockquote class="blockquote">
-<p><em>Which assumptions matter enough to justify learning, delay, or redesign—before committing further?</em></p>
+<p>How does quantity change when I change price?</p>
 </blockquote>
-<p>This toolkit exists to answer that question.</p>
-<p>It does not help you optimize profit.<br>
-It helps you <strong>decide what to pay attention to next</strong>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="How this toolkit fits">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How this toolkit fits
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This toolkit builds directly on the toolkit for <a href="./tk9_read_profit.html"><em>reading a profit curve</em></a>.</p>
-<p>It assumes you can already recognize:</p>
-<ul>
-<li>impossible profit,</li>
-<li>fragile profit,</li>
-<li>and robust profit.</li>
-</ul>
-<p>Sensitivity does not replace that judgment. It sharpens it by revealing <em>where being wrong would matter most</em>.</p>
-</div>
-</div>
-</div>
+<p>Under rivalry, there are two distinct effects.</p>
+<section id="own-price-effect" class="level4">
+<h4 class="anchored" data-anchor-id="own-price-effect">Own-price effect</h4>
+<p>When you raise your price, some customers reduce quantity or leave.<br>
+This is price sensitivity — the familiar slope discipline.</p>
 </section>
-<section id="step-1-treat-every-input-as-a-belief-not-a-fact" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-treat-every-input-as-a-belief-not-a-fact">Step 1: Treat Every Input as a Belief, Not a Fact</h2>
-<p>Profit estimates rest on assumptions.</p>
-<p>Some are well supported.<br>
-Others are weak guesses.<br>
-All are uncertain.</p>
-<p>Sensitivity analysis begins by reframing inputs as beliefs rather than facts:</p>
+<section id="cross-price-effect" class="level4">
+<h4 class="anchored" data-anchor-id="cross-price-effect">Cross-price effect</h4>
+<p>When the rival raises their price, some customers shift toward you. This is substitution.</p>
+<p>Both must be measured.</p>
+<p>If you only estimate how demand responds to your own price, you do not understand competition. If you only estimate switching without price discipline, you do not understand margin.</p>
+<p>Rivalry is the joint presence of both.</p>
+<p>Importantly, the principles of good experimentation do not change.</p>
+<p>You still must:</p>
 <ul>
-<li>demand shape,</li>
-<li>willingness to pay,</li>
-<li>variable cost per unit,</li>
-<li>fixed commitments,</li>
-<li>scale and access assumptions.</li>
+<li>Define the unit clearly.</li>
+<li>Define the period clearly.</li>
+<li>Frame the problem carefully.</li>
+<li>Avoid measurement error.</li>
+<li>Validate responses.</li>
 </ul>
-<p>The goal is not to eliminate uncertainty.<br>
-It is to understand <em>which uncertainty matters</em>.</p>
+<p>Nothing about data discipline disappears under competition.<br>
+But something becomes more fragile.</p>
 </section>
-<section id="step-2-ask-the-right-sensitivity-question" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-ask-the-right-sensitivity-question">Step 2: Ask the Right Sensitivity Question</h2>
-<p>Sensitivity is often misunderstood.</p>
-<p>The question is <em>not</em>:</p>
+<section id="dimensionality-increases-fragility" class="level3">
+<h3 class="anchored" data-anchor-id="dimensionality-increases-fragility">Dimensionality Increases Fragility</h3>
+<p>When demand is one-dimensional, errors distort one slope.<br>
+When demand is two-dimensional, errors distort interaction.</p>
+<p>If units differ across products, substitution is mismeasured.<br>
+If time periods differ, cross-price sensitivity becomes noise.<br>
+If framing favors one product over another, estimated advantage becomes artificial.</p>
+<p>Under rivalry, sloppiness compounds.</p>
+<p>The experimental principles developed earlier do not change.<br>
+They become more important.</p>
+</section>
+<section id="move-from-optimization-to-strategic-interaction" class="level3">
+<h3 class="anchored" data-anchor-id="move-from-optimization-to-strategic-interaction">Move from Optimization to Strategic Interaction</h3>
+<p>With one-dimensional demand, the central question was:</p>
 <blockquote class="blockquote">
-<p><em>Which variable moves profit the most?</em></p>
+<p>What price maximizes profit?</p>
 </blockquote>
-<p>The correct question is:</p>
+<p>With two-dimensional demand, the question becomes:</p>
 <blockquote class="blockquote">
-<p><em>Which assumption, if wrong, would change the decision?</em></p>
+<p>What price maximizes profit given that someone else is also choosing a price?</p>
 </blockquote>
-<p>An assumption can be</p>
-<ul>
-<li>highly uncertain but low consequence, or</li>
-<li>fairly certain but catastrophic if wrong.</li>
-</ul>
-<p>Sensitivity focuses on consequence, not likelihood.</p>
+<p>This is strategic interaction. But strategic interaction is not abstract theory. It rests on measurable substitution and measurable price sensitivity.</p>
+<p>Before we solve for equilibrium profit, we must measure those forces directly.</p>
 </section>
-<section id="step-3-vary-one-assumption-at-a-timedeliberately" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-vary-one-assumption-at-a-timedeliberately">Step 3: Vary One Assumption at a Time—Deliberately</h2>
-<p>To learn from sensitivity, change one assumption at a time while holding others fixed.</p>
-<p>Typical candidates include:</p>
-<ul>
-<li>demand slope (price sensitivity),</li>
-<li>maximum willingness to pay,</li>
-<li>variable cost per unit,</li>
-<li>fixed cost magnitude or timing,</li>
-<li>achievable scale or access.</li>
-</ul>
-<p>For each variation, observe:</p>
-<ul>
-<li>whether profit disappears,</li>
-<li>whether fragility worsens,</li>
-<li>or whether robustness remains.</li>
-</ul>
-<p>The goal is not realism. The goal is exposure.</p>
 </section>
-<section id="step-4-identify-decision-critical-assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-identify-decision-critical-assumptions">Step 4: Identify Decision-Critical Assumptions</h2>
-<p>An assumption is <em>decision-critical</em> if:</p>
+<section id="designing-experiments-under-rivalry" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="designing-experiments-under-rivalry"><span class="header-section-number">16.2</span> Designing Experiments Under Rivalry</h2>
+<!-- In earlier chapters, experimental design focused on varying a single price.
+
+Under rivalry, that is no longer sufficient. -->
+<p>To estimate competitive demand, both prices must vary.<br>
+Your price must vary.<br>
+The rival’s price must vary.</p>
+<p>Without variation in both, substitution cannot be identified.</p>
+<p>If the rival’s price is held fixed, you can estimate own-price sensitivity — but not cross-price effects.<br>
+If your price does not vary independently of the rival’s, the two effects become confounded.</p>
+<p>Competitive demand requires deliberate variation in two dimensions.</p>
+<section id="rival-price-is-now-an-experimental-variable" class="level3">
+<h3 class="anchored" data-anchor-id="rival-price-is-now-an-experimental-variable">Rival Price Is Now an Experimental Variable</h3>
+<p>Under competition, the rival’s price is not background context. It is a treatment variable.</p>
+<p>This does not require abandoning prior survey discipline.</p>
+<p>The same six-step structure applies:</p>
 <ul>
-<li>small changes reverse feasibility, or</li>
-<li>reasonable error collapses profit, or</li>
-<li>robustness depends heavily on it being “just right.”</li>
+<li>Screen the right population.</li>
+<li>Establish context.</li>
+<li>Ground the problem and solution.</li>
+<li>Evaluate appeal.</li>
+<li>Elicit price or quantity.</li>
+<li>Gather customer characteristics.</li>
 </ul>
-<p>These assumptions deserve attention.</p>
-<p>Others—even if uncertain—may not.</p>
+<p>The only structural extension is this:<br>
+Price questions must now incorporate the rival explicitly.</p>
+<p>The rival’s offer must be described consistently.<br>
+Its framing must not bias responses.<br>
+Its price must vary systematically.</p>
+<p>Careless framing can artificially inflate substitution or suppress it.<br>
+Under rivalry, neutrality matters more.</p>
 </section>
-<section id="step-5-sort-assumptions-by-actionability" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-sort-assumptions-by-actionability">Step 5: Sort Assumptions by Actionability</h2>
-<p>Not all sensitive assumptions should be treated the same.</p>
-<p>Ask:</p>
+<section id="identification-requires-independent-variation" class="level3">
+<h3 class="anchored" data-anchor-id="identification-requires-independent-variation">Identification Requires Independent Variation</h3>
+<p>To estimate own-price and cross-price effects separately, price variation must be structured so that:</p>
 <ul>
-<li><em>Can this assumption be tested further?</em></li>
-<li><em>Can it be influenced by design?</em></li>
-<li><em>Can commitment be delayed until it is clearer?</em></li>
-<li><em>Is it largely outside our control?</em></li>
+<li>Your price changes while the rival’s does not.</li>
+<li>The rival’s price changes while yours does not.</li>
+<li>Both change in combination.</li>
 </ul>
-<p>This step prevents wasted effort.</p>
-<p>Sensitivity without judgment leads to anxiety. Sensitivity with judgment leads to strategy.</p>
+<p>If prices move together in every scenario, the data cannot distinguish substitution from own-price discipline.</p>
+<p>The goal of experimental design is not realism.<br>
+It is identification.</p>
+<p>Respondents may not encounter every price combination in reality.<br>
+But without structured variation, the resulting demand estimates will not support competitive analysis.</p>
 </section>
-<section id="step-6-decide-the-next-responsible-move" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-decide-the-next-responsible-move">Step 6: Decide the Next Responsible Move</h2>
-<p>Sensitivity analysis does not tell you what to do.<br>
-It tells you what it would be irresponsible to ignore.</p>
-<p>Common responses include:</p>
+<section id="the-cost-of-combinatorial-explosion" class="level3">
+<h3 class="anchored" data-anchor-id="the-cost-of-combinatorial-explosion">The Cost of Combinatorial Explosion</h3>
+<p>When two prices vary, the number of possible combinations grows quickly.<br>
+Naively enumerating all price pairs creates respondent fatigue and noisy data.<br>
+Under rivalry, experimental compression becomes necessary.<br>
+Structured design — rather than exhaustive enumeration — allows substitution to be estimated without overwhelming respondents.</p>
+<p>The detailed mechanics of these designs are provided in <code>Toolkit 16</code>.</p>
+<p>Here, the principle is simple:<br>
+Competitive demand must be intentionally identified.<br>
+It does not emerge accidentally.</p>
+</section>
+</section>
+<section id="estimating-cross-price-effects" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="estimating-cross-price-effects"><span class="header-section-number">16.3</span> Estimating Cross-Price Effects</h2>
+<p>Design creates variation.<br>
+Estimation translates that variation into structure.</p>
+<p>Under rivalry, demand is no longer estimated as:</p>
+<p><span class="math display">\[
+\mathsf{Q = f(P)}
+\]</span></p>
+<p>It is estimated as:</p>
+<p><span class="math display">\[
+\mathsf{Q_i = f(P_i, P_j)}
+\]</span></p>
+<p>At minimum, estimation must identify two forces:</p>
 <ul>
-<li><p><strong>Experiment</strong><br>
-When a sensitive assumption can be tested cheaply.</p></li>
-<li><p><strong>Delay commitment</strong><br>
-When fragility is high but learning is ongoing.</p></li>
-<li><p><strong>Redesign</strong><br>
-When the structure itself creates unnecessary exposure.</p></li>
-<li><p><strong>Proceed deliberately</strong><br>
-When robustness exists despite uncertainty.</p></li>
-<li><p><strong>Stop</strong><br>
-When the decision fails under any reasonable assumption.</p></li>
+<li><strong>Own-price sensitivity</strong> — how quantity changes when your price changes.</li>
+<li><strong>Cross-price substitution</strong> — how quantity shifts when the rival’s price changes.</li>
 </ul>
-<p>Each response is valid. What matters is that it is chosen consciously.</p>
-</section>
-<section id="step-7-use-sensitivity-to-allocate-attention-not-precision" class="level2">
-<h2 class="anchored" data-anchor-id="step-7-use-sensitivity-to-allocate-attention-not-precision">Step 7: Use Sensitivity to Allocate Attention, Not Precision</h2>
-<p>Sensitivity analysis is not about fine-tuning numbers.</p>
-<p>It is about deciding:</p>
+<p>A simple linear specification illustrates the structure:</p>
+<p><span class="math display">\[
+\mathsf{Q_i = a_i - b_i P_i + d_{ij} P_j}
+\]</span></p>
+<p>Each parameter carries strategic meaning:</p>
 <ul>
-<li>what deserves more evidence,</li>
-<li>what can be tolerated as uncertain,</li>
-<li>and what must be resolved before commitment.</li>
+<li><span class="math inline">\(\mathsf{a_i}\)</span> — baseline demand (intercept)</li>
+<li><span class="math inline">\(\mathsf{b_i}\)</span> — own-price sensitivity (slope discipline)</li>
+<li><span class="math inline">\(\mathsf{d_{ij}}\)</span> — cross-price substitution (switching intensity)</li>
 </ul>
-<p>Time, money, and focus are scarce.</p>
-<p>Sensitivity helps you spend them where they matter most.</p>
+<p>The goal of estimation is not statistical elegance.<br>
+It is structural interpretation.</p>
+<section id="interpreting-the-coefficients" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-the-coefficients">Interpreting the Coefficients</h3>
+<p>If <span class="math inline">\(\mathsf{b_i}\)</span> is large, demand falls sharply when price rises.<br>
+Margin is fragile.</p>
+<p>If <span class="math inline">\(\mathsf{d_{ij}}\)</span> is large, customers shift strongly when the rival changes price.<br>
+Competition is intense.</p>
+<p>If <span class="math inline">\(\mathsf{d_{ij}}\)</span> is small, customers are relatively insulated from rival pricing.<br>
+Competition is softened.</p>
+<p>These are not abstract numbers.<br>
+They describe measurable strategic pressure.</p>
 </section>
-<section id="what-this-toolkit-refuses-to-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-toolkit-refuses-to-do">What This Toolkit Refuses to Do</h2>
-<p>This toolkit does <em>not</em>: - forecast future outcomes, - or guarantee success.</p>
-<p>It exists for a narrower—and more important—purpose:</p>
+<section id="functional-form-and-flexibility" class="level3">
+<h3 class="anchored" data-anchor-id="functional-form-and-flexibility">Functional Form and Flexibility</h3>
+<p>Linear demand is useful for intuition and interpretation.</p>
+<p>In practice, competitive demand may also be estimated using:</p>
+<ul>
+<li>Exponential specifications</li>
+<li>Logistic or sigmoid forms</li>
+<li>Other nonlinear models</li>
+</ul>
+<p>Closed-form solutions for equilibrium are not required.<br>
+Once demand is estimated, competitive profit can be computed numerically.<br>
+The <a href="https://rconnect.byu.edu/CompetitionAnalytics"><strong>competition analytics app</strong></a> performs this optimization after parameters are estimated.</p>
+<p>What matters here is not algebraic solvability.<br>
+What matters is whether the data credibly identify:</p>
+<ul>
+<li>Own-price discipline<br>
+</li>
+<li>Cross-price substitution</li>
+</ul>
+<p>Without both, competitive profit cannot be diagnosed.</p>
+</section>
+<section id="from-estimation-to-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="from-estimation-to-strategy">From Estimation to Strategy</h3>
+<p>Under monopoly, estimation revealed price sensitivity.<br>
+Under rivalry, estimation reveals interaction.</p>
+<p>It tells us:</p>
+<ul>
+<li>How strongly customers react to our price.</li>
+<li>How strongly they react to the rival’s price.</li>
+<li>How tightly the two firms are linked through substitution.</li>
+</ul>
+<p>Only after these forces are measured can we layer cost and scale on top to evaluate competitive profit.</p>
+<p>That step follows next.</p>
+</section>
+</section>
+<section id="from-estimated-demand-to-competitive-profit" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="from-estimated-demand-to-competitive-profit"><span class="header-section-number">16.4</span> From Estimated Demand to Competitive Profit</h2>
+<p>Demand estimation gives us structure.</p>
+<p>But structure alone does not answer the central question:</p>
 <blockquote class="blockquote">
-<p><em>To prevent commitment based on fragile assumptions that have not earned that privilege.</em></p>
+<p>Is this worth doing?</p>
 </blockquote>
-</section>
-<section id="where-this-leaves-the-decision" class="level2">
-<h2 class="anchored" data-anchor-id="where-this-leaves-the-decision">Where This Leaves the Decision</h2>
-<p>By the end of this toolkit, you should be able to say:</p>
+<p>To answer that, estimated demand must be translated into profit under rivalry.</p>
+<p>The logic mirrors the monopoly case, with one critical difference.</p>
+<p>Under monopoly:</p>
+<ol type="1">
+<li>Estimate demand.</li>
+<li>Add cost.</li>
+<li>Optimize price.</li>
+<li>Evaluate profit.</li>
+</ol>
+<p>Under rivalry:</p>
+<ol type="1">
+<li>Estimate competitive demand.</li>
+<li>Add cost.</li>
+<li>Solve mutual optimization.</li>
+<li>Evaluate equilibrium profit.</li>
+</ol>
+<p>The difference is interaction.</p>
+<section id="step-1-construct-the-profit-function" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-construct-the-profit-function">Step 1: Construct the Profit Function</h3>
+<p>Once demand is estimated, profit for firm ( i ) is:</p>
+<p><span class="math display">\[
+\mathsf{\pi_i(P_i, P_j) = (P_i - c_i)\, Q_i(P_i, P_j) - f_i}
+\]</span></p>
+<p>Where:</p>
 <ul>
-<li>which assumptions your decision depends on most,</li>
-<li>how much error you can tolerate,</li>
-<li>and whether further learning is warranted before committing.</li>
+<li><span class="math inline">\(\mathsf{c_i}\)</span> is variable cost.</li>
+<li><span class="math inline">\(\mathsf{f_i}\)</span> is fixed cost.</li>
+<li><span class="math inline">\(\mathsf{Q_i(P_i, P_j)}\)</span> is the estimated demand function.</li>
 </ul>
-<p>At that point, analytics has done its job.</p>
-<p>What remains is judgment.</p>
-<p>Sensitivity does not remove uncertainty.<br>
-It ensures you know <em>where uncertainty still matters</em>.</p>
-<p>That is the discipline that makes pre-revenue decisions responsible rather than hopeful.</p>
+<p>Nothing about cost changes under rivalry.<br>
+What changes is that profit now depends on two prices.</p>
+</section>
+<section id="step-2-solve-for-mutual-best-response" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-solve-for-mutual-best-response">Step 2: Solve for Mutual Best Response</h3>
+<p>Each firm chooses price to maximize its own profit, taking the other’s price as given. This produces a best-response function for each firm.</p>
+<p>Equilibrium occurs where both firms are simultaneously choosing their optimal price.</p>
+<p>Closed-form solutions may exist in simple linear cases.<br>
+In practice, numerical optimization is sufficient.<br>
+The <a href="https//:rconnect.byu.edu/CompetitionAnalytics"><strong>competition app</strong></a> implements this step once demand and cost are specified.</p>
+<p>The key point is that equilibrium price is not chosen in isolation.<br>
+It is determined by strategic interaction embedded in the demand estimates.</p>
+</section>
+<section id="step-3-evaluate-equilibrium-profit" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-evaluate-equilibrium-profit">Step 3: Evaluate Equilibrium Profit</h3>
+<p>Once equilibrium prices are identified, equilibrium quantities and profits follow directly from the estimated demand and cost structure.</p>
+<p>At this stage, feasibility can be evaluated.<br>
+Profit may survive.<br>
+Profit may be fragile.<br>
+Profit may collapse toward cost.</p>
+<p>But those outcomes are no longer assumed. They are measured.</p>
+</section>
+<section id="the-analytics-spine-restored" class="level3">
+<h3 class="anchored" data-anchor-id="the-analytics-spine-restored">The Analytics Spine Restored</h3>
+<p>The full competitive analytics sequence is now visible:</p>
+<ul>
+<li>Design the experiment.<br>
+</li>
+<li>Estimate competitive demand.<br>
+</li>
+<li>Add cost.<br>
+</li>
+<li>Solve for equilibrium.<br>
+</li>
+<li>Diagnose profit durability.</li>
+</ul>
+<p>Competition does not require new economic philosophy.<br>
+It requires measuring substitution with the same discipline used to measure price sensitivity.</p>
+<p>Once competitive demand is estimated, interaction is no longer abstract theory.<br>
+It is embedded in the parameters.</p>
+<p>Equilibrium price is a consequence.<br>
+Profit is a consequence.<br>
+Fragility is measurable.</p>
+</section>
+</section>
+<section id="diagnosing-structural-position" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="diagnosing-structural-position"><span class="header-section-number">16.5</span> Diagnosing Structural Position</h2>
+<p>Once competitive demand is estimated, structural position becomes visible.</p>
+<p>Competitive advantage is not inferred from revenue.<br>
+It is not inferred from market size.<br>
+It is not inferred from narrative strength.</p>
+<p>It is inferred from parameter differences.</p>
+<p>If two firms have identical demand and cost parameters, equilibrium outcomes will be symmetric.<br>
+Prices will match.<br>
+Margins will match.<br>
+Profits will move together.</p>
+<p>Symmetry produces shared discipline.<br>
+Asymmetry produces advantage.</p>
+<p>Structural position can be diagnosed along four measurable dimensions:</p>
+<ul>
+<li><strong>Baseline demand (<span class="math inline">\(\mathsf{a}\)</span>)</strong> — Who begins with stronger underlying customer pull?</li>
+<li><strong>Own-price sensitivity (<span class="math inline">\(\mathsf{b}\)</span>)</strong> — Who faces steeper margin discipline?</li>
+<li><strong>Cross-price substitution (<span class="math inline">\(\mathsf{d}\)</span>)</strong> — Who is more insulated from rival pricing?</li>
+<li><strong>Unit variable cost (<span class="math inline">\(\mathsf{c}\)</span>)</strong> — Who can profit at lower price levels?</li>
+</ul>
+<p>These parameters are not stories.<br>
+They are empirical estimates.</p>
+<p>Small differences in price sensitivity or substitution can produce large differences in equilibrium profit.<br>
+Minor cost advantages can become decisive under competitive pressure.</p>
+<p>Under rivalry, advantage does not appear as a slogan.<br>
+It appears as parameter asymmetry.<br>
+Measured demand reveals whether competition is tight or softened, fragile or durable.</p>
+<p>In the <a href="ch17_competitive_advantage">next chapter</a>, we layer cost and scale onto these estimated demand structures and solve for competitive profit directly.</p>
+<blockquote class="blockquote">
+<p>Competitive advantage is measured, not declared.</p>
+</blockquote>
 
 
 </section>
@@ -1058,13 +1254,13 @@ It ensures you know <em>where uncertainty still matters</em>.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./tk9_read_profit.html" class="pagination-link" aria-label="Read a Profit Curve for Feasibility and Fragility">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Read a Profit Curve for Feasibility and Fragility</span>
+      <a href="./ch15_differentiated.html" class="pagination-link" aria-label="Differentiated Bertrand Competition">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Differentiated Bertrand Competition</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ch13_competition.html" class="pagination-link" aria-label="Profit under Rivalry">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Profit under Rivalry</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch17_competitive_advantage.html" class="pagination-link" aria-label="Competitive Advantage as Structure">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -524,8 +524,7 @@ Higher variable cost $\mathsf{c}$ shifts equilibrium price upward.
 #### Demand strength
 Stronger baseline demand $\mathsf{a}$ raises equilibrium price.
 
-Equilibrium is not arbitrary.
-
+Equilibrium is not arbitrary.  
 It is a structural consequence of demand, cost, and substitution.
 
 
@@ -582,15 +581,14 @@ Return to the core question:
 
 > Is this worth doing?
 
-Under differentiation, profit does not disappear automatically.
-
+Under differentiation, profit does not disappear automatically.  
 But it depends on structure.
 
 Three parameters matter:
 
 - Differentiation (the size of $\mathsf{d}$)
 - Price sensitivity (the size of $\mathsf{b}$)
-- Variable cost (the size of $\mathsf{c}$)
+- Unit variable cost (the size of $\mathsf{c}$)
 
 If differentiation is weak and price sensitivity is strong, equilibrium price will be close to cost.  
 Profit may be fragile.
@@ -600,8 +598,7 @@ A small cost disadvantage can eliminate margin.
 If differentiation is meaningful, equilibrium price will be higher.    
 Profit can be durable.
 
-Feasibility is no longer about finding *any* positive profit curve.
-
+Feasibility is no longer about finding *any* positive profit curve.  
 It is about whether structure protects margin under response.
 
 
@@ -640,8 +637,7 @@ When differentiation is weak (small $\mathsf{d}$), equilibrium price is relative
 
 As differentiation strengthens (larger $\mathsf{d}$), equilibrium price rises.
 
-Differentiation increases pricing power.
-
+Differentiation increases pricing power.  
 But it also increases interdependence.
 
 The slope of the best-response function is:

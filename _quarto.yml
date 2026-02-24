@@ -35,7 +35,7 @@ book:
   
   chapters:
     - index.qmd
-    - part: The Pre-Revenue Decision
+    - part: Pre-Revenue Decisions
       chapters:
         - ch1_is_this_worth_doing.qmd
         - ch2_uncertainty_types.qmd
@@ -78,6 +78,8 @@ book:
         - ch13_competition.qmd
         - ch14_undifferentiated.qmd
         - ch15_differentiated.qmd
+        - ch16_competition_experiment.qmd
+        - ch17_competitive_advantage.qmd
         
     - part: Old Econ Competition
       chapters:

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Use Sensitivity to Decide What to Learn Next – Is This Worth Doing?</title>
+<title>17&nbsp; Competitive Advantage as Structure – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ch13_competition.html" rel="next">
-<link href="./tk9_read_profit.html" rel="prev">
+<link href="./competition.html" rel="next">
+<link href="./ch16_competition_experiment.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="custom_itwd.css">
@@ -84,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Toolkit II: Profit</a></li><li class="breadcrumb-item"><a href="./tk10_sensitivity_decide.html">Use Sensitivity to Decide What to Learn Next</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch17_competitive_advantage.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">The Pre-Revenue Decision</span></a>
+ <span class="menu-text">Pre-Revenue Decisions</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -273,11 +302,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./part_profit_toolkits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Toolkit II: Profit</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tk6_variable_cost.html" class="sidebar-item-text sidebar-link">
@@ -304,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link active">
+  <a href="./tk10_sensitivity_decide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use Sensitivity to Decide What to Learn Next</span></a>
   </div>
 </li>
@@ -312,13 +341,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Competition</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch13_competition.html" class="sidebar-item-text sidebar-link">
@@ -345,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch17_competitive_advantage.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch17_competitive_advantage.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></span></a>
   </div>
 </li>
@@ -453,24 +482,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#step-1-treat-every-input-as-a-belief-not-a-fact" id="toc-step-1-treat-every-input-as-a-belief-not-a-fact" class="nav-link active" data-scroll-target="#step-1-treat-every-input-as-a-belief-not-a-fact">Step 1: Treat Every Input as a Belief, Not a Fact</a></li>
-  <li><a href="#step-2-ask-the-right-sensitivity-question" id="toc-step-2-ask-the-right-sensitivity-question" class="nav-link" data-scroll-target="#step-2-ask-the-right-sensitivity-question">Step 2: Ask the Right Sensitivity Question</a></li>
-  <li><a href="#step-3-vary-one-assumption-at-a-timedeliberately" id="toc-step-3-vary-one-assumption-at-a-timedeliberately" class="nav-link" data-scroll-target="#step-3-vary-one-assumption-at-a-timedeliberately">Step 3: Vary One Assumption at a Time—Deliberately</a></li>
-  <li><a href="#step-4-identify-decision-critical-assumptions" id="toc-step-4-identify-decision-critical-assumptions" class="nav-link" data-scroll-target="#step-4-identify-decision-critical-assumptions">Step 4: Identify Decision-Critical Assumptions</a></li>
-  <li><a href="#step-5-sort-assumptions-by-actionability" id="toc-step-5-sort-assumptions-by-actionability" class="nav-link" data-scroll-target="#step-5-sort-assumptions-by-actionability">Step 5: Sort Assumptions by Actionability</a></li>
-  <li><a href="#step-6-decide-the-next-responsible-move" id="toc-step-6-decide-the-next-responsible-move" class="nav-link" data-scroll-target="#step-6-decide-the-next-responsible-move">Step 6: Decide the Next Responsible Move</a></li>
-  <li><a href="#step-7-use-sensitivity-to-allocate-attention-not-precision" id="toc-step-7-use-sensitivity-to-allocate-attention-not-precision" class="nav-link" data-scroll-target="#step-7-use-sensitivity-to-allocate-attention-not-precision">Step 7: Use Sensitivity to Allocate Attention, Not Precision</a></li>
-  <li><a href="#what-this-toolkit-refuses-to-do" id="toc-what-this-toolkit-refuses-to-do" class="nav-link" data-scroll-target="#what-this-toolkit-refuses-to-do">What This Toolkit Refuses to Do</a></li>
-  <li><a href="#where-this-leaves-the-decision" id="toc-where-this-leaves-the-decision" class="nav-link" data-scroll-target="#where-this-leaves-the-decision">Where This Leaves the Decision</a></li>
+  <li><a href="#breaking-symmetry" id="toc-breaking-symmetry" class="nav-link active" data-scroll-target="#breaking-symmetry"><span class="header-section-number">17.1</span> Breaking Symmetry</a></li>
+  <li><a href="#three-structural-sources-of-advantage" id="toc-three-structural-sources-of-advantage" class="nav-link" data-scroll-target="#three-structural-sources-of-advantage"><span class="header-section-number">17.2</span> Three Structural Sources of Advantage</a>
+  <ul class="collapse">
+  <li><a href="#lower-cost" id="toc-lower-cost" class="nav-link" data-scroll-target="#lower-cost">1. Lower Cost</a></li>
+  <li><a href="#stronger-demand" id="toc-stronger-demand" class="nav-link" data-scroll-target="#stronger-demand">2. Stronger Demand</a></li>
+  <li><a href="#greater-differentiation" id="toc-greater-differentiation" class="nav-link" data-scroll-target="#greater-differentiation">3. Greater Differentiation</a></li>
+  </ul></li>
+  <li><a href="#advantage-is-a-shift-not-a-story" id="toc-advantage-is-a-shift-not-a-story" class="nav-link" data-scroll-target="#advantage-is-a-shift-not-a-story"><span class="header-section-number">17.3</span> Advantage Is a Shift, Not a Story</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_profit_toolkits.html">Toolkit II: Profit</a></li><li class="breadcrumb-item"><a href="./tk10_sensitivity_decide.html">Use Sensitivity to Decide What to Learn Next</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch17_competitive_advantage.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-toolkit-sensitivity" class="quarto-section-identifier">Use Sensitivity to Decide What to Learn Next</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></h1>
+<p class="subtitle lead"><em>How parameter differences shift equilibrium</em></p>
 </div>
 
 
@@ -487,171 +516,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="turning-fragility-into-learning-priorities" class="level4">
-<h4 class="anchored" data-anchor-id="turning-fragility-into-learning-priorities"><em>Turning Fragility Into Learning Priorities</em></h4>
-<p>Once profit has been correctly interpreted, the question changes.</p>
-<p>The question is no longer whether profit is possible or fragile.</p>
-<p>It becomes:</p>
-<blockquote class="blockquote">
-<p><em>Which assumptions matter enough to justify learning, delay, or redesign—before committing further?</em></p>
-</blockquote>
-<p>This toolkit exists to answer that question.</p>
-<p>It does not help you optimize profit.<br>
-It helps you <strong>decide what to pay attention to next</strong>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="How this toolkit fits">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How this toolkit fits
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This toolkit builds directly on the toolkit for <a href="./tk9_read_profit.html"><em>reading a profit curve</em></a>.</p>
-<p>It assumes you can already recognize:</p>
+<p>In <a href="./ch15_differentiated.html">Chapter 15</a>, we assumed symmetry with the rival.</p>
+<p>Same cost.<br>
+Same demand sensitivity.<br>
+Same differentiation.</p>
+<p>That is why equilibrium produced the same price for both firms. But symmetry is not the goal of entrepreneurship.</p>
+<p>Difference is.</p>
+<p>Competitive advantage does not mean “trying harder.”<br>
+It does not mean “believing more strongly.”<br>
+It does not mean “marketing louder.”</p>
+<p>It means changing structure.</p>
+<section id="breaking-symmetry" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="breaking-symmetry"><span class="header-section-number">17.1</span> Breaking Symmetry</h2>
+<p>Return to the equilibrium price:</p>
+<p><span class="math display">\[
+\mathsf{P^* = \frac{a + bc}{2b - d}.}
+\]</span></p>
+<p>That expression contains everything.</p>
+<p>If two firms differ in:</p>
 <ul>
-<li>impossible profit,</li>
-<li>fragile profit,</li>
-<li>and robust profit.</li>
+<li>Variable cost <span class="math inline">\(\mathsf{c}\)</span>,</li>
+<li>Demand strength <span class="math inline">\(\mathsf{a}\)</span>,</li>
+<li>Differentiation <span class="math inline">\(\mathsf{d}\)</span>,</li>
 </ul>
-<p>Sensitivity does not replace that judgment. It sharpens it by revealing <em>where being wrong would matter most</em>.</p>
-</div>
-</div>
-</div>
+<p>their best-response functions shift.</p>
+<p>The intersection shifts.<br>
+Equilibrium prices diverge.<br>
+Profit diverges.<br>
+<em>Advantage appears.</em></p>
+<p>Not because one firm chose differently at the same structure.<br>
+But because the competitive profit structure itself is different.</p>
 </section>
-<section id="step-1-treat-every-input-as-a-belief-not-a-fact" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-treat-every-input-as-a-belief-not-a-fact">Step 1: Treat Every Input as a Belief, Not a Fact</h2>
-<p>Profit estimates rest on assumptions.</p>
-<p>Some are well supported.<br>
-Others are weak guesses.<br>
-All are uncertain.</p>
-<p>Sensitivity analysis begins by reframing inputs as beliefs rather than facts:</p>
-<ul>
-<li>demand shape,</li>
-<li>willingness to pay,</li>
-<li>variable cost per unit,</li>
-<li>fixed commitments,</li>
-<li>scale and access assumptions.</li>
-</ul>
-<p>The goal is not to eliminate uncertainty.<br>
-It is to understand <em>which uncertainty matters</em>.</p>
+<section id="three-structural-sources-of-advantage" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="three-structural-sources-of-advantage"><span class="header-section-number">17.2</span> Three Structural Sources of Advantage</h2>
+<p>There are only three ways to shift equilibrium in your favor.</p>
+<section id="lower-cost" class="level3">
+<h3 class="anchored" data-anchor-id="lower-cost">1. Lower Cost</h3>
+<p>A lower variable cost shifts your best-response function downward.</p>
+<p>You can profitably set a lower price.<br>
+You can survive price pressure others cannot.</p>
+<p>Cost advantage does not eliminate rivalry.<br>
+It makes you more durable within it.</p>
 </section>
-<section id="step-2-ask-the-right-sensitivity-question" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-ask-the-right-sensitivity-question">Step 2: Ask the Right Sensitivity Question</h2>
-<p>Sensitivity is often misunderstood.</p>
-<p>The question is <em>not</em>:</p>
-<blockquote class="blockquote">
-<p><em>Which variable moves profit the most?</em></p>
-</blockquote>
-<p>The correct question is:</p>
-<blockquote class="blockquote">
-<p><em>Which assumption, if wrong, would change the decision?</em></p>
-</blockquote>
-<p>An assumption can be</p>
-<ul>
-<li>highly uncertain but low consequence, or</li>
-<li>fairly certain but catastrophic if wrong.</li>
-</ul>
-<p>Sensitivity focuses on consequence, not likelihood.</p>
+<section id="stronger-demand" class="level3">
+<h3 class="anchored" data-anchor-id="stronger-demand">2. Stronger Demand</h3>
+<p>If customers value your product more highly (higher <span class="math inline">\(\mathsf{a}\)</span>), your demand curve shifts outward.</p>
+<p>Your best-response line shifts upward.<br>
+You charge more at equilibrium.</p>
+<p>Revenue advantage becomes structural.</p>
 </section>
-<section id="step-3-vary-one-assumption-at-a-timedeliberately" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-vary-one-assumption-at-a-timedeliberately">Step 3: Vary One Assumption at a Time—Deliberately</h2>
-<p>To learn from sensitivity, change one assumption at a time while holding others fixed.</p>
-<p>Typical candidates include:</p>
-<ul>
-<li>demand slope (price sensitivity),</li>
-<li>maximum willingness to pay,</li>
-<li>variable cost per unit,</li>
-<li>fixed cost magnitude or timing,</li>
-<li>achievable scale or access.</li>
-</ul>
-<p>For each variation, observe:</p>
-<ul>
-<li>whether profit disappears,</li>
-<li>whether fragility worsens,</li>
-<li>or whether robustness remains.</li>
-</ul>
-<p>The goal is not realism. The goal is exposure.</p>
+<section id="greater-differentiation" class="level3">
+<h3 class="anchored" data-anchor-id="greater-differentiation">3. Greater Differentiation</h3>
+<p>If customers are less willing to switch away from you (lower effective substitution), the parameter governing rivalry changes.</p>
+<p>Your equilibrium margin increases.</p>
+<p>Differentiation does not remove competition.<br>
+It reduces how tightly your price is pinned to the rival’s.</p>
 </section>
-<section id="step-4-identify-decision-critical-assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-identify-decision-critical-assumptions">Step 4: Identify Decision-Critical Assumptions</h2>
-<p>An assumption is <em>decision-critical</em> if:</p>
-<ul>
-<li>small changes reverse feasibility, or</li>
-<li>reasonable error collapses profit, or</li>
-<li>robustness depends heavily on it being “just right.”</li>
-</ul>
-<p>These assumptions deserve attention.</p>
-<p>Others—even if uncertain—may not.</p>
 </section>
-<section id="step-5-sort-assumptions-by-actionability" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-sort-assumptions-by-actionability">Step 5: Sort Assumptions by Actionability</h2>
-<p>Not all sensitive assumptions should be treated the same.</p>
-<p>Ask:</p>
-<ul>
-<li><em>Can this assumption be tested further?</em></li>
-<li><em>Can it be influenced by design?</em></li>
-<li><em>Can commitment be delayed until it is clearer?</em></li>
-<li><em>Is it largely outside our control?</em></li>
-</ul>
-<p>This step prevents wasted effort.</p>
-<p>Sensitivity without judgment leads to anxiety. Sensitivity with judgment leads to strategy.</p>
-</section>
-<section id="step-6-decide-the-next-responsible-move" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-decide-the-next-responsible-move">Step 6: Decide the Next Responsible Move</h2>
-<p>Sensitivity analysis does not tell you what to do.<br>
-It tells you what it would be irresponsible to ignore.</p>
-<p>Common responses include:</p>
-<ul>
-<li><p><strong>Experiment</strong><br>
-When a sensitive assumption can be tested cheaply.</p></li>
-<li><p><strong>Delay commitment</strong><br>
-When fragility is high but learning is ongoing.</p></li>
-<li><p><strong>Redesign</strong><br>
-When the structure itself creates unnecessary exposure.</p></li>
-<li><p><strong>Proceed deliberately</strong><br>
-When robustness exists despite uncertainty.</p></li>
-<li><p><strong>Stop</strong><br>
-When the decision fails under any reasonable assumption.</p></li>
-</ul>
-<p>Each response is valid. What matters is that it is chosen consciously.</p>
-</section>
-<section id="step-7-use-sensitivity-to-allocate-attention-not-precision" class="level2">
-<h2 class="anchored" data-anchor-id="step-7-use-sensitivity-to-allocate-attention-not-precision">Step 7: Use Sensitivity to Allocate Attention, Not Precision</h2>
-<p>Sensitivity analysis is not about fine-tuning numbers.</p>
-<p>It is about deciding:</p>
-<ul>
-<li>what deserves more evidence,</li>
-<li>what can be tolerated as uncertain,</li>
-<li>and what must be resolved before commitment.</li>
-</ul>
-<p>Time, money, and focus are scarce.</p>
-<p>Sensitivity helps you spend them where they matter most.</p>
-</section>
-<section id="what-this-toolkit-refuses-to-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-toolkit-refuses-to-do">What This Toolkit Refuses to Do</h2>
-<p>This toolkit does <em>not</em>: - forecast future outcomes, - or guarantee success.</p>
-<p>It exists for a narrower—and more important—purpose:</p>
-<blockquote class="blockquote">
-<p><em>To prevent commitment based on fragile assumptions that have not earned that privilege.</em></p>
-</blockquote>
-</section>
-<section id="where-this-leaves-the-decision" class="level2">
-<h2 class="anchored" data-anchor-id="where-this-leaves-the-decision">Where This Leaves the Decision</h2>
-<p>By the end of this toolkit, you should be able to say:</p>
-<ul>
-<li>which assumptions your decision depends on most,</li>
-<li>how much error you can tolerate,</li>
-<li>and whether further learning is warranted before committing.</li>
-</ul>
-<p>At that point, analytics has done its job.</p>
-<p>What remains is judgment.</p>
-<p>Sensitivity does not remove uncertainty.<br>
-It ensures you know <em>where uncertainty still matters</em>.</p>
-<p>That is the discipline that makes pre-revenue decisions responsible rather than hopeful.</p>
+<section id="advantage-is-a-shift-not-a-story" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="advantage-is-a-shift-not-a-story"><span class="header-section-number">17.3</span> Advantage Is a Shift, Not a Story</h2>
+<p>Competitive advantage is not a slogan.</p>
+<p>It is a shift in parameters.</p>
+<p>It moves the best-response function.<br>
+It moves the intersection.<br>
+It changes the equilibrium outcome.</p>
+<p>That is why advantage must be structural.</p>
+<p>Not rhetorical.</p>
 
 
 </section>
@@ -1058,13 +988,13 @@ It ensures you know <em>where uncertainty still matters</em>.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./tk9_read_profit.html" class="pagination-link" aria-label="Read a Profit Curve for Feasibility and Fragility">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Read a Profit Curve for Feasibility and Fragility</span>
+      <a href="./ch16_competition_experiment.html" class="pagination-link" aria-label="Measuring Demand Under Rivalry">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Measuring Demand Under Rivalry</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ch13_competition.html" class="pagination-link" aria-label="Profit under Rivalry">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Profit under Rivalry</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./competition.html" class="pagination-link" aria-label="Competition">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Competition</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
