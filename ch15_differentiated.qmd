@@ -500,7 +500,7 @@ But symmetry is not required for equilibrium.
 
 If firms differ in cost, demand strength, or differentiation, their best-response functions shift. The intersection still determines equilibrium — but the prices need not be equal.
  
-[Chapter 16 Competitive Advantage](ch16_competitive_advantage.qmd) explores what happens when firms are structurally different. That is where competitive advantage appears.
+[Chapter 17 Competitive Profit and Structural Advantage](ch17_competitive_advantage.qmd) explores what happens when firms are structurally different. That is where competitive advantage appears.
 
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>17&nbsp; Competitive Advantage as Structure – Is This Worth Doing?</title>
+<title>17&nbsp; Competitive Profit and Structural Advantage – Is This Worth Doing?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -113,7 +133,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch17_competitive_advantage.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch17_competitive_advantage.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Profit and Structural Advantage</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -375,7 +395,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch17_competitive_advantage.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Profit and Structural Advantage</span></span></a>
   </div>
 </li>
       </ul>
@@ -482,24 +502,48 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#breaking-symmetry" id="toc-breaking-symmetry" class="nav-link active" data-scroll-target="#breaking-symmetry"><span class="header-section-number">17.1</span> Breaking Symmetry</a></li>
-  <li><a href="#three-structural-sources-of-advantage" id="toc-three-structural-sources-of-advantage" class="nav-link" data-scroll-target="#three-structural-sources-of-advantage"><span class="header-section-number">17.2</span> Three Structural Sources of Advantage</a>
+  <li><a href="#from-estimated-demand-to-competitive-profit" id="toc-from-estimated-demand-to-competitive-profit" class="nav-link active" data-scroll-target="#from-estimated-demand-to-competitive-profit"><span class="header-section-number">17.1</span> From Estimated Demand to Competitive Profit</a></li>
+  <li><a href="#case-advantage-under-imitation-in-ice-cream-sandwiches" id="toc-case-advantage-under-imitation-in-ice-cream-sandwiches" class="nav-link" data-scroll-target="#case-advantage-under-imitation-in-ice-cream-sandwiches"><span class="header-section-number">17.2</span> Case: Advantage Under Imitation in Ice Cream Sandwiches</a></li>
+  <li><a href="#structural-sources-of-competitive-advantage" id="toc-structural-sources-of-competitive-advantage" class="nav-link" data-scroll-target="#structural-sources-of-competitive-advantage"><span class="header-section-number">17.3</span> Structural Sources of Competitive Advantage</a>
   <ul class="collapse">
-  <li><a href="#lower-cost" id="toc-lower-cost" class="nav-link" data-scroll-target="#lower-cost">1. Lower Cost</a></li>
-  <li><a href="#stronger-demand" id="toc-stronger-demand" class="nav-link" data-scroll-target="#stronger-demand">2. Stronger Demand</a></li>
-  <li><a href="#greater-differentiation" id="toc-greater-differentiation" class="nav-link" data-scroll-target="#greater-differentiation">3. Greater Differentiation</a></li>
+  <li><a href="#baseline-demand-mathsfa" id="toc-baseline-demand-mathsfa" class="nav-link" data-scroll-target="#baseline-demand-mathsfa">1. Baseline Demand (<span class="math inline">\(\mathsf{a}\)</span>)</a></li>
+  <li><a href="#own-price-sensitivity-mathsfb" id="toc-own-price-sensitivity-mathsfb" class="nav-link" data-scroll-target="#own-price-sensitivity-mathsfb">2. Own-Price Sensitivity (<span class="math inline">\(\mathsf{b}\)</span>)</a></li>
+  <li><a href="#substitution-intensity-mathsfd_ij---d_ji" id="toc-substitution-intensity-mathsfd_ij---d_ji" class="nav-link" data-scroll-target="#substitution-intensity-mathsfd_ij---d_ji">3. Substitution Intensity (<span class="math inline">\(\mathsf{d_{ij} - d_{ji}}\)</span>)</a></li>
+  <li><a href="#variable-cost-mathsfc" id="toc-variable-cost-mathsfc" class="nav-link" data-scroll-target="#variable-cost-mathsfc">4. Variable Cost (<span class="math inline">\(\mathsf{c}\)</span>)</a></li>
+  <li><a href="#interpreting-the-structural-levers" id="toc-interpreting-the-structural-levers" class="nav-link" data-scroll-target="#interpreting-the-structural-levers">Interpreting the Structural Levers</a></li>
+  <li><a href="#what-the-figures-reveal" id="toc-what-the-figures-reveal" class="nav-link" data-scroll-target="#what-the-figures-reveal">What the Figures Reveal</a></li>
   </ul></li>
-  <li><a href="#advantage-is-a-shift-not-a-story" id="toc-advantage-is-a-shift-not-a-story" class="nav-link" data-scroll-target="#advantage-is-a-shift-not-a-story"><span class="header-section-number">17.3</span> Advantage Is a Shift, Not a Story</a></li>
+  <li><a href="#durable-vs.-fragile-advantage" id="toc-durable-vs.-fragile-advantage" class="nav-link" data-scroll-target="#durable-vs.-fragile-advantage"><span class="header-section-number">17.4</span> Durable vs.&nbsp;Fragile Advantage</a>
+  <ul class="collapse">
+  <li><a href="#substitution-and-fragility" id="toc-substitution-and-fragility" class="nav-link" data-scroll-target="#substitution-and-fragility">Substitution and Fragility</a></li>
+  <li><a href="#insulation-and-durability" id="toc-insulation-and-durability" class="nav-link" data-scroll-target="#insulation-and-durability">Insulation and Durability</a></li>
+  <li><a href="#cost-and-durability" id="toc-cost-and-durability" class="nav-link" data-scroll-target="#cost-and-durability">Cost and Durability</a></li>
+  <li><a href="#structural-magnitude-matters" id="toc-structural-magnitude-matters" class="nav-link" data-scroll-target="#structural-magnitude-matters">Structural Magnitude Matters</a></li>
+  <li><a href="#a-diagnostic-view" id="toc-a-diagnostic-view" class="nav-link" data-scroll-target="#a-diagnostic-view">A Diagnostic View</a></li>
+  </ul></li>
+  <li><a href="#scale-and-the-entrepreneurial-boundary" id="toc-scale-and-the-entrepreneurial-boundary" class="nav-link" data-scroll-target="#scale-and-the-entrepreneurial-boundary"><span class="header-section-number">17.5</span> Scale and the Entrepreneurial Boundary</a>
+  <ul class="collapse">
+  <li><a href="#the-focal-population" id="toc-the-focal-population" class="nav-link" data-scroll-target="#the-focal-population">The Focal Population</a></li>
+  <li><a href="#rival-scale" id="toc-rival-scale" class="nav-link" data-scroll-target="#rival-scale">Rival Scale</a></li>
+  <li><a href="#tam-is-not-structural-advantage" id="toc-tam-is-not-structural-advantage" class="nav-link" data-scroll-target="#tam-is-not-structural-advantage">TAM Is Not Structural Advantage</a></li>
+  <li><a href="#the-entrepreneurial-boundary" id="toc-the-entrepreneurial-boundary" class="nav-link" data-scroll-target="#the-entrepreneurial-boundary">The Entrepreneurial Boundary</a></li>
+  </ul></li>
+  <li><a href="#decision-lens" id="toc-decision-lens" class="nav-link" data-scroll-target="#decision-lens"><span class="header-section-number">17.6</span> Decision Lens</a>
+  <ul class="collapse">
+  <li><a href="#a-structured-diagnostic" id="toc-a-structured-diagnostic" class="nav-link" data-scroll-target="#a-structured-diagnostic">A Structured Diagnostic</a></li>
+  <li><a href="#structural-vs.-temporary" id="toc-structural-vs.-temporary" class="nav-link" data-scroll-target="#structural-vs.-temporary">Structural vs.&nbsp;Temporary</a></li>
+  <li><a href="#the-entrepreneurial-test" id="toc-the-entrepreneurial-test" class="nav-link" data-scroll-target="#the-entrepreneurial-test">The Entrepreneurial Test</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch17_competitive_advantage.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch13_competition.html">Competition</a></li><li class="breadcrumb-item"><a href="./ch17_competitive_advantage.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Profit and Structural Advantage</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Advantage as Structure</span></h1>
-<p class="subtitle lead"><em>How parameter differences shift equilibrium</em></p>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Competitive Profit and Structural Advantage</span></h1>
+<p class="subtitle lead"><em>From measured demand to durable advantage</em></p>
 </div>
 
 
@@ -516,74 +560,583 @@ window.Quarto = {
 </header>
 
 
-<p>In <a href="./ch15_differentiated.html">Chapter 15</a>, we assumed symmetry with the rival.</p>
+<p>In <a href="./ch15_differentiated.html">Chapter 15</a>, we assumed symmetry.</p>
 <p>Same cost.<br>
 Same demand sensitivity.<br>
 Same differentiation.</p>
-<p>That is why equilibrium produced the same price for both firms. But symmetry is not the goal of entrepreneurship.</p>
-<p>Difference is.</p>
-<p>Competitive advantage does not mean “trying harder.”<br>
-It does not mean “believing more strongly.”<br>
-It does not mean “marketing louder.”</p>
-<p>It means changing structure.</p>
-<section id="breaking-symmetry" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="breaking-symmetry"><span class="header-section-number">17.1</span> Breaking Symmetry</h2>
-<p>Return to the equilibrium price:</p>
-<p><span class="math display">\[
-\mathsf{P^* = \frac{a + bc}{2b - d}.}
-\]</span></p>
-<p>That expression contains everything.</p>
-<p>If two firms differ in:</p>
+<p>Symmetry simplifies analysis.<br>
+But entrepreneurship seeks asymmetry.</p>
+<p>In <a href="ch16_competition_experiment">Chapter 16</a>, we estimated competitive demand directly.<br>
+We measured how quantity responds to:</p>
 <ul>
-<li>Variable cost <span class="math inline">\(\mathsf{c}\)</span>,</li>
-<li>Demand strength <span class="math inline">\(\mathsf{a}\)</span>,</li>
-<li>Differentiation <span class="math inline">\(\mathsf{d}\)</span>,</li>
+<li>Your price</li>
+<li>The rival’s price</li>
 </ul>
-<p>their best-response functions shift.</p>
-<p>The intersection shifts.<br>
-Equilibrium prices diverge.<br>
-Profit diverges.<br>
-<em>Advantage appears.</em></p>
-<p>Not because one firm chose differently at the same structure.<br>
-But because the competitive profit structure itself is different.</p>
+<p>Those parameters describe discipline and substitution.</p>
+<p>Now we add cost and scale and compute profit. <!-- 
+In [Chapter 15](ch15_differentiated.qmd), we assumed symmetry with the rival.
+
+Same cost.  
+Same demand sensitivity.  
+Same differentiation.
+--> <!--That is why equilibrium produced the same price for both firms.
+But symmetry is not the goal of entrepreneurship.
+
+Difference is.
+
+Competitive advantage does not mean “trying harder.”  
+It does not mean “believing more strongly.”  
+It does not mean “marketing louder.”
+
+It means changing structure. 
+
+In the [previous chapter](ch16_competition_experiment), we measured competitive demand.
+
+We estimated how quantity responds to:
+
+- Your price.
+- The rival’s price.
+
+Those parameters describe substitution and discipline.
+
+Now we layer cost and scale onto those estimates and evaluate profit directly.
+--></p>
+<section id="from-estimated-demand-to-competitive-profit" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="from-estimated-demand-to-competitive-profit"><span class="header-section-number">17.1</span> From Estimated Demand to Competitive Profit</h2>
+<p>Estimated demand gives structure.<br>
+Profit gives decision.</p>
+<p>For firm <span class="math inline">\(\mathsf{i}\)</span>, competitive profit is:</p>
+<p><span class="math display">\[
+\mathsf{\pi_i(P_i, P_j) = (P_i - c_i)\, Q_i(P_i, P_j) - f_i}
+\]</span></p>
+<p>The demand function <span class="math inline">\(\mathsf{Q_i(P_i, P_j)}\)</span> is no longer assumed.<br>
+It has been estimated.</p>
+<p>Variable cost <span class="math inline">\(\mathsf{c_i}\)</span> and fixed cost $ are added as before.</p>
+<p>The difference from monopoly is not cost.<br>
+It is interaction.<br>
+Each firm chooses price to maximize its own profit, taking the rival’s price as given.</p>
+<p>Equilibrium occurs where both firms are simultaneously choosing their best response.</p>
+<p>In simple linear cases, this equilibrium can be written in closed form.<br>
+In practice, numerical optimization is sufficient.<br>
+The <a href="http://rconnect.byu.edu/CompetitionAnalytics"><strong>competition analytics app</strong></a> performs this calculation once demand and cost are specified.</p>
+<p>The key point is structural:</p>
+<ul>
+<li>Equilibrium price is determined by estimated demand parameters.</li>
+<li>Profit is determined by equilibrium price.</li>
+<li>Competitive performance is computed.</li>
+</ul>
 </section>
-<section id="three-structural-sources-of-advantage" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="three-structural-sources-of-advantage"><span class="header-section-number">17.2</span> Three Structural Sources of Advantage</h2>
-<p>There are only three ways to shift equilibrium in your favor.</p>
-<section id="lower-cost" class="level3">
-<h3 class="anchored" data-anchor-id="lower-cost">1. Lower Cost</h3>
-<p>A lower variable cost shifts your best-response function downward.</p>
-<p>You can profitably set a lower price.<br>
-You can survive price pressure others cannot.</p>
-<p>Cost advantage does not eliminate rivalry.<br>
-It makes you more durable within it.</p>
+<section id="case-advantage-under-imitation-in-ice-cream-sandwiches" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="case-advantage-under-imitation-in-ice-cream-sandwiches"><span class="header-section-number">17.2</span> Case: Advantage Under Imitation in Ice Cream Sandwiches</h2>
+<p>Smart Cookie opened near a campus with a simple but popular product: ice cream sandwiches made from gourmet cookies and ice cream.<br>
+After several years of success, a nearby franchise sandwich shop, Hogi Yogi, introduced a nearly identical ice cream sandwich at a lower price.</p>
+<p>We expected the franchise’s scale and lower cost to overwhelm the incumbent.<br>
+It did not.<br>
+Long lines at Smart Cookie persisted.</p>
+<p>To understand why, we collected price–quantity data and estimated differentiated Bertrand demand for both firms.</p>
+<p>The estimated demand functions were:</p>
+<p><span class="math display">\[
+\mathsf{Q_{sc} = -0.7043 - 2.1589 P_{sc} + 5.5687 P_{hy}}
+\]</span></p>
+<p><span class="math display">\[
+\mathsf{Q_{hy} = 4.5693 - 3.4966 P_{hy} + 0.5541 P_{sc}}
+\]</span></p>
+<p>Variable costs were:</p>
+<p><span class="math display">\[
+\mathsf{c_{sc} = 0.75, \quad c_{hy} = 0.50}
+\]</span></p>
+<p>Several structural differences are immediately visible.</p>
+<ul>
+<li>Hogi Yogi has lower cost.</li>
+<li>Hogi Yogi faces steeper own-price sensitivity.</li>
+<li>Smart Cookie benefits far more from substitution when Hogi Yogi raises price.</li>
+</ul>
+<p>Substitution is asymmetric.</p>
+<p>Using these estimated demand curves and costs, we solve for the Bertrand–Nash equilibrium.</p>
+<p>The equilibrium prices are:</p>
+<p><span class="math display">\[
+\mathsf{P_{sc}^* = 1.5336, \quad P_{hy}^* = 1.0249}
+\]</span></p>
+<p>Equilibrium profits per customer per month are:</p>
+<p><span class="math display">\[
+\mathsf{\pi_{sc}^* = 1.326, \quad \pi_{hy}^* = 0.963}
+\]</span></p>
+<p>The predicted equilibrium prices were within pennies of observed market prices.<br>
+The difficult question of competitive performance reduces to inspecting four parameters.</p>
+<p>Hogi Yogi’s lower cost was not enough to overcome:</p>
+<ul>
+<li>Higher own-price sensitivity,</li>
+<li>Weaker substitution leverage.</li>
+</ul>
+<p>Smart Cookie’s structural insulation — reflected in its demand parameters — sustained higher price and higher profit despite entry.</p>
+<p>Competitive advantage appeared not as a slogan, but as parameter asymmetry.</p>
+<p>The same structural logic appears in global brand competition.<br>
+In large-scale markets, differentiation often shows up simultaneously as lower own-price sensitivity and asymmetric substitution. Both are measurable forms of customer insulation. A case from Coke and Pepsi illustrates this directly.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Depth Example: Coke vs.&nbsp;Pepsi
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<hr>
+<p>To see how structural parameters scale to global brands, consider published demand estimates for cola concentrate from Coca-Cola (c) and Pepsi (p).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The estimated differentiated demand system is:</p>
+<p><span class="math display">\[
+\mathsf{Q_c = 63.42 - 3.98 P_c + 2.25 P_p}
+\]</span></p>
+<p><span class="math display">\[
+\mathsf{Q_p = 49.52 - 5.48 P_p + 1.40 P_c}
+\]</span></p>
+<p>Estimated variable costs:</p>
+<p><span class="math display">\[
+\mathsf{c_c = 4.96, \quad c_p = 3.96}
+\]</span></p>
+<section id="structural-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="structural-comparison">Structural Comparison</h3>
+<p>Several asymmetries are immediately visible:</p>
+<ul>
+<li>Coke has <em>higher baseline demand</em> (63.42 vs.&nbsp;49.52).</li>
+<li>Coke faces <em>lower own-price sensitivity</em> (3.98 vs.&nbsp;5.48).</li>
+<li>Coke benefits from <em>stronger substitution</em> when Pepsi raises price (2.25 vs.&nbsp;1.40).</li>
+<li>Pepsi has <em>lower cost</em>.</li>
+</ul>
+<p>Differentiation operates through both own-price sensitivity and cross-price substitution.</p>
 </section>
-<section id="stronger-demand" class="level3">
-<h3 class="anchored" data-anchor-id="stronger-demand">2. Stronger Demand</h3>
-<p>If customers value your product more highly (higher <span class="math inline">\(\mathsf{a}\)</span>), your demand curve shifts outward.</p>
-<p>Your best-response line shifts upward.<br>
-You charge more at equilibrium.</p>
-<p>Revenue advantage becomes structural.</p>
+<section id="bertrandnash-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="bertrandnash-equilibrium">Bertrand–Nash Equilibrium</h3>
+<p>Solving the mutual best-response problem yields:</p>
+<p><span class="math display">\[
+\mathsf{P_c^* = \$12.74, \quad P_p^* = \$8.12}
+\]</span></p>
+<p>Equilibrium economic profits:</p>
+<p><span class="math display">\[
+\mathsf{\pi_c = \$242.71, \quad \pi_p = \$95.08}
+\]</span></p>
+<p>Coke charges a higher price and earns substantially higher profit despite Pepsi’s cost advantage.</p>
+<p>The explanation is structural:</p>
+<ul>
+<li>Lower own-price sensitivity</li>
+<li>Stronger substitution leverage</li>
+<li>Higher baseline demand</li>
+</ul>
+<p>Pepsi’s lower cost is not enough to offset Coke’s demand-side insulation.</p>
+<p>Competitive advantage is visible directly in the estimated parameters.</p>
+<hr>
 </section>
-<section id="greater-differentiation" class="level3">
-<h3 class="anchored" data-anchor-id="greater-differentiation">3. Greater Differentiation</h3>
-<p>If customers are less willing to switch away from you (lower effective substitution), the parameter governing rivalry changes.</p>
-<p>Your equilibrium margin increases.</p>
-<p>Differentiation does not remove competition.<br>
-It reduces how tightly your price is pinned to the rival’s.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="structural-sources-of-competitive-advantage" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="structural-sources-of-competitive-advantage"><span class="header-section-number">17.3</span> Structural Sources of Competitive Advantage</h2>
+<p>The ice cream case illustrates a broader principle:<br>
+Competitive advantage appears as asymmetry in structural parameters.</p>
+<p>In differentiated Bertrand competition, four parameters govern equilibrium price and profit:</p>
+<ul>
+<li>Baseline demand (<span class="math inline">\(\mathsf{a}\)</span>)</li>
+<li>Own-price sensitivity (<span class="math inline">\(\mathsf{b}\)</span>)</li>
+<li>Substitution intensity (<span class="math inline">\(\mathsf{d}\)</span>)</li>
+<li>Variable cost (<span class="math inline">\(\mathsf{c}\)</span>)</li>
+</ul>
+<p>Each shifts equilibrium outcomes in a predictable way.</p>
+<p>We examine them one at a time.</p>
+<section id="baseline-demand-mathsfa" class="level3">
+<h3 class="anchored" data-anchor-id="baseline-demand-mathsfa">1. Baseline Demand (<span class="math inline">\(\mathsf{a}\)</span>)</h3>
+<p>Higher baseline demand shifts the entire demand curve outward.</p>
+<p>Holding other parameters constant:</p>
+<ul>
+<li>Equilibrium price rises.</li>
+<li>Equilibrium quantity rises.</li>
+<li>Profit rises.</li>
+</ul>
+<p>Baseline demand reflects broad appeal, brand awareness, distribution reach, or category growth.<br>
+It is not the same as total addressable market.</p>
+<p>A large market does not guarantee high <span class="math inline">\(\mathsf{a}\)</span> for your firm.<br>
+Advantage requires that demand for <em>your</em> product is structurally higher at comparable prices.</p>
+<hr>
+</section>
+<section id="own-price-sensitivity-mathsfb" class="level3">
+<h3 class="anchored" data-anchor-id="own-price-sensitivity-mathsfb">2. Own-Price Sensitivity (<span class="math inline">\(\mathsf{b}\)</span>)</h3>
+<p>The parameter <span class="math inline">\(\mathsf{b}\)</span> governs how sharply quantity falls when price rises.</p>
+<p>Lower <span class="math inline">\(\mathsf{b}\)</span> means:</p>
+<ul>
+<li>Customers are less sensitive to your price.</li>
+<li>You can raise price with smaller quantity loss.</li>
+<li>Equilibrium price increases nonlinearly.</li>
+<li>Profit rises disproportionately.</li>
+</ul>
+<p>This is pricing power.</p>
+<p>In practice, strong differentiation often appears as lower own-price sensitivity.<br>
+Customers do not leave quickly when price rises.</p>
+<hr>
+</section>
+<section id="substitution-intensity-mathsfd_ij---d_ji" class="level3">
+<h3 class="anchored" data-anchor-id="substitution-intensity-mathsfd_ij---d_ji">3. Substitution Intensity (<span class="math inline">\(\mathsf{d_{ij} - d_{ji}}\)</span>)</h3>
+<p>Substitution has two dimensions: its overall intensity and its asymmetry. High substitution intensifies rivalry for both firms. Asymmetry in substitution creates advantage for one firm relative to the other.</p>
+<p>The parameter <span class="math inline">\(\mathsf{d}\)</span> measures how much demand shifts when the rival changes price.</p>
+<p>Higher <span class="math inline">\(\mathsf{d}\)</span> means:</p>
+<ul>
+<li>You benefit more when the rival raises price.</li>
+<li>Rivalry is stronger.</li>
+<li>Strategic interdependence intensifies.</li>
+</ul>
+<p>Asymmetry matters.<br>
+If <span class="math inline">\(\mathsf{d_{ij} &gt; d_{ji}}\)</span>, firm <span class="math inline">\(\mathsf{i}\)</span> gains more customers from firm <span class="math inline">\(\mathsf{j}\)</span> when they (<span class="math inline">\(\mathsf{j}\)</span>) raise price and loses fewer customers to firm <span class="math inline">\(\mathsf{j}\)</span> when firm <span class="math inline">\(\mathsf{i}\)</span> raises price.</p>
+<p>This creates insulation.</p>
+<p>Differentiation therefore operates in two structural ways:</p>
+<ul>
+<li>Reducing own-price sensitivity.</li>
+<li>Weakening substitution toward rivals.</li>
+</ul>
+<p>Both are measurable.</p>
+<hr>
+</section>
+<section id="variable-cost-mathsfc" class="level3">
+<h3 class="anchored" data-anchor-id="variable-cost-mathsfc">4. Variable Cost (<span class="math inline">\(\mathsf{c}\)</span>)</h3>
+<p>Lower variable cost increases margin directly.<br>
+It also affects equilibrium price indirectly.</p>
+<p>A cost advantage allows a firm to:</p>
+<ul>
+<li>Sustain lower prices if needed.</li>
+<li>Earn higher profit at equilibrium.</li>
+<li>Discipline rivals through credible pricing threats.</li>
+</ul>
+<p>Cost advantage is powerful.<br>
+But as the ice cream and Coke examples show, cost alone does not dominate demand-side insulation.</p>
+<hr>
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-cap-location="bottom">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ch17-advantage-levers-asymd-price-profit-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch17-advantage-levers-asymd-price-profit-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch17_competitive_advantage_files/figure-html/fig-ch17-advantage-levers-asymd-price-profit-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17-advantage-levers-asymd-price-profit-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.1: Equilibrium prices as each structural advantage strengthens (move right = more advantage for Firm i). Baseline: <span class="math inline">\(\mathsf{a=100},\ \mathsf{b=2},\ \mathsf{c=25},\ \mathsf{d_{ij}=d_{ji}=1}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ch17-advantage-levers-asymd-price-profit-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch17-advantage-levers-asymd-price-profit-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch17_competitive_advantage_files/figure-html/fig-ch17-advantage-levers-asymd-price-profit-2.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch17-advantage-levers-asymd-price-profit-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.2: Equilibrium profit for Firm i under the same one-at-a-time advantage shifts from baseline as in Figure 17.1.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreting-the-structural-levers" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-the-structural-levers">Interpreting the Structural Levers</h3>
+<p>All four lines begin at the same point.<br>
+At zero advantage, both firms are structurally identical:</p>
+<ul>
+<li>Price = $50</li>
+<li>Profit = $1,250</li>
+</ul>
+<p>The dot marks that shared baseline.<br>
+From that point forward, each curve shows what happens when one structural lever strengthens for Firm i while everything else remains equal.</p>
+<p>Move to the right.<br>
+Advantage increases.<br>
+Equilibrium adjusts.</p>
+<section id="higher-baseline-demand-mathsfa" class="level4">
+<h4 class="anchored" data-anchor-id="higher-baseline-demand-mathsfa">1. Higher Baseline Demand (↑<span class="math inline">\(\mathsf{a}\)</span>)</h4>
+<p>When more customers value Firm i’s product at any given price, equilibrium price rises. Why? Because demand shifts outward. The firm can raise price and still retain volume.</p>
+<p>Profit increases steadily.</p>
+<p>This lever reflects stronger overall willingness to pay — brand appeal, broader relevance, stronger perceived value.</p>
+</section>
+<section id="lower-price-sensitivity-mathsfb" class="level4">
+<h4 class="anchored" data-anchor-id="lower-price-sensitivity-mathsfb">2. Lower Price Sensitivity (↓<span class="math inline">\(\mathsf{b}\)</span>)</h4>
+<p>This is the most powerful lever in the figure.</p>
+<p>When customers become less sensitive to Firm <span class="math inline">\(\mathsf{i}\)</span>’s price, the firm can raise price aggressively without losing many buyers.</p>
+<p>The price curve bends upward sharply.<br>
+Profit accelerates.</p>
+<p>This is insulation.</p>
+<p>It reflects design, positioning, and customer understanding.<br>
+It is rarely accidental.</p>
+</section>
+<section id="substitution-advantage-mathsfd_ij-d_ji" class="level4">
+<h4 class="anchored" data-anchor-id="substitution-advantage-mathsfd_ij-d_ji">3. Substitution Advantage (↑<span class="math inline">\(\mathsf{(d_{ij} − d_{ji})}\)</span>)</h4>
+<p>Here we hold total substitutability constant but tilt it in Firm <span class="math inline">\(\mathsf{i}\)</span>’s favor.</p>
+<p>Firm <span class="math inline">\(\mathsf{i}\)</span> loses fewer customers when it raises price. Firm <span class="math inline">\(\mathsf{j}\)</span> loses more customers when it raises price.</p>
+<p>The effect is positive but moderate.</p>
+<p>Substitution asymmetry matters — but on its own, it is not as explosive as reducing price sensitivity.<br>
+It is competitive insulation at the margin.</p>
+</section>
+<section id="lower-unit-cost-mathsfc" class="level4">
+<h4 class="anchored" data-anchor-id="lower-unit-cost-mathsfc">4. Lower Unit Cost (↓<span class="math inline">\(\mathsf{c}\)</span>)</h4>
+<p>Cost advantage moves profit directly.</p>
+<p>Price actually falls slightly relative to baseline — because the firm optimally passes some of its efficiency into competitive positioning.<br>
+But profit rises meaningfully.</p>
+<p>This lever works through margin, not demand.</p>
 </section>
 </section>
-<section id="advantage-is-a-shift-not-a-story" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="advantage-is-a-shift-not-a-story"><span class="header-section-number">17.3</span> Advantage Is a Shift, Not a Story</h2>
-<p>Competitive advantage is not a slogan.</p>
-<p>It is a shift in parameters.</p>
-<p>It moves the best-response function.<br>
-It moves the intersection.<br>
-It changes the equilibrium outcome.</p>
-<p>That is why advantage must be structural.</p>
-<p>Not rhetorical.</p>
+<section id="what-the-figures-reveal" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-figures-reveal">What the Figures Reveal</h3>
+<p>Several insights become visible immediately:</p>
+<ul>
+<li>All advantages are measured relative to a common equilibrium.</li>
+<li>Some levers shift price dramatically.</li>
+<li>Some levers shift profit more than price.</li>
+<li>Not all “advantages” are equally powerful.</li>
+</ul>
+<p>Most importantly:</p>
+<p>Competitive advantage is not abstract.<br>
+It is parameterized.<br>
+It is measurable.<br>
+It is visible in equilibrium outcomes. It is estimated from data.</p>
+<!-- ### Structure, Not Story
+
+These parameters determine equilibrium outcomes mechanically.  
+They are not narrative claims.  
+They are estimated from data. -->
+<p>Competitive advantage is not:</p>
+<ul>
+<li>Market share,</li>
+<li>Revenue growth,</li>
+<li>Branding language,</li>
+<li>Or TAM slides.</li>
+</ul>
+<p>It is parameter asymmetry.</p>
+<p>When one firm enjoys stronger baseline demand, lower own-price sensitivity, weaker substitution, or lower cost, equilibrium shifts.</p>
+<p>The strategic question becomes diagnostic:<br>
+Which parameter structurally favors you?</p>
+<p>If none do, you do not have competitive advantage.<br>
+If one does, you can see exactly how it operates.</p>
+<p>These structural parameters are not accidents.<br>
+They are shaped by product design, positioning, customer selection, and operational decisions.<br>
+The entrepreneur does not choose equilibrium directly — they shape the parameters that determine equilibrium.</p>
+</section>
+</section>
+<section id="durable-vs.-fragile-advantage" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="durable-vs.-fragile-advantage"><span class="header-section-number">17.4</span> Durable vs.&nbsp;Fragile Advantage</h2>
+<p>Not all parameter asymmetries produce the same kind of advantage.</p>
+<p>Some shift equilibrium slightly.<br>
+Some shift it dramatically.<br>
+Some are easy to imitate.<br>
+Some are difficult to erode.</p>
+<p>The figures make this visible.</p>
+<p>When structural differences are small, equilibrium outcomes are close.<br>
+Prices differ by pennies.<br>
+Profits differ marginally.</p>
+<p>That kind of advantage is fragile.</p>
+<p>A small competitor response — a price cut, a minor product tweak, a modest cost improvement — can eliminate it.</p>
+<section id="substitution-and-fragility" class="level3">
+<h3 class="anchored" data-anchor-id="substitution-and-fragility">Substitution and Fragility</h3>
+<p>When substitution remains high, rivalry intensifies.<br>
+Even if baseline demand differs, customers shift readily between firms when prices change.<br>
+High substitution compresses margins.</p>
+<p>In that environment, equilibrium profit is sensitive to small parameter changes.<br>
+Advantage erodes quickly.</p>
+<p>This is why undifferentiated markets collapse toward cost.<br>
+Discipline is severe.</p>
+</section>
+<section id="insulation-and-durability" class="level3">
+<h3 class="anchored" data-anchor-id="insulation-and-durability">Insulation and Durability</h3>
+<p>Durability appears when insulation is strong.</p>
+<p>Lower own-price sensitivity (small <span class="math inline">\(\mathsf{b}\)</span>) allows a firm to raise price without large quantity loss.<br>
+Asymmetric substitution (<span class="math inline">\(\mathsf{d_{ij} &gt; d_{ji}}\)</span>) reduces customer leakage and amplifies gains when rivals move.</p>
+<p>When those parameters differ meaningfully, equilibrium shifts more decisively.<br>
+Price gaps widen.<br>
+Profit gaps widen.</p>
+<p>Advantage becomes harder to neutralize.<br>
+It is embedded in the structure of demand.</p>
+</section>
+<section id="cost-and-durability" class="level3">
+<h3 class="anchored" data-anchor-id="cost-and-durability">Cost and Durability</h3>
+<p>Cost advantage can also be durable — but in a different way.</p>
+<p>Lower cost increases margin directly.<br>
+It allows credible price responses.<br>
+It can discipline rivals.</p>
+<p>But cost advantages are often more observable and more imitable than demand-side insulation.<br>
+Operational improvements spread.<br>
+Technology diffuses.</p>
+<p>Customer insulation is frequently more persistent than process efficiency.</p>
+</section>
+<section id="structural-magnitude-matters" class="level3">
+<h3 class="anchored" data-anchor-id="structural-magnitude-matters">Structural Magnitude Matters</h3>
+<p>The key is not whether a parameter differs.<br>
+It is how much it differs.</p>
+<p>A small reduction in <span class="math inline">\(\mathsf{b}\)</span> produces modest shifts.<br>
+A large change in <span class="math inline">\(\mathsf{b}\)</span> amplifies nonlinear effects in price and profit.</p>
+<p>A slight asymmetry in substitution may be inconsequential.<br>
+A large asymmetry changes competitive equilibrium entirely.</p>
+<p>Durability is a function of magnitude.</p>
+</section>
+<section id="a-diagnostic-view" class="level3">
+<h3 class="anchored" data-anchor-id="a-diagnostic-view">A Diagnostic View</h3>
+<p>Advantage is durable when:</p>
+<ul>
+<li>Parameter asymmetry is large.</li>
+<li>Substitution pressure is weak.</li>
+<li>Price sensitivity is low.</li>
+<li>The underlying cause of insulation is difficult to imitate.</li>
+</ul>
+<p>Advantage is fragile when:</p>
+<ul>
+<li>Parameters are nearly symmetric.</li>
+<li>Substitution is strong.</li>
+<li>Customers respond quickly to price.</li>
+<li>The source of difference is easily copied.</li>
+</ul>
+<p>Competitive advantage is therefore not a label.<br>
+It is a measurable difference in structural parameters — and its durability depends on the size and stability of that difference.</p>
+</section>
+</section>
+<section id="scale-and-the-entrepreneurial-boundary" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="scale-and-the-entrepreneurial-boundary"><span class="header-section-number">17.5</span> Scale and the Entrepreneurial Boundary</h2>
+<p>Competitive profit is always computed relative to a defined population.</p>
+<p>Demand is estimated for a specific group.<br>
+Prices are chosen for that group.<br>
+Equilibrium profit is calculated for that group.</p>
+<p>Scale enters only after structure is understood.</p>
+<section id="the-focal-population" class="level3">
+<h3 class="anchored" data-anchor-id="the-focal-population">The Focal Population</h3>
+<p>In entrepreneurial settings, the relevant population is the one you can realistically serve.<br>
+Not the total addressable market.<br>
+Not global category sales.<br>
+Not industry revenue.</p>
+<p>The relevant population is the defined segment for which demand was estimated.</p>
+<p>Equilibrium profit is:</p>
+<ul>
+<li>Price × quantity,</li>
+<li>Within the focal market boundary,</li>
+<li>Given estimated demand parameters.</li>
+</ul>
+<p>If you expand the population, profit scales proportionally — holding structure constant.</p>
+<p>But expanding population does not change the structural parameters themselves.</p>
+</section>
+<section id="rival-scale" class="level3">
+<h3 class="anchored" data-anchor-id="rival-scale">Rival Scale</h3>
+<p>In differentiated Bertrand competition, rival scale does not directly determine equilibrium price.<br>
+Only demand parameters and cost matter.</p>
+<p>A large incumbent may serve a broader population.<br>
+But if we are analyzing your focal segment, what matters is:</p>
+<ul>
+<li>How sensitive those customers are to price.</li>
+<li>How strongly they substitute.</li>
+<li>What your cost structure is relative to theirs.</li>
+</ul>
+<p>Rival scale becomes strategically relevant only when:</p>
+<ul>
+<li>Capacity binds,</li>
+<li>Network effects change demand structure,</li>
+<li>Or multi-market interactions alter pricing incentives.</li>
+</ul>
+<p>Those are extensions, not the core mechanism.</p>
+</section>
+<section id="tam-is-not-structural-advantage" class="level3">
+<h3 class="anchored" data-anchor-id="tam-is-not-structural-advantage">TAM Is Not Structural Advantage</h3>
+<p>Large total addressable markets can coexist with:</p>
+<ul>
+<li>High price sensitivity,</li>
+<li>Intense substitution,</li>
+<li>Thin margins.</li>
+</ul>
+<p>Conversely, small segments can sustain high prices and durable profit when insulation is strong.<br>
+Scale multiplies structure.<br>
+It does not replace it.</p>
+<p>Entrepreneurial analysis therefore proceeds in this order:</p>
+<ol type="1">
+<li>Define the focal population.</li>
+<li>Estimate demand within that population.</li>
+<li>Compute equilibrium profit.</li>
+<li>Then evaluate expansion.</li>
+</ol>
+<p>Structure first.<br>
+Scale second.</p>
+</section>
+<section id="the-entrepreneurial-boundary" class="level3">
+<h3 class="anchored" data-anchor-id="the-entrepreneurial-boundary">The Entrepreneurial Boundary</h3>
+<p>An entrepreneur’s boundary is the segment where:</p>
+<ul>
+<li>Demand is measurable,</li>
+<li>Cost is controllable,</li>
+<li>Competition is defined.</li>
+</ul>
+<p>Beyond that boundary, assumptions multiply.<br>
+Within that boundary, profit can be computed.</p>
+<p>Competitive advantage is evaluated locally before it is extrapolated globally. That discipline prevents wishful scaling.</p>
+</section>
+</section>
+<section id="decision-lens" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="decision-lens"><span class="header-section-number">17.6</span> Decision Lens</h2>
+<p>By this point, the question has changed.</p>
+<p>In monopoly, the question was:<br>
+Is demand strong enough to sustain profit?</p>
+<p>Under rivalry, the question becomes sharper:<br>
+Which structural parameter favors us — and is it large enough to matter?</p>
+<p>Competitive advantage is not a story.<br>
+It is not branding language.<br>
+It is not market share.<br>
+It is parameter asymmetry.</p>
+<section id="a-structured-diagnostic" class="level3">
+<h3 class="anchored" data-anchor-id="a-structured-diagnostic">A Structured Diagnostic</h3>
+<p>Before acting, ask:</p>
+<ul>
+<li>Is our baseline demand meaningfully higher?</li>
+<li>Are customers less sensitive to our price?</li>
+<li>Do we lose fewer customers when we raise price?</li>
+<li>Do we gain more customers when rivals raise price?</li>
+<li>Do we operate at lower variable cost?</li>
+</ul>
+<p>If none of these are structurally true, equilibrium will not favor you.<br>
+If one or more are true — and large enough — equilibrium shifts.</p>
+<p>Profit follows.</p>
+</section>
+<section id="structural-vs.-temporary" class="level3">
+<h3 class="anchored" data-anchor-id="structural-vs.-temporary">Structural vs.&nbsp;Temporary</h3>
+<p>A discount campaign is temporary.<br>
+A viral moment is temporary.<br>
+A short-term cost cut is temporary.</p>
+<p>Structural advantage is embedded in:</p>
+<ul>
+<li>Estimated demand parameters,</li>
+<li>Relative substitution patterns,</li>
+<li>Cost asymmetry that competitors cannot easily replicate.</li>
+</ul>
+<p>The distinction matters.</p>
+<p>Temporary improvements shift outcomes briefly.<br>
+Structural asymmetries shift equilibrium.</p>
+</section>
+<section id="the-entrepreneurial-test" class="level3">
+<h3 class="anchored" data-anchor-id="the-entrepreneurial-test">The Entrepreneurial Test</h3>
+<p>The discipline of competition analytics forces a difficult but powerful question:<br>
+Is our advantage structural — or fragile?</p>
+<p>If it is structural, equilibrium will reveal it.<br>
+If it is fragile, equilibrium will expose it.</p>
+<p>Entrepreneurship is not the pursuit of large markets.<br>
+It is the pursuit of structural insulation within a defined market.</p>
+<p>Measure it.<br>
+Compute it.<br>
+Then decide.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-gasmi-vuong-laffont92" class="csl-entry" role="listitem">
+Gasmi, Farid, Quang Vuong, and J. J. Laffont. 1992. <span>“Econometric Analysis of Collusive Behavior in a Soft-Drink Market.”</span> <em>Journal of Economics and Management Strategy</em> 1 (2): 277–311.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><span class="citation" data-cites="gasmi-vuong-laffont92">Gasmi, Vuong, and Laffont (<a href="references.html#ref-gasmi-vuong-laffont92" role="doc-biblioref">1992</a>)</span> estimate demand and cost functions for Coca-Cola and Pepsi and analyze Bertrand competition using historical data. We are replicating that work here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

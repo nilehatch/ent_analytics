@@ -1,6 +1,6 @@
 ---
-title: "Competitive Advantage as Structure"
-subtitle: "*How parameter differences shift equilibrium*"
+title: "Competitive Profit and Structural Advantage"
+subtitle: "*From measured demand to durable advantage*"
 ---
 
 
@@ -16,13 +16,32 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-In [Chapter 15](ch15_differentiated.qmd), we assumed symmetry with the rival.
+In [Chapter 15](ch15_differentiated.qmd), we assumed symmetry.
 
 Same cost.  
 Same demand sensitivity.  
 Same differentiation.
 
-That is why equilibrium produced the same price for both firms.
+Symmetry simplifies analysis.  
+But entrepreneurship seeks asymmetry.
+
+In [Chapter 16](ch16_competition_experiment), we estimated competitive demand directly.  
+We measured how quantity responds to:
+
+- Your price
+- The rival’s price
+
+Those parameters describe discipline and substitution.
+
+Now we add cost and scale and compute profit.
+<!-- 
+In [Chapter 15](ch15_differentiated.qmd), we assumed symmetry with the rival.
+
+Same cost.  
+Same demand sensitivity.  
+Same differentiation.
+-->
+<!--That is why equilibrium produced the same price for both firms.
 But symmetry is not the goal of entrepreneurship.
 
 Difference is.
@@ -31,94 +50,970 @@ Competitive advantage does not mean “trying harder.”
 It does not mean “believing more strongly.”  
 It does not mean “marketing louder.”
 
-It means changing structure.
+It means changing structure. 
+
+In the [previous chapter](ch16_competition_experiment), we measured competitive demand.
+
+We estimated how quantity responds to:
+
+- Your price.
+- The rival’s price.
+
+Those parameters describe substitution and discipline.
+
+Now we layer cost and scale onto those estimates and evaluate profit directly.
+-->
 
 
 
 
+##  From Estimated Demand to Competitive Profit
 
-## Breaking Symmetry
+Estimated demand gives structure.  
+Profit gives decision.
 
-Return to the equilibrium price:
+For firm $\mathsf{i}$, competitive profit is:
 
 $$
-\mathsf{P^* = \frac{a + bc}{2b - d}.}
+\mathsf{\pi_i(P_i, P_j) = (P_i - c_i)\, Q_i(P_i, P_j) - f_i}
 $$
 
-That expression contains everything.
+The demand function $\mathsf{Q_i(P_i, P_j)}$ is no longer assumed.  
+It has been estimated.
 
-If two firms differ in:
+Variable cost $\mathsf{c_i}$ and fixed cost $\mathsf{f_i} are added as before.
 
-- Variable cost $\mathsf{c}$,
-- Demand strength $\mathsf{a}$,
-- Differentiation $\mathsf{d}$,
+The difference from monopoly is not cost.  
+It is interaction.  
+Each firm chooses price to maximize its own profit, taking the rival’s price as given.
 
-their best-response functions shift.
+Equilibrium occurs where both firms are simultaneously choosing their best response.
 
-The intersection shifts.  
-Equilibrium prices diverge.  
-Profit diverges.  
-*Advantage appears.*
+In simple linear cases, this equilibrium can be written in closed form.  
+In practice, numerical optimization is sufficient.  
+The [**competition analytics app**](http://rconnect.byu.edu/CompetitionAnalytics) performs this calculation once demand and cost are specified.
 
-Not because one firm chose differently at the same structure.  
-But because the competitive profit structure itself is different.
+The key point is structural:
 
-
-
-
-
-## Three Structural Sources of Advantage
-
-There are only three ways to shift equilibrium in your favor.
-
-### 1. Lower Cost
-
-A lower variable cost shifts your best-response function downward.
-
-You can profitably set a lower price.  
-You can survive price pressure others cannot.
-
-Cost advantage does not eliminate rivalry.  
-It makes you more durable within it.
-
-
-
-### 2. Stronger Demand
-
-If customers value your product more highly (higher $\mathsf{a}$), your demand curve shifts outward.
-
-Your best-response line shifts upward.  
-You charge more at equilibrium.
-
-Revenue advantage becomes structural.
-
-
-
-### 3. Greater Differentiation
-
-If customers are less willing to switch away from you (lower effective substitution), the parameter governing rivalry changes.
-
-Your equilibrium margin increases.
-
-Differentiation does not remove competition.  
-It reduces how tightly your price is pinned to the rival’s.
+- Equilibrium price is determined by estimated demand parameters.
+- Profit is determined by equilibrium price.
+- Competitive performance is computed.
 
 
 
 
 
 
-## Advantage Is a Shift, Not a Story
 
-Competitive advantage is not a slogan.
+## Case: Advantage Under Imitation in Ice Cream Sandwiches
 
-It is a shift in parameters.
+Smart Cookie opened near a campus with a simple but popular product: ice cream sandwiches made from gourmet cookies and ice cream.  
+After several years of success, a nearby franchise sandwich shop, Hogi Yogi, introduced a nearly identical ice cream sandwich at a lower price.  
 
-It moves the best-response function.  
-It moves the intersection.  
-It changes the equilibrium outcome.
+We expected the franchise’s scale and lower cost to overwhelm the incumbent.  
+It did not.  
+Long lines at Smart Cookie persisted.
 
-That is why advantage must be structural.
+To understand why, we collected price–quantity data and estimated differentiated Bertrand demand for both firms.
 
-Not rhetorical.
+The estimated demand functions were:
+
+$$
+\mathsf{Q_{sc} = -0.7043 - 2.1589 P_{sc} + 5.5687 P_{hy}}
+$$
+
+$$
+\mathsf{Q_{hy} = 4.5693 - 3.4966 P_{hy} + 0.5541 P_{sc}}
+$$
+
+Variable costs were:
+
+$$
+\mathsf{c_{sc} = 0.75, \quad c_{hy} = 0.50}
+$$
+
+Several structural differences are immediately visible.
+
+- Hogi Yogi has lower cost.
+- Hogi Yogi faces steeper own-price sensitivity.
+- Smart Cookie benefits far more from substitution when Hogi Yogi raises price.
+
+Substitution is asymmetric.
+
+Using these estimated demand curves and costs, we solve for the Bertrand–Nash equilibrium.
+
+The equilibrium prices are:
+
+$$
+\mathsf{P_{sc}^* = 1.5336, \quad P_{hy}^* = 1.0249}
+$$
+
+Equilibrium profits per customer per month are:
+
+$$
+\mathsf{\pi_{sc}^* = 1.326, \quad \pi_{hy}^* = 0.963}
+$$
+
+The predicted equilibrium prices were within pennies of observed market prices.  
+The difficult question of competitive performance reduces to inspecting four parameters.
+
+Hogi Yogi’s lower cost was not enough to overcome:
+
+- Higher own-price sensitivity,
+- Weaker substitution leverage.
+
+Smart Cookie’s structural insulation — reflected in its demand parameters — sustained higher price and higher profit despite entry.
+
+Competitive advantage appeared not as a slogan, but as parameter asymmetry.
+
+The same structural logic appears in global brand competition.  
+In large-scale markets, differentiation often shows up simultaneously as lower own-price sensitivity and asymmetric substitution. Both are measurable forms of customer insulation. A case from Coke and Pepsi illustrates this directly.
+
+
+::: {.callout-tip collapse="true" icon="false"}
+## Depth Example: Coke vs. Pepsi
+
+---
+
+To see how structural parameters scale to global brands, consider published demand estimates for cola concentrate from Coca-Cola (c) and Pepsi (p).[^1]
+
+The estimated differentiated demand system is:
+
+$$
+\mathsf{Q_c = 63.42 - 3.98 P_c + 2.25 P_p}
+$$
+
+$$
+\mathsf{Q_p = 49.52 - 5.48 P_p + 1.40 P_c}
+$$
+
+Estimated variable costs:
+
+$$
+\mathsf{c_c = 4.96, \quad c_p = 3.96}
+$$
+
+### Structural Comparison
+
+Several asymmetries are immediately visible:
+
+- Coke has *higher baseline demand* (63.42 vs. 49.52).
+- Coke faces *lower own-price sensitivity* (3.98 vs. 5.48).
+- Coke benefits from *stronger substitution* when Pepsi raises price (2.25 vs. 1.40).
+- Pepsi has *lower cost*.
+
+Differentiation operates through both own-price sensitivity and cross-price substitution.
+
+### Bertrand–Nash Equilibrium
+
+Solving the mutual best-response problem yields:
+
+$$
+\mathsf{P_c^* = \$12.74, \quad P_p^* = \$8.12}
+$$
+
+Equilibrium economic profits:
+
+$$
+\mathsf{\pi_c = \$242.71, \quad \pi_p = \$95.08}
+$$
+
+Coke charges a higher price and earns substantially higher profit despite Pepsi’s cost advantage.
+
+The explanation is structural:
+
+- Lower own-price sensitivity
+- Stronger substitution leverage
+- Higher baseline demand
+
+Pepsi’s lower cost is not enough to offset Coke’s demand-side insulation.
+
+Competitive advantage is visible directly in the estimated parameters.
+
+---
+
+[^1]:  @gasmi-vuong-laffont92 estimate demand and cost functions for Coca-Cola and Pepsi and analyze Bertrand competition using historical data. We are replicating that work here.
+:::
+
+
+
+
+
+## Structural Sources of Competitive Advantage
+
+The ice cream case illustrates a broader principle:  
+Competitive advantage appears as asymmetry in structural parameters.
+
+In differentiated Bertrand competition, four parameters govern equilibrium price and profit:
+
+- Baseline demand ($\mathsf{a}$)
+- Own-price sensitivity ($\mathsf{b}$)
+- Substitution intensity ($\mathsf{d}$)
+- Variable cost ($\mathsf{c}$)
+
+Each shifts equilibrium outcomes in a predictable way.
+
+We examine them one at a time.
+
+
+
+### 1. Baseline Demand ($\mathsf{a}$)
+
+Higher baseline demand shifts the entire demand curve outward.
+
+Holding other parameters constant:
+
+- Equilibrium price rises.
+- Equilibrium quantity rises.
+- Profit rises.
+
+Baseline demand reflects broad appeal, brand awareness, distribution reach, or category growth.  
+It is not the same as total addressable market.
+
+A large market does not guarantee high $\mathsf{a}$ for your firm.  
+Advantage requires that demand for *your* product is structurally higher at comparable prices.
+
+---
+
+### 2. Own-Price Sensitivity ($\mathsf{b}$)
+
+The parameter $\mathsf{b}$ governs how sharply quantity falls when price rises.
+
+Lower $\mathsf{b}$ means:
+
+- Customers are less sensitive to your price.
+- You can raise price with smaller quantity loss.
+- Equilibrium price increases nonlinearly.
+- Profit rises disproportionately.
+
+This is pricing power.
+
+In practice, strong differentiation often appears as lower own-price sensitivity.  
+Customers do not leave quickly when price rises.
+
+---
+
+### 3. Substitution Intensity ($\mathsf{d_{ij} - d_{ji}}$)
+
+Substitution has two dimensions: its overall intensity and its asymmetry. High substitution intensifies rivalry for both firms. Asymmetry in substitution creates advantage for one firm relative to the other.
+
+The parameter $\mathsf{d}$ measures how much demand shifts when the rival changes price.
+
+Higher $\mathsf{d}$ means:
+
+- You benefit more when the rival raises price.
+- Rivalry is stronger.
+- Strategic interdependence intensifies.
+
+Asymmetry matters.  
+If $\mathsf{d_{ij} > d_{ji}}$, firm $\mathsf{i}$ gains more customers from firm $\mathsf{j}$ when they ($\mathsf{j}$) raise price and loses fewer customers to firm $\mathsf{j}$ when firm $\mathsf{i}$ raises price.
+
+This creates insulation.
+
+Differentiation therefore operates in two structural ways:
+
+- Reducing own-price sensitivity.
+- Weakening substitution toward rivals.
+
+Both are measurable.
+
+---
+
+### 4. Variable Cost ($\mathsf{c}$)
+
+Lower variable cost increases margin directly.  
+It also affects equilibrium price indirectly.
+
+A cost advantage allows a firm to:
+
+- Sustain lower prices if needed.
+- Earn higher profit at equilibrium.
+- Discipline rivals through credible pricing threats.
+
+Cost advantage is powerful.  
+But as the ice cream and Coke examples show, cost alone does not dominate demand-side insulation.
+
+---
+
+```{r}
+#| label: fig-ch17-advantage-levers-asymd-price-profit
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap:
+#|   - "Equilibrium prices as each structural advantage strengthens (move right = more advantage for Firm i). Baseline: $\\mathsf{a=100},\\ \\mathsf{b=2},\\ \\mathsf{c=25},\\ \\mathsf{d_{ij}=d_{ji}=1}$."
+#|   - "Equilibrium profit for Firm i under the same one-at-a-time advantage shifts from baseline as in Figure 17.1."
+#| layout-ncol: 2
+#| cap-location: bottom
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+library(ggthemes)
+
+base_theme <- theme_hc()
+col_pi <- "#2F855A"
+col_p <- "mediumblue"
+col_zero <- "grey50"
+
+# ---------------------------------------------------------
+# Asymmetric differentiated Bertrand (linear demand)
+#
+# Q_i = a - b P_i + d_ij P_j
+# Q_j = a - b P_j + d_ji P_i
+#
+# Profit: pi_i = (P_i - c) Q_i - f
+#
+# Reaction functions:
+# P_i = (a + b c + d_ij P_j) / (2b) 
+# P_j = (a + b c + d_ji P_i) / (2b)
+#
+# Solve the 2x2 linear system for (P_i, P_j):
+#   P_i - (d_ij/(2b)) P_j = (a + b c)/(2b)
+#  -(d_ji/(2b)) P_i + P_j = (a + b c)/(2b)
+# ---------------------------------------------------------
+
+# Baseline parameters (your old demonstration numbers)
+a0   <- 100
+b0   <- 2
+c0   <- 25
+d0   <- 1      # baseline symmetric substitution: d_ij = d_ji = d0
+f0   <- 0
+
+eq_asym <- function(a, b, c, d_ij, d_ji, f = 0){
+  k <- (a + b*c) / (2*b)
+  alpha <- d_ij / (2*b)
+  beta  <- d_ji / (2*b)
+
+  # Solve A x = rhs, where x = (P_i, P_j)
+  A <- matrix(c(1, -alpha,
+                -beta, 1), nrow = 2, byrow = TRUE)
+  rhs <- c(k, k)
+
+  detA <- det(A)
+  if(abs(detA) < 1e-10) return(tibble(Pi = NA_real_, Pj = NA_real_, Qi = NA_real_, pi_i = NA_real_))
+
+  sol <- solve(A, rhs)
+  Pi <- sol[1]
+  Pj <- sol[2]
+
+  Qi <- a - b*Pi + d_ij*Pj
+
+  if(Qi < 0) return(tibble(Pi = NA_real_, Pj = NA_real_, Qi = NA_real_, pi_i = NA_real_))
+
+  pi_i <- (Pi - c)*Qi - f
+  tibble(Pi = Pi, Pj = Pj, Qi = Qi, pi_i = pi_i)
+}
+
+# Advantage strength (rightward always "better for Firm i")
+adv_grid <- seq(0, 0.30, by = 0.01)
+
+# We will vary ONE lever at a time.
+# For the asymmetric substitution advantage lever:
+# hold average substitution fixed at d0, vary Delta = d_ij - d_ji > 0
+# so d_ij = d0 + Delta/2, d_ji = d0 - Delta/2
+# We'll map "adv" to Delta proportionally: Delta = adv * d0 (simple scaling)
+
+df <- bind_rows(
+  # Higher baseline demand (a ↑)
+  tibble(lever = "Higher baseline demand (↑a)", adv = adv_grid,
+         a = a0*(1+adv), b = b0, c = c0, d_ij = d0, d_ji = d0),
+
+  # Lower own-price sensitivity (b ↓)
+  tibble(lever = "Lower price sensitivity (↓b)", adv = adv_grid,
+         a = a0, b = b0*(1-adv), c = c0, d_ij = d0, d_ji = d0),
+
+  # Lower unit cost (c ↓)
+  tibble(lever = "Lower unit cost (↓c)", adv = adv_grid,
+         a = a0, b = b0, c = c0*(1-adv), d_ij = d0, d_ji = d0),
+
+  # Asymmetric substitution advantage (d_ij - d_ji ↑), holding average substitution fixed
+  tibble(lever = "Substitution advantage (↑(d_ij - d_ji))", adv = adv_grid,
+         a = a0, b = b0, c = c0,
+         Delta = d0*adv,
+         d_ij = d0 + Delta/2,
+         d_ji = d0 - Delta/2) |>
+    select(-Delta)
+) |>
+  rowwise() |>
+  mutate(eq = list(eq_asym(a, b, c, d_ij, d_ji, f0))) |>
+  unnest(eq) |>
+  ungroup()
+
+# Labels at the right edge of the plot
+label_df <- df |>
+  group_by(lever) |>
+  filter(adv == max(adv, na.rm = TRUE)) |>
+  slice_tail(n = 1) |>
+  ungroup()
+
+# Linetypes (single color)
+lt_map <- c(
+  "Higher baseline demand (↑a)"              = "solid",
+  "Lower price sensitivity (↓b)"             = "solid",
+  "Lower unit cost (↓c)"                     = "solid",
+  "Substitution advantage (↑(d_ij - d_ji))"  = "solid"
+)
+
+# --- label styling knobs (match your book style) ---
+label_fill  <- "white"
+label_alpha <- 0.85
+label_size  <- 5
+label_color <- "grey20"
+
+# Give yourself a tiny bit of room on the right for labels
+x_max_plot <- max(adv_grid)
+x_label    <- x_max_plot - 0.01
+x_lim_plot <- c(min(adv_grid), x_max_plot + 0.03)  # small extension, not a big empty field
+
+# --- stagger labels manually (edit these 4 numbers as needed) ---
+# The idea: move each label slightly up/down so they never overlap.
+# Start with small offsets; adjust by eye in seconds.
+label_offsets_price <- c(
+  "Higher baseline demand (↑a)"              =  -2,
+  "Lower price sensitivity (↓b)"             =  -1,
+  "Lower unit cost (↓c)"                     =  0,
+  "Substitution advantage (↑(d_ij - d_ji))"  =  .5
+)
+
+label_offsets_profit <- c(
+  "Higher baseline demand (↑a)"              =  -550,
+  "Lower price sensitivity (↓b)"             =  -100,
+  "Lower unit cost (↓c)"                     =  55,
+  "Substitution advantage (↑(d_ij - d_ji))"  =  -140
+)
+
+make_lever_plot <- function(x){
+  switch(
+    x,
+    "Higher baseline demand (↑a)" =
+      '"Higher baseline demand"~("\u2191"*a)',
+    "Lower price sensitivity (↓b)" =
+      '"Lower price sensitivity"~("\u2193"*b)',
+    "Lower unit cost (↓c)" =
+      '"Lower unit cost"~("\u2193"*c)',
+    "Substitution advantage (↑(d_ij - d_ji))" =
+      '"Substitution advantage"~("\u2191"*(d[ij]-d[ji]))',
+    '""'
+  )
+}
+
+# labels INSIDE the panel to avoid spill/cropping
+x_label <- max(adv_grid) - 0.01
+
+label_df_price <- label_df |>
+  mutate(
+    lever_plot = vapply(lever, make_lever_plot, character(1)),
+    x_lab = x_label,
+    y_lab = Pi + unname(label_offsets_price[lever])
+  )
+
+stopifnot(!any(is.na(label_df_price$lever_plot)))
+stopifnot(all(nchar(label_df_price$lever_plot) > 0))
+
+label_df_profit <- label_df |>
+  mutate(
+    lever_plot = vapply(lever, make_lever_plot, character(1)),
+    x_lab = x_label,
+    y_lab = pi_i + unname(label_offsets_profit[lever])
+  )
+
+stopifnot(all(c("lever","x_lab","y_lab") %in% names(label_df_price)))
+stopifnot(all(c("lever","x_lab","y_lab") %in% names(label_df_profit)))
+
+baseline_price <- df |>
+  filter(adv == 0) |>
+  distinct(Pi)
+
+# -----------------------------
+# Plot 1: Equilibrium price for Firm i
+# -----------------------------
+p_price <- ggplot(df, aes(x = adv, y = Pi, linetype = lever)) +
+  geom_line(color = col_p, linewidth = 2, na.rm = TRUE) +
+  geom_vline(xintercept = 0, color = col_zero, linewidth = 0.5) +
+  geom_point(
+    data = baseline_price,
+    aes(x = 0, y = Pi),
+    inherit.aes = FALSE,
+    color = col_pi,
+    fill = "white",
+    shape = 21,
+    stroke = 1.2,
+    size = 2.5) +
+  
+  geom_label(
+    data = label_df_price,
+    aes(x = x_lab, y = y_lab, label = lever_plot),
+    inherit.aes = FALSE,
+    parse = TRUE,
+    hjust = 1,                 # anchors label box to the right edge of x_lab
+    fill = "white",
+    alpha = 0.85,
+    color = "grey20",
+    size = 4,
+    label.size = 0.15
+    ) +
+
+  scale_linetype_manual(values = lt_map) +
+  scale_x_continuous(
+    labels = percent_format(accuracy = 1),
+    limits = x_lim_plot,
+    expand = expansion(mult = c(0.02, 0.02))
+    ) +
+  scale_y_continuous(labels = label_dollar()) +
+#  scale_y_continuous(labels = label_number(accuracy = 1)) +
+  labs(
+    x = "Advantage strength (percent improvement)",
+    y = "Equilibrium price (Firm i)"
+  ) +
+  coord_cartesian(clip = "off") +
+  base_theme +
+  theme(
+    legend.position = "none",
+    plot.margin = margin(5.5, 55, 5.5, 5.5)  # right margin is the key
+  )
+
+# -----------------------------
+# Plot 2: Equilibrium profit for Firm i
+# -----------------------------
+p_profit <- ggplot(df, aes(x = adv, y = pi_i, linetype = lever)) +
+  geom_line(color = col_pi, linewidth = 2, na.rm = TRUE) +
+  geom_hline(yintercept = 0, color = col_zero, linewidth = 0.5) +
+  geom_hline(yintercept = 1250, color = col_zero, linewidth = 0.5, linetype = "dotted") +
+  geom_vline(xintercept = 0, color = col_zero, linewidth = 0.5) +
+  geom_point(
+    data = df |> filter(adv == 0) |> distinct(lever, Pi, pi_i),
+    aes(x = 0, y = pi_i),
+    color = col_pi,
+    size = 2, 
+    fill = "white",
+    shape = 21,
+    stroke = 1.2,
+    size = 2.5) +
+  
+  geom_label(
+    data = label_df_profit,
+    aes(x = x_lab, y = y_lab, label = lever_plot),
+    inherit.aes = FALSE,
+    parse = TRUE,
+    hjust = 1,
+    fill = "white",
+    alpha = 0.85,
+    color = "grey20",
+    size = 4,
+    label.size = 0.15
+    ) +
+
+  scale_linetype_manual(values = lt_map) +
+  scale_x_continuous(
+    labels = percent_format(accuracy = 1),
+    limits = x_lim_plot,
+    expand = expansion(mult = c(0.02, 0.02))
+  ) +
+  scale_y_continuous(labels = label_dollar()) +
+  scale_y_continuous(
+    breaks = function(x) sort(unique(c(
+      scales::pretty_breaks(n = 5)(x),
+      1250
+      ))),
+    labels = label_dollar()) +
+#  scale_y_continuous(labels = label_number(accuracy = 1)) +
+  labs(
+    x = "Advantage strength (percent improvement)",
+    y = "Equilibrium profit (Firm i)"
+  ) +
+  coord_cartesian(ylim = c(1200, 3500), clip = "off") +
+  base_theme +
+  theme(
+    legend.position = "none",
+    plot.margin = margin(5.5, 55, 5.5, 5.5)
+  )
+
+p_price
+p_profit
+```
+
+### Interpreting the Structural Levers
+
+All four lines begin at the same point.  
+At zero advantage, both firms are structurally identical:
+
+- Price = $50
+- Profit = $1,250
+
+The dot marks that shared baseline.  
+From that point forward, each curve shows what happens when one structural lever strengthens for Firm i while everything else remains equal.
+
+Move to the right.  
+Advantage increases.  
+Equilibrium adjusts.
+
+
+#### 1. Higher Baseline Demand (↑$\mathsf{a}$)
+
+When more customers value Firm i’s product at any given price, equilibrium price rises.
+Why?
+Because demand shifts outward. The firm can raise price and still retain volume.
+
+Profit increases steadily.
+
+This lever reflects stronger overall willingness to pay — brand appeal, broader relevance, stronger perceived value.
+
+
+
+#### 2. Lower Price Sensitivity (↓$\mathsf{b}$)
+
+This is the most powerful lever in the figure.
+
+When customers become less sensitive to Firm $\mathsf{i}$’s price, the firm can raise price aggressively without losing many buyers.
+
+The price curve bends upward sharply.  
+Profit accelerates.
+
+This is insulation.
+
+It reflects design, positioning, and customer understanding.  
+It is rarely accidental.
+
+
+
+#### 3. Substitution Advantage (↑$\mathsf{(d_{ij} − d_{ji})}$)
+
+Here we hold total substitutability constant but tilt it in Firm $\mathsf{i}$’s favor.
+
+Firm $\mathsf{i}$ loses fewer customers when it raises price.
+Firm $\mathsf{j}$ loses more customers when it raises price.
+
+The effect is positive but moderate.
+
+Substitution asymmetry matters — but on its own, it is not as explosive as reducing price sensitivity.  
+It is competitive insulation at the margin.
+
+
+
+#### 4. Lower Unit Cost (↓$\mathsf{c}$)
+
+Cost advantage moves profit directly.
+
+Price actually falls slightly relative to baseline — because the firm optimally passes some of its efficiency into competitive positioning.  
+But profit rises meaningfully.
+
+This lever works through margin, not demand.
+
+### What the Figures Reveal
+
+Several insights become visible immediately:
+
+- All advantages are measured relative to a common equilibrium.
+- Some levers shift price dramatically.
+- Some levers shift profit more than price.
+- Not all “advantages” are equally powerful.
+
+Most importantly:
+
+Competitive advantage is not abstract.  
+It is parameterized.  
+It is measurable.  
+It is visible in equilibrium outcomes.
+It is estimated from data.
+
+<!-- ### Structure, Not Story
+
+These parameters determine equilibrium outcomes mechanically.  
+They are not narrative claims.  
+They are estimated from data. -->
+
+Competitive advantage is not:
+
+- Market share,
+- Revenue growth,
+- Branding language,
+- Or TAM slides.
+
+It is parameter asymmetry.
+
+When one firm enjoys stronger baseline demand, lower own-price sensitivity, weaker substitution, or lower cost, equilibrium shifts.
+
+The strategic question becomes diagnostic:  
+Which parameter structurally favors you?
+
+If none do, you do not have competitive advantage.  
+If one does, you can see exactly how it operates.
+
+These structural parameters are not accidents.  
+They are shaped by product design, positioning, customer selection, and operational decisions.  
+The entrepreneur does not choose equilibrium directly — they shape the parameters that determine equilibrium.
+
+
+
+## Durable vs. Fragile Advantage
+
+Not all parameter asymmetries produce the same kind of advantage.
+
+Some shift equilibrium slightly.  
+Some shift it dramatically.  
+Some are easy to imitate.  
+Some are difficult to erode.
+
+The figures make this visible.
+
+When structural differences are small, equilibrium outcomes are close.  
+Prices differ by pennies.  
+Profits differ marginally.
+
+That kind of advantage is fragile.
+
+A small competitor response — a price cut, a minor product tweak, a modest cost improvement — can eliminate it.
+
+
+
+### Substitution and Fragility
+
+When substitution remains high, rivalry intensifies.   
+Even if baseline demand differs, customers shift readily between firms when prices change.  
+High substitution compresses margins.
+
+In that environment, equilibrium profit is sensitive to small parameter changes.  
+Advantage erodes quickly.
+
+This is why undifferentiated markets collapse toward cost.  
+Discipline is severe.
+
+
+### Insulation and Durability
+
+Durability appears when insulation is strong.
+
+Lower own-price sensitivity (small $\mathsf{b}$) allows a firm to raise price without large quantity loss.  
+Asymmetric substitution ($\mathsf{d_{ij} > d_{ji}}$) reduces customer leakage and amplifies gains when rivals move.  
+
+When those parameters differ meaningfully, equilibrium shifts more decisively.  
+Price gaps widen.  
+Profit gaps widen.  
+
+Advantage becomes harder to neutralize.  
+It is embedded in the structure of demand.
+
+
+
+### Cost and Durability
+
+Cost advantage can also be durable — but in a different way.
+
+Lower cost increases margin directly.  
+It allows credible price responses.  
+It can discipline rivals.
+
+But cost advantages are often more observable and more imitable than demand-side insulation.  
+Operational improvements spread.  
+Technology diffuses.
+
+Customer insulation is frequently more persistent than process efficiency.
+
+
+
+### Structural Magnitude Matters
+
+The key is not whether a parameter differs.  
+It is how much it differs.
+
+A small reduction in $\mathsf{b}$ produces modest shifts.  
+A large change in $\mathsf{b}$ amplifies nonlinear effects in price and profit.
+
+A slight asymmetry in substitution may be inconsequential.  
+A large asymmetry changes competitive equilibrium entirely.
+
+Durability is a function of magnitude.
+
+
+
+### A Diagnostic View
+
+Advantage is durable when:
+
+- Parameter asymmetry is large.
+- Substitution pressure is weak.
+- Price sensitivity is low.
+- The underlying cause of insulation is difficult to imitate.
+
+Advantage is fragile when:
+
+- Parameters are nearly symmetric.
+- Substitution is strong.
+- Customers respond quickly to price.
+- The source of difference is easily copied.
+
+Competitive advantage is therefore not a label.  
+It is a measurable difference in structural parameters — and its durability depends on the size and stability of that difference.
+
+
+
+
+## Scale and the Entrepreneurial Boundary
+
+Competitive profit is always computed relative to a defined population.
+
+Demand is estimated for a specific group.  
+Prices are chosen for that group.  
+Equilibrium profit is calculated for that group.
+
+Scale enters only after structure is understood.
+
+
+### The Focal Population
+
+In entrepreneurial settings, the relevant population is the one you can realistically serve.  
+Not the total addressable market.  
+Not global category sales.  
+Not industry revenue.
+
+The relevant population is the defined segment for which demand was estimated.
+
+Equilibrium profit is:
+
+- Price × quantity,
+- Within the focal market boundary,
+- Given estimated demand parameters.
+
+If you expand the population, profit scales proportionally — holding structure constant.
+
+But expanding population does not change the structural parameters themselves.
+
+
+
+### Rival Scale
+
+In differentiated Bertrand competition, rival scale does not directly determine equilibrium price.  
+Only demand parameters and cost matter.
+
+A large incumbent may serve a broader population.  
+But if we are analyzing your focal segment, what matters is:
+
+- How sensitive those customers are to price.
+- How strongly they substitute.
+- What your cost structure is relative to theirs.
+
+
+Rival scale becomes strategically relevant only when:
+
+- Capacity binds,
+- Network effects change demand structure,
+- Or multi-market interactions alter pricing incentives.
+
+Those are extensions, not the core mechanism.
+
+
+
+### TAM Is Not Structural Advantage
+
+Large total addressable markets can coexist with:
+
+- High price sensitivity,
+- Intense substitution,
+- Thin margins.
+
+Conversely, small segments can sustain high prices and durable profit when insulation is strong.  
+Scale multiplies structure.  
+It does not replace it.
+
+Entrepreneurial analysis therefore proceeds in this order:
+
+1. Define the focal population.
+2. Estimate demand within that population.
+3. 	Compute equilibrium profit.
+4. Then evaluate expansion.
+
+Structure first.  
+Scale second.
+
+
+
+### The Entrepreneurial Boundary
+
+An entrepreneur’s boundary is the segment where:
+
+- Demand is measurable,
+- Cost is controllable,
+- Competition is defined.
+
+Beyond that boundary, assumptions multiply.  
+Within that boundary, profit can be computed.
+
+Competitive advantage is evaluated locally before it is extrapolated globally.
+That discipline prevents wishful scaling.
+
+
+
+
+
+
+## Decision Lens
+
+By this point, the question has changed.
+
+In monopoly, the question was:  
+Is demand strong enough to sustain profit?
+
+Under rivalry, the question becomes sharper:  
+Which structural parameter favors us — and is it large enough to matter?
+
+Competitive advantage is not a story.  
+It is not branding language.  
+It is not market share.  
+It is parameter asymmetry.
+
+
+
+### A Structured Diagnostic
+
+Before acting, ask:
+
+- Is our baseline demand meaningfully higher?
+- Are customers less sensitive to our price?
+- Do we lose fewer customers when we raise price?
+- Do we gain more customers when rivals raise price?
+- Do we operate at lower variable cost?
+
+If none of these are structurally true, equilibrium will not favor you.  
+If one or more are true — and large enough — equilibrium shifts.
+
+Profit follows.
+
+
+
+### Structural vs. Temporary
+
+A discount campaign is temporary.  
+A viral moment is temporary.  
+A short-term cost cut is temporary.  
+
+Structural advantage is embedded in:
+
+- Estimated demand parameters,
+- Relative substitution patterns,
+- Cost asymmetry that competitors cannot easily replicate.
+
+The distinction matters.
+
+Temporary improvements shift outcomes briefly.  
+Structural asymmetries shift equilibrium.
+
+
+
+### The Entrepreneurial Test
+
+The discipline of competition analytics forces a difficult but powerful question:  
+Is our advantage structural — or fragile?
+
+If it is structural, equilibrium will reveal it.  
+If it is fragile, equilibrium will expose it.
+
+Entrepreneurship is not the pursuit of large markets.  
+It is the pursuit of structural insulation within a defined market.
+
+Measure it.  
+Compute it.  
+Then decide.
+
 

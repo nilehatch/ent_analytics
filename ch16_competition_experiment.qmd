@@ -415,7 +415,7 @@ Structural position can be diagnosed along four measurable dimensions:
 
 - **Baseline demand ($\mathsf{a}$)** — Who begins with stronger underlying customer pull?
 - **Own-price sensitivity ($\mathsf{b}$)** — Who faces steeper margin discipline?
-- **Cross-price substitution ($\mathsf{d}$)** — Who is more insulated from rival pricing?
+- **Cross-price substitution ($\mathsf{d}$)** — Who is more insulated from rival pricing? 
 - **Unit variable cost ($\mathsf{c}$)** — Who can profit at lower price levels?
 
 These parameters are not stories.  
