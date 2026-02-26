@@ -71,8 +71,7 @@ book:
         - tk8_scaling.qmd
         - tk9_read_profit.qmd
         - tk10_sensitivity_decide.qmd
-        
-        
+
     - part: Competition
       chapters:
         - ch13_competition.qmd
@@ -80,14 +79,8 @@ book:
         - ch15_differentiated.qmd
         - ch16_competition_experiment.qmd
         - ch17_competitive_advantage.qmd
-        
-    - part: Old Econ Competition
-      chapters:
-        - competition.qmd
-        - competition_undiff_bertrand.qmd
-        - competition_diff_bertrand.qmd        
-        - competitive_advantage.qmd
-        - entry.qmd        
+        - ch18_entry.qmd
+
     - part: part_competitive_dynamics.qmd
       chapters:
         - game_theory.qmd

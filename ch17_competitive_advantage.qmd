@@ -23,7 +23,7 @@ Same demand sensitivity.
 Same differentiation.
 
 Symmetry simplifies analysis.  
-But entrepreneurship seeks asymmetry.
+Entrepreneurship seeks asymmetry.
 
 In [Chapter 16](ch16_competition_experiment), we estimated competitive demand directly.  
 We measured how quantity responds to:
@@ -458,7 +458,7 @@ lt_map <- c(
 
 # --- label styling knobs (match your book style) ---
 label_fill  <- "white"
-label_alpha <- 0.85
+label_alpha <- 0.9
 label_size  <- 5
 label_color <- "grey20"
 
@@ -1012,8 +1012,46 @@ If it is fragile, equilibrium will expose it.
 Entrepreneurship is not the pursuit of large markets.  
 It is the pursuit of structural insulation within a defined market.
 
-Measure it.  
+<!-- Measure it.  
 Compute it.  
 Then decide.
+-->
 
 
+
+
+## Where Do Structural Parameters Come From?
+
+The parameters we have analyzed are not accidents.  
+They are not abstract constants imposed by the market.  
+They are the measurable consequences of strategic choices.
+
+**Baseline demand ($\mathsf{a}$)** reflects how many customers value your offering at comparable prices.  
+Product design, positioning, distribution, and problem selection shape it.
+
+**Own-price sensitivity ($\mathsf{b}$)** reflects how sharply customers reduce quantity when price rises.  
+Clarity of value, uniqueness of solution, and customer fit influence it.
+
+**Substitution intensity ($\mathsf{d}$)** reflects how easily customers move between you and a rival.  
+Differentiation, targeting, and perceived similarity determine it.
+
+**Variable cost ($\mathsf{c}$)** reflects operational design, sourcing, scale discipline, and process efficiency.
+
+Entrepreneurs do not choose equilibrium price directly.  
+They shape the structural parameters that determine equilibrium.
+
+Profit analytics does not create advantage.
+It reveals whether advantage is large enough to justify action.
+
+The question of strategy becomes precise:  
+
+> Have we designed the offering and chosen the segment in a way that creates structural insulation?
+
+If the answer is no, equilibrium will expose it.  
+If the answer is yes, equilibrium will quantify it.
+
+Before launch, this is the discipline.
+
+Measure structure.  
+Compute equilibrium.  
+Then decide whether it is worth doing

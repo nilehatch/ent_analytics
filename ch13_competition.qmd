@@ -29,7 +29,8 @@ You could stage commitment.
 
 Even under uncertainty, the structure was stable.
 
-Now we introduce something different. A rival who also optimizes.
+Now we introduce something different. A rival who also optimizes.  
+
 
 
 

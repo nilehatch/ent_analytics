@@ -46,7 +46,8 @@ $$
 - The term $\mathsf{-bP_i}$ captures how your own price reduces your demand.
 - The term $\mathsf{+dP_j}$ captures how a higher rival price shifts customers toward you.
 
-When $\mathsf{d > 0}$, customers are not perfectly loyal—but they do not switch completely either.
+When $\mathsf{d > 0}$, customers are not perfectly loyal—but they do not switch completely either.  
+Smaller d reflects stronger differentiation between products; larger d reflects stronger substitution and more intense rivalry.
 
 Your demand responds gradually to price differences.
 
@@ -263,9 +264,8 @@ When the rival raises price by one dollar, your best price rises by only about 2
 Your response is disciplined.  
 Not explosive.
 
-Differentiation softens rivalry.
+<!-- Differentiation softens rivalry. -->
 
---- 
 
 
 In general, with demand
@@ -540,8 +540,7 @@ Compare three structural cases:
 - Undifferentiated collapse ([Chapter 14](ch14_undifferentiated.qmd))
 - Differentiated rivalry (this chapter)
 
-In monopoly, price is highest.
-
+In monopoly, price is highest.  
 In undifferentiated price competition, price falls to cost.
 
 In differentiated rivalry, price lies between those extremes.  
@@ -586,10 +585,11 @@ But it depends on structure.
 
 Three parameters matter:
 
-- Differentiation (the size of $\mathsf{d}$)
+- Substitution intensity (the size of $\mathsf{d}$)
 - Price sensitivity (the size of $\mathsf{b}$)
 - Unit variable cost (the size of $\mathsf{c}$)
 
+Smaller substitution intensity reflects stronger differentiation between products.  
 If differentiation is weak and price sensitivity is strong, equilibrium price will be close to cost.  
 Profit may be fragile.
 
@@ -603,7 +603,7 @@ It is about whether structure protects margin under response.
 
 
 ::: {.callout-tip collapse="true" icon = "false"}
-## Degree of Differentiation [optional math note]
+## Substitution Intensity [optional math note]
 
 The parameter $\mathsf{d}$ measures how strongly customers shift toward you when the rival raises price.
 
@@ -633,8 +633,7 @@ $$
 
 Now vary $\mathsf{d}$.
 
-When differentiation is weak (small $\mathsf{d}$), equilibrium price is relatively low.
-
+When substitution intensity is weak (small $\mathsf{d}$), differentiation is also weak and equilibrium price is relatively low.  
 As differentiation strengthens (larger $\mathsf{d}$), equilibrium price rises.
 
 Differentiation increases pricing power.  
@@ -696,7 +695,7 @@ ggplot(df_d, aes(x = d, y = P_star)) +
   base_theme
 ```
 
-As differentiation approaches $\mathsf{2b}$, pricing becomes highly interdependent and equilibrium price rises sharply. Structural insulation from pure price competition becomes decisive.
+As substitution intensity $\mathsf{d}$  approaches $\mathsf{2b}$, pricing becomes highly interdependent and equilibrium price rises sharply. Structural insulation from pure price competition becomes decisive.
 
 :::
 
