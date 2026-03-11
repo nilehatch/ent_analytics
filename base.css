@@ -64,10 +64,17 @@ figcaption {
   Prefer Quarto/Bootstrap table classes when possible.
   Keep base tables clean and readable without heavy theming.
 */
-table {
+/*table {
   border-collapse: collapse;
   width: 100%;
   margin: 1em 0;
+}*/
+
+table {
+  border-collapse: collapse;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 th, td {

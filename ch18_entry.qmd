@@ -176,14 +176,17 @@ Then decide whether entry is worth doing.
 
 
 
-## Cognition and Industry Outcomes
+## Cognition and Entry Performance
 
-The analysis in this chapter assumes that entrepreneurs correctly forecast competitive equilibrium.  
+The analysis in this chapter assumes that entrepreneurs correctly forecast competitive equilibrium.
 That assumption is not trivial.
+
+Entry is not just a bet on demand.
+It is a forecast about how the market will settle after rivals respond.
 
 Different cognitive representations of competition produce systematically different industry outcomes.
 
-In related research,^[For details on this research, see @hatch-ostler18.] we simulated entry decisions for two innovators deciding whether to enter a differentiated market and compete under different cognitive frameworks.The different cognitive frameworks led them to use different analytical tools to guide their decision.
+In related research,^[For details, see @hatch-ostler18.] we simulated entry decisions for two innovators deciding whether to enter a differentiated market. Each pair used a shared cognitive framework to guide its decision.
 
 Some firms:
 
@@ -195,7 +198,7 @@ Some firms:
 - Applied flexibility logic (real options).
 - Integrated competitive equilibrium and flexibility into a shared structural representation.
 
-Each regime produced a distinct pattern of industry profit.
+Each cognitive regime produced a distinct pattern of industry profit.
 
 ```{r}
 #| label: fig-cognition-performance
@@ -207,35 +210,35 @@ Each regime produced a distinct pattern of industry profit.
 knitr::include_graphics("images/on-diagonal-alpha-01.png")
 ```
 
-The results are striking.
+The differences are not subtle.
 
 “Always enter” cognition performed worst.  
-Awareness of market improved outcomes slightly.  
-Awareness of rivalry improved them further.  
+Recognizing market size improved outcomes slightly.  
+Recognizing rivalry improved them further.
 
-But the largest performance gains came from explicitly modeling differentiated competition.
+But the largest performance gain came from explicitly modeling differentiated competition.
 
-When firms forecast equilibrium under differentiated rivalry before entering, industry profit outcomes rose dramatically.
+When firms forecast equilibrium under differentiated rivalry before entering, profit outcomes rose dramatically.
 
-More sophisticated integrations of game theory and flexibility performed best — but the incremental gain beyond disciplined competitive equilibrium thinking was modest relative to the jump from naïve entry.
+More sophisticated integrations of game theory and flexibility performed best — but the incremental improvement beyond disciplined competitive equilibrium thinking was modest relative to the leap from naïve entry.
 
 The implication is practical.  
 Even without advanced strategic machinery, representing competition structurally — estimating demand, modeling substitution, computing equilibrium — moves decision quality near the performance frontier.
 
-In contrast, relying on optimism, market size, or isolated financial tools systematically underperforms.
+In contrast, relying on optimism, market size alone, or isolated financial tools systematically underperforms.
 
-The difference is not intelligence.  
+The difference is not intelligence.
 It is representation.
 
-Entry is a forecast about equilibrium.  
+Entry is a forecast about equilibrium.
 The quality of that forecast determines performance.
 
-This book develops the cognitive discipline required to make that forecast explicitly.
-
+This book develops the discipline required to make that forecast explicit.  
 Not perfectly.  
-But structurally.  
+But structurally.
+
 And that shift alone changes outcomes.
 
 Cognition shapes equilibrium.  
 Tools are not neutral.  
-Analytical discipline is competitive advantage.
+Analytical discipline is competitive advantage.  

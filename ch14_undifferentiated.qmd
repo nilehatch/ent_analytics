@@ -63,14 +63,11 @@ Fixed cost cannot be recovered.
 
 ## Economic Profit Is Not the Same as Income
 
-At this point, it is important to clarify something.
-
-Zero economic profit does not mean zero income.
-
+At this point, it is important to clarify something.  
+Zero economic profit does not mean zero income.  
 A business operating at price equal to cost can still generate accounting income. The owner may draw a salary. Cash may flow through the firm. The business may look active and even successful from the outside.
 
-Zero economic profit means something more precise.
-
+Zero economic profit means something more precise.  
 It means the firm earns no return above the opportunity cost of capital, time, and risk. The return is no better than what the entrepreneur could earn elsewhere with similar effort and exposure.
 
 In undifferentiated price competition, this is the long-run outcome.

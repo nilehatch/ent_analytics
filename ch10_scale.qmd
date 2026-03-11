@@ -43,7 +43,7 @@ Only then can profit be evaluated honestly.
 
 
 
-## Entrepreneurs often talk about “market size” as if it were part of demand.
+## Entrepreneurs often talk about “market size” as if it were part of demand
 
 It is not.
 
@@ -135,7 +135,7 @@ To reason about scale responsibly, adoption and penetration must be separated.
 
 ### Adoption Is a Customer-Level Decision
 
-Adoption is about *who says yes*.
+Adoption is about *who says yes*. <!-- allow how many here as well -->
 
 It reflects individual customer choices:
 
@@ -152,7 +152,7 @@ It shows up in:
 - price sensitivity,
 - and willingness to pay.
 
-When demand we considered demand earlier in the book in @sec-demand-chapter and @sec-demand-estimation-chapter, adoption was already present implicitly. The customers who participated in demand experiments revealed how likely *they* were to buy at different prices.
+When we considered demand earlier in the book in @sec-demand-chapter and @sec-demand-estimation-chapter, adoption was already present implicitly. The customers who participated in demand experiments revealed how likely *they* were to buy at different prices.
 
 What adoption does *not* tell us is how many such customers exist in the world.
 

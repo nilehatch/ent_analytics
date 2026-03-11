@@ -241,7 +241,7 @@ This is not a theory of cost. It is a way of separating two different kinds of c
 
 This equation does not tell you what costs *should* be. It simply makes explicit what is already true: some costs depend on scale, and some do not.
 
-Different cost structures are different choices of $\mathsf{F}$ and $\mathsf{c}$.
+Different cost structures are different choices of $\mathsf{f}$ and $\mathsf{c}$.
 Those choices determine how risky the business becomes as demand turns out higher or lower than expected.
 
 
