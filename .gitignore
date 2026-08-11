@@ -4,3 +4,18 @@
 .Ruserdata
 
 /.quarto/
+
+# Quarto build output — rendered by `quarto render`, deployed by
+# `quarto publish netlify`. Untracked 11 Aug 2026; it was carrying ~104
+# files and is why .git reached 115M. Source images (cover.png, images/)
+# stay tracked — do not add a blanket *.png rule here.
+_book/
+_site/
+*_files/
+.quarto/
+
+# macOS
+.DS_Store
+
+# Local backups
+*.bak-*
