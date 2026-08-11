@@ -8,8 +8,8 @@ book:
 #  author: "Nile Hatch"  
 #  date: "1/1/2026"
   reader-mode: true
-  site-url: https://ei.nilehatch.com/
-  repo-url: https://github.com/nilehatch/exp_innov/
+  site-url: https://ea.nilehatch.com/
+  repo-url: https://github.com/nilehatch/ent_analytics/
 
   page-footer:
     left: |
@@ -93,8 +93,11 @@ book:
         - simultaneous_games.qmd        
         - sequential_games.qmd
         - strategic_commitment.qmd
-    - part: Competing to Sell to Businesses
-    - summary.qmd
+    # Removed 11 Aug 2026, both pending real content:
+    #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)
+    #   - summary.qmd                             (placeholder: "this book has no content
+    #                                              whatsoever" — was live as ch. 24)
+    # summary.qmd is still on disk. Restore this line when a real summary exists.
     - references.qmd
 
 bibliography: references.bib
