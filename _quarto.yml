@@ -80,7 +80,8 @@ book:
         - ch16_competition_experiment.qmd
         - ch17_competitive_advantage.qmd
         - ch18_entry.qmd
-        - tk11_competition_survey.qmd
+        
+    - tk11_competition_survey.qmd
 
     - part: Competitive Dynamics
       chapters:

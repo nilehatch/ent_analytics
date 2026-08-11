@@ -1,4 +1,6 @@
-# Designing a Competitive Demand Survey {#sec-toolkit-design-competition-survey .unnumbered}
+# Toolkit III: Competition {#sec-toolkit-design-competition-survey .unnumbered}
+
+## Designing a Competitive Demand Survey {.subtitle}
 
 ------------------------------------------------------------------------
 
@@ -178,6 +180,17 @@ For the focal product (Product A), ask quantity under four conditions:
 | max WTP A   | 0       |
 | 0       | max WTP B   |
 | max WTP A   | max WTP B   |
+
+::: {.anchor-scenarios}
+
+**Anchor Quantity Scenarios**
+
+1. **Price A = 0**, **Price B = 0**
+2. **Price A = WTP A**, **Price B = 0**
+3. **Price A = 0**, **Price B = WTP B**
+4. **Price A = WTP A**, **Price B = WTP B**
+
+:::
 
 Example prompts:
 

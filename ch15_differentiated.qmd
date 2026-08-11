@@ -674,7 +674,7 @@ b <- 2
 c <- 230
 
 # Range of differentiation values (must stay below 2b = 4)
-d_vals <- seq(0.1, 3.5, length.out = 200)
+d_vals <- seq(0.1, 2, length.out = 200)
 
 # Equilibrium price function
 P_star <- (a + b*c) / (2*b - d_vals)

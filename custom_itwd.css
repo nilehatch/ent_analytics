@@ -257,3 +257,96 @@ table.table {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+/* ---------- Toolkit / micro tables ---------- */
+
+table.table {
+  width: auto !important;
+  margin: 0.8em 0 1.2em 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+/* header rule */
+table.table thead th {
+  font-weight: 600;
+  border: none;
+  border-bottom: 2px solid #6b7280;
+  background: transparent;
+  padding: 0.25rem 0.8rem 0.35rem 0.4rem;
+}
+
+/* body rows */
+table.table tbody td {
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.35rem 0.8rem 0.35rem 0.4rem;
+}
+
+/* remove final row rule */
+table.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ---------- Academic / MIT-press style toolkit tables ---------- */
+
+table.table {
+  width: auto !important;
+  margin: 1em auto 1.4em auto;   /* centered small tables */
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  border-top: 2px solid #6b7280;   /* subtle table top rule */
+}
+
+/* header */
+table.table thead th {
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  border-bottom: 1.5px solid #9ca3af;  /* header rule */
+  padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+  background: transparent;
+}
+
+/* body rows */
+table.table tbody td {
+  border: none;
+  padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+}
+
+/* subtle row separation */
+table.table tbody tr + tr td {
+  border-top: 1px solid #e5e7eb;
+}
+
+table.table td + td,
+table.table th + th {
+  padding-left: 1.4rem;
+}
+
+/* ---------- Micro reference blocks ---------- */
+
+.anchor-scenarios {
+  max-width: 420px;
+  margin: 1em auto 1.4em auto;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid #6b7280;
+  background: #f9fafb;
+  font-size: 0.95rem;
+}
+
+.anchor-scenarios strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.anchor-scenarios ol {
+  margin: 0.3rem 0 0 1.2rem;
+  padding: 0;
+}
+
+.anchor-scenarios li {
+  margin: 0.25rem 0;
+}
