@@ -144,15 +144,94 @@ Evidence gathered from a distinctive subset should be interpreted as describing 
 
 This is not a reason to avoid early demand learning. It is a reason to be precise about what the evidence actually supports.
 
-Only after understanding who had a chance to respond does it make sense to ask the next question: *who chose to respond—and why*.
+Understanding who had a chance to respond raises an obvious question about how they came to have it.
 
 
 If you find that your sampling frame is narrow or difficult to justify, pause before proceeding.
 
-This is often a sign that the demand learning problem needs to be reframed.  
+This is often a sign that the demand learning problem needs to be reframed.
 Returning to the [problem framing toolkit](frame-the-problem.qmd) can help clarify which population truly matters for the decision at hand.
 
 
+## Getting People to Answer
+
+The last section asked who had a chance to respond. The next one asks who took it. Between those two questions sits work that nobody assigns you, and that this book has so far left out.
+
+### Your Sampling Frame Is Something You Built
+
+It is easy to read the previous section as describing a frame you can go and inspect: where the survey was posted, who it was sent to, who happened to see it. That reading is too passive. Nobody hands you a frame. You build one, person by person, and what you end up with is the residue of where you looked, who agreed to help, and where you eventually stopped trying.
+
+This is why two people studying the same market can produce evidence that cannot be compared. One posted a link in a general forum and took whoever wandered in. The other spent a week persuading a trade association to forward it to their members. Both have forty responses. Only one of them has forty responses from the people the decision is about.
+
+### Response Rate Is a Leading Indicator of Acquisition Cost
+
+Most people treat low response as an obstacle standing between them and the real work.
+
+Do the arithmetic before you accept that. Suppose it took two hundred approaches to collect forty answers to a survey that costs a respondent three minutes and no money whatsoever. You will eventually need people to do something considerably harder than that. They will have to hand you money.
+
+Acquisition runs through the same channel you just used, against much higher friction. What it costs shows up in the profit equation directly: in variable cost if you pay for each customer acquired, in fixed cost if you build a channel and staff it. A channel that cannot deliver free survey responses cheaply is unlikely to deliver paying customers cheaply.
+
+So the recruiting you are finding tedious is not standing between you and your measurement of $\mathsf{q}$. It is your first measurement of $\mathsf{c}$ and $\mathsf{f}$.
+
+Take that literally rather than as consolation. Record how many approaches each response cost you, and record it by channel. Those numbers are evidence, and they are close to the only evidence about acquisition cost available to you before you have something to sell.
+
+### Track the Funnel, Not the Count
+
+The number that matters is not how many responses you have. It is where you lost everyone else.
+
+Count people at four points: approached, started, passed the screener, finished. Each gap says something different, and each one is a finding rather than a failure.
+
+**Lost before starting.** You cannot reach this group through this channel. That is an access finding, and it is often worth more than what the survey would have told you.
+
+**Screened out in volume.** The segment is rarer in this population than you assumed. Notice what you now have: an empirical estimate of how common your customer actually is, which is precisely the number market sizing asserts and never measures.
+
+**Started, then abandoned at the price questions.** Something is unclear, in the instrument or in the product description, or the questions ask more than a stranger will give. This is fixable, and worth fixing before you gather anything further.
+
+**Finished, with willingness to pay clustered near zero.** You have your answer. It arrived cheaply and early, which was the entire point of asking.
+
+Everyone who failed to finish told you something. A raw count throws all of it away.
+
+### Where the People Already Are
+
+The common failure is to broadcast and hope the right people identify themselves.
+
+Broadcasting works badly for a structural reason. Your target segment is by construction a minority of any general audience, so a general channel delivers mostly people you will screen out, at full effort per person. You exhaust yourself assembling a sample you then discard.
+
+Somebody has already done the aggregating for you. Your people gather somewhere: a club, a trade association, a subreddit, a Discord, a conference, a waiting room, a shop that serves them, a queue they stand in. Find the gathering rather than the individuals, then ask whoever runs it.
+
+**Borrowed credibility is the largest single lever available to you.** A link from a stranger converts close to nothing. The same link forwarded by a moderator, an organizer, an association's staff, or a shop owner converts many times better, because the trust already exists and you are borrowing it instead of building it. A week spent earning one introduction usually beats a week spent posting.
+
+**Ask in person, deliver digitally.** A face-to-face request followed by *I'll send you the link* outperforms a purely digital approach by a wide margin, because the commitment becomes social rather than transactional. This is the move most people avoid and the one that works.
+
+**Be specific about why you are asking.** *I'm a student working on a project* requests charity. *I'm trying to work out whether this particular thing, for people like you, is worth building, and I'll send you what I find* offers an exchange.
+
+**Length is the biggest thing you control.** Every question costs completions, and the price questions you actually need are already demanding. Cut to the screener, the willingness-to-pay block, and only those characteristics you will genuinely segment on. Everything else is a tax paid in lost responses.
+
+### What to Offer
+
+Incentives are where a demand survey differs from every other kind of survey.
+
+An ordinary survey can pay its respondents without much harm. This one cannot, for a specific reason. You are asking people what they would pay. Paying them to answer makes money salient at exactly the wrong moment, and it recruits people who answer surveys for money, a group defined by a trait that has nothing to do with wanting your product.
+
+Offering the product itself is worse, which is counterintuitive enough to say plainly. Cash selects for people who want cash, roughly unrelated to your question. Your product selects for people who want your product, which is the very thing you are trying to measure. You would be recruiting on your own dependent variable. And giving it away announces that its price is zero, moments before you ask what someone would pay for it. A discount carries the same defect in milder form, and adds one of its own by naming a price before you ask for theirs.
+
+What remains is workable. **Early access at the eventual price** concedes nothing on price and selects only mildly on interest. **An adjacent item, raffled** — an accessory, or something else from the same category — is the best incentive most ventures can offer, because it biases toward category interest, which overlaps your screener rather than your outcome. **The findings themselves**, sent back to everyone who answered, remain the cleanest offer available and cost you nothing but the sending.
+
+One further possibility belongs outside this list, because it is not an incentive at all.
+
+If you are tempted to give people the product in exchange for answering, consider selling it to them instead. A preorder, a deposit, or a pledge at a stated price is not a stated preference. It is a purchase, and it is stronger evidence than any survey can produce. It does not replace the survey, which estimates a whole curve where a preorder gives you a single point. It validates one, at a real price, with real money, which is exactly the [one-point anchor test](check-demand-curve.qmd) the estimated curve should be held to.
+
+### When You Cannot Reach Them At All
+
+Sometimes the honest outcome of recruitment is that it does not work.
+
+You tried several channels, spent real effort, and could not assemble enough of the right people to say anything. The temptation then is to widen the definition until responses arrive, which converts a clean negative result into a misleading positive one.
+
+Record what happened instead. A group you cannot reach is not a market you can serve. Whatever they might have paid, you have no way to put an offer in front of them, and no way to do it repeatedly at a cost you could carry.
+
+That is not a failed experiment. It is an answer to a question the profit equation asks and market sizing never does.[^access]
+
+[^access]: *Expeditionary Innovation* makes this test the explicit gate of its first phase: see [Test Your Access](https://ei.nilehatch.com/Test_Access.html). The act is the same and the purpose differs. There you are checking whether sustained contact is possible before committing months to a community. Here you need that contact to produce a demand curve. A failure in either place is the same finding.
 
 
 
