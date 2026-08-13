@@ -10,18 +10,41 @@
    Load order in _quarto.yml: base.css FIRST, then this file (so these
    values override the fallbacks declared in base.css).
 
-   Palette: green, against Make the Call's cerulean and Expeditionary
-   Innovation's own hue. The greens are carried over from the pre-canonical
-   custom_itwd.css so the book still looks like itself; accent, muted, and
-   text already matched the family exactly and are unchanged.
+   PALETTE — pine, settled 13 Aug 2026.
+
+   The banner is linear-gradient(90deg, primary 0%, secondary 100%), so the
+   two values below are the whole title block. Depth comes from the far end
+   RECEDING: Make the Call darkens 7.6 lightness points left to right,
+   Expeditionary Innovation darkens 4.5 and names its secondary "the banner
+   gradient's far end". The values these replace lightened by 18 points, which
+   is what made this book's banner read flat for so long — the gradient ran
+   backwards, and four times harder than the siblings ran forwards. Pine
+   darkens 6.9, landing between the two.
+
+   Hue places this book at 154 degrees, against Make the Call at 180–196 and
+   Expeditionary Innovation at 199–203. That is one continuous analogous run
+   through green, cyan, azure, not a departure — and at 25.5 degrees of
+   separation this book is further from its nearest neighbour than those two
+   are from each other (3.7 degrees).
+
+   Green is deliberate: this is the profit book, and profit is what the
+   chrome should say. Pine rather than emerald because a muted, dark green
+   reads as sober arithmetic where a bright one reads as dollar bills.
+
+   Two constraints any replacement must also clear:
+     - white text passes WCAG AA at BOTH gradient ends (6.52:1 and 9.62:1)
+     - the chrome green stays clear of the #2F855A the figures use to encode
+       profit, so chrome never looks like it is carrying data (10.4 points of
+       lightness apart). Chrome is identity and differs per book; the figure
+       palette is semantics and stays constant across books.
    =============================== */
 
 :root {
-  --brand-primary:      #0F5132;  /* Deep green */
-  --brand-primary-dark: #0B3D26;  /* Darker green (hover/active) */
-  --brand-secondary:    #1F9D8A;  /* Teal-green */
-  --brand-accent:       #E3A008;  /* Gold (depth / h3 tick) */
-  --brand-muted:        #6B7280;  /* Muted gray text */
-  --brand-bg-tint:      #E9F7F3;  /* Soft green tint */
-  --brand-text:         #1F2937;  /* Rich gray body text */
+  --brand-primary:      #146B45;  /* Pine (banner near end, h2 rule) */
+  --brand-primary-dark: #0F5636;  /* Darker pine (hover/active) */
+  --brand-secondary:    #0D4F33;  /* Deep pine (banner far end, h3) */
+  --brand-accent:       #E3A008;  /* Gold (depth / h3 tick) — shared */
+  --brand-muted:        #6B7280;  /* Muted gray text — shared */
+  --brand-bg-tint:      #EBF4F0;  /* Soft pine tint */
+  --brand-text:         #1F2937;  /* Rich gray body text — shared */
 }

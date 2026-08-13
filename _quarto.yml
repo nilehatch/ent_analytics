@@ -109,7 +109,10 @@ format:
       - base.css
       - custom_itwd.css
     number-sections: true
-    number-depth: 2
+    # Depth 1 numbers chapters only, never sections — matching Expeditionary
+    # Innovation. Make the Call sets number-sections: false outright. At depth 2
+    # this book was the family outlier, stamping 2.1 / 2.2 down every chapter.
+    number-depth: 1
     fig-cap-location: margin
     tbl-cap-location: margin
 #    embed-resources: true
