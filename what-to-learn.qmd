@@ -1,0 +1,68 @@
+---
+title: "What Do You Need to Know to Decide?"
+subtitle: "Finding the one unknown that is both blocking and learnable"
+---
+
+Knowing that demand is the unknown is not the same as knowing what to go find out.
+
+When you actually face a decision, the unknowns do not arrive as one tidy question about quantity. They arrive as a crowd. Who exactly this is for. Whether anyone would pay for it at all. Whether the people who would pay are numerous enough to matter. Whether you can even reach them. Whether a competitor undercuts you the week you launch.
+
+Every one of them looks relevant. None of them looks decisive on its own. Faced with that, most people do one of two things: they start gathering whatever information is easiest to get, or they stop and wait for the picture to clear. Both feel like diligence. Neither moves the decision.
+
+What is missing here is rarely data. It is that nobody has said which single unknown is standing in the way.
+
+## Many Unknowns, One That Blocks You
+
+It is tempting to believe a good decision requires understanding everything, and that once enough questions are answered the right move becomes obvious.
+
+Decisions do not work that way, and you would not have the time even if they did. What matters is which piece of the uncertainty prevents you from acting responsibly right now.
+
+Call that piece your **most urgent unknown**. It is the thing that has to be better understood before the next decision can be made with integrity. Until it is addressed, acting is reckless and waiting is stalling, and it is genuinely difficult to tell those two apart from the inside.
+
+Other unknowns will still be there. Some of them may be larger in an absolute sense. If they do not touch the decision in front of you, they are not your problem this week.
+
+This is worth saying plainly, because the most urgent unknown is rarely the most interesting one. The unknown you enjoy thinking about, and the one your advisors like to argue about, are usually not the one whose answer would change what you do on Monday.
+
+Naming it does not make the uncertainty go away. It puts the uncertainty in an order. Reduce the first unknown and a second one moves into its place, which means this is a discipline you practice repeatedly rather than a step you complete once.
+
+Entrepreneurs who skip it work hard without moving. They gather information that changes nothing, and they mistake the motion for learning.
+
+## Which Unknowns Are Worth Chasing
+
+Naming the blocking unknown is half the filter. The other half is whether it can be reduced at all.
+
+Some uncertainty will not resolve before you act, whatever you spend on it. You cannot find out what a competitor will launch next year, how the economy will turn, or which of a hundred small accidents will break your way. That is **irreducible uncertainty**. The honest responses to it are judgment, flexibility, and keeping the commitment small enough that being wrong does not end you.
+
+Other uncertainty exists only because nobody has gone and asked. Who these people actually are. What they do instead today. What they would pay to stop doing it. That is **reducible uncertainty**, and it is almost always larger than it feels from inside the fog.
+
+The distinction deserves care, because it is also the most convenient thing in this book to get wrong. Treating a reducible unknown as irreducible gives you permission to skip the work, and it arrives with attractive language ready to hand. *Nobody can predict this.* *You just have to try it and see.* *At some point you have to bet on yourself.* Held sincerely, those are realism. Reached for to avoid an afternoon of customer interviews, they are guessing dressed up as courage.
+
+The good news is that most of what makes a pre-revenue decision feel like a gamble is reducible. Who your customer is can usually be settled. What they would pay can be measured. Since profit uncertainty is mostly demand uncertainty, and demand uncertainty is mostly reducible, the economics of the decision are largely learnable. What remains genuinely unpredictable is smaller than it looks, and a good deal easier to carry once it is the only thing you are carrying.
+
+One point of vocabulary, since the words get used loosely. **Risk** describes a situation where you can put meaningful probabilities on the outcomes. **Uncertainty** describes one where you cannot. Most pre-revenue decisions are uncertainty, and tools built for risk will mislead you here. A probability you invented is not evidence, however carefully you then multiply by it.
+
+Put the two filters together and you have the question this chapter exists to answer. Of everything you do not know, which one is both blocking the decision and learnable before you have to make it? That is where the effort goes.
+
+## From Urgent Unknown to a Question You Can Answer
+
+An unknown becomes useful only when it is turned into a question, and not every question qualifies.
+
+Some questions describe the world. Others inform a decision. Both can be interesting. Only the second reduces uncertainty about what to do.
+
+An **entrepreneurial question** is defined by the job it does. Its answer would change the action you take, or it would raise your confidence in the action you were already leaning toward. Here is the test: imagine getting each possible answer. If you would do the same thing either way, you have a fine question about the world and the wrong question for this decision.
+
+Clarity matters more than precision at this stage. A question can be answered accurately and stay useless, because it never connected to a choice. A question answered roughly can be worth a great deal, because it settled the thing that was blocking you.
+
+Notice how the question changes as the blocking unknown changes. If what blocks you is whether anyone wants this, then population size will not help; ask whether people who have the problem would pay a price that covers your costs. If what blocks you is what to charge, then willingness to pay and price sensitivity are the questions, and features and branding can wait. If what blocks you is whether to buy the equipment, then repeat purchase and volume are the questions, and enthusiasm is beside the point.
+
+A common failure is to begin with the question that is easy to answer rather than the one that matters. Data you can get quietly substitutes for data you need, work happens, and the decision does not move.
+
+Getting the question right also buys you a stopping rule, which is worth more than it sounds. You have enough evidence when more of it would not change the decision. Without a question there is no such point, and research expands to fill however much time you are willing to give it.
+
+## Where This Usually Lands
+
+Run both filters on a real pre-revenue decision and they land in the same place surprisingly often.
+
+Costs can generally be estimated within a workable range, because you control them. Competitive responses can often be bracketed: assume something reasonable and unfavorable, then check whether the decision survives it. Operational problems are real, and they are mostly problems of execution, which is a later question than whether the thing is worth executing at all.
+
+What is left is demand. It blocks the decision, and it can be learned. That combination is uncommon enough to be worth the trouble of going out and running a real experiment on it.

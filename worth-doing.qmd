@@ -1,0 +1,112 @@
+---
+title: "Is This Worth Doing?"
+subtitle: "The decision you have to make before the numbers exist"
+---
+
+Every venture reaches a moment when someone has to commit, and the numbers that would settle the question do not exist yet.
+
+Maybe you are deciding whether to leave a salary. Maybe you are looking at a business someone wants to sell you, or a price you have never charged, or a lease that would double your capacity and drain your savings. On the surface these situations have nothing in common. Underneath they are identical: a commitment that is hard to reverse, made on evidence you do not have.
+
+If you have been in that position, you know the feeling. The decision is clearly consequential. The information you want is clearly absent. The pressure to move does not wait for the information to arrive.
+
+People talk their way around this moment. They talk about vision, momentum, timing, conviction, and readiness. Those conversations circle a question that rarely gets asked plainly:
+
+*Is this worth doing?*
+
+## Why the Decision Feels Impossible
+
+Most decisions you have made in your working life came with anchors. A budget to compare against. Last quarter's numbers. A benchmark, a forecast, a track record. You may not have trusted them completely, but they gave you something to argue with.
+
+Before revenue exists, those anchors are gone. There is no history to consult and no outcome to measure. What you have instead is a set of signals pointing in different directions at once: an advisor's encouragement, an analogy to a company you admire, a story about someone who tried this and failed, your own alternating excitement and dread.
+
+None of those signals is decisive, so none of them settles anything. Confidence and overconfidence start to feel the same from the inside. So do caution and paralysis.
+
+The difficulty here is easy to misdiagnose as a shortage of information. What you are actually short of is specification. Nobody has yet said what would have to be true for the answer to be yes.
+
+## The False Choice
+
+When clarity is missing, most people believe they are choosing between two options.
+
+Guess now: commit, launch, and find out. Or wait: hold off until the picture clears.
+
+The first option has a whole culture behind it. Move fast. Fail early. You cannot learn anything sitting in a room. There is something real in this, because action does generate information and no amount of thinking substitutes for contact with a paying customer. But notice what the advice quietly assumes, which is that failure is the cheapest teacher available.
+
+For some people it genuinely is. An investor holding thirty companies can afford for most of them to fail, because the arithmetic works at the level of the portfolio and one success pays for the rest. You are not a portfolio. You hold one company, and you hold it with your savings, your reputation, your relationships, and years you do not get back. Advice calibrated to someone else's risk tolerance will feel like courage while it spends your money.
+
+The second option, waiting, has a more obvious flaw: the certainty never arrives.
+
+What both options share is an assumption, and the assumption is the thing worth attacking. Both take for granted that the only way to find out whether something will work is to do it.
+
+## Postponing Is Also an Answer
+
+It is tempting to set the question aside, and many entrepreneurs do, for a reasonable-sounding reason. It is too early to tell.
+
+Setting the question aside does not remove it. It answers it quietly, in the affirmative, over and over.
+
+Every hire, every contract, every month of runway spent embeds a judgment that this is worth doing. Even *let's just try it for six months* is a claim that six months of your life is a fair price for the information. That may well be true. The trouble is that nobody has checked, because the judgment was never stated in a form anyone could examine.
+
+A decision made this way is also hard to revise, because you cannot revise a position you never articulated.
+
+## The Question Is Really About Profit
+
+When people ask whether something is worth doing, they may have several things in mind at once: meaning, identity, what else they could be doing with the time. Those matter, and this book will not pretend to weigh them for you.
+
+But underneath all of them sits a constraint that eventually makes the question concrete. At some point the venture has to generate more value than it consumes. It has to pay for itself, sustain the people in it, and justify the commitments it demanded.
+
+That constraint is profit.
+
+Profit is rarely the first thing anyone wants to talk about, and it is not the only thing that matters. What it does is turn *worth doing* from an aspiration into a claim that could be wrong. And it shapes which paths are open to you long before any revenue arrives.
+
+## Four Terms, and One Mystery
+
+Here is the argument of this book in a single line:
+
+$$ \mathsf{\pi = pq - cq - f} $$
+
+Profit is the price you charge times the quantity you sell, less what each unit costs you to make and deliver, less the fixed costs you committed to before anyone bought anything.
+
+Nothing about this equation is new. Any introductory economics course puts it on the board in the first week. What matters is what it shows you when you read it as a map of your own ignorance instead of as a calculation.
+
+Take the terms one at a time and ask where each one comes from.
+
+**Price is yours.** You may not know the best price, and you may change it later, but you set it. Price is a decision, not a discovery.
+
+**Variable cost is largely yours.** It follows from choices about materials, process, labor, channel, and quality. Suppliers constrain you and physics constrains you, but you can find out what a unit costs before you sell one, because you can build one.
+
+**Fixed cost is entirely yours.** Space, equipment, software, salaries, the minimum you must spend to be open at all. You choose the size of that commitment, which is precisely what makes it dangerous.
+
+**Quantity is not yours.**
+
+Quantity is the one term you do not set. It is produced by other people, out in the world, deciding whether what you are selling is worth what you are asking. You can influence it. You cannot choose it. And before you have sold anything, you have no record of anyone ever having made that choice.
+
+That asymmetry is the reason pre-revenue decisions feel so unsteady, and it is more useful than it first appears, because it says the fog is not spread evenly. Three of the four terms are already in your hands. The uncertainty that actually threatens the decision is concentrated in one place.
+
+**Before revenue exists, profit uncertainty is very nearly all demand uncertainty.**
+
+## What That Buys You
+
+Early ventures feel uncertain in every direction. Customers are unfamiliar, competitors are unpredictable, costs seem to move whenever you look at them, and the future is opaque.
+
+The equation disciplines that feeling. Most of what feels unknowable turns out to be a choice you have not made yet, and a choice you have not made is a different kind of problem from a fact you do not have. Choices can be made this afternoon. Your pricing, your cost structure, and the size of your commitments are not waiting on the market to reveal them to you.
+
+Demand is the exception, and demand has to be learned.
+
+This is why the book is shaped the way it is. If almost all of the uncertainty sits in $\mathsf{q}$, then almost all of the effort belongs there. Working out what it costs you to make the thing is worth doing carefully, and it will not tell you whether to proceed. Refining a cost structure before you have any idea whether anyone will buy at a viable price is precision applied to the wrong term.
+
+Demand is the anchor. Nearly everything else in the profit equation is a decision you get to make once you know what the demand curve looks like.
+
+## Four Layers Under One Letter
+
+Saying that demand is the unknown does not yet tell you how to learn it. Unpack $\mathsf{q}$ and there are four layers inside it. They have to be settled roughly in order, because each one means very little until the layer above it is fixed.
+
+**Whose quantity.** Before you can ask how many, you have to say who. A product can appeal weakly to a very large group or intensely to a small one, and those are different businesses with different economics. This layer is cheap to get wrong and expensive to discover late, because it is entirely possible to estimate demand beautifully for the wrong people.
+
+**How that group behaves at a price.** This is demand proper. At each price you might charge, how many of those people buy. It is the layer this book spends the most time on, because it is the one that has to come from the world rather than from you.
+
+**What that behavior does to money.** Once you have a demand curve, your own choices come back in. Set a price against it, subtract what a unit costs you, subtract the commitments you are prepared to make, and the curve becomes a profit estimate with a range around it.
+
+**What happens when somebody else moves.** Everything above treats your venture as though it stood alone. Sometimes that is fair. Sometimes a competitor's response is the whole difference between a good business and a crowded one. This layer comes last because without a demand curve, competitive scenarios have nothing to move.
+
+Those four layers are the order of this book, and they are also the order to work in. Most of the wasted effort in early ventures is work done on a lower layer while a higher one is still open: cost models refined before anyone knows whether a viable price exists, competitive analysis run against a demand curve nobody has estimated, market sizing performed on a customer who has not been identified. The work is real and the sequence is wrong, so none of it settles anything.
+
+Get the order right and every piece of work you do has something solid underneath it.

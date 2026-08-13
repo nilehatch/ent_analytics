@@ -1,0 +1,516 @@
+---
+title: "Executing Demand Experiments"
+subtitle: "Who answered, who did not, and what they thought you asked"
+---
+
+Designing a good demand experiment is necessary—but not sufficient.
+
+Between a well-designed survey and usable demand evidence lies execution. This is where plans encounter reality, and where many otherwise sound demand experiments quietly fail.
+
+Execution introduces risks that design alone cannot eliminate. Who actually sees the survey, who chooses to respond, how questions are interpreted in context, and how carefully responses are given all shape the evidence that results.
+
+These risks are rarely obvious. Bad execution does not always produce noisy or chaotic data. More often, it produces data that looks clean, coherent, and convincing—while pointing in the wrong direction.
+
+This chapter focuses on the most common execution failures in demand experiments. The goal is not to eliminate these risks entirely. It is to recognize them early, interpret evidence cautiously, and know when learning must continue before decisions are made.
+
+<!-- We begin with the most basic execution question of all: **who actually answered**. -->
+
+Many of the execution failures discussed in this chapter can be reduced—but not eliminated—through careful framing and validation.
+
+Several toolkits are designed to support that work, especially:
+
+- [Framing a Demand Learning Problem](frame-the-problem.qmd),
+- [Designing a Demand Survey](survey-design.qmd),
+- and [Validating and Stress-Testing Demand Evidence](validate-evidence.qmd).
+
+This chapter explains why those tools matter.
+
+
+## Sampling: Who Actually Had a Chance to Answer?
+
+Demand experiments do not happen in theory. They happen in the world.
+
+However carefully a survey is designed, the evidence it produces depends on a basic fact: *who was actually given a chance to respond*.
+
+This question comes *before* who chose to respond. It comes before analysis. And it often determines what the evidence can and cannot say.
+
+
+
+### The Population Is Not the Sample
+
+Entrepreneurs usually begin with a target population in mind.
+
+They might say they are studying:
+
+- potential first-time buyers,
+- people who experience a particular problem,
+- customers who care about a specific attribute,
+- or a defined segment of a broader market.
+
+This population defines *who could plausibly be a customer*.
+
+But the population is not the sample.
+
+The sample consists of the people who were actually reached—those who were exposed to the survey and had a real opportunity to respond. This group is sometimes called the **sampling frame**, even if no formal sampling plan was used.
+
+The distinction matters.
+
+
+
+### Eligibility Is Not Representativeness
+
+A common mistake is to assume that if all respondents belong to the target population, the sample must be appropriate.
+
+This is not true.
+
+A sample can consist entirely of legitimate customers and still badly misrepresent market demand.
+
+Why? Because market demand depends not just on *who is included*, but on *which parts of the population are represented*.
+
+If a sample draws only from a narrow, distinctive subset of the population, the resulting demand evidence will reflect that subset’s preferences—not the population as a whole.
+
+This is especially likely when the sampling frame is defined by:
+
+- shared institutions or affiliations,
+- strong cultural or social coordination,
+- unusually high engagement or commitment,
+- or easy accessibility rather than relevance.
+
+In these cases, the sample may be *inside* the population while failing to *span* it.
+
+
+
+### How Convenience Sampling Shapes the Frame
+
+Most early demand experiments rely on *convenience sampling*.
+
+Surveys are sent to people who are:
+
+- easy to reach,
+- already connected to the entrepreneur,
+- active in a particular community,
+- or readily available through existing channels.
+
+Convenience sampling is not inherently wrong. It is often unavoidable.
+
+The risk is not convenience itself, but *unexamined convenience*.
+
+Convenience sampling determines *which parts of the population are given a voice*. When access is limited to a narrow or highly coordinated subset, other regions of the population are excluded entirely—before anyone chooses whether to respond.
+
+This exclusion happens quietly. No data is collected from those outside the frame, and their absence can be mistaken for indifference rather than inaccessibility.
+
+
+
+### Why Composition Matters for Demand
+
+Demand is an aggregate object.
+
+Entrepreneurs are rarely trying to learn how one individual behaves. They are trying to assess whether an initiative can support a viable business at the level of the target market.
+
+That requires understanding the *distribution* of demand across the population:
+
+- how preferences vary,
+- how willingness to pay differs,
+- how usage intensity changes across customers.
+
+A sample that captures only one region of this variation—even if that region is valid—can lead to systematic overestimation or underestimation of demand.
+
+The danger is not that the data are wrong.  
+The danger is that they are *conditionally right* and interpreted as *generally right*.
+
+
+
+### The First Sampling Question to Ask
+
+Before looking at response rates or survey results, ask a simpler question:
+
+> Who was actually given a chance to respond?
+
+Answering this requires more than listing where the survey was posted or whom it was sent to. It requires reflecting on how access was determined—and which parts of the population that access favored.
+
+Good sampling discipline begins here:
+
+- not with statistics,
+- not with correction,
+- but with awareness of coverage.
+
+
+
+### A Protective Rule of Interpretation
+
+When sampling frames are narrow, conclusions should be narrow as well.
+
+Evidence gathered from a distinctive subset should be interpreted as describing *that subset*, not the entire market you hope to serve.
+
+This is not a reason to avoid early demand learning. It is a reason to be precise about what the evidence actually supports.
+
+Only after understanding who had a chance to respond does it make sense to ask the next question: *who chose to respond—and why*.
+
+
+If you find that your sampling frame is narrow or difficult to justify, pause before proceeding.
+
+This is often a sign that the demand learning problem needs to be reframed.  
+Returning to the [problem framing toolkit](frame-the-problem.qmd) can help clarify which population truly matters for the decision at hand.
+
+
+
+
+
+
+## Selection Bias: Who Chose to Respond?
+
+Once a sampling frame is established, a second question immediately follows:
+
+**Of those who had a chance to respond, who actually did?**
+
+This is the problem of selection bias.
+
+Selection bias arises when the people who choose to respond differ systematically from those who do not. In demand experiments, this difference is rarely random—and it rarely cancels out.
+
+
+
+### Response Is an Action, Not a Coin Flip
+
+Responding to a survey is itself a choice.
+
+That choice reflects motivation, attention, availability, interest, and perceived relevance. People who respond are not interchangeable with people who remain silent.
+
+In demand experiments, respondents are often more likely to be:
+
+- interested in the problem or solution,
+- opinionated about the offering,
+- motivated to help,
+- optimistic about the idea,
+- or personally aligned with the entrepreneur or team.
+
+None of this makes their answers dishonest. It does mean their answers are *selective*.
+
+
+
+### Silence Is Not Neutral
+
+A common mistake is to treat non-response as missing data rather than as information.
+
+In reality, silence often carries meaning.
+
+People who do not respond may:
+
+- be indifferent,
+- be too busy,
+- find the offering irrelevant,
+- feel unsure how to answer,
+- or simply not care enough to engage.
+
+In early demand learning, these silent individuals are often closer to the marginal customer—the ones whose decisions determine how steep or fragile demand really is.
+
+Ignoring silence does not remove its effect. It hides it.
+
+
+
+### Why Selection Bias Inflates Early Demand
+
+Selection bias tends to distort demand evidence in predictable ways.
+
+Because respondents are often more engaged than non-respondents, early demand estimates frequently:
+
+- overstate appeal,
+- overstate willingness to pay,
+- understate price sensitivity,
+- and underrepresent hesitation or indifference.
+
+This is why early demand evidence often looks encouraging—and why it so often fails to hold up when exposed to a broader audience.
+
+The problem is not that respondents are lying.  
+The problem is that they are not typical.
+
+Because selection bias tends to inflate early demand estimates, validation is essential.
+
+The [demand evidence validation toolkit](validate-evidence.qmd) provides practical ways to check whether encouraging early results hold up under replication or follow-up testing.
+
+### Selection Bias Compounds Sampling Bias
+
+Selection bias does not occur in isolation.
+
+It compounds whatever sampling limitations already exist.
+
+If the sampling frame is narrow, selection bias operates *within* that narrow group. If the frame overrepresents highly engaged customers, selection bias amplifies that engagement further.
+
+This is why well-designed surveys can still produce misleading confidence if execution effects are ignored.
+
+Good demand learning requires attention to both:
+
+- who was allowed to respond, and
+- who chose to respond.
+
+
+
+### What Selection Bias Does *Not* Mean
+
+Recognizing selection bias does not mean:
+
+- surveys are useless,
+- early demand cannot be learned,
+- or evidence should be ignored entirely.
+
+It means that demand evidence must be interpreted *as conditional*, not definitive.
+
+Early evidence is strongest when:
+
+- it aligns with realistic expectations,
+- it survives replication or follow-up testing,
+- and it remains stable across different samples or framings.
+
+
+
+### A Practical Discipline
+
+Before acting on demand evidence, pause and ask:
+
+- Who might have been most eager to respond?
+- Who might have ignored this entirely?
+- How would the demand curve look if quieter, less motivated customers were better represented?
+
+You do not need precise answers to these questions. You need to acknowledge that they exist.
+
+Selection bias cannot be eliminated.  
+It can be respected.
+
+The next section turns to a different execution risk—one that arises even when the *right* people respond: *measurement error*.
+
+
+
+
+
+
+
+## Measurement Error: What Did They Think You Asked?
+
+Even when the right people are given a chance to respond—and even when they choose to do so—another risk remains.
+
+*Measurement error* arises when respondents interpret a question differently than the entrepreneur intended.
+
+This is not about carelessness or deception. It is about how humans make sense of questions in context.
+
+
+
+### Measurement Is an Interaction, Not a Transmission
+
+Survey questions are not transmitted directly from designer to respondent.
+
+They are interpreted.
+
+Each respondent brings their own assumptions about:
+
+- what the product really is,
+- what “one unit” means,
+- how often the decision occurs,
+- what constraints apply,
+- and what situation they should imagine.
+
+If those assumptions differ from the ones embedded in the experiment design, the responses may be internally consistent—and still answer a different question.
+
+
+
+### Ambiguous Units Create Invisible Error
+
+One of the most common sources of measurement error is an unclear unit.
+
+If respondents are unsure whether “one” means:
+
+- one item,
+- one visit,
+- one month,
+- one session,
+- or one bundle,
+
+their willingness-to-pay and quantity responses become difficult to interpret.
+
+Respondents will often resolve this ambiguity silently, choosing an interpretation that feels reasonable to them. The survey does not flag the mismatch. The data still looks clean.
+
+The error appears only later, when conclusions fail to align with reality.
+
+
+
+### Time Frames Drift Easily
+
+Time frames are equally fragile.
+
+If a question does not clearly specify when the decision is made and how often it can repeat, respondents may answer using different horizons:
+
+- some imagining a one-time purchase,
+- others imagining occasional use,
+- others imagining habitual consumption.
+
+When time frames drift, quantities and valuations drift with them.
+
+This is why defining the decision period is not a technical detail. It is a prerequisite for meaningful demand evidence.
+
+
+
+### Hypothetical Contexts Invite Substitution
+
+Measurement error also arises when respondents quietly substitute a different context for the one intended.
+
+They may imagine:
+
+- a different version of the product,
+- a different competitive environment,
+- a different budget constraint,
+- or a different level of urgency.
+
+This substitution is often unconscious. Respondents answer sincerely—just not about the scenario the entrepreneur had in mind.
+
+The more abstract the question, the more room there is for substitution.
+
+
+
+### Clean Data Can Still Be Wrong
+
+Measurement error is especially dangerous because it does not always create noise.
+
+Responses can be smooth, consistent, and well-behaved—and still misaligned with the intended question.
+
+When this happens, analysis does not correct the problem. It amplifies it.
+
+Models faithfully process what they are given. If the measurement is off, the output will be precise and misleading at the same time.
+
+Measurement error often reflects gaps in how units, time frames, or scenarios were specified.
+
+When this occurs, the right response is not adjustment but redesign.  
+The [problem framing toolkit](frame-the-problem.qmd) and the [survey design toolkit](survey-design.qmd) provide structured ways to revisit these design choices before proceeding to analysis.
+
+
+### What Measurement Discipline Looks Like
+
+Measurement discipline does not require perfect control.
+
+It requires attention to whether respondents are answering the *same question you think you are asking*.
+
+Signs of measurement trouble include:
+
+- unexpected dispersion in responses,
+- implausible quantities or prices,
+- confusion in open-ended answers,
+- or difficulty explaining results in plain language.
+
+When these appear, the right response is not adjustment or correction. It is redesign.
+
+
+
+### Measurement Error Is a Design–Execution Boundary
+
+Measurement error sits at the boundary between design and execution.
+
+Good design reduces it. Good execution does not eliminate it.
+
+This is why demand learning is iterative. Early experiments reveal not just demand, but also flaws in how demand is being measured.
+
+Recognizing measurement error early is a strength, not a failure.
+
+The final section of this chapter explains why ignoring these risks is especially dangerous—and why *bad data is often worse than no data at all*.
+
+
+
+
+
+
+
+## Why Bad Data Is Worse Than No Data
+
+When demand experiments fail, they rarely fail loudly.
+
+More often, they produce results that look reasonable, quantitative, and actionable—while quietly pointing in the wrong direction.
+
+This is what makes bad data dangerous.
+
+
+
+### No Data Leaves You Aware of Your Ignorance
+
+When no data exists, entrepreneurs know where they stand.
+
+They may be uncertain, uncomfortable, or hesitant—but they are aware that judgment is being exercised without evidence. Decisions made in this state tend to be cautious, provisional, and revisable.
+
+Ignorance is visible.
+
+That visibility matters. It keeps entrepreneurs alert to risk and open to learning.
+
+
+
+### Bad Data Creates False Confidence
+
+Bad data does something different.
+
+It replaces visible ignorance with *illusory knowledge*.
+
+Numbers appear. Charts can be drawn. Estimates can be computed. The language of evidence enters the conversation—even though the evidence itself is fragile or misaligned.
+
+Once this happens, uncertainty does not disappear. It becomes harder to see.
+
+Decisions made on bad data often feel responsible precisely because they are justified quantitatively. This is why they are so difficult to unwind later.
+
+The [demand evidence validation toolkit](validate-evidence.qmd) is designed for precisely this situation: to help determine whether evidence is strong enough to support commitment, or whether learning must continue.
+
+
+### Models Amplify, They Do Not Correct
+
+Analytics do not rescue flawed data.
+
+Models assume that inputs mean what we think they mean. They do not question:
+
+- whether the right people were sampled,
+- whether respondents interpreted questions consistently,
+- whether quantities and prices refer to the same unit and period,
+- or whether the scenario was cognitively real.
+
+When these assumptions are violated, models do not fail gracefully. They amplify error with precision.
+
+The result is not random noise. It is confident misdirection.
+
+When demand evidence is fragile, inconsistent, or poorly grounded, the most responsible next step is often not further analysis—but validation.
+
+
+
+### Why Entrepreneurs Are Especially Vulnerable
+
+Entrepreneurs are particularly exposed to this risk for three reasons.
+
+First, early decisions feel urgent. There is pressure to “get something” rather than wait for better evidence.
+
+Second, early demand evidence often comes from surveys or small samples, where design and execution errors have outsized effects.
+
+Third, once commitments are made—pricing decisions, investments, launches—it becomes psychologically and organizationally difficult to revisit the underlying data.
+
+Bad data does not just mislead a single decision. It shapes a path.
+
+
+
+### A Conservative Rule of Thumb
+
+A useful rule in early demand learning is this:
+
+> *If the data would make you more confident than you should be, you should not use it yet.*
+
+This does not mean you need perfect evidence. It means you need evidence whose limitations you understand.
+
+Sometimes the right response to a weak experiment is not adjustment or correction, but restraint. Choosing not to act on fragile results is itself a disciplined decision.
+
+Poor execution does not just create noise — it creates data that should not be estimated at all.
+
+Before moving on to demand estimation, it is worth pausing to check whether the evidence you have collected actually supports the kind of inference you want to make. The toolkit [Preparing Data for Demand Estimation](prepare-data.qmd) provides a short set of checks designed to catch problems before modeling turns them into false confidence.
+
+
+
+### What This Chapter Was Really About
+
+This chapter was not about technique.
+
+It was about *protecting judgment*.
+
+Designing and executing demand experiments responsibly is not about eliminating uncertainty. It is about ensuring that whatever confidence you gain is earned—and that whatever uncertainty remains is visible.
+
+The goal is not to move faster.  
+It is to move with integrity.
+
+In the next chapter, we turn from execution to interpretation: how demand evidence is transformed into demand curves, and how judgment enters once again—this time in estimation.
+

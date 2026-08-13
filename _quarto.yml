@@ -37,61 +37,61 @@ book:
     - index.qmd
     - part: Pre-Revenue Decisions
       chapters:
-        - ch1_is_this_worth_doing.qmd
-        - ch3_profit_before_revenue.qmd
-        - ch4_need_to_know.qmd
+        - worth-doing.qmd
+        - familiar-tools.qmd
+        - what-to-learn.qmd
 
     - part: Learning Demand
       chapters:
-        - ch5_demand.qmd
-        - ch6_design_experiment.qmd
-        - ch7_execute_experiment.qmd
-        - ch8_estimate_demand.qmd
+        - what-demand-is.qmd
+        - designing-experiments.qmd
+        - executing-experiments.qmd
+        - estimating-demand.qmd
 
-    - part: part_demand_toolkits.qmd # Toolkit
+    - part: part-demand-toolkits.qmd # Toolkit
       chapters:
-        - tk1_frame_problem.qmd
-        - tk2_survey_design.qmd
-        - tk3_validate_data.qmd
-        - tk4_preparing_data.qmd
-        - tk5_estimated_demand_check.qmd
+        - frame-the-problem.qmd
+        - survey-design.qmd
+        - validate-evidence.qmd
+        - prepare-data.qmd
+        - check-demand-curve.qmd
         
-    - part: part_cost_profit.qmd
+    - part: part-cost-profit.qmd
       chapters:
-        - ch9_cost.qmd
-        - ch10_scale.qmd
-        - ch11_profit.qmd
-        - ch12_profit_reasoning.qmd
+        - cost.qmd
+        - scale.qmd
+        - profit.qmd
+        - profit-reasoning.qmd
 
-    - part: part_profit_toolkits.qmd # Toolkit
+    - part: part-profit-toolkits.qmd # Toolkit
       chapters:
-        - tk6_variable_cost.qmd
-        - tk7_fixed_cost.qmd
-        - tk8_scaling.qmd
-        - tk9_read_profit.qmd
-        - tk10_sensitivity_decide.qmd
+        - variable-cost.qmd
+        - fixed-cost.qmd
+        - scaling.qmd
+        - read-profit.qmd
+        - sensitivity.qmd
 
     - part: Competition
       chapters:
-        - ch13_competition.qmd
-        - ch14_undifferentiated.qmd
-        - ch15_differentiated.qmd
-        - ch16_competition_experiment.qmd
-        - ch17_competitive_advantage.qmd
-        - ch18_entry.qmd
+        - competition.qmd
+        - undifferentiated-competition.qmd
+        - differentiated-competition.qmd
+        - competition-experiment.qmd
+        - competitive-advantage.qmd
+        - entry.qmd
         
-    - tk11_competition_survey.qmd
+    - competition-survey.qmd
 
     - part: Competitive Dynamics
       chapters:
-        - ch19_non-price_competition.qmd
+        - non-price-competition.qmd
         
-    - part: part_competitive_dynamics.qmd
+    - part: part-competitive-dynamics.qmd
       chapters:
-        - game_theory.qmd
-        - simultaneous_games.qmd        
-        - sequential_games.qmd
-        - strategic_commitment.qmd
+        - game-theory.qmd
+        - simultaneous-games.qmd        
+        - sequential-games.qmd
+        - strategic-commitment.qmd
     # Removed 11 Aug 2026, both pending real content:
     #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)
     #   - summary.qmd                             (placeholder: "this book has no content

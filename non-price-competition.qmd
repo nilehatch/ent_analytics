@@ -1,0 +1,214 @@
+---
+title: "Competition Is Not Only Price"
+subtitle: "Rivals move on features, position, and commitment too"
+#subtitle: "*Entry is a forecast about competition equilibrium*"
+---
+
+
+```{r}
+#| output: false
+#| include: false
+library(tidyverse)
+#library(readxl)
+library(ggthemes)
+library(scales)
+library(gt)
+knitr::opts_chunk$set(echo = TRUE) 
+```
+
+## Structural Commitment Before Price
+
+Up to this point, competition has been modeled through price.
+
+Firms choose prices.  
+Demand responds.  
+Equilibrium determines quantity and profit.
+
+This approach is deliberate. Price competition is the mechanism through which rivalry ultimately expresses itself. Once firms are active in a market, prices adjust until no participant can profitably deviate.
+
+But price competition is not the beginning of the story.
+
+Before price competition occurs, firms make choices that shape the environment in which price competition will later unfold. These choices are often less visible than price, but they are no less consequential.
+
+They determine the structure of the game.
+
+Price competition is the visible fight.  
+Structural commitment is the hidden move.
+
+Understanding this distinction is essential for anticipating profit.
+
+## The Limits of One-Stage Thinking
+
+The equilibrium analysis developed earlier treated several parameters as given.
+
+Demand was characterized by parameters describing baseline demand, price sensitivity, and substitution across products.  
+Cost was represented through marginal cost and fixed commitments.
+
+With these parameters in place, equilibrium prices, quantities, and profit could be computed.
+
+This approach is analytically clean. But it leaves an important question unanswered:
+
+Where do these parameters come from?
+
+In practice, they are not simply inherited from the market. Many of them reflect choices made by firms before price competition begins.
+
+A firm may invest in infrastructure that lowers marginal cost.  
+It may develop product features that reduce substitution with rivals.  
+It may build distribution systems that expand baseline demand.  
+It may commit to capacity that affects the credibility of future price competition.
+
+These choices do not determine the final price directly. Instead, they alter the parameters that determine the equilibrium once price competition occurs.
+
+The result is a sequential process rather than a single simultaneous decision.
+
+First, firms choose structure.  
+Then, given that structure, price competition determines outcomes.
+
+## Structural Variables
+
+Several of the parameters used earlier in the demand and profit calculations can be influenced through deliberate choices.
+
+Consider four categories.
+
+### Cost Structure
+
+Firms can alter marginal cost through technology, supply chain design, or operational efficiency.
+
+Investments in automation, procurement relationships, or process innovation can reduce cost. Conversely, design choices emphasizing customization or quality may raise it.
+
+Once these choices are made, price competition takes place with the resulting cost structure in place.
+
+Lower cost does not guarantee profit. But it changes the equilibrium that price competition will produce.
+
+### Differentiation
+
+Product design and brand positioning affect substitution.
+
+When two products are perceived as close substitutes, price competition becomes intense. When products are differentiated, price sensitivity between them weakens.
+
+Investments in features, design, or brand identity can therefore alter the substitution parameters that shape competitive equilibrium.
+
+These investments do not set prices directly. Instead, they reshape the demand relationships that determine price competition.
+
+### Baseline Demand
+
+Firms may influence baseline demand through distribution reach, reputation, or platform adoption.
+
+A product available through a broad distribution network will have greater baseline demand than one that is difficult to access. Similarly, trusted brands or established ecosystems often enjoy higher starting demand.
+
+Again, these choices do not determine the final equilibrium price. But they shift the demand curve on which price competition operates.
+
+### Capacity and Infrastructure
+
+Physical or digital infrastructure can shape the strategic environment in which pricing occurs.
+
+Large installed capacity may signal the ability to supply aggressively at low price. Platform investments may expand the accessible population of users. Distribution infrastructure may make entry by rivals more difficult.
+
+These commitments influence how competitors anticipate the future equilibrium.
+
+They alter expectations before price competition begins.
+
+
+
+## The Sequential Nature of Competition
+
+These observations imply that competition unfolds in stages.
+
+In the first stage, firms choose structural commitments: cost structure, differentiation investments, infrastructure, and other long-lived decisions.
+
+In the second stage, firms compete in price within the environment created by those commitments.
+
+The equilibrium price competition analyzed earlier describes the second stage.
+
+But the parameters of that equilibrium are shaped by the choices made in the first stage.
+
+For purposes of profit estimation, this distinction matters.
+
+If structural commitments change demand or cost parameters, they also change the equilibrium profit that will eventually result.
+
+## Using Equilibrium as a Profit Engine
+
+The equilibrium analysis developed earlier remains central.
+
+Given a set of demand parameters and cost conditions, equilibrium prices and quantities can be computed. From these, profit follows.
+
+This equilibrium therefore acts as a profit engine.
+
+Structural choices feed parameters into the engine.  
+The engine produces equilibrium outcomes.
+
+The entrepreneur’s problem becomes clearer when framed this way.
+
+A proposed structural commitment—an investment in cost reduction, differentiation, or infrastructure—should be evaluated by asking how it changes the parameters that enter the equilibrium calculation.
+
+If the resulting equilibrium produces higher expected profit, the commitment may be justified.
+
+If not, the investment may simply intensify rivalry without improving outcomes.
+
+## Structural Moves Can Improve or Destroy Profit
+
+Not every structural commitment improves the competitive position of the firm that makes it.
+
+Some investments are easily imitated.  
+Others provoke symmetric responses from rivals.  
+Still others increase rivalry intensity for the entire industry.
+
+For example, if both competitors invest heavily in capacity or cost reduction, the resulting price competition may eliminate the benefit of those investments. Margins compress for everyone.
+
+In such cases, structural escalation raises cost without increasing profit.
+
+Conversely, certain structural moves create asymmetric advantages that persist through equilibrium competition. Durable differentiation, unique technology, or superior cost positions can shift the equilibrium in a more favorable direction.
+
+The same type of commitment may therefore have very different profit implications depending on how rivals respond.
+
+This is why structural commitments must be evaluated through the lens of the equilibrium they create.
+
+### From Parameters to Strategy
+
+Earlier chapters showed how to estimate profit once demand and cost parameters are known.
+
+This chapter adds a prior step.
+
+Firms may influence those parameters through deliberate structural choices.
+
+The sequence now becomes:
+
+1. Choose structural commitments 
+2. Estimate the resulting demand and cost parameters 
+3. Compute competitive equilibrium 
+4. Evaluate profit.
+
+This sequence allows structural decisions to be evaluated with the same discipline used for pricing and demand analysis.
+
+The goal is not to predict every strategic interaction perfectly. That is rarely possible.
+
+The goal is to recognize that structural commitments determine the equilibrium environment in which price competition occurs.
+
+Once that environment is specified, the analytical tools developed earlier remain applicable.
+
+### The Hidden Layer of Competition
+
+Entrepreneurial discussions of competition often focus on visible actions.
+
+Price changes.  
+Promotions.  
+Market share shifts.
+
+But these events occur after a deeper layer of competition has already taken place.
+
+By the time firms begin adjusting prices, many of the parameters that determine the outcome have already been chosen.
+
+Cost structures are in place.  
+Products are designed.  
+Infrastructure has been built.
+
+These commitments quietly shape the equilibrium that price competition will reveal.
+
+Recognizing this hidden layer does not replace the equilibrium analysis developed earlier.
+
+It explains where its parameters come from.
+
+Price competition determines how the game ends.  
+Structural commitment determines which game is played.
+
+Understanding both is necessary for evaluating whether a venture is worth doing.

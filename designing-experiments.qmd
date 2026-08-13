@@ -1,0 +1,496 @@
+---
+title: "Designing Experiments to Learn Demand"
+subtitle: "Asking a question whose answers can become a demand curve"
+---
+
+This chapter is about getting the *right evidence*, not doing math.
+
+If the experiment is designed well, the analytics that follow are straightforward. If it is designed poorly, the analytics will faithfully produce nonsense.
+
+Learning demand is not a statistical problem first. It is an experimental design problem rooted in human judgment. Before asking what customers would pay—or how much they would buy—we need to be clear about what question we are trying to answer, and what kind of demand that question implies.
+
+
+
+
+
+
+## The Question Behind the Questions
+
+Entrepreneurs usually begin with a decision, not a dataset.
+
+They want to know whether to build something, how to price it, whether to invest further, or whether to walk away. These are entrepreneurial questions. They are about action.
+
+Demand experiments, however, require translating those entrepreneurial questions into factual questions that can be answered with evidence.
+
+This translation step is easy to skip and costly to ignore.
+
+For example, an entrepreneur may ask:
+
+- “Is demand strong enough to justify launching?”
+- “What price range makes sense?”
+- “Could this support a profitable business?”
+
+These are legitimate questions, but they are not yet questions an experiment can answer. To design a demand experiment, they must be sharpened.
+
+At a minimum, this requires making four commitments explicit:
+
+- **Who is the customer?**  
+  Whose decision are we trying to understand?
+
+- **What is one unit?**  
+  What exactly is being bought or chosen?^[By “unit,” we mean whatever the customer mentally counts when deciding whether to buy.]
+
+- **What is the decision period?**  
+  Over what span of time does the customer make this choice?^[By “period,” we mean how often and on what interval that decision can repeat.]
+
+- **What evidence would change the decision?**  
+  What would you do differently if the answer were higher, lower, or more uncertain than expected?
+
+These are not technical details. They define what demand *means* in the context of the decision.
+
+Without them, willingness-to-pay questions float free of any real choice, and quantity responses cannot be interpreted consistently.
+
+A well-designed demand experiment begins by answering these questions clearly—even if only approximately. Precision can come later. Coherence cannot.
+
+For readers who want concrete tools—example wording, sequencing templates, and annotated survey designs—the accompanying [**problem framing toolkit**](frame-the-problem.qmd) walks through these preliminary decisions step by step. The toolkit helps frame the entrepreneurial decision and the most urgent unknown, then shows how to define unit and period, and finally how to choose the appropriate demand type.
+
+These tools are not required to follow the argument of this chapter. They are provided so that when you are ready to design a demand experiment, you can do so deliberately rather than by improvisation.
+
+
+
+
+## What Kind of Demand Are You Measuring?
+
+Once the unit and decision period are defined, an important distinction becomes unavoidable.
+
+In some decisions, quantity is fixed by construction.  
+In others, quantity is part of what must be learned.
+
+This distinction changes how demand must be measured, how questions must be asked, and how the resulting data can be used.
+
+### Yes/No Demand
+
+In some settings, the customer’s decision is essentially binary.
+
+They either buy or they do not.
+
+This occurs when:
+
+- the customer makes at most one purchase per decision period, and
+- the quantity purchased, if they buy, is always one unit.
+
+Examples include:
+
+- subscribing to a service
+- purchasing a license
+- adopting a new tool
+- choosing a single plan or package
+
+In these cases, the experiment is not about “how many units” a customer would buy. That answer is fixed. The relevant uncertainty is *who buys at which prices*.
+
+Yes/no demand experiments focus on:
+
+- willingness to pay thresholds
+- the share of customers who would buy at different prices
+- how sensitive adoption is to price changes
+
+This structure simplifies both survey design and data transformation. But it only works when the underlying decision really is binary.
+
+Treating a repeated or consumptive decision as yes/no demand hides important variation and produces misleading results.
+
+### How-Many Demand
+
+In other settings, quantity is not fixed.
+
+Customers may buy, use, or consume multiple units within the decision period. How much they consume is part of the unknown.
+
+This occurs when:
+
+- purchases repeat over time, or
+- usage intensity varies meaningfully across customers.
+
+Examples include:
+
+- meals per week
+- rides per month
+- sessions per year
+- items consumed or replaced regularly
+
+In these cases, learning demand requires learning *quantity*, not just willingness to pay. The experiment must elicit a quantity response that is explicitly tied to the defined period.
+
+This changes everything:
+
+- question wording becomes more demanding
+- respondent fatigue becomes a real risk
+- assumptions about aggregation must be made carefully
+
+The goal here is not to choose a method yet. It is to recognize which kind of demand the decision implies.
+
+Designing a yes/no experiment for how-many demand—or vice versa—does not just reduce accuracy. It changes the meaning of the evidence entirely.
+
+Before asking how much customers would pay, the entrepreneur must first answer a simpler question:
+
+*Is quantity fixed, or is quantity itself what I need to learn?*
+
+
+
+
+
+## Willingness to Pay as Demand Evidence
+
+Once the unit, decision period, and type of demand are clear, a natural question follows:
+
+*What kind of evidence can actually tell us something about demand?*
+
+One of the most common—and most misunderstood—answers is willingness to pay.
+
+Entrepreneurs often talk about willingness to pay as if it were a price recommendation: *what customers would pay*, or *what the product is worth*. Used this way, willingness to pay invites disappointment and false confidence.
+
+Used properly, willingness to pay plays a different role.
+
+It is not a price to charge.  
+It is evidence about tradeoffs and constraints.
+
+### What Willingness to Pay Is—and Is Not
+
+Willingness to pay describes the highest price at which a customer would still choose the product, given a specific unit and a specific decision context.
+
+That definition matters.
+
+WTP is not:
+
+- the price a customer hopes to pay
+- the price they think is fair
+- the price they expect in the market
+- the price that will maximize profit
+
+It is a boundary.
+
+At prices above a customer’s willingness to pay, purchase does not occur. At prices below it, purchase becomes possible—though not guaranteed.
+
+This is why willingness to pay is useful even when it is imperfect. It helps rule out prices that cannot work and identify ranges where demand might plausibly exist.
+
+### Willingness to Pay Requires Context
+
+Willingness to pay is not a stable trait of a customer. It is a response to a specific decision scenario.
+
+The same customer may have very different willingness to pay depending on:
+
+- what exactly is being purchased
+- how often the decision repeats
+- what alternatives are available
+- what constraints they face
+
+This is why willingness-to-pay questions that lack context often produce answers that feel encouraging but fail to hold up later.
+
+Without a clearly defined unit, customers may imagine different things when answering the same question.
+
+Without a defined decision period, customers may implicitly assume one-time use, occasional use, or unlimited use—each of which implies a different valuation.
+
+When context is missing, willingness-to-pay responses cannot be compared, aggregated, or interpreted coherently.
+
+### What Willingness to Pay Can Tell You
+
+When designed carefully, willingness-to-pay evidence can answer questions that interest, adoption, and usage data cannot.
+
+It can reveal:
+
+- which prices are clearly too high
+- which prices are clearly acceptable to many customers
+- how sharply demand may fall as price increases
+- whether demand exists at prices that cover costs
+
+Importantly, willingness to pay does not answer these questions with certainty. It answers them with *structure*.
+
+It turns vague optimism or pessimism into bounded uncertainty—uncertainty that can be reasoned about.
+
+This is why willingness to pay is so central to pre-revenue demand learning. It engages directly with the tradeoff at the heart of the decision: value versus price.
+
+### Poor WTP Questions Create False Confidence
+
+Because willingness to pay sounds concrete, it is easy to ask WTP questions too casually.
+
+Questions like “What would you be willing to pay?” or “What is a reasonable price?” often produce confident answers that feel informative. In reality, they conflate preferences, norms, and aspirations with actual tradeoffs.
+
+When willingness-to-pay questions are poorly framed, the resulting data do not simply become noisy. They become misleading.
+
+They suggest demand where none exists, or obscure demand that might be viable. They narrow attention prematurely or encourage unjustified optimism.
+
+This is why willingness to pay must be interpreted, not believed.
+
+In the sections that follow, we turn to the design principles that make willingness-to-pay evidence meaningful—and to the common sources of bias that must be anticipated rather than ignored.
+
+
+
+
+## Survey Design Principles That Keep the Data Honest
+
+Learning demand from surveys is not primarily a statistical challenge. It is a human one.
+
+Respondents are not adversaries, but they are not neutral measuring instruments either. They bring incentives, assumptions, and social instincts into every question they answer. If those forces are ignored, willingness-to-pay data can look precise while being systematically wrong.
+
+Good survey design does not eliminate bias. It *redirects* it.
+
+The goal is not to trick respondents into revealing “true” values, but to create a context in which their answers reflect realistic tradeoffs rather than abstract preferences.
+
+Over time, a consistent survey structure has proven especially effective for this purpose.
+
+## A Structure That Reduces Transactional Bias
+
+One of the easiest ways to bias a willingness-to-pay question is to make it feel like a transaction.
+
+If a respondent is shown a product description and immediately asked what they would pay, the interaction is framed as a negotiation. Many respondents will instinctively understate their valuation, even if they like the product, because doing so feels costless.
+
+Other respondents respond in the opposite direction. Wanting to be helpful or encouraging, they overstate what they would pay, imagining themselves as supporters rather than buyers.
+
+Neither response is dishonest. Both are human.
+
+A more reliable approach is to separate *evaluation* from *valuation*.
+
+This can be done by structuring the survey so that respondents are first asked to help judge the quality and appeal of the offering, and only later asked to express that judgment in monetary terms.
+
+A typical sequence looks like this:
+
+1. **Screening the population**  
+   Establish that the respondent is actually part of the intended customer group. This protects the integrity of the data before any valuation occurs.
+
+2. **Establishing context and purpose**  
+   Explain what is being considered and why the respondent’s honest input matters. When respondents understand that the product may or may not be built depending on the answers, their responses tend to reflect real tradeoffs rather than casual opinion.
+
+3. **Ensuring informed evaluation**  
+   Describe the problem and the proposed solution with enough clarity that the respondent can imagine encountering it in a real decision context. This is not marketing; it is making the decision cognitively real.
+
+4. **Assessing appeal before price**  
+   Ask respondents to evaluate the offering using non-monetary judgments:
+   - overall appeal or “wow” factor
+   - what they like most
+   - what concerns them
+   - what could be improved
+
+   These questions allow respondents to express enthusiasm, skepticism, or ambivalence without immediately anchoring on price.
+
+5. **Eliciting willingness to pay**  
+   Only after appeal has been assessed is willingness to pay introduced—as another way of expressing value, this time in financial terms rather than ratings or words.
+
+6. **Collecting customer characteristics**  
+   Finally, gather information that helps interpret variation in responses and refine the target customer definition.
+
+This structure does not remove bias. It reduces the most damaging forms of it by changing how respondents interpret the task they are being asked to perform.
+
+The structure described here is not merely a set of principles. It can be implemented directly.
+
+The [**survey design toolkit**](survey-design.qmd) will walk you through the key survey design decisions to implement a survey structure that reduces transactional bias in practice. 
+
+
+
+### Why This Structure Works
+
+This sequencing changes the respondent’s mental frame.
+
+Early questions invite judgment rather than negotiation. Respondents are asked to help evaluate whether something has merit, not to decide whether they personally want a discount.
+
+By the time willingness to pay is introduced, respondents have already expressed their evaluation in other ways. The price question becomes a consistency check rather than a standalone transaction.
+
+In effect, willingness to pay becomes a *monetary rating* layered on top of earlier judgments, rather than the sole measure of value.
+
+This does not make willingness-to-pay responses perfectly accurate. But it makes them more interpretable—and more aligned with real decision behavior.
+
+
+
+## A Note on Scope and Applicability
+
+A single willingness-to-pay question is most appropriate when demand is yes/no—when the customer’s decision is whether to buy one unit in the defined period.
+
+When quantity itself is part of the uncertainty, willingness to pay must be paired with quantity information, and survey design becomes more demanding. The principles above still apply, but the structure must accommodate additional cognitive load.
+
+For now, the important point is this: willingness-to-pay evidence is only as good as the context in which it is elicited.
+
+In the next section, we turn directly to the most important remaining challenge—why even well-designed surveys tend to misstate demand, and what can be done to anticipate that bias rather than be surprised by it.
+
+
+
+## Hypothetical Bias (Introduced, Not Buried)
+
+Any time people are asked about choices they have not yet made, their answers reflect more than preference alone.
+
+They reflect imagination, intention, social context, and emotion.
+
+This is not dishonesty. It is how humans answer hypothetical questions.
+
+### Why Hypothetical Bias Exists
+
+When respondents answer demand questions—especially willingness-to-pay questions—they are not reporting stored facts. They are simulating a future decision.
+
+That simulation differs from real choice in several ways:
+
+- consequences are distant or abstract,
+- tradeoffs feel less concrete,
+- and commitment is reversible.
+
+As a result, stated behavior often differs from actual behavior.
+
+### Why Willingness to Pay Is Especially Vulnerable
+
+Willingness to pay concentrates multiple judgments into a single number.
+
+Respondents must imagine:
+
+- the product,
+- the context of use,
+- competing alternatives,
+- budget constraints,
+- and future priorities.
+
+Small differences in framing or interpretation can meaningfully change the answer. This makes WTP powerful—but fragile.
+
+The mistake is not using WTP.  
+The mistake is treating it as literal truth rather than evidence with structure and limits.
+
+### Why This Is Not a Reason to Abandon Surveys
+
+Hypothetical bias is sometimes presented as a fatal flaw.
+
+It is not.
+
+Every method of learning demand before revenue exists relies on imagination to some degree. Surveys make that reliance visible. They allow bias to be reasoned about rather than ignored.
+
+What matters is not eliminating hypothetical bias—which is impossible—but *designing and interpreting evidence with it in mind*.
+
+That work continues in execution, validation, and estimation.
+
+For now, the key lesson is simple:
+
+> Stated demand is not false.  
+> It is incomplete.
+
+Used carefully, it can still reduce uncertainty about what to do next.
+
+
+
+
+
+
+## Imperfect Evidence, Used Responsibly
+
+At this point, it is worth naming something that experienced entrepreneurs eventually learn—and beginners often misunderstand.
+
+Early demand evidence is almost always imperfect.
+
+This is not a failure of effort or intelligence. It is a structural feature of learning before revenue exists.
+
+
+
+### The Legitimate Role of Convenience Sampling
+
+Entrepreneurs are often warned against convenience sampling—and for good reason.
+
+Convenience samples are rarely representative of a target population, and treating them as such can lead to serious error.
+
+But rejecting convenience sampling entirely is a mistake.
+
+Convenience samples can be valuable *when they are used for the right purpose*.
+
+Early in demand learning, convenience samples are often the fastest way to:
+
+- test whether survey questions are understood as intended,
+- identify confusing language or unrealistic scenarios,
+- refine units, time frames, and framing,
+- and surface unexpected reactions before wider deployment.
+
+<!--
+Used this way, convenience sampling is not evidence about demand.  
+It is evidence about *whether your instrument works at all*.
+-->
+
+The mistake is not starting with a convenience sample.  
+The mistake is stopping there—or interpreting it as representative.
+
+
+
+### Why Willingness-to-Pay Responses Are Biased in Both Directions
+
+Willingness-to-pay questions are vulnerable to bias. This is well known.
+
+What is discussed less often is that *the biases do not all run in the same direction*.
+
+Some respondents understate willingness to pay:
+
+- to protect themselves from imagined future prices,
+- to avoid signaling eagerness,
+- or because the question feels transactional.
+
+Others overstate willingness to pay:
+
+- out of sympathy for the entrepreneur,
+- because the idea feels appealing in the abstract,
+- or because consequences are hypothetical.
+
+These forces do not cancel cleanly. But they do interact.
+
+At the sample level, the result is often not pure fantasy—but *noisy direction*.
+
+This is why early demand curves should be treated as provisional maps, not precise measurements. They help rule things out and identify promising regions. They do not yet justify commitment.
+
+
+
+### Why Validation Closes the Loop
+
+Because early evidence is imperfect, validation is not an optional extra. It is what makes learning responsible.
+
+A simple validation step—such as returning to a fresh sample and asking:
+
+> *“If the price were \$X, would you buy?”*
+
+should produce results that align roughly with the demand curve inferred earlier.
+
+If it does, confidence increases—not because the curve is “correct,” but because the evidence is coherent.
+
+If it does not, that is not a failure. It is information.
+
+Validation reveals whether early biases, framing choices, or sampling shortcuts materially distorted learning. It tells you whether to proceed, revise, or pause.
+
+In this sense, validation does not fix bad data.  
+It tells you whether the data was good enough to use at all.
+
+
+
+### Direction Before Precision
+
+The purpose of early demand experiments is not to eliminate uncertainty.
+
+It is to replace uninformed guessing with structured learning—and to do so without creating false confidence.
+
+Convenience samples, biased responses, and provisional curves can all play a role in that process, *if they are used with discipline*.
+
+The goal is not perfection.  
+The goal is progress you can stand behind.
+
+Practical methods for validating early demand evidence—and deciding when it is strong enough to act on—are provided in the [demand evidence validation toolkit](validate-evidence.qmd).
+
+
+
+
+
+## A Simple Design Checklist
+
+Before moving on to estimation and modeling, it is worth pausing to ensure that the foundation is solid.
+
+The goal of this checklist is not to enforce rigid rules. It is to make sure that key design commitments have been made consciously rather than accidentally. The toolkits exist to support this pause.
+
+Before analyzing demand data, you should be able to answer “yes” to each of the following:
+
+- [ ] **Customer defined:** Do you know exactly whose decision you are trying to learn about?
+- [ ] **Unit defined:**  Is it clear what counts as one unit in the customer’s mind?
+- [ ] **Decision period defined:** Have you specified when and how often this decision occurs?
+- [ ] **Demand type identified:**  Is demand yes/no or how-many given the unit and period?
+- [ ] **Willingness-to-pay approach chosen:**  Does your WTP question match the type of demand you are measuring?
+- [ ] **Bias risks acknowledged:**  Have you considered how framing, sympathy, or abstraction might affect responses?
+- [ ] **Plan for transformation later:**  Do you know how these responses will eventually be converted into price–quantity data?
+
+If any of these feel unclear, that is not a problem—it is a signal.
+
+Return to the framing and design tools before proceeding. Demand estimation is only as credible as the evidence it is built on.
+
+With these pieces in place, we are finally ready to move from design to analysis—to turn structured responses into demand curves that can inform real profit decisions.
+
+
