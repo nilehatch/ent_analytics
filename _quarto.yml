@@ -38,7 +38,6 @@ book:
     - part: Pre-Revenue Decisions
       chapters:
         - ch1_is_this_worth_doing.qmd
-        - ch2_uncertainty_types.qmd
         - ch3_profit_before_revenue.qmd
         - ch4_need_to_know.qmd
 

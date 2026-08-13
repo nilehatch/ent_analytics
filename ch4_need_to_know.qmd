@@ -1,164 +1,65 @@
-# What Do You Need to Know to Decide?
+# What Do You Need to Know to Decide? {#sec-need-to-know-chapter}
 
-By this point, one thing should be clear: recognizing that a decision is difficult does not yet tell you how to make it.
+Knowing that demand is the unknown is not the same as knowing what to go find out.
 
-Understanding that profit is uncertain, or that demand matters, is not enough. Many entrepreneurs reach this point with a sharpened sense of risk but no clearer sense of direction.
+When you actually face a decision, the unknowns do not arrive as one tidy question about quantity. They arrive as a crowd. Who exactly this is for. Whether anyone would pay for it at all. Whether the people who would pay are numerous enough to matter. Whether you can even reach them. Whether a competitor undercuts you the week you launch.
 
-They know the decision matters.  
-They know uncertainty is unavoidable.  
-They know they should not proceed blindly.
+Every one of them looks relevant. None of them looks decisive on its own. Faced with that, most people do one of two things: they start gathering whatever information is easiest to get, or they stop and wait for the picture to clear. Both feel like diligence. Neither moves the decision.
 
-And still, the next step remains unclear.
+What is missing here is rarely data. It is that nobody has said which single unknown is standing in the way.
 
-This is not because the problem is too complex. It is because the question has not yet been made specific enough.
+## Many Unknowns, One That Blocks You
 
+It is tempting to believe a good decision requires understanding everything, and that once enough questions are answered the right move becomes obvious.
 
+Decisions do not work that way, and you would not have the time even if they did. What matters is which piece of the uncertainty prevents you from acting responsibly right now.
 
+Call that piece your **most urgent unknown**. It is the thing that has to be better understood before the next decision can be made with integrity. Until it is addressed, acting is reckless and waiting is stalling, and it is genuinely difficult to tell those two apart from the inside.
 
-## Knowing That Something Matters Is Not the Same as Knowing What to Learn
+Other unknowns will still be there. Some of them may be larger in an absolute sense. If they do not touch the decision in front of you, they are not your problem this week.
 
-Early-stage decisions often feel overwhelming because too many things appear unknown at once.
+This is worth saying plainly, because the most urgent unknown is rarely the most interesting one. The unknown you enjoy thinking about, and the one your advisors like to argue about, are usually not the one whose answer would change what you do on Monday.
 
-Who exactly the customer is.  
-What problem matters most.  
-How price-sensitive demand might be.  
-Whether demand is large enough to matter.  
-Whether competition will respond aggressively.
+Naming it does not make the uncertainty go away. It puts the uncertainty in an order. Reduce the first unknown and a second one moves into its place, which means this is a discipline you practice repeatedly rather than a step you complete once.
 
-All of these questions feel relevant. None feels decisive on its own.
+Entrepreneurs who skip it work hard without moving. They gather information that changes nothing, and they mistake the motion for learning.
 
-As a result, entrepreneurs often default to one of two moves: gathering information opportunistically, or postponing learning altogether. Neither approach brings clarity, because neither begins with a clear sense of *what must be known in order to decide*.
+## Which Unknowns Are Worth Chasing
 
-The problem is not a lack of data.  
-It is a lack of focus.
+Naming the blocking unknown is half the filter. The other half is whether it can be reduced at all.
 
+Some uncertainty will not resolve before you act, whatever you spend on it. You cannot find out what a competitor will launch next year, how the economy will turn, or which of a hundred small accidents will break your way. That is **irreducible uncertainty**. The honest responses to it are judgment, flexibility, and keeping the commitment small enough that being wrong does not end you.
 
+Other uncertainty exists only because nobody has gone and asked. Who these people actually are. What they do instead today. What they would pay to stop doing it. That is **reducible uncertainty**, and it is almost always larger than it feels from inside the fog.
 
+The distinction deserves care, because it is also the most convenient thing in this book to get wrong. Treating a reducible unknown as irreducible gives you permission to skip the work, and it arrives with attractive language ready to hand. *Nobody can predict this.* *You just have to try it and see.* *At some point you have to bet on yourself.* Held sincerely, those are realism. Reached for to avoid an afternoon of customer interviews, they are guessing dressed up as courage.
 
-## Decisions Do Not Require Answers to Every Question
+The good news is that most of what makes a pre-revenue decision feel like a gamble is reducible. Who your customer is can usually be settled. What they would pay can be measured. Since profit uncertainty is mostly demand uncertainty, and demand uncertainty is mostly reducible, the economics of the decision are largely learnable. What remains genuinely unpredictable is smaller than it looks, and a good deal easier to carry once it is the only thing you are carrying.
 
-It is tempting to believe that good decisions require comprehensive understanding. That if enough questions are answered, the right action will become obvious.
+One point of vocabulary, since the words get used loosely. **Risk** describes a situation where you can put meaningful probabilities on the outcomes. **Uncertainty** describes one where you cannot. Most pre-revenue decisions are uncertainty, and tools built for risk will mislead you here. A probability you invented is not evidence, however carefully you then multiply by it.
 
-In practice, decisions are made under constraint. Time, attention, and resources are limited. Not every uncertainty can be resolved, and not every unknown needs to be.
+Put the two filters together and you have the question this chapter exists to answer. Of everything you do not know, which one is both blocking the decision and learnable before you have to make it? That is where the effort goes.
 
-What matters is not whether uncertainty exists, but which uncertainty stands in the way of acting responsibly right now.
+## From Urgent Unknown to a Question You Can Answer
 
-Until that distinction is made, learning remains diffuse and effort remains unfocused.
+An unknown becomes useful only when it is turned into a question, and not every question qualifies.
 
+Some questions describe the world. Others inform a decision. Both can be interesting. Only the second reduces uncertainty about what to do.
 
+An **entrepreneurial question** is defined by the job it does. Its answer would change the action you take, or it would raise your confidence in the action you were already leaning toward. Here is the test: imagine getting each possible answer. If you would do the same thing either way, you have a fine question about the world and the wrong question for this decision.
 
+Clarity matters more than precision at this stage. A question can be answered accurately and stay useless, because it never connected to a choice. A question answered roughly can be worth a great deal, because it settled the thing that was blocking you.
 
+Notice how the question changes as the blocking unknown changes. If what blocks you is whether anyone wants this, then population size will not help; ask whether people who have the problem would pay a price that covers your costs. If what blocks you is what to charge, then willingness to pay and price sensitivity are the questions, and features and branding can wait. If what blocks you is whether to buy the equipment, then repeat purchase and volume are the questions, and enthusiasm is beside the point.
 
-## Many Unknowns, One That Matters Now
+A common failure is to begin with the question that is easy to answer rather than the one that matters. Data you can get quietly substitutes for data you need, work happens, and the decision does not move.
 
-At any moment, entrepreneurs face many unknowns.
+Getting the question right also buys you a stopping rule, which is worth more than it sounds. You have enough evidence when more of it would not change the decision. Without a question there is no such point, and research expands to fill however much time you are willing to give it.
 
-Some are obvious. Others only become visible once work begins. New information often reveals additional uncertainty rather than eliminating it. This is not a failure of planning. It is a feature of acting in unfamiliar territory.
+## Where This Usually Lands
 
-The mistake is not acknowledging uncertainty.  
-The mistake is treating all unknowns as equally important.
+Run both filters on a real pre-revenue decision and they land in the same place surprisingly often.
 
-Decisions are made one at a time. Each decision is blocked by a different kind of uncertainty. The uncertainty that matters is not the one that is most interesting, most frightening, or most discussed. It is the one that prevents responsible action *now*.
+Costs can generally be estimated within a workable range, because you control them. Competitive responses can often be bracketed: assume something reasonable and unfavorable, then check whether the decision survives it. Operational problems are real, and they are mostly problems of execution, which is a later question than whether the thing is worth executing at all.
 
-This is the entrepreneur’s most *urgent unknown*.
-
-The most urgent unknown is the question that must be better understood before the next decision can be made with integrity. Until it is addressed, action is either reckless or stalled.
-
-Other uncertainties may still exist. They may even be larger in an absolute sense. But if they do not affect the decision immediately at hand, they are not yet the right focus.
-
-Identifying the most urgent unknown does not eliminate uncertainty. It creates order within it. It also suggests what comes next: once this unknown is reduced, the next most urgent unknown takes its place.
-
-Once one uncertainty is reduced, another often takes its place. Learning does not shrink the space of unknowns so much as it rearranges them. New questions emerge. Old concerns recede. Attention shifts.
-
-This is not a problem to be solved once. It is a discipline to be practiced repeatedly.
-
-Entrepreneurs who fail to make this distinction often work hard without making progress. They collect information that does not change what they do. They mistake motion for learning.
-
-Entrepreneurs who can identify their most urgent unknown, even imperfectly, gain something more valuable than certainty: direction.
-
-What matters is not whether uncertainty exists, but which uncertainty stands in the way of acting responsibly right now.
-
-That distinction is easy to name and hard to make—because it requires choosing one unknown to treat as primary.
-
-
-
-
-
-## From Urgent Unknowns to Entrepreneurial Questions
-
-Identifying the most urgent unknown is only a beginning.
-
-An unknown becomes actionable only when it is translated into a question that can guide learning. This translation is where many entrepreneurs struggle—not because they lack curiosity, but because not all questions serve the same purpose.
-
-Some questions describe the world.  
-Others inform decisions.
-
-Both can be interesting. Only one reduces uncertainty about what to do next.
-
-An entrepreneurial question is not defined by the kind of data it uses, but by the role it plays. It is a question whose answer would change the action taken—or increase confidence in the action already under consideration.
-
-This is why clarity matters more than precision at this stage.
-
-A question can be answered accurately and still be useless if it does not connect back to a decision. Conversely, a question can be answered imperfectly and still be valuable if it reduces the uncertainty that matters most.
-
-The distinction becomes clear when uncertainty is viewed through the lens of action.
-
-- If the most urgent unknown is about demand, then questions about population size, customer characteristics, or interest levels are only useful insofar as they help determine whether demand is strong enough at viable prices to justify proceeding.
-- If the most urgent unknown is about pricing, then questions about willingness to pay and price sensitivity matter. Questions about features or branding may not—yet.
-- If the most urgent unknown is about scale, then questions about repeat purchasing, usage intensity, or capacity constraints become relevant.
-
-In each case, the entrepreneurial question does not stand alone. It is derived from the decision and shaped by the uncertainty that blocks it.
-
-This is why entrepreneurial questions are often broader than factual questions, but narrower than strategic aspirations. They sit between action and evidence.
-
-A common failure mode is to begin with questions that are easy to answer rather than questions that matter. Data availability quietly substitutes for decision relevance. Learning occurs, but uncertainty remains.
-
-When the entrepreneurial question is clear, learning gains a natural stopping rule. Evidence is sufficient when it no longer changes the decision under consideration.
-
-Only at that point does it make sense to ask how the question can be answered responsibly.
-
-
-
-
-## Demand Is Often the First Urgent Unknown
-
-Once the decision, the uncertainty, and the entrepreneurial question are made explicit, a pattern usually emerges.
-
-In many pre-revenue decisions, the most urgent unknown turns out to involve demand.
-
-This is not because demand is the only uncertainty that matters. It is because demand is the uncertainty that most often determines whether a venture is worth doing at all.
-
-Questions about costs, competition, and execution matter. They can meaningfully affect profit. But in early decisions, they rarely block action in the same way demand does.
-
-Costs can often be estimated within a usable range. Competitive responses can sometimes be bracketed. Operational challenges can be anticipated, even if imperfectly.
-
-Demand is different.
-
-Demand determines whether revenue exists at all, whether prices that cover costs are plausible, and whether refinements to cost structure or competitive positioning are worth pursuing in the first place.
-
-For this reason, many entrepreneurial questions ultimately reduce to some version of the same concern: *is there enough demand, at viable prices, to justify moving forward?*
-
-This does not mean demand is always the most urgent unknown. There are decisions where regulatory uncertainty, technological feasibility, or organizational constraints dominate. But in pre-revenue profit decisions, demand is often the uncertainty that matters first.
-
-Recognizing this is not a commitment to any particular method. It is a prioritization move.
-
-Once demand becomes the most urgent unknown, the task is no longer to speculate about it, but to learn it deliberately.
-
-
-
-
-## Looking Ahead: Learning Demand Deliberately
-
-Identifying demand as the most urgent unknown does not resolve it.
-
-Demand is not revealed automatically, and it is not learned by observation alone. It must be inferred from evidence, gathered intentionally and interpreted carefully.
-
-Poorly designed learning creates false confidence. Well-designed learning reduces uncertainty in ways that actually inform decisions.
-
-This distinction matters because learning is never neutral. The questions asked, the data collected, and the assumptions embedded in measurement all shape what can be concluded.
-
-Without clarity about the decision and the question, it is easy to collect information that looks relevant but does not change what is done next.
-
-The chapters that follow focus on learning demand in a disciplined way—beginning with what demand is and is not, and then turning to how evidence about demand can be generated responsibly.
-
-Only then does it make sense to design the experiment.
+What is left is demand. It blocks the decision, and it can be learned. That combination is uncommon enough to be worth the trouble of going out and running a real experiment on it.

@@ -6,7 +6,7 @@ Maybe you are deciding whether to leave a salary. Maybe you are looking at a bus
 
 If you have been in that position, you know the feeling. The decision is clearly consequential. The information you want is clearly absent. The pressure to move does not wait for the information to arrive.
 
-People talk their way around this moment. They talk about vision, momentum, timing, conviction, and readiness. Those conversations circle a question that rarely gets said plainly:
+People talk their way around this moment. They talk about vision, momentum, timing, conviction, and readiness. Those conversations circle a question that rarely gets asked plainly:
 
 *Is this worth doing?*
 
@@ -91,3 +91,19 @@ Demand is the exception, and demand has to be learned.
 This is why the book is shaped the way it is. If almost all of the uncertainty sits in $\mathsf{q}$, then almost all of the effort belongs there. Working out what it costs you to make the thing is worth doing carefully, and it will not tell you whether to proceed. Refining a cost structure before you have any idea whether anyone will buy at a viable price is precision applied to the wrong term.
 
 Demand is the anchor. Nearly everything else in the profit equation is a decision you get to make once you know what the demand curve looks like.
+
+## Four Layers Under One Letter
+
+Saying that demand is the unknown does not yet tell you how to learn it. Unpack $\mathsf{q}$ and there are four layers inside it. They have to be settled roughly in order, because each one means very little until the layer above it is fixed.
+
+**Whose quantity.** Before you can ask how many, you have to say who. A product can appeal weakly to a very large group or intensely to a small one, and those are different businesses with different economics. This layer is cheap to get wrong and expensive to discover late, because it is entirely possible to estimate demand beautifully for the wrong people.
+
+**How that group behaves at a price.** This is demand proper. At each price you might charge, how many of those people buy. It is the layer this book spends the most time on, because it is the one that has to come from the world rather than from you.
+
+**What that behavior does to money.** Once you have a demand curve, your own choices come back in. Set a price against it, subtract what a unit costs you, subtract the commitments you are prepared to make, and the curve becomes a profit estimate with a range around it.
+
+**What happens when somebody else moves.** Everything above treats your venture as though it stood alone. Sometimes that is fair. Sometimes a competitor's response is the whole difference between a good business and a crowded one. This layer comes last because without a demand curve, competitive scenarios have nothing to move.
+
+Those four layers are the order of this book, and they are also the order to work in. Most of the wasted effort in early ventures is work done on a lower layer while a higher one is still open: cost models refined before anyone knows whether a viable price exists, competitive analysis run against a demand curve nobody has estimated, market sizing performed on a customer who has not been identified. The work is real and the sequence is wrong, so none of it settles anything.
+
+Get the order right and every piece of work you do has something solid underneath it.
