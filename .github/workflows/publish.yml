@@ -1,0 +1,50 @@
+name: Publish to Netlify
+
+# Deploy the book to Netlify on every push to main.
+#
+# Twenty-two documents in this book contain R chunks, but this workflow never
+# installs R: execute.freeze is `auto` in _quarto.yml, so `quarto render` uses
+# the committed _freeze/ results as long as the source is unchanged. If a
+# chunk's source HAS changed and the freeze was not committed, the runner has
+# no R and the build fails loudly here rather than publishing stale output.
+# Always commit _freeze/ alongside any edit to a document containing a chunk.
+#
+# We render, then deploy _book/ with Netlify's own CLI rather than
+# quarto-actions/publish. That composite action silently dropped
+# NETLIFY_AUTH_TOKEN inside its internal step (it resolved empty there and the
+# deploy was skipped while the job still passed). Setting the token on our own
+# run step below is deterministic.
+#
+# Requires repo secret: NETLIFY_AUTH_TOKEN. Site id is public (also in
+# _publish.yml), so it is inlined below.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Render book
+        run: quarto render
+
+      - name: Deploy _book to Netlify
+        run: |
+          npm install --no-save netlify-cli
+          npx netlify deploy --prod --dir=_book --site="$NETLIFY_SITE_ID" --message "CI: ${GITHUB_SHA::7}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 5308cddf-79b6-4163-a152-727325f87ce5

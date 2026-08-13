@@ -120,3 +120,15 @@ execute:
   echo: false
   warning: false
   error: false
+  # Freeze R chunk results so CI never needs R installed. Twenty-two documents
+  # in this book carry R chunks; the GitHub runner has no R and no tidyverse.
+  #
+  # `auto`, NOT `true`. With `true`, Quarto never re-executes during a project
+  # render, so edits to a chunk are silently ignored and the stale frozen
+  # markdown ships instead. `auto` re-executes only when the source actually
+  # changes, which is what we want locally.
+  #
+  # Commit _freeze/ after any render that touches a document with code. If the
+  # freeze is out of date, CI FAILS LOUDLY rather than quietly publishing
+  # stale content. Same setting and same reasoning as Expeditionary Innovation.
+  freeze: auto
