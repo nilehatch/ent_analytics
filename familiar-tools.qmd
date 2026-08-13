@@ -3,110 +3,117 @@ title: "Why the Familiar Tools Can't Answer It"
 subtitle: "Five respectable frameworks, and the one thing none of them learns"
 ---
 
-If the unknown that matters is quantity, the obvious next move is to reach for a tool that estimates it.
+If the unknown that matters is quantity, the sensible next move is to reach for a tool that estimates it.
 
-Entrepreneurs are not short of tools. Most people facing an early profit decision reach for something familiar, widely taught, and socially respectable. These tools feel serious. Presenting one to a board, an advisor, or a spouse feels like having done the work.
+You are not short of tools. Anyone facing an early profit decision has several ready to hand, all of them familiar, widely taught, and socially respectable. They feel serious. Putting one in front of a board, an advisor, or a spouse feels like having done the work.
 
-Each of these tools was built to answer a real question, and most answer it well. The question they were built for is a different one.
+Each was built to answer a real question, and most answer it well. Take what follows as an inventory rather than an indictment: what each tool was designed to do, and the hole they all leave in the same place.
 
-## Why the Obvious Tools Fail at This Question
+## Accounting Is Right, and Late
 
+Accounting is the most rigorous instrument on this list. It is also the least useful to you right now, for reasons that have nothing to do with its quality.
 
-At this point, a reasonable reaction is to ask:
+Income statements, margins, and cash flow statements are records. They describe transactions that already happened. That backward orientation is a virtue: it is why you can audit them, why a bank will lend against them, and why two accountants examining the same firm arrive at the same number.
 
-*So how do people usually try to answer this?*
+Before you have sold anything, there are no transactions to record.
 
-Entrepreneurs are not short on tools. In fact, most people confronting an early-stage profit decision reach for frameworks that are familiar, widely taught, and socially validated. These tools feel serious. They feel responsible.
+What happens next is worth naming, because nearly everyone does it. You build a spreadsheet shaped like an income statement and fill it with numbers you made up. Revenue on the first row. Cost of goods below it. The arithmetic is flawless, and the document carries the authority of accounting without any of its content. It looks like a record. It is a wish with column headers.
 
-The problem is not that these tools are useless. The problem is that they were not designed to answer the question at hand.
+The absence of accounting data before revenue is structural rather than a delay. There is nothing to wait for.
 
-### Accounting: Useful Too Late
+## Five Forces Describes the Room You Are Standing In
 
-Accounting data is extremely useful—*after* a business has revenue.
+Porter's five forces is a genuinely good instrument.[^porter] It asks whether an industry tends to be profitable, and answers by examining rivalry, entrants, substitutes, and the bargaining power on either side of you. Ask it whether airlines are a hard business and it will tell you, correctly, and tell you why.
 
-Income statements, margins, and cash flows tell you what has already happened. They are backward-looking by design. Before a venture operates, there are no transactions to record and no profits to observe.
+Now look at what is actually in it. Rivalry, entry, substitution, buyer power, supplier power. There is no price anywhere in the framework. There is no quantity. No term in it could combine into a dollar figure, because the output is a judgment about an industry's tendency rather than an estimate of your venture's economics.
 
-Attempts to “do accounting early” usually involve inventing numbers that resemble accounting outputs. These numbers borrow the authority of accounting without its empirical foundation. They look rigorous, but they do not evaluate profit.
+That distinction carries more weight than it first appears to. Two firms in the same industry, facing identical forces, can have opposite futures: one serving a group whose need is acute and who will pay for relief, the other serving people who shrug. Five forces sees one industry. You are not an industry. You are one firm, with one offer, aimed at one group of people, and the profit you care about lives in the distance between you and the average of the room you happen to be standing in.
 
-The absence of accounting data before revenue exists is not a temporary inconvenience. It is a structural fact.
+::: {.for-curious}
+<details>
+<summary>For the Curious — Where the five forces came from</summary>
 
-### Five Forces: Structure Without Outcomes
+<!-- Intellectual-history claim (IO/SCP lineage) introduced here by CC, 13 Aug 2026.
+     Not sourced beyond the framework's own provenance; verify in Zotero before print. -->
 
-Porter’s Five Forces framework helps describe competitive pressure. It organizes thinking around rivalry, entry, substitutes, buyer power, and supplier power. As a descriptive tool, it can be useful.
+The framework descends from industrial organization economics, a field whose unit of analysis is the industry and whose earliest clients were regulators asking whether a market was competitive enough. That inheritance explains the shape of the tool exactly. A regulator wants to know whether an industry earns unusual returns and why. A regulator has no reason to care how many units any particular firm will sell.
 
-What it does not do is estimate profit.
+Porter's move was to turn that apparatus around and hand it to managers of established firms, who found it clarifying, because a manager of an established firm already knows their own quantity. It is sitting on last year's statements. The framework filled the gap those managers actually had, which was the environment, and left untouched the one they did not have.
 
-Five Forces contains no prices, no quantities, and no link between competitive structure and economic outcomes. Assessments of force strength are ultimately subjective, and two industries that look similar on Five Forces can support very different profit potential for a specific venture.
+Your problem runs the other way. You know very little about your environment and nothing whatever about your quantity, and the tool reached you from people for whom the second was never in question.
 
-The framework classifies environments. It does not evaluate opportunities.
+</details>
+:::
 
-### Business Model Canvas: Description Without Evaluation
+## The Business Model Canvas Checks Your Logic
 
-The Business Model Canvas helps people articulate how a business is supposed to work. It is useful for communication and alignment.
+The canvas does something none of the others do: it makes you say the whole thing out loud.[^bmc] Nine boxes, and you cannot leave one empty without noticing. Who these people are, what you are offering them, how it reaches them, what it costs to keep running, where the money comes in. As a way to surface the part of your plan you have been quietly avoiding, it works.
 
-It does not answer whether the business will make money.
+What it checks is coherence. Whether the pieces fit each other.
 
-You can fill in every box, validate every assumption, and still lose money. The canvas describes components, not economic consequences. It contains no mechanism for estimating willingness to pay, price sensitivity, or quantity sold.
+Coherence is cheap. You can fill every box, have each one follow sensibly from the last, and describe a business that loses money on every sale. Nothing in the canvas asks *how many*. The revenue box asks where money comes from and accepts whatever you tell it, with no way to report that the answer is wrong, because it never contained a mechanism for finding out.
 
-Coherence is not the same as viability.
+A coherent plan and a viable one are different claims, and only one of them can be checked with a pen.
 
-### TAM, SAM, SOM: Scale Without Demand
+## TAM, SAM, SOM Measures the Room
 
-Market sizing frameworks are among the most common tools used in early evaluation. They are easy to compute, easy to present, and easy to believe.
+Market sizing is the most common tool in early evaluation, and the easiest to compute, to present, and to believe.
 
-They do not estimate profit.
+It measures the room. Total addressable market, then the portion you could serve, then the portion you might win. The first two are usually researchable and often roughly right. The third is where it breaks: getting from the size of a room to a quantity requires assuming a share, and the share is precisely the thing you do not know.
 
-TAM, SAM, and SOM focus on scale, not value. To get from market size to profit, one must assume a market share of an imagined market at an imagined price. Quantity sold is never learned; it is assumed.
+Watch how that number is usually produced. Someone finds a large figure, applies a modest-sounding percentage to it, and offers the modesty of the percentage as evidence of realism. *We only need one percent.* That sentence has launched a remarkable number of failed companies, because one percent of a large number sounds humble while being a confident claim about the behavior of tens of thousands of people you have never met.
 
-These frameworks work best when entering stable, well-understood markets. They break down precisely in the kinds of settings where new ventures and new business models operate.
+Market size is a ceiling. A ceiling tells you the most that could happen. It is worth knowing, and it is not the thing you need in order to decide.
 
-### Pro Forma NPV: Precision Built on Guesses
+## Pro Forma NPV Is Precise About a Guess
 
-Pro forma cash flows and discounted cash flow analysis are explicitly profit-oriented, which is their appeal.
+Discounted cash flow is the only tool here that is explicitly about profit, which is exactly why it feels like the right instrument to reach for.
 
-But every number inside them is an assumption.
+The machinery is sound. Money later is worth less than money now, the discount rate says by how much, and none of the arithmetic is in dispute. Applied to a business with a history, a DCF is a serious estimate.
 
-Prices are guessed. Costs are guessed. Growth rates are guessed. Most importantly, quantity sold is almost always assumed rather than estimated. Discounting does not solve this problem; it simply adds mathematical precision to uncertainty.
+Applied to a business without one, every input is invented. Price is invented. Cost is invented. Growth is invented. And quantity, the number every other line depends on, is assumed rather than estimated, usually as a percentage climbing tidily across a row of years.
 
-The output reflects the inputs. When the inputs are guesses, the output is a refined guess.
+Try something on any pro forma you have been handed. Change the growth rate in the final year by a single percentage point, and watch what happens to the answer. It will usually move further than you expect, because in a model of this shape most of the value sits in years nobody can see, and those years are assumption compounded. Discounting does not repair that. It applies careful arithmetic to a guess and hands back a guess with decimal places.
 
-### The Pattern
+::: {.for-curious}
+<details>
+<summary>For the Curious — Why the far years dominate</summary>
 
-Stepping back, a pattern emerges.
+A five-year projection rarely ends at year five. It ends with a *terminal value*: one figure standing in for everything afterward, computed by assuming the final year's cash flow grows forever at some steady rate. That single assumption often carries more of the total than all five projected years together, which is why a one-point change to it swings the answer so violently.
 
-**None of these tools estimate demand.**  
-**Quantity sold is never learned.**
+The uncomfortable part is that the terminal growth rate is the least knowable number in the model. It describes a business you have not started, in a market you have not entered, at a date past which nobody forecasts anything at all. Arithmetically, it is also the number the conclusion leans on hardest.
 
-This is not because entrepreneurs are careless or unsophisticated. It is because they are using the best tools they have been given—and those tools were never designed to learn demand.
+None of this argues against discounting. The argument is about ordering. A DCF is a good way to price a cash flow you can already estimate, and a poor way to discover whether one exists.
 
-The profit equation makes this visible. If profit uncertainty before revenue exists is primarily uncertainty about *q*, then tools that never engage with *q* cannot answer the question of whether a business is worth doing.
+</details>
+:::
 
-This book begins from that recognition and takes a different starting point.
+## What the Five Have in Common
 
-## From Structure to Focus
+Line them up and the shape is difficult to miss.
 
+Accounting needs transactions. Five forces needs an industry. The canvas needs a hypothesis. Market sizing needs a defined market. NPV needs a stream of cash flows. Every one of them takes as its input something you are supposed to have already, and what you do not have is the same in every case.
 
-Recognizing that demand anchors profit evaluation does not yet tell an entrepreneur what to study next.
+None of them learns quantity. Not one contains a mechanism for discovering how many people will buy from you at a price you could charge. They organize, classify, describe, and discount. They do not measure.
 
-Early-stage ventures and mature companies face the same unknowns when facing a decision about a new initiative:
+That is a strange gap for five good tools to share, and it is worth asking why it sits exactly where it does.
 
-- who the customer really is,
-- what problem matters most,
-- how price-sensitive demand might be,
-- whether demand is large enough to justify entry.
+## Why the Gap Sits Exactly There
 
-The profit equation helps locate uncertainty, but it does not prioritize it.
+The tools are not defective. They were built for people who did not need the missing piece.
 
-Before gathering data or running analysis, entrepreneurs must make a more basic move:
-they must decide which uncertainty matters most for the decision they are facing right now.
+Four of the five assume an operating business. Accounting, five forces, the canvas as it is usually taught, and DCF all come out of the world of established firms, where quantity is a known quantity. It is on the statements. A manager reaching for these instruments has last year's units in hand and is asking a different question: given what we already sell, how do we do better? For that question they are excellent, and the hole you are staring at is not a hole at all, because the number was never missing.
 
-Without that focus, analysis can be careful and still miss the point.
+The fifth is more interesting, and it lands closer to home.
 
-Data does not tell entrepreneurs what to do.
-Questions do.
+Market sizing and the pitch-deck pro forma were built for a conversation with investors, and an investor needs something different from you. A portfolio holder is not asking whether your venture will work. They are asking whether the upside is large enough to justify a position, given that most positions will fail anyway. For that purpose the size of the room is genuinely the relevant number, and your actual quantity is close to irrelevant. If it works, they need it to be big. If it does not, they wanted to know cheaply and fast, which is what failure provides.
 
-Evidence becomes useful only when answering a question would actually change the action taken.
+So the tools optimize for what matters to the person across the table. Nobody is being dishonest and there is no conspiracy here. It is simply what happens when every instrument available for a decision was designed by people who bear a different loss than the one you are carrying.
 
-Clarifying the decision, the uncertainty that blocks it, and the question whose answer would reduce that uncertainty is the step that makes learning demand possible rather than accidental.
+You are the residual claimant. Not the industry, not the portfolio, not the market. If this fails, the person who absorbs it is you, and the single number that determines whether it fails is the one number none of these tools will go out and find.
 
-That step comes next.
+So you will have to find it yourself.
+
+[^porter]: The original statement of the framework is @porter79.
+
+[^bmc]: The canvas is laid out in @osterwalder-pigneur10.
