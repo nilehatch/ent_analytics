@@ -215,9 +215,11 @@ Economics has formal names for this distinction. What matters here is only that 
 ::: {.reflect}
 **Ask yourself — what is one, and over what period?**
 
-Write out the sentence a customer would actually be answering: *Would you pay ______ for one ______, per ______?*
+Write out the sentence a customer would actually be answering: *What is the most you would pay for one ______, per ______?*
 
-Fill in all three blanks for your own venture. Most people manage the price easily, hesitate on the unit, and discover they have never once stated the period.
+Note the shape of that question before you fill it in. It asks for a maximum rather than a verdict on a price you name. *Would you pay forty dollars?* answered yes tells you only that this person sits somewhere above forty, and you never find out where. The most-you-would-pay version returns the point at which that person's own quantity moves from zero to one, which is the raw material a demand curve is built from. Price-testing questions have their place later, once you have a curve and a candidate price worth testing.
+
+Now fill in the two blanks for your own venture. Most people hesitate on the unit and discover they have never once stated the period.
 
 Now read it aloud as though you were the customer rather than the founder. If you would need to ask a clarifying question before you could answer, so will they, and they will not ask. They will guess, silently, and hand you a number that means something other than what you record.
 
