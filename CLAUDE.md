@@ -10,14 +10,14 @@ and it is estimated from willingness-to-pay survey data.
 
 ## Open revision opportunities (found July 2026)
 
-1. **The core transformation is missing from the book — strongest revision opportunity.**
-   The move that makes WTP data into a legitimate demand curve — sort WTP descending,
-   cumulative-count so quantity at price P = the number of respondents with WTP ≥ P (the
-   survival function of a reservation-price distribution) — appears ONLY in
-   `../app-profit-analytics/server.R:338-346`. ch8 explains estimation philosophically and
-   defers to the app ("handled automatically"). This is the most intuitive AND most rigorous
-   part of the method ("line everyone up by what they'd pay, count who's still standing") and
-   it belongs in the book, worked, not hidden in app code.
+1. ~~**The core transformation is missing from the book.**~~ **Done 14 Aug 2026**, in
+   `estimating-demand.qmd`. Worked by hand on twelve respondents: raw table, sorted table with
+   a running count, and a step-function figure, followed by the how-many case as horizontal
+   summation. The chapter now separates **counting** (nearly assumption-free, produces the
+   empirical staircase) from **fitting** (where every behavioural assumption enters), which was
+   the conflation underneath the old version. A `.for-curious` names the survival function and
+   reservation prices. Both elicitations are unified: yes/no is how-many where nobody buys more
+   than one.
 
 2. **The novelty claim needs to be located precisely.** The yes/no path (WTP survival
    function) is standard — adjacent to open-ended contingent valuation / Van Westendorp — do
