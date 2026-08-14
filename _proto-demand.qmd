@@ -1,0 +1,69 @@
+---
+title: "Prototype — interactive demand"
+subtitle: "Two sliders, one point: along the curve, and shifts of the curve"
+format:
+  html:
+    css: [base.css, custom_itwd.css]
+---
+
+Move the first slider and the dot slides **along** a curve that never moves. Move the second and the whole curve **shifts**, because everything other than price lives in the intercept.
+
+```{ojs}
+//| echo: false
+viewof price = Inputs.range([0, 1200], {value: 500, step: 10, label: "Price"})
+viewof size  = Inputs.range([1200, 3200], {value: 2500, step: 50, label: "Market size"})
+```
+
+```{ojs}
+//| echo: false
+b = 2
+BASE = 2500
+Qof = (p, a) => Math.max(0, a - b * p)
+Qnow = Qof(price, size)
+grid = d3.range(0, 1251, 5)
+curve = grid.map(p => ({p, q: Qof(p, size)}))
+ghost = grid.map(p => ({p, q: Qof(p, BASE)}))
+shifted = Math.abs(size - BASE) > 1
+
+Plot.plot({
+  width: 720,
+  height: 420,
+  marginLeft: 62,
+  marginBottom: 46,
+  style: {background: "transparent", fontSize: "13px", color: "#4A5751"},
+  x: {domain: [0, 1250], label: "Price →", tickFormat: d => `$${d3.format(",")(d)}`,
+      labelAnchor: "right"},
+  y: {domain: [0, 3400], label: "↑ Quantity", tickFormat: d3.format(","),
+      grid: true, labelAnchor: "top"},
+  marks: [
+    // reference curve, only once it has been moved off
+    shifted ? Plot.line(ghost, {x: "p", y: "q", stroke: "#9CA8A2",
+                                strokeWidth: 1.5, strokeDasharray: "4,4"}) : null,
+    // the demand curve
+    Plot.line(curve, {x: "p", y: "q", stroke: "#2563EB", strokeWidth: 2.5}),
+    // read-off guides
+    Plot.ruleX([price], {y1: 0, y2: Qnow, stroke: "#77837D", strokeDasharray: "2,3"}),
+    Plot.ruleY([Qnow], {x1: 0, x2: price, stroke: "#77837D", strokeDasharray: "2,3"}),
+    // the point, ringed in surface so it reads over the line
+    Plot.dot([{p: price, q: Qnow}], {x: "p", y: "q", r: 6, fill: "#16201B",
+                                     stroke: "white", strokeWidth: 2}),
+    Plot.text([{p: price, q: Qnow}], {
+      x: "p", y: "q", dx: 12, dy: -14, textAnchor: "start", fontSize: 13,
+      fill: "#16201B", fontWeight: 600,
+      text: d => `$${d3.format(",")(d.p)}, ${d3.format(",")(Math.round(d.q))} units`
+    }),
+    Plot.ruleY([0], {stroke: "#CFD6D2"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<p style="margin-top:.5rem;color:#4A5751">
+At a price of <strong>$${d3.format(",")(price)}</strong>,
+quantity is <strong>${d3.format(",")(Math.round(Qnow))}</strong> units.
+${shifted
+  ? `The dashed line is where the curve sat with ${d3.format(",")(BASE)} customers.`
+  : `Move the second slider to see the curve shift.`}
+</p>`
+```

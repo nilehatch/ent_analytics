@@ -21,3 +21,7 @@ _site/
 *.bak-*
 
 **/*.quarto_ipynb
+
+# Prototype render output (the .qmd is kept; Quarto skips _-prefixed files)
+_proto-*.html
+_proto-*_files/
