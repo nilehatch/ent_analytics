@@ -1,0 +1,31 @@
+/*-- scss:defaults --*/
+
+// itwd.scss — Bootstrap variable overrides for Is This Worth Doing?
+//
+// Three layers of styling, and they do not overlap:
+//
+//   cosmo            the Bootstrap theme Quarto ships
+//   itwd.scss        THIS FILE: compile-time Bootstrap variables, so the
+//                    framework's own furniture (nav highlights, links, focus
+//                    rings, search) uses this book's colour instead of
+//                    Bootstrap's default blue
+//   base.css         runtime structure and the callout taxonomy, byte-identical
+//                    across the family
+//   custom_itwd.css  runtime --brand-* values, seven of them
+//
+// Why this file exists. Cosmo's default primary is a blue, and Quarto uses it
+// for the active item in the left book navigation and the right chapter
+// navigation. In Expeditionary Innovation that blue is close enough to the
+// book's own azure to pass unnoticed; in Make the Call the cerulean is mostly
+// blue, so the mismatch is only a hint. This book is green, and a blue
+// highlight against a green heading reads as a mistake because it is one.
+//
+// Values match custom_itwd.css. Change both together or neither.
+
+$primary:           #146B45;   // pine, matching --brand-primary
+$link-color:        #0F5636;   // slightly deeper, so links read as ink-with-intent
+$link-hover-color:  #0B3D26;   // --brand-primary-dark
+
+// Cosmo derives focus rings and active states from $primary, so those follow
+// automatically. Body text and headings are set by base.css through the brand
+// variables and are deliberately not touched here.
