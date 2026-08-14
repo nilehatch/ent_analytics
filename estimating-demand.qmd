@@ -163,6 +163,10 @@ Join the two points with a straight line and you have that individual's demand f
 
 Then do exactly what you did before, except that you are adding quantities rather than counting heads. At each price, ask every respondent how many they would take, and add up the answers. That is **horizontal summation**, and it is the same move as the running count: at each price, total up whoever is still in.
 
+::: {.column-margin .def-margin}
+**Horizontal summation** — adding up what every individual would buy at one price, then repeating at every price to build the market curve.
+:::
+
 The prices worth evaluating are the respondents' own maximums, since those are the only places where the total changes shape. You never had to invent a price grid.
 
 And now the two methods collapse into one. Set every respondent's quantity to a single unit at any price they will accept, and the horizontal sum becomes a head count, and the head count is the staircase in @fig-empirical-demand. *Yes/no demand is how-many demand where nobody can buy more than one.* One transformation, two special cases, which is why the same app handles both without switching techniques.

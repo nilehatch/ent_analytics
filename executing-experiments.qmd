@@ -15,7 +15,11 @@ Four things can go wrong between sending a survey and believing its answers. Thi
 
 Start with the question that comes before all the others: *who was actually given an opportunity to respond?*
 
-Your **population** is everyone whose decision the venture depends on. Your **sample** is the handful who answered. Between them sits the sampling frame, meaning the subset who could have answered because the survey reached them at all, and the frame is almost never a small copy of the population.
+Your **population** is everyone whose decision the venture depends on. Your **sample** is the handful who answered. Between them sits the **sampling frame**: the subset who could have answered, because the survey reached them at all. The frame is almost never a small copy of the population.
+
+::: {.column-margin .def-margin}
+**Sampling frame** — the people your survey could actually reach. Neither the population you care about nor the sample who answered.
+:::
 
 Two things are easy to confuse here. Eligibility is not representativeness: everyone in your frame might genuinely belong to your customer group and still, collectively, look nothing like it. And size is not composition. Four hundred responses from people who all found you the same way is a large sample of a narrow slice, and the largeness does nothing to fix the narrowness. Doubling a biased sample doubles the bias with more decimal places.
 
@@ -113,7 +117,11 @@ The people who answer are more interested in the problem, more opinionated about
 
 The direction is consistent enough to state. Early demand evidence tends to overstate appeal, overstate willingness to pay, understate price sensitivity, and underrepresent indifference. Which is why early results so often look encouraging and so often fail to survive contact with a wider audience. Your respondents were not lying. They were not typical.
 
-The mistake that does the most damage is treating silence as missing data. It is not missing; it is an answer you did not record. People who ignored your survey may be indifferent, may be busy, may have found the offering irrelevant, or may not have cared enough to click. And here is the part worth sitting with: *the people who did not answer are usually closer to your marginal customer than the people who did.* The marginal customer is the one deciding at the edge, and it is the edge that determines whether your demand curve is steep or shallow, robust or fragile. Your dataset is systematically thinnest exactly where the answer is decided.
+The mistake that does the most damage is treating silence as missing data. It is not missing; it is an answer you did not record. People who ignored your survey may be indifferent, may be busy, may have found the offering irrelevant, or may not have cared enough to click. And here is the part worth sitting with. Your **marginal customer** is the one deciding right at your price, and it is that person, rather than your enthusiasts, who determines whether demand is steep or shallow, robust or fragile. *The people who did not answer are usually closer to your marginal customer than the people who did.* Your dataset is systematically thinnest exactly where the answer is decided.
+
+::: {.column-margin .def-margin}
+**Marginal customer** — the person deciding right at your price, whose choice settles whether demand there is steep or shallow.
+:::
 
 Selection bias also compounds rather than adds. It operates *inside* whatever frame you already have, so a narrow frame full of engaged people gets narrower and more engaged. A well-designed survey can still produce confident nonsense if this is ignored.
 

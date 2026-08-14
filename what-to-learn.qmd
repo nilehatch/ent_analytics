@@ -19,6 +19,10 @@ Decisions do not work that way, and you would not have the time even if they did
 
 Call that piece your **most urgent unknown**. It is the thing that has to be better understood before the next decision can be made with integrity. Until it is addressed, acting is reckless and waiting is stalling, and it is genuinely difficult to tell those two apart from the inside.
 
+::: {.column-margin .def-margin}
+**Most urgent unknown** — the one unknown standing between you and the next decision, which is rarely the largest one on your list.
+:::
+
 Other unknowns will still be there. Some of them may be larger in an absolute sense. If they do not touch the decision in front of you, they are not your problem this week.
 
 This is worth saying plainly, because the most urgent unknown is rarely the most interesting one. The unknown you enjoy thinking about, and the one your advisors like to argue about, are usually not the one whose answer would change what you do on Monday.
@@ -35,6 +39,10 @@ Some uncertainty will not resolve before you act, whatever you spend on it. You 
 
 Other uncertainty exists only because nobody has gone and asked. Who these people actually are. What they do instead today. What they would pay to stop doing it. That is **reducible uncertainty**, and it is almost always larger than it feels from inside the fog.
 
+::: {.column-margin .def-margin}
+**Reducible uncertainty** — what is unknown only because nobody went and asked. Its opposite, irreducible uncertainty, will not resolve before you act whatever you spend on it.
+:::
+
 The distinction deserves care, because it is also the most convenient thing in this book to get wrong. Treating a reducible unknown as irreducible gives you permission to skip the work, and it arrives with attractive language ready to hand. *Nobody can predict this.* *You just have to try it and see.* *At some point you have to bet on yourself.* Held sincerely, those are realism. Reached for to avoid an afternoon of customer interviews, they are guessing dressed up as courage.
 
 The good news is that most of what makes a pre-revenue decision feel like a gamble is reducible. Who your customer is can usually be settled. What they would pay can be measured. Since profit uncertainty is mostly demand uncertainty, and demand uncertainty is mostly reducible, the economics of the decision are largely learnable. What remains genuinely unpredictable is smaller than it looks, and a good deal easier to carry once it is the only thing you are carrying.
@@ -50,6 +58,10 @@ An unknown becomes useful only when it is turned into a question, and not every 
 Some questions describe the world. Others inform a decision. Both can be interesting. Only the second reduces uncertainty about what to do.
 
 An **entrepreneurial question** is defined by the job it does. Its answer would change the action you take, or it would raise your confidence in the action you were already leaning toward. Here is the test: imagine getting each possible answer. If you would do the same thing either way, you have a fine question about the world and the wrong question for this decision.
+
+::: {.column-margin .def-margin}
+**Entrepreneurial question** — one whose answer would change what you do, or raise your confidence in what you were already going to do.
+:::
 
 Clarity matters more than precision at this stage. A question can be answered accurately and stay useless, because it never connected to a choice. A question answered roughly can be worth a great deal, because it settled the thing that was blocking you.
 

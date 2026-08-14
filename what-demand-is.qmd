@@ -33,7 +33,7 @@ Without demand these decisions are guesses with spreadsheets attached. With it t
 
 ## What Demand Is
 
-Demand is a **relationship between price and quantity**. Not a single number, not a forecast, and not a line on a chart that goes up over time.
+**Demand** is a relationship between price and quantity. Not a single number, not a forecast, and not a line on a chart that goes up over time.
 
 A demand curve answers one narrow question:
 
@@ -97,7 +97,11 @@ Three things about that sentence repay attention. It describes variation rather 
 
 Before anyone can tell you what they would pay, both of you have to agree on what they would be paying for. That sounds trivial. It is where a startling number of demand surveys die.
 
-A unit is not an accounting definition. It is a **cognitive** one: whatever the customer mentally counts when deciding whether to buy. That may or may not match how you would like to sell it.
+A **unit** is whatever the customer mentally counts when deciding whether to buy. That is a cognitive definition rather than an accounting one, and it may or may not match how you would like to sell.
+
+::: {.column-margin .def-margin}
+**Unit** — whatever the customer mentally counts when deciding whether to buy, which need not be how you package it or invoice it.
+:::
 
 Ask someone what they would pay for your prepared meals and watch the question fall apart. One dinner? A week of them? A month on subscription? A year? Those answers span two orders of magnitude, and a respondent who guesses wrong is not being careless. You asked an ambiguous question and they resolved the ambiguity however seemed natural, silently, without telling you which way they went.
 
@@ -107,7 +111,11 @@ So pick the unit the customer already counts in. If they think in visits, do not
 
 ## Over What Period
 
-The second silent assumption is time, and it goes wrong in the opposite direction. Where an ambiguous unit produces scattered answers, an unstated period produces answers that agree with each other and mean nothing.
+The second silent assumption is time. Call it the **decision period**: the stretch over which a customer makes this choice and can make it again. It goes wrong in the opposite direction from the unit, because where an ambiguous unit produces scattered answers, an unstated period produces answers that agree with each other and mean nothing.
+
+::: {.column-margin .def-margin}
+**Decision period** — the span of time a quantity refers to. Quantity means nothing without one, and every cost you set against it has to use the same span.
+:::
 
 Every purchase decision sits in a rhythm. Some are once in a lifetime, some are monthly, some are whenever the old one breaks. A customer who would pay \$40 is telling you something entirely different depending on whether that is \$40 once, \$40 a month, or \$40 every few years when they think of it.
 
