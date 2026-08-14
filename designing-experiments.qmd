@@ -35,6 +35,19 @@ The fork matters because the two require different questions, produce differentl
 
 So before writing a single question: *is quantity fixed at one, or is quantity the thing I am trying to learn?*
 
+::: {.for-curious}
+<details>
+<summary>For the Curious — What economists call these</summary>
+
+The plain names used here have precise counterparts. A customer who buys at most one unit in the period is said to have **unit demand**, a term from auction and mechanism design; a customer who may buy several has **multi-unit demand**. Empirical economists cut the same distinction differently and speak of the **extensive margin**, whether someone participates at all, against the **intensive margin**, how much they buy given that they do. Yes/no demand varies only on the extensive margin. How-many demand varies on both, which is exactly why it takes more questions to pin down.
+
+It is worth seeing why the more familiar durable-versus-nondurable split does not do this job, since it is the first place most people reach. Durability is a property of the *good*. This distinction is a property of the *purchase decision inside the period you defined*, which means the same good can land on either side depending on a choice you made earlier. A car is yes/no demand over a year and how-many demand over twenty. A cup of coffee is how-many demand over a month and yes/no over the next hour.
+
+That is not a defect in the categories. It is a consequence of the fact that quantity has no meaning until a period is fixed, and it is one more reason to settle the unit and the period before anything else.
+
+</details>
+:::
+
 ## What Willingness to Pay Actually Is
 
 Willingness to pay is the most misunderstood instrument in early demand work, mostly because the phrase sounds like it means *the price to charge*.
@@ -85,9 +98,9 @@ The cost is fatigue. You are asking one question repeatedly with a number change
 
 The alternative asks three questions that each require a different kind of thinking.
 
-1. If this were permanently free, how many would you use per period?
-2. What is the most you would pay for one unit?
-3. At that price, how many would you use per period?
+> 1. *If this were permanently free, how many would you use per period?*
+> 2. *What is the most you would pay for one unit?*
+> 3. *At that price, how many would you use per period?*
 
 The first strips price out completely and asks about need and usage, which sets a collaborative frame and gives you a ceiling on consumption. The second is the boundary. The third finds the other end of the same person's demand.
 
