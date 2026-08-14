@@ -145,78 +145,64 @@ Four things get mistaken for demand often enough to name.
 
 ## Changes Along a Curve, and Changes in the Curve
 
-One more distinction is worth seeing early.
+One more distinction is worth seeing early, because the two situations it separates produce identical-looking disappointment and call for opposite responses.
 
-@fig-demand-changes-1 and @fig-demand-changes-2 show two situations that produce the same kind of disappointment and call for opposite responses.
+Below is the same curve you just met, with handles on it.
 
-::: {layout-ncol=2}
-```{r}
-#| label: fig-demand-changes
-#| echo: false
-#| warning: false
-#| layout-ncol: 2
-#| cap-location: bottom
-#| fig-cap:
-#|   - "Same customers, different price: moving along the same curve (A → B)."
-#|   - "Same price, different customers: different curve at the same price (A → C)."
-
-library(ggplot2)
-library(scales)
-
-a1 <- 2500; b2 <- -2
-a2 <- 2000; b1 <- -2
-fQ1 <- function(P) a1 + b1 * P
-fQ2 <- function(P) a2 + b2 * P
-
-A <- data.frame(P = 500, Q = fQ1(500), label = "A")
-B <- data.frame(P = 750, Q = fQ1(750), label = "B")
-C <- data.frame(P = 500, Q = fQ2(500), label = "C")
-
-
-plot_demand_change_along <- ggplot() +
-  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
-  geom_segment(aes(x = A$P, y = A$Q, xend = B$P-25, yend = B$Q+50),
-               arrow = arrow(length = unit(0.16, "inches")),
-               linewidth = 3, color = "black") +
-  geom_point(data = rbind(A, B), aes(x = P, y = Q), size = 4.5, color = "black") +
-  geom_text(data = rbind(A, B), aes(x = P, y = Q, label = label),
-            vjust = 1.8, size = 7) +
-  labs(x = "Price", y = "Quantity") +
-  scale_x_continuous(labels = label_dollar(), n.breaks = 5) +
-  scale_y_continuous(labels = label_comma()) +
-  coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
-  theme_itwd()
-
-##################################
-
-
-plot_demand_change_between <- ggplot() +
-  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
-  geom_function(fun = fQ2, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
-  geom_segment(aes(x = A$P, y = A$Q, xend = C$P, yend = C$Q+75),
-               arrow = arrow(length = unit(0.16, "inches")),
-               linewidth = 3, color = "black") +
-  geom_point(data = rbind(A, C), aes(x = P, y = Q), size = 4.5, color = "black") +
-  geom_text(data = rbind(A, C), aes(x = P, y = Q, label = label),
-            vjust = c(-1.2, 1.8), size = 7) +
-  labs(x = "Price", y = "Quantity") +
-  scale_x_continuous(labels = label_dollar(), n.breaks = 5) +
-  scale_y_continuous(labels = label_comma()) +
-  coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
-  theme_itwd()
-
-##################################
-
-plot_demand_change_along
-plot_demand_change_between
+```{ojs}
+//| echo: false
+viewof price = Inputs.range([0, 1200], {value: 500, step: 10, label: "Price"})
+viewof size  = Inputs.range([1500, 3200], {value: 2500, step: 50, label: "Market size"})
 ```
-:::
 
-In the first, sales fell because you raised the price. You are the same firm facing the same customers, and you moved along a curve that never changed. Lower the price and the volume comes back.
+```{ojs}
+//| echo: false
+b = 2
+BASE = 2500
+Qof = (p, a) => Math.max(0, a - b * p)
+Qnow = Qof(price, size)
+gridP = d3.range(0, 1251, 5)
+curve = gridP.map(p => ({p, q: Qof(p, size)}))
+ghost = gridP.map(p => ({p, q: Qof(p, BASE)}))
+shifted = Math.abs(size - BASE) > 1
 
-In the second, sales fell at a price you never touched. The curve itself moved, because the customers did. Something changed out in the world, and lowering your price will not restore what you lost, it will only make the loss cheaper.
+Plot.plot({
+  width: 700,
+  height: 400,
+  marginLeft: 64,
+  marginBottom: 46,
+  style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
+  x: {domain: [0, 1250], label: "Price \u2192", tickFormat: d => `$${d3.format(",")(d)}`,
+      labelAnchor: "right"},
+  y: {domain: [0, 3400], label: "\u2191 Quantity", tickFormat: d3.format(","),
+      grid: true, labelAnchor: "top"},
+  marks: [
+    shifted ? Plot.line(ghost, {x: "p", y: "q", stroke: "#9CA8A2",
+                                strokeWidth: 1.5, strokeDasharray: "4,4"}) : null,
+    Plot.line(curve, {x: "p", y: "q", stroke: "#2563EB", strokeWidth: 2.5}),
+    Plot.ruleX([price], {y1: 0, y2: Qnow, stroke: "#6B7280", strokeDasharray: "2,3"}),
+    Plot.ruleY([Qnow], {x1: 0, x2: price, stroke: "#6B7280", strokeDasharray: "2,3"}),
+    Plot.dot([{p: price, q: Qnow}], {x: "p", y: "q", r: 6, fill: "#1F2937",
+                                     stroke: "white", strokeWidth: 2}),
+    Plot.text([{p: price, q: Qnow}], {
+      x: "p", y: "q", dx: 12, dy: -14, textAnchor: "start", fontSize: 13,
+      fill: "#1F2937", fontWeight: 600,
+      text: d => `$${d3.format(",")(d.p)}, ${d3.format(",")(Math.round(d.q))} units`
+    }),
+    Plot.ruleY([0], {stroke: "#E1E6E3"})
+  ]
+})
+```
 
-Economics has formal names for this distinction. What matters here is only that you can tell which one you are in, because the two look identical on a sales report and call for entirely different responses.
+Move the **price** slider first. The dot travels up and down a curve that does not move. Sales fell because you raised your price, and nothing at all changed about your customers. Drop the price back and the volume returns, because it was waiting there the whole time.
+
+Now put price back where it was and move the **market size** slider instead. The dot moves again, and this time for a completely different reason: the whole curve has shifted, and the dashed line marks where it used to sit. Sales fell at a price you never touched. Something changed out in the world, and lowering your price will not restore what you lost. It will only make the loss cheaper.
+
+The second case is the one that matters, because a simple model like this puts everything that is not price into a single number, the intercept. How many people there are, what a rival is charging, whether the season turned, whether anyone has heard of you: all of it lands in one place, and moving it moves the whole curve rather than your position on it.
+
+That distinction is worth the trouble because the two look identical on a sales report. Revenue is down, and that is the entire content of the report. Whether the fix is a price change or something else altogether depends on which of these happened, and the report cannot tell you.
+
+Economics has formal names for this pair. What matters here is that you can tell which one you are in.
 
 ## Putting It to Work
 
