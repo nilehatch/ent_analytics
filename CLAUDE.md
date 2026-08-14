@@ -74,6 +74,30 @@ Revision opportunity 1 — the WTP survival-function transformation, missing fro
 only in `../app-profit-analytics/server.R` — lands in class week 8. Writing it into the book
 and building that week are the same task. Do it once.
 
+## Build and deploy — one rule that will bite you
+
+`.github/workflows/publish.yml` renders and deploys `_book/` to Netlify on every push to `main`.
+The runner has **no R**, so it relies entirely on the committed `_freeze/`, with
+`execute: freeze: auto` in `_quarto.yml`.
+
+**Always `quarto render` the whole project before committing. Never render named files.**
+
+Quarto applies `freeze` only during a *project* render. `quarto render some-chapter.qmd` always
+executes the chunks and **does not write `_freeze/`**, so a targeted render leaves the freeze
+stale while the working tree looks fine and the local HTML is correct. Push that and CI fails at
+the first changed document containing R.
+
+That is the design working rather than a defect — `auto` was chosen over `true` precisely so a
+stale freeze fails loudly instead of silently publishing old figures (see the comment in
+`_quarto.yml`). It happened once, on 14 Aug 2026, to `what-demand-is.qmd`; the next commit's full
+render fixed it. Twenty-two documents here carry R chunks, so the exposure is wide.
+
+Before any commit that touches a `.qmd` with an R chunk:
+
+```
+quarto render && git status --short _freeze    # expect changes; commit them with the prose
+```
+
 ## Repo history
 
 This directory had **no `.git` until 11 Aug 2026.** It was copied from
