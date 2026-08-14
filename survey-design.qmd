@@ -210,7 +210,7 @@ In this approach, quantity is elicited at two meaningful anchors rather than acr
 The sequence is:
 
 1. Ask how many units the respondent would consume if the price were permanently \$0.
-2. Ask for the respondent’s maximum willingness to pay for one unit.
+2. Ask for the respondent’s maximum willingness to pay per unit.
 3. Ask how many units they would consume at that maximum price.
 
 ##### Design Notes

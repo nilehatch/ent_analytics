@@ -99,7 +99,7 @@ Before anyone can tell you what they would pay, both of you have to agree on wha
 
 A unit is not an accounting definition. It is a **cognitive** one: whatever the customer mentally counts when deciding whether to buy. That may or may not match how you would like to sell it.
 
-Ask someone what they would pay for your coffee and watch the question fall apart. A cup? A twelve-ounce bag of beans? A month of Tuesday deliveries? A year of them? Those answers differ by a factor of fifty, and a respondent who guesses wrong is not being careless. You asked an ambiguous question and they resolved the ambiguity however seemed natural, silently, without telling you which way they went.
+Ask someone what they would pay for your prepared meals and watch the question fall apart. One dinner? A week of them? A month on subscription? A year? Those answers span two orders of magnitude, and a respondent who guesses wrong is not being careless. You asked an ambiguous question and they resolved the ambiguity however seemed natural, silently, without telling you which way they went.
 
 The damage is worse than noise. Noise cancels; this does not. You end up with a column of numbers that look comparable and are answers to different questions, and nothing you do downstream can separate them again. The curve you fit will be perfectly smooth and describe nobody.
 
@@ -215,7 +215,7 @@ Economics has formal names for this distinction. What matters here is only that 
 ::: {.reflect}
 **Ask yourself — what is one, and over what period?**
 
-Write out the sentence a customer would actually be answering: *What is the most you would pay for one ______, per ______?*
+Write out the sentence a customer would actually be answering: *What is the most you would pay per ______, per ______?*
 
 Note the shape of that question before you fill it in. It asks for a maximum rather than a verdict on a price you name. *Would you pay forty dollars?* answered yes tells you only that this person sits somewhere above forty, and you never find out where. The most-you-would-pay version returns the point at which that person's own quantity moves from zero to one, which is the raw material a demand curve is built from. Price-testing questions have their place later, once you have a curve and a candidate price worth testing.
 

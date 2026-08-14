@@ -41,7 +41,7 @@ So before writing a single question: *is quantity fixed at one, or is quantity t
 
 The plain names used here have precise counterparts. A customer who buys at most one unit in the period is said to have **unit demand**, a term from auction and mechanism design; a customer who may buy several has **multi-unit demand**. Empirical economists cut the same distinction differently and speak of the **extensive margin**, whether someone participates at all, against the **intensive margin**, how much they buy given that they do. Yes/no demand varies only on the extensive margin. How-many demand varies on both, which is exactly why it takes more questions to pin down.
 
-It is worth seeing why the more familiar durable-versus-nondurable split does not do this job, since it is the first place most people reach. Durability is a property of the *good*. This distinction is a property of the *purchase decision inside the period you defined*, which means the same good can land on either side depending on a choice you made earlier. A car is yes/no demand over a year and how-many demand over twenty. A cup of coffee is how-many demand over a month and yes/no over the next hour.
+It is worth seeing why the more familiar durable-versus-nondurable split does not do this job, since it is the first place most people reach. Durability is a property of the *good*. This distinction is a property of the *purchase decision inside the period you defined*, which means the same good can land on either side depending on a choice you made earlier. A car is yes/no demand over a year and how-many demand over twenty. A sandwich is how-many demand over a month and yes/no over a single lunch break.
 
 That is not a defect in the categories. It is a consequence of the fact that quantity has no meaning until a period is fixed, and it is one more reason to settle the unit and the period before anything else.
 
@@ -66,9 +66,9 @@ There are two shapes a money question can take, and confusing them is the most c
 
 A yes here tells you that this person's boundary sits somewhere above forty dollars. It does not tell you where. Ask a hundred people the same thing and you have a hundred inequalities all pointing the same direction, from which a curve can be recovered only by varying the price across respondents and assuming a shape for the distribution. That is a real method, and it needs a much larger sample than you are likely to have.
 
-> *What is the most you would pay for one unit, per period?*
+> *What is the most you would pay per unit, per period?*
 
-This returns the boundary itself: the exact price at which that person's quantity moves from one to zero. One respondent, one point. Forty respondents, forty points, and the curve is built by counting rather than by fitting an assumption.
+This returns the boundary itself: the price above which that person buys nothing at all. One respondent, one point. Forty respondents, forty points, and the curve is built by counting rather than by fitting an assumption.
 
 Both questions are legitimate and they belong at opposite ends of the work. Eliciting a maximum is how you *build* a curve. Naming a price and asking for a yes is how you *test* one, later, after the curve exists and the arithmetic has proposed a price worth testing. Reaching for the test form early feels efficient and quietly costs you the thing you came for.
 
@@ -99,12 +99,31 @@ The cost is fatigue. You are asking one question repeatedly with a number change
 The alternative asks three questions that each require a different kind of thinking.
 
 > 1. *If this were permanently free, how many would you use per period?*
-> 2. *What is the most you would pay for one unit?*
+> 2. *What is the most you would pay per unit?*
 > 3. *At that price, how many would you use per period?*
 
 The first strips price out completely and asks about need and usage, which sets a collaborative frame and gives you a ceiling on consumption. The second is the boundary. The third finds the other end of the same person's demand.
 
 Two points and a cut-off define that respondent's individual demand: quantity falls from the free-consumption level down to the level at their maximum, and above their maximum they are gone entirely. Do that for everyone, add the individual curves together at each price, and you have a market demand curve assembled out of the respondents' own numbers.
+
+::: {.for-curious}
+<details>
+<summary>For the Curious — Why "per unit" and not "for one unit"</summary>
+
+The second question asks for the most someone would pay **per unit**, and the wording is deliberate. The natural alternative, *the most you would pay for one unit*, reads as the reservation price of a single item, and if that is what it meant then the answer to the third question would always be one: at a price exactly equal to what the first unit is worth to you, you take exactly that one. The third question would be redundant.
+
+It is not redundant, and the collected survey data says so. Respondents routinely report that they would still take several units at their maximum price. Two things account for it.
+
+**The period caps consumption before value runs out.** Somebody who would happily buy five lunches a week is not revealing that the sixth is worth less to them; they are revealing that there are only five working days. When the binding constraint is the calendar rather than diminishing value, quantity sits flat right up to the price ceiling and then stops.
+
+**Units are often inputs to a goal rather than ends in themselves.** Someone trying to reach a hundred grams of protein a day does not value a twenty-gram serving at a fifth of the goal. They need five, and the fifth is worth as much as the first, because four servings do not get them there. Where usage runs in fixed proportions like this, marginal value does not decline smoothly across the units at all.
+
+So $\mathsf{P_{max}}$ is a ceiling on the price *per unit*, not the value of one particular unit. At or below it they buy however many the period and the goal call for. Above it they buy none.
+
+That last sentence is what makes the individual demand curve drop to zero rather than tail off. It looks abrupt on a chart, and it is the economically correct shape: a per-unit ceiling exceeded does not make someone buy fewer, it makes them stop.
+
+</details>
+:::
 
 Two features of this deserve notice. The prices at which the market curve bends are the respondents' *own* maximum willingness to pay, so you never had to guess which prices to test. And the yes/no case turns out to be this same procedure with the quantities set to one: each person contributes a single unit below their boundary and nothing above it. *The two methods are one method.* Yes/no is what the anchor approach becomes when nobody can buy more than one.
 
