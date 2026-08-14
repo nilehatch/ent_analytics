@@ -9,10 +9,10 @@ subtitle: "*Shifting the parameters of competition*"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 Earlier chapters introduced the parameters that determine equilibrium outcomes in competitive markets.

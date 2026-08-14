@@ -10,10 +10,10 @@ subtitle: "Entry is a forecast about where competition settles"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 

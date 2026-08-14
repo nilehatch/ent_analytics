@@ -10,10 +10,10 @@ subtitle: "Rivals move on features, position, and commitment too"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 ## Structural Commitment Before Price

@@ -8,10 +8,10 @@ subtitle: "Deciding without seeing what your rival decided"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 

@@ -8,10 +8,10 @@ subtitle: "Turning what people told you into a curve you can reason with"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 Everything so far has been about learning: framing the question, designing evidence that could answer it, getting the right people to answer honestly.
@@ -109,7 +109,7 @@ It is worth pausing on why this works rather than accepting it as a trick. Each 
 #| fig-cap: "The empirical demand curve. Each step down is one respondent's maximum price."
 #| fig-align: center
 
-library(ggplot2); library(scales); library(ggthemes)
+library(ggplot2); library(scales)
 
 d <- tibble::tibble(wtp = wtp) |>
   count(wtp, name = "n_at") |>
@@ -123,7 +123,7 @@ steps <- tibble::tibble(
 )
 
 ggplot(steps, aes(price, quantity)) +
-  geom_step(direction = "hv", linewidth = 1.6, color = "RoyalBlue") +
+  geom_step(direction = "hv", linewidth = 1.6, color = itwd_demand) +
   geom_point(data = d, aes(wtp, quantity), size = 2.6, color = "black") +
   geom_segment(aes(x = 0, y = 6, xend = 12, yend = 6),
                linetype = "dotted", linewidth = 0.5) +
@@ -135,7 +135,7 @@ ggplot(steps, aes(price, quantity)) +
   scale_y_continuous(breaks = 0:12) +
   coord_cartesian(xlim = c(0, 21), ylim = c(0, 12.6), expand = FALSE) +
   labs(x = "Price", y = "Quantity") +
-  theme_hc()
+  theme_itwd()
 ```
 
 Notice what this object is. It is not a model and it contains no assumption about anybody who was not asked. Every step down is one respondent leaving. With twelve people the staircase is coarse; with two hundred it looks very nearly like a smooth curve, because it is the same construction with smaller steps.
@@ -201,7 +201,6 @@ Different shapes tell different stories, and the job is not to find the true one
 #| fig-align: center
 library(ggplot2)
 library(scales)
-library(ggthemes)
 library(tidyverse)
 
 # Price grid
@@ -251,7 +250,7 @@ ggplot(df, aes(x = Price, y = Quantity)) +
   coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
   scale_x_continuous(labels = label_dollar()) +
   scale_y_continuous(labels = label_comma()) +
-  theme_hc()
+  theme_itwd()
 ```
 **Linear** demand says sensitivity is constant: every dollar of price costs you the same number of units, wherever you are on the curve. Simple, familiar, and it implies unlimited demand as price approaches zero and negative demand at high prices. Over a narrow range around observed prices that rarely matters. Outside one, it does.
 
@@ -275,7 +274,6 @@ That is the honest argument for a functional form. Not that a statistic preferre
 library(tidyverse)
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
 set.seed(8)
 
@@ -393,7 +391,7 @@ ggplot(df, aes(x = Price, y = Quantity)) +
   coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
   scale_x_continuous(labels = label_dollar(), n.breaks = 6) +
   scale_y_continuous(labels = label_comma()) +
-  theme_hc()
+  theme_itwd()
 ```
 Each fit looks reasonable across the prices you actually observed. They diverge sharply outside that range, which is exactly where pricing decisions tend to live, and it is why the companion app fits all three rather than picking one for you.
 

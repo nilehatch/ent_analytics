@@ -103,11 +103,11 @@ This toolkit assumes you are looking at a profit curve that looks *like this*.
 #|   - "Three common shapes: impossible profit, fragile profit, and robust profit (illustrative)."
 
 library(tibble)
+source("R/theme-itwd.R")
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 
 col_pi  <- "#2F855A"   # profit green (your choice)
 col_ref <- "grey40"
@@ -237,9 +237,8 @@ plot_profit_shapes
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
-theme_use <- theme_hc()
+theme_use <- theme_itwd()
 
 # ---- Example functions (stand-ins for your app's funcs) ----
 max_price <- 1300
@@ -290,7 +289,7 @@ p_profit_only <- ggplot(df, aes(x = Price)) +
 # ---- Panel B: Overlay (Revenue, Cost, Profit) ----
 p_overlay <- ggplot(df, aes(x = Price)) +
   geom_hline(yintercept = 0, linewidth = 0.7, color = "grey35") +
-  geom_line(aes(y = Revenue), color = "royalblue", linewidth = 2) +
+  geom_line(aes(y = Revenue), color = itwd_demand, linewidth = 2) +
   geom_line(aes(y = Cost),    color = "tomato",   linewidth = 2) +
   geom_line(aes(y = Profit),  color = "forestgreen", linewidth = 2) +
   geom_vline(xintercept = P_star, linetype = "dashed", color = "black") +

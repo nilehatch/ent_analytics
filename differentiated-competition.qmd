@@ -9,10 +9,10 @@ subtitle: "*How differentiation preserves margin under rivalry*"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 
@@ -84,10 +84,9 @@ If we trace the peak of every slice of that surface, we obtain a new curve.
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 library(dplyr)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 col_zero <- "grey40"
 col_pi   <- "#2F855A"
 
@@ -354,9 +353,8 @@ When we plot both best-response functions on the same axes, there is a single in
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 col_pi <- "#2F855A"
 
 # -----------------------------
@@ -406,7 +404,7 @@ ggplot() +
   
   geom_line(data = df_i,
             aes(x = Pj, y = Pi),
-            color = "mediumblue",
+            color = itwd_demand,
             linewidth = 2) +
   
   geom_line(data = df_j,
@@ -663,9 +661,8 @@ The figure below shows how equilibrium price changes as differentiation increase
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 col_pi <- "purple"
 
 # Parameters (consistent with chapter)

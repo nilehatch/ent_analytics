@@ -9,10 +9,10 @@ subtitle: "*Substitution, price sensitivity, and experimental design in competit
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 In the previous chapters on competition, we analyzed profit by assuming a demand structure.

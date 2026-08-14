@@ -10,10 +10,10 @@ subtitle: "What You Choose, What You Commit"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 
@@ -331,7 +331,6 @@ In @fig-cost-structures, multiple ways of serving the same demand are shown. Eac
 
 library(tidyverse)
 library(scales)
-library(ggthemes)
 
 # Cost structures (edit freely)
 F1 <- 5000
@@ -394,7 +393,7 @@ ggplot(rev_bounds, aes(x)) +
   labs(x = "Quantity", y = "Total cost") +
   scale_y_continuous(labels = dollar_format()) +
   coord_cartesian(xlim = c(0, Qmax), ylim = c(0, 1200000), expand = FALSE) +
-  theme_hc()
+  theme_itwd()
 ```
 
 A crossing point is not a goal. It is a condition. Choosing a high–fixed-cost structure is a bet that demand will reach and remain above this level. Choosing a low–fixed-cost structure preserves flexibility if it does not.

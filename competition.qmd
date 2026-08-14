@@ -10,10 +10,10 @@ subtitle: "What changes when somebody else is selling too"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 
@@ -94,10 +94,9 @@ Profit is no longer a single curve you optimize in isolation. It becomes a surfa
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 library(dplyr)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 col_zero <- "grey30"
 col_pi  <- "#2F855A"
 
@@ -182,10 +181,9 @@ Next we fill in many more slices, revealing the surface.
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 library(dplyr)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 col_zero <- "grey40"
 col_pi   <- "#2F855A"
 

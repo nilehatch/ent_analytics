@@ -9,10 +9,10 @@ subtitle: "Seeing the Pre-Revenue Decision Clearly"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 
@@ -184,7 +184,6 @@ Both reflect demand that is too weak—but in fundamentally different ways.-->
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
 # -----------------------------
 # Common: demand as Q(P) with price on x-axis (your convention)
@@ -200,7 +199,7 @@ P_max <- 1300
 R <- function(P) P * Q(P)
 
 # Helper theme (matches your book's existing plot grammar)
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 
 # ============================================================
 # Panel A: Negative margins everywhere (variable cost too high)
@@ -220,7 +219,7 @@ plot_profit_impossible_margin <- ggplot() +
   geom_hline(yintercept = 0,linewidth = 0.6, linetype = "solid", color = "grey40") +    
   geom_function(fun = TC_A,xlim = c(P_min, P_max), linewidth = 2, color = "#C2410C") +
   geom_function(fun = VC_A,xlim = c(P_min, P_max), linewidth = 2, color = "#FB923C") +
-  geom_function(fun = R,   xlim = c(P_min, P_max), linewidth = 2, color = "RoyalBlue") +
+  geom_function(fun = R,   xlim = c(P_min, P_max), linewidth = 2, color = itwd_demand) +
   geom_function(fun = Pi_A,xlim = c(P_min, P_max), linewidth = 2, color = "#2F855A") +
   labs(x = "Price", y = "Dollars") +
   scale_x_continuous(labels = label_dollar(), n.breaks = 5, limits = c(0, 1249)) +
@@ -252,7 +251,7 @@ Pi_B <- function(P) R(P) - TC_B(P)
 
 plot_profit_impossible_fixed <- ggplot() +
   geom_hline(yintercept = 0,linewidth = 0.6, linetype = "solid", color = "grey40") +    
-  geom_function(fun = R,   xlim = c(P_min, P_max), linewidth = 2, color = "RoyalBlue") +
+  geom_function(fun = R,   xlim = c(P_min, P_max), linewidth = 2, color = itwd_demand) +
   geom_function(fun = VC_B,xlim = c(P_min, P_max), linewidth = 2, color = "#FB923C") +
   geom_function(fun = TC_B,xlim = c(P_min, P_max), linewidth = 2, color = "#C2410C") +
   geom_function(fun = Pi_B,xlim = c(P_min, P_max), linewidth = 2, color = "#2F855A") +
@@ -384,7 +383,6 @@ In the second, demand is strong, but fixed commitments are large. Contribution i
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
 # -----------------------------
 # Common conventions (match 12.1)
@@ -393,12 +391,12 @@ P_min <- 0
 P_max <- 1300
 
 # Revenue and cost colors (match your existing palette)
-col_rev <- "RoyalBlue"
+col_rev <- itwd_demand
 col_vc  <- "#FB923C"
 col_tc  <- "#C2410C"
 col_pi  <- "#2F855A"   # recommended profit green
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 
 
 # -----------------------------

@@ -10,10 +10,10 @@ subtitle: "Reasoning about choices that depend on another choice"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 Game theory is more than a theoretical construct or a toolkit for gamers to dominate at Monopoly; it's a critical framework for entrepreneurs navigating the competitive business landscape. It demystifies the complex process of strategic decision-making in an environment where outcomes are influenced not just by your actions, but also by the responses of competitors, partners, and customers.

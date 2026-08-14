@@ -8,10 +8,10 @@ subtitle: "A relationship between price and quantity, not a number and not a hop
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE)
+source("R/theme-itwd.R")
 ```
 
 
@@ -64,7 +64,7 @@ Q0 <- fQ1(P0)
 
 ggplot() +
   # Demand curve
-  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = "RoyalBlue") +
+  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
 
   # Dotted read-off guides (tied to the highlighted point)
   geom_segment(aes(x = 0,   y = Q0, xend = P0, yend = Q0),
@@ -86,7 +86,7 @@ ggplot() +
   scale_x_continuous(labels = label_dollar()) +
   scale_y_continuous(labels = label_comma()) +
 
-  theme_hc()
+  theme_itwd()
 ```
 
 Price runs along the horizontal axis and quantity up the vertical one. Read the marked point and it says that at a price of \$500, customers would buy 1,500 units.
@@ -174,7 +174,7 @@ C <- data.frame(P = 500, Q = fQ2(500), label = "C")
 
 
 plot_demand_change_along <- ggplot() +
-  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = "RoyalBlue") +
+  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
   geom_segment(aes(x = A$P, y = A$Q, xend = B$P-25, yend = B$Q+50),
                arrow = arrow(length = unit(0.16, "inches")),
                linewidth = 3, color = "black") +
@@ -185,14 +185,14 @@ plot_demand_change_along <- ggplot() +
   scale_x_continuous(labels = label_dollar(), n.breaks = 5) +
   scale_y_continuous(labels = label_comma()) +
   coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
-  theme_hc()
+  theme_itwd()
 
 ##################################
 
 
 plot_demand_change_between <- ggplot() +
-  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = "RoyalBlue") +
-  geom_function(fun = fQ2, xlim = c(0, 1250), linewidth = 2, color = "RoyalBlue") +
+  geom_function(fun = fQ1, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
+  geom_function(fun = fQ2, xlim = c(0, 1250), linewidth = 2, color = itwd_demand) +
   geom_segment(aes(x = A$P, y = A$Q, xend = C$P, yend = C$Q+75),
                arrow = arrow(length = unit(0.16, "inches")),
                linewidth = 3, color = "black") +
@@ -203,7 +203,7 @@ plot_demand_change_between <- ggplot() +
   scale_x_continuous(labels = label_dollar(), n.breaks = 5) +
   scale_y_continuous(labels = label_comma()) +
   coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
-  theme_hc()
+  theme_itwd()
 
 ##################################
 

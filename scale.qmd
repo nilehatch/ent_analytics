@@ -9,10 +9,10 @@ subtitle: "How Fixed Costs Force the Question"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 
@@ -466,7 +466,6 @@ With it, optimization becomes what it should be: a tool for stress-testing decis
 
 library(ggplot2)
 library(scales)
-library(ggthemes)
 
 # -----------------------------
 # Demand (sample) as Q(P)
@@ -505,14 +504,14 @@ P_min <- 0
 P_max <- 1300
 
 # Shared formatting helper (keeps visual grammar consistent)
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 
 # -----------------------------
 # Panel A: Scaling mistake
 # -----------------------------
 plot_scaling_mistake <- ggplot() +
   geom_function(fun = R_sample, xlim = c(P_min, P_max),
-                linewidth = 2, color = "RoyalBlue") +
+                linewidth = 2, color = itwd_demand) +
   geom_function(fun = C_sample, xlim = c(P_min, P_max),
                 linewidth = 2, color = "#C2410C") +
   labs(x = "Price", y = "Dollars") +
@@ -530,7 +529,7 @@ plot_scaling_mistake <- ggplot() +
 # -----------------------------
 plot_scaled_correctly <- ggplot() +
   geom_function(fun = R_pop, xlim = c(P_min, P_max),
-                linewidth = 2, color = "RoyalBlue") +
+                linewidth = 2, color = itwd_demand) +
   geom_function(fun = C_pop, xlim = c(P_min, P_max),
                 linewidth = 2, color = "#C2410C") +
   labs(x = "Price", y = "Dollars") +

@@ -9,10 +9,10 @@ subtitle: "*When structure becomes strategy*"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 Earlier chapters showed how structural commitments influence the parameters that determine equilibrium competition.

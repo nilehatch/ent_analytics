@@ -11,10 +11,10 @@ number-sections: false
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 In a perfectly competitive world, businesses would focus solely on cost efficiency and price competition, with the market ensuring that every firm’s self-interest leads to the common good. But the reality of entrepreneurial competition is much more complex. Entrepreneurs don’t just participate in markets—they shape them, making strategic choices that *redefine value*, *influence rivals*, and *shift industry dynamics*.

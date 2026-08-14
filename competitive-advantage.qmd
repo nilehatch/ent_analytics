@@ -9,10 +9,10 @@ subtitle: "*From measured demand to durable advantage*"
 #| include: false
 library(tidyverse)
 #library(readxl)
-library(ggthemes)
 library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
+source("R/theme-itwd.R")
 ```
 
 
@@ -350,11 +350,10 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(scales)
-library(ggthemes)
 
-base_theme <- theme_hc()
+base_theme <- theme_itwd()
 col_pi <- "#2F855A"
-col_p <- "mediumblue"
+col_p <- itwd_demand
 col_zero <- "grey50"
 
 # ---------------------------------------------------------
