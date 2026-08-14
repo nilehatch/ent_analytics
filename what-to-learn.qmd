@@ -66,3 +66,24 @@ Run both filters on a real pre-revenue decision and they land in the same place 
 Costs can generally be estimated within a workable range, because you control them. Competitive responses can often be bracketed: assume something reasonable and unfavorable, then check whether the decision survives it. Operational problems are real, and they are mostly problems of execution, which is a later question than whether the thing is worth executing at all.
 
 What is left is demand. It blocks the decision, and it can be learned. That combination is uncommon enough to be worth the trouble of going out and running a real experiment on it.
+
+## Putting It to Work
+
+::: {.reflect}
+**Ask yourself — which unknown is both?**
+
+Write down everything you do not know about the decision in front of you. Do not curate the list; get it all down, including the items that feel too obvious or too large to be useful.
+
+Now run the first filter. Cross off anything whose answer would leave you doing the same thing either way. However interesting those items are, they are not blocking you.
+
+Run the second filter on what survives. For each one, ask whether a week of honest effort could actually reduce it. Some cannot be reduced at any price, and those you carry rather than chase.
+
+Whatever clears both filters is your work. If several do, the one that would be cheapest to learn goes first. If nothing does, look again at the first filter, because a decision blocked by nothing learnable is usually a decision you have already made and have not admitted to yet.
+:::
+
+::: {.key-action}
+**The move:** Work the unknown that is both blocking and learnable. Everything else on the list is a distraction or a fact of life, and telling those two apart is most of the discipline.
+:::
+
+For most pre-revenue decisions the filters land on demand, which is why the next several chapters do nothing else. Learning it deliberately begins with being precise about what demand actually is, because the word carries at least four meanings in ordinary use and only one of them can be estimated.
+

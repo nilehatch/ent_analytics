@@ -110,3 +110,26 @@ Saying that demand is the unknown does not yet tell you how to learn it. Unpack 
 Those four layers are the order of this book, and they are also the order to work in. Most of the wasted effort in early ventures is work done on a lower layer while a higher one is still open: cost models refined before anyone knows whether a viable price exists, competitive analysis run against a demand curve nobody has estimated, market sizing performed on a customer who has not been identified. The work is real and the sequence is wrong, so none of it settles anything.
 
 Get the order right and every piece of work you do has something solid underneath it.
+
+## Putting It to Work
+
+::: {.reflect}
+**Ask yourself — where is your own q?**
+
+Take the decision you brought to this book and write down four things.
+
+The price you would charge. That is $\mathsf{p}$, and you just chose it in a few seconds.
+
+What one unit costs you to make and deliver. That is $\mathsf{c}$. Estimate it if you have to; the point is that you could find out this afternoon.
+
+What you must spend before anyone buys anything at all. That is $\mathsf{f}$, and you chose the size of it.
+
+Now the quantity. Notice that you cannot write it, and that no amount of thinking will produce it. If you wrote a number anyway, ask where it came from: evidence, or the figure the arithmetic needed in order to work.
+:::
+
+::: {.key-action}
+**The move:** Three of the four terms are already yours. Spend your effort on the one that is not.
+:::
+
+That last question is the uncomfortable one, and most people have never been asked it. The reason has less to do with carelessness than with the instruments everyone is handed, which turn out to have been built by people who already knew their quantity, or who never needed to.
+

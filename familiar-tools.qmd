@@ -114,6 +114,24 @@ You are the residual claimant. Not the industry, not the portfolio, not the mark
 
 So you will have to find it yourself.
 
+## Putting It to Work
+
+::: {.reflect}
+**Ask yourself — where did your number come from?**
+
+Think back to the last time you tried to work out whether something was worth doing, and name what you reached for. A spreadsheet. A market size someone quoted you. A canvas on a wall. A slide with five years of revenue on it.
+
+Whichever it was, find the place where quantity entered it. There is always one, because a profit figure cannot be produced without it.
+
+Then ask the only question that matters about that number. Was it estimated from something, or assumed so the rest could be calculated? If somebody handed it to you, ask what they were going to do with your answer. An investor, a lender, and a landlord all need something different from you, and none of them needs what you need.
+:::
+
+::: {.key-action}
+**The move:** Before you trust any framework, find where quantity enters it. If it was assumed rather than learned, the framework did not answer your question — it restated it in a form that looked settled.
+:::
+
+Finding that number is the rest of this book. Before going after it, though, there is a prior question that decides whether you should go after it at all right now, because quantity is not always the thing standing between you and the decision in front of you.
+
 [^porter]: The original statement of the framework is @porter79.
 
 [^bmc]: The canvas is laid out in @osterwalder-pigneur10.
