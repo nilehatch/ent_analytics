@@ -43,24 +43,25 @@ None of which makes margin useless. Once scale exists and commitments are covere
 
 Many readers will have met this argument under a more modern name, and it deserves placing rather than ignoring.
 
-**Unit economics** asks whether a single customer pays for itself, usually by setting the contribution that customer produces against what it cost to acquire them. That is a real improvement on plain margin, because it pulls acquisition cost inside the unit, and acquisition cost is exactly what margin analysis habitually forgets. It is also the cost your [response rate](executing-experiments.qmd) was already telling you about.
+**Unit economics** asks whether a single transaction pays for itself: the direct revenues and costs of the thing you actually sell, counted per unit. There is real evidence that attending to it matters. Tidhar, Hallen and Eisenhardt followed three matched pairs of new firms in online fashion for close to a decade, one of each pair growing into a mature firm while its counterpart stalled, and found that the ones that made it began with focused attention on unit profitability rather than on growth [@tidhar-hallen-eisenhardt25].
 
 ::: {.column-margin .def-margin}
-**Unit economics** — whether one customer pays for itself, acquisition cost included. A necessary condition, and not a sufficient one.
+**Unit economics** — the direct revenues and costs of one transaction. Distinct, in the study that establishes it, from profitability at the level of the firm.
 :::
 
-Notice what it still cannot see. Unit economics establishes that $\mathsf{p}$ exceeds $\mathsf{c}$, which is necessary and is not the question this book is asking. It is silent about $\mathsf{f}$, because $\mathsf{f}$ does not live in a unit. A venture where every customer pays for itself can still fail to cover what was committed before any of them arrived.
+Two findings in that study are worth carrying, because both arrive at conclusions this book has already reached from another direction.
 
-That is a boundary on the idea rather than a flaw in it. Unit economics grew out of businesses where fixed costs are genuinely small beside variable ones: software, marketplaces, direct-to-consumer with the manufacturing rented. In that world the binding constraint really is per-customer, and the framework is not merely useful but correct. Carry it into a business with a building, a plant, a clinic, or a regulatory approval to obtain, and it will report cheerfully that things are fine while the commitment goes uncovered.
+The first is what attending to unit profitability did to their *learning*: it broadened it. Making a transaction pay requires understanding every part of it, so those firms ended up learning about shipping, returns, theft, inventory and the hours a stylist spends, while the peers who focused on growth learned mostly about whether customers liked the product. That is the [trigger question](cost.qmd) from the previous chapter, found independently: you discover costs by walking through what actually happens, not by reading down a category list.
 
-<!-- NWH (16 Aug 2026) reports confidence that focusing on unit economics is
-     associated with higher probability of success and of unicorn outcomes,
-     citing Eisenhardt and former students at Stanford. No such reference is in
-     references.bib and I could not identify the specific paper, so the
-     empirical claim is deliberately NOT made here. Supply the cite and it
-     belongs in a .for-curious alongside this section. -->
+The second is what they did about growth, which was to delay it deliberately. Waiting lists, invitations, no paid marketing, while the peers bought advertising. That is [the timing argument](cost.qmd) arriving from a completely different direction, and it is the more striking of the two because it contradicts what founders are usually told.
 
-So it is a screen rather than a verdict. It rules out the ventures that lose money on every sale, which is worth doing early and cheaply. What it cannot tell you is whether enough sales exist, which is what the last two chapters were for.
+So why does this chapter still hold profit apart from margin?
+
+Because the authors do. They define unit profitability as distinct from profitability at the level of the firm, and that distinction is the one this book has been building toward. Unit economics tells you whether the transaction works. It is silent about $\mathsf{f}$, because $\mathsf{f}$ is not part of any transaction. It is what you owed before the first one happened.
+
+Their own boundary cases make the point better than an argument would. A famous retailer that lost money at the firm level for years while its individual transactions were profitable early fits their theory comfortably. Ventures sustained by investors willing to subsidize prolonged losses do not, and the authors say so plainly.
+
+Which leaves the two doing different jobs, neither substituting for the other. A venture whose every transaction pays for itself can still fail to cover what was committed before any of them arrived. And a venture whose transactions do not pay cannot be rescued by volume, which is what a venture capitalist quoted in that study meant: "Growth solves many problems, but unit economics is not one of them."
 
 ## Profit Is Not Growth
 
