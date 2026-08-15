@@ -85,84 +85,88 @@ That choice does more than move profit up or down. It decides how much risk you 
 
 Two ventures can face identical demand at identical prices and present completely different decisions. The high-fixed, low-variable structure looks better whenever demand shows up, because margins are wide and profit accumulates fast. The condition attached to that upside is easy to skip past: demand has to be large enough and reliable enough. High fixed costs concentrate risk, making outcomes acutely sensitive to errors in your demand estimate, your price, or your timing. Low fixed costs spread it, capping the upside and also the damage.
 
-@fig-cost-structures shows several ways of serving the same demand, each a different commitment profile.
+Two structures make the choice concrete. One keeps commitments small and pays more per unit; the other buys a lower per-unit cost by committing up front. Move the sliders and watch where each one wins.
 
-```{r}
-#| label: fig-cost-structures
-#| echo: false
-#| warning: false
-#| fig-cap: "Cost Structure Is a Choice About Risk: Each curve shows total cost C(q) = f + cq for a different combination of fixed and variable costs. No structure is universally better — each becomes preferable only at sufficient scale."
-#| fig-cap-location: margin
-
-#% Cost structure choice depends on scale: different fixed/variable mixes dominate at different quantities."
-
-library(tidyverse)
-library(scales)
-
-# Cost structures (edit freely)
-F1 <- 5000
-F2 <- 50000
-F3 <- 500000
-
-c1 <- 300
-c2 <- 200
-c3 <- 100
-
-fTC1 <- function(Q) F1 + c1 * Q
-fTC2 <- function(Q) F2 + c2 * Q
-fTC3 <- function(Q) F3 + c3 * Q
-
-# Crossing points (where TC_i == TC_j)
-Q12 <- (F2 - F1) / (c1 - c2)
-Q23 <- (F3 - F2) / (c2 - c3)
-
-# y-values at crossings for vertical guide lengths
-TC12 <- fTC1(Q12)
-TC23 <- fTC2(Q23)
-
-# Plot range
-Qmax <- 7000
-rev_bounds <- tibble(x = c(0, Qmax))
-
-# Helper data for direct labels placed near the right edge
-labels_df <- tibble(
-  Q = c(3600, 3100, 6300),
-  label = c("Cost structure 1\n(low f, high c)",
-            "Cost structure 2\n(moderate f, moderate c)",
-            "Cost structure 3\n(high f, low c)"),
-  TC = c(fTC1(3600), fTC2(3100), fTC3(6300))
-)
-
-ggplot(rev_bounds, aes(x)) +
-  # Vertical guides at crossing points
-  geom_segment(aes(x = Q12, y = 0, xend = Q12, yend = TC12),
-               linetype = "dotted", linewidth = 0.5, color = "black") +
-  geom_segment(aes(x = Q23, y = 0, xend = Q23, yend = TC23),
-               linetype = "dotted", linewidth = 0.5, color = "black") +
-
-  # Total cost curves (grayscale + distinct linetypes)
-  geom_function(fun = fTC1, linewidth = 1.8, color = "#FB923C", linetype = "solid") +
-  geom_function(fun = fTC2, linewidth = 1.8, color = "#C2410C", linetype = "solid") + # longdash
-  geom_function(fun = fTC3, linewidth = 1.8, color = "#7F1D1D", linetype = "solid") + # dotdash
-
-  # Direct labels on curves (avoids legend problems)
-  geom_label(data = labels_df, aes(x = Q, y = TC, label = label),
-             hjust = 0.5, size = 3, label.size = 0.2, fill = "white") +
-
-  # Crossing annotations (kept minimal and readable)
-  annotate("label", x = Q12 + 250, y = 40000,
-           label = paste0("Crossing at Q ≈ ", comma(round(Q12))),
-           hjust = 0, label.size = 0.2, size = 3, fill = "white") +
-  annotate("label", x = Q23 + 250, y = 40000,
-           label = paste0("Crossing at Q ≈ ", comma(round(Q23))),
-           hjust = 0, label.size = 0.2, size = 3, fill = "white") +
-
-  labs(x = "Quantity", y = "Total cost") +
-  scale_y_continuous(labels = dollar_format()) +
-  coord_cartesian(xlim = c(0, Qmax), ylim = c(0, 1200000), expand = FALSE) +
-  theme_itwd()
+```{ojs}
+//| echo: false
+viewof fB = Inputs.range([20000, 150000], {value: 50000, step: 5000,
+             label: "Commitment (fixed cost)"})
+viewof cB = Inputs.range([120, 290], {value: 200, step: 10,
+             label: "Its cost per unit"})
+viewof qExp = Inputs.range([0, 1500], {value: 300, step: 25,
+             label: "Quantity you expect"})
 ```
-Where those lines cross is not a target. It is a condition. Picking the high-commitment structure is a bet that demand will arrive at that scale and stay there; picking the low-commitment one keeps you solvent if it does not.
+
+```{ojs}
+//| echo: false
+// Structure A stays fixed: small commitment, higher cost per unit.
+fA = 5000
+cA = 300
+tcA = q => fA + cA * q
+tcB = q => fB + cB * q
+qStar = cA > cB ? (fB - fA) / (cA - cB) : Infinity
+qMax = 1500
+qs = d3.range(0, qMax + 1, 5)
+
+Plot.plot({
+  width: 700, height: 420, marginLeft: 78, marginBottom: 46, marginRight: 100,
+  style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
+  x: {domain: [0, qMax], label: "Quantity \u2192", tickFormat: d3.format(","),
+      labelAnchor: "right"},
+  y: {domain: [0, 520000], label: "\u2191 Total cost",
+      tickFormat: d => `$${d3.format(",.0f")(d)}`, grid: true, labelAnchor: "top"},
+  marks: [
+    // Shade ONLY the region where committing wins. Two warm tints either side
+    // of the crossing made the boundary disappear; one shaded side and one
+    // clear side reads as a threshold, which is what it is.
+    Plot.rect([{x1: Math.min(qStar, qMax), x2: qMax}],
+              {x1: "x1", x2: "x2", y1: 0, y2: 520000, fill: "#D9541A", fillOpacity: 0.10}),
+    Plot.text([{x: Math.min(qStar, qMax) + (qMax - Math.min(qStar, qMax)) / 2}],
+              {x: "x", y: 30000, text: () => "committing is cheaper here",
+               fill: "#9A4A1E", fontSize: 11, textAnchor: "middle"}),
+
+    Plot.line(qs.map(q => ({q, c: tcA(q)})),
+              {x: "q", y: "c", stroke: "#F0913F", strokeWidth: 2.5}),
+    Plot.line(qs.map(q => ({q, c: tcB(q)})),
+              {x: "q", y: "c", stroke: "#D9541A", strokeWidth: 2.5}),
+
+    Plot.text([{q: qMax, c: tcA(qMax)}], {x: "q", y: "c", dx: 8, dy: -4,
+              text: () => "stay flexible", fill: "#F0913F", textAnchor: "start", fontSize: 12}),
+    Plot.text([{q: qMax, c: tcB(qMax)}], {x: "q", y: "c", dx: 8, dy: 10,
+              text: () => "commit", fill: "#D9541A", textAnchor: "start", fontSize: 12}),
+
+    // the crossover: the quantity at which the commitment pays for itself
+    qStar < qMax ? Plot.ruleX([qStar], {y1: 0, y2: tcA(qStar),
+              stroke: "#1F2937", strokeDasharray: "3,3"}) : null,
+    qStar < qMax ? Plot.dot([{q: qStar, c: tcA(qStar)}],
+              {x: "q", y: "c", r: 5, fill: "#1F2937", stroke: "white", strokeWidth: 2}) : null,
+
+    // where you actually expect to be
+    Plot.ruleX([qExp], {stroke: "#2563EB", strokeWidth: 2, strokeOpacity: 0.55}),
+    Plot.text([{q: qExp}], {x: "q", y: 495000, text: () => "expected",
+              fill: "#2563EB", fontSize: 11, textAnchor: "middle"}),
+    Plot.ruleY([0], {stroke: "#E1E6E3"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<p style="margin-top:.4rem;color:#4A5751">
+The commitment pays for itself at <strong>${qStar === Infinity ? "no quantity"
+  : d3.format(",.0f")(qStar) + " units"}</strong>.
+At the ${d3.format(",")(qExp)} units you expect, committing
+${tcB(qExp) < tcA(qExp)
+  ? `saves <strong>$${d3.format(",.0f")(tcA(qExp) - tcB(qExp))}</strong>.`
+  : `costs you <strong>$${d3.format(",.0f")(tcB(qExp) - tcA(qExp))}</strong> more than staying flexible.`}
+</p>`
+```
+
+The dotted line is the whole decision. To the left of it the flexible structure is cheaper; to the right the commitment is. That crossing quantity is what the commitment actually costs, expressed in the only currency that matters here, which is how much demand you need before it starts paying.
+
+So put your demand estimate on that axis. If the quantity you can defend from evidence sits comfortably to the right, the commitment is buying you something you will use. If it sits to the left, or straddles the line, you would be paying for efficiency at a scale you have not yet shown exists. Notice too what the sliders do to the crossing: a bigger commitment pushes it right, and a deeper cut in unit cost pulls it left. Those two move in opposition, which is why "we will make it up on volume" is a claim about a specific quantity rather than a mood.
+
+This is the timing point made visible. Nothing about the commitment structure is wrong. It is wrong *early*, when the demand that would justify it is still a hope, and it stays wrong until evidence moves your expected quantity past the crossing.
 
 ## Break-Even Is a Constraint, Not a Target
 
