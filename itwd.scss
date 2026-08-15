@@ -2,7 +2,7 @@
 
 // itwd.scss — Bootstrap variable overrides for Is This Worth Doing?
 //
-// Three layers of styling, and they do not overlap:
+// Four layers of styling, and they do not overlap:
 //
 //   cosmo            the Bootstrap theme Quarto ships
 //   itwd.scss        THIS FILE: compile-time Bootstrap variables, so the
@@ -20,11 +20,39 @@
 // blue, so the mismatch is only a hint. This book is green, and a blue
 // highlight against a green heading reads as a mistake because it is one.
 //
-// Values match custom_itwd.css. Change both together or neither.
+// THE NAV GREEN IS NOT THE BANNER GREEN, AND MUST NOT BE.
+//
+// These two greens do opposite jobs, so they sit at opposite ends of the
+// lightness range, and the mechanisms are independent: the banner reads
+// --brand-primary from custom_itwd.css at runtime, while Bootstrap compiles
+// $primary here. Changing one does not touch the other.
+//
+//   banner   dark ground carrying WHITE text, so it must be dark
+//            --brand-primary #146B45, L 24.9%
+//   nav      coloured text on a WHITE ground, sitting beside near-black body
+//            text, so it must be light enough to look highlighted
+//            $primary #298E5C, L 35.9%
+//
+// The first attempt set $primary to the banner pine and produced a highlight
+// DARKER than the text it was meant to stand out from: active #0F5636 at
+// L 19.8% against Cosmo's body text #343a40 at L 22.7%. Nile reported it as
+// "very close to black, hard to tell the difference between highlighted
+// choices and non-highlighted ones", which is exactly what a negative
+// lightness delta looks like.
+//
+// Cosmo's own blue gets a 30-point lightness jump over the body text. Green is
+// perceptually brighter than blue, so it cannot climb that far and still stay
+// readable on white; #298E5C takes 13 points and makes up the rest on hue,
+// which is a large shift against a neutral grey. Its contrast on white is
+// 4.10:1, slightly better than the 3.97:1 of the Bootstrap blue it replaces.
+//
+// If you change this value, check three things: contrast on white at or above
+// 4:1, lightness at least 10 points above #343a40, and that it still reads as
+// the same hue family as the banner.
 
-$primary:           #146B45;   // pine, matching --brand-primary
-$link-color:        #0F5636;   // slightly deeper, so links read as ink-with-intent
-$link-hover-color:  #0B3D26;   // --brand-primary-dark
+$primary:           #298E5C;   // nav highlights, links, focus rings
+$link-color:        #248053;   // links in body text, a shade steadier
+$link-hover-color:  #146B45;   // resolves to the banner pine on hover
 
 // Cosmo derives focus rings and active states from $primary, so those follow
 // automatically. Body text and headings are set by base.css through the brand
