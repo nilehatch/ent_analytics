@@ -60,99 +60,86 @@ Fixed costs do not care who adopts. They care how many do.
 
 Which is why early evidence cannot give you a penetration rate, however encouraging it looks. *Thirty percent of the people we interviewed said they would buy* is a statement about thirty percent of the people you could find, who were more motivated, better informed, more tolerant of friction, and more forgiving than the population behind them. That does not make the evidence useless. It makes it **local**.
 
-Scaling a local result up to a population is the error in @fig-scaling-mismatch-1, where demand measured on a sample is asked to carry costs incurred at population scale and revenue never catches up. @fig-scaling-mismatch-2 puts the two on the same footing. Nothing about the business changed between those panels. Only the units did, and the first version looks like a verdict.
+Scaling a local result up to a population is the commonest way this goes wrong, and it is worth seeing on one picture.
 
-```{r}
-#| label: fig-scaling-mismatch
-#| echo: false
-#| warning: false
-#| layout-ncol: 2
-#| cap-location: bottom
-#| fig-cap:
-#|   - "The scaling mistake: sample demand is asked to carry population-level fixed costs (revenue never catches cost)."
-#|   - "Demand on the correct scale: rescaling demand to the target population puts revenue and cost on comparable terms."
+The axis below is **quantity**, not price. That is deliberate: cost is a function of how much you make, so plotted this way your cost structure is a single straight line whose intercept is the commitment $\mathsf{f}$ and whose slope is the cost per unit $\mathsf{c}$, exactly as [the previous chapter](cost.qmd) wrote it. That line never moves in what follows. The only thing the slider changes is how many customers exist to travel along it.
 
-library(ggplot2)
-library(scales)
-
-# -----------------------------
-# Demand (sample) as Q(P)
-# -----------------------------
-# Linear demand in *quantity as a function of price* (your convention)
-a <- 2500
-b <- -2
-Q_sample <- function(P) pmax(0, a + b * P)   # clamp at 0 so it doesn't go negative
-
-# -----------------------------
-# Scale factor: population vs sample
-# -----------------------------
-# Think of this as (accessible target population / sample size) times any other scaling logic you use.
-k <- 12
-Q_pop <- function(P) k * Q_sample(P)
-
-# -----------------------------
-# Cost structure (population-level fixed cost + per-unit variable cost)
-# -----------------------------
-F <- 1000000
-c <- 200
-C_of_Q <- function(Q) F + c * Q
-
-# Express cost as a function of price using demand: C(P) = F + c*Q(P)
-C_sample <- function(P) C_of_Q(Q_sample(P))
-C_pop    <- function(P) C_of_Q(Q_pop(P))
-
-# -----------------------------
-# Revenue as a function of price: R(P) = P * Q(P)
-# -----------------------------
-R_sample <- function(P) P * Q_sample(P)
-R_pop    <- function(P) P * Q_pop(P)
-
-# Plot range for price
-P_min <- 0
-P_max <- 1300
-
-# Shared formatting helper (keeps visual grammar consistent)
-base_theme <- theme_itwd()
-
-# -----------------------------
-# Panel A: Scaling mistake
-# -----------------------------
-plot_scaling_mistake <- ggplot() +
-  geom_function(fun = R_sample, xlim = c(P_min, P_max),
-                linewidth = 2, color = itwd_demand) +
-  geom_function(fun = C_sample, xlim = c(P_min, P_max),
-                linewidth = 2, color = "#C2410C") +
-  labs(x = "Price", y = "Dollars") +
-  scale_x_continuous(labels = label_dollar(), n.breaks = 5, limits = c(0,1249)) +
-  scale_y_continuous(labels = label_dollar(), limits = c(0,10000000)) +
-  coord_cartesian(xlim = c(P_min, P_max), expand = FALSE) +
-  base_theme +
-  annotate("label",
-           x = 850, y = max(C_sample(seq(P_min, P_max, length.out = 200))) + 1000000 * 0.92,
-           label = "Sample revenue\nvs population fixed costs",
-           size = 4, label.size = 0.2, fill = "white")
-
-# -----------------------------
-# Panel B: Demand scaled to population
-# -----------------------------
-plot_scaled_correctly <- ggplot() +
-  geom_function(fun = R_pop, xlim = c(P_min, P_max),
-                linewidth = 2, color = itwd_demand) +
-  geom_function(fun = C_pop, xlim = c(P_min, P_max),
-                linewidth = 2, color = "#C2410C") +
-  labs(x = "Price", y = "Dollars") +
-  scale_x_continuous(labels = label_dollar(), n.breaks = 5, limits = c(0,1249)) +
-  scale_y_continuous(labels = label_dollar(), limits = c(0,10000000)) +
-  coord_cartesian(xlim = c(P_min, P_max), expand = FALSE) +
-  base_theme +
-  annotate("label",
-           x = 850, y = max(C_pop(seq(P_min, P_max, length.out = 200))) * 0.92,
-           label = "Revenue and cost\non comparable scale",
-           size = 4, label.size = 0.2, fill = "white")
-
-plot_scaling_mistake
-plot_scaled_correctly
+```{ojs}
+//| echo: false
+viewof kScale = Inputs.range([1, 12], {value: 1, step: 0.5,
+  label: "Population, as a multiple of your sample"})
 ```
+
+```{ojs}
+//| echo: false
+Ffix = 1000000
+cVar = 200
+cost = q => Ffix + cVar * q
+
+// Sample demand Q = 2500 - 2P, so inverse demand P = (2500k - Q) / 2k
+// and revenue R(Q) = Q * P(Q). Scaling multiplies the whole curve by k.
+rev = q => q * (2500 * kScale - q) / (2 * kScale)
+qCap = 2500 * kScale
+
+// break-even where R(Q) = C(Q):  Q^2 - 2100kQ + 2000000k = 0
+disc = 2100 * kScale * (2100 * kScale) - 4 * 2000000 * kScale
+be = disc > 0
+  ? [(2100 * kScale - Math.sqrt(disc)) / 2, (2100 * kScale + Math.sqrt(disc)) / 2]
+  : null
+
+qs = d3.range(0, qCap + 1, Math.max(5, qCap / 400))
+
+Plot.plot({
+  width: 700, height: 430, marginLeft: 86, marginBottom: 46, marginRight: 92,
+  style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
+  x: {domain: [0, 31000], label: "Quantity \u2192", tickFormat: d3.format(","),
+      labelAnchor: "right"},
+  y: {domain: [0, 10000000], label: "\u2191 Dollars",
+      tickFormat: d => `$${d3.format(".2s")(d).replace("G","B")}`,
+      grid: true, labelAnchor: "top"},
+  marks: [
+    be ? Plot.rect([{x1: be[0], x2: Math.min(be[1], qCap)}],
+          {x1: "x1", x2: "x2", y1: 0, y2: 10000000, fill: "#2F855A", fillOpacity: 0.08}) : null,
+    be ? Plot.text([{x: (be[0] + Math.min(be[1], qCap)) / 2}],
+          {x: "x", y: 9400000, text: () => "revenue covers cost here",
+           fill: "#2F855A", fontSize: 11, textAnchor: "middle"}) : null,
+
+    // the cost structure: ONE line, unchanged by anything the slider does
+    Plot.line(d3.range(0, 31001, 250).map(q => ({q, y: cost(q)})),
+              {x: "q", y: "y", stroke: "#C2410C", strokeWidth: 2.5}),
+    Plot.text([{q: 30500, y: cost(30500)}], {x: "q", y: "y", dx: 6, dy: -6,
+              text: () => "total cost", fill: "#C2410C", textAnchor: "start", fontSize: 12}),
+    Plot.dot([{q: 0, y: Ffix}], {x: "q", y: "y", r: 4, fill: "#C2410C"}),
+    Plot.text([{q: 0, y: Ffix}], {x: "q", y: "y", dx: 6, dy: -12,
+              text: () => "f", fill: "#C2410C", fontSize: 12, textAnchor: "start"}),
+
+    Plot.line(qs.map(q => ({q, y: rev(q)})),
+              {x: "q", y: "y", stroke: "#2563EB", strokeWidth: 2.5}),
+    Plot.text([{q: qCap * 0.5, y: rev(qCap * 0.5)}], {x: "q", y: "y", dy: -14,
+              text: () => "revenue", fill: "#2563EB", fontSize: 12, textAnchor: "middle"}),
+    Plot.ruleY([0], {stroke: "#E1E6E3"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<p style="margin-top:.4rem;color:#4A5751">
+At ${kScale}\u00d7 your sample, the best revenue available is
+<strong>$${d3.format(",.0f")(rev(1250 * kScale))}</strong> against a cost of
+<strong>$${d3.format(",.0f")(cost(1250 * kScale))}</strong> at that quantity.
+${be
+ ? `Revenue covers cost between <strong>${d3.format(",.0f")(be[0])}</strong> and
+    <strong>${d3.format(",.0f")(Math.min(be[1], qCap))}</strong> units.`
+ : `<span style="color:#A33A2A">The revenue curve never reaches the cost line. No price
+    works, because there are not enough customers to reach one.</span>`}
+</p>`
+```
+
+Start at one and the revenue curve is a small hump near the origin while the cost line climbs steadily away from it. Nothing is wrong with the cost structure and nothing is wrong with the demand; the sample simply does not contain enough people to pay for a commitment sized for a population. Push the slider up and the hump grows until it finally rises through the cost line, and the two crossings are the quantities between which this venture works at all.
+
+Somewhere around one and a half to two times the sample, the curve first touches the line. Below that there is no price and no effort that helps. That threshold is not a forecast about the market. It is a fact about the commitment, and it was available before anything was spent.
+
 ## The Penetration Your Commitments Require
 
 Here is the part that turns all of this into a number.
