@@ -185,8 +185,14 @@ Plot.plot({
   y: {domain: [0, nresp * 1.06], label: "\u2191 Quantity", tickFormat: d3.format(","),
       grid: true, labelAnchor: "top"},
   marks: [
+    // The line only connects; the DOTS are the data. Each one is a price
+    // somebody actually named, sitting at the running count for that price.
+    // The static figure above carries the same dots and they matter more than
+    // the line, so they are drawn on top with a white ring to stay legible.
     Plot.line(staircase, {x: "wtp", y: "quantity", curve: "step-before",
-                          stroke: "#2563EB", strokeWidth: 2.5}),
+                          stroke: "#2563EB", strokeWidth: 2}),
+    Plot.dot(staircase, {x: "wtp", y: "quantity", r: nresp > 80 ? 2.8 : 4,
+                         fill: "#1F2937", stroke: "white", strokeWidth: 1.5}),
     Plot.ruleY([0], {stroke: "#E1E6E3"})
   ]
 })
@@ -195,9 +201,10 @@ Plot.plot({
 ```{ojs}
 //| echo: false
 html`<p style="margin-top:.4rem;color:#6B7280;font-size:.9rem">
-${nresp} respondents. The first twelve are the real answers from the table above;
-the rest are simulated from the same shape, to show what more evidence would do
-to the staircase.</p>`
+${nresp} respondents. Each dot is one price somebody named, and the line only
+joins them up. The first twelve are the real answers from the table above; the
+rest are simulated from the same shape, to show what more evidence would do to
+the staircase.</p>`
 ```
 
 
