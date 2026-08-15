@@ -1,6 +1,14 @@
 project:
   type: book
   output-dir: _book
+  # Mirrors references.bib to the Better BibTeX auto-export at
+  # ~/Documents/bibs/zotero.bib for every cited key: appends what is missing,
+  # refreshes what Zotero has changed, and leaves everything else byte-for-byte
+  # (including this book's large legacy bib, inherited from ent_analytics).
+  # Absent master (CI, fresh clone) => notice and exit 0. Same script as
+  # Expeditionary Innovation. See scripts/sync-refs.py.
+  pre-render:
+    - scripts/sync-refs.py
 
 book:
   title: "Is This Worth Doing?"

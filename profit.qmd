@@ -43,7 +43,7 @@ None of which makes margin useless. Once scale exists and commitments are covere
 
 Many readers will have met this argument under a more modern name, and it deserves placing rather than ignoring.
 
-**Unit economics** asks whether a single transaction pays for itself: the direct revenues and costs of the thing you actually sell, counted per unit. There is real evidence that attending to it matters. Tidhar, Hallen and Eisenhardt followed three matched pairs of new firms in online fashion for close to a decade, one of each pair growing into a mature firm while its counterpart stalled, and found that the ones that made it began with focused attention on unit profitability rather than on growth [@tidhar-hallen-eisenhardt25].
+**Unit economics** asks whether a single transaction pays for itself: the direct revenues and costs of the thing you actually sell, counted per unit. There is real evidence that attending to it matters. Tidhar, Hallen and Eisenhardt followed three matched pairs of new firms in online fashion for close to a decade, one of each pair growing into a mature firm while its counterpart stalled, and found that the ones that made it began with focused attention on unit profitability rather than on growth [@tidharMeasureTwiceCut2025].
 
 ::: {.column-margin .def-margin}
 **Unit economics** — the direct revenues and costs of one transaction. Distinct, in the study that establishes it, from profitability at the level of the firm.
