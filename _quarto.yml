@@ -56,7 +56,7 @@ book:
         - prepare-data.qmd
         - check-demand-curve.qmd
         
-    - part: part-cost-profit.qmd
+    - part: Profit
       chapters:
         - cost.qmd
         - scale.qmd

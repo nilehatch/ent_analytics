@@ -73,6 +73,14 @@ Which is why **when** matters more than **how much**. Some commitments must be m
 
 Fixed costs are chosen too. How fast to scale, what capability to build, own or rent, automate or do by hand. Different answers, different exposure, same demand.
 
+Which suggests a test worth applying to any commitment before making it. Your profit is $\mathsf{(p - c)q - f}$. A commitment adds to $\mathsf{f}$, so it earns its place only by improving one of the other three terms by more than it costs: a lower $\mathsf{c}$, a higher $\mathsf{p}$, or a larger $\mathsf{q}$ through capacity you did not have or access you could not otherwise reach.
+
+So ask which term this moves, and by how much. Most commitments answer immediately. Equipment that halves the labor in each unit moves $\mathsf{c}$. A certification that lets you sell to hospitals at all moves $\mathsf{q}$. A finish customers will pay more for moves $\mathsf{p}$.
+
+The interesting cases are the ones where part of the spending answers and part of it does not. A building with your name on the front may genuinely cost less to occupy than the lease it replaces, and that part moves $\mathsf{c}$. The name on the front moves nothing. An advertisement in an expensive slot buys reach, which moves $\mathsf{q}$, and it also buys the feeling of being the sort of company that advertises in that slot, which lands on no term at all.
+
+That unassignable remainder is what people are pointing at when they call something a vanity project, and naming it this way makes it measurable rather than moral. Instead of asking whether a commitment is indulgent, which is a judgment about character, you ask what fraction of it lands on a term in the equation and treat the rest as what it is: consumption, bought by a venture that has not yet shown it can afford any.
+
 ## The Shape of a Cost Structure
 
 Put the two together and total cost has a simple form:
