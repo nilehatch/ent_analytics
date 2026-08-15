@@ -39,6 +39,29 @@ Profit forces the question margin avoids. To ask whether something is profitable
 
 None of which makes margin useless. Once scale exists and commitments are covered and the venture is operating in a viable range, margin becomes the right tool for making it better. It simply cannot tell you whether to start.
 
+### A Word on Unit Economics
+
+Many readers will have met this argument under a more modern name, and it deserves placing rather than ignoring.
+
+**Unit economics** asks whether a single customer pays for itself, usually by setting the contribution that customer produces against what it cost to acquire them. That is a real improvement on plain margin, because it pulls acquisition cost inside the unit, and acquisition cost is exactly what margin analysis habitually forgets. It is also the cost your [response rate](executing-experiments.qmd) was already telling you about.
+
+::: {.column-margin .def-margin}
+**Unit economics** — whether one customer pays for itself, acquisition cost included. A necessary condition, and not a sufficient one.
+:::
+
+Notice what it still cannot see. Unit economics establishes that $\mathsf{p}$ exceeds $\mathsf{c}$, which is necessary and is not the question this book is asking. It is silent about $\mathsf{f}$, because $\mathsf{f}$ does not live in a unit. A venture where every customer pays for itself can still fail to cover what was committed before any of them arrived.
+
+That is a boundary on the idea rather than a flaw in it. Unit economics grew out of businesses where fixed costs are genuinely small beside variable ones: software, marketplaces, direct-to-consumer with the manufacturing rented. In that world the binding constraint really is per-customer, and the framework is not merely useful but correct. Carry it into a business with a building, a plant, a clinic, or a regulatory approval to obtain, and it will report cheerfully that things are fine while the commitment goes uncovered.
+
+<!-- NWH (16 Aug 2026) reports confidence that focusing on unit economics is
+     associated with higher probability of success and of unicorn outcomes,
+     citing Eisenhardt and former students at Stanford. No such reference is in
+     references.bib and I could not identify the specific paper, so the
+     empirical claim is deliberately NOT made here. Supply the cite and it
+     belongs in a .for-curious alongside this section. -->
+
+So it is a screen rather than a verdict. It rules out the ventures that lose money on every sale, which is worth doing early and cheaply. What it cannot tell you is whether enough sales exist, which is what the last two chapters were for.
+
 ## Profit Is Not Growth
 
 Growth is the other substitute, and it is more seductive because it is visible.
@@ -46,6 +69,10 @@ Growth is the other substitute, and it is more seductive because it is visible.
 Growth measures change: more customers, more revenue, more activity. Those can genuinely signal learning or traction. What they cannot signal is surplus. A venture can grow while losing money on every unit, grow revenue while deepening losses, or grow *because* it is subsidizing demand.
 
 Growth describes motion. Profit describes value. Only the second justifies a commitment.
+
+::: {.column-margin .def-margin}
+**Growth** — change over time in some quantity: customers, revenue, usage, share. Which quantity is rarely specified, and none of them is surplus.
+:::
 
 The substitution happens because profit is hard to see early and growth is easy. Before revenue exists, profit has to be reasoned about conditionally, while growth can be observed on a dashboard this week. So growth becomes evidence that profit will follow, which it is not. Growth amplifies whatever economics already exist, in the same way [scaling](scale.qmd) does, and for the same reason: neither creates surplus that the structure was not already producing.
 
