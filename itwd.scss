@@ -77,16 +77,40 @@ $link-hover-color:  #146B45;   // resolves to the banner pine on hover
 // size, it survives colour-blindness and greyscale, and it is what most
 // documentation sidebars use. Hue now confirms what weight already said.
 
+// FONT-WEIGHT DOES NOTHING HERE. Measured on the live site: the rendered text
+// width is identical at 400, 600 and 700, because Quarto ships Source Sans Pro
+// at a single weight. An earlier attempt set font-weight 600 on the active item
+// and Nile correctly reported seeing no difference, because there was none.
+// Do not reach for weight in this book without first shipping a bold face.
+//
+// Nor can hue carry it alone in the LEFT sidebar. Inactive items there are a
+// mid grey, rgb(84,85,85) at L 33.1%, and the active green sits at L 35.9%:
+// a 2.8 point lightness gap, so the two differ almost only in hue, which at
+// this size is a signal a reader has to hunt for. The right-hand table of
+// contents reads far better for two reasons that have nothing to do with
+// colour choice: its inactive text is near-black at L 16.9%, a 19 point gap,
+// and it already carries a left border.
+//
+// So the sidebar gets the cue the table of contents already had. A left rule
+// and a tinted ground are shape and area rather than colour, they survive
+// greyscale and colour-blindness, and they do not depend on a font weight the
+// book does not have.
+
 div.sidebar-item-container .active,
 div.sidebar-item-container .show > .nav-link,
 div.sidebar-item-container .sidebar-link > code {
-  color: #298E5C !important;
-  font-weight: 600;
+  color: #146B45 !important;          // banner pine: darker than the grey around it
+  background: #EBF4F0;                // --brand-bg-tint
+  border-left: 3px solid #298E5C;
+  padding-left: 0.5rem;
+  border-radius: 0 3px 3px 0;
+  display: inline-block;
+  width: 100%;
 }
 
 .sidebar nav[role="doc-toc"] ul > li > a.active,
 .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
-  color: #298E5C !important;
-  font-weight: 600;
+  color: #146B45 !important;
   border-left-color: #298E5C !important;
+  border-left-width: 3px !important;
 }
