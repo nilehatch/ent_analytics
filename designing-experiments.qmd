@@ -57,7 +57,7 @@ That is not a defect in the categories. It is a consequence of the fact that qua
 **Willingness to pay** is the most misunderstood instrument in early demand work, mostly because the phrase sounds like it means *the price to charge*.
 
 ::: {.column-margin .def-margin}
-**Willingness to pay** — the highest price at which somebody would still buy, given a stated unit and period. A boundary on their behaviour, never a recommendation about yours.
+**Willingness to pay** — the highest price at which somebody would still buy, given a stated unit and period. A boundary on their behavior, never a recommendation about yours.
 :::
 
 It does not. A person's willingness to pay is a **boundary**: the highest price at which they would still choose to buy, given a specific unit in a specific period. Above it they do not buy. Below it they might. That is the whole of what the number claims.

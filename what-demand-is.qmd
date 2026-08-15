@@ -91,7 +91,7 @@ ggplot() +
 
 Price runs along the horizontal axis and quantity up the vertical one. Read the marked point and it says that at a price of \$500, customers would buy 1,500 units.
 
-Three things about that sentence repay attention. It describes variation rather than an outcome, so it is not telling you what will happen; it is telling you what would happen under a condition you have not yet chosen. It summarises many possible worlds at once rather than the one you will end up in. And the curve itself is unknown to you, which is the entire difficulty. You do not pick a demand curve the way you pick a price. You go and find out what yours is.
+Three things about that sentence repay attention. It describes variation rather than an outcome, so it is not telling you what will happen; it is telling you what would happen under a condition you have not yet chosen. It summarizes many possible worlds at once rather than the one you will end up in. And the curve itself is unknown to you, which is the entire difficulty. You do not pick a demand curve the way you pick a price. You go and find out what yours is.
 
 ## What Counts as One Unit
 
@@ -129,7 +129,7 @@ For anyone without economics training, one explicit pass at what this picture do
 
 The curve is a map rather than a timeline. Nothing on it is happening in sequence, and moving along it does not mean time is passing or a decision has been taken. It shows how quantity would change if the price were different, which is a claim about a set of hypothetical worlds rather than a prediction about the actual one.
 
-It is also not something you optimise directly. The curve is a fact about your customers that you are trying to discover. What you optimise is your position on it, and that comes later, once you know roughly where it runs.
+It is also not something you optimize directly. The curve is a fact about your customers that you are trying to discover. What you optimize is your position on it, and that comes later, once you know roughly where it runs.
 
 ## What Demand Is Not
 

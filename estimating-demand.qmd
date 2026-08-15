@@ -30,14 +30,14 @@ The two steps:
 
 **Counting.** Take the individual answers and work out, at each price, how many units would be bought. This step assumes almost nothing beyond the answers meaning what they say. It produces an empirical demand curve made entirely of your respondents.
 
-**Fitting.** Lay a smooth mathematical shape over those points so you can reason about prices nobody was asked about. This step assumes a great deal, and every assumption is a claim about behaviour you did not observe.
+**Fitting.** Lay a smooth mathematical shape over those points so you can reason about prices nobody was asked about. This step assumes a great deal, and every assumption is a claim about behavior you did not observe.
 
 Most of the trouble people get into with demand estimation comes from running the two together and treating the output of the second as though it had the innocence of the first.
 
 ::: {.limit}
 **What estimation cannot do**
 
-An estimate summarises what your evidence implies *if its assumptions hold*. It makes no claim that those assumptions are correct, complete, or stable, and it is not a forecast of what customers will do.
+An estimate summarizes what your evidence implies *if its assumptions hold*. It makes no claim that those assumptions are correct, complete, or stable, and it is not a forecast of what customers will do.
 
 Treat the curve as a lens rather than a prophecy: it shows how price and quantity are related given what you know today. When new evidence arrives the curve should move. That is the instrument working, not failing.
 :::
@@ -324,11 +324,11 @@ ggplot(df, aes(x = Price, y = Quantity)) +
 
 **Exponential** demand says quantity falls proportionally rather than by a fixed amount, so sensitivity accelerates as price climbs. It never goes negative, which is an improvement, and it implies demand keeps growing sharply as price falls toward zero, which usually overstates how much more people will consume of something they already have enough of.
 
-**Sigmoid** demand says almost nobody buys at high prices, almost everyone who might buy does at low ones, and nearly all the interesting behaviour happens in a band between. That shape falls out of two things that are true of most markets: the population is finite, and cutting price stops helping once the people who want it already have it.
+**Sigmoid** demand says almost nobody buys at high prices, almost everyone who might buy does at low ones, and nearly all the interesting behavior happens in a band between. That shape falls out of two things that are true of most markets: the population is finite, and cutting price stops helping once the people who want it already have it.
 
 Sigmoid tends to fit entrepreneurial situations well, and it is worth being clear about why, because *it fits the data better* is not the reason. It respects two constraints the others violate. There is a ceiling, because only so many customers exist. And there is a floor, because past some price people simply opt out rather than buying a smaller amount. Look back at the staircase and you can see both: it is flat at the top, flat at the bottom, and steep in the middle. The empirical curve already had the shape.
 
-That is the honest argument for a functional form. Not that a statistic preferred it, but that its implied behaviour matches what you can see in your own data and what you know about how people buy.
+That is the honest argument for a functional form. Not that a statistic preferred it, but that its implied behavior matches what you can see in your own data and what you know about how people buy.
 
 ```{r}
 #| label: fig-model-fits-simulated
@@ -554,7 +554,7 @@ Fit statistics are worth reading and they answer a narrower question than the on
 
 is not
 
-> *Which shape implies behaviour I would bet on?*
+> *Which shape implies behavior I would bet on?*
 
 A model that fits a little worse while implying something sensible about customers is the better guide to an irreversible commitment. That judgment cannot be delegated to a statistic, and the app does not try to.
 

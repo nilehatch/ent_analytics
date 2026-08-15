@@ -63,7 +63,7 @@ Fixed costs answer a different question, and the difference is the whole point.
 
 If a cost arrives because a customer bought, it is variable. If it arrives because **you** decided to move forward, it is fixed. That test matters more than any accounting category, because it identifies who is carrying the risk when demand disappoints. A **fixed cost** is best read as a commitment rather than an expense.
 
-What counts is not whether a cost is fixed forever but whether it is hard to reverse, slow to unwind, or binding across the decision you are actually making. A lease, salaried people, specialised equipment, a platform contract, money spent on compliance or brand before anyone has bought anything.
+What counts is not whether a cost is fixed forever but whether it is hard to reverse, slow to unwind, or binding across the decision you are actually making. A lease, salaried people, specialized equipment, a platform contract, money spent on compliance or brand before anyone has bought anything.
 
 Commitments change the shape of the problem by introducing a threshold. With variable costs alone, every sale above cost helps. Once a fixed cost exists, the venture has to generate enough contribution to justify it before anything good happens at all, and that *enough* is a demand requirement you did not previously have.
 
@@ -179,22 +179,22 @@ The pattern is common enough that people notice it without having a theory for i
 ::: {.mini-case}
 **A cellar full of rabbits**
 
-My first venture failed when I was a teenager. The reason it did not take anything else with it is the subject of this chapter.
+My first *failed* venture came when I was a teenager. The reason it did not take anything else with it is the subject of this chapter.
 
-Local buzz said rabbit was about to be the next protein and the industry needed suppliers. A farmer let me use a potato cellar with one end caved in, and my father, my brothers and I rebuilt it, closing the collapsed end with a thick wall of straw bales. I worked afternoons at the feed store that supplied cages to our part of the valley, and for every few cages I built for them they let me build one for myself out of their materials. That was my entire wage. Eventually I had more than a hundred. The herd we grew by breeding rather than buying.
+Local buzz said rabbit was about to be the next protein and the industry needed suppliers. A farmer let me use a potato cellar with one end caved in, and my father, my brothers and I rebuilt it, closing the collapsed end with a wall of straw bales. I worked afternoons at the feed store that supplied cages to our part of the valley, and for every few cages I built for them they let me build one for myself out of their materials. That was my entire wage. Eventually I had more than a hundred, and the herd we grew by breeding rather than buying.
 
-What I could not build my way out of was the feeders and an automatic watering system. Everything else I paid for in labour. Every other day that winter I filled a tank at home, drove it out to the cellar, and moved the water across bucket by bucket. It was a cold winter with a great deal of snow, and I was soaked and frozen every time.
+What I could not build my way out of was feed, feeders, and an automatic watering system. Everything else I paid for in labor, including hauling water to the cellar every other day and moving it across bucket by bucket, through a winter cold enough that I was soaked and frozen every time.
 
-There was a subsidised lending programme for young people in farm country, cheap money in a period when ordinary rates ran above twenty percent. I could see exactly what to automate. The minimum loan was larger than I needed, so I spent a while deciding what to do with the surplus. My parents, who had failed at things themselves and distrusted debt without having any words for what they were objecting to, pushed me to stay as I was.
+There was a subsidized lending program for young people in farm country, cheap money in a period when ordinary rates ran above twenty percent. I could see exactly what to automate. My parents, who had watched businesses fail, urged me not to rush into the debt. They probably articulated the reason well enough; I do not know whether I was hearing it.
 
-Then the buyer came, collected rabbits along the interstate, weighed them, wrote a cheque and drove on to the next farm. The cheque bounced. I had not known that was something a cheque could do, and the bank charged me for it. Next time they apologised and made good on the loss with another cheque, which also bounced. I believed them for longer than I should have. I do not think a single payment ever cleared.
+Then the buyer came, collected rabbits along the interstate, weighed them, wrote a check, and drove on to the next pickup down the valley. The check bounced, and the bank charged me for it. They apologized and made it good with another check, which also bounced. I do not think a single payment ever cleared.
 
-So the venture earned nothing, and I ate the costs, and eventually the inventory.
+So the venture earned nothing, I ate the costs, and eventually the inventory.
 
-Here is the part worth keeping. I had not been prudent. I had been broke, and I did what young founders do when they cannot raise money: accepted a high cost per unit to avoid commitments I could not fund. Had that loan been for the amount I actually needed, I would have taken it, automated the watering, and owed the money out of earnings that never arrived. As it was, the lesson cost me a season of frozen hands and some feeders.
+Here is the part worth keeping. I had not been prudent. I had been broke, and I did what young founders do when they cannot raise money: accepted a high cost per unit to avoid commitments I could not fund. Had I not exercised some caution and delayed the loan application, I would have automated the watering and owed the money out of earnings that never arrived. The caution bought time, and the time was what told me there would be no revenue.
 :::
 
-Notice what that story is not. It is not an argument for staying small, and the frozen hands were a genuine cost that automation would have removed. It is an argument about sequence. The commitment would have been sound at a quantity the venture never reached, and nothing available at the time could have told me whether it would get there, because the only buyer was writing cheques that did not clear.
+Notice what that story is not. It is not an argument for staying small, and the frozen hands were a genuine cost that automation would have removed. It is an argument about sequence. The commitment would have been sound at a quantity the venture never reached, and nothing available at the time could have told me whether it would get there, because the only buyer was writing checks that did not clear.
 
 
 ## Break-Even Is a Constraint, Not a Target
@@ -213,7 +213,7 @@ Cost analysis feels decisive in a way it is not. Lower costs feel safer, leaner 
 
 But cost creates no value. It generates no demand. It has no opinion about whether anyone will buy. All it tells you is what serving demand would take, if demand appears.
 
-Which means a cheaper structure can still be the wrong one when demand is small or price-sensitive, and an expensive structure can be right when demand is strong enough to carry it. Cost narrows the field of viable decisions. It does not choose among them, and treating a cost reduction as a result is how ventures optimise their way into a business nobody wants.
+Which means a cheaper structure can still be the wrong one when demand is small or price-sensitive, and an expensive structure can be right when demand is strong enough to carry it. Cost narrows the field of viable decisions. It does not choose among them, and treating a cost reduction as a result is how ventures optimize their way into a business nobody wants.
 
 Demand and cost only mean something together, and what they mean together is profit.
 
