@@ -487,7 +487,11 @@ viewof pmax_view = Inputs.range([1300, 3000], {value: 1300, step: 50, label: "Sh
 // Coefficients come from R via ojs_define. The fits are fixed; only the
 // plotted range varies, which is the whole point being made.
 cf = fitcoef
-qLin = p => Math.max(0, cf.lin_a + cf.lin_b * p)
+// Linear is NOT clamped here, unlike the static figure above, which uses
+// pmax(0, .) so the line stops at the axis. The clamp is cosmetic inside the
+// observed range and it conceals what the model actually says, which is the
+// one thing this figure exists to show.
+qLin = p => cf.lin_a + cf.lin_b * p
 qExp = p => cf.exp_A * Math.exp(-cf.exp_k * p)
 qSig = p => cf.sig_L / (1 + Math.exp((p - cf.sig_P0) / cf.sig_s))
 
@@ -503,27 +507,36 @@ Plot.plot({
   style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
   x: {domain: [0, pmax_view], label: "Price \u2192",
       tickFormat: d => `$${d3.format(",")(d)}`, labelAnchor: "right"},
-  y: {domain: [0, 2700], label: "\u2191 Quantity", tickFormat: d3.format(","),
+  y: {domain: [-1500, 2700], label: "\u2191 Quantity", tickFormat: d3.format(","),
       grid: true, labelAnchor: "top"},
+  // Same colours as the two static figures above: linear mid blue,
+  // exponential navy, sigmoid pale blue. Do not diverge from those.
   color: {domain: ["Linear", "Exponential", "Sigmoid"],
-          range: ["#93B4F5", "#C2410C", "#2563EB"]},
+          range: ["#2563EB", "#1E3A8A", "#78B7FA"]},
   marks: [
     // the band the evidence actually covers
     Plot.rect([{x1: cf.p_lo, x2: cf.p_hi}],
-              {x1: "x1", x2: "x2", y1: 0, y2: 2700, fill: "#EBF4F0"}),
+              {x1: "x1", x2: "x2", y1: -1500, y2: 2700, fill: "#EBF4F0"}),
     Plot.text([{x: (cf.p_lo + cf.p_hi) / 2}],
               {x: "x", y: 2560, text: () => "prices your evidence covers",
                fill: "#6B7280", fontSize: 11}),
+    // everything below this line is a quantity no customer can produce
+    Plot.areaY([{x: 0, y: 0}, {x: 3000, y: 0}],
+               {x: "x", y1: 0, y2: -1500, fill: "#FDECEC", fillOpacity: 0.5}),
     Plot.line(lines, {x: "p", y: "q", stroke: "model", strokeWidth: 2.5}),
     Plot.text(lines.filter(d => d.p === pmax_view),
               {x: "p", y: "q", text: "model", fill: "model", dx: 8,
                textAnchor: "start", fontSize: 12}),
-    Plot.ruleY([0], {stroke: "#E1E6E3"})
+    Plot.ruleY([0], {stroke: "#9CA8A2", strokeWidth: 1.2})
   ]
 })
 ```
 
-Push it far enough and the linear fit walks into negative quantity, which no customer has ever done. The exponential never goes negative and keeps promising buyers at prices nobody would pay. Only the sigmoid settles toward zero and stays there. All three described your evidence about equally well; they disagree entirely about the world outside it, and the decision you are about to make may well live out there.
+Watch the linear fit first, because it does not wait for the edge of your evidence. It crosses zero at about \$1,050 and keeps going, so at \$1,250, a price people in this sample actually answered about, it implies roughly minus five hundred units. Negative quantity is not a small inaccuracy. It is the model describing something that cannot happen, inside the range you sampled. The static figure above hides this, because it clamps the line at zero; the clamp tidies the picture and conceals what the model is saying.
+
+The other two fail more politely. Exponential never goes negative, and it keeps promising buyers at prices nobody would pay, tailing off toward zero without ever getting there. Sigmoid settles toward zero and stays.
+
+All three described the same evidence about equally well. They disagree completely about the world outside it, and about part of the world inside it, which is why choosing on fit alone is a way of not choosing at all.
 
 
 The point of fitting several is not to hold a contest and crown the highest score. It is to see how much your conclusion depends on the assumption you made. *When the three models tell the same story, your decision is robust. When they diverge, the divergence is the finding*, and it tells you which additional evidence would actually be worth gathering.
