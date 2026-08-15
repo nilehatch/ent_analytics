@@ -140,6 +140,67 @@ ggplot(steps, aes(price, quantity)) +
 
 Notice what this object is. It is not a model and it contains no assumption about anybody who was not asked. Every step down is one respondent leaving. With twelve people the staircase is coarse; with two hundred it looks very nearly like a smooth curve, because it is the same construction with smaller steps.
 
+You do not have to take that on faith. The slider below keeps adding respondents drawn to look like the twelve you already have, and the staircase refines as they arrive.
+
+```{ojs}
+//| echo: false
+viewof nresp = Inputs.range([12, 300], {value: 12, step: 1, label: "Respondents"})
+```
+
+```{ojs}
+//| echo: false
+// The twelve real answers, then a pool of further respondents resampled from
+// them with a little jitter. Simulated, and captioned as such: they show what
+// more evidence of the SAME shape would do, not what anyone actually said.
+// Seeded, so the slider ADDS respondents rather than redrawing the sample.
+observed = [12, 8, 15, 10, 5, 12, 18, 9, 12, 15, 8, 10]
+
+rng = { let a = 20260814; return () => { a |= 0; a = a + 0x6D2B79F5 | 0;
+  let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+  return ((t ^ t >>> 14) >>> 0) / 4294967296; } }
+
+pool = {
+  const out = observed.slice();
+  while (out.length < 300) {
+    const base = observed[Math.floor(rng() * observed.length)];
+    const jit  = (rng() + rng() + rng() - 1.5) * 2.4;
+    out.push(Math.max(1, Math.round(base + jit)));
+  }
+  return out;
+}
+
+sample = pool.slice(0, nresp)
+
+staircase = {
+  const counts = d3.rollups(sample, v => v.length, d => d)
+    .sort((a, b) => d3.descending(a[0], b[0]));
+  let run = 0;
+  return counts.map(([wtp, n]) => ({wtp, quantity: (run += n)}));
+}
+
+Plot.plot({
+  width: 700, height: 400, marginLeft: 62, marginBottom: 46,
+  style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
+  x: {domain: [0, 26], label: "Price \u2192", tickFormat: d => `$${d}`, labelAnchor: "right"},
+  y: {domain: [0, nresp * 1.06], label: "\u2191 Quantity", tickFormat: d3.format(","),
+      grid: true, labelAnchor: "top"},
+  marks: [
+    Plot.line(staircase, {x: "wtp", y: "quantity", curve: "step-before",
+                          stroke: "#2563EB", strokeWidth: 2.5}),
+    Plot.ruleY([0], {stroke: "#E1E6E3"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<p style="margin-top:.4rem;color:#6B7280;font-size:.9rem">
+${nresp} respondents. The first twelve are the real answers from the table above;
+the rest are simulated from the same shape, to show what more evidence would do
+to the staircase.</p>`
+```
+
+
 ::: {.for-curious}
 <details>
 <summary>For the Curious — What you just built has a name</summary>
@@ -393,7 +454,77 @@ ggplot(df, aes(x = Price, y = Quantity)) +
   scale_y_continuous(labels = label_comma()) +
   theme_itwd()
 ```
+
+```{r}
+#| echo: false
+#| output: false
+# Hand the FITTED parameters to the interactive figure below. The fits happen
+# here in R, once, by nls; JavaScript only redraws them across a wider price
+# range. Refitting in the browser would mean reimplementing nonlinear least
+# squares, which is real work to get subtly wrong for no pedagogical gain.
+ojs_define(
+  fitcoef = list(
+    lin_a = unname(coef(fit_lin)[1]), lin_b = unname(coef(fit_lin)[2]),
+    exp_A = unname(coef(fit_exp)[["A"]]), exp_k  = unname(coef(fit_exp)[["k"]]),
+    sig_L = unname(coef(fit_sig)[["L"]]), sig_P0 = unname(coef(fit_sig)[["P0"]]),
+    sig_s = unname(coef(fit_sig)[["s"]]),
+    p_lo  = min(df$Price), p_hi = max(df$Price)
+  )
+)
+```
+
 Each fit looks reasonable across the prices you actually observed. They diverge sharply outside that range, which is exactly where pricing decisions tend to live, and it is why the companion app fits all three rather than picking one for you.
+
+Widen the window and watch it happen. The three fits below are the same ones above, computed once from the same evidence; the only thing the slider changes is how far past that evidence you look.
+
+```{ojs}
+//| echo: false
+viewof pmax_view = Inputs.range([1300, 3000], {value: 1300, step: 50, label: "Show prices up to"})
+```
+
+```{ojs}
+//| echo: false
+// Coefficients come from R via ojs_define. The fits are fixed; only the
+// plotted range varies, which is the whole point being made.
+cf = fitcoef
+qLin = p => Math.max(0, cf.lin_a + cf.lin_b * p)
+qExp = p => cf.exp_A * Math.exp(-cf.exp_k * p)
+qSig = p => cf.sig_L / (1 + Math.exp((p - cf.sig_P0) / cf.sig_s))
+
+pgrid = d3.range(0, pmax_view + 1, 5)
+lines = [
+  ...pgrid.map(p => ({p, q: qLin(p), model: "Linear"})),
+  ...pgrid.map(p => ({p, q: qExp(p), model: "Exponential"})),
+  ...pgrid.map(p => ({p, q: qSig(p), model: "Sigmoid"}))
+]
+
+Plot.plot({
+  width: 700, height: 420, marginLeft: 66, marginBottom: 46, marginRight: 96,
+  style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
+  x: {domain: [0, pmax_view], label: "Price \u2192",
+      tickFormat: d => `$${d3.format(",")(d)}`, labelAnchor: "right"},
+  y: {domain: [0, 2700], label: "\u2191 Quantity", tickFormat: d3.format(","),
+      grid: true, labelAnchor: "top"},
+  color: {domain: ["Linear", "Exponential", "Sigmoid"],
+          range: ["#93B4F5", "#C2410C", "#2563EB"]},
+  marks: [
+    // the band the evidence actually covers
+    Plot.rect([{x1: cf.p_lo, x2: cf.p_hi}],
+              {x1: "x1", x2: "x2", y1: 0, y2: 2700, fill: "#EBF4F0"}),
+    Plot.text([{x: (cf.p_lo + cf.p_hi) / 2}],
+              {x: "x", y: 2560, text: () => "prices your evidence covers",
+               fill: "#6B7280", fontSize: 11}),
+    Plot.line(lines, {x: "p", y: "q", stroke: "model", strokeWidth: 2.5}),
+    Plot.text(lines.filter(d => d.p === pmax_view),
+              {x: "p", y: "q", text: "model", fill: "model", dx: 8,
+               textAnchor: "start", fontSize: 12}),
+    Plot.ruleY([0], {stroke: "#E1E6E3"})
+  ]
+})
+```
+
+Push it far enough and the linear fit walks into negative quantity, which no customer has ever done. The exponential never goes negative and keeps promising buyers at prices nobody would pay. Only the sigmoid settles toward zero and stays there. All three described your evidence about equally well; they disagree entirely about the world outside it, and the decision you are about to make may well live out there.
+
 
 The point of fitting several is not to hold a contest and crown the highest score. It is to see how much your conclusion depends on the assumption you made. *When the three models tell the same story, your decision is robust. When they diverge, the divergence is the finding*, and it tells you which additional evidence would actually be worth gathering.
 
