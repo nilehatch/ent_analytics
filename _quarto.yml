@@ -41,7 +41,7 @@ book:
         - familiar-tools.qmd
         - what-to-learn.qmd
 
-    - part: Learning Demand
+    - part: Demand
       chapters:
         - what-demand-is.qmd
         - designing-experiments.qmd
