@@ -168,6 +168,35 @@ So put your demand estimate on that axis. If the quantity you can defend from ev
 
 This is the timing point made visible. Nothing about the commitment structure is wrong. It is wrong *early*, when the demand that would justify it is still a hope, and it stays wrong until evidence moves your expected quantity past the crossing.
 
+The pattern is common enough that people notice it without having a theory for it. A promising venture does well, and then builds itself a headquarters with its name on the front, or buys the expensive advertisement, and something goes wrong afterwards. The spending is rarely the cause on its own. It is a signal that the firm started sizing its commitments to the future it was hoping for rather than the one it had evidence for, and the commitments outlast the hope.
+
+<!-- Mini-case: NWH's own first venture, told to CC 15 Aug 2026. Details he
+     flagged as uncertain are deliberately not asserted here: the exact cage
+     ratio (three or ten), and which winter (1980-81 or 1981-82). The interest
+     rate claim is his and is broadly right for US prime in that period, but
+     wants a citation before print. -->
+
+::: {.mini-case}
+**A cellar full of rabbits**
+
+My first venture failed when I was a teenager. The reason it did not take anything else with it is the subject of this chapter.
+
+Local buzz said rabbit was about to be the next protein and the industry needed suppliers. A farmer let me use a potato cellar with one end caved in, and my father, my brothers and I rebuilt it, closing the collapsed end with a thick wall of straw bales. I worked afternoons at the feed store that supplied cages to our part of the valley, and for every few cages I built for them they let me build one for myself out of their materials. That was my entire wage. Eventually I had more than a hundred. The herd we grew by breeding rather than buying.
+
+What I could not build my way out of was the feeders and an automatic watering system. Everything else I paid for in labour. Every other day that winter I filled a tank at home, drove it out to the cellar, and moved the water across bucket by bucket. It was a cold winter with a great deal of snow, and I was soaked and frozen every time.
+
+There was a subsidised lending programme for young people in farm country, cheap money in a period when ordinary rates ran above twenty percent. I could see exactly what to automate. The minimum loan was larger than I needed, so I spent a while deciding what to do with the surplus. My parents, who had failed at things themselves and distrusted debt without having any words for what they were objecting to, pushed me to stay as I was.
+
+Then the buyer came, collected rabbits along the interstate, weighed them, wrote a cheque and drove on to the next farm. The cheque bounced. I had not known that was something a cheque could do, and the bank charged me for it. Next time they apologised and made good on the loss with another cheque, which also bounced. I believed them for longer than I should have. I do not think a single payment ever cleared.
+
+So the venture earned nothing, and I ate the costs, and eventually the inventory.
+
+Here is the part worth keeping. I had not been prudent. I had been broke, and I did what young founders do when they cannot raise money: accepted a high cost per unit to avoid commitments I could not fund. Had that loan been for the amount I actually needed, I would have taken it, automated the watering, and owed the money out of earnings that never arrived. As it was, the lesson cost me a season of frozen hands and some feeders.
+:::
+
+Notice what that story is not. It is not an argument for staying small, and the frozen hands were a genuine cost that automation would have removed. It is an argument about sequence. The commitment would have been sound at a quantity the venture never reached, and nothing available at the time could have told me whether it would get there, because the only buyer was writing cheques that did not clear.
+
+
 ## Break-Even Is a Constraint, Not a Target
 
 Break-even gets talked about as a milestone, which quietly misdescribes it.
