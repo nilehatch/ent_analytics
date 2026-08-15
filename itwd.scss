@@ -54,6 +54,39 @@ $primary:           #298E5C;   // nav highlights, links, focus rings
 $link-color:        #248053;   // links in body text, a shade steadier
 $link-hover-color:  #146B45;   // resolves to the banner pine on hover
 
-// Cosmo derives focus rings and active states from $primary, so those follow
-// automatically. Body text and headings are set by base.css through the brand
-// variables and are deliberately not touched here.
+// Body text and headings are set by base.css through the brand variables and
+// are deliberately not touched here.
+
+
+/*-- scss:rules --*/
+
+// ---- Navigation active state -----------------------------------------------
+//
+// Setting $primary is NOT sufficient, and the reason is worth recording.
+// Cosmo does not use $primary directly for the active sidebar item; it derives
+// a darkened shade. With $primary at #298E5C that derivation produced
+// #1B613F at L 24.3%, sitting against inactive sidebar text #545555 at
+// L 33.1%. Darker than the text it was meant to highlight, for the second
+// time, which is why raising $primary alone did not fix Nile's report.
+//
+// So the active colour is set here directly rather than derived.
+//
+// Colour is also not carrying this alone any more. Both navigations rendered
+// every item at font-weight 400, so the highlight had exactly one cue and it
+// was a hue a reader has to hunt for. Weight is the stronger signal at this
+// size, it survives colour-blindness and greyscale, and it is what most
+// documentation sidebars use. Hue now confirms what weight already said.
+
+div.sidebar-item-container .active,
+div.sidebar-item-container .show > .nav-link,
+div.sidebar-item-container .sidebar-link > code {
+  color: #298E5C !important;
+  font-weight: 600;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+  color: #298E5C !important;
+  font-weight: 600;
+  border-left-color: #298E5C !important;
+}
