@@ -63,16 +63,25 @@ This book is the required text for **ENTP 5771** at the University of Utah
 Building the course means close-reading ch1–ch12 on a schedule, which is the re-voicing pass
 for those chapters whether or not it is billed as one. Separate sessions; one priority queue.
 
+Chapter numbers below are the **current** ones. They changed on 13 Aug 2026 when
+`ch2_uncertainty_types` dissolved into what is now ch3 and the `chN_` filename prefixes
+came off; the old numbers in any note written before that date are one or more higher.
+
 | Class week | Opens | Book material |
 |---|---|---|
-| 6–7 | 28 Sep | ch5–ch7, tk2, tk3 |
-| 8 | 19 Oct | ch8, tk4, tk5 — **see revision opportunity 1 above** |
-| 9–11 | 26 Oct | ch9–ch12, tk6–tk10 |
-| 12–14 | 16 Nov | ch13–ch22 — **ch19–ch22 must be finished by ~25 Nov** |
+| 6–7 | 28 Sep | ch4–ch6 (`what-demand-is` → `executing-experiments`), `survey-design`, `validate-evidence` |
+| 8 | 19 Oct | ch7 `estimating-demand`, `prepare-data`, `check-demand-curve` |
+| 9–11 | 26 Oct | ch8–ch11 (`cost` → `profit-reasoning`), the five profit toolkits |
+| 12–14 | 16 Nov | ch12–ch22 — **the four legacy game-theory files, now ch19–ch22, must be finished by ~25 Nov** |
 
-Revision opportunity 1 — the WTP survival-function transformation, missing from ch8 and living
-only in `../app-profit-analytics/server.R` — lands in class week 8. Writing it into the book
-and building that week are the same task. Do it once.
+Careful with that last row. "ch19–ch22" now resolves to `game-theory`, `simultaneous-games`,
+`sequential-games` and `strategic-commitment` — the *legacy* files, which are the ones in the
+TOC. The orphaned `ch20_`–`ch22_` files are on disk and out of the TOC; `ch19_` was renamed
+`non-price-competition` and is now ch18.
+
+Class week 8 material is written. The WTP survival-function transformation, revision
+opportunity 1 above, was the open item there and landed in `estimating-demand.qmd` on
+14 Aug 2026, worked by hand with a table and a step-function figure.
 
 ## Build and deploy — one rule that will bite you
 

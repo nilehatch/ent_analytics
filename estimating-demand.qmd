@@ -407,6 +407,34 @@ is not
 
 A model that fits a little worse while implying something sensible about customers is the better guide to an irreversible commitment. That judgment cannot be delegated to a statistic, and the app does not try to.
 
+## Is This Curve Safe to Use?
+
+Software will fit a curve to almost anything you hand it. That is a convenience and a hazard, because a smooth line looks authoritative whether or not the evidence beneath it can carry a decision.
+
+So before reasoning with a curve, spend five minutes on whether you should. None of what follows tests whether the curve is true. They test whether it is safe.
+
+**Does it behave like people?** Three conditions, and checking them takes no economics at all. Quantity should never go negative. Demand should not explode as price approaches zero, because somebody who already has enough of a thing does not take unlimited quantities of it just because it got cheap. And demand should fall to nearly nothing at a high enough price, because everyone has a ceiling. A model that breaks one of these inside the price range you actually care about is telling you about itself rather than about your customers.
+
+**Does it match your staircase?** You have both objects now, so put one on top of the other. Watch for a curve sitting consistently above the points, or consistently below, or fitting the middle and failing at both ends, or getting visibly dragged by two or three extreme answers. The most useful version of this check is also the crudest: cover the curve, look only at the points, and ask whether you would have drawn that line yourself. When the fitted curve tells a different story from the evidence, the difference is the finding.
+
+**Does it predict something you already know?** Pick one price you have an intuition about, whether from a competitor, a comparable product, or your own wallet, and read the quantity off the curve. Is that number *possible*, for your unit and your period? This is not a test of accuracy. It asks whether you can reason about the output at all, and a curve that produces figures you cannot even argue with is not yet a usable object.
+
+**When it fails, go upstream.** The temptation is to try functional forms until one looks better, which is the analytical equivalent of shopping for a second opinion. A curve that fails a sanity check is usually reporting a problem in the evidence rather than in itself: unit or period drifting between questions, non-customers left in the sample, a price question that felt like a negotiation, or a demand type that never matched the decision. Changing the shape conceals all of that and fixes none of it.
+
+::: {.checkpoint}
+**Before you accept a fitted curve**
+
+Your AI, or the app, will hand you a curve and a fit statistic. Do not accept either until you can do three things.
+
+- Name the highest and lowest prices anyone in your evidence actually gave you, and say whether the price you care about falls between them.
+- Read the quantity off the curve at one price you have an intuition about, and say out loud whether that number is possible.
+- Point to the stretch of the curve your evidence does not cover, and say what the model assumed in order to draw it there.
+
+If you cannot do all three, what you have is a picture rather than an estimate.
+:::
+
+A curve worth using lines up with your unit and period, behaves like people, matches the evidence you gathered, and produces numbers you can argue about. Smoothness has nothing to do with it. That last property is rarer in entrepreneurship than it sounds, and it is the whole point of the exercise: a structured object you can argue with.
+
 ## What the Curve Will Not Do
 
 You now have an object you can reason with. It is worth being precise about what it does not settle.
