@@ -330,6 +330,16 @@ Sigmoid tends to fit entrepreneurial situations well, and it is worth being clea
 
 That is the honest argument for a functional form. Not that a statistic preferred it, but that its implied behavior matches what you can see in your own data and what you know about how people buy.
 
+::: {.learn-ai}
+**Learn From Your AI**
+
+That argument only bites if you know what a fit statistic is. If $R^2$ and overfitting are already familiar, skip this. If they are not, they are worth ten minutes before you choose a curve, because the whole point above is that the number most people reach for is the wrong one to reach for.
+
+::: {.prompt}
+I am fitting a demand curve to willingness-to-pay data from a survey, choosing between a linear, an exponential, and a sigmoid shape. In plain language, explain what $R^2$ actually measures, why a more flexible curve will almost always score higher on it, and what overfitting looks like when it happens. Then tell me what a fit statistic can and cannot tell me about which shape to trust *outside* the range of prices I actually observed. Here is my situation: [what you sell, roughly how many people you surveyed, and the lowest and highest prices they gave you].
+:::
+:::
+
 ```{r}
 #| label: fig-model-fits-simulated
 #| echo: false
