@@ -114,6 +114,119 @@ A move that expands the pool creates something that was not there before. More p
 
 A move that redistributes takes from the rival. When both firms make it, the takings cancel, and whatever was spent is simply gone. Every firm behaved sensibly and the industry is poorer.
 
+There is a way of drawing a game that makes the answer visible rather than calculated, and it is worth learning because you will read a matrix faster with it than without.
+
+For each column, ask which row that player prefers, and draw an arrow pointing there. For each row, ask which column the other player prefers, and do the same. Where two arrows point into the same cell, neither firm wants to leave it, and that cell is the equilibrium. A player whose arrows both point the same way has a dominant strategy and does not need to think about the other at all.
+
+Below, the arrows are drawn for you and everything is live. Switch the campaign between the two kinds, and move its effectiveness and its price.
+
+```{ojs}
+//| echo: false
+viewof kind = Inputs.radio(
+  new Map([["Reach — brings new consumption into the market", "reach"],
+           ["Comparative — moves consumption from the rival", "shift"]]),
+  {value: "shift", label: "Campaign"})
+viewof S = Inputs.range([0.25, 2.0], {value: 1.0, step: 0.05,
+  label: "Units it adds per person"})
+viewof K = Inputs.range([0, 1.20], {value: 0.10, step: 0.05,
+  label: "Price per person"})
+```
+
+```{ojs}
+//| echo: false
+a1b = -0.7043
+b1  = 2.158877
+d1  = 5.568712
+c1  = 0.75
+a2b = 4.569339
+b2  = 3.496552
+d2  = 0.554085
+c2  = 0.50
+
+eqp = function(a1, a2) {
+  const X1 = (a1 + b1*c1)/(2*b1), Y1 = d1/(2*b1);
+  const X2 = (a2 + b2*c2)/(2*b2), Y2 = d2/(2*b2);
+  const den = 1 - Y1*Y2;
+  const p1 = (X1 + Y1*X2)/den, p2 = (X2 + Y2*X1)/den;
+  return [(p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1)];
+}
+
+pay = function(s, h) {
+  const a1 = kind === "reach" ? a1b + S*s : a1b + S*s - S*h;
+  const a2 = kind === "reach" ? a2b + S*h : a2b + S*h - S*s;
+  const r = eqp(a1, a2);
+  return [r[0] - K*s, r[1] - K*h];
+}
+
+// best responses: SC picks the row, HY picks the column
+scBR = ({0: pay(1,0)[0] > pay(0,0)[0] ? 1 : 0, 1: pay(1,1)[0] > pay(0,1)[0] ? 1 : 0})
+hyBR = ({0: pay(0,1)[1] > pay(0,0)[1] ? 1 : 0, 1: pay(1,1)[1] > pay(1,0)[1] ? 1 : 0})
+nash = [0,1].flatMap(s => [0,1].map(h => [s,h])).filter(([s,h]) => scBR[h] === s && hyBR[s] === h)
+
+label = ({"0,0": "neither advertises", "0,1": "Hogi Yogi alone",
+          "1,0": "Smart Cookie alone", "1,1": "both advertise"})
+dilemma = nash.length === 1 && !(nash[0][0] === 0 && nash[0][1] === 0)
+  && pay(nash[0][0], nash[0][1])[0] < pay(0,0)[0]
+  && pay(nash[0][0], nash[0][1])[1] < pay(0,0)[1]
+usd = d3.format("$,.2f")
+
+html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
+  Equilibrium: <b>${nash.map(n => label[n.join(",")]).join(" or ") || "none"}</b>${
+    dilemma
+      ? html` &nbsp;<span style="color:#C2410C;font-weight:600">— and both firms are
+              worse off than if neither had moved.</span>`
+      : (nash.length === 1 && (nash[0][0] || nash[0][1])
+          ? html` &nbsp;<span style="color:#2F855A">— and the money buys something.</span>`
+          : ``)
+  }</div>`
+```
+
+```{ojs}
+//| echo: false
+{
+  const cells = [0,1].flatMap(s => [0,1].map(h => {
+    const v = pay(s,h);
+    return {s, h, x: h, y: s, sc: v[0], hy: v[1],
+            isNash: nash.some(n => n[0]===s && n[1]===h)};
+  }));
+  // Smart Cookie chooses the row, so its arrows are vertical, one per column.
+  // Hogi Yogi chooses the column, so its arrows are horizontal, one per row.
+  // Both are pushed to the edges of the cells so they never cross the numbers.
+  const vArr = [0,1].map(h => ({x: h - 0.36, y1: 1 - scBR[h], y2: scBR[h]}));
+  const hArr = [0,1].map(s => ({y: s - 0.33, x1: 1 - hyBR[s], x2: hyBR[s]}));
+  return Plot.plot({
+    width: 660, height: 400, marginLeft: 128, marginTop: 46, marginBottom: 34,
+    style: {background: "transparent", fontSize: "13px", color: "#1F2937"},
+    x: {domain: [-0.6, 1.6], ticks: [0,1], tickFormat: d => d ? "advertises" : "does not",
+        label: "Hogi Yogi →", labelAnchor: "center", axis: "top"},
+    y: {domain: [-0.6, 1.6], ticks: [0,1], tickFormat: d => d ? "advertises" : "does not",
+        label: "↑ Smart Cookie", labelAnchor: "center"},
+    marks: [
+      Plot.rect(cells, {x1: d => d.x-0.42, x2: d => d.x+0.42,
+                        y1: d => d.y-0.42, y2: d => d.y+0.42,
+                        fill: d => d.isNash ? "#EBF4F0" : "#FAFAFA",
+                        stroke: d => d.isNash ? "#2F855A" : "#E1E6E3",
+                        strokeWidth: d => d.isNash ? 2 : 1}),
+      // payoffs coloured to match each firm's arrows, so no legend is needed
+      Plot.text(cells, {x: d => d.x - 0.02, y: "y", text: d => usd(d.sc),
+                        textAnchor: "end", fontSize: 15, fontWeight: 600, fill: "#2563EB"}),
+      Plot.text(cells, {x: d => d.x + 0.02, y: "y", text: d => usd(d.hy),
+                        textAnchor: "start", fontSize: 15, fontWeight: 600, fill: "#C2410C"}),
+      Plot.arrow(vArr, {x1: "x", y1: "y1", x2: "x", y2: "y2",
+                        stroke: "#2563EB", strokeWidth: 2.4, headLength: 9, insetEnd: 26}),
+      Plot.arrow(hArr, {x1: "x1", y1: "y", x2: "x2", y2: "y",
+                        stroke: "#C2410C", strokeWidth: 2.4, headLength: 9, insetEnd: 38})
+    ]
+  })
+}
+```
+
+Smart Cookie is blue and Hogi Yogi orange, in the payoffs and in the arrows alike. Blue arrows run vertically because Smart Cookie is choosing a row; orange run horizontally because Hogi Yogi is choosing a column. The shaded cell is the one both point into.
+
+Start where the chapter left off, with the comparative campaign at ten cents. Every arrow points toward advertising, both firms land in the bottom-right, and the readout says what the numbers said: both are worse off than if neither had moved. Now raise the price. Somewhere near seventeen cents Smart Cookie's arrows flip, the trap opens, and above about sixty cents nobody advertises at all.
+
+Then switch the campaign to reach and watch what changes. The arrows still converge on both firms advertising, and the warning disappears, because the money is now buying consumption that did not previously exist.
+
 Most competitive moves are recognizable as one or the other once the question is asked plainly.
 
 ```{r}
