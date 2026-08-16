@@ -21,15 +21,11 @@ Add a rival and something changes that no amount of better estimation fixes. The
 
 ## Profit Becomes a Surface
 
-Chapter 1 put the argument of this book on one line, and every chapter since has been about one of its terms:
+The last chapter read profit as a curve, and the curve was a picture of this:
 
-$$ \mathsf{\pi = pq - cq - f} $$
+$$ \mathsf{\pi(p) = (p - c)\,q(p) - f} $$
 
-Price times quantity, less what each unit costs, less what you committed before anyone bought. The last chapter turned that into a picture you could read for feasibility, fragility and robustness. Written as a function of the one thing you choose, it is
-
-$$ \mathsf{\pi(p) = (p - c)\,q - f} $$
-
-Under rivalry it takes a second argument:
+One price in, one profit out, with your demand curve supplying the quantity. Under rivalry that function takes a second argument:
 
 $$ \mathsf{\pi_i(p_i, p_j)} $$
 

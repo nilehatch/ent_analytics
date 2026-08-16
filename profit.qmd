@@ -27,7 +27,11 @@ Margin is the more comfortable of the two. It feels clean, it feels like efficie
 
 **Margin** describes what is left per unit or per dollar of revenue. It answers how much each sale contributes and how efficiently revenue becomes surplus. Useful questions, and not decisive ones, because a venture can have excellent margins and be a bad decision, or modest margins and be worth doing. What separates those cases is scale.
 
-The reason is structural. Margins are local; fixed costs are not. A margin is computed on one unit, while a commitment has to be carried by all of them together. So margin on its own is silent about whether the venture can support what it has committed to. High margins do not guarantee profit when demand is small. Low margins do not preclude it when demand is large.
+The reason is structural, and it is easiest to see by writing the two things down. Margin is a per-unit quantity, $\mathsf{p - c}$. Profit is what that quantity earns across every unit you sell, less what you committed before any of them arrived:
+
+$$ \mathsf{\pi = (p - c)\,q - f} $$
+
+That is [chapter 1's equation](worth-doing.qmd) with the per-unit part gathered into a single term. Look at where $\mathsf{f}$ appears. It is in the second expression and not in the first, and that is the entire difference between the two ideas. Margins are local; fixed costs are not. A margin is computed on one unit, while a commitment has to be carried by all of them together. So margin on its own is silent about whether the venture can support what it has committed to. High margins do not guarantee profit when demand is small. Low margins do not preclude it when demand is large.
 
 ::: {.column-margin .def-margin}
 **Margin** — surplus per unit or per dollar of revenue. A local measure, blind by construction to commitments that aggregate.

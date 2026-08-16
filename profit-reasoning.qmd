@@ -23,6 +23,14 @@ So the object worth looking at is not the number. It is the curve.
 
 Plot profit against price and the structure of the decision becomes visible. At low prices you sell plenty and earn too little on each. At high prices the margin looks handsome and too few people buy. Somewhere between, if anywhere, the two effects trade off in your favor.
 
+Every curve in this chapter is a picture of one equation, and it is the one this book started with:
+
+$$ \mathsf{\pi(p) = (p - c)\,q(p) - f} $$
+
+The only thing added is the reminder that quantity depends on price, written $\mathsf{q(p)}$. That small notation carries the whole first half of the book. Your demand curve is not sitting alongside your profit calculation; it is *inside* it, supplying the quantity at every price you might consider. Estimate demand badly and every point on the profit curve is wrong, which is why four chapters came before this one.
+
+Reading the curve is reading that equation as a shape.
+
 That shape carries information no summary statistic does. You can see whether profit is possible at all, over what range of prices it survives, how steeply it falls away on either side, and how far the whole curve sits above or below zero. Those are four different questions, and they have four different answers that a single number collapses into one.
 
 The curve is a map rather than an instruction. It does not tell you what to charge. Reading one is an act of interpretation, and interpretation is the part that stays yours.
@@ -171,6 +179,8 @@ If you cannot answer all four, what you have is a number rather than a decision.
 ## Seeing It Move
 
 The three readings are easier to believe when you can push a structure from one to another. Below is the profit curve for a venture whose demand, unit cost, and commitment you control.
+
+The three sliders are the three terms of the equation. **Market size** sets $\mathsf{q(p)}$, how many buyers exist at each price. **Unit cost** is $\mathsf{c}$. **Commitment** is $\mathsf{f}$. Everything you can change about this venture is one of those three, and the curve is what they produce together.
 
 ```{ojs}
 //| echo: false
