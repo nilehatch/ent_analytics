@@ -184,7 +184,9 @@ Two firms. Identical products. Customers who care about nothing but price, with 
 
 Suppose your costs match your rival's, and they are charging \$100. You can take every customer by charging \$99, so you do. They can take them all back at \$98, so they do. Each move is individually rational and each invites the next.
 
-The undercutting stops at one place. When price reaches variable cost, the next cut loses money on every unit sold, and neither firm has a profitable move left:
+The undercutting stops at one place. When price reaches variable cost, the next cut loses money on every unit sold, and neither firm has a profitable move left:[^bertrand]
+
+[^bertrand]: This argument is old and it is not mine. Joseph Bertrand made it in 1883, reviewing Cournot, and the model of price competition that follows from it carries his name [@bertrandBookReviewEmphRecherche1883]. The next chapter is the version where products differ.
 
 $$\mathsf{P = c}$$
 
@@ -232,7 +234,9 @@ It did not end there. More mini-mills entered, capacity grew, and eventually the
 Nobody was outmanaged. The advantage created profit and the entry it attracted erased it, which is what happens when enough firms share similar costs and sell an indistinguishable product.
 :::
 
-The online version runs faster and looks different enough that people do not recognize it. You find a product, build a storefront, advertise well, and sales begin. Margins are healthy at first because few competitors are visible and the platform rewards early traction. Then other sellers notice, source from the same supplier, run similar ads, and the platform sorts everyone by price and reviews. Each entrant takes a little more of the margin. Orders keep coming and contribution keeps shrinking.
+The online version runs faster and looks different enough that people do not recognize it. You find a product, build a storefront, advertise well, and sales begin. Margins are healthy at first because few competitors are visible and the platform rewards early traction. Then other sellers notice, source from the same supplier, run similar ads, and the platform sorts everyone by price and reviews. Each entrant takes a little more of the margin.[^dispersion]
+
+[^dispersion]: What a price-comparison platform does to the spread between sellers has been studied directly; @bayePriceDispersionSmall2004 is the place to start. Being findable and being comparable are the same thing on such a platform, and comparability is what compresses margin. Orders keep coming and contribution keeps shrinking.
 
 The steel version took thirty years. The drop-shipping version can take thirty weeks. The structure is identical, and in both cases the difference between early profit and durable profit was never effort.
 

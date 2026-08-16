@@ -15,7 +15,9 @@ source("R/theme-itwd.R")
 
 The last chapter ended in the worst case: identical products, customers who care only about price, and undercutting that runs until margin is gone. That case is real and worth fearing, and it is not where most markets live.
 
-In most markets customers notice differences. Some prefer your brand, some trust your delivery, some are three blocks closer to you, and some simply do not check the other price. When a rival drops a dollar, you lose a few of them rather than all of them. That partial loyalty is the whole subject of this chapter, because it is what stands between you and the collapse.
+In most markets customers notice differences. Some prefer your brand, some trust your delivery, some are three blocks closer to you, and some simply do not check the other price.[^hotelling]
+
+[^hotelling]: The observation that a small difference is enough to stop the collapse goes back to @hotellingStabilityCompetition1929, whose customers preferred the nearer of two sellers along a road. Location was the difference in his case; anything customers care about does the same work. When a rival drops a dollar, you lose a few of them rather than all of them. That partial loyalty is the whole subject of this chapter, because it is what stands between you and the collapse.
 
 ## It Takes Two Equations
 
