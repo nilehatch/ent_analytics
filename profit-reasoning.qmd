@@ -79,6 +79,10 @@ ggplot(df, aes(P, Pi)) +
 
 Sometimes the curve never crosses zero. **Impossible profit** means exactly that and no more: at every price you could charge, the venture loses money.
 
+::: {.column-margin .def-margin}
+**Impossible profit** — no price covers the commitments. A statement about the current design, not a prediction about the venture.
+:::
+
 The reflex is to assume something broke. Founders re-check the data, adjust the demand fit, hunt for a price they might have missed. Almost always the analysis is fine and is telling them something precise: given what you currently believe about demand, cost, and scale, no price supports the commitments you have named.
 
 Read that sentence carefully, because it is narrower than it feels. It says nothing about whether the venture will fail, whether customers want the product, or whether you should quit. It is a statement about *this design*, and the design is made of things you chose.
@@ -92,10 +96,6 @@ There is a temptation to look for the one number that would fix it. Impossible p
 What the result invites is a specific question: *what would have to change for profit to exist, and is that change available to me?* Sometimes the answer is a smaller commitment, which lowers the bar. Sometimes it is a different population, one that is denser or cheaper to reach. Sometimes it is a redesigned offering with different economics. And sometimes there is no such change, and the honest move is to stop.
 
 Finding this out before signing a lease is the whole point. An impossible curve found early costs a few weeks of analysis. Found late, it costs whatever you committed.
-
-::: {.column-margin .def-margin}
-**Impossible profit** — no price covers the commitments. A statement about the current design, not a prediction about the venture.
-:::
 
 ## When Profit Is Fragile
 
