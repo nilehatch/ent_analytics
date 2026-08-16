@@ -582,7 +582,7 @@ So before reasoning with a curve, spend five minutes on whether you should. None
 
 **When it fails, go upstream.** The temptation is to try functional forms until one looks better, which is the analytical equivalent of shopping for a second opinion. A curve that fails a sanity check is usually reporting a problem in the evidence rather than in itself: unit or period drifting between questions, non-customers left in the sample, a price question that felt like a negotiation, or a demand type that never matched the decision. Changing the shape conceals all of that and fixes none of it.
 
-::: {.checkpoint}
+::: {.threshold}
 **Before you accept a fitted curve**
 
 Your AI, or the app, will hand you a curve and a fit statistic. Do not accept either until you can do three things.

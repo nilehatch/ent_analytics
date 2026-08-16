@@ -155,7 +155,7 @@ This is what makes sensitivity a learning tool rather than a reporting tool. Tim
 
 It also reframes what scale means. Some ventures are deliberately built to run on very low commitments early, and that is a strategy rather than a shortcut. For those, the question is not whether the design supports the full commitment eventually, but whether it can sustain itself at this stage long enough to earn the right to the next one. Scale becomes a path with stages rather than a single number to clear, and sensitivity tells you what each stage can survive and what would break first.
 
-::: {.checkpoint}
+::: {.threshold}
 **Before you accept a profit curve**
 
 The app will hand you a curve, a peak, and the price that produced it. Do not accept any of them until you can answer four questions.
