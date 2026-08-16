@@ -223,6 +223,78 @@ html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
 
 Smart Cookie is blue and Hogi Yogi orange, in the payoffs and in the arrows alike. Blue arrows run vertically because Smart Cookie is choosing a row; orange run horizontally because Hogi Yogi is choosing a column. The shaded cell is the one both point into.
 
+Dragging those sliders without a map is a good way to watch things change without learning much, so here is the map. Every point in it is a whole game, solved, and coloured by which equilibrium comes out. The dot is where your sliders currently sit.
+
+```{ojs}
+//| echo: false
+classify = function(kk, sv, kv) {
+  const p = (s, h) => {
+    const a1 = kk === "reach" ? a1b + sv*s : a1b + sv*s - sv*h;
+    const a2 = kk === "reach" ? a2b + sv*h : a2b + sv*h - sv*s;
+    const r = eqp(a1, a2);
+    return [r[0] - kv*s, r[1] - kv*h];
+  };
+  const sc = {0: p(1,0)[0] > p(0,0)[0] ? 1 : 0, 1: p(1,1)[0] > p(0,1)[0] ? 1 : 0};
+  const hy = {0: p(0,1)[1] > p(0,0)[1] ? 1 : 0, 1: p(1,1)[1] > p(1,0)[1] ? 1 : 0};
+  const ns = [];
+  for (const s of [0,1]) for (const h of [0,1]) if (sc[h] === s && hy[s] === h) ns.push([s,h]);
+  if (ns.length !== 1) return "more than one";
+  const [s, h] = ns[0];
+  if (s === 0 && h === 0) return "neither advertises";
+  if (s === 1 && h === 0) return "Smart Cookie alone";
+  if (s === 0 && h === 1) return "Hogi Yogi alone";
+  const b = p(0,0);
+  return (p(1,1)[0] < b[0] && p(1,1)[1] < b[1]) ? "both — and both lose" : "both advertise";
+}
+
+// depends on the campaign type only, so it is computed once per toggle
+// rather than on every slider tick
+mapCells = {
+  const nx = 46, ny = 38, x0 = 0.25, x1 = 2.0, y0 = 0, y1 = 1.20;
+  const dx = (x1-x0)/nx, dy = (y1-y0)/ny, out = [];
+  for (let i = 0; i < nx; i++) for (let j = 0; j < ny; j++) {
+    const x = x0 + i*dx, y = y0 + j*dy;
+    out.push({x, y, dx, dy, r: classify(kind, x + dx/2, y + dy/2)});
+  }
+  return out;
+}
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  width: 660, height: 340, marginLeft: 62, marginBottom: 46, marginRight: 8,
+  style: {background: "transparent", fontSize: "12px", color: "#6B7280"},
+  x: {domain: [0.25, 2.0], label: "Units the campaign adds per person →",
+      labelAnchor: "center"},
+  y: {domain: [0, 1.20], label: "↑ Price per person",
+      tickFormat: d => `$${d3.format(".2f")(d)}`, labelAnchor: "center"},
+  color: {
+    domain: ["neither advertises", "Smart Cookie alone", "Hogi Yogi alone",
+             "both advertise", "both — and both lose", "more than one"],
+    range:  ["#EFEFEE", "#CFE0FA", "#FBDCC4", "#CCE8D6", "#F0AE99", "#DDD6FE"],
+    legend: true
+  },
+  marks: [
+    Plot.rect(mapCells, {x1: "x", y1: "y", x2: d => d.x + d.dx, y2: d => d.y + d.dy,
+                         fill: "r", stroke: null}),
+    Plot.dot([{x: S, y: K}], {x: "x", y: "y", r: 7, fill: "#1F2937",
+                              stroke: "white", strokeWidth: 2.5}),
+    Plot.text([{x: S, y: K}], {x: "x", y: "y", dy: -18,
+                               text: () => "you are here", fill: "#1F2937",
+                               fontSize: 12, fontWeight: 600})
+  ]
+})
+```
+
+Two things are worth reading off it before touching anything.
+
+The boundaries all slope the same way. A more effective campaign is worth more, so it stays worth buying at a higher price, and every region boundary drifts right as effectiveness rises. Nothing surprising there, and it is the reason a single threshold is not the answer to *is this worth it* — the answer is a curve.
+
+What differs between the two campaigns is what lies at the bottom. Switch to reach and the cheap end of the map is entirely green: when advertising expands the market, both firms buying it is a good outcome, at every effectiveness. Switch to comparative and a band of salmon opens along the bottom, and that band *is* the trap. It sits at low prices, which is the corollary this chapter has already stated and the map now makes geographic: the cheaper a redistributive campaign gets, the more certainly both firms buy it and the more certainly both regret it.
+
+Above that band, in both maps, is the region where only one firm advertises, and above that the region where nobody does. Notice which firm survives longest in each. Under reach it is Smart Cookie, because the differentiated firm captures more of any expansion and can therefore justify a higher price for it. Under comparative it is Hogi Yogi, because the firm with more to gain from poaching is the one with fewer customers to lose.
+
 Start where the chapter left off, with the comparative campaign at ten cents. Every arrow points toward advertising, both firms land in the bottom-right, and the readout says what the numbers said: both are worse off than if neither had moved. Now raise the price. Somewhere near seventeen cents Smart Cookie's arrows flip, the trap opens, and above about sixty cents nobody advertises at all.
 
 Then switch the campaign to reach and watch what changes. The arrows still converge on both firms advertising, and the warning disappears, because the money is now buying consumption that did not previously exist.
