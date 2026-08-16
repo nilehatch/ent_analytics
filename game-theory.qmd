@@ -1,239 +1,226 @@
 ---
-title: "Game Theory"
-subtitle: "Reasoning about choices that depend on another choice"
+title: "Building the Game"
+subtitle: "Nobody hands you a payoff matrix, and the payoffs are the whole difficulty"
 ---
-
-## Anticipating and Responding to Rivals
 
 ```{r}
 #| output: false
 #| include: false
 library(tidyverse)
-#library(readxl)
 library(scales)
 library(gt)
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
 ```
 
-Game theory is more than a theoretical construct or a toolkit for gamers to dominate at Monopoly; it's a critical framework for entrepreneurs navigating the competitive business landscape. It demystifies the complex process of strategic decision-making in an environment where outcomes are influenced not just by your actions, but also by the responses of competitors, partners, and customers.
+The last chapter ended one step short. Hogi Yogi could buy the advertising, and so could Smart Cookie, and each of them has to decide without knowing what the other will do.
 
-## The Importance of Game Theory in Competitive Strategy
-Many people assume that competition is straightforward: firms either enjoy *monopoly power*, where they control prices and earn high profits, or they operate under *perfect competition*, where the invisible hand of the market ensures that self-interested actions serve the common good.  
+That is a game, and this chapter is about how to build one.
 
-However, real-world markets exist on a continuum between these extremes, where firms have some influence over market outcomes, but their success is interdependent on the strategic choices of others. Unlike in perfect competition, where firms act independently of each other and price falls to cost, businesses in oligopolistic or differentiated markets must anticipate and react to competitors' actions.
+The distinction matters more than it sounds. Almost everything written about game theory teaches you to *solve* games: here is a matrix of numbers, find the equilibrium. It is a reasonable thing to teach and it prepares you for a situation that never happens. Nobody will walk into your office holding a payoff matrix and ask you to solve it. What you will have is a decision, a competitor, and no numbers at all.
 
-Game theory offers a lens to understand and navigate this intricate network, highlighting how strategic choices are intertwined. It underscores the critical insight that the success of your decisions hinges on the interconnected strategies within your business ecosystem. This understanding is pivotal for several reasons:
+Building the game is the work. It is also where every mistake lives.
 
--   **Enhanced Competitive Insight:** By acknowledging the interconnected nature of market actions, entrepreneurs can better predict competitor reactions, enabling strategic moves that are informed, proactive, and one step ahead.
--   **Informed Strategic Choices:** Grasping the concept of interdependence aids in identifying actions that not only advance your position but also shape the competitive landscape in your favor, thus fostering optimal strategic decision-making.
--   **Opportunities for Collaboration:** Beyond competitive dynamics, game theory also reveals avenues for negotiation and cooperation, identifying potential alliances that bolster your competitive stance.
+## Solving Is the Easy Part
 
-Through game theory, entrepreneurs gain the ability to not just react to the competitive environment but to actively influence its evolution, equipping them with the strategies to thrive in tomorrow’s market.
+The conventional five steps of a game are worth stating, mostly so the weighting can be corrected.
 
+Identify the players. Identify the actions available to each. Determine the payoffs from every combination of actions. Identify each player's strategies. Solve for the equilibrium.
 
-## Individual vs. Interdependent Decision-Making
+The last step is the one textbooks spend their pages on and it is genuinely mechanical. Given a completed matrix, finding dominant strategies and equilibria is a procedure you can carry out on paper in a minute, and an AI will do it instantly and correctly every time. Hand a machine four numbered cells and you will get the right answer.
 
-#### Contrasting Contributions of Adam Smith and John Nash {.unnumbered}
-Adam Smith, the father of modern economics, is often credited with the idea that "individual ambition serves the common good". In markets with *perfect competition*, this is largely true—with myriad economic actors acting in their own self-interest, the "invisible hand" naturally directs the market to the best outcome for society.optimize market outcomes.  
+Step three is where the difficulty is, and it is not close. *What are the payoffs?* is a question about what would actually happen to your business under four different futures, only one of which you will observe. Answering it requires knowing how customers respond to price, what serving them costs, how many of them exist, and how the other firm would price in each case.
 
-However, as dramatized in *A Beautiful Mind*, John Nash pointed out that when competitors' choices influence each other, independent optimization fails. The best outcomes occur not when each player does what is best for themselves in isolation, but when each player chooses what is best for themselves given what others are doing.  Like Adam Smith, Nash recommends that you should pursue your self-interest but you should pursue your individual ambition in response to the behavior of the other players.
+Which is to say: it requires everything in the previous sixteen chapters. The engine that turns parameters into equilibrium profit is the payoff function. That is why game theory belongs at the end of this book rather than in a chapter of its own somewhere near the front. Every other chapter was building the thing that fills in the cells.
 
-This is the essence of game theory—understanding how strategic interdependence shapes competition and decision-making.
+## Payoffs Are Profit
 
+There are two ways to fill a matrix, and they are not equally useful.
 
-## The Five Steps of Game Theory
-Game theory provides a structured approach to understanding competitive dynamics. Regardless of the type of strategic interaction, analyzing a game follows five core steps:
+**Ordinal payoffs** rank outcomes. Best, second best, third, worst, or 4, 3, 2, 1 with no claim that the gaps mean anything. They are quick, they need no data, and for some games they are enough: if you only need to know which outcome each player prefers, ranking gets you to an equilibrium.
 
-1. **Identify the Players**  
-   - Who are the decision-makers in the game?  
-   - In business, players might include competitors, customers, suppliers, investors, or regulators.  
+They also smuggle in the answer. To rank the outcomes you must already know which you prefer, and in most real competitive decisions that is precisely what you do not know. Is it better to advertise while your rival does, or to sit still while they advertise alone? The last chapter showed that the intuitive ranking of exactly that question is wrong.
 
-2. **Identify the Possible Actions**  
-   - What choices do each of the players have?  
-   - These actions could involve pricing strategies, product launches, marketing moves, supply chain decisions, or investment choices.  
+**Cardinal payoffs** are numbers with meaning — profit, or the net present value of profit over the life of the commitment. They require the analysis. They also answer questions ranking cannot: how much better, whether the gap is worth the risk, and at what cost the decision would flip.
 
-3. **Determine Payoffs**  
-   - What are the consequences of each possible action?  
-   - Payoffs can be financial (profits, market share, revenue) or strategic (brand loyalty, competitive positioning).  
+::: {.column-margin .def-margin}
+**Ordinal and cardinal payoffs** — a ranking of outcomes versus a measurement of them. Ordinal is faster and assumes you already know the order. Cardinal has to be computed and tells you how much is at stake.
+:::
 
-4. **Identify the Strategies**  
-   - A strategy is a plan of action that accounts for every possible move by rivals.  
-   - Some strategies may be dominant (always the best choice), while others depend on rival responses.  
+For this book, payoffs are profit. You have a demand system, a cost structure, and a procedure for finding where prices settle. Every cell of a matrix is one run of that procedure under one combination of decisions.
 
-5. **Solve for the Equilibrium Outcome**  
-   - The equilibrium is the expected result of rational decision-making, where no player has an incentive to unilaterally change their strategy.  
-   - The *Nash Equilibrium* occurs when each player is playing their best response to every other player’s choice.
+## Building the Game, One Cell at a Time
 
-This systematic approach helps entrepreneurs move beyond intuition and predict how competitors and partners will react to strategic moves.
+Back to the ice cream sandwiches, with the agency now selling to both shops. Each firm can buy the campaign or not. The campaign costs \$0.75 per person per month and adds two units of consumption per person per month to whoever buys it.
 
----
+**The players** are Smart Cookie and Hogi Yogi. **The actions** are advertise or do not. That gives four combinations, and each one is a different market with different parameters, so each one needs its own equilibrium.
 
-## Real-World Applications of Game Theory in Entrepreneurship
-Game theory is not just an academic exercise—it has practical applications in entrepreneurial strategy, shaping how startups and businesses pricing, investment, and market entry decisions.
+That is the whole construction. Change the parameters to match the combination, solve the pricing game, record the profits, subtract the cost of the campaign from whoever bought it.
 
-#### 1. Competitive Pricing Strategies
-Many entrepreneurs assume they can set prices freely to maximize their own profits. However, in competitive markets, price changes trigger responses from rivals.  
+```{r}
+#| label: tbl-ad-game-build
+#| echo: false
+#| tbl-cap: "Four combinations, four separate pricing equilibria. The campaign adds two units of reach to whoever buys it; every other parameter is unchanged from the estimated system. Profit is per person per month, net of the $0.75 campaign."
 
-For example, if a startup cuts prices to gain market share, competitors may match the cut, leading to a price war that reduces profits for everyone. Undiferentiated Bertrand competition models show that rational competitors tend to undercut each other until price equals cost—a dangerous trap for startups without a cost advantage.  
+eqm <- function(a1, a2) {
+  b1 <- 2.158877; d1 <- 5.568712; c1 <- 0.75
+  b2 <- 3.496552; d2 <- 0.554085; c2 <- 0.50
+  X1 <- (a1 + b1*c1)/(2*b1); Y1 <- d1/(2*b1)
+  X2 <- (a2 + b2*c2)/(2*b2); Y2 <- d2/(2*b2)
+  den <- 1 - Y1*Y2
+  p1 <- (X1 + Y1*X2)/den; p2 <- (X2 + Y2*X1)/den
+  c(p1, p2, (p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1))
+}
+A1 <- -0.7043; A2 <- 4.569339; K <- 0.75
 
-**Key Lesson:** Game theory helps businesses anticipate competitive price reactions* and develop differentiation strategies that avoid price wars.
+rows <- map_dfr(list(c(0,0), c(0,1), c(1,0), c(1,1)), function(z) {
+  e <- eqm(A1 + 2*z[1], A2 + 2*z[2])
+  tibble(`Smart Cookie` = if (z[1]) "advertises" else "does not",
+         `Hogi Yogi`    = if (z[2]) "advertises" else "does not",
+         `p sc` = dollar(e[1], .01), `p hy` = dollar(e[2], .01),
+         `π sc` = dollar(e[3] - K*z[1], .01),
+         `π hy` = dollar(e[4] - K*z[2], .01))
+})
+rows |> gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(5), table.width = pct(100)) |>
+  cols_align("center")
+```
 
-#### 2. Market Entry and Deterrence Strategies
-When entering a new market, a startup must consider how incumbents will react. If a dominant firm threatens to lower prices to drive new entrants out, should the startup ignore the threat?  
+Four rows, four equilibria, and every number in them computed rather than assumed. Notice that the prices differ in every row. The firms are not choosing between four versions of the same market, they are choosing which market to be in.
 
-Using game theory and backward induction, an entrepreneur can determine whether such a threat is credible. If the incumbent has no incentive to follow through, the startup can confidently enter the market. However, if the incumbent has committed to cost-cutting investments, its threat may be real, and entry may need to be reconsidered.
+Arranged as a matrix, that is the game:
 
-**Key Lesson:** Game theory helps predict whether competitive threats are credible, guiding smarter entry decisions.
+```{r}
+#| label: tbl-ad-game-normal
+#| echo: false
+#| tbl-cap: "The advertising game in normal form. Each cell is (Smart Cookie, Hogi Yogi) profit per person per month, net of the campaign."
 
-### 3. Negotiation and Strategic Alliances
-Game theory doesn’t just apply to rivalries—it also helps entrepreneurs negotiate effectively with investors, suppliers, and partners.  For example, if a startup is seeking venture capital funding, multiple investors may be competing to invest. Should the startup hold out for better terms or accept an early offer?  
+cell <- function(s, h) {
+  e <- eqm(A1 + 2*s, A2 + 2*h)
+  sprintf("%s,  %s", dollar(e[3] - K*s, .01), dollar(e[4] - K*h, .01))
+}
+tibble::tibble(
+  ` ` = c("**Smart Cookie does not advertise**", "**Smart Cookie advertises**"),
+  `Hogi Yogi does not advertise` = c(cell(0,0), cell(1,0)),
+  `Hogi Yogi advertises`         = c(cell(0,1), cell(1,1))
+) |>
+  gt() |>
+  fmt_markdown(columns = ` `) |>
+  tab_options(table.font.size = 13, data_row.padding = px(12), table.width = pct(100)) |>
+  cols_align("center") |>
+  cols_align("left", columns = ` `)
+```
 
-A game-theoretic approach can help entrepreneurs:  
+## Solving It
 
-- Recognize when investors have an incentive to negotiate aggressively.  
-- Use commitment strategies to increase their bargaining power.  
-- Identify collaborative game structures where win-win partnerships emerge.
+This part takes a paragraph, which is the point.
 
-**Key Lesson:** Game theory provides a framework for optimizing negotiations and securing advantageous deals.
+Look down each column for Smart Cookie. If Hogi Yogi sits still, Smart Cookie earns \$1.33 by doing nothing and \$2.90 by advertising. If Hogi Yogi advertises, Smart Cookie earns \$3.08 by doing nothing and \$5.57 by advertising. Advertising is better in both cases, so it is a **dominant strategy** — Smart Cookie does not need to predict anything.
 
+Now across each row for Hogi Yogi. Against a passive Smart Cookie, \$0.96 or \$1.74. Against an advertising Smart Cookie, \$1.12 or \$1.98. Also dominant.
 
-## Conclusion: Why Entrepreneurs Need Game Theory
-Ignoring strategic interdependence can lead to unpleasant surprises—price wars, unexpected competitor reactions, or failed negotiations. Entrepreneurs who recognize and analyze interdependent decision-making can anticipate challenges before they arise, giving them a competitive edge.
+Both firms advertise. The equilibrium is \$5.57 and \$1.98, and neither firm has any reason to deviate.
 
-### Key Takeaways
+::: {.column-margin .def-margin}
+**Dominant strategy** — an action that is best whatever the other firm does. When one exists you do not have to forecast your rival, which is the easiest kind of decision competition ever offers.
+:::
 
-- Game theory explains why competition is interdependent, not isolated. 
-- The five-step process (players, actions, payoffs, strategies, equilibrium) helps analyze competitive decisions.
-- Real-world applications include pricing, market entry, and negotiation strategies.
-- Entrepreneurs who use game theory can anticipate rival responses, avoid costly mistakes, and gain strategic advantages.
+Two things about that outcome deserve notice, and neither was visible before the game was built.
 
-By applying game-theoretic thinking, entrepreneurs can not only navigate competitive landscapes but also reshape them in their favor.
+Both firms end up better off than if neither had advertised: \$5.57 against \$1.33, and \$1.98 against \$0.96. This is not a trap. The spending genuinely creates value here, because the campaign brings new consumption into the market rather than shuffling existing consumption between two shops. Not every competitive escalation works this way, and the next chapter is about telling the difference.
 
+And the gap widens again. Smart Cookie's lead goes from thirty-six cents to three dollars and fifty-nine. Hogi Yogi advertises, correctly, and finishes further behind than when it started. The advertising was worth buying and it was never going to fix the problem.
 
+## What Would the Ad Have to Cost?
 
-<!-- 
-Reading Quiz: Game Theory in Entrepreneurship
+Here is the return on having built the game rather than been handed it.
 
-1. Why is game theory important for entrepreneurs?
+A payoff matrix is four numbers. A payoff *function* is the machinery that produced them, and it will answer questions the numbers cannot. The most useful one: the agency is charging \$0.75 — at what price would this stop being worth it?
 
-a) It helps entrepreneurs dominate at board games like Monopoly.
-b) It provides a structured way to understand and navigate strategic interdependencies.
-c) It ensures that every entrepreneur becomes a monopoly.
-d) It guarantees that all business decisions will be profitable.
+That question has an answer, because the gross gains are computable and the cost is the only thing that changes.
 
-Correct Answer: b – Game theory helps entrepreneurs analyze and respond to competitors’ strategies rather than making isolated decisions.
+```{r}
+#| label: tbl-ad-thresholds
+#| echo: false
+#| tbl-cap: "Each firm's gross gain from advertising, which is what the campaign would have to cost before that firm stopped wanting it."
 
-⸻
+g <- function(s,h) eqm(A1 + 2*s, A2 + 2*h)
+tibble::tibble(
+  Situation = c("Hogi Yogi, if Smart Cookie sits still",
+                "Hogi Yogi, if Smart Cookie advertises",
+                "Smart Cookie, if Hogi Yogi sits still",
+                "Smart Cookie, if Hogi Yogi advertises"),
+  `Worth buying while the campaign costs less than` =
+    dollar(c(g(0,1)[4]-g(0,0)[4], g(1,1)[4]-g(1,0)[4],
+             g(1,0)[3]-g(0,0)[3], g(1,1)[3]-g(0,1)[3]), .01)
+) |> gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(6), table.width = pct(92)) |>
+  cols_align("left", columns = Situation) |> cols_align("center")
+```
 
-2. According to game theory, how does Nash’s perspective differ from Adam Smith’s?
+At \$0.75 the agency is selling well below every one of those thresholds, which is why advertising is dominant for both firms. Raise the price and the game changes character in stages. Above about \$1.62, Hogi Yogi drops out whatever Smart Cookie does, and the equilibrium becomes Smart Cookie advertising alone. Above about \$2.32, nobody buys.
 
-a) Smith believed that businesses should cooperate, while Nash believed competition is always destructive.
-b) Smith assumed independent decision-making leads to the common good, while Nash emphasized interdependent strategic decision-making.
-c) Nash rejected the idea of competition, while Smith encouraged businesses to ignore competitors.
-d) Smith and Nash had identical views on economic competition.
+So the same two firms, the same customers, the same campaign effectiveness, produce three different games depending only on what the agency charges. If you had been handed the matrix you could have solved it. Having built it, you can negotiate, and you know that Hogi Yogi's willingness to pay tops out around \$1.62 while Smart Cookie's runs to \$3.24, which is worth knowing before either of them walks into the agency.
 
-Correct Answer: b – Smith’s view assumes independent decision-making in perfect competition, while Nash showed that interdependent strategies are key in markets with strategic interactions.
+::: {.limit}
+**What a two-by-two hides**
 
-⸻
+Real decisions are rarely binary. Advertising comes in amounts, not in a switch, and the campaign that adds two units per person is one point on a curve that probably bends.
 
-3. What are the five steps in applying game theory to strategic decisions?
+A two-by-two is a deliberate simplification that buys clarity about the *structure*: who has a dominant strategy, whether the outcome is a trap, which firm the spillover favours. Use it for that. When the question is *how much* rather than *whether*, the same machinery still works, but you are optimizing over a continuous choice rather than reading a cell, and the answer stops being a game in the textbook sense.
+:::
 
-a) Identify the industry, predict government intervention, set prices, adjust profit margins, and react to market trends.
-b) Identify players, identify possible actions, determine payoffs, identify strategies, and solve for equilibrium.
-c) Choose a random strategy, wait for competitors to react, adjust tactics, increase advertising, and repeat the process.
-d) Find the best business idea, secure funding, start marketing, launch the product, and analyze sales.
+## The Same Logic at Ten Billion Dollars
 
-Correct Answer: b – The structured process of game theory involves identifying players, their possible actions, payoffs, strategies, and equilibrium outcomes.
+The construction does not change with the size of the decision, only the horizon over which profit is counted.
 
-⸻
+Consider two aircraft manufacturers deciding whether to develop a new, technologically advanced aircraft, which is the situation Airbus and Boeing faced. Each can innovate or not. The payoffs are the net present value of Bertrand competition profits over twenty years, computed under each of the four combinations, with the development cost carried as a fixed commitment.
 
-4. In the context of game theory, what is a Nash equilibrium?
+```{r}
+#| label: tbl-airbus-boeing
+#| echo: false
+#| tbl-cap: "Illustrative NPV in billions over twenty years, computed from estimated demand and cost under each combination. Airbus first, Boeing second."
 
-a) A situation where every player is making their best decision based on what others are doing, and no one has an incentive to change their strategy.
-b) The outcome where one player wins everything and all others lose.
-c) The most ethical decision that benefits all parties equally.
-d) A strategy that guarantees success regardless of competitors’ choices.
+tibble::tibble(
+  ` ` = c("**Airbus does not innovate**", "**Airbus innovates**"),
+  `Boeing does not innovate` = c("$30B,  $40B", "$40B,  $20B"),
+  `Boeing innovates`         = c("$20B,  $30B", "-$10B,  -$20B")
+) |>
+  gt() |> fmt_markdown(columns = ` `) |>
+  tab_options(table.font.size = 13, data_row.padding = px(12), table.width = pct(100)) |>
+  cols_align("center") |> cols_align("left", columns = ` `)
+```
 
-Correct Answer: a – A Nash equilibrium occurs when all players are making their best strategic choices given their rivals’ decisions, and no one benefits from changing unilaterally.
+Solve it the same way. Boeing earns \$40B rather than \$30B if Airbus stays out, and \$20B rather than losing \$20B if Airbus goes ahead. Not innovating is dominant for Boeing. Knowing that, Airbus compares \$30B with \$40B and develops the aircraft.
 
-⸻
+The structure is identical to the ice cream sandwiches. What differs is that the payoffs took months of demand analysis and cost forecasting to produce, and that the mistaken cell, the one where both firms innovate, would have cost thirty billion dollars.
 
-5. Which of the following is NOT an example of how entrepreneurs can apply game theory?
+That is the argument for building games carefully. It is also, as it happens, where the research this part closes on began.
 
-a) Anticipating competitor reactions when setting prices.
-b) Evaluating whether a large firm’s threat to lower prices is credible before entering a market.
-c) Negotiating better deals with investors by understanding their incentives.
-d) Using game theory to predict stock market trends with absolute certainty.
+::: {.threshold}
+**Before you trust a game you have built**
 
-Correct Answer: d – Game theory helps in strategic decision-making, but it does not predict market movements with certainty.
--->
+- **Is every cell a computed equilibrium?** If any payoff was estimated by intuition while the others were calculated, the comparison between them is meaningless.
+- **Did you let prices move in every cell?** The most common error is holding price fixed at today's level in the cells where the structure changed. The last chapter showed what that costs.
+- **Are the payoffs on one clock?** Per person per month, or NPV over twenty years, but not one of each. Mixing horizons across cells produces a matrix that looks solvable and is not.
+- **Have you included the cost of the action in the cells where it was taken?** Only there. This is the easiest arithmetic slip in the whole construction.
+- **Would a small change in one parameter flip the equilibrium?** If so, say so out loud. A game whose answer depends on the third decimal place of an estimated coefficient is telling you the decision is close, not that it is resolved.
+:::
 
-<!-- From the old reading quizzes
-In game theory, what is a strategy?
-  A goal and set of policies designed to achieve competitive advantage in a particular marketplace. 
-  Performing similar activities better than rivals perform them. 
-  Performing different activities from rivals' or performing similar activities in different ways. 
-Correct Answer
-  The complete set of one player's best responses to every possible action of other. 
-  What a player should do to win a game. 
-General answer comments
-A strategy is a very specific thing in game theory. A player's strategy is the set of her best responses to every possible action her rivals could take. Once the strategies of all players are specified, we are ready to find the equilibrium outcome (the outcome that we expect to happen).
+::: {.reflect}
+**Ask yourself — what are the four futures?**
 
+Name one non-price decision in front of you and one competitor who could make the same decision.
 
-In the Academy Award winning film A Beautiful Mind, John Nash's character has an epiphany while in a pub in Princeton New Jersey. When a beautiful blond girl enters the pub with her brunette friends, John Nash and his fellow math Ph.D. students (big men on campus at Princeton in the 1950s) begin posturing to meet and dance with the blonde. They discuss Adam Smith and agree to "every man for himself, gentlemen." John Nash proposes: "If we all go for the blond, we block each other. Not a single one of us is going to get her. So then we go for the friends, but they will all give us the cold shoulder because nobody likes to be second choice. But what if no one goes for the blond. We don't get in each other's way and we don't insult the other girls. That's the only way we win."
+Write the four combinations. Both do it, you alone, they alone, neither. Do not put numbers in yet. Just say, in a sentence each, what the market looks like in that future.
 
-Which of the following is true about the equilibrium outcome of the game as John Nash proposes it.
+Now ask which of the four you have actually thought about. Most people have considered two: the world where they act and the world where they do not, both assuming the rival stands still. The two cells that involve the competitor moving are usually blank, and one of them is where the trouble is.
 
-  The game leads to a Bertrand equilibrium. 
-  The game does NOT lead to a Bertrand equilibrium. 
-  The game leads to a Nash equilibrium. 
-Correct Answer
-  The game does NOT lead to a Nash equilibrium. 
-  The game leads to a Stackelberg equilibrium. 
-  The game does NOT lead to a Stackelberg equilibrium. 
-General answer comments
-"The first introduction that many people have to game theory and the Nash equilibrium in in the Academy award winning movie A Beautiful Mind. Ironically, the equilibrium outcome that is proposed in the movie is not a Nash equilibrium." [page 4]
+Then, for the cell that worries you most, ask what you would have to know to put a number in it. That list is your next piece of analysis, and it is shorter than it looks. It is demand, cost, and scale under one set of assumptions.
+:::
 
+::: {.key-action}
+**The move:** Build the game before you solve it. Solving is arithmetic and a machine will do it; the payoffs are judgment plus every chapter that came before, and a matrix filled in by intuition gives a confident answer to a question nobody asked.
+:::
 
-What is a Nash equilibrium?
-  An outcome where every player is simultaneously playing a best response to all other players. 
-  An outcome where no player has an incentive to choose a different action. 
-  An outcome of the highest common good achieved by every player doing what is best for himself. 
-Correct Answer
-  A and B are true 
-  A and C are true 
-  B and C are true 
-General answer comments
-"The final step in solving the game is to find the equilibrium outcome. If the outcome is a Nash equilibrium, it must be that every player is playing a best response to every other player at the same time." [pages 7-8]
-
-"[E]very player is simultaneously playing their best response---no player has an incentive to choose a different action." [inset in page 7]
-
-
-Prisoner dilemma games are bad for players because their strategies lead them to actions that are mutually most destructive, like price wars in undifferentiated Bertrand oligopolies. In practice, firms can avoid self-destructive behavior by using trigger strategies in repeated games as long as
-Correct Answer
-  the discount rate is low enough. 
-  the discount rate is high enough. 
-  there are many players in the repeated game. 
-  no player can effectively damage (punish) its rivals. 
-  players cannot observe what their rivals are doing. 
-General answer comments
-"In general, cooperation is possible when the value of cooperation is greater than the value of aggressive play. There are several elements that influence the relative value of cooperative and aggressive play:
-
-Potential gains from cooperation: It is easier to induce cooperation when the payoffs to cooperation are much higher than the payoffs in the prisoner's dilemma equilibrium.
-
-Potential to punish an aggressive rival: We can "punish an aggressive player by responding in kind to aggressive play. If the prisoner's dilemma payoff is low enough compared to the cooperative equilibrium, an aggressor will lose enough from the punishment for aggressive pricing to promote cooperation.
-
-The discount rate is low enough: The discount rate defines how heavily we discount the future. Since the payment from aggression comes immediately and the punishments are spread over a long time, heavy discounting of the future (a high discount rate) makes it more difficult to cooperate.
-
-The ability to monitor and punish aggressive play: Firms must be able to monitor their rivals' behavior, recognize betrayal, and implement punishment by retaliating with a low price. When it is difficult to monitor a rival, the risk of punishment is low and cooperation is unlikely.
-
-Few enough players in the game: The more players, the more difficult it is to monitor each other and cooperation is less likely. The entry of new players to the game is particularly difficult because their benefits, costs, and discount rate are unknown. A new player may be playing aggressively or just not know the rules.
-
-A history of punishment in response to aggressive play: The threat of punishment is effective only when the potential aggressor believes the potential target will retaliate. Firms that develop a reputation of protecting themselves by punishing aggressors are more credible when they threaten aggressive rivals who contemplate betrayal. Firms that forgive and ignore all aggressive play mark themselves as patsies and attract aggressive rivals who are eager for their turn to take advantage.
-
-When all these factors are in place, it is reasonably likely that undifferentiated Bertrand competitors facing a prisoner's dilemma can cooperate.
-
-
--->
-
+Both games in this chapter had a comfortable property: the equilibrium left everyone better off than doing nothing, or at least left the winner clearly ahead. That is not guaranteed. There are competitive moves where both firms act rationally, both end up worse than if neither had moved, and no amount of skill at solving the game gets you out of it. Telling those apart in advance is the difference between a competitive investment and an expensive reflex.
