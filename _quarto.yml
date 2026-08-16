@@ -9,6 +9,13 @@ project:
   # Expeditionary Innovation. See scripts/sync-refs.py.
   pre-render:
     - scripts/sync-refs.py
+  # Netlify reads _headers from the root of the deployed directory, and the
+  # workflow deploys _book/. _book/ is gitignored and rebuilt on the runner,
+  # so the file cannot simply be committed there — Quarto has to copy it in.
+  # It stops the edge serving a stale page; the comments in _headers explain
+  # what went wrong and why Cache-Control alone was not enough.
+  resources:
+    - _headers
 
 book:
   title: "Is This Worth Doing?"

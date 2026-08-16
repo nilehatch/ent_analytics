@@ -1,0 +1,44 @@
+# Netlify reads this file from the root of the published directory (_book/).
+# It is copied there by `resources:` in _quarto.yml — see the note there.
+#
+# WHY THIS EXISTS
+#
+# On 15 Aug 2026 a corrected page kept serving its previous version through
+# repeated reloads, including DevTools "Empty Cache and Hard Reload". That
+# clears the BROWSER's copy, so the fact that it changed nothing is the whole
+# diagnosis: the stale copy was not in the browser. Netlify was reporting
+#
+#     cache-status: "Netlify Edge"; hit; ttl=31535985
+#
+# on the HTML — a year-long time to live at the edge. Appending ?v=2 produced
+# the new page instantly, which confirms it: a different query string is a
+# different cache key at the edge, so that request missed the stale entry and
+# went to origin. The origin was correct the entire time.
+#
+# This had cost three review cycles before it was diagnosed, each one looking
+# like "the fix did not work" when the fix had already shipped.
+#
+# THE TWO HEADERS ARE NOT THE SAME KNOB
+#
+# Cache-Control            governs the visitor's browser.
+# Netlify-CDN-Cache-Control governs Netlify's edge, and takes precedence there.
+#
+# The site was already sending `Cache-Control: public,max-age=0,must-revalidate`,
+# which is correct and was never the problem. Only the second header reaches the
+# edge, so only the second header could have fixed this.
+#
+# `no-cache` does NOT mean "do not store". It means "revalidate before serving".
+# Both layers still keep the file and still answer with 304 Not Modified when
+# nothing changed, so repeat visits stay fast. What it removes is the ability to
+# serve a stale copy without asking.
+
+/*
+  Cache-Control: no-cache
+  Netlify-CDN-Cache-Control: no-cache
+
+# Quarto's bundled libraries carry their version in the directory name
+# (bootstrap-5.x, quarto-html, and so on), so any change to them changes the
+# URL. Those are safe to cache hard and never go stale.
+/site_libs/*
+  Cache-Control: public, max-age=31536000, immutable
+  Netlify-CDN-Cache-Control: public, max-age=31536000, immutable
