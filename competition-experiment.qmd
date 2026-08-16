@@ -1,434 +1,126 @@
 ---
 title: "Measuring Demand Under Rivalry"
-subtitle: "*Substitution, price sensitivity, and experimental design in competitive markets*"
+subtitle: "Where the parameters come from, and why one price is no longer enough"
 ---
-
 
 ```{r}
 #| output: false
 #| include: false
 library(tidyverse)
-#library(readxl)
 library(scales)
 library(gt)
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
 ```
 
-In the previous chapters on competition, we analyzed profit by assuming a demand structure.
+Every number in the last two chapters was handed to you. The appeal, both price sensitivities, both directions of switching, the costs. That was deliberate, so the machinery would be visible while it ran, and it is not a position you can make a decision from.
 
-We showed how profit becomes a surface defined by two prices.  
-We derived best-response functions.  
-We identified equilibrium.
+This chapter is about where those numbers actually come from. The good news is that nothing you learned about demand experiments is wrong. The complication is that adding a second firm adds a second price, and a second price changes what an experiment has to accomplish.
 
-But all of those results depend on the shape of demand.
+## Two Prices, Not One
 
-Until now, demand was given.
-In practice, it must be measured.
+When demand depended on your price alone, an experiment answered one question: how does quantity respond as your price moves?
 
-Under rivalry, demand is no longer one-dimensional.
-It depends on both your price and your rival’s price.
+Under rivalry, quantity responds to two prices, and the responses are different things.
 
-$$ \mathsf{Q_i = f(P_i, P_j)}$$
+The **own-price effect** is the familiar one. Raise your price and some customers buy less or leave. That is $\mathsf{b_i}$, and everything in [designing experiments](designing-experiments.qmd) about eliciting it still applies.
 
-That single change — adding a second price — transforms how experiments must be designed and how demand must be estimated.
+The **cross-price effect** is new. Raise the *rival's* price and some of their customers come to you. That is $\mathsf{d_i}$, and no experiment that varies only your own price will ever reveal it.
 
-This chapter extends the experimental discipline developed earlier to competitive settings.  
-The goal is not to add complexity.  
-The goal is to measure substitution directly.
+Measure only the first and you have a demand curve that will mislead you the moment the other firm moves. Measure only switching, without price sensitivity, and you know customers are mobile without knowing what it costs you when they move.
 
-Once competitive demand is estimated, cost and scale can be layered on top to evaluate profit under rivalry. That step comes next.
+And there is a third thing, which the last chapter argued is the one most often missed. Your rival has an equation too, and $\mathsf{d_j}$ — how many of *your* customers leave for *them* when *you* raise price — is a separate quantity that your own customers' answers can tell you about only if you ask.
 
-First, we must measure the structure that makes competition possible.
+That is three measurements, not one, and only the first is familiar.
 
+## The Rival's Price Is a Treatment
 
+The structural change to experimental design is small to state and easy to get wrong.
 
+Under monopoly the rival's price does not exist. Under rivalry it is not background context either. It is a variable you must deliberately manipulate, in the same way and for the same reason you manipulate your own.
 
+The sequence of a good demand experiment does not change. You still screen for the right population, establish context, ground the problem and the solution, evaluate appeal, and elicit price or quantity. What changes is that the price question now has to describe two offers rather than one, and the rival's offer has to be described consistently, framed neutrally, and priced differently across respondents.
 
+That framing burden is heavier than it sounds. Describe the competitor warmly and you will measure more switching than exists; describe them dismissively and you will measure less. Both errors look like data. Under rivalry, neutrality in how you present the other firm is not politeness, it is measurement.
 
-## Demand Under Rivalry Is Two-Dimensional
+::: {.limit}
+**What a stated-preference experiment cannot settle**
 
-When demand depended only on your price, estimation focused on one question:
+Asking people what they would do when a competitor changes price measures intention under a described scenario, not behavior in a market. Cross-price effects are especially exposed to this, because switching is exactly the kind of decision people find easy to imagine and harder to execute against habit, convenience, and inertia.
 
-> How does quantity change when I change price?
+Treat estimated substitution as an upper bound on how mobile your customers really are, and prefer a smaller number when the evidence is thin. The [validation toolkit](validate-evidence.qmd) applies here with more force than it did under monopoly, not less.
+:::
 
-Under rivalry, there are two distinct effects.
+## Identification, Not Realism
 
+Here is the requirement that decides whether an experiment works at all, and it is the one founders most often violate while being careful about everything else.
 
-#### Own-price effect
-When you raise your price, some customers reduce quantity or leave.  
-This is price sensitivity — the familiar slope discipline.
+To separate own-price sensitivity from substitution, the two prices have to move **independently**. Your price must change while the rival's holds still. The rival's must change while yours holds still. And some respondents must see both change together.
 
-#### Cross-price effect
-When the rival raises their price, some customers shift toward you.
-This is substitution.
+If every scenario moves both prices in step, the data cannot tell the two effects apart. Not because the sample is too small or the statistics too crude, but because the information simply is not in there. No amount of analysis recovers a distinction the design did not create.
 
-Both must be measured.
+This is where a sensible instinct does real damage. Founders build scenarios that feel realistic, and in a real market prices tend to move together — everyone's costs rise, everyone raises price. Reproduce that faithfully in your design and you will produce a beautifully realistic experiment that cannot answer your question.
 
-If you only estimate how demand responds to your own price, you do not understand competition.
-If you only estimate switching without price discipline, you do not understand margin.
+*The goal of experimental design is not realism. It is identification.*
 
-Rivalry is the joint presence of both.
+A respondent may never encounter the price pair you show them. That is acceptable and often necessary. What is not acceptable is a set of scenarios from which the parameters cannot be recovered.
 
-Importantly, the principles of good experimentation do not change.
+The obvious way to guarantee independent variation is to show every combination of prices, and that fails for a different reason: the combinations multiply fast, and a respondent asked twenty pricing questions stops thinking somewhere around the eighth. Structured designs exist that get identification from a fraction of the full grid, and [the competition toolkit](competition-survey.qmd) has the mechanics. The principle is what matters here. Competitive demand has to be identified on purpose. It does not turn up on its own.
 
-You still must:
+## Reading the Coefficients
 
-- Define the unit clearly.
-- Define the period clearly.
-- Frame the problem carefully.
-- Avoid measurement error.
-- Validate responses.
+Estimation gives you a fitted system rather than a single curve:
 
-Nothing about data discipline disappears under competition.  
-But something becomes more fragile.
+$$ \mathsf{q_i = a_i - b_i\,p_i + d_i\,p_j} $$
+$$ \mathsf{q_j = a_j - b_j\,p_j + d_j\,p_i} $$
 
+Six numbers, and each one is a claim about behavior you can sanity-check against what you know.
 
-### Dimensionality Increases Fragility
+A large $\mathsf{b_i}$ says your customers leave quickly when you raise price. Your margin is fragile and you have less pricing room than the raw appeal suggests. A small $\mathsf{b_i}$ says the opposite, and it is the parameter [the last chapter](differentiated-competition.qmd) argued is worth the most.
 
-When demand is one-dimensional, errors distort one slope.  
-When demand is two-dimensional, errors distort interaction.
+A large $\mathsf{d_i}$ says you capture a lot when the rival raises price, which means you are a close substitute for them. A small one means your customers are largely insulated from what they do.
 
-If units differ across products, substitution is mismeasured.  
-If time periods differ, cross-price sensitivity becomes noise.  
-If framing favors one product over another, estimated advantage becomes artificial.
+And the pair $\mathsf{d_i}$ against $\mathsf{d_j}$ is the comparison worth making first, because it is the one a single equation cannot show you. If they are close to equal, you and your rival are symmetric substitutes and neither has an edge in the flow. If they diverge, the firm on the favorable side has an advantage that will show up in equilibrium whether or not anyone has noticed it.
 
-Under rivalry, sloppiness compounds.
+Linear demand is a convenience rather than a commitment. Exponential, logistic, and other shapes can be fitted the same way, and the same caution from [estimating demand](estimating-demand.qmd) governs the choice: prefer the shape whose implied behavior matches what you can see, not the shape with the better fit statistic. Equilibrium does not need a closed-form solution. Once the system is estimated, the [competition app](https://rconnect.byu.edu/CompetitionAnalytics) will find where the best responses cross numerically, and so will any competent AI you hand the parameters to.
 
-The experimental principles developed earlier do not change.  
-They become more important.
+## Where These Numbers Come From
 
-### Move from Optimization to Strategic Interaction
+One reframing before you go and measure anything, because it changes what you do with the result.
 
-With one-dimensional demand, the central question was:
+It is tempting to treat these six parameters as facts about a market — conditions you discover, the way you would discover a population or a regulation. They are not. They are consequences of decisions somebody made, most of them yours.
 
-> What price maximizes profit?
+Your appeal $\mathsf{a_i}$ follows from product design, positioning, and who you chose to sell to. Your price sensitivity $\mathsf{b_i}$ follows from how clearly the value is understood, how distinctive the offering is, and whether your customers have an easy alternative in mind. The substitution terms follow from how differentiated you actually are and from which segment you targeted, which is why two firms selling similar things to different people can have very different $\mathsf{d}$ values.
 
-With two-dimensional demand, the question becomes:
+You do not choose your equilibrium price. You choose the parameters that produce it, mostly long before the price is ever charged, through decisions that did not look like pricing decisions at the time.
 
-> What price maximizes profit given that someone else is also choosing a price?
+That is what makes measurement worth the trouble. A parameter you inherited is a constraint. A parameter you produced is a design choice you can revisit, and knowing which of the six are weak tells you which decision to reopen.
 
-This is strategic interaction. But strategic interaction is not abstract theory. It rests on measurable substitution and measurable price sensitivity.
+::: {.threshold}
+**Before you trust a competitive demand estimate**
 
-Before we solve for equilibrium profit, we must measure those forces directly.
+Do not carry these parameters into an equilibrium calculation until you can answer four questions.
 
+- **Did both prices move independently?** Point to scenarios where yours changed and theirs did not, and scenarios where the reverse happened. If you cannot, your own-price and cross-price effects are not separately identified whatever the software reported.
+- **Was the rival described neutrally?** Read your own scenario text as though you worked for the competitor. If it would annoy you, your substitution estimate is biased and you know which way.
+- **Do both directions make sense together?** Compare $\mathsf{d_i}$ and $\mathsf{d_j}$ and say out loud what their difference claims about real customers. A large asymmetry is a strong claim and needs a reason you can name.
+- **Does the fitted system behave at the prices you care about?** Check quantity at your candidate price and at the rival's likely price. If either is negative or absurd, the fit is being extrapolated past the evidence.
 
+If you cannot answer all four, what you have is a set of coefficients rather than a measurement.
+:::
 
+::: {.reflect}
+**Ask yourself — could my experiment tell the two effects apart?**
 
+Sketch the pricing scenarios you would actually put in front of people. Four or five of them, with both prices written down.
 
-## Designing Experiments Under Rivalry
+Now look only at the pairs of numbers. Do your price and the rival's price move together in every scenario? If they do, you have designed an experiment that will produce clean-looking estimates of something other than what you wanted, and you will not find out until the numbers disagree with the market.
 
-<!-- In earlier chapters, experimental design focused on varying a single price.
+Then ask the question behind it. If a competitor cut price by fifteen percent next month, how much of your volume would go? You are going to answer that number one way or another — from evidence, or from optimism, on the day it happens.
+:::
 
-Under rivalry, that is no longer sufficient. -->
+::: {.key-action}
+**The move:** Vary both prices independently or you cannot separate your own price sensitivity from substitution. Realistic scenarios where prices move together produce estimates that cannot be told apart.
+:::
 
-To estimate competitive demand, both prices must vary.  
-Your price must vary.  
-The rival’s price must vary.  
-
-Without variation in both, substitution cannot be identified.
-
-If the rival’s price is held fixed, you can estimate own-price sensitivity — but not cross-price effects.  
-If your price does not vary independently of the rival’s, the two effects become confounded.
-
-Competitive demand requires deliberate variation in two dimensions.
-
-
-### Rival Price Is Now an Experimental Variable
-
-Under competition, the rival’s price is not background context. It is a treatment variable.
-
-This does not require abandoning prior survey discipline.
-
-The same six-step structure applies:
-
-- Screen the right population.
-- Establish context.
-- Ground the problem and solution.
-- Evaluate appeal.
-- Elicit price or quantity.
-- Gather customer characteristics.
-
-The only structural extension is this:  
-Price questions must now incorporate the rival explicitly.
-
-The rival’s offer must be described consistently.  
-Its framing must not bias responses.  
-Its price must vary systematically.
-
-Careless framing can artificially inflate substitution or suppress it.  
-Under rivalry, neutrality matters more.
-
-
-### Identification Requires Independent Variation
-
-To estimate own-price and cross-price effects separately, price variation must be structured so that:
-
-- Your price changes while the rival’s does not.
-- The rival’s price changes while yours does not.
-- Both change in combination.
-
-If prices move together in every scenario, the data cannot distinguish substitution from own-price discipline.
-
-The goal of experimental design is not realism.  
-It is identification.
-
-Respondents may not encounter every price combination in reality.  
-But without structured variation, the resulting demand estimates will not support competitive analysis.
-
-
-### The Cost of Combinatorial Explosion
-
-When two prices vary, the number of possible combinations grows quickly.  
-Naively enumerating all price pairs creates respondent fatigue and noisy data.  
-Under rivalry, experimental compression becomes necessary.  
-Structured design — rather than exhaustive enumeration — allows substitution to be estimated without overwhelming respondents.
-
-The detailed mechanics of these designs are provided in `Toolkit 16`.
-
-Here, the principle is simple:  
-Competitive demand must be intentionally identified.  
-It does not emerge accidentally.
-
-
-
-
-## Estimating Cross-Price Effects
-
-Design creates variation.  
-Estimation translates that variation into structure.
-
-Under rivalry, demand is no longer estimated as:
-
-$$
-\mathsf{Q = f(P)}
-$$
-
-It is estimated as:
-
-$$
-\mathsf{Q_i = f(P_i, P_j)}
-$$
-
-At minimum, estimation must identify two forces:
-
-- **Own-price sensitivity** — how quantity changes when your price changes.
-- **Cross-price substitution** — how quantity shifts when the rival’s price changes.
-
-A simple linear specification illustrates the structure:
-
-$$
-\mathsf{Q_i = a_i - b_i P_i + d_{ij} P_j}
-$$
-
-Each parameter carries strategic meaning:
-
-- $\mathsf{a_i}$ — baseline demand (intercept)
-- $\mathsf{b_i}$ — own-price sensitivity (slope discipline)
-- $\mathsf{d_{ij}}$ — cross-price substitution (switching intensity)
-
-The goal of estimation is not statistical elegance.  
-It is structural interpretation.
-
-
-
-### Interpreting the Coefficients
-
-If $\mathsf{b_i}$ is large, demand falls sharply when price rises.  
-Margin is fragile.
-
-If $\mathsf{d_{ij}}$ is large, customers shift strongly when the rival changes price.  
-Competition is intense.
-
-If $\mathsf{d_{ij}}$ is small, customers are relatively insulated from rival pricing.  
-Competition is softened.
-
-These are not abstract numbers.  
-They describe measurable strategic pressure.
-
-
-
-### Functional Form and Flexibility
-
-Linear demand is useful for intuition and interpretation.
-
-In practice, competitive demand may also be estimated using:
-
-- Exponential specifications
-- Logistic or sigmoid forms
-- Other nonlinear models
-
-Closed-form solutions for equilibrium are not required.  
-Once demand is estimated, competitive profit can be computed numerically.  
-The [**competition analytics app**](https://rconnect.byu.edu/CompetitionAnalytics) performs this optimization after parameters are estimated.
-
-What matters here is not algebraic solvability.  
-What matters is whether the data credibly identify:
-
-- Own-price discipline  
-- Cross-price substitution  
-
-Without both, competitive profit cannot be diagnosed.
-
-
-
-### From Estimation to Strategy
-
-Under monopoly, estimation revealed price sensitivity.  
-Under rivalry, estimation reveals interaction.
-
-It tells us:
-
-- How strongly customers react to our price.
-- How strongly they react to the rival’s price.
-- How tightly the two firms are linked through substitution.
-
-Only after these forces are measured can we layer cost and scale on top to evaluate competitive profit.
-
-That step follows next.
-
-
-
-
-
-
-## From Estimated Demand to Competitive Profit
-
-Demand estimation gives us structure.
-
-But structure alone does not answer the central question:
-
-> Is this worth doing?
-
-To answer that, estimated demand must be translated into profit under rivalry.
-
-The logic mirrors the monopoly case, with one critical difference.
-
-Under monopoly:
-
-1. Estimate demand.
-2. Add cost.
-3. Optimize price.
-4. Evaluate profit.
-
-Under rivalry:
-
-1. Estimate competitive demand.
-2. Add cost.
-3. Solve mutual optimization.
-4. Evaluate equilibrium profit.
-
-The difference is interaction.
-
-
-### Step 1: Construct the Profit Function
-
-Once demand is estimated, profit for firm \( i \) is:
-
-$$
-\mathsf{\pi_i(P_i, P_j) = (P_i - c_i)\, Q_i(P_i, P_j) - f_i}
-$$
-
-Where:
-
-- $\mathsf{c_i}$ is variable cost.
-- $\mathsf{f_i}$ is fixed cost.
-- $\mathsf{Q_i(P_i, P_j)}$ is the estimated demand function.
-
-Nothing about cost changes under rivalry.  
-What changes is that profit now depends on two prices.
-
-
-
-### Step 2: Solve for Mutual Best Response
-
-Each firm chooses price to maximize its own profit, taking the other’s price as given. This produces a best-response function for each firm.
-
-Equilibrium occurs where both firms are simultaneously choosing their optimal price.
-
-Closed-form solutions may exist in simple linear cases.  
-In practice, numerical optimization is sufficient.  
-The [**competition app**](https//:rconnect.byu.edu/CompetitionAnalytics) implements this step once demand and cost are specified.
-
-The key point is that equilibrium price is not chosen in isolation.  
-It is determined by strategic interaction embedded in the demand estimates.
-
-
-
-### Step 3: Evaluate Equilibrium Profit
-
-Once equilibrium prices are identified, equilibrium quantities and profits follow directly from the estimated demand and cost structure.
-
-At this stage, feasibility can be evaluated.  
-Profit may survive.  
-Profit may be fragile.  
-Profit may collapse toward cost.
-
-But those outcomes are no longer assumed. They are measured.
-
-
-
-### The Analytics Spine Restored
-
-The full competitive analytics sequence is now visible:
-
-- Design the experiment.  
-- Estimate competitive demand.  
-- Add cost.  
-- Solve for equilibrium.  
-- Diagnose profit durability.
-
-Competition does not require new economic philosophy.  
-It requires measuring substitution with the same discipline used to measure price sensitivity.
-
-Once competitive demand is estimated, interaction is no longer abstract theory.  
-It is embedded in the parameters.
-
-Equilibrium price is a consequence.  
-Profit is a consequence.  
-Fragility is measurable.
-
-
-
-
-
-
-## Diagnosing Structural Position
-
-Once competitive demand is estimated, structural position becomes visible.
-
-Competitive advantage is not inferred from revenue.  
-It is not inferred from market size.  
-It is not inferred from narrative strength.
-
-It is inferred from parameter differences.
-
-If two firms have identical demand and cost parameters, equilibrium outcomes will be symmetric.  
-Prices will match.  
-Margins will match.  
-Profits will move together.
-
-Symmetry produces shared discipline.  
-Asymmetry produces advantage.
-
-Structural position can be diagnosed along four measurable dimensions:
-
-- **Baseline demand ($\mathsf{a}$)** — Who begins with stronger underlying customer pull?
-- **Own-price sensitivity ($\mathsf{b}$)** — Who faces steeper margin discipline?
-- **Cross-price substitution ($\mathsf{d}$)** — Who is more insulated from rival pricing? 
-- **Unit variable cost ($\mathsf{c}$)** — Who can profit at lower price levels?
-
-These parameters are not stories.  
-They are empirical estimates.
-
-Small differences in price sensitivity or substitution can produce large differences in equilibrium profit.  
-Minor cost advantages can become decisive under competitive pressure.
-
-Under rivalry, advantage does not appear as a slogan.  
-It appears as parameter asymmetry.  
-Measured demand reveals whether competition is tight or softened, fragile or durable.
-
-In the [next chapter](ch17_competitive_advantage), we layer cost and scale onto these estimated demand structures and solve for competitive profit directly.
-
-> Competitive advantage is measured, not declared.
-
+With demand measured on both sides, cost and scale go on top exactly as they did before rivalry existed, and the equilibrium follows from the parameters rather than from anybody's judgment about where prices ought to land. What remains is the harder question of whether the position those parameters describe is one worth having.

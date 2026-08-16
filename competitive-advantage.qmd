@@ -36,7 +36,7 @@ The expectation was straightforward. The franchise had scale, a lower cost struc
 
 It did not. The lines at Smart Cookie stayed long.
 
-To find out why, we collected price and quantity data from both firms and estimated a differentiated demand system:
+To find out why, we surveyed their customers, and estimated a differentiated demand system from what those customers said they would buy at what prices:
 
 $$\mathsf{q_{sc} = -0.70 - 2.16\,p_{sc} + 5.57\,p_{hy}}$$
 $$\mathsf{q_{hy} = \phantom{-}4.57 - 3.50\,p_{hy} + 0.55\,p_{sc}}$$
@@ -70,7 +70,11 @@ Size comes first. When the asymmetry is small the equilibrium barely moves — p
 
 Then imitability, and here the ranking inverts.
 
-Cost advantages are the most visible and the most copyable. Operations improve, technology spreads, suppliers sell to everyone, and the thing that made you cheaper is usually legible to anyone who looks. A cost advantage is real while it lasts and it is the one most likely to be temporary.
+Cost advantages are usually the most visible and the most copyable. Operations improve, technology spreads, suppliers sell to everyone, and whatever made you cheaper is generally legible to anyone who looks hard.
+
+Usually, and not always, and the exceptions are worth knowing because they point at which kind of cost advantage to build. A cost advantage that comes from what an organization has *learned* behaves very differently from one that comes from what it *bought*. Semiconductor plants that invested in the human capital of their operators moved down the learning curve faster and held the resulting cost advantage, and it did not transfer to rivals even when the operators themselves did, because much of what those people knew was specific to that plant and did not travel with them [@hatchHumanCapitalLearning2004]. Toyota's production advantages were similarly slow to reach its American rivals even where the same suppliers were building parts for both, in the same buildings, because the advantage lived in the relationships rather than in the equipment [@dyerRelationSpecificCapabilititesNetwork2006].
+
+Slow is not permanent. The American manufacturers largely closed that gap in the end. That is the useful part rather than a qualification of it: a cost advantage built out of what people and networks know can outlast the patience of the firms trying to copy it, and it is a different asset from a cost advantage built out of a purchase order.
 
 Demand-side insulation is harder to see and harder to erode. Low $\mathsf{b}$ means customers who do not leave when you raise price, and that comes from things a competitor cannot buy in a quarter: trust built over years, a product genuinely suited to a specific group, switching costs, habit, identity. Smart Cookie's advantage was of this kind, which is why a franchise with a cost edge could not dislodge it.
 
