@@ -209,9 +209,9 @@ Which brings us to the question the equations were built to answer.
 
 Differentiation is not one number. It is a claim about customers, and it shows up in the demand system in more than one place, doing different work in each.
 
-**It shows up as $\mathsf{b_i}$, and this is the one people underrate.** Your own-price sensitivity says how many customers you lose when you raise your price and the rival stands still. Low $\mathsf{b_i}$ means people who want *you* specifically, and it buys the one thing every other advantage struggles to deliver: pricing power. Tune each lever until it opens the same profit gap over a rival, and the routes are visibly different. Extra appeal and extra switching both get you there mostly by selling more. Lower price sensitivity gets you there by charging appreciably more.
+**It shows up as $\mathsf{b_i}$**, and this is the one people underrate. Your own-price sensitivity says how many customers you lose when you raise your price and the rival stands still. Low $\mathsf{b_i}$ means people who want *you* specifically, and it buys the one thing every other advantage struggles to deliver: pricing power. Tune each lever until it opens the same profit gap over a rival, and the routes are visibly different. Extra appeal and extra switching both get you there mostly by selling more. Lower price sensitivity gets you there by charging appreciably more.
 
-**It shows up as the split between $\mathsf{d_i}$ and $\mathsf{d_j}$.** Not the total switching in the market, which you do not control, but its direction, which you influence with everything you do. A firm customers defect *to* rather than *from* is a differentiated firm, and the table earlier put a number on what that asymmetry is worth.
+**It shows up as the split between $\mathsf{d_i}$ and $\mathsf{d_j}$**, and the split is the part that is yours. Not the total switching in the market, which you do not control, but its direction, which you influence with everything you do. A firm customers defect *to* rather than *from* is a differentiated firm, and the table earlier put a number on what that asymmetry is worth.
 
 **It shows up as $\mathsf{a_i}$**, the size of your appeal. Real, and the least distinctive of the three, because a bigger $\mathsf{a}$ is closer to being better known than to being harder to leave.
 
