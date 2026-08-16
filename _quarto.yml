@@ -94,12 +94,15 @@ book:
         
     - competition-survey.qmd
 
-    - part: Competitive Dynamics
-      chapters:
-        - non-price-competition.qmd
-        
+    # One part, not two. Until 16 Aug 2026 the TOC carried a bare
+    # "Competitive Dynamics" part holding non-price-competition AND a second
+    # part keyed to part-competitive-dynamics.qmd holding the four legacy
+    # game-theory files. That was one unfinished migration showing as two
+    # parts. Merged here; the four legacy files collapse into three chapters
+    # as they are rewritten.
     - part: part-competitive-dynamics.qmd
       chapters:
+        - non-price-competition.qmd
         - game-theory.qmd
         - simultaneous-games.qmd        
         - sequential-games.qmd

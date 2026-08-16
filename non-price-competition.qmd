@@ -1,214 +1,176 @@
 ---
-title: "Competition Is Not Only Price"
-subtitle: "Rivals move on features, position, and commitment too"
-#subtitle: "*Entry is a forecast about competition equilibrium*"
+title: "The Moves Before the Price"
+subtitle: "Every parameter in the last four chapters was a decision somebody made"
 ---
-
 
 ```{r}
 #| output: false
 #| include: false
 library(tidyverse)
-#library(readxl)
 library(scales)
 library(gt)
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
 ```
 
-## Structural Commitment Before Price
+The last part treated competition as a fight about price. Two firms, two prices, one equilibrium, and everything else held still while they argued.
+
+That was the right place to start, because price is where rivalry finally settles and it is the variable both firms can change on a Tuesday. It is also the last thing that happens. By the time two firms are adjusting prices against each other, most of what decides the outcome has already been decided.
 
-Up to this point, competition has been modeled through price.
+Look back at what that analysis needed before it could produce a single number: an appeal, a price sensitivity, two directions of switching, a unit cost. Six parameters, taken as given. *Not one of them was given.* Each is the residue of a decision somebody made, usually years earlier, usually without thinking of it as a competitive move at all.
 
-Firms choose prices.  
-Demand responds.  
-Equilibrium determines quantity and profit.
+## The Parameters Were Decisions
 
-This approach is deliberate. Price competition is the mechanism through which rivalry ultimately expresses itself. Once firms are active in a market, prices adjust until no participant can profitably deviate.
+This is worth being concrete about, because the abstraction hides how ordinary these decisions are.
 
-But price competition is not the beginning of the story.
+```{r}
+#| label: tbl-decisions-to-parameters
+#| echo: false
+#| tbl-cap: "The left column is the kind of decision a founder recognizes making. The right column is what it does to the equilibrium of the last four chapters."
 
-Before price competition occurs, firms make choices that shape the environment in which price competition will later unfold. These choices are often less visible than price, but they are no less consequential.
+tibble::tribble(
+  ~Decision, ~`What it moves`,
+  "Reach — advertising, distribution, listings, being findable",
+    "a — how many people know about you and can buy",
+  "Distinctiveness — features, design, service, brand",
+    "b and the two d's — how readily people leave over price",
+  "Segment — who you decide to sell to",
+    "all of them — a different population has different sensitivities",
+  "Make or buy, process, automation",
+    "c — what one unit costs to deliver",
+  "Size of the commitment — space, equipment, headcount",
+    "f — the bar volume has to clear",
+  "Exclusivity — contracts, shelf space, integration",
+    "the d's — how easily a rival reaches your customers"
+) |>
+  gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(6), table.width = pct(97)) |>
+  cols_align("left")
+```
 
-They determine the structure of the game.
+Read that table in the direction founders actually experience it. Nobody sits down to choose a substitution coefficient. They decide whether to sign the exclusive supply deal, whether to add the feature, whether to lease the bigger space, whether to sell to students or to families. The coefficient is what those decisions look like from the outside, months later, when somebody estimates a demand system.
 
-Price competition is the visible fight.  
-Structural commitment is the hidden move.
+Which means the six parameters are not facts about your market. They are the accumulated shape of your own past decisions, and the ones you have not made yet are still open.
 
-Understanding this distinction is essential for anticipating profit.
+## Equilibrium as a Profit Engine
 
-## The Limits of One-Stage Thinking
+That reframing turns the machinery of the last part into something you can point at a decision.
 
-The equilibrium analysis developed earlier treated several parameters as given.
+You have a procedure that takes six parameters and returns an equilibrium: two prices, two quantities, two profits. Feed it one set of parameters and it tells you what happens. Feed it a different set and it tells you what would happen instead. The procedure does not care where the parameters came from.
 
-Demand was characterized by parameters describing baseline demand, price sensitivity, and substitution across products.  
-Cost was represented through marginal cost and fixed commitments.
+So a structural decision can be evaluated the same way a price can:
 
-With these parameters in place, equilibrium prices, quantities, and profit could be computed.
+1. Say what the decision does to the parameters.
+2. Recompute the equilibrium.
+3. Compare the profit to what you would have had.
 
-This approach is analytically clean. But it leaves an important question unanswered:
+Step one is the hard step and it is the only one that needs judgment. Steps two and three are arithmetic, and [the competition app](https://rconnect.byu.edu/CompetitionAnalytics) or any competent AI will do them while you wait.
 
-Where do these parameters come from?
+That is the whole method of this part. What makes it worth a part rather than a paragraph is that the answers it produces are frequently not the ones anybody expected.
 
-In practice, they are not simply inherited from the market. Many of them reflect choices made by firms before price competition begins.
+## Running the Engine Once
 
-A firm may invest in infrastructure that lowers marginal cost.  
-It may develop product features that reduce substitution with rivals.  
-It may build distribution systems that expand baseline demand.  
-It may commit to capacity that affects the credibility of future price competition.
+Return to Smart Cookie and Hogi Yogi, whose estimated demand system [chapter 15](competitive-advantage.qmd) already put on the table.
 
-These choices do not determine the final price directly. Instead, they alter the parameters that determine the equilibrium once price competition occurs.
+Hogi Yogi is the frustrated firm. It has the cost advantage, twenty-five cents a unit, and it is losing anyway — charging \$1.02 against Smart Cookie's \$1.53, and earning \$0.96 per person per month against \$1.33. Suppose an advertising agency offers it a campaign: for \$0.75 per person per month, the campaign will add two units of consumption per person per month.
 
-The result is a sequential process rather than a single simultaneous decision.
+That is a real offer with a real price, and it is exactly the kind of decision the table above describes. It buys **reach**, so it moves $\mathsf{a_{hy}}$ and nothing else. The products do not change, so distinctiveness is untouched. Costs per sandwich do not change.
 
-First, firms choose structure.  
-Then, given that structure, price competition determines outcomes.
+Before deciding, notice how easy it is to answer badly. The campaign adds two units at \$0.75 per person, and Hogi Yogi's contribution is about fifty cents a unit, so two units is roughly a dollar of contribution against seventy-five cents of cost. Buy it. That reasoning treats the demand curve as a thing that sits still while you add units to it.
 
-## Structural Variables
+It does not sit still, because prices move once the curve does. Recompute the equilibrium with $\mathsf{a_{hy}}$ raised by two and everything else unchanged:
 
-Several of the parameters used earlier in the demand and profit calculations can be influenced through deliberate choices.
+```{r}
+#| label: tbl-hy-advertises
+#| echo: false
+#| tbl-cap: "The advertising campaign moves one parameter — Hogi Yogi's reach. Both firms end up charging more and earning more. Smart Cookie has done nothing."
 
-Consider four categories.
+eqm <- function(a1, a2) {
+  b1 <- 2.158877; d1 <- 5.568712; c1 <- 0.75
+  b2 <- 3.496552; d2 <- 0.554085; c2 <- 0.50
+  X1 <- (a1 + b1*c1)/(2*b1); Y1 <- d1/(2*b1)
+  X2 <- (a2 + b2*c2)/(2*b2); Y2 <- d2/(2*b2)
+  den <- 1 - Y1*Y2
+  p1 <- (X1 + Y1*X2)/den; p2 <- (X2 + Y2*X1)/den
+  q1 <- a1 - b1*p1 + d1*p2; q2 <- a2 - b2*p2 + d2*p1
+  list(p1 = p1, p2 = p2, pi1 = (p1-c1)*q1, pi2 = (p2-c2)*q2)
+}
+b <- eqm(-0.7043, 4.569339)
+a <- eqm(-0.7043, 4.569339 + 2)
 
-### Cost Structure
+tibble::tibble(
+  ` `                     = c("Before", "After Hogi Yogi advertises", "Change"),
+  `Smart Cookie price`    = c(dollar(b$p1, .01), dollar(a$p1, .01), dollar(a$p1-b$p1, .01)),
+  `Hogi Yogi price`       = c(dollar(b$p2, .01), dollar(a$p2, .01), dollar(a$p2-b$p2, .01)),
+  `Smart Cookie profit`   = c(dollar(b$pi1, .01), dollar(a$pi1, .01), dollar(a$pi1-b$pi1, .01)),
+  `Hogi Yogi profit`      = c(dollar(b$pi2, .01), dollar(a$pi2 - 0.75, .01),
+                              dollar(a$pi2 - 0.75 - b$pi2, .01))
+) |>
+  gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(5), table.width = pct(100)) |>
+  cols_align("center") |>
+  tab_footnote("Hogi Yogi's profit is net of the $0.75 campaign. Per person per month.",
+               locations = cells_column_labels(columns = `Hogi Yogi profit`))
+```
 
-Firms can alter marginal cost through technology, supply chain design, or operational efficiency.
+Hogi Yogi should buy the campaign. Its profit goes from \$0.96 to \$1.74, which is a gain of seventy-eight cents on a seventy-five cent investment, and the naive arithmetic was roughly right about that much.
 
-Investments in automation, procurement relationships, or process innovation can reduce cost. Conversely, design choices emphasizing customization or quality may raise it.
+Now look at the column it was not watching. Smart Cookie's profit rises from \$1.33 to \$3.08. Smart Cookie did not advertise, did not change its product, did not change its price deliberately, and did not spend a cent. It gained \$1.75 — more than twice what Hogi Yogi gained by paying for the campaign.
 
-Once these choices are made, price competition takes place with the resulting cost structure in place.
+And the gap between the two firms, the thing Hogi Yogi was actually trying to close, goes from thirty-six cents to a dollar thirty-four. *It nearly quadrupled.*
 
-Lower cost does not guarantee profit. But it changes the equilibrium that price competition will produce.
+## Why the Spillover Runs That Way
 
-### Differentiation
+That result is not a quirk of these numbers. It follows directly from the asymmetry [chapter 13](differentiated-competition.qmd) made the centre of the argument.
 
-Product design and brand positioning affect substitution.
+The campaign puts more people in the market for an ice cream sandwich. Those people then face two prices. And this pair of firms has wildly lopsided switching: when Hogi Yogi's price rises, 5.57 units of demand move toward Smart Cookie, while a rise in Smart Cookie's price sends only 0.55 back the other way.
 
-When two products are perceived as close substitutes, price competition becomes intense. When products are differentiated, price sensitivity between them weakens.
+So expanding the pool hands the differentiated firm most of the expansion. Worse for Hogi Yogi, the extra demand lets *it* raise price from \$1.02 to \$1.34 — and every cent of that rise pushes customers toward the rival, whose own best response is to raise price too, from \$1.53 to \$1.94. Both firms end up charging more and selling more, and the one with the loyal customers captures most of it.
 
-Investments in features, design, or brand identity can therefore alter the substitution parameters that shape competitive equilibrium.
+The lesson is not that Hogi Yogi should skip the campaign. It should buy it; seventy-eight cents is seventy-eight cents. The lesson is that *a move that improves your position and a move that closes a gap are different moves*, and reach is the first kind. Buying reach in a market where you are the substitutable firm subsidizes the firm you are trying to catch.
 
-These investments do not set prices directly. Instead, they reshape the demand relationships that determine price competition.
+Closing that gap would require moving $\mathsf{b}$ or the $\mathsf{d}$s — making Hogi Yogi's own customers less willing to leave. That is a different and more expensive campaign, and no amount of the cheap kind adds up to it.
 
-### Baseline Demand
+## Why This Has to Be Solved Backwards
 
-Firms may influence baseline demand through distribution reach, reputation, or platform adoption.
+Notice the order in which that analysis had to happen.
 
-A product available through a broad distribution network will have greater baseline demand than one that is difficult to access. Similarly, trusted brands or established ecosystems often enjoy higher starting demand.
+The decision is the advertising, and it comes first in time. Hogi Yogi signs with the agency, and only afterwards does anyone set a price. But it was impossible to evaluate the decision without first working out what prices would follow it. The second-stage answer had to be computed before the first-stage question could be asked.
 
-Again, these choices do not determine the final equilibrium price. But they shift the demand curve on which price competition operates.
+That is **backward induction**, and it is the only way a staged decision can be evaluated. Solve the end first, then use its answer to choose at the beginning.
 
-### Capacity and Infrastructure
+::: {.column-margin .def-margin}
+**Backward induction** — solving a staged decision from the last stage forward. You cannot judge a move until you know how the game finishes, so you compute the finish first and reason back to the move.
+:::
 
-Physical or digital infrastructure can shape the strategic environment in which pricing occurs.
+It also explains why the naive arithmetic failed. *Two units at fifty cents of contribution against seventy-five cents of cost* is a first-stage calculation that never solved the second stage. It assumed the price would stay at \$1.02. The price did not stay at \$1.02, and the whole point of the exercise is that it could not have.
 
-Large installed capacity may signal the ability to supply aggressively at low price. Platform investments may expand the accessible population of users. Distribution infrastructure may make entry by rivals more difficult.
+## What the Engine Cannot Tell You Yet
 
-These commitments influence how competitors anticipate the future equilibrium.
+There is one assumption still buried in all of this, and it is large.
 
-They alter expectations before price competition begins.
+Hogi Yogi was offered the campaign. Smart Cookie was not — or was offered it and did not take it, or had not heard of the agency. The entire analysis above assumes the rival stands still while you act.
 
+That is the assumption [chapter 12](competition.qmd) spent a whole chapter dismantling for price, and there is no reason it should survive here. Advertising agencies sell to whoever will buy. If the campaign is available to Hogi Yogi it is almost certainly available to Smart Cookie, and Smart Cookie can do the same arithmetic.
 
+Which means the honest version of the question is not *what happens if we advertise*. It is *what happens if we advertise and they do too, or we do and they do not, or they do and we do not, or neither of us does*. Four outcomes, each requiring its own equilibrium, and a decision that depends on which one you expect.
 
-## The Sequential Nature of Competition
+That is a game, in the technical sense, and it is the subject of the next chapter. The useful part is that you already have everything needed to build it: the engine that turns parameters into profit, run once for each combination.
 
-These observations imply that competition unfolds in stages.
+::: {.reflect}
+**Ask yourself — which parameter would this actually move?**
 
-In the first stage, firms choose structural commitments: cost structure, differentiation investments, infrastructure, and other long-lived decisions.
+Take the largest non-price decision currently in front of you. New feature, new channel, new equipment, a hire, an exclusive deal, a campaign.
 
-In the second stage, firms compete in price within the environment created by those commitments.
+Now answer one question about it, in the vocabulary of the last four chapters. Does it change how many people know about you, how willing your customers are to stay when you raise price, how readily people move between you and a rival, or what a unit costs you?
 
-The equilibrium price competition analyzed earlier describes the second stage.
+Most decisions move exactly one. If yours seems to move all four, you have described an ambition rather than a decision, and it is worth pushing until you can say which.
 
-But the parameters of that equilibrium are shaped by the choices made in the first stage.
+Then the harder question, and the one this chapter exists for. If it moves reach, and your rival is the more differentiated firm, ask honestly who captures the customers you are about to create.
+:::
 
-For purposes of profit estimation, this distinction matters.
+::: {.key-action}
+**The move:** A structural decision is evaluated by recomputing the equilibrium it produces, not by adding up its direct effects. The direct effects assume prices hold still, and prices are the one thing guaranteed to move.
+:::
 
-If structural commitments change demand or cost parameters, they also change the equilibrium profit that will eventually result.
-
-## Using Equilibrium as a Profit Engine
-
-The equilibrium analysis developed earlier remains central.
-
-Given a set of demand parameters and cost conditions, equilibrium prices and quantities can be computed. From these, profit follows.
-
-This equilibrium therefore acts as a profit engine.
-
-Structural choices feed parameters into the engine.  
-The engine produces equilibrium outcomes.
-
-The entrepreneur’s problem becomes clearer when framed this way.
-
-A proposed structural commitment—an investment in cost reduction, differentiation, or infrastructure—should be evaluated by asking how it changes the parameters that enter the equilibrium calculation.
-
-If the resulting equilibrium produces higher expected profit, the commitment may be justified.
-
-If not, the investment may simply intensify rivalry without improving outcomes.
-
-## Structural Moves Can Improve or Destroy Profit
-
-Not every structural commitment improves the competitive position of the firm that makes it.
-
-Some investments are easily imitated.  
-Others provoke symmetric responses from rivals.  
-Still others increase rivalry intensity for the entire industry.
-
-For example, if both competitors invest heavily in capacity or cost reduction, the resulting price competition may eliminate the benefit of those investments. Margins compress for everyone.
-
-In such cases, structural escalation raises cost without increasing profit.
-
-Conversely, certain structural moves create asymmetric advantages that persist through equilibrium competition. Durable differentiation, unique technology, or superior cost positions can shift the equilibrium in a more favorable direction.
-
-The same type of commitment may therefore have very different profit implications depending on how rivals respond.
-
-This is why structural commitments must be evaluated through the lens of the equilibrium they create.
-
-### From Parameters to Strategy
-
-Earlier chapters showed how to estimate profit once demand and cost parameters are known.
-
-This chapter adds a prior step.
-
-Firms may influence those parameters through deliberate structural choices.
-
-The sequence now becomes:
-
-1. Choose structural commitments 
-2. Estimate the resulting demand and cost parameters 
-3. Compute competitive equilibrium 
-4. Evaluate profit.
-
-This sequence allows structural decisions to be evaluated with the same discipline used for pricing and demand analysis.
-
-The goal is not to predict every strategic interaction perfectly. That is rarely possible.
-
-The goal is to recognize that structural commitments determine the equilibrium environment in which price competition occurs.
-
-Once that environment is specified, the analytical tools developed earlier remain applicable.
-
-### The Hidden Layer of Competition
-
-Entrepreneurial discussions of competition often focus on visible actions.
-
-Price changes.  
-Promotions.  
-Market share shifts.
-
-But these events occur after a deeper layer of competition has already taken place.
-
-By the time firms begin adjusting prices, many of the parameters that determine the outcome have already been chosen.
-
-Cost structures are in place.  
-Products are designed.  
-Infrastructure has been built.
-
-These commitments quietly shape the equilibrium that price competition will reveal.
-
-Recognizing this hidden layer does not replace the equilibrium analysis developed earlier.
-
-It explains where its parameters come from.
-
-Price competition determines how the game ends.  
-Structural commitment determines which game is played.
-
-Understanding both is necessary for evaluating whether a venture is worth doing.
+Hogi Yogi's frustration was well founded and its instinct was not wrong. Advertising did help. What it could not do was change the thing that made it the weaker firm, and the reason is visible in the parameters: reach is available to anyone with a budget, while the loyalty that lets Smart Cookie hold a fifty-cent premium was built over years and is not for sale by the month.

@@ -1,6 +1,6 @@
 ---
-title: "Competitive Dynamics"
-subtitle: "Choices that depend on what somebody else chooses"
+title: "Competition Before Price"
+subtitle: "The decisions that set the payoffs, made before anyone charges anything"
 number-sections: false
 ---
 
