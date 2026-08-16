@@ -71,7 +71,7 @@ came off; the old numbers in any note written before that date are one or more h
 |---|---|---|
 | 6–7 | 28 Sep | ch4–ch6 (`what-demand-is` → `executing-experiments`), `survey-design`, `validate-evidence` |
 | 8 | 19 Oct | ch7 `estimating-demand`, `prepare-data`, `check-demand-curve` |
-| 9–11 | 26 Oct | ch8–ch11 (`cost` → `profit-reasoning`), the five profit toolkits |
+| 9–11 | 26 Oct | ch8–ch11 (`cost` → `profit-reasoning`), the **four** profit toolkits |
 | 12–14 | 16 Nov | ch12–ch22 — **the four legacy game-theory files, now ch19–ch22, must be finished by ~25 Nov** |
 
 Careful with that last row. "ch19–ch22" now resolves to `game-theory`, `simultaneous-games`,
@@ -124,6 +124,13 @@ copy the sibling books' blanket `*.png` ignore rule into this repo.
 
 Per global CLAUDE.md: preserve the author's voice; cite when changing facts or claims;
 this is book content (the .qmd files here), not vault notes.
+
+**The toolkits are assigned reading this semester.** Weeks 6–7 assign `survey-design` and
+`validate-evidence`, week 8 assigns `prepare-data` and `check-demand-curve`, weeks 9–11 assign
+the four profit toolkits. So *building* the method layer and *dissolving* the toolkits are two
+decisions with different timing: the first is additive and safe to do now, the second breaks
+the syllabus mid-course and cannot happen before the semester ends. Do not delete a toolkit
+file that appears in the table above while the class is running.
 
 **Citations.** `scripts/sync-refs.py` runs as a pre-render hook and mirrors `references.bib`
 to the Better BibTeX auto-export at `~/Documents/bibs/zotero.bib`. Never hand-write a bib
