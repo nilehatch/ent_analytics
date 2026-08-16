@@ -77,7 +77,7 @@ ggplot(df, aes(P, Pi)) +
 
 ## When Profit Is Impossible
 
-Sometimes the curve never crosses zero. Every price loses money.
+Sometimes the curve never crosses zero. **Impossible profit** means exactly that and no more: at every price you could charge, the venture loses money.
 
 The reflex is to assume something broke. Founders re-check the data, adjust the demand fit, hunt for a price they might have missed. Almost always the analysis is fine and is telling them something precise: given what you currently believe about demand, cost, and scale, no price supports the commitments you have named.
 
@@ -115,11 +115,7 @@ Fragility arrives from two directions that look different and behave the same. T
 
 Fragile profit is more dangerous than impossible profit for a plain reason. Impossible is unambiguous and forces a decision. Fragile offers a plausible story of success, and a plausible story is exactly what a founder who has already decided will reach for. A single positive region on the curve gets read as validation when it may be a knife edge.
 
-The instinct fragility triggers is to optimize — profit is positive somewhere, so find the best price. Optimization sharpens the edge without widening it. Before asking where profit is highest, the question worth asking is whether profit exists across a wide enough range of beliefs to justify committing, which is a question about **robustness**.
-
-::: {.column-margin .def-margin}
-**Robustness** — whether a decision stays acceptable when demand, cost, access, and execution all come in somewhat worse than planned.
-:::
+The instinct fragility triggers is to optimize — profit is positive somewhere, so find the best price. Optimization sharpens the edge without widening it. Before asking where profit is highest, the question worth asking is whether profit exists across a wide enough range of beliefs to justify committing, which is a question about robustness.
 
 Fragility is sometimes fixable. Delaying a fixed commitment lowers the bar the venture has to clear. Converting a fixed cost to a variable one trades peak profit for a wider profitable band. Narrowing to a denser, more reachable population raises achievable penetration. Each of those widens the band rather than raising the peak, which is the right trade when the band is what is threatening you.
 
@@ -127,7 +123,11 @@ And sometimes fragility is simply the answer: the venture is too exposed to comm
 
 ## When Profit Is Robust
 
-The third reading is the one worth waiting for. Profit clears zero across a wide range of prices, the curve is not steep near your candidate price, and being somewhat wrong about several things at once still leaves you in the money.
+The third reading is the one worth waiting for. **Robustness** is profit that clears zero across a wide range of prices, with the curve shallow near your candidate price, so that being somewhat wrong about several things at once still leaves you in the money.
+
+::: {.column-margin .def-margin}
+**Robustness** — whether a decision stays acceptable when demand, cost, access, and execution all come in somewhat worse than planned.
+:::
 
 Robustness is worth more than maximum profit, and the trade is usually available. A design with a slightly lower peak that survives a bad quarter dominates a higher peak that reverses on a mild disappointment. Founders reliably choose the higher peak, because peaks are what spreadsheets report and bands are what you have to go looking for.
 
