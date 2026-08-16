@@ -174,7 +174,7 @@ The question that replaces *what is my optimal price?* is harder and more useful
 
 > *What price survives when the other firm is optimizing too?*
 
-Everything you learned still applies. Contribution margin, fixed-cost commitment, required penetration, sensitivity — all of it holds. The change is where you evaluate them. A venture that is feasible in isolation can be infeasible under rivalry, and a structure that looked robust can turn fragile the moment margins compress.
+Everything you learned still applies. Contribution, fixed-cost commitment, required penetration, sensitivity — all of it holds. The change is where you evaluate them. A venture that is feasible in isolation can be infeasible under rivalry, and a structure that looked robust can turn fragile the moment margins compress.
 
 ## The Unforgiving Case
 
@@ -188,7 +188,7 @@ The undercutting stops at one place. When price reaches variable cost, the next 
 
 $$\mathsf{P = c}$$
 
-Nothing about that outcome required cooperation, collusion, or a truce. It is simply where the logic runs out. And at that price, contribution margin is gone, so profit is:
+Nothing about that outcome required cooperation, collusion, or a truce. It is simply where the logic runs out. And at that price, contribution is gone, so profit is:
 
 $$\mathsf{\pi = (P - c)Q - f = -f}$$
 

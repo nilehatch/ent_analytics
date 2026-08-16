@@ -146,9 +146,13 @@ Here is the part that turns all of this into a number.
 
 Penetration usually gets talked about aspirationally. *If we get just five percent of the market.* That framing quietly reverses the logic, because penetration is not something you aim at. It is something your cost structure **demands**, and you can calculate it before you have any idea whether it is achievable.
 
-Every sale contributes what is left after the cost of making it, which is the price minus the variable cost. Divide your fixed commitment by that contribution and you have the number of units required before anything is covered:
+Every sale contributes what is left after the cost of making it, which is the price minus the variable cost. That amount is the sale's **contribution**, and the word is literal: it is what the sale contributes toward the fixed costs you have already committed. Divide your fixed commitment by that contribution and you have the number of units required before anything is covered:
 
 $$ \mathsf{q_{required}} = \frac{\mathsf{f}}{\mathsf{p - c}} $$
+
+::: {.column-margin .def-margin}
+**Contribution** — what one sale leaves after its own variable cost, $\mathsf{p - c}$, and therefore what it contributes toward fixed cost. If you have met *contribution margin* in accounting, this is the per-unit form of it.
+:::
 
 Divide that by the population you can actually reach, and you have the share of them who must buy.
 
