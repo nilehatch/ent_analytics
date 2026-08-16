@@ -132,6 +132,6 @@ Then ask the only question that matters about that number. Was it estimated from
 
 Finding that number is the rest of this book. Before going after it, though, there is a prior question that decides whether you should go after it at all right now, because quantity is not always the thing standing between you and the decision in front of you.
 
-[^porter]: The original statement of the framework is @porter79.
+[^porter]: The original statement of the framework is @porterHowCompetitiveForces1979.
 
-[^bmc]: The canvas is laid out in @osterwalder-pigneur10.
+[^bmc]: The canvas is laid out in @osterwalderBusinessModelGeneration2010.

@@ -187,7 +187,7 @@ It is a forecast about how the market will settle after rivals respond.
 
 Different cognitive representations of competition produce systematically different industry outcomes.
 
-In related research,^[For details, see @hatch-ostler18.] we simulated entry decisions for two innovators deciding whether to enter a differentiated market. Each pair used a shared cognitive framework to guide its decision.
+In related research,^[For details, see @hatchPerformanceEffectsCompeting2018.] we simulated entry decisions for two innovators deciding whether to enter a differentiated market. Each pair used a shared cognitive framework to guide its decision.
 
 Some firms:
 

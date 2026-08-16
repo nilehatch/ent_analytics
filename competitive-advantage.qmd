@@ -232,7 +232,7 @@ Competitive advantage is visible directly in the estimated parameters.
 
 ---
 
-[^1]:  @gasmi-vuong-laffont92 estimate demand and cost functions for Coca-Cola and Pepsi and analyze Bertrand competition using historical data. We are replicating that work here.
+[^1]:  @gasmiEconometricAnalysisCollusive1992 estimate demand and cost functions for Coca-Cola and Pepsi and analyze Bertrand competition using historical data. We are replicating that work here.
 :::
 
 

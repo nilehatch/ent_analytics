@@ -124,3 +124,16 @@ copy the sibling books' blanket `*.png` ignore rule into this repo.
 
 Per global CLAUDE.md: preserve the author's voice; cite when changing facts or claims;
 this is book content (the .qmd files here), not vault notes.
+
+**Citations.** `scripts/sync-refs.py` runs as a pre-render hook and mirrors `references.bib`
+to the Better BibTeX auto-export at `~/Documents/bibs/zotero.bib`. Never hand-write a bib
+entry — put the work in Zotero and render. Cite keys are BBT's `authorTitleWordsYear`; the
+eight legacy `author-year-shortname` keys this book inherited were migrated 15 Aug 2026.
+
+`references.bib` here is the ~2,900-entry file inherited from `ent_analytics`, nearly all of
+it uncited. The hook only touches cited entries, so the bulk sits inert. Slimming it to the
+cited set is possible and has not been done.
+
+One live warning is expected on every render: `knuth84`, cited in `intro.qmd`. That file is
+Quarto template debris — not in the TOC, and the key has no entry in `references.bib` at all.
+Deleting `intro.qmd` clears it.
