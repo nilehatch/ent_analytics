@@ -76,7 +76,6 @@ book:
         - variable-cost.qmd
         - fixed-cost.qmd
         - scaling.qmd
-        - read-profit.qmd
         - sensitivity.qmd
 
     - part: Competition
