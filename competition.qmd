@@ -236,7 +236,7 @@ Nobody was outmanaged. The advantage created profit and the entry it attracted e
 
 The online version runs faster and looks different enough that people do not recognize it. You find a product, build a storefront, advertise well, and sales begin. Margins are healthy at first because few competitors are visible and the platform rewards early traction. Then other sellers notice, source from the same supplier, run similar ads, and the platform sorts everyone by price and reviews. Each entrant takes a little more of the margin.[^dispersion]
 
-[^dispersion]: What a price-comparison platform does to the spread between sellers has been studied directly; @bayePriceDispersionSmall2004 is the place to start. Being findable and being comparable are the same thing on such a platform, and comparability is what compresses margin. Orders keep coming and contribution keeps shrinking.
+[^dispersion]: Measured, and the numbers are stark. Across four million daily price observations for more than a thousand consumer electronics products on a price-comparison site, @bayePriceDispersionSmall2004a found that the gap between the two *lowest* prices averaged 23 per cent where only two sellers listed, and 3.5 per cent where seventeen did. The overall spread across all sellers did not collapse — prices were not converging to one price — but the competition at the front of the queue tightened sharply as the queue lengthened. That front is where the customers are. Orders keep coming and contribution keeps shrinking.
 
 The steel version took thirty years. The drop-shipping version can take thirty weeks. The structure is identical, and in both cases the difference between early profit and durable profit was never effort.
 
