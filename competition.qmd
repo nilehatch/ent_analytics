@@ -1,395 +1,299 @@
 ---
-title: "Profit under Rivalry"
-subtitle: "What changes when somebody else is selling too"
-#subtitle: "Seeing the Pre-Revenue Decision Clearly"
+title: "When Price Competition Destroys Profit"
+subtitle: "Rivalry turns your profit curve into a surface, and in the worst case it flattens"
 ---
-
 
 ```{r}
 #| output: false
 #| include: false
 library(tidyverse)
-#library(readxl)
 library(scales)
 library(gt)
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
 ```
 
+Everything so far has treated profit as something you build out of three ingredients you control and one you have to learn. You set the price, you choose the cost structure, you commit the fixed costs, and demand is the unknown you go and estimate.
 
-Up to this point, profit depended on three things:
+That framing has carried the whole book, and it holds only while nobody else is selling.
 
-- Your price  
-- Your demand  
-- Your costs  
+Add a rival and something changes that no amount of better estimation fixes. The rival is not another source of noise in your demand curve. The rival is choosing a price, on purpose, in response to yours, and revising it when you revise yours. You are no longer solving a problem. You are in an argument with someone who is solving the same problem from the other side.
 
-You could estimate demand.  
-You could discipline cost.  
-You could study sensitivity.  
-You could stage commitment.  
+## Profit Becomes a Surface
 
-Even under uncertainty, the structure was stable.
+Until now profit has been a function of one thing you choose:
 
-Now we introduce something different. A rival who also optimizes.  
+$$\mathsf{\pi(P) = (P - c)\,Q - f}$$
 
+Pick a price, read the quantity off your demand curve, subtract what it costs. The last chapter turned that into a picture you could read for feasibility, fragility, and robustness.
 
+Under rivalry the same expression takes a second argument:
 
+$$\mathsf{\pi_i(P_i, P_j)}$$
 
+Your profit now depends on your price and your rival's. Nothing about the logic changed, and everything about the geometry did. Your demand is no longer a curve you estimated once; it is a curve that sits somewhere different depending on what the other firm charges. If they cut price, yours shifts in. If they raise it, yours shifts out. If they enter a segment you thought was yours, it splits.
 
-## Profit Is No Longer a Curve
-
-Previously, profit looked like this:
-
-$$ 
-\mathsf{\pi(P)} = \mathsf{(P - c)Q- f}
-$$
-
-You chose a price.  
-Customers responded with their demand.  
-You optimized.  
-
-Now profit looks like this:
-
-$$ 
-\mathsf{\pi_i(P_i, P_j)}
-$$
-
-Your profit depends on your price ($\mathsf{P_i}$) *and* your rival’s price ($\mathsf{P_j}$).
-
-Your demand is no longer stable.
-It is conditional.
-
-If your rival lowers price, your demand shifts.  
-If they raise price, your demand shifts.  
-If they enter your market, your demand splits.  
-
-Your profit curve is no longer a curve.
-
-It is a moving surface.
-
-
-
-
-
-## From Curve to Surface
-
-In earlier chapters, profit was a curve: profit as a function of *your* price.
-
-When we add a rival, your profit depends on *two* prices:
-
-The rival chooses a price.  
-You choose a price.  
-And each of you can adjust in response.
-
-Profit is no longer a single curve you optimize in isolation. It becomes a surface: $\mathsf{\pi(P_i, P_j)}$.
-
+So the profit curve you learned to read is one slice through something larger. @fig-rival-price-shifts takes three slices, holding the rival's price fixed at a low, middle, and high level.
 
 ```{r}
-#| label: fig-ch13-curve-shift
+#| label: fig-rival-price-shifts
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-cap: "Profit curves holding the rival’s price fixed at three different levels. The best price shifts as the rival’s price changes."
+#| fig-cap: "Your profit as a function of your own price, at three different rival prices. The curve is the familiar shape from the last chapter. What is new is that there are three of them, and the best price is different on each."
 #| cap-location: margin
 
-library(ggplot2)
-library(scales)
-library(dplyr)
+a <- 2600; b <- 2.0; d <- 1.1; c <- 230; f <- 450000
 
-base_theme <- theme_itwd()
-col_zero <- "grey30"
-col_pi  <- "#2F855A"
-
-# Parameters (same as before)
-a <- 2600
-b <- 2.0
-d <- 1.1
-c <- 230
-f <- 450000
-
-Q_i <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
+Q_i    <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
 Pi_fun <- function(Pi, Pj) (Pi - c) * Q_i(Pi, Pj) - f
 
-Pi_grid <- seq(0, 2000, length.out = 260)
-
+Pi_grid   <- seq(0, 2000, length.out = 260)
 Pj_levels <- c(300, 800, 1300)
 
-df_curves <- expand.grid(
-  Pi = Pi_grid,
-  Pj = Pj_levels
-) |>
+df_curves <- expand.grid(Pi = Pi_grid, Pj = Pj_levels) |>
   as_tibble() |>
-  mutate(
-    profit = Pi_fun(Pi, Pj),
-    Pj_lab = paste0("Rival price = ", dollar(Pj))
-  )
+  mutate(profit = Pi_fun(Pi, Pj))
 
 df_opt <- df_curves |>
-  group_by(Pj, Pj_lab) |>
+  group_by(Pj) |>
   slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
   ungroup()
 
-ggplot(df_curves, aes(x = Pi, y = profit, group = Pj_lab)) +
-  geom_hline(yintercept = 0, linewidth = 0.8, color = col_zero) +
-  
-  geom_segment(
-  data = df_opt,
-  aes(x = Pi, xend = Pi, y = 0, yend = profit),
-  inherit.aes = FALSE,
-  linetype = "dotted",
-  color = "black",
-  linewidth = 0.5,
-  alpha = .5
-  ) +
-  
-  # annotate("segment", x = 847.5, y = 0, xend = 847.5, yend = Pi_fun(847.5,300), linetype="dotted", color = "black", linewidth=0.5) +
-  # annotate("segment", x = 985, y = 0, xend = 985, yend = Pi_fun(985,800), linetype="dotted", color = "black", linewidth=0.5) +  
-  # annotate("segment", x = 1122.5, y = 0, xend = 1122.5, yend = Pi_fun(1122.5,1300), linetype="dotted", color = "black", linewidth=0.5) +    
-  
-  geom_line(linewidth = 2, color = col_pi) +
-  labs(
-    x = "Your price",
-    y = "Profit (dollars)",
-    color = ""
-  ) +
-  
-  annotate("label", x = 690, y = 120000, #1030
-           label = "Rival price = $300\nBest price (given rival) = $847.50", fill = "white", alpha = .8, size = 3) +
-  annotate("label", x = 825, y = 500000,
-           label = "Rival price = $800\nBest price (given rival) = $985.00", fill = "white", alpha = .8, size = 3) +
-  annotate("label", x = 957, y = 950000,
-           label = "Rival price = $1300\nBest price (given rival) = $1122.50", fill = "white", alpha = .8, size = 3) +
-
-  
+ggplot(df_curves, aes(x = Pi, y = profit, group = Pj)) +
+  geom_hline(yintercept = 0, linewidth = 0.8, color = itwd_muted) +
+  geom_segment(data = df_opt, aes(x = Pi, xend = Pi, y = 0, yend = profit),
+               inherit.aes = FALSE, linetype = "dotted",
+               color = itwd_ink, linewidth = 0.5, alpha = .5) +
+  geom_line(linewidth = 2, color = itwd_profit) +
+  geom_point(data = df_opt, aes(x = Pi, y = profit), inherit.aes = FALSE,
+             size = 2, color = itwd_ink) +
+  annotate("label", x = 690, y = 120000, size = 3, fill = "white", alpha = .85,
+           label = "Rival at $300\nyour best price $847") +
+  annotate("label", x = 825, y = 500000, size = 3, fill = "white", alpha = .85,
+           label = "Rival at $800\nyour best price $985") +
+  annotate("label", x = 957, y = 950000, size = 3, fill = "white", alpha = .85,
+           label = "Rival at $1,300\nyour best price $1,122") +
   coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
   scale_x_continuous(labels = label_dollar()) +
   scale_y_continuous(labels = label_dollar()) +
-  base_theme +
+  labs(x = "Your price", y = "Your profit") +
+  theme_itwd() +
   theme(legend.position = "none")
 ```
 
-First, we hold the rival’s price fixed and look at a few slices of that surface.  
-Next we fill in many more slices, revealing the surface.
+Read the three peaks. When the rival is cheap, your best price is low and your profit is thin. When the rival is expensive, you can charge more and earn more. The shape you spent the last chapter learning to read is intact, and it slides.
+
+Fill in every rival price between those three and the slices become a surface.
 
 ```{r}
-#| label: fig-ch13-ribbed-surface
+#| label: fig-profit-surface
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-cap: 'Many profit curves across rival prices. Together, they form the profit surface $\mathsf{\pi(P_i, P_j)}$.'
+#| fig-cap: 'Fifty-one slices at rival prices from $300 to $1,300. Taken together they are the profit surface $\mathsf{\pi(P_i, P_j)}$. The dots trace your best price as the rival moves, which is the object the next chapter is about.'
 #| cap-location: margin
 
-library(ggplot2)
-library(scales)
-library(dplyr)
-
-base_theme <- theme_itwd()
-col_zero <- "grey40"
-col_pi   <- "#2F855A"
-
-# -----------------------------
-# Parameters (same structure as your chapter)
-# -----------------------------
-a <- 2600
-b <- 2.0
-d <- 1.1
-c <- 230
-f <- 450000
-
-Q_i   <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
-Pi_fun <- function(Pi, Pj) (Pi - c) * Q_i(Pi, Pj) - f
-
-Pi_grid <- seq(0, 1300, length.out = 260)
-
-# Featured rival prices (the ones you label)
-Pj_feature <- c(300, 800, 1300)
-
-# Many rival prices (ribs) to suggest the surface
 Pj_ribs <- seq(300, 1300, by = 20)
 
-# -----------------------------
-# Build data
-# -----------------------------
-df_ribs <- expand.grid(
-  Pi = Pi_grid,
-  Pj = Pj_ribs
-) |>
+df_ribs <- expand.grid(Pi = seq(0, 1300, length.out = 260), Pj = Pj_ribs) |>
   as_tibble() |>
-  mutate(
-    profit = Pi_fun(Pi, Pj),
-    kind = "rib"
-  )
+  mutate(profit = Pi_fun(Pi, Pj))
 
-df_feat <- expand.grid(
-  Pi = Pi_grid,
-  Pj = Pj_feature
-) |>
+df_feat <- expand.grid(Pi = seq(0, 1300, length.out = 260), Pj = Pj_levels) |>
   as_tibble() |>
-  mutate(
-    profit = Pi_fun(Pi, Pj),
-    kind = "featured",
-    Pj_lab = paste0("Rival price = ", dollar(Pj))
-  )
-
-# Compute best price within the grid for the featured curves (no calculus needed)
-df_opt <- df_feat |>
-  group_by(Pj, Pj_lab) |>
-  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
-  ungroup()
+  mutate(profit = Pi_fun(Pi, Pj))
 
 df_ridge <- df_ribs |>
   group_by(Pj) |>
   slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
   ungroup()
 
-# -----------------------------
-# Plot
-# -----------------------------
 ggplot() +
-  geom_hline(yintercept = 0, linewidth = 0.6, color = col_zero) +
-
-  # faint ribs (many curves)
-  geom_line(
-    data = df_ribs,
-    aes(x = Pi, y = profit, group = Pj),
-    color = col_pi,
-    linewidth = 1.6,
-    alpha = 0.18
-  ) +
-
-  # bold featured curves (three curves)
-  # optional "outline": draw black underneath first for clarity
-  geom_line(
-    data = df_feat,
-    aes(x = Pi, y = profit, group = Pj),
-    color = "black",
-    linewidth = 2.6,
-    alpha = 1
-  ) +
-  geom_line(
-    data = df_feat,
-    aes(x = Pi, y = profit, group = Pj),
-    color = col_pi,
-    linewidth = 2.2
-  ) +
-
-  geom_point(
-  data = df_opt,
-  aes(x = Pi, y = profit),
-  inherit.aes = FALSE,
-  color = "black",
-  size = 1.5
-) +
-  
-  annotate("text", x = df_opt$Pi[2], y = df_opt$profit[2] + 10000,
-         label = "peak", vjust = -1, size = 3) +
-
-  labs(
-    x = "Your price",
-    y = "Profit (dollars)"
-  ) +
-
+  geom_hline(yintercept = 0, linewidth = 0.6, color = itwd_muted) +
+  geom_line(data = df_ribs, aes(x = Pi, y = profit, group = Pj),
+            color = itwd_profit, linewidth = 1.4, alpha = 0.16) +
+  geom_line(data = df_feat, aes(x = Pi, y = profit, group = Pj),
+            color = itwd_profit, linewidth = 2) +
+  geom_point(data = df_ridge, aes(x = Pi, y = profit),
+             color = itwd_ink, size = 1.1) +
   coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
   scale_x_continuous(labels = label_dollar()) +
   scale_y_continuous(labels = label_dollar()) +
-  base_theme +
+  labs(x = "Your price", y = "Your profit") +
+  theme_itwd() +
   theme(legend.position = "none")
 ```
 
-Then we fill in many more slices. The faint curves show profit across many possible rival prices, and the highlighted points mark the peak of each featured curve (your best price *given* that rival price).
+The line of dots along the ridge is worth noticing now, because the next chapter is entirely about it. It is your best price as a function of theirs, and it says that under rivalry you no longer have *a* best price. You have a rule for finding one once you know what they are doing.
 
-Profit is still profit reasoning.
-But it is profit reasoning under response.
+Move the rival yourself and watch what it does to you.
 
+```{ojs}
+//| echo: false
+viewof pj = Inputs.range([300, 1300], {value: 800, step: 10, label: "Rival's price"})
+```
 
+```{ojs}
+//| echo: false
+// One name per line: OJS makes every top-level binding its own reactive cell,
+// so the comma-separated form is a re-assignment error rather than a declaration.
+aa = 2600
+bb = 2.0
+dd = 1.1
+cc = 230
+ff = 450000
 
+Qi   = (pi, pj) => Math.max(0, aa - bb * pi + dd * pj)
+Prof = (pi, pj) => (pi - cc) * Qi(pi, pj) - ff
 
+pgrid = d3.range(400, 1301, 4)
+mine  = pgrid.map(p => ({p, pi: Prof(p, pj)}))
+base  = pgrid.map(p => ({p, pi: Prof(p, 800)}))
+best  = mine.reduce((x, y) => (y.pi > x.pi ? y : x))
+moved = Math.abs(pj - 800) > 1
 
-## A New Source of Uncertainty
+// The ridge: best price at every rival price, which is the best-response rule.
+ridge = d3.range(300, 1301, 10).map(j => {
+  const g = pgrid.map(p => ({p, pi: Prof(p, j)}))
+  return g.reduce((x, y) => (y.pi > x.pi ? y : x))
+})
 
-Earlier, uncertainty came from:
+money = d3.format("$,.0f")
 
-- Demand estimation  
-- Cost estimation  
-- Scaling assumptions  
+html`<div style="font-size:15px;margin:0 0 .5rem 0;color:#1F2937">
+  Rival at <b>${money(pj)}</b> → your best price is <b>${money(best.p)}</b>,
+  earning <b>${money(best.pi)}</b>.</div>`
+```
 
-Now there is a new source:
+```{ojs}
+//| echo: false
+Plot.plot({
+  width: 700, height: 400, marginLeft: 78, marginBottom: 46,
+  style: {background: "transparent", fontSize: "13px", color: "#6B7280"},
+  x: {domain: [400, 1300], label: "Your price →",
+      tickFormat: d => `$${d3.format(",")(d)}`, labelAnchor: "right"},
+  y: {domain: [-100000, 1300000], label: "↑ Your profit",
+      tickFormat: d => `$${d3.format(",.0f")(d / 1000)}k`,
+      grid: true, labelAnchor: "top"},
+  marks: [
+    Plot.line(ridge, {x: "p", y: "pi", stroke: "#9CA8A2",
+                      strokeWidth: 1.5, strokeDasharray: "3,4"}),
+    moved ? Plot.line(base, {x: "p", y: "pi", stroke: "#9CA8A2",
+                             strokeWidth: 1.5, clip: true}) : null,
+    Plot.ruleY([0], {stroke: "#6B7280"}),
+    Plot.line(mine, {x: "p", y: "pi", stroke: "#2F855A",
+                     strokeWidth: 2.5, clip: true}),
+    Plot.ruleX([best.p], {y1: 0, y2: best.pi, stroke: "#6B7280",
+                          strokeDasharray: "2,3"}),
+    Plot.dot([best], {x: "p", y: "pi", r: 6, fill: "#1F2937",
+                      stroke: "white", strokeWidth: 2})
+  ]
+})
+```
 
-*Strategic responses of rivals.*
+The solid grey curve is where you were when the rival charged \$800; the dashed grey line is the ridge, the path the peak travels. Push the rival down toward \$300 and your whole curve sinks while your best price retreats with it — you are not being outsold, you are being compressed. Push them up toward \$1,300 and you follow them up, earning more at a higher price without doing anything differently.
 
-The rival is not noise.  
-The rival is not random.  
+That dashed ridge is a straight line, and it is worth knowing why before the next chapter derives it. Every dollar the rival adds sends some customers your way, which lifts your demand, which makes a slightly higher price your best answer. With demand this shape the relationship comes out exactly linear: your best price is a fixed starting point plus a little over a quarter of whatever they charge. You follow them, and you follow them partway.
 
-The rival is optimizing profit at the same time you are and this changes how feasibility must be evaluated.
+Say that last part carefully, because it is the hinge of the next two chapters. You match a fraction of their move rather than all of it, and so do they. Neither firm chases the other to the bottom, and neither escapes upward alone. Two partial responses pointing at each other is what settles rivalry at a price, and it is why the identical-goods case that follows is so brutal: strip the differentiation out and that fraction goes to one.
 
+## The Mistake Almost Everyone Makes
 
+Here is how the reasoning usually goes wrong, and it goes wrong at the last step rather than the first.
 
+A founder estimates willingness to pay honestly. They pick a price the evidence supports, work out the contribution, check that the volume covers the commitments, and conclude the venture is worth doing. Every step is sound. Then they act on a number computed at the price they would like to charge, rather than at the price that survives once somebody else is choosing too.
 
+Look back at @fig-rival-price-shifts. The tall curve is real. It is also what you get when the rival prices at \$1,300, which is a choice they make for their own reasons and can unmake on a Tuesday. Building on that peak means building on someone else's decision.
 
-## The Entrepreneurial Mistake
+The question that replaces *what is my optimal price?* is harder and more useful:
 
-Many founders calculate profit as if they were alone.
+> *What price survives when the other firm is optimizing too?*
 
-They:
+Everything you learned still applies. Contribution margin, fixed-cost commitment, required penetration, sensitivity — all of it holds. The change is where you evaluate them. A venture that is feasible in isolation can be infeasible under rivalry, and a structure that looked robust can turn fragile the moment margins compress.
 
-- Estimate willingness-to-pay.
-- Choose a price.
-- Calculate margin.
-- Project scale.
+## The Unforgiving Case
 
-Then they conclude:
+To see how far this can go, take rivalry in its harshest form.
 
-> “This is worth doing.”
+Two firms. Identical products. Customers who care about nothing but price, with no brand preference, no switching cost, and no reason to prefer one seller over the other. In that world even a one-dollar gap moves the entire market.
 
-But they have evaluated profit at their preferred price — not at the price that survives competition.
+Suppose your costs match your rival's, and they are charging \$100. You can take every customer by charging \$99, so you do. They can take them all back at \$98, so they do. Each move is individually rational and each invites the next.
 
-Under rivalry, the relevant question is not:
+The undercutting stops at one place. When price reaches variable cost, the next cut loses money on every unit sold, and neither firm has a profitable move left:
 
-> What is my optimal price?
+$$\mathsf{P = c}$$
 
-It is:
+Nothing about that outcome required cooperation, collusion, or a truce. It is simply where the logic runs out. And at that price, contribution margin is gone, so profit is:
 
-> What price survives when others optimize too?
+$$\mathsf{\pi = (P - c)Q - f = -f}$$
 
+You sell the entire time and never recover a dollar of what you committed.
 
+## Zero Profit Does Not Mean Zero Income
 
+That result confuses people, and the confusion is worth clearing up because it is the reason the pattern keeps catching founders who are paying attention.
 
+**Economic profit** of zero does not mean no money moves. A firm pricing at cost can still generate accounting income, pay a salary, run cash through the business, and look busy and even successful from outside. What it cannot do is earn a return above what the same capital, time, and risk would have earned somewhere else.
 
+::: {.column-margin .def-margin}
+**Economic profit** — what is left after the return you could have earned elsewhere with the same capital, time and risk. Accounting income can be healthy while this is zero.
+:::
 
+So the honest description of a mature undifferentiated market is that people work hard, take real risk, collect real income, and earn nothing for the risk. Which is exactly the shape of the most common story in entrepreneurship.
 
-## Feasibility Under Rivalry
+Someone says *I am making a hundred thousand dollars a year from my drop-shipping store.* That may be entirely true. The questions that decide whether it is a business are all about what happens next. What if another seller sources the same product a little cheaper? What if six more enter? What if advertising costs rise, or the platform starts sorting by price?
 
-A business that is feasible in isolation may be infeasible under competition.  
-A business that appears robust may become fragile when margins compress.  
-Fixed costs that were recoverable alone may become unrecoverable when demand splits.
+If the product is undifferentiated and entry is easy, the income is real and the profit is borrowed. What looked like a business may have been a temporary gap in competition.
 
-Competition does not change the logic of profit.
+## The Pattern Repeats
 
-It changes the constraints.
+This is not a thought experiment. It has run in industries as far apart as heavy manufacturing and online retail, with the same ending.
 
-Everything you learned still applies:
+::: {.mini-case}
+**How mini-mills won and then lost the profit**
 
-- Contribution margin  
-- Fixed cost commitment  
-- Scaling discipline  
-- Sensitivity  
+For decades integrated steel mills dominated production. They started from iron ore, required enormous facilities, and carried heavy fixed costs. Then mini-mills arrived with a different process: melt scrap steel instead of smelting ore, in a smaller plant, at meaningfully lower cost in categories like rebar.
 
-But now they must be evaluated at a competitive outcome.
+That cost advantage was real and it paid. Mini-mills entered the segments where the gap was widest, prices settled near the cost of the higher-cost integrated mills, and the newcomers earned genuine economic profit for years. The innovation worked exactly as intended.
 
+It did not end there. More mini-mills entered, capacity grew, and eventually the market no longer needed the integrated mills to meet demand at all. They exited those segments. With the high-cost producers gone, price fell again — this time toward the cost of the *highest-cost remaining mini-mill*. The extraordinary profit disappeared.
 
+Nobody was outmanaged. The advantage created profit and the entry it attracted erased it, which is what happens when enough firms share similar costs and sell an indistinguishable product.
+:::
 
+The online version runs faster and looks different enough that people do not recognize it. You find a product, build a storefront, advertise well, and sales begin. Margins are healthy at first because few competitors are visible and the platform rewards early traction. Then other sellers notice, source from the same supplier, run similar ads, and the platform sorts everyone by price and reviews. Each entrant takes a little more of the margin. Orders keep coming and contribution keeps shrinking.
 
+The steel version took thirty years. The drop-shipping version can take a quarter. The structure is identical, and in both cases the difference between early profit and durable profit was never effort.
 
+That is what makes easy entry treacherous rather than convenient. The same low barrier that let you start lets everyone else start, and the more visible and attractive the opportunity, the faster it happens. Before entering a market, the useful question is not whether you can generate revenue. It is what happens to your margin when other people see what you see.
 
-## The Decision Lens
+## Only Structure Changes the Outcome
 
-From this chapter forward, profit must always be asked in this form:
+Notice what did not save anyone in either story. Strong demand did not. Large scale did not. Competence did not, and neither did working harder than the competition, because everyone in a price war is working hard.
 
-> Is this worth doing *given that others will respond*?
+If undifferentiated price competition drives margin to zero, only two things change the result, and both of them are structural.
 
-If your profit only exists when competitors remain passive, you do not have a business. You have a temporary condition.
+The first is a genuinely lower cost than your rivals — not better purchasing or tighter operations, but a cost structure they cannot copy, which lets you stay profitable at prices that ruin them. That is what the mini-mills had, and the story shows both what it earns and how long it lasts once imitators arrive.
 
-Competition is not a separate topic from profit reasoning.  
-It is profit reasoning under intelligent response.
+The second is differentiation that actually changes behavior: enough perceived difference that a one-dollar gap no longer moves the whole market. This is the more common route and the more commonly overstated one, because every founder believes their product is different and customers are the only ones whose opinion counts.
 
-And that changes everything.
+Both work by changing the parameters of the profit function rather than by trying harder inside it. Without one of them, feasibility is resting on branding language and execution optimism, and price competition will find that out.
+
+::: {.reflect}
+**Ask yourself — what happens when they see what you see?**
+
+Write down what you would charge and what you expect to earn on a unit. That is the number you have been carrying.
+
+Now assume a competent, well-funded competitor enters next year selling something a customer would call the same thing. Not a bad competitor. A good one.
+
+Do not model it. Just answer two questions. What price do you end up at, and what is your contribution then?
+
+If the answer is that your price holds because customers would not switch, name the specific reason they would not, and be honest about whether it is a reason *they* would give or a reason you would give on their behalf. If the answer is that your price falls to something near your cost, you have learned the most important thing in this chapter, and you have learned it before committing anything.
+:::
+
+::: {.key-action}
+**The move:** Evaluate profit at the price that survives competition, not the price you would prefer. If your margin only exists while rivals stay passive, you are holding a temporary condition rather than a business.
+:::
+
+Most markets are not this harsh. Customers do notice differences, and they weigh brand, convenience, trust, timing, and service alongside price. Where those differences are real, a small price gap no longer redirects everything, and contribution can survive rivalry instead of collapsing to nothing. What that survival depends on, and how much of it you actually have, is the next question.
