@@ -25,7 +25,7 @@ Two things get substituted for it often enough to be worth separating out.
 
 Margin is the more comfortable of the two. It feels clean, it feels like efficiency, and it is available early.
 
-Margin describes what is left per unit or per dollar of revenue. It answers how much each sale contributes and how efficiently revenue becomes surplus. Useful questions, and not decisive ones, because a venture can have excellent margins and be a bad decision, or modest margins and be worth doing. What separates those cases is scale.
+**Margin** describes what is left per unit or per dollar of revenue. It answers how much each sale contributes and how efficiently revenue becomes surplus. Useful questions, and not decisive ones, because a venture can have excellent margins and be a bad decision, or modest margins and be worth doing. What separates those cases is scale.
 
 The reason is structural. Margins are local; fixed costs are not. A margin is computed on one unit, while a commitment has to be carried by all of them together. So margin on its own is silent about whether the venture can support what it has committed to. High margins do not guarantee profit when demand is small. Low margins do not preclude it when demand is large.
 
@@ -67,7 +67,7 @@ Which leaves the two doing different jobs, neither substituting for the other. A
 
 Growth is the other substitute, and it is more seductive because it is visible.
 
-Growth measures change: more customers, more revenue, more activity. Those can genuinely signal learning or traction. What they cannot signal is surplus. A venture can grow while losing money on every unit, grow revenue while deepening losses, or grow *because* it is subsidizing demand.
+**Growth** measures change: more customers, more revenue, more activity. Those can genuinely signal learning or traction. What they cannot signal is surplus. A venture can grow while losing money on every unit, grow revenue while deepening losses, or grow *because* it is subsidizing demand.
 
 Growth describes motion. Profit describes value. Only the second justifies a commitment.
 
@@ -87,7 +87,7 @@ So growth is something to interpret rather than celebrate. It can coexist quite 
 
 Before revenue exists, profit can only be reasoned about in expectation, and that fact makes people uncomfortable enough to mishandle it in two opposite directions. Some avoid profit reasoning altogether. Others treat the expectation as a prediction.
 
-**Expected profit is conditional rather than speculative.** It is not a guess about what will happen; it is a statement about what would happen if the assumptions underneath the decision hold — how demand responds to price, how costs behave, how large and reachable the population is, what the commitments expose you to. Its value is that it forces those assumptions to coexist in one frame where they can be examined together.
+**Expected profit** is conditional rather than speculative. It is not a guess about what will happen; it is a statement about what would happen if the assumptions underneath the decision hold — how demand responds to price, how costs behave, how large and reachable the population is, what the commitments expose you to. Its value is that it forces those assumptions to coexist in one frame where they can be examined together.
 
 ::: {.column-margin .def-margin}
 **Expected profit** — what the decision implies if its assumptions hold. A conditional statement, never a forecast.
