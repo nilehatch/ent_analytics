@@ -106,7 +106,6 @@ book:
         - game-theory.qmd
         - simultaneous-games.qmd        
         - sequential-games.qmd
-        - strategic-commitment.qmd
     # Removed 11 Aug 2026, both pending real content:
     #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)
     #   - summary.qmd                             (placeholder: "this book has no content

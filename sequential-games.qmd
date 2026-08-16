@@ -1,151 +1,199 @@
 ---
-title: "Sequential Games"
-subtitle: "When moving first changes what the other side will do"
+title: "Moving First, and Meaning It"
+subtitle: "Commitment works by removing your own options, which is why it is dangerous"
 ---
 
 ```{r}
 #| output: false
 #| include: false
 library(tidyverse)
-#library(readxl)
 library(scales)
 library(gt)
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
 ```
 
-## Introduction
+Both games so far assumed the two firms decided at the same moment, each ignorant of the other. That is a reasonable model of sealed bids and simultaneous launches, and it is a poor model of most competition.
 
-In many situations, the assumption that all companies act at the same time strains credibility.  Many real-world strategic decisions unfold in a sequence rather than all at once. In sequential games, players make their moves one after another, allowing later players to react to the decisions of those who acted before them. This sequence of moving and responding fundamentally changes the game's dynamics and treating them like a simultaneous game leads to flawed strategies and disappointing outcomes.
+Firms watch each other. One acts, the other sees it and responds. And sometimes a firm acts *specifically* so that the other has to respond to something already done and impossible to undo. That last move is the subject of this chapter, and it is the only reliable way out of the trap the last chapter described.
 
-For example, in a coordination game like the battle of the sexes, if one of the players chooses a venue first, the other can respond only to that venue. In this case, one of the equilibria disappears and the reasonable risk of the worst outcome is eliminated. More generally, making the assumption that games are played simultaneously when they are actually played in sequence leads to incorrect strategies and uncertain equilibria.
+## Order Changes Outcomes
 
+When one firm moves first, the game is no longer a matrix. It is a sequence, and the right picture is a tree.
 
-## Non-Credible Threats
+```{r}
+#| label: fig-two-stage-tree
+#| echo: false
+#| warning: false
+#| fig-cap: "The two-stage structure of every decision in this part. The commitment is chosen first and cannot be unchosen; prices settle afterwards, conditional on it. Working out the payoff at the end of each branch is the only way to choose at the start."
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 3.6
 
-In sequential games, the timing and order of decisions are not insignificant details. The ability to observe and react to a competitor's move can be a significant strategic advantage. The ability to anticipate a competitor's response allows players to move pre-emptively and shape the competitive environment in their favor.  Moving first, for example, allows a firm to make strategic commitments that can deter competitors, secure resources, or lock in advantageous positions by forcing competitors to respond to the early mover on less favorable terms.
+seg <- tibble::tribble(
+  ~x, ~y, ~xend, ~yend,
+  0, 0,  1, 0.9,
+  0, 0,  1, -0.9,
+  1, 0.9, 2, 1.35,
+  1, 0.9, 2, 0.45,
+  1, -0.9, 2, -0.45,
+  1, -0.9, 2, -1.35
+)
+lab <- tibble::tribble(
+  ~x, ~y, ~t, ~h,
+  -0.06, 0,    "Hogi Yogi", 1,
+  0.5, 0.62,   "invest", 0.5,
+  0.5, -0.62,  "do not", 0.5,
+  1.05, 0.9,   "prices settle", 0,
+  1.05, -0.9,  "prices settle", 0,
+  2.06, 1.35,  "$0.99, $1.22", 0,
+  2.06, 0.45,  "$1.19, $1.20", 0,
+  2.06, -0.45, "$1.56, $0.94", 0,
+  2.06, -1.35, "$1.33, $0.96", 0
+)
+node <- tibble::tibble(x = c(0, 1, 1), y = c(0, 0.9, -0.9))
 
-In sequential games, the dynamics go beyond mere observation and response. They open up the possibility of __non-credible threats__, where a player might threaten to take actions that, upon closer inspection, wouldn't actually be in their interest to carry out. Such threats, lacking in credibility, should typically be ignored, as they're unlikely to be acted upon. Distinguishing between credible and non-credible strategies becomes a critical skill in navigating the strategic landscape of sequential games.
+ggplot() +
+  geom_segment(data = seg, aes(x, y, xend = xend, yend = yend),
+               color = itwd_muted, linewidth = 0.7) +
+  geom_point(data = node, aes(x, y), size = 3, color = itwd_ink) +
+  geom_text(data = lab, aes(x, y, label = t, hjust = h),
+            size = 3.5, color = itwd_ink) +
+  annotate("text", x = 0.5, y = 1.72, label = "stage 1: commit",
+           size = 3.4, color = itwd_muted) +
+  annotate("text", x = 1.55, y = 1.72, label = "stage 2: compete on price",
+           size = 3.4, color = itwd_muted) +
+  coord_cartesian(xlim = c(-0.55, 2.95), ylim = c(-1.85, 1.95)) +
+  theme_void()
+```
 
-Thankfully, the challenge of identifying and countering non-credible threats can be systematically addressed by constructing the game in an __extensive form__ (essentially, a decision tree) and solving it through __backward induction__. This method for identifying strategies, simplifies the analysis by breaking down the game into a sequence of decisions to choose the best response, starting from the end and working backwards. By doing so, it becomes evident which threats or actions are actually in a player's interest to follow through on, based on the outcomes of subsequent moves.
+Reading a tree is reading it backwards. The payoffs at the far right are equilibria of the pricing game, computed under whatever was committed at the left. Only once those exist can the first decision be made, which is the backward induction [chapter 16](non-price-competition.qmd) arrived at by necessity rather than by name.
 
-This method not only clarifies which strategies are credible but also enhances strategic planning and decision-making. It allows entrepreneurs and strategists to anticipate competitor moves more accurately, devise responses that effectively counter non-credible threats, and leverage their own strategic moves for maximum impact. Through the use of extensive form games and backward induction, the complex interdependencies of sequential decisions become navigable, empowering businesses to craft strategies that are both informed and actionable.
+Moving first is not automatically better. A first mover commits while knowing least, and a second mover buys information by waiting and gives up the chance to shape what it is walking into. Which is worth more depends entirely on whether the first move changes anything the second firm has to live with. If it does not, going first is just deciding early.
 
-## Constructing Seqential Games in Normal Form
+## The Threat You Cannot Carry Out
 
-Consider a simple game where an entrepreneur deliberates entering a market dominated by a monopolist. The entrepreneur's choices are to enter or not enter, while the monopolist can fight the entry with aggressive pricing or accommodate by sharing the market. The outcomes are quantified as follows:
+Here is where most strategic talk fails.
 
-- `Enter` and `fight`: The entrepreneur faces a \$5M loss, while the monopolist gains \$4M.
-- `Enter` and `accommodate`: Both parties profit by \$5M each.
-- `Not enter`: Regardless of the monopolist’s choice, the entrepreneur gains nothing, and the monopolist secures a \$12M profit.
+Suppose Hogi Yogi, tired of losing, announces that it will match any price Smart Cookie sets and undercut it by a nickel. Alarming, if true. Smart Cookie should check whether it is.
 
-Solving this game in normal form reveals two Nash equilibria seen in @fig-monop-entrant-1: one where the monopolist fights and deters entry, and another where the entrant enters and is accommodated. But which outcome is more likely?
+Hogi Yogi's variable cost is fifty cents. At Smart Cookie's price of \$1.53, undercutting by a nickel means charging \$1.48 — but Hogi Yogi's own best response to \$1.53 is \$1.02, which earns it more than \$1.48 would. The announced policy is worse for Hogi Yogi than what Hogi Yogi would do anyway, so Hogi Yogi will not do it.
 
-![If the entry game is played simultaneously in normal form, the solution is two Nash equilibria where the monopolist may fight or accommodate and the entrant may enter or not enter.](images/Monop-Entrant-02.png){#fig-monop-entrant-1 .lightbox fig-align="center" width="50%"}
+That is a **non-credible threat**: something a firm says it will do that it would not actually want to do when the moment came. Smart Cookie can ignore it, and should.
 
-Given the logical sequence of moves, the entrant must decide first, providing the monopolist with something to fight or accommodate. This sequential decision-making highlights the non-credibility of the monopolist's threat to fight. If the entrant chooses to enter, knowing the monopolist’s best interest lies in accommodating, the threat of a price war becomes ineffective. This realization negates the not enter/fight equilibrium, leaving enter/accommodate as the most plausible outcome.
+::: {.column-margin .def-margin}
+**Non-credible threat** — a stated intention that the firm would not want to carry out if tested. It changes nothing, because the other side can check the arithmetic as easily as you can.
+:::
 
-The crux of sequential games is recognizing that threats lacking in credibility—those not in a player's best interest to execute—should not influence decision-making. The sequencing of moves clarifies which strategies are bluffs and which are genuine, guiding players towards rational and beneficial outcomes. This principle is pivotal in strategic environments where timing and order of actions shape the competitive landscape, enabling players to navigate complex scenarios with foresight and precision.
+The test is mechanical and it is the same test throughout this book. Work out what the threatening firm would earn by following through, and what it would earn by quietly not bothering. If the second number is larger, the threat is noise.
 
+Which raises the question the rest of the chapter answers. If saying does not work, what does?
 
-## Constructing Sequential Games in Extensive Form 
+## Commitment Is Removing Your Own Option
 
-When dealing with sequential-move games, particularly those with multiple stages, constructing them in __extensive form__ enhances clarity. This format visualizes the game as a decision tree, where nodes represent decision points for players, and branches indicate possible actions.
+A threat becomes credible when carrying it out stops being a sacrifice. The reliable way to arrange that is to change your own situation so the aggressive move is simply what you would now prefer.
 
-For illustration, let's revisit the monopolist-entrant game, now depicted in extensive form as seen in @fig-monop-entrant-a. In this decision tree:
+That is what commitment is. Not resolve, not stated intention, but an irreversible change to your own payoffs that makes your future behavior predictable to somebody else.
 
-- "E" marks the entrant’s decision node: to `enter` or `not enter`.
-- "M" nodes represent the monopolist’s subsequent choices: to `fight` by initiating a price war or to `accommodate` by maintaining high prices and sharing the market.
+Hogi Yogi has such a move available. Suppose it can install equipment, a better freezer line or a faster assembly process, that cuts its cost per sandwich by fifteen cents, from fifty to thirty-five. The equipment must be bought before any pricing happens, it costs money, and it cannot be returned.
 
-The payoffs, aligned with our previous discussion in normal form, are noted at each terminal node, reflecting the outcomes of combined actions. The arrangement of payoffs (whether on the left or right) should maintain consistency and clear labeling to avoid confusion.
+Notice what it does that an announcement cannot. With lower cost, aggressive pricing is not a sacrifice Hogi Yogi is making to punish anyone; it is Hogi Yogi's own best response. Smart Cookie does not have to believe a promise. It has to look at a freezer.
 
-![Construction of the entry game with sequential moves in extensive form: "E" is the entrant, "M" is the monopolist, their possible actions are marked on the paths, and their payoffs are given at the end of each decision path.](images/Monopolist-Entrant-a.png){#fig-monop-entrant-a .lightbox fig-align="center" width="50%"}
+```{r}
+#| label: tbl-commitment-game
+#| echo: false
+#| tbl-cap: "Equipment that cuts unit cost by fifteen cents, available to either firm. Profit per person per month, before the cost of the equipment itself."
 
+eqc <- function(c1, c2) {
+  a1 <- -0.7043; b1 <- 2.158877; d1 <- 5.568712
+  a2 <- 4.569339; b2 <- 3.496552; d2 <- 0.554085
+  X1 <- (a1 + b1*c1)/(2*b1); Y1 <- d1/(2*b1)
+  X2 <- (a2 + b2*c2)/(2*b2); Y2 <- d2/(2*b2)
+  den <- 1 - Y1*Y2
+  p1 <- (X1 + Y1*X2)/den; p2 <- (X2 + Y2*X1)/den
+  c((p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1))
+}
+CUT <- 0.15
+cc <- function(s,h) { v <- eqc(0.75 - CUT*s, 0.50 - CUT*h)
+                      sprintf("%s,  %s", dollar(v[1], .01), dollar(v[2], .01)) }
+tibble::tibble(
+  ` ` = c("**Smart Cookie does not invest**", "**Smart Cookie invests**"),
+  `Hogi Yogi does not invest` = c(cc(0,0), cc(1,0)),
+  `Hogi Yogi invests`         = c(cc(0,1), cc(1,1))
+) |>
+  gt() |> fmt_markdown(columns = ` `) |>
+  tab_options(table.font.size = 13, data_row.padding = px(12), table.width = pct(100)) |>
+  cols_align("center") |> cols_align("left", columns = ` `)
+```
 
+Compare that top-right cell with everything this part has produced so far.
 
-## Solving Sequential Games Through Backward Induction {.unnumbered}
+When Hogi Yogi advertised, it gained and Smart Cookie gained more. When it advertised comparatively, the moves cancelled. Here, Hogi Yogi goes from \$0.96 to \$1.22 and *Smart Cookie falls from \$1.33 to \$0.99*. The gap Hogi Yogi has been chasing for three chapters does not narrow — it reverses. Hogi Yogi is now the more profitable firm.
 
-To solve sequential games in extensive form, we use a method known as __backward induction__, which clarifies the decision-making process by working from the game's end back to its start. This method helps us pinpoint the best response at each decision point, considering the subsequent moves of other players.
+This is the first move in the whole part that takes something from the rival, and the reason is worth sitting with. Reach created customers and the differentiated firm collected most of them. Comparative advertising moved customers and got matched. Lower cost changes what Hogi Yogi will *charge*, and a rival's price is the one thing Smart Cookie's own profit cannot be insulated from.
 
-Returning to our monopolist-entrant game in extensive form, we start with the monopolist's final decisions. Given the choice between a price war and maintaining high prices after the entrant has entered, the monopolist prefers the latter, yielding a higher payoff. This preference is represented in @fig-monop-entrant-b by a bolded arrow towards the high price decision, indicating the monopolist's best response.  When the entrant does not enter, we move to the lower node for the monopolist where it retains monopoly status regardless of whether if fights or accommodates.
+## The Escalation Nobody Escapes
 
-![Solving the entry game in extensive form through backward induction: best responses are indicated by bolded arrows, leading to the sub-game perfect equilibrium.](images/Monopolist-Entrant-b.png){#fig-monop-entrant-b .lightbox fig-align="center" width="55%"}
+The equipment is also available to Smart Cookie, so the honest question is the one the last two chapters trained you to ask.
 
-The entrant, considering the monopolist's response, finds entering the market to be the best move, given it leads to a mutually beneficial profit sharing. This decision path is marked, leading to the game's equilibrium point, where both firms play their best responses simultaneously.
+Both firms want it. Smart Cookie gains whether or not Hogi Yogi invests, and so does Hogi Yogi, so long as the equipment costs less than about twenty cents per person per month. At any price below that, both buy, and the equilibrium is the bottom-right cell.
 
-The key outcome of backward induction is the __sub-game perfect equilibrium__, which inherently discounts non-credible threats. Unlike in our initial normal form game, where the monopolist's threat of a price war might deter entry, sequential analysis reveals such threats as non-credible. The monopolist, in reality, would choose to accommodate entry, rendering the price war strategy implausible when actions unfold over time.
+Look at where that leaves them. Before anyone invested, Smart Cookie earned \$1.33 and Hogi Yogi \$0.96. After both invest at, say, twelve cents a head, Smart Cookie earns \$1.07 and Hogi Yogi \$1.08.
 
-Thus, the sub-game perfect equilibrium identified through backward induction is a refined Nash equilibrium specific to sequential games.^[All sub-game perfect equilibria are Nash equilibria but the inverse is not true.] It focuses on credible strategies by considering the actual sequence of moves, ensuring that only feasible outcomes—those based on rational, best-response strategies—are considered viable. In doing so, it sidesteps the ambiguity of non-credible threats found in simultaneous-move games, offering a clear pathway to strategic decision-making in real-world scenarios.
+Hogi Yogi is better off than it started. Smart Cookie is substantially worse. And Smart Cookie's decision to invest was correct at every step — declining would have left it worse still.
 
-## Entrepreneurial Applications: First-Mover vs. Second-Mover Advantages {.unnumbered}
+That is not quite a prisoner's dilemma, because only one firm is trapped by it. It is something more common and less discussed: an escalation that transfers advantage from the differentiated firm to the efficient one, in which the differentiated firm's best available play is to participate in its own erosion.
 
-In business strategy, sequential decision-making shapes market outcomes by determining who moves first and how competitors react. Understanding whether to act early or wait can make or break an entrepreneurial venture.
+## When Commitment Backfires
 
-### First-Mover Advantages
-A first mover in a new market may benefit from:
+The same irreversibility that makes commitment work is what makes it dangerous, and the failures are predictable enough to name.
 
-- **Brand Loyalty & Market Share:** Early movers often establish customer loyalty before competitors enter.
-- **Cost Leadership:** By scaling operations early, a first mover may drive down costs, making it harder for later entrants to compete.
-- **Network Effects:** In industries like social media or fintech, early adopters create self-reinforcing user bases that discourage switching.
+**It stops being information.** A commitment made on today's estimate of demand is still binding when the estimate turns out wrong. The freezer line does not care that the campus enrollment fell. This is the sunk-cost trap arriving from the front rather than the rear. The problem is not throwing good money after bad; it is having removed your own ability to stop.
 
-However, first movers also face risks:
+**It invites the response it was meant to prevent.** A visible commitment tells your rival exactly what you are about to do, which is the point, and also gives them time to prepare. The table above is that story. Hogi Yogi's move works beautifully against a passive Smart Cookie and much less well against one that reads the same numbers.
 
-- They bear the cost of educating customers, while later entrants benefit from an already established market.
-- Competitors can reverse-engineer innovations and introduce superior products.
-- Unproven markets may lead to costly failures (e.g., early AI startups that ran out of funding before the market matured).
+**It costs flexibility, and flexibility is worth most exactly when uncertainty is highest.** This is the deepest tension in the chapter, because it puts commitment in direct conflict with everything [Part 3](profit-reasoning.qmd) said about staging decisions under uncertainty. A commitment converts an option into an obligation. When demand is well understood that is cheap; when it is not, you have paid for predictability with your ability to be wrong safely.
 
-### Second-Mover Advantages
-Not all advantages go to first movers. Second movers can:
+There is no formula that resolves that trade. What there is, unexpectedly, is evidence about when it tips.
 
-- Learn from first-mover mistakes and refine their product accordingly.
-- Enter with better technology after observing customer reactions.
-- Compete on cost efficiency by avoiding the heavy R&D expenses faced by pioneers.
+## What Your Rival Believes
 
-For example, Facebook was a second-mover in social networking, learning from Friendster and Myspace’s missteps before dominating the space.
+The last chapter said the way out of a trap is to change what your rival expects. This chapter has been about how. It is worth closing on how much that turns out to matter.
 
-For entrepreneurs, recognizing whether their business is a first-mover advantage play (like Tesla in EVs) or a second-mover strategy (like Apple refining smartphones after Blackberry) is critical for effective strategic planning.
+Recall the simulated entry decisions from [chapter 15](competitive-advantage.qmd), where each firm held some representation of its market and its rival. Two findings from that work bear directly on commitment.
 
+The first decomposes what makes a rival dangerous to you. A rival that *perceives* well, reading demand accurately and seeing the rivalry it is in, turns out to help you, because accurate perception makes a competitor predictable and rarely reckless. What hurts you is a rival with **commitment capability**: the ability to move irreversibly and make you live with it.^[@hatchCognitiveExposureHow2026, under revision.]
 
+That is a strong statement about the asymmetry of this chapter's subject. Commitment is the attribute of a competitor that damages you most, which is exactly why it is worth having and exactly why it is worth checking whether the firm across the street has it.
 
+The second finding is the one that resolves the tension left open above. The trade between committing and staying flexible is not a fixed property of your situation. *It shifts with the representation your rival holds.* Against a rival who has not thought about you at all, flexibility is cheap and commitment often unnecessary. Against one who is modelling you carefully, moving irreversibly is how you stop being modelled — because there is nothing left to predict.
 
-## Conclusion: Strategic Thinking in a Sequential World
+So the question is not *should I commit or stay flexible*. It is *what does the other firm see, and what does that make worth doing*. Which is the question this entire part has been an argument for asking.
 
-Sequential games provide a critical framework for understanding how timing and order influence strategic outcomes. Unlike simultaneous games, where competitors move blindly, sequential games allow firms to observe, anticipate, and react—making strategic foresight a key advantage.
+::: {.threshold}
+**Before making an irreversible commitment**
 
-### Key Takeaways
+- **Is it actually irreversible?** If you could unwind it in a quarter at modest cost, it is a plan rather than a commitment, and it will not change anyone's behavior. That is not a failure; it just means you should not expect the strategic benefit.
+- **Does it change what you would want to do, or only what you say?** Compute your best response after the commitment. If the aggressive move still is not your preference, you have bought an expensive announcement.
+- **What is the payoff if the rival matches it?** Not whether they will. Fill in the cell. The most common commitment error is evaluating only the column where the rival stands still.
+- **What is it worth if your demand estimate is wrong by a third?** Commitments are priced on forecasts and paid for regardless. If the answer is ruinous, the commitment is a bet on the estimate rather than on the strategy.
+- **Would you rather face this rival, or be them?** If a competitor made the identical move against you, would you regard it as serious? If not, they will not either.
+:::
 
-- First-mover vs. second-mover strategies define how businesses enter and compete in markets.
-- Commitments and threats must be credible to be effective—rational competitors ignore bluffs.
-- Backward induction is a powerful tool for identifying the most realistic equilibrium and avoiding bad strategic choices.
+::: {.reflect}
+**Ask yourself — what could you do that you could not undo?**
 
-By applying these concepts, entrepreneurs can make better strategic decisions, avoid predictable pitfalls, and use timing as a competitive advantage. Whether launching a new product, expanding into a new market, or deterring competition, understanding sequential decision-making is a fundamental skill in entrepreneurial strategy.
+List the commitments actually available to you in the next year. Equipment, a lease, a hire, an exclusive agreement, a public price, a stated position.
 
-<!--
-4. Updated Reading Quiz
-	1.	What distinguishes sequential games from simultaneous games?
-	•	(A) Players act at the same time.
-	•	(B) Players move in a sequence, allowing reactions to previous moves. ✅
-	•	(C) Players act without knowing the other’s decisions.
-	•	(D) Players must randomize their strategies.
-	2.	What is backward induction used for in sequential games?
-	•	(A) To move first and gain an advantage.
-	•	(B) To work backward from the final moves to find optimal strategies. ✅
-	•	(C) To create uncertainty and force mixed strategies.
-	•	(D) To determine whether simultaneous moves are better.
-	3.	Which of the following is an example of a credible commitment?
-	•	(A) A startup publicly states it will undercut all competitors but lacks funding to sustain the strategy.
-	•	(B) A large e-commerce company builds new warehouses to signal its commitment to fast delivery. ✅
-	•	(C) A firm threatens to lower prices indefinitely, even though it would harm its own profits.
-	•	(D) A CEO makes a vague promise to dominate an industry without any clear action.
-	4.	What is a potential advantage of being a second mover rather than a first mover?
-	•	(A) The second mover faces higher costs and more uncertainty.
-	•	(B) The second mover learns from first-mover mistakes and can enter with better technology. ✅
-	•	(C) The second mover has no advantage and always loses to the first mover.
-	•	(D) The second mover never benefits from network effects.
-	5.	Why do non-credible threats often fail in business strategy?
-	•	(A) Because they involve large irreversible investments.
-	•	(B) Because rational competitors recognize they will not be carried out. ✅
-	•	(C) Because they increase competition.
-	•	(D) Because they require backward induction to implement.
-	
-	-->
+For each one, answer a single question: after making it, what would you *want* to do differently from what you want now? If the answer is nothing, it is a purchase rather than a commitment, and it will not change how anyone else behaves.
+
+Then take the one that does change your incentives and ask the harder version. Your competitor can see it. Given what they will then want to do, are you better off than before you moved?
+
+Most founders evaluate a commitment against the world as it is. The question that matters is how it looks in the world the commitment creates.
+:::
+
+::: {.key-action}
+**The move:** Commitment works by changing what you will want to do, not by changing what you say. If a move leaves your own best response unchanged, it will not move your rival either, however expensive it was.
+:::
+
+This part began by observing that every parameter in the competition chapters was a decision somebody had made. It ends with the sharpest version of that claim: the most consequential decisions are the ones that cannot be revisited, they are made before revenue exists and before the prices they govern are ever charged, and they are evaluated by working out an equilibrium that has not happened yet. Which is the whole argument of this book, arriving at the place where the stakes are highest.
