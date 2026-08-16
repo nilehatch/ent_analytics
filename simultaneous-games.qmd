@@ -21,11 +21,13 @@ That is not how competitive escalation usually goes, and the reason has nothing 
 
 Change one thing about the offer.
 
-The agency in the last chapter sold **reach**: a campaign that told more people ice cream sandwiches existed, and brought two units per person per month of new consumption into the market. Whoever bought it grew the pool.
+The agency in the last chapter sold **reach**: a campaign that told more people ice cream sandwiches existed, and brought one more unit per person per month of new consumption into the market. Whoever bought it grew the pool.
 
-Now suppose a different agency sells **comparative** advertising. Not *ice cream sandwiches are good*, but *ours are better than theirs*. This campaign does not tell anybody anything new about the category. It moves two units per person from the rival's column into yours, and nothing else changes.
+Now suppose a different agency sells **comparative** advertising. Not *ice cream sandwiches are good*, but *ours are better than theirs*. This campaign does not tell anybody anything new about the category. It moves one unit per person out of the rival's column and into yours, at every price, and changes nothing else.
 
-Same firms. Same estimated demand system. Same two units. The only difference is where the two units come from.
+In the parameters, that is a transfer between the two intercepts. The advertiser's $\mathsf{a}$ rises by one and the rival's falls by one. Price sensitivity is untouched and so is substitution, because the campaign does not make anyone more willing to switch on price; it simply relocates a unit of demand and leaves it there.
+
+Same firms, same estimated demand system, same one unit. The only difference is where the unit comes from.
 
 ```{r}
 #| label: tbl-redistributive-gross
@@ -41,7 +43,7 @@ eqm <- function(a1, a2) {
   p1 <- (X1 + Y1*X2)/den; p2 <- (X2 + Y2*X1)/den
   c((p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1))
 }
-A1 <- -0.7043; A2 <- 4.569339; S <- 2
+A1 <- -0.7043; A2 <- 4.569339; S <- 1
 gr <- function(s,h) eqm(A1 + S*s - S*h, A2 + S*h - S*s)
 
 tibble::tibble(
@@ -60,24 +62,24 @@ Look at the diagonal. When neither firm advertises, Smart Cookie earns \$1.33 an
 
 Not approximately. Exactly. The two campaigns cancel, the customers end up where they began, and the two firms have each paid an agency for the privilege.
 
-Unilaterally, though, the campaign works. Hogi Yogi alone gains more than a dollar of gross contribution, and Smart Cookie alone gains thirty-eight cents. Each firm, looking at its own decision, sees a real gain.
+Unilaterally, though, the campaign works. Hogi Yogi alone gains fifty-eight cents of gross contribution, and Smart Cookie alone gains eighteen. Each firm, looking at its own decision, sees a real gain.
 
 ## When That Becomes a Trap
 
 Whether that structure is a trap depends entirely on the price of the campaign, and the arithmetic is worth doing carefully because the answer is counterintuitive.
 
-For both firms to buy, the gain has to exceed the cost in every situation. The smallest of those gains is Smart Cookie's thirty-three cents when Hogi Yogi is already advertising. So the campaign has to cost **less than about thirty-three cents** before both firms want it regardless of what the other does.
+For both firms to buy, the gain has to exceed the cost in every situation. The smallest of those gains is Smart Cookie's seventeen cents when Hogi Yogi is already advertising. So the campaign has to cost **less than about seventeen cents** before both firms want it regardless of what the other does.
 
-At the seventy-five cents the last chapter's agency charged, nobody buys this one. Smart Cookie declines, Hogi Yogi declines, and the comparative campaign never happens. The expensive poaching campaign is not a trap because it is not tempting.
+At the fifty cents the last chapter's agency charged, nobody buys this one. Smart Cookie declines, Hogi Yogi declines, and the comparative campaign never happens. The expensive poaching campaign is not a trap because it is not tempting.
 
 Make it cheap, though, and the structure bites.
 
 ```{r}
 #| label: tbl-dilemma
 #| echo: false
-#| tbl-cap: "The same comparative campaign priced at $0.25. Advertising is now the better choice for each firm whatever the other does, and both end up exactly $0.25 poorer than if neither had bought it."
+#| tbl-cap: "The same comparative campaign priced at $0.10. Advertising is now the better choice for each firm whatever the other does, and both end up exactly $0.10 poorer than if neither had bought it."
 
-K <- 0.25
+K <- 0.10
 cellK <- function(s,h) sprintf("%s,  %s",
   dollar(gr(s,h)[1] - K*s, .01), dollar(gr(s,h)[2] - K*h, .01))
 tibble::tibble(
@@ -90,9 +92,9 @@ tibble::tibble(
   cols_align("center") |> cols_align("left", columns = ` `)
 ```
 
-Work through it the way the last chapter did. Smart Cookie earns \$1.33 sitting still against a passive rival and \$1.46 by advertising; \$0.99 against an advertising rival and \$1.08 by advertising. Better both times. Hogi Yogi finds the same thing.
+Work through it the way the last chapter did. Smart Cookie earns \$1.33 sitting still against a passive rival and \$1.41 by advertising; \$1.15 against an advertising rival and \$1.23 by advertising. Better both times. Hogi Yogi finds the same thing.
 
-So both advertise. Both are behaving correctly. And the equilibrium leaves Smart Cookie at \$1.08 against the \$1.33 it would have had, and Hogi Yogi at \$0.71 against \$0.96 — each exactly twenty-five cents poorer, which is exactly what the campaign cost.
+So both advertise. Both are behaving correctly. And the equilibrium leaves Smart Cookie at \$1.23 against the \$1.33 it would have had, and Hogi Yogi at \$0.86 against \$0.96, each exactly ten cents poorer, which is exactly what the campaign cost.
 
 This is a **prisoner's dilemma**, and notice where it came from. It was not assumed for the sake of illustration. It fell out of an estimated demand system, a plausible campaign, and a price, and it would have fallen out the same way if nobody had ever heard the phrase.
 

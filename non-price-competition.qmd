@@ -72,13 +72,13 @@ That is the whole method of this part. What makes it worth a part rather than a 
 
 Return to Smart Cookie and Hogi Yogi, whose estimated demand system [chapter 15](competitive-advantage.qmd) already put on the table.
 
-Hogi Yogi is the frustrated firm. It has the cost advantage, twenty-five cents a unit, and it is losing anyway — charging \$1.02 against Smart Cookie's \$1.53, and earning \$0.96 per person per month against \$1.33. Suppose an advertising agency offers it a campaign: for \$0.75 per person per month, the campaign will add two units of consumption per person per month.
+Hogi Yogi is the frustrated firm. It has the cost advantage, twenty-five cents a unit, and it is losing anyway — charging \$1.02 against Smart Cookie's \$1.53, and earning \$0.96 per person per month against \$1.33. Suppose an advertising agency offers it a campaign: for \$0.50 per person per month, the campaign will add one more unit of consumption per person per month.
 
 That is a real offer with a real price, and it is exactly the kind of decision the table above describes. It buys **reach**, so it moves $\mathsf{a_{hy}}$ and nothing else. The products do not change, so distinctiveness is untouched. Costs per sandwich do not change.
 
-Before deciding, notice how easy it is to answer badly. The campaign adds two units at \$0.75 per person, and Hogi Yogi's contribution is about fifty cents a unit, so two units is roughly a dollar of contribution against seventy-five cents of cost. Buy it. That reasoning treats the demand curve as a thing that sits still while you add units to it.
+Before deciding, notice how easy it is to answer badly. The campaign adds a unit at \$0.50 per person, and Hogi Yogi's contribution is about fifty cents a unit, so the extra unit roughly pays for the campaign and no more. A close call, probably worth it. That reasoning treats the demand curve as a thing that sits still while you add units to it.
 
-It does not sit still, because prices move once the curve does. Recompute the equilibrium with $\mathsf{a_{hy}}$ raised by two and everything else unchanged:
+It does not sit still, because prices move once the curve does. Recompute the equilibrium with $\mathsf{a_{hy}}$ raised by one and everything else unchanged:
 
 ```{r}
 #| label: tbl-hy-advertises
@@ -96,28 +96,28 @@ eqm <- function(a1, a2) {
   list(p1 = p1, p2 = p2, pi1 = (p1-c1)*q1, pi2 = (p2-c2)*q2)
 }
 b <- eqm(-0.7043, 4.569339)
-a <- eqm(-0.7043, 4.569339 + 2)
+a <- eqm(-0.7043, 4.569339 + 1)
 
 tibble::tibble(
   ` `                     = c("Before", "After Hogi Yogi advertises", "Change"),
   `Smart Cookie price`    = c(dollar(b$p1, .01), dollar(a$p1, .01), dollar(a$p1-b$p1, .01)),
   `Hogi Yogi price`       = c(dollar(b$p2, .01), dollar(a$p2, .01), dollar(a$p2-b$p2, .01)),
   `Smart Cookie profit`   = c(dollar(b$pi1, .01), dollar(a$pi1, .01), dollar(a$pi1-b$pi1, .01)),
-  `Hogi Yogi profit`      = c(dollar(b$pi2, .01), dollar(a$pi2 - 0.75, .01),
-                              dollar(a$pi2 - 0.75 - b$pi2, .01))
+  `Hogi Yogi profit`      = c(dollar(b$pi2, .01), dollar(a$pi2 - 0.50, .01),
+                              dollar(a$pi2 - 0.50 - b$pi2, .01))
 ) |>
   gt() |>
   tab_options(table.font.size = 12, data_row.padding = px(5), table.width = pct(100)) |>
   cols_align("center") |>
-  tab_footnote("Hogi Yogi's profit is net of the $0.75 campaign. Per person per month.",
+  tab_footnote("Hogi Yogi's profit is net of the $0.50 campaign. Per person per month.",
                locations = cells_column_labels(columns = `Hogi Yogi profit`))
 ```
 
-Hogi Yogi should buy the campaign. Its profit goes from \$0.96 to \$1.74, which is a gain of seventy-eight cents on a seventy-five cent investment, and the naive arithmetic was roughly right about that much.
+Hogi Yogi should buy the campaign. Its profit goes from \$0.96 to \$1.14, a gain of seventeen cents on a fifty-cent investment. Thin, and positive, and the naive arithmetic was in the right neighbourhood.
 
-Now look at the column it was not watching. Smart Cookie's profit rises from \$1.33 to \$3.08. Smart Cookie did not advertise, did not change its product, did not change its price deliberately, and did not spend a cent. It gained \$1.75 — more than twice what Hogi Yogi gained by paying for the campaign.
+Now look at the column it was not watching. Smart Cookie's profit rises from \$1.33 to \$2.11. Smart Cookie did not advertise, did not change its product, did not change its price deliberately, and did not spend a cent. It gained seventy-nine cents, which is more than four times what Hogi Yogi got for paying.
 
-And the gap between the two firms, the thing Hogi Yogi was actually trying to close, goes from thirty-six cents to a dollar thirty-four. *It nearly quadrupled.*
+And the gap between the two firms, the thing Hogi Yogi was actually trying to close, goes from thirty-six cents to ninety-eight cents. *It nearly tripled.*
 
 ## Why the Spillover Runs That Way
 
@@ -125,7 +125,7 @@ That result is not a quirk of these numbers. It follows directly from the asymme
 
 The campaign puts more people in the market for an ice cream sandwich. Those people then face two prices. And this pair of firms has wildly lopsided switching: when Hogi Yogi's price rises, 5.57 units of demand move toward Smart Cookie, while a rise in Smart Cookie's price sends only 0.55 back the other way.
 
-So expanding the pool hands the differentiated firm most of the expansion. Worse for Hogi Yogi, the extra demand lets *it* raise price from \$1.02 to \$1.34 — and every cent of that rise pushes customers toward the rival, whose own best response is to raise price too, from \$1.53 to \$1.94. Both firms end up charging more and selling more, and the one with the loyal customers captures most of it.
+So expanding the pool hands the differentiated firm most of the expansion. Worse for Hogi Yogi, the extra demand lets *it* raise price from \$1.02 to \$1.18, and every cent of that rise pushes customers toward the rival, whose own best response is to raise price too, from \$1.53 to \$1.74. Both firms end up charging more and selling more, and the one with the loyal customers captures most of it.
 
 The lesson is not that Hogi Yogi should skip the campaign. It should buy it; seventy-eight cents is seventy-eight cents. The lesson is that *a move that improves your position and a move that closes a gap are different moves*, and reach is the first kind. Buying reach in a market where you are the substitutable firm subsidizes the firm you are trying to catch.
 
@@ -143,7 +143,7 @@ That is **backward induction**, and it is the only way a staged decision can be 
 **Backward induction** — solving a staged decision from the last stage forward. You cannot judge a move until you know how the game finishes, so you compute the finish first and reason back to the move.
 :::
 
-It also explains why the naive arithmetic failed. *Two units at fifty cents of contribution against seventy-five cents of cost* is a first-stage calculation that never solved the second stage. It assumed the price would stay at \$1.02. The price did not stay at \$1.02, and the whole point of the exercise is that it could not have.
+It also explains what the naive arithmetic was missing. *One unit at fifty cents of contribution against fifty cents of cost* is a first-stage calculation that never solved the second stage, and it assumed the price would stay at \$1.02. The price did not stay at \$1.02, which is why the campaign was worth rather more to Hogi Yogi than the back-of-envelope suggested, and worth far more than that to Smart Cookie.
 
 ## What the Engine Cannot Tell You Yet
 

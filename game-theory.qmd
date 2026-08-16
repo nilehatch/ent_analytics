@@ -51,7 +51,7 @@ For this book, payoffs are profit. You have a demand system, a cost structure, a
 
 ## Building the Game, One Cell at a Time
 
-Back to the ice cream sandwiches, with the agency now selling to both shops. Each firm can buy the campaign or not. The campaign costs \$0.75 per person per month and adds two units of consumption per person per month to whoever buys it.
+Back to the ice cream sandwiches, with the agency now selling to both shops. Each firm can buy the campaign or not. The campaign costs \$0.50 per person per month and adds one unit of consumption per person per month to whoever buys it.
 
 **The players** are Smart Cookie and Hogi Yogi. **The actions** are advertise or do not. That gives four combinations, and each one is a different market with different parameters, so each one needs its own equilibrium.
 
@@ -60,7 +60,7 @@ That is the whole construction. Change the parameters to match the combination, 
 ```{r}
 #| label: tbl-ad-game-build
 #| echo: false
-#| tbl-cap: "Four combinations, four separate pricing equilibria. The campaign adds two units of reach to whoever buys it; every other parameter is unchanged from the estimated system. Profit is per person per month, net of the $0.75 campaign."
+#| tbl-cap: "Four combinations, four separate pricing equilibria. The campaign adds one unit of reach to whoever buys it; every other parameter is unchanged from the estimated system. Profit is per person per month, net of the $0.50 campaign."
 
 eqm <- function(a1, a2) {
   b1 <- 2.158877; d1 <- 5.568712; c1 <- 0.75
@@ -71,10 +71,10 @@ eqm <- function(a1, a2) {
   p1 <- (X1 + Y1*X2)/den; p2 <- (X2 + Y2*X1)/den
   c(p1, p2, (p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1))
 }
-A1 <- -0.7043; A2 <- 4.569339; K <- 0.75
+A1 <- -0.7043; A2 <- 4.569339; K <- 0.50; S <- 1
 
 rows <- map_dfr(list(c(0,0), c(0,1), c(1,0), c(1,1)), function(z) {
-  e <- eqm(A1 + 2*z[1], A2 + 2*z[2])
+  e <- eqm(A1 + S*z[1], A2 + S*z[2])
   tibble(`Smart Cookie` = if (z[1]) "advertises" else "does not",
          `Hogi Yogi`    = if (z[2]) "advertises" else "does not",
          `p sc` = dollar(e[1], .01), `p hy` = dollar(e[2], .01),
@@ -96,7 +96,7 @@ Arranged as a matrix, that is the game:
 #| tbl-cap: "The advertising game in normal form. Each cell is (Smart Cookie, Hogi Yogi) profit per person per month, net of the campaign."
 
 cell <- function(s, h) {
-  e <- eqm(A1 + 2*s, A2 + 2*h)
+  e <- eqm(A1 + S*s, A2 + S*h)
   sprintf("%s,  %s", dollar(e[3] - K*s, .01), dollar(e[4] - K*h, .01))
 }
 tibble::tibble(
@@ -115,11 +115,11 @@ tibble::tibble(
 
 This part takes a paragraph, which is the point.
 
-Look down each column for Smart Cookie. If Hogi Yogi sits still, Smart Cookie earns \$1.33 by doing nothing and \$2.90 by advertising. If Hogi Yogi advertises, Smart Cookie earns \$3.08 by doing nothing and \$5.57 by advertising. Advertising is better in both cases, so it is a **dominant strategy** — Smart Cookie does not need to predict anything.
+Look down each column for Smart Cookie. If Hogi Yogi sits still, Smart Cookie earns \$1.33 by doing nothing and \$1.84 by advertising. If Hogi Yogi advertises, Smart Cookie earns \$2.11 by doing nothing and \$2.86 by advertising. Advertising is better in both cases, so it is a **dominant strategy** — Smart Cookie does not need to predict anything.
 
-Now across each row for Hogi Yogi. Against a passive Smart Cookie, \$0.96 or \$1.74. Against an advertising Smart Cookie, \$1.12 or \$1.98. Also dominant.
+Now across each row for Hogi Yogi. Against a passive Smart Cookie, \$0.96 or \$1.14. Against an advertising Smart Cookie, \$1.04 or \$1.24. Also dominant.
 
-Both firms advertise. The equilibrium is \$5.57 and \$1.98, and neither firm has any reason to deviate.
+Both firms advertise. The equilibrium is \$2.86 and \$1.24, and neither firm has any reason to deviate.
 
 ::: {.column-margin .def-margin}
 **Dominant strategy** — an action that is best whatever the other firm does. When one exists you do not have to forecast your rival, which is the easiest kind of decision competition ever offers.
@@ -127,15 +127,15 @@ Both firms advertise. The equilibrium is \$5.57 and \$1.98, and neither firm has
 
 Two things about that outcome deserve notice, and neither was visible before the game was built.
 
-Both firms end up better off than if neither had advertised: \$5.57 against \$1.33, and \$1.98 against \$0.96. This is not a trap. The spending genuinely creates value here, because the campaign brings new consumption into the market rather than shuffling existing consumption between two shops. Not every competitive escalation works this way, and the next chapter is about telling the difference.
+Both firms end up better off than if neither had advertised: \$2.86 against \$1.33, and \$1.24 against \$0.96. This is not a trap. The spending genuinely creates value here, because the campaign brings new consumption into the market rather than shuffling existing consumption between two shops. Not every competitive escalation works this way, and the next chapter is about telling the difference.
 
-And the gap widens again. Smart Cookie's lead goes from thirty-six cents to three dollars and fifty-nine. Hogi Yogi advertises, correctly, and finishes further behind than when it started. The advertising was worth buying and it was never going to fix the problem.
+And the gap widens again. Smart Cookie's lead goes from thirty-six cents to a dollar sixty-two. Hogi Yogi advertises, correctly, and finishes further behind than when it started. The advertising was worth buying and it was never going to fix the problem.
 
 ## What Would the Ad Have to Cost?
 
 Here is the return on having built the game rather than been handed it.
 
-A payoff matrix is four numbers. A payoff *function* is the machinery that produced them, and it will answer questions the numbers cannot. The most useful one: the agency is charging \$0.75 — at what price would this stop being worth it?
+A payoff matrix is four numbers. A payoff *function* is the machinery that produced them, and it will answer questions the numbers cannot. The most useful one: the agency is charging \$0.50, so at what price would this stop being worth it?
 
 That question has an answer, because the gross gains are computable and the cost is the only thing that changes.
 
@@ -144,7 +144,7 @@ That question has an answer, because the gross gains are computable and the cost
 #| echo: false
 #| tbl-cap: "Each firm's gross gain from advertising, which is what the campaign would have to cost before that firm stopped wanting it."
 
-g <- function(s,h) eqm(A1 + 2*s, A2 + 2*h)
+g <- function(s,h) eqm(A1 + S*s, A2 + S*h)
 tibble::tibble(
   Situation = c("Hogi Yogi, if Smart Cookie sits still",
                 "Hogi Yogi, if Smart Cookie advertises",
@@ -158,14 +158,14 @@ tibble::tibble(
   cols_align("left", columns = Situation) |> cols_align("center")
 ```
 
-At \$0.75 the agency is selling well below every one of those thresholds, which is why advertising is dominant for both firms. Raise the price and the game changes character in stages. Above about \$1.62, Hogi Yogi drops out whatever Smart Cookie does, and the equilibrium becomes Smart Cookie advertising alone. Above about \$2.32, nobody buys.
+At \$0.50 the agency is selling below every one of those thresholds, which is why advertising is dominant for both firms. Raise the price and the game changes character in stages. Above about \$0.70, Hogi Yogi drops out whatever Smart Cookie does, and the equilibrium becomes Smart Cookie advertising alone. Above about \$1.02, nobody buys.
 
-So the same two firms, the same customers, the same campaign effectiveness, produce three different games depending only on what the agency charges. If you had been handed the matrix you could have solved it. Having built it, you can negotiate, and you know that Hogi Yogi's willingness to pay tops out around \$1.62 while Smart Cookie's runs to \$3.24, which is worth knowing before either of them walks into the agency.
+So the same two firms, the same customers, the same campaign effectiveness, produce three different games depending only on what the agency charges. If you had been handed the matrix you could have solved it. Having built it, you can negotiate, and you know that Hogi Yogi's willingness to pay tops out at about seventy cents while Smart Cookie's runs past a dollar, which is worth knowing before either of them walks into the agency.
 
 ::: {.limit}
 **What a two-by-two hides**
 
-Real decisions are rarely binary. Advertising comes in amounts, not in a switch, and the campaign that adds two units per person is one point on a curve that probably bends.
+Real decisions are rarely binary. Advertising comes in amounts, not in a switch, and the campaign that adds one unit per person is one point on a curve that probably bends.
 
 A two-by-two is a deliberate simplification that buys clarity about the *structure*: who has a dominant strategy, whether the outcome is a trap, which firm the spillover favours. Use it for that. When the question is *how much* rather than *whether*, the same machinery still works, but you are optimizing over a continuous choice rather than reading a cell, and the answer stops being a game in the textbook sense.
 :::
