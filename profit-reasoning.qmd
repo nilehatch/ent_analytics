@@ -156,15 +156,16 @@ This is what makes sensitivity a learning tool rather than a reporting tool. Tim
 It also reframes what scale means. Some ventures are deliberately built to run on very low commitments early, and that is a strategy rather than a shortcut. For those, the question is not whether the design supports the full commitment eventually, but whether it can sustain itself at this stage long enough to earn the right to the next one. Scale becomes a path with stages rather than a single number to clear, and sensitivity tells you what each stage can survive and what would break first.
 
 ::: {.checkpoint}
-**Before you commit, you should be able to answer four questions.**
+**Before you accept a profit curve**
 
-Which reading is this — impossible, fragile, or robust? Say it in one word, and say what in the curve tells you.
+The app will hand you a curve, a peak, and the price that produced it. Do not accept any of them until you can answer four questions.
 
-If profit exists, how wide is the band? Name the lowest and highest price that still clears zero. If those two numbers are close together, you have fragile profit regardless of how large the peak is.
+- **Which reading is this?** Say it in one word — impossible, fragile, or robust — and say what in the curve tells you.
+- **How wide is the band?** Name the lowest and highest price that still clears zero. If those two numbers sit close together you have fragile profit, however large the peak between them is.
+- **Which assumption carries the decision?** Move one belief at a time until profit crosses zero. Whichever one gets there on the smallest change is the one the decision is resting on.
+- **Can you do anything about that assumption?** If you can test it, that is your next piece of work. If you can neither test it nor design around it, that is exposure, and it has to be accepted deliberately rather than discovered later.
 
-Which assumption carries the decision? Change one belief at a time until profit crosses zero. Whichever one gets there first with the smallest change is the one your decision rests on.
-
-Can you do anything about it? If yes, that is your next piece of work. If no, that is your exposure, and it needs to be accepted deliberately rather than discovered later.
+If you cannot answer all four, what you have is a number rather than a decision.
 :::
 
 ## Seeing It Move
