@@ -65,6 +65,10 @@ $$ \mathsf{\pi = pq - cq - f} $$
 
 Profit is the price you charge times the quantity you sell, less what each unit costs you to make and deliver, less the fixed costs you committed to before anyone bought anything.
 
+::: {.column-margin .def-margin}
+**$\mathsf{\pi}$** — the Greek letter *pi*, used here and everywhere after it to mean **profit**. It is not 3.14. Economists borrowed the letter because *profit* starts with a p sound, and the convention stuck. The other four letters are $\mathsf{p}$ for price, $\mathsf{q}$ for quantity, $\mathsf{c}$ for the cost of one unit, and $\mathsf{f}$ for fixed cost.
+:::
+
 Nothing about this equation is new. Any introductory economics course puts it on the board in the first week. What matters is what it shows you when you read it as a map of your own ignorance instead of as a calculation.
 
 Take the terms one at a time and ask where each one comes from.

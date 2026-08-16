@@ -21,101 +21,69 @@ Add a rival and something changes that no amount of better estimation fixes. The
 
 ## Profit Becomes a Surface
 
-Until now profit has been a function of one thing you choose:
+Chapter 1 put the argument of this book on one line, and every chapter since has been about one of its terms:
 
-$$\mathsf{\pi(P) = (P - c)\,Q - f}$$
+$$ \mathsf{\pi = pq - cq - f} $$
 
-Pick a price, read the quantity off your demand curve, subtract what it costs. The last chapter turned that into a picture you could read for feasibility, fragility, and robustness.
+Price times quantity, less what each unit costs, less what you committed before anyone bought. The last chapter turned that into a picture you could read for feasibility, fragility and robustness. Written as a function of the one thing you choose, it is
 
-Under rivalry the same expression takes a second argument:
+$$ \mathsf{\pi(p) = (p - c)\,q - f} $$
 
-$$\mathsf{\pi_i(P_i, P_j)}$$
+Under rivalry it takes a second argument:
 
-Your profit now depends on your price and your rival's. Nothing about the logic changed, and everything about the geometry did. Your demand is no longer a curve you estimated once; it is a curve that sits somewhere different depending on what the other firm charges. If they cut price, yours shifts in. If they raise it, yours shifts out. If they enter a segment you thought was yours, it splits.
+$$ \mathsf{\pi_i(p_i, p_j)} $$
 
-So the profit curve you learned to read is one slice through something larger. @fig-rival-price-shifts takes three slices, holding the rival's price fixed at a low, middle, and high level.
+::: {.column-margin .def-margin}
+**Subscripts** — $\mathsf{i}$ means *you* and $\mathsf{j}$ means *the other firm*, so $\mathsf{p_i}$ is your price and $\mathsf{p_j}$ is theirs. Nothing is squared or multiplied; the small letter is only a name tag. $\mathsf{\pi_i(p_i, p_j)}$ reads "your profit depends on both prices."
+:::
 
-```{r}
-#| label: fig-rival-price-shifts
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-cap: "Your profit as a function of your own price, at three different rival prices. The curve is the familiar shape from the last chapter. What is new is that there are three of them, and the best price is different on each."
-#| cap-location: margin
+Your profit now depends on your price and your rival's. Nothing about the logic changed and everything about the geometry did. Your demand is no longer a curve you estimated once; it sits somewhere different depending on what the other firm charges. If they cut price, yours shifts in. If they raise it, yours shifts out. If they enter a segment you thought was yours, it splits.
 
-a <- 2600; b <- 2.0; d <- 1.1; c <- 230; f <- 450000
-
-Q_i    <- function(Pi, Pj) pmax(0, a - b*Pi + d*Pj)
-Pi_fun <- function(Pi, Pj) (Pi - c) * Q_i(Pi, Pj) - f
-
-Pi_grid   <- seq(0, 2000, length.out = 260)
-Pj_levels <- c(300, 800, 1300)
-
-df_curves <- expand.grid(Pi = Pi_grid, Pj = Pj_levels) |>
-  as_tibble() |>
-  mutate(profit = Pi_fun(Pi, Pj))
-
-df_opt <- df_curves |>
-  group_by(Pj) |>
-  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
-  ungroup()
-
-ggplot(df_curves, aes(x = Pi, y = profit, group = Pj)) +
-  geom_hline(yintercept = 0, linewidth = 0.8, color = itwd_muted) +
-  geom_segment(data = df_opt, aes(x = Pi, xend = Pi, y = 0, yend = profit),
-               inherit.aes = FALSE, linetype = "dotted",
-               color = itwd_ink, linewidth = 0.5, alpha = .5) +
-  geom_line(linewidth = 2, color = itwd_profit) +
-  geom_point(data = df_opt, aes(x = Pi, y = profit), inherit.aes = FALSE,
-             size = 2, color = itwd_ink) +
-  annotate("label", x = 690, y = 120000, size = 3, fill = "white", alpha = .85,
-           label = "Rival at $300\nyour best price $847") +
-  annotate("label", x = 825, y = 500000, size = 3, fill = "white", alpha = .85,
-           label = "Rival at $800\nyour best price $985") +
-  annotate("label", x = 957, y = 950000, size = 3, fill = "white", alpha = .85,
-           label = "Rival at $1,300\nyour best price $1,122") +
-  coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
-  scale_x_continuous(labels = label_dollar()) +
-  scale_y_continuous(labels = label_dollar()) +
-  labs(x = "Your price", y = "Your profit") +
-  theme_itwd() +
-  theme(legend.position = "none")
-```
-
-Read the three peaks. When the rival is cheap, your best price is low and your profit is thin. When the rival is expensive, you can charge more and earn more. The shape you spent the last chapter learning to read is intact, and it slides.
-
-Fill in every rival price between those three and the slices become a surface.
+So the profit curve you learned to read is one slice through something larger. Fill in a slice for every price the rival might charge and the slices become a surface.
 
 ```{r}
 #| label: fig-profit-surface
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-cap: 'Fifty-one slices at rival prices from $300 to $1,300. Taken together they are the profit surface $\mathsf{\pi(P_i, P_j)}$. The dots trace your best price as the rival moves, which is the object the next chapter is about.'
+#| fig-cap: 'Fifty-one slices at rival prices from $300 to $1,300. Together they are the profit surface $\mathsf{\pi_i(p_i, p_j)}$. The dots trace your best price as the rival moves, and they fall on a straight line.'
 #| cap-location: margin
 
-Pj_ribs <- seq(300, 1300, by = 20)
+a <- 2600; b <- 2.0; d <- 1.1; c <- 230; f <- 450000
 
-df_ribs <- expand.grid(Pi = seq(0, 1300, length.out = 260), Pj = Pj_ribs) |>
-  as_tibble() |>
-  mutate(profit = Pi_fun(Pi, Pj))
+q_i    <- function(pi_, pj) pmax(0, a - b*pi_ + d*pj)
+prof_i <- function(pi_, pj) (pi_ - c) * q_i(pi_, pj) - f
 
-df_feat <- expand.grid(Pi = seq(0, 1300, length.out = 260), Pj = Pj_levels) |>
-  as_tibble() |>
-  mutate(profit = Pi_fun(Pi, Pj))
+# The ridge is computed, not searched. Taking the best point from a grid of
+# prices snaps every answer to a grid value, and since the true optimum
+# advances $5.50 per $20 of rival price while the grid cell is $5.02, the
+# ridge picks up a visible stagger that is pure sampling artifact. Setting
+# the derivative to zero gives p* exactly, and it is linear in the rival's
+# price -- which is the claim the prose makes a few paragraphs down.
+best_p <- function(pj) (a + b*c + d*pj) / (2*b)
 
-df_ridge <- df_ribs |>
-  group_by(Pj) |>
-  slice_max(order_by = profit, n = 1, with_ties = FALSE) |>
-  ungroup()
+p_grid  <- seq(0, 1300, length.out = 400)
+pj_ribs <- seq(300, 1300, by = 20)
+pj_feat <- c(300, 800, 1300)
+
+df_ribs <- expand.grid(p_i = p_grid, pj = pj_ribs) |>
+  as_tibble() |> mutate(profit = prof_i(p_i, pj))
+
+df_feat <- expand.grid(p_i = p_grid, pj = pj_feat) |>
+  as_tibble() |> mutate(profit = prof_i(p_i, pj))
+
+df_ridge <- tibble(pj = pj_ribs) |>
+  mutate(p_i = best_p(pj), profit = prof_i(p_i, pj))
 
 ggplot() +
   geom_hline(yintercept = 0, linewidth = 0.6, color = itwd_muted) +
-  geom_line(data = df_ribs, aes(x = Pi, y = profit, group = Pj),
+  geom_line(data = df_ribs, aes(x = p_i, y = profit, group = pj),
             color = itwd_profit, linewidth = 1.4, alpha = 0.16) +
-  geom_line(data = df_feat, aes(x = Pi, y = profit, group = Pj),
+  geom_line(data = df_feat, aes(x = p_i, y = profit, group = pj),
             color = itwd_profit, linewidth = 2) +
-  geom_point(data = df_ridge, aes(x = Pi, y = profit),
+  geom_line(data = df_ridge, aes(x = p_i, y = profit),
+            color = itwd_ink, linewidth = 0.6, linetype = "dashed") +
+  geom_point(data = df_ridge, aes(x = p_i, y = profit),
              color = itwd_ink, size = 1.1) +
   coord_cartesian(xlim = c(400, 1300), ylim = c(-50000, 1300000)) +
   scale_x_continuous(labels = label_dollar()) +
@@ -144,20 +112,20 @@ dd = 1.1
 cc = 230
 ff = 450000
 
-Qi   = (pi, pj) => Math.max(0, aa - bb * pi + dd * pj)
-Prof = (pi, pj) => (pi - cc) * Qi(pi, pj) - ff
+Qi   = (p, pjj) => Math.max(0, aa - bb * p + dd * pjj)
+Prof = (p, pjj) => (p - cc) * Qi(p, pjj) - ff
+
+// Solved rather than searched, for the same reason as the figure above: taking
+// the best point off a grid staggers the answer by up to half a grid cell.
+bestP = pjj => (aa + bb * cc + dd * pjj) / (2 * bb)
 
 pgrid = d3.range(400, 1301, 4)
 mine  = pgrid.map(p => ({p, pi: Prof(p, pj)}))
 base  = pgrid.map(p => ({p, pi: Prof(p, 800)}))
-best  = mine.reduce((x, y) => (y.pi > x.pi ? y : x))
+best  = ({p: bestP(pj), pi: Prof(bestP(pj), pj)})
 moved = Math.abs(pj - 800) > 1
 
-// The ridge: best price at every rival price, which is the best-response rule.
-ridge = d3.range(300, 1301, 10).map(j => {
-  const g = pgrid.map(p => ({p, pi: Prof(p, j)}))
-  return g.reduce((x, y) => (y.pi > x.pi ? y : x))
-})
+ridge = d3.range(300, 1301, 10).map(j => ({p: bestP(j), pi: Prof(bestP(j), j)}))
 
 money = d3.format("$,.0f")
 
@@ -204,7 +172,7 @@ Here is how the reasoning usually goes wrong, and it goes wrong at the last step
 
 A founder estimates willingness to pay honestly. They pick a price the evidence supports, work out the contribution, check that the volume covers the commitments, and conclude the venture is worth doing. Every step is sound. Then they act on a number computed at the price they would like to charge, rather than at the price that survives once somebody else is choosing too.
 
-Look back at @fig-rival-price-shifts. The tall curve is real. It is also what you get when the rival prices at \$1,300, which is a choice they make for their own reasons and can unmake on a Tuesday. Building on that peak means building on someone else's decision.
+Look back at the surface. The tallest curve on it is real, and it is what you get when the rival prices at \$1,300 — a choice they made for their own reasons and can unmake on a Tuesday. Building on that peak means building on someone else's decision.
 
 The question that replaces *what is my optimal price?* is harder and more useful:
 
@@ -234,7 +202,7 @@ You sell the entire time and never recover a dollar of what you committed.
 
 That result confuses people, and the confusion is worth clearing up because it is the reason the pattern keeps catching founders who are paying attention.
 
-**Economic profit** of zero does not mean no money moves. A firm pricing at cost can still generate accounting income, pay a salary, run cash through the business, and look busy and even successful from outside. What it cannot do is earn a return above what the same capital, time, and risk would have earned somewhere else.
+**Economic profit** of zero does not mean nothing lands in your pocket. A firm pricing at cost can still generate accounting income, pay a salary, run cash through the business, and look busy and even successful from outside. What it cannot do is earn a return above what the same capital, time, and risk would have earned somewhere else.
 
 ::: {.column-margin .def-margin}
 **Economic profit** — what is left after the return you could have earned elsewhere with the same capital, time and risk. Accounting income can be healthy while this is zero.
@@ -242,7 +210,13 @@ That result confuses people, and the confusion is worth clearing up because it i
 
 So the honest description of a mature undifferentiated market is that people work hard, take real risk, collect real income, and earn nothing for the risk. Which is exactly the shape of the most common story in entrepreneurship.
 
-Someone says *I am making a hundred thousand dollars a year from my drop-shipping store.* That may be entirely true. The questions that decide whether it is a business are all about what happens next. What if another seller sources the same product a little cheaper? What if six more enter? What if advertising costs rise, or the platform starts sorting by price?
+Someone says *I am making a hundred thousand dollars a year from my drop-shipping store.*
+
+Before asking anything clever about that sentence, ask the plain question: a hundred thousand dollars of what? Very often the answer is revenue. Money arrived; nothing has been subtracted. The cost of the goods, the advertising that produced the orders, the returns, the platform's cut, and the hours are all still to come out, and what remains may be a fraction of the number or none of it.
+
+This is not a beginner's mistake, which is what makes it worth naming. Founders quote revenue, press coverage reports revenue, pitch decks lead with revenue, and investors who know better let it stand because it is the number that grows fastest and photographs best. An entire culture has settled on describing success with the one figure that says nothing about whether the business works.
+
+So take the sentence at its most generous and assume they meant profit. Even then the questions that decide whether it is a business are all about what happens next. What if another seller sources the same product a little cheaper? What if six more enter? What if advertising costs rise, or the platform starts sorting by price?
 
 If the product is undifferentiated and entry is easy, the income is real and the profit is borrowed. What looked like a business may have been a temporary gap in competition.
 
@@ -264,7 +238,7 @@ Nobody was outmanaged. The advantage created profit and the entry it attracted e
 
 The online version runs faster and looks different enough that people do not recognize it. You find a product, build a storefront, advertise well, and sales begin. Margins are healthy at first because few competitors are visible and the platform rewards early traction. Then other sellers notice, source from the same supplier, run similar ads, and the platform sorts everyone by price and reviews. Each entrant takes a little more of the margin. Orders keep coming and contribution keeps shrinking.
 
-The steel version took thirty years. The drop-shipping version can take a quarter. The structure is identical, and in both cases the difference between early profit and durable profit was never effort.
+The steel version took thirty years. The drop-shipping version can take thirty weeks. The structure is identical, and in both cases the difference between early profit and durable profit was never effort.
 
 That is what makes easy entry treacherous rather than convenient. The same low barrier that let you start lets everyone else start, and the more visible and attractive the opportunity, the faster it happens. Before entering a market, the useful question is not whether you can generate revenue. It is what happens to your margin when other people see what you see.
 

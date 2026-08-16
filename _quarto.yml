@@ -88,7 +88,6 @@ book:
     - part: Competition
       chapters:
         - competition.qmd
-        - undifferentiated-competition.qmd
         - differentiated-competition.qmd
         - competition-experiment.qmd
         - competitive-advantage.qmd
