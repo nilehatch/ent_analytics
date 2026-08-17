@@ -1,6 +1,8 @@
-# What Your Estimate Is Worth {.unnumbered}
+---
+subtitle: "You have a number now; this is how much of it you checked"
+---
 
-*You have a number now. This is how much of it you checked.*
+# What Your Estimate Is Worth {.unnumbered #sec-what-its-worth}
 
 The chapters that build the argument are behind you, and it is worth saying what the argument was.
 

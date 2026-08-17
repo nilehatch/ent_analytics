@@ -141,6 +141,23 @@ deliberately kept by hand, say so and say why; ch9's required penetration is the
 The arm most often missing is the threshold. Before this rule it appeared only in ch11, ch17, ch18
 and ch19. Check it when writing anything new.
 
+**Unnumbered chapters that still need a subtitle.** A YAML `title:` and an unnumbered
+heading are mutually exclusive in a Quarto book — set `title:` and the chapter gets a
+number. The pattern, learned in EI and used here for `what-its-worth.qmd`, is YAML
+carrying **only** the subtitle, then an H1 with the attributes:
+
+```
+---
+subtitle: "You have a number now; this is how much of it you checked"
+---
+
+# What Your Estimate Is Worth {.unnumbered #sec-what-its-worth}
+```
+
+That renders the same pine banner as a numbered chapter, subtitle and all, minus the
+number. Do not fall back to an italic line under the heading; it looks close and sits
+outside the banner.
+
 **Citations.** `scripts/sync-refs.py` runs as a pre-render hook and mirrors `references.bib`
 to the Better BibTeX auto-export at `~/Documents/bibs/zotero.bib`. Never hand-write a bib
 entry — put the work in Zotero and render. Cite keys are BBT's `authorTitleWordsYear`; the
