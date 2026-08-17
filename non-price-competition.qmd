@@ -112,7 +112,7 @@ tibble::tibble(
                locations = cells_column_labels(columns = `Hogi Yogi profit`))
 ```
 
-Hogi Yogi should buy the campaign. Its profit goes from \$0.96 to \$1.14, a gain of seventeen cents on a fifty-cent investment. Thin, and positive, and the naive arithmetic was in the right neighbourhood.
+Hogi Yogi should buy the campaign. Its profit goes from \$0.96 to \$1.14, a gain of seventeen cents on a fifty-cent investment. Thin, and positive, and the naive arithmetic was in the right neighborhood.
 
 Now look at the column it was not watching. Smart Cookie's profit rises from \$1.33 to \$2.11. Smart Cookie did not advertise, did not change its product, did not change its price deliberately, and did not spend a cent. It gained seventy-nine cents, which is more than four times what Hogi Yogi got for paying.
 
