@@ -27,10 +27,26 @@
 
 itwd_demand       <- "#2563EB"  # demand, quantity, the customer side
 itwd_demand_light <- "#93B4F5"  # a second demand line (rival, before/after)
+itwd_demand_dark  <- "#1E3A8A"  # the dark end of the demand ramp (see below)
 itwd_cost         <- "#C2410C"  # cost, variable and total
 itwd_cost_light   <- "#FB923C"  # a second cost line
 itwd_profit       <- "#2F855A"  # profit, surplus, the good outcome
 itwd_accent       <- "#E3A008"  # gold: highlight only, never a data series
+
+# ---- the demand ramp -------------------------------------------------------
+# The rule above is one colour per role, which breaks down when a figure shows
+# several curves that are all the same role: three functional forms of one
+# demand curve, say. Three hues would claim they are different things. The
+# answer is one hue at three lightnesses, which reads as three of the same
+# thing, and which survives greyscale printing and red-green colour deficiency
+# because the signal is lightness rather than hue.
+#
+#   itwd_demand_dark   L* 27    itwd_demand   L* 46    itwd_demand_light  L* 73
+#
+# Use it only for same-role curves, in that order, and label such figures in
+# itwd_ink rather than in the curve colours: at 2pt a line carries the light
+# end fine, but text at L* 73 is 2.1:1 on white, under the 3:1 contrast bar.
+itwd_demand_ramp <- c(itwd_demand_dark, itwd_demand, itwd_demand_light)
 
 # ---- neutrals, taken from the book's brand variables -----------------------
 itwd_ink   <- "#1F2937"  # --brand-text: axis titles, annotations, points

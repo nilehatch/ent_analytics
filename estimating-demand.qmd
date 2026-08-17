@@ -296,23 +296,20 @@ df <- tibble(
 
 ggplot(df, aes(x = Price, y = Quantity)) +
   geom_line(data = filter(df, Model == "Linear"),
-            linewidth = 1.8, linetype = "solid", color = "#2563EB") +
+            linewidth = 1.8, linetype = "solid", color = itwd_demand) +
   geom_line(data = filter(df, Model == "Exponential"),
-            linewidth = 1.8, linetype = "solid", color = "#1E3A8A") + # dashed
+            linewidth = 1.8, linetype = "solid", color = itwd_demand_dark) +
   geom_line(data = filter(df, Model == "Sigmoid"),
-            linewidth = 2, linetype = "solid", color = "#78b7fa") + # dotdash
+            linewidth = 2, linetype = "solid", color = itwd_demand_light) +
 
-  # Direct labels
+  # Direct labels, in ink: each sits nearest its own curve by 3x or more,
+  # so proximity does the work and the light end keeps its contrast.
   annotate("text", x = 950, y = fQ_lin(900),
-           label = "Linear", color = "#2563eb", hjust = 0, size = 5) +
+           label = "Linear", color = itwd_ink, hjust = 0, size = 5) +
   annotate("text", x = 250, y = fQ_exp(250) - 120,
-           label = "Exponential", color = "#1e3a8a", hjust = 1, size = 5) +
+           label = "Exponential", color = itwd_ink, hjust = 1, size = 5) +
   annotate("text", x = 340, y = fQ_sig(400) + 350,
-           label = "Sigmoid", color = "#78b7fa", hjust = 0, size = 5) +
-  
-#  geom_label(x = 950, y = fQ_lin(950), 
-#             label = "Linear", color = "#2563EB", fill = "white",
-#             size = 5, label.size = 0.0, label.padding = unit(0.15, "lines")) +
+           label = "Sigmoid", color = itwd_ink, hjust = 0, size = 5) +
 
   labs(x = "Price", y = "Quantity") +
   coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
@@ -447,23 +444,23 @@ lab_x2 <- 400
 lab_x3 <- 400
 
 ggplot(df, aes(x = Price, y = Quantity)) +
-  geom_point(color = "gray60", size = .8, alpha = 0.75) +
+  geom_point(color = itwd_ghost, size = .8, alpha = 0.75) +
 
-  # Three fitted curves (same color, distinct linetypes)
+  # Three fitted curves on the demand ramp: one hue, three lightnesses
   geom_line(data = df_fit %>% filter(Model == "Linear fit"),
-            aes(y = Quantity), color = "#2563EB", linewidth = 1.2, linetype = "solid") +
+            aes(y = Quantity), color = itwd_demand, linewidth = 1.2, linetype = "solid") +
   geom_line(data = df_fit %>% filter(Model == "Exponential fit"),
-            aes(y = Quantity), color = "#1E3A8A", linewidth = 1.2, linetype = "solid") +
+            aes(y = Quantity), color = itwd_demand_dark, linewidth = 1.2, linetype = "solid") +
   geom_line(data = df_fit %>% filter(Model == "Sigmoid fit"),
-            aes(y = Quantity), color = "#78B7FA", linewidth = 2, linetype = "solid") +
+            aes(y = Quantity), color = itwd_demand_light, linewidth = 2, linetype = "solid") +
 
-  # Direct labels (avoids tiny legend keys)
+  # Direct labels in ink (avoids tiny legend keys)
   annotate("text", x = lab_x1, y = pred_lin(lab_x1) + 100,
-           label = "Linear fit", hjust = 0, size = 4) +
+           label = "Linear fit", color = itwd_ink, hjust = 0, size = 4) +
   annotate("text", x = lab_x2, y = pred_exp(lab_x2) - 120,
-           label = "Exponential fit", hjust = 1, size = 4) +
+           label = "Exponential fit", color = itwd_ink, hjust = 1, size = 4) +
   annotate("text", x = lab_x3, y = pred_sig(lab_x3) + 140,
-           label = "Sigmoid fit", hjust = 0, size = 4) +
+           label = "Sigmoid fit", color = itwd_ink, hjust = 0, size = 4) +
 
   labs(x = "Price", y = "Quantity") +
   coord_cartesian(xlim = c(0, 1300), ylim = c(0, 2500), expand = FALSE) +
@@ -526,10 +523,11 @@ Plot.plot({
       tickFormat: d => `$${d3.format(",")(d)}`, labelAnchor: "right"},
   y: {domain: [-1500, 2700], label: "\u2191 Quantity", tickFormat: d3.format(","),
       grid: true, labelAnchor: "top"},
-  // Same colours as the two static figures above: linear mid blue,
-  // exponential navy, sigmoid pale blue. Do not diverge from those.
+  // The demand ramp from R/theme-itwd.R, which OJS cannot read: linear is
+  // itwd_demand, exponential itwd_demand_dark, sigmoid itwd_demand_light.
+  // Same colours as the two static figures above; do not diverge from those.
   color: {domain: ["Linear", "Exponential", "Sigmoid"],
-          range: ["#2563EB", "#1E3A8A", "#78B7FA"]},
+          range: ["#2563EB", "#1E3A8A", "#93B4F5"]},
   marks: [
     // the band the evidence actually covers
     Plot.rect([{x1: cf.p_lo, x2: cf.p_hi}],
