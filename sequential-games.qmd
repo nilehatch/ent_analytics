@@ -180,6 +180,59 @@ What the cheaper equipment does not buy is a position. Both firms end at low cos
 
 That is the trade a commitment offers and it is not the one people expect. It rarely maximizes this period's profit. It buys a structure that persists, by taking an option away from somebody else.
 
+## What Counts as a Commitment
+
+The equipment was one example, and one example is a poor basis for recognizing a category. It is worth seeing the range, because the question a reader is left with otherwise is whether their own situation contains anything that qualifies.
+
+The table below is ordered by how hard each move is to reverse, which is the property that decides whether it works at all. The moves near the top bind you tightly and are believed for that reason. The ones near the bottom bind you loosely, and a rival who notices that will treat them as talk.
+
+```{r}
+#| label: tbl-commitment-types
+#| echo: false
+#| tbl-cap: "Moves that can serve as commitments, hardest to undo first. Whether any particular instance actually is one is settled by the test, not by which row it sits in."
+
+tibble::tribble(
+  ~`The move`, ~`What makes it stick`, ~`What it changes for the other firm`,
+  "Equipment or a process that cuts your unit cost",
+    "installed, and it does not go back",
+    "at the right price, it stops them matching",
+  "Capacity built ahead of demand",
+    "the capacity exists whether you fill it or not",
+    "they expect low prices, because low prices are now your best answer",
+  "Exclusive supply or distribution agreements",
+    "a contract with a term and a penalty",
+    "their reach falls, and so does their route to your customers",
+  "Specialising hard for one segment",
+    "rebuilding for a different one costs what building this one cost",
+    "your customers are stickier and you are harder to follow",
+  "Long-term contracts with customers",
+    "the customer is bound rather than persuaded",
+    "there are fewer customers left for them to win",
+  "A published price you would be embarrassed to move",
+    "reputation, which is real but cheap to spend",
+    "very little, unless they believe the embarrassment"
+) |>
+  gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(7), table.width = pct(100)) |>
+  cols_align("left")
+```
+
+Two things about that table are worth more than its contents.
+
+The middle column is the one to read first. Every row is believed for a specific, checkable reason, and the reason is never that the firm meant it. When you are considering a move of your own, that column is the sentence you have to be able to write.
+
+And nothing in the left column is automatically a commitment. A lease can be one, and usually is not. Capacity can be one, and is not if a rival knows you would rather idle it than fight. Which row a move sits in tells you how likely it is to bind; only the test tells you whether it does.
+
+## The Same Thing, Seen From Outside
+
+There is a category of commitment the book has already covered under a different name, and it is worth joining them up.
+
+[Chapter 15](competitive-advantage.qmd) defined an entry barrier as structural asymmetry large enough to make an entrant's equilibrium profit negative, and observed that an incumbent investing in visible capacity or signalling low cost is not frightening anybody — it is changing their forecast. That is this chapter's test with one substitution. The rival's move is *enter*, and the commitment works if it changes that move to *do not*.
+
+So entry deterrence is not a separate topic from strategic commitment. It is the special case where the response you are trying to change is the decision to show up at all, and the reason it gets its own literature is that the rival in question does not exist yet and cannot be observed. Everything else about it is the same: an irreversible move, a rival recomputing, and a best response that flips or does not.
+
+That symmetry is worth carrying in both directions. When you are the incumbent, your commitments are barriers. When you are the entrant, somebody else's commitments are what you are computing your way past, and the question in [chapter 15](competitive-advantage.qmd), *is the asymmetry real*, is the same question as *did they actually commit*.
+
 ## When Commitment Backfires
 
 The property that makes a commitment work is the one that makes it dangerous, so the failures are predictable.
