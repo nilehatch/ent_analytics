@@ -277,7 +277,7 @@ The purpose of the survey is therefore not precision—it is *learning the struc
 ```{=html}
 <!--
 ::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
-This toolkit builds directly on the toolkit for [*reading a profit curve*](read-profit.qmd).
+This toolkit builds directly on *reading a profit curve* in [chapter 11](profit-reasoning.qmd).
 
 It assumes you can already recognize:
 
