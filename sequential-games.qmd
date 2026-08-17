@@ -49,6 +49,10 @@ Work out what your competitor does if you sit still, and what they do if you go 
 
 That test is the chapter, and it says nothing about who goes first. What makes a commitment work is that it cannot be undone, not that it happened early. An announcement a year in advance changes nothing; a freezer installed this morning changes everything. Order matters only in that your rival has to be able to see it before choosing.
 
+Notice how the work divides, because it is the same division this book has been making since the demand chapters. Computing a rival's best response under two different structures is arithmetic. Hand over the estimated demand system, the two cost structures, the move and what it changes, and any competent AI will return both answers — and, more usefully, the price at which the answer flips, which is the number you actually want.
+
+What no machine can supply is the specification. Which irreversible moves are genuinely available to you. Whether the one you are considering is irreversible in fact rather than in intention. Which parameter it moves, and by how much. Every one of those is a judgment about your own situation, they all have to be made before any arithmetic can begin, and getting them wrong produces a computation that is flawless and useless.
+
 ## Running the Test
 
 Hogi Yogi can install equipment that cuts its cost per sandwich from fifty cents to thirty-five. It must be bought before any pricing happens, and it cannot be returned.
@@ -259,10 +263,12 @@ The second settles the trade left open above. Whether to commit or stay flexible
 
 So the question was never *commit or stay flexible*. It is *what does the other firm see*, and the answer to that changes which one is worth doing.
 
+Which is also the one input this book cannot hand to a machine. Everything else in the chapter falls out of a demand system and a cost structure. What a competitor attends to does not. It comes from watching them: what they talk about publicly, what they have already built, which numbers they seem to manage against, what they failed to notice the last time you moved. That is the least quantitative judgment anywhere in this book and, on the evidence above, close to the most consequential.
+
 ::: {.threshold}
 **Before making an irreversible commitment**
 
-- **Run the test.** Work out your rival's best response if you sit still and if you go ahead. The same answer twice means you are buying an asset rather than changing a game, and it should clear the same bar as any other purchase.
+- **Run the test.** Work out your rival's best response if you sit still and if you go ahead. The same answer twice means you are buying an asset rather than changing a game, and it should clear the same bar as any other purchase. Do not stop at the two answers — ask for the price at which they flip, because that tells you how much room you have.
 - **Is it actually irreversible?** If you could unwind it in a quarter at modest cost, your rival knows that too, and it will not move them. Not a failure — it just means the strategic benefit is not there to be counted.
 - **Evaluate the new equilibrium, not the old one plus a saving.** If the move does change your rival, the profit that matters comes from the game you have created. Adding a cost saving to today's profit overstates it, sometimes badly.
 - **What is it worth if demand comes in a third below your estimate?** Commitments are priced on forecasts and paid regardless. If the answer is ruinous, you are betting on the estimate rather than on the strategy.
@@ -279,6 +285,8 @@ Now write two sentences. What does your closest competitor do over the following
 If those two sentences are the same, you have a purchase. It may well be a good one, and you should evaluate it exactly as you would any other equipment, with none of the strategic story attached to it.
 
 If they differ, write down the difference, because that difference is what you are buying. Then ask the question that decides it: in the world where they respond that way, are you better off than you are today? That is a different calculation from the one that got you interested, and it is the only one that counts.
+
+Do this before you compute anything. Then compute it, and see whether you were right. Where your instinct and the arithmetic disagree, one of them is wrong about your parameters and the other is wrong about your rival, and finding out which is worth more than either answer on its own.
 :::
 
 ::: {.key-action}
