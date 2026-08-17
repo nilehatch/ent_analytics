@@ -40,11 +40,18 @@ if (!exists("itwd_pine")) source("R/theme-itwd.R")
 #' @param width      table width as a percentage of the text column
 #' @param align      default column alignment; override single columns by
 #'                   chaining cols_align() afterwards, which still wins
+#' @param row_labels name of a column whose cells are row headings rather than
+#'                   data — the left column of a game matrix, which labels the
+#'                   row player's choices exactly as the column labels label the
+#'                   column player's. Takes the same pine as the column labels,
+#'                   so a matrix does not head its two axes in two different
+#'                   ways. Bold is not used: the header signal is pine.
 gt_itwd <- function(data,
-                    font_size = 12,
-                    padding   = 6,
-                    width     = 100,
-                    align     = c("center", "left", "right")) {
+                    font_size  = 12,
+                    padding    = 6,
+                    width      = 100,
+                    align      = c("center", "left", "right"),
+                    row_labels = NULL) {
 
   align <- match.arg(align)
 
@@ -86,5 +93,10 @@ gt_itwd <- function(data,
       style     = gt::cell_text(color = itwd_pine_deep),
       locations = gt::cells_column_spanners(spanners = gt::everything())
     ) |>
-    gt::cols_align(align)
+    gt::cols_align(align) |>
+    (\(g) if (is.null(row_labels)) g else
+       g |> gt::tab_style(
+         style     = gt::cell_text(color = itwd_pine),
+         locations = gt::cells_body(columns = tidyselect::all_of(row_labels))
+       ))()
 }

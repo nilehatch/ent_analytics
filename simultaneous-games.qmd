@@ -26,7 +26,7 @@ The agency in the last chapter sold **reach**: a campaign that told more people 
 
 Now suppose a different agency sells **comparative** advertising. Not *ice cream sandwiches are good*, but *ours are better than theirs*. This campaign does not tell anybody anything new about the category. It moves one unit per person out of the rival's column and into yours, at every price, and changes nothing else.
 
-In the parameters, that is a transfer between the two intercepts. The advertiser's $\mathsf{a}$ rises by one and the rival's falls by one. Price sensitivity is untouched and so is substitution, because the campaign does not make anyone more willing to switch on price; it simply relocates a unit of demand and leaves it there.
+In the parameters, that is a transfer between the two intercepts. Whichever shop buys the campaign sees its demand intercept $\mathsf{a}$ rise by one, and its rival's fall by one. Price sensitivity is untouched and so is substitution, because the campaign does not make anyone more willing to switch on price; it simply relocates a unit of demand and leaves it there.
 
 Same firms, same estimated demand system, same one unit. The only difference is where the unit comes from.
 
@@ -48,14 +48,14 @@ A1 <- -0.7043; A2 <- 4.569339; S <- 1
 gr <- function(s,h) eqm(A1 + S*s - S*h, A2 + S*h - S*s)
 
 tibble::tibble(
-  ` ` = c("**Smart Cookie does not**", "**Smart Cookie advertises**"),
+  ` ` = c("Smart Cookie does not", "Smart Cookie advertises"),
   `Hogi Yogi does not` = c(sprintf("%s,  %s", dollar(gr(0,0)[1], .01), dollar(gr(0,0)[2], .01)),
                            sprintf("%s,  %s", dollar(gr(1,0)[1], .01), dollar(gr(1,0)[2], .01))),
   `Hogi Yogi advertises` = c(sprintf("%s,  %s", dollar(gr(0,1)[1], .01), dollar(gr(0,1)[2], .01)),
                              sprintf("%s,  %s", dollar(gr(1,1)[1], .01), dollar(gr(1,1)[2], .01)))
 ) |>
-  gt() |> fmt_markdown(columns = ` `) |>
-  gt_itwd(font_size = 13, padding = 12) |>
+  gt() |>
+  gt_itwd(font_size = 13, padding = 12, row_labels = " ") |>
   cols_align("left", columns = ` `)
 ```
 
@@ -67,7 +67,7 @@ Unilaterally, though, the campaign works. Hogi Yogi alone gains fifty-eight cent
 
 ## When That Becomes a Trap
 
-Whether that structure is a trap depends entirely on the price of the campaign, and the arithmetic is worth doing carefully because the answer is counterintuitive.
+Whether that structure is a trap depends entirely on what the campaign costs, and the arithmetic is worth doing carefully because the answer is counterintuitive.
 
 For both firms to buy, the gain has to exceed the cost in every situation. The smallest of those gains is Smart Cookie's seventeen cents when Hogi Yogi is already advertising. So the campaign has to cost **less than about seventeen cents** before both firms want it regardless of what the other does.
 
@@ -78,18 +78,18 @@ Make it cheap, though, and the structure bites.
 ```{r}
 #| label: tbl-dilemma
 #| echo: false
-#| tbl-cap: "The same comparative campaign priced at $0.10. Advertising is now the better choice for each firm whatever the other does, and both end up exactly $0.10 poorer than if neither had bought it."
+#| tbl-cap: "The same comparative campaign at a cost of $0.10. Advertising is now the better choice for each firm whatever the other does, and both end up exactly $0.10 poorer than if neither had bought it."
 
 K <- 0.10
 cellK <- function(s,h) sprintf("%s,  %s",
   dollar(gr(s,h)[1] - K*s, .01), dollar(gr(s,h)[2] - K*h, .01))
 tibble::tibble(
-  ` ` = c("**Smart Cookie does not**", "**Smart Cookie advertises**"),
+  ` ` = c("Smart Cookie does not", "Smart Cookie advertises"),
   `Hogi Yogi does not`   = c(cellK(0,0), cellK(1,0)),
   `Hogi Yogi advertises` = c(cellK(0,1), cellK(1,1))
 ) |>
-  gt() |> fmt_markdown(columns = ` `) |>
-  gt_itwd(font_size = 13, padding = 12) |>
+  gt() |>
+  gt_itwd(font_size = 13, padding = 12, row_labels = " ") |>
   cols_align("left", columns = ` `)
 ```
 
@@ -97,13 +97,13 @@ Work through it the way the last chapter did. Smart Cookie earns \$1.33 sitting 
 
 So both advertise. Both are behaving correctly. And the equilibrium leaves Smart Cookie at \$1.23 against the \$1.33 it would have had, and Hogi Yogi at \$0.86 against \$0.96, each exactly ten cents poorer, which is exactly what the campaign cost.
 
-This is a **prisoner's dilemma**, and notice where it came from. It was not assumed for the sake of illustration. It fell out of an estimated demand system, a plausible campaign, and a price, and it would have fallen out the same way if nobody had ever heard the phrase.
+This is a **prisoner's dilemma**, and notice where it came from. It was not assumed for the sake of illustration. It fell out of an estimated demand system, a plausible campaign, and a cost, and it would have fallen out the same way if nobody had ever heard the phrase.
 
 ::: {.column-margin .def-margin}
 **Prisoner's dilemma** — a game where each player's best move leaves everyone worse off than if none of them had moved. The equilibrium is correct and the outcome is bad, which is why solving it harder does not help.
 :::
 
-There is a nasty corollary in the pricing. The cheaper the poaching campaign, the more certainly both firms buy it, and the money is burned either way. *The trap requires the move to be cheap, and cheap is exactly when it looks most obviously worth doing.*
+There is a nasty corollary in the cost. The cheaper the poaching campaign, the more certainly both firms buy it, and the money is burned either way. *The trap requires the move to be cheap, and cheap is exactly when it looks most obviously worth doing.*
 
 ## Two Kinds of Move
 
@@ -121,7 +121,7 @@ There is a way of drawing a game that makes the answer visible rather than calcu
 
 For each column, ask which row that player prefers, and draw an arrow pointing there. For each row, ask which column the other player prefers, and do the same. Where two arrows point into the same cell, neither firm wants to leave it, and that cell is the equilibrium. A player whose arrows both point the same way has a dominant strategy and does not need to think about the other at all.
 
-Below, the arrows are drawn for you and everything is live. Switch the campaign between the two kinds, and move its effectiveness and its price.
+Below, the arrows are drawn for you and everything is live. Switch the campaign between the two kinds, and move its effectiveness and its cost.
 
 ```{ojs}
 //| echo: false
@@ -132,7 +132,7 @@ viewof kind = Inputs.radio(
 viewof S = Inputs.range([0.25, 2.0], {value: 1.0, step: 0.05,
   label: "Units it adds per person"})
 viewof K = Inputs.range([0, 1.20], {value: 0.10, step: 0.05,
-  label: "Price per person"})
+  label: "Cost per person"})
 ```
 
 ```{ojs}
@@ -195,18 +195,25 @@ html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
   // Smart Cookie chooses the row, so its arrows are vertical, one per column.
   // Hogi Yogi chooses the column, so its arrows are horizontal, one per row.
   // Both are pushed to the edges of the cells so they never cross the numbers.
-  const vArr = [0,1].map(h => ({x: h - 0.36, y1: 1 - scBR[h], y2: scBR[h]}));
-  const hArr = [0,1].map(s => ({y: s - 0.33, x1: 1 - hyBR[s], x2: hyBR[s]}));
+  // Each arrow is aligned with its OWNER'S numbers rather than parked in the
+  // margin: Smart Cookie's vertical arrows sit under its own payoff, which is
+  // the left number, so the arrow points from the figure it is leaving to the
+  // figure it prefers. Hogi Yogi's run below the row, aligned with the right
+  // number, because a horizontal arrow at the numbers' own height would have
+  // to cross Smart Cookie's payoff to reach Hogi Yogi's.
+  const vArr = [0,1].map(h => ({x: h - 0.13, y1: 1 - scBR[h], y2: scBR[h]}));
+  const hArr = [0,1].map(s => ({y: s - 0.25, x1: 1 - hyBR[s] + 0.13,
+                                             x2: hyBR[s] + 0.13}));
   return Plot.plot({
-    width: 660, height: 400, marginLeft: 128, marginTop: 46, marginBottom: 34,
+    width: 640, height: 292, marginLeft: 94, marginTop: 36, marginBottom: 20,
     style: {background: "transparent", fontSize: "13px", color: "#1F2937"},
-    x: {domain: [-0.6, 1.6], ticks: [0,1], tickFormat: d => d ? "advertises" : "does not",
+    x: {domain: [-0.54, 1.54], ticks: [0,1], tickFormat: d => d ? "advertises" : "does not",
         label: "Hogi Yogi →", labelAnchor: "center", axis: "top"},
-    y: {domain: [-0.6, 1.6], ticks: [0,1], tickFormat: d => d ? "advertises" : "does not",
+    y: {domain: [-0.46, 1.46], ticks: [0,1], tickFormat: d => d ? "advertises" : "does not",
         label: "↑ Smart Cookie", labelAnchor: "center"},
     marks: [
-      Plot.rect(cells, {x1: d => d.x-0.42, x2: d => d.x+0.42,
-                        y1: d => d.y-0.42, y2: d => d.y+0.42,
+      Plot.rect(cells, {x1: d => d.x-0.46, x2: d => d.x+0.46,
+                        y1: d => d.y-0.36, y2: d => d.y+0.36,
                         fill: d => d.isNash ? "#EBF4F0" : "#FAFAFA",
                         stroke: d => d.isNash ? "#2F855A" : "#E1E6E3",
                         strokeWidth: d => d.isNash ? 2 : 1}),
@@ -216,9 +223,11 @@ html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
       Plot.text(cells, {x: d => d.x + 0.02, y: "y", text: d => usd(d.hy),
                         textAnchor: "start", fontSize: 15, fontWeight: 600, fill: "#C2410C"}),
       Plot.arrow(vArr, {x1: "x", y1: "y1", x2: "x", y2: "y2",
-                        stroke: "#2563EB", strokeWidth: 2.4, headLength: 9, insetEnd: 26}),
+                        stroke: "#2563EB", strokeWidth: 2.4, headLength: 9,
+                        insetStart: 22, insetEnd: 24}),
       Plot.arrow(hArr, {x1: "x1", y1: "y", x2: "x2", y2: "y",
-                        stroke: "#C2410C", strokeWidth: 2.4, headLength: 9, insetEnd: 38})
+                        stroke: "#C2410C", strokeWidth: 2.4, headLength: 9,
+                        insetStart: 20, insetEnd: 22})
     ]
   })
 }
@@ -241,13 +250,14 @@ classify = function(kk, sv, kv) {
   const hy = {0: p(0,1)[1] > p(0,0)[1] ? 1 : 0, 1: p(1,1)[1] > p(1,0)[1] ? 1 : 0};
   const ns = [];
   for (const s of [0,1]) for (const h of [0,1]) if (sc[h] === s && hy[s] === h) ns.push([s,h]);
-  if (ns.length !== 1) return "more than one";
+  if (ns.length !== 1) return "more than one equilibrium";
   const [s, h] = ns[0];
   if (s === 0 && h === 0) return "neither advertises";
   if (s === 1 && h === 0) return "Smart Cookie alone";
   if (s === 0 && h === 1) return "Hogi Yogi alone";
   const b = p(0,0);
-  return (p(1,1)[0] < b[0] && p(1,1)[1] < b[1]) ? "both — and both lose" : "both advertise";
+  return (p(1,1)[0] < b[0] && p(1,1)[1] < b[1])
+    ? "both advertise, both lose" : "both advertise, both gain";
 }
 
 // depends on the campaign type only, so it is computed once per toggle
@@ -265,17 +275,28 @@ mapCells = {
 
 ```{ojs}
 //| echo: false
+// Fixed colour per region, filtered to those the current map contains, so a
+// swatch never appears for a region the reader cannot find. Order is kept.
+regionPalette = [["neither advertises",        "#EFEFEE"],
+                 ["Smart Cookie alone",        "#CFE0FA"],
+                 ["Hogi Yogi alone",           "#FBDCC4"],
+                 ["both advertise, both gain", "#CCE8D6"],
+                 ["both advertise, both lose", "#F0AE99"],
+                 ["more than one equilibrium", "#DDD6FE"]]
+
+regionsPresent = { const seen = new Set(mapCells.map(d => d.r));
+                   return regionPalette.filter(d => seen.has(d[0])); }
+
 Plot.plot({
   width: 660, height: 340, marginLeft: 62, marginBottom: 46, marginRight: 8,
   style: {background: "transparent", fontSize: "12px", color: "#6B7280"},
   x: {domain: [0.25, 2.0], label: "Units the campaign adds per person →",
       labelAnchor: "center"},
-  y: {domain: [0, 1.20], label: "↑ Price per person",
+  y: {domain: [0, 1.20], label: "↑ Campaign cost per person",
       tickFormat: d => `$${d3.format(".2f")(d)}`, labelAnchor: "center"},
   color: {
-    domain: ["neither advertises", "Smart Cookie alone", "Hogi Yogi alone",
-             "both advertise", "both — and both lose", "more than one"],
-    range:  ["#EFEFEE", "#CFE0FA", "#FBDCC4", "#CCE8D6", "#F0AE99", "#DDD6FE"],
+    domain: regionsPresent.map(d => d[0]),
+    range:  regionsPresent.map(d => d[1]),
     legend: true
   },
   marks: [
@@ -292,13 +313,15 @@ Plot.plot({
 
 Two things are worth reading off it before touching anything.
 
-The boundaries all slope the same way. A more effective campaign is worth more, so it stays worth buying at a higher price, and every region boundary drifts right as effectiveness rises. Nothing surprising there, and it is the reason a single threshold is not the answer to *is this worth it* — the answer is a curve.
+The boundaries all slope the same way. A more effective campaign is worth more, so it stays worth buying at a higher cost, and every region boundary drifts right as effectiveness rises. Nothing surprising there, and it is the reason a single threshold is not the answer to *is this worth it* — the answer is a curve.
 
-What differs between the two campaigns is what lies at the bottom. Switch to reach and the cheap end of the map is entirely green: when advertising expands the market, both firms buying it is a good outcome, at every effectiveness. Switch to comparative and a band of salmon opens along the bottom, and that band *is* the trap. It sits at low prices, which is the corollary this chapter has already stated and the map now makes geographic: the cheaper a redistributive campaign gets, the more certainly both firms buy it and the more certainly both regret it.
+What differs between the two campaigns is what lies at the bottom. Switch to reach and the cheap end of the map is entirely green: when advertising expands the market, both firms buying it is a good outcome, at every effectiveness. Switch to comparative and a band of salmon opens along the bottom, and that band *is* the trap. It sits at low costs, which is the corollary this chapter has already stated and the map now makes geographic: the cheaper a redistributive campaign gets, the more certainly both firms buy it and the more certainly both regret it.
 
-Above that band, in both maps, is the region where only one firm advertises, and above that the region where nobody does. Notice which firm survives longest in each. Under reach it is Smart Cookie, because the differentiated firm captures more of any expansion and can therefore justify a higher price for it. Under comparative it is Hogi Yogi, because the firm with more to gain from poaching is the one with fewer customers to lose.
+Above that band, under either campaign, is the region where only one firm advertises, and above that the region where nobody does. Notice which firm it is, because it changes. Under reach it is Smart Cookie, because the differentiated firm captures more of any expansion and can therefore justify a higher cost for it. Under comparative it is Hogi Yogi, because the firm with more to gain from poaching is the one with fewer customers to lose.
 
-Start where the chapter left off, with the comparative campaign at ten cents. Every arrow points toward advertising, both firms land in the bottom-right, and the readout says what the numbers said: both are worse off than if neither had moved. Now raise the price. Somewhere near seventeen cents Smart Cookie's arrows flip, the trap opens, and above about sixty cents nobody advertises at all.
+The absences say as much as the regions. Smart Cookie never advertises alone under a comparative campaign, and Hogi Yogi never does under reach; neither campaign ever produces both outcomes. Each toggle yields three of the six possible regions and never the other three, which is why the legend changes when you switch — it lists what is on the map rather than what could be.
+
+Start where the chapter left off, with the comparative campaign at ten cents. Every arrow points toward advertising, both firms land in the bottom-right, and the readout says what the numbers said: both are worse off than if neither had moved. Now raise the cost. Somewhere near seventeen cents Smart Cookie's arrows flip, the trap opens, and above about sixty cents nobody advertises at all.
 
 Then switch the campaign to reach and watch what changes. The arrows still converge on both firms advertising, and the warning disappears, because the money is now buying consumption that did not previously exist.
 
@@ -334,7 +357,7 @@ The middle rows are where founders get into trouble, because redistributive move
 
 ## You Cannot Out-Solve a Dilemma
 
-The instinct on recognizing a prisoner's dilemma is to look for a cleverer play. There is not one. The equilibrium is not a mistake; it is what happens when two firms respond correctly to their situations. Solving the game more carefully returns the same answer.
+The instinct on recognizing a prisoner's dilemma is to look for a cleverer play that escapes it. There is not one. The equilibrium is not a mistake; it is what happens when two firms respond correctly to their situations. Solving the game more carefully returns the same answer.
 
 What changes the outcome is changing the game, and the honest list of ways to do that is short.
 
@@ -372,7 +395,7 @@ Take the competitive move you are most likely to make in the next year. Write do
 
 If the honest answer is "from my competitor," you are in the second kind of game, and the question that decides whether it is worth doing is not whether the move works. It is what happens when your competitor does the same thing back.
 
-Now put a price on it and ask the question the last chapter taught. What would this have to cost before it stopped being worth doing? If the answer is a large number, the move is cheap relative to its unilateral value, and cheap is precisely the condition under which your rival will also find it worth doing.
+Now cost it out and ask the question the last chapter taught. What would this have to cost before it stopped being worth doing? If the answer is a large number, the move is cheap relative to its unilateral value, and cheap is precisely the condition under which your rival will also find it worth doing.
 
 Then spend two minutes on the alternative. What could the same money buy that would bring in customers who are currently buying nothing at all?
 :::

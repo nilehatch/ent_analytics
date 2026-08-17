@@ -100,13 +100,12 @@ cell <- function(s, h) {
   sprintf("%s,  %s", dollar(e[3] - K*s, .01), dollar(e[4] - K*h, .01))
 }
 tibble::tibble(
-  ` ` = c("**Smart Cookie does not advertise**", "**Smart Cookie advertises**"),
+  ` ` = c("Smart Cookie does not advertise", "Smart Cookie advertises"),
   `Hogi Yogi does not advertise` = c(cell(0,0), cell(1,0)),
   `Hogi Yogi advertises`         = c(cell(0,1), cell(1,1))
 ) |>
   gt() |>
-  fmt_markdown(columns = ` `) |>
-  gt_itwd(font_size = 13, padding = 12) |>
+  gt_itwd(font_size = 13, padding = 12, row_labels = " ") |>
   cols_align("left", columns = ` `)
 ```
 
@@ -181,12 +180,12 @@ Consider two aircraft manufacturers deciding whether to develop a new, technolog
 #| tbl-cap: "Illustrative NPV in billions over twenty years, computed from estimated demand and cost under each combination. Airbus first, Boeing second."
 
 tibble::tibble(
-  ` ` = c("**Airbus does not innovate**", "**Airbus innovates**"),
+  ` ` = c("Airbus does not innovate", "Airbus innovates"),
   `Boeing does not innovate` = c("$30B,  $40B", "$40B,  $20B"),
   `Boeing innovates`         = c("$20B,  $30B", "-$10B,  -$20B")
 ) |>
-  gt() |> fmt_markdown(columns = ` `) |>
-  gt_itwd(font_size = 13, padding = 12) |>
+  gt() |>
+  gt_itwd(font_size = 13, padding = 12, row_labels = " ") |>
   cols_align("left", columns = ` `)
 ```
 
