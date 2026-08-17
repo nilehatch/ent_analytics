@@ -1,6 +1,6 @@
 ---
-title: "Moving First, and Meaning It"
-subtitle: "Commitment works by removing your own options, which is why it is dangerous"
+title: "Moves You Cannot Take Back"
+subtitle: "A commitment changes what your rival does; anything else is a purchase"
 ---
 
 ```{r}
@@ -13,110 +13,52 @@ knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
 ```
 
-Both games so far assumed the two firms decided at the same moment, each ignorant of the other. That is a reasonable model of sealed bids and simultaneous launches, and it is a poor model of most competition.
+The last chapter ended with an escape route and no directions. When two firms are stuck in a game that pays neither of them, the way out is to change what the other one expects. This chapter is how, and there is a test that tells you whether you have managed it.
 
-Firms watch each other. One acts, the other sees it and responds. And sometimes a firm acts *specifically* so that the other has to respond to something already done and impossible to undo. That last move is the subject of this chapter, and it is the only reliable way out of the trap the last chapter described.
+The test earns its place because the difference is genuinely hard to see from the inside. Two firms can make the same investment, at the same price, for the same reason, and for one of them it changes the competition while for the other it is a bill. What separates them is not the size of the cheque.
 
-## Order Changes Outcomes
+## Saying So Does Not Work
 
-When one firm moves first, the game is no longer a matrix. It is a sequence, and the right picture is a tree.
+Start with the version firms reach for first, because it is free.
 
-```{r}
-#| label: fig-two-stage-tree
-#| echo: false
-#| warning: false
-#| fig-cap: "One commitment, and the pricing equilibrium that follows from it. The branch is a choice; what happens after it is not. Smart Cookie is held still here so the structure is visible; the next section lets it move."
-#| fig-align: center
-#| fig-width: 8.5
-#| fig-height: 3.2
+Hogi Yogi, tired of losing, announces that it will match any price Smart Cookie sets and undercut it by a nickel. Smart Cookie should check whether that means anything.
 
-seg <- tibble::tribble(
-  ~x, ~y, ~xend, ~yend,
-  0, 0,    1.15,  0.72,
-  0, 0,    1.15, -0.72,
-  1.15, 0.72, 2.15,  0.72,
-  1.15,-0.72, 2.15, -0.72
-)
-lab <- tibble::tribble(
-  ~x, ~y, ~t, ~h, ~sz, ~col,
-  -0.08, 0,     "Hogi Yogi\nchooses", 1, 3.5, itwd_ink,
-  0.52, 0.52,   "installs the equipment", 0.5, 3.4, itwd_ink,
-  0.52, -0.52,  "does not", 0.5, 3.4, itwd_ink,
-  1.65, 0.90,   "prices settle", 0.5, 3.1, itwd_muted,
-  1.65, -0.54,  "prices settle", 0.5, 3.1, itwd_muted,
-  2.24, 0.72,   "$0.99,  $1.10", 0, 3.9, itwd_ink,
-  2.24, -0.72,  "$1.33,  $0.96", 0, 3.9, itwd_ink
-)
-ggplot() +
-  geom_segment(data = seg[1:2,], aes(x, y, xend = xend, yend = yend),
-               color = itwd_ink, linewidth = 0.8) +
-  geom_segment(data = seg[3:4,], aes(x, y, xend = xend, yend = yend),
-               color = itwd_muted, linewidth = 0.8, linetype = "dashed",
-               arrow = arrow(length = unit(0.10, "cm"), type = "closed")) +
-  geom_point(aes(x = 0, y = 0), size = 3.4, color = itwd_ink) +
-  geom_point(data = tibble(x = c(1.15, 1.15), y = c(0.72, -0.72)), aes(x, y),
-             size = 2.6, shape = 21, fill = "white", color = itwd_muted, stroke = 0.9) +
-  geom_text(data = lab, aes(x, y, label = t, hjust = h, size = sz, color = col),
-            lineheight = 0.95) +
-  scale_size_identity() + scale_color_identity() +
-  annotate("segment", x = -0.15, xend = 1.15, y = 1.42, yend = 1.42,
-           color = itwd_rule, linewidth = 0.6) +
-  annotate("segment", x = 1.15, xend = 2.15, y = 1.42, yend = 1.42,
-           color = itwd_rule, linewidth = 0.6) +
-  annotate("text", x = 0.5, y = 1.62, label = "a choice, and irreversible",
-           size = 3.2, color = itwd_muted) +
-  annotate("text", x = 1.65, y = 1.62, label = "not a choice, but its consequence",
-           size = 3.2, color = itwd_muted) +
-  annotate("text", x = 2.42, y = 1.62, label = "profit", size = 3.2, color = itwd_muted,
-           hjust = 0) +
-  coord_cartesian(xlim = c(-0.75, 3.35), ylim = c(-1.35, 1.85)) +
-  theme_void()
-```
+Hogi Yogi's cost is fifty cents a sandwich. Against Smart Cookie's price of \$1.53, the announced policy would commit Hogi Yogi to \$1.48. But Hogi Yogi's own best response to \$1.53 is \$1.02, and \$1.02 earns it more than \$1.48 would. On the day, Hogi Yogi would quietly not do it.
 
-Only the first segment is a decision. Hogi Yogi chooses, and the choice cannot be unchosen. What follows is not a second choice but a consequence: given the cost structure that now exists, prices settle where [chapter 13](differentiated-competition.qmd) said they settle, at the point where neither firm can improve by moving alone. The numbers on the right are those equilibrium profits.
-
-Reading a tree means reading it backwards. You cannot evaluate the branch on the left until the numbers on the right exist, which is the backward induction [chapter 16](non-price-competition.qmd) arrived at by necessity rather than by name.
-
-Moving first is not automatically better. A first mover commits while knowing least, and a second mover buys information by waiting and gives up the chance to shape what it is walking into. Which is worth more depends entirely on whether the first move changes anything the second firm has to live with. If it does not, going first is just deciding early.
-
-## The Threat You Cannot Carry Out
-
-Here is where most strategic talk fails.
-
-Suppose Hogi Yogi, tired of losing, announces that it will match any price Smart Cookie sets and undercut it by a nickel. Alarming, if true. Smart Cookie should check whether it is.
-
-Hogi Yogi's variable cost is fifty cents. At Smart Cookie's price of \$1.53, undercutting by a nickel means charging \$1.48 — but Hogi Yogi's own best response to \$1.53 is \$1.02, which earns it more than \$1.48 would. The announced policy is worse for Hogi Yogi than what Hogi Yogi would do anyway, so Hogi Yogi will not do it.
-
-That is a **non-credible threat**: something a firm says it will do that it would not actually want to do when the moment came. Smart Cookie can ignore it, and should.
+That is a **non-credible threat**, and spotting one is arithmetic rather than judgment. Work out what the threatening firm earns by following through, and what it earns by forgetting the whole thing. If the second number is larger, nothing was said.
 
 ::: {.column-margin .def-margin}
-**Non-credible threat** — a stated intention that the firm would not want to carry out if tested. It changes nothing, because the other side can check the arithmetic as easily as you can.
+**Non-credible threat** — a stated intention the firm would not want to carry out if tested. It changes nothing, because the other side can check the arithmetic as easily as you can.
 :::
 
-The test is mechanical and it is the same test throughout this book. Work out what the threatening firm would earn by following through, and what it would earn by quietly not bothering. If the second number is larger, the threat is noise.
+Notice exactly what failed. Hogi Yogi tried to change Smart Cookie's expectations by talking, while leaving its own situation untouched. Nothing about Hogi Yogi's incentives moved, so nothing about Smart Cookie's beliefs needed to.
 
-Which raises the question the rest of the chapter answers. If saying does not work, what does?
+## The Test
 
-## Commitment Is Removing Your Own Option
-
-A threat becomes credible when the other firm can see that you would go through with it, and there are exactly two ways to arrange that. You can make the aggressive move stop being a sacrifice, so it is simply what you would now prefer. Or you can make the sacrifice unavoidable, so that going through with it is no longer up to you.
-
-Both work, and the first is usually cheaper. What they have in common is that neither involves saying anything.
-
-That is what **commitment** means here. Not resolve and not stated intention, but an irreversible change to your own payoffs that makes your future behaviour predictable to somebody else.
+A **commitment** is the move that fixes that. It is irreversible, it changes what you will later want to do, and because of that it changes what your rival should expect from you.
 
 ::: {.column-margin .def-margin}
-**Commitment** — an irreversible move that changes what you will later want to do, and is therefore believed. Often called *strategic* commitment, to separate it from the everyday sense of being determined. Determination is not commitment; a signed lease is.
+**Commitment** — an irreversible move that changes what you will later want to do, and is therefore believed. Often called *strategic* commitment, to keep it apart from the everyday sense of being determined. Determination is not a commitment; a signed lease is.
 :::
 
-Hogi Yogi has such a move available. Suppose it can install equipment, a better freezer line or a faster assembly process, that cuts its cost per sandwich by fifteen cents, from fifty to thirty-five. The equipment must be bought before any pricing happens, it costs money, and it cannot be returned.
+Which turns into a question you can actually answer about any irreversible move in front of you.
 
-Notice what it does that an announcement cannot. With lower cost, aggressive pricing is not a sacrifice Hogi Yogi is making to punish anyone; it is Hogi Yogi's own best response. Smart Cookie does not have to believe a promise. It has to look at a freezer.
+> **Does my rival's best response change if I make this move?**
+
+Work out what your competitor does if you sit still, and what they do if you go ahead. If the answer is the same either way, the move may still be worth making, and it is a purchase, to be judged on its own returns like any other. If the answer differs, you have changed the game, and the equilibrium worth evaluating is a new one.
+
+That test is the chapter, and it says nothing about who goes first. What makes a commitment work is that it cannot be undone, not that it happened early. An announcement a year in advance changes nothing; a freezer installed this morning changes everything. Order matters only in that your rival has to be able to see it before choosing.
+
+## Running the Test
+
+Hogi Yogi can install equipment that cuts its cost per sandwich from fifty cents to thirty-five. It must be bought before any pricing happens, and it cannot be returned.
+
+Hold Smart Cookie still for a moment, only to see what the move does on its own.
 
 ```{r}
-#| label: tbl-commitment-game
+#| label: tbl-hy-alone
 #| echo: false
-#| tbl-cap: "Equipment that cuts unit cost by fifteen cents, available to either firm at $0.12 per person per month. Profit per person per month, net of the equipment for whichever firm bought it."
+#| tbl-cap: "Hogi Yogi installs the equipment and Smart Cookie does nothing. Per person per month, before the cost of the equipment."
 
 eqc <- function(c1, c2) {
   a1 <- -0.7043; b1 <- 2.158877; d1 <- 5.568712
@@ -125,92 +67,169 @@ eqc <- function(c1, c2) {
   X2 <- (a2 + b2*c2)/(2*b2); Y2 <- d2/(2*b2)
   den <- 1 - Y1*Y2
   p1 <- (X1 + Y1*X2)/den; p2 <- (X2 + Y2*X1)/den
-  c((p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1))
+  c(p1, p2, (p1-c1)*(a1 - b1*p1 + d1*p2), (p2-c2)*(a2 - b2*p2 + d2*p1))
 }
-CUT <- 0.15; KIT <- 0.12
-cc <- function(s,h) { v <- eqc(0.75 - CUT*s, 0.50 - CUT*h)
-                      sprintf("%s,  %s", dollar(v[1] - KIT*s, .01),
-                                         dollar(v[2] - KIT*h, .01)) }
+b <- eqc(0.75, 0.50); a <- eqc(0.75, 0.35)
 tibble::tibble(
-  ` ` = c("**Smart Cookie does not invest**", "**Smart Cookie invests**"),
-  `Hogi Yogi does not invest` = c(cc(0,0), cc(1,0)),
-  `Hogi Yogi invests`         = c(cc(0,1), cc(1,1))
+  ` `                       = c("Before", "After the equipment", "Change"),
+  `HY unit cost`            = c(dollar(0.50,.01), dollar(0.35,.01), dollar(-0.15,.01)),
+  `HY price`                = c(dollar(b[2],.01), dollar(a[2],.01), dollar(a[2]-b[2],.01)),
+  `SC price`                = c(dollar(b[1],.01), dollar(a[1],.01), dollar(a[1]-b[1],.01)),
+  `HY profit`               = c(dollar(b[4],.01), dollar(a[4],.01), dollar(a[4]-b[4],.01)),
+  `SC profit`               = c(dollar(b[3],.01), dollar(a[3],.01), dollar(a[3]-b[3],.01))
 ) |>
-  gt() |> fmt_markdown(columns = ` `) |>
-  tab_options(table.font.size = 13, data_row.padding = px(12), table.width = pct(100)) |>
-  cols_align("center") |> cols_align("left", columns = ` `)
+  gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(6), table.width = pct(100)) |>
+  cols_align("center") |>
+  tab_spanner(label = "Hogi Yogi", columns = c(`HY unit cost`, `HY price`, `HY profit`)) |>
+  tab_spanner(label = "Smart Cookie", columns = c(`SC price`, `SC profit`))
 ```
 
-Hold Smart Cookie still for a moment and read the top row; the next section lets it move.
+Read it as a chain rather than a table. Cheaper to make means cheaper to sell, so Hogi Yogi's *price* falls from \$1.02 to \$0.94. Smart Cookie has to follow it down, from \$1.53 to \$1.43. And Smart Cookie's *profit* falls from \$1.33 to \$0.99 — not because anything happened to Smart Cookie's costs, which never moved, but because its rival became cheaper and it had to answer.
 
-Compare that top-right cell with everything this part has produced so far.
+That is the first move in this whole part that takes something from the other firm, and the reason is a number from [chapter 13](differentiated-competition.qmd). Smart Cookie's demand responds to Hogi Yogi's price with a coefficient of 5.57, the largest in the system. Smart Cookie is enormously exposed to what Hogi Yogi charges. Neither kind of advertising reached that exposure; a cost cut goes straight at it.
 
-When Hogi Yogi advertised, it gained and Smart Cookie gained more. When it advertised comparatively, the moves cancelled. Here, by committing to a lower unit cost — thirty-five cents a sandwich instead of fifty — Hogi Yogi goes from \$0.96 to \$1.10, and *Smart Cookie falls from \$1.33 to \$0.99*. The gap Hogi Yogi has been chasing for three chapters does not narrow — it reverses. Hogi Yogi is now the more profitable firm.
+Now let Smart Cookie move, and run the test. The equipment is available to it too, so the question is what Smart Cookie does in each case, and the answer turns out to depend on what the equipment costs.
 
-This is the first move in the whole part that takes something from the rival, and the reason is worth sitting with. Reach created customers and the differentiated firm collected most of them. Comparative advertising moved customers and got matched. Lower cost changes what Hogi Yogi will *charge*, and a rival's price is the one thing Smart Cookie's own profit cannot be insulated from.
+```{r}
+#| label: tbl-the-test
+#| echo: false
+#| tbl-cap: "The same move at two prices. What decides whether Hogi Yogi has made a commitment or a purchase is not its own profit but Smart Cookie's response."
 
-## The Escalation Nobody Escapes
+sc_best <- function(K, hy_invests) {
+  hyc <- if (hy_invests) 0.35 else 0.50
+  if (eqc(0.60, hyc)[3] - K > eqc(0.75, hyc)[3]) "matches" else "does not"
+}
+tibble::tibble(
+  `If the equipment costs` = c(dollar(0.12,.01), dollar(0.22,.01)),
+  `Smart Cookie, if Hogi Yogi sits still`   = c(sc_best(0.12,FALSE), sc_best(0.22,FALSE)),
+  `Smart Cookie, if Hogi Yogi installs it`  = c(sc_best(0.12,TRUE),  sc_best(0.22,TRUE)),
+  `So the move is`                          = c("a purchase", "a commitment")
+) |>
+  gt() |>
+  tab_options(table.font.size = 12, data_row.padding = px(9), table.width = pct(100)) |>
+  cols_align("center") |> cols_align("left", columns = `If the equipment costs`)
+```
 
-The equipment is also available to Smart Cookie, so the honest question is the one the last two chapters trained you to ask.
+At twelve cents the equipment is cheap enough that Smart Cookie wants it either way. Hogi Yogi installing it changes nothing about what Smart Cookie does. Both firms end up cheaper, nobody is deterred, and Hogi Yogi has bought a cost reduction — a perfectly good thing to buy, which did not change the game.
 
-Both firms want it. Reading down the columns, Smart Cookie is better off investing whether or not Hogi Yogi does, and so is Hogi Yogi. The equipment would have to cost more than about twenty cents a head before either of them declined; at twelve it is an easy call for both. So the equilibrium is the bottom-right cell.
+At twenty-two cents the answers split. If Hogi Yogi sits still, Smart Cookie buys the equipment. If Hogi Yogi installs it first, Smart Cookie no longer wants to, because matching a rival who is already cheap is worth less than matching one who is not. Hogi Yogi's move has stopped Smart Cookie doing something it would otherwise have done.
 
-Look at where that leaves them. Before anyone invested, Smart Cookie earned \$1.33 and Hogi Yogi \$0.96. With both invested, it is \$1.07 and \$1.08.
+That is where order finally does some work, and it is easiest to see as a sequence.
 
-Hogi Yogi is better off than it started. Smart Cookie is substantially worse. And Smart Cookie's decision to invest was correct at every step — declining would have left it worse still.
+```{r}
+#| label: fig-deterrence-tree
+#| echo: false
+#| warning: false
+#| fig-cap: "The twenty-two cent case read as a sequence. Smart Cookie's chosen branch is solid and the one it rejects is faded, so the deterrence is visible: installing the equipment is what stops Smart Cookie from matching. Payoffs are net of the equipment for whichever firm bought it."
+#| fig-align: center
+#| fig-width: 8.6
+#| fig-height: 3.9
 
-That is not quite a prisoner's dilemma, because only one firm is trapped by it. It is something more common and less discussed: an escalation that transfers advantage from the differentiated firm to the efficient one, in which the differentiated firm's best available play is to participate in its own erosion.
+K <- 0.22
+pay <- function(s, h) { v <- eqc(0.75 - 0.15*s, 0.50 - 0.15*h)
+                        c(v[3] - K*s, v[4] - K*h) }
+lv <- list(c(1,1), c(0,1), c(1,0), c(0,0))
+ys <- c(1.5, 0.5, -0.5, -1.5)
+chosen <- c(FALSE, TRUE, TRUE, FALSE)
+
+seg1 <- tibble(x = 0, y = 0, xend = 1.1, yend = c(1.0, -1.0))
+seg2 <- tibble(x = 1.1, y = rep(c(1.0, -1.0), each = 2),
+               xend = 2.2, yend = ys, ok = chosen)
+leaf <- tibble(x = 2.2, y = ys, ok = chosen,
+               t = map_chr(lv, ~ sprintf("$%.2f,  $%.2f",
+                                         pay(.x[1], .x[2])[1], pay(.x[1], .x[2])[2])))
+
+ggplot() +
+  geom_segment(data = seg1, aes(x, y, xend = xend, yend = yend),
+               color = itwd_ink, linewidth = 0.9) +
+  geom_segment(data = seg2, aes(x, y, xend = xend, yend = yend, alpha = ok),
+               color = itwd_ink, linewidth = 0.9) +
+  geom_text(data = leaf, aes(x + 0.10, y, label = t, alpha = ok),
+            hjust = 0, size = 3.9, color = itwd_ink) +
+  scale_alpha_manual(values = c(`FALSE` = 0.20, `TRUE` = 1), guide = "none") +
+  geom_point(aes(x = 0, y = 0), size = 3.4, color = itwd_ink) +
+  geom_point(data = tibble(x = 1.1, y = c(1, -1)), aes(x, y),
+             size = 3.2, color = itwd_demand) +
+  annotate("text", x = -0.10, y = 0, label = "Hogi Yogi", hjust = 1,
+           size = 3.5, color = itwd_ink) +
+  annotate("text", x = 1.10, y = c(1.30, -0.72), label = "Smart Cookie",
+           size = 3.3, color = itwd_demand) +
+  annotate("text", x = 0.52, y = c(0.72, -0.72), label = c("installs", "does not"),
+           size = 3.3, color = itwd_ink) +
+  annotate("text", x = 1.68, y = c(1.36, 0.64, -0.36, -1.64),
+           label = c("matches", "does not", "matches", "does not"),
+           size = 3.1, color = itwd_muted) +
+  annotate("text", x = 2.30, y = 1.92, label = "Smart Cookie, Hogi Yogi",
+           hjust = 0, size = 3.0, color = itwd_muted) +
+  coord_cartesian(xlim = c(-1.0, 3.6), ylim = c(-2.05, 2.05)) +
+  theme_void()
+```
+
+Read it backwards, which is the only way a tree can be read. In the upper branch, where Hogi Yogi has installed the equipment, Smart Cookie compares \$0.97 against \$0.99 and declines to match. In the lower branch, where Hogi Yogi has not, Smart Cookie compares \$1.34 against \$1.33 and matches. Two different answers, which is the test passing.
+
+Knowing that, Hogi Yogi compares the two outcomes it can actually reach: \$1.00 by installing, \$0.94 by sitting still. It installs. And Smart Cookie, which would have been a low-cost firm in the other branch, stays at seventy-five cents a sandwich.
+
+## What It Actually Bought
+
+Be precise about the gain, because it is not simply money.
+
+At twelve cents both firms invest and Hogi Yogi finishes at \$1.08, which is more than the \$1.00 it earns at twenty-two. On this period's profit alone, Hogi Yogi should prefer the cheaper equipment.
+
+What the cheaper equipment does not buy is a position. Both firms end at low cost, neither holds anything the other lacks, and the structural asymmetry that [chapter 15](competitive-advantage.qmd) called the whole of competitive advantage has been competed away in a single round. At twenty-two cents Hogi Yogi is the only low-cost firm in the market and remains so while the equipment stays expensive.
+
+That is the trade a commitment offers and it is not the one people expect. It rarely maximizes this period's profit. It buys a structure that persists, by taking an option away from somebody else.
 
 ## When Commitment Backfires
 
-The same irreversibility that makes commitment work is what makes it dangerous, and the failures are predictable enough to name.
+The property that makes a commitment work is the one that makes it dangerous, so the failures are predictable.
 
-**It stops being information.** A commitment made on today's estimate of demand is still binding when the estimate turns out wrong. The freezer line does not care that the campus enrollment fell. This is the sunk-cost trap arriving from the front rather than the rear. The problem is not throwing good money after bad; it is having removed your own ability to stop.
+**It stops responding to news.** A commitment is priced on today's estimate and binding under tomorrow's. The equipment does not care that enrolment fell. That is the sunk cost trap arriving from the front rather than the rear: not throwing good money after bad, but having removed your own ability to stop.
 
-**It invites the response it was meant to prevent.** A visible commitment tells your rival exactly what you are about to do, which is the point, and also gives them time to prepare. The table above is that story. Hogi Yogi's move works beautifully against a passive Smart Cookie and much less well against one that reads the same numbers.
+**It invites the response it was meant to forestall.** A commitment only works if the rival sees it, and a rival who sees it has time to prepare. The same equipment deters Smart Cookie at twenty-two cents and provokes it at twelve, and the difference is a price Hogi Yogi does not set.
 
-**It costs flexibility, and flexibility is worth most exactly when uncertainty is highest.** This is the deepest tension in the chapter, because it puts commitment in direct conflict with everything [Part 3](profit-reasoning.qmd) said about staging decisions under uncertainty. A commitment converts an option into an obligation. When demand is well understood that is cheap; when it is not, you have paid for predictability with your ability to be wrong safely.
+**It spends flexibility, which is worth most when you know least.** **Flexibility** here is what [chapter 8](cost.qmd) meant in arguing that *when* you commit matters more than *how much*: the ability to wait, learn, and decide later on better information. A commitment converts that option into an obligation. Where demand is well understood the option was cheap and the trade is fine. Where demand is barely understood, you have paid for predictability with your ability to be wrong safely, which is the one thing a pre-revenue venture cannot spare.
 
-There is no formula that resolves that trade. What there is, unexpectedly, is evidence about when it tips.
+::: {.column-margin .def-margin}
+**Flexibility** — the ability to decide later, once you know more. Worth most when uncertainty is highest, which is exactly when a commitment costs the most to make.
+:::
+
+No formula settles that trade. There is, unexpectedly, evidence about what tips it.
 
 ## What Your Rival Believes
 
-The last chapter said the way out of a trap is to change what your rival expects. This chapter has been about how. It is worth closing on how much that turns out to matter.
+Recall the simulated entry decisions from [chapter 15](competitive-advantage.qmd), where each firm held some representation of its market and its rival. Two results land directly on this chapter.^[@hatchCognitiveExposureHow2026, under revision.]
 
-Recall the simulated entry decisions from [chapter 15](competitive-advantage.qmd), where each firm held some representation of its market and its rival. Two findings from that work bear directly on commitment.
+The first is about what makes a competitor dangerous. A rival that *perceives* well, reading demand accurately and seeing the rivalry it is in, turns out to help you, because accurate perception makes a firm predictable and rarely reckless. What hurts you is a rival with **commitment capability**: the ability to move irreversibly and leave you to live with it. Commitment is the attribute of a competitor that damages you most, which is why it is worth having and why it is worth checking whether the firm across the street has it.
 
-The first decomposes what makes a rival dangerous to you. A rival that *perceives* well, reading demand accurately and seeing the rivalry it is in, turns out to help you, because accurate perception makes a competitor predictable and rarely reckless. What hurts you is a rival with **commitment capability**: the ability to move irreversibly and make you live with it.^[@hatchCognitiveExposureHow2026, under revision.]
+The second settles the trade left open above. Whether to commit or stay flexible is not a fixed feature of your situation. It shifts with the representation your rival holds. Against a competitor who has not thought about you, flexibility is cheap and commitment usually unnecessary. Against one modelling you carefully, moving irreversibly is how you stop being modelled, because there is nothing left to predict.
 
-That is a strong statement about the asymmetry of this chapter's subject. Commitment is the attribute of a competitor that damages you most, which is exactly why it is worth having and exactly why it is worth checking whether the firm across the street has it.
-
-The second finding is the one that resolves the tension left open above. The trade between committing and staying flexible is not a fixed property of your situation. *It shifts with the representation your rival holds.* Against a rival who has not thought about you at all, flexibility is cheap and commitment often unnecessary. Against one who is modelling you carefully, moving irreversibly is how you stop being modelled — because there is nothing left to predict.
-
-So the question is not *should I commit or stay flexible*. It is *what does the other firm see, and what does that make worth doing*. Which is the question this entire part has been an argument for asking.
+So the question was never *commit or stay flexible*. It is *what does the other firm see*, and the answer to that changes which one is worth doing.
 
 ::: {.threshold}
 **Before making an irreversible commitment**
 
-- **Is it actually irreversible?** If you could unwind it in a quarter at modest cost, it is a plan rather than a commitment, and it will not change anyone's behavior. That is not a failure; it just means you should not expect the strategic benefit.
-- **Does it change what you would want to do, or only what you say?** Compute your best response after the commitment. If the aggressive move still is not your preference, you have bought an expensive announcement.
-- **What is the payoff if the rival matches it?** Not whether they will. Fill in the cell. The most common commitment error is evaluating only the column where the rival stands still.
-- **What is it worth if your demand estimate is wrong by a third?** Commitments are priced on forecasts and paid for regardless. If the answer is ruinous, the commitment is a bet on the estimate rather than on the strategy.
-- **Would you rather face this rival, or be them?** If a competitor made the identical move against you, would you regard it as serious? If not, they will not either.
+- **Run the test.** Work out your rival's best response if you sit still and if you go ahead. The same answer twice means you are buying an asset rather than changing a game, and it should clear the same bar as any other purchase.
+- **Is it actually irreversible?** If you could unwind it in a quarter at modest cost, your rival knows that too, and it will not move them. Not a failure — it just means the strategic benefit is not there to be counted.
+- **Evaluate the new equilibrium, not the old one plus a saving.** If the move does change your rival, the profit that matters comes from the game you have created. Adding a cost saving to today's profit overstates it, sometimes badly.
+- **What is it worth if demand comes in a third below your estimate?** Commitments are priced on forecasts and paid regardless. If the answer is ruinous, you are betting on the estimate rather than on the strategy.
+- **What does it cost in flexibility, and can you afford that yet?** Early, when least is known, that price is at its highest.
 :::
 
 ::: {.reflect}
-**Ask yourself — what could you do that you could not undo?**
+**Ask yourself — would it change what they do?**
 
-List the commitments actually available to you in the next year. Equipment, a lease, a hire, an exclusive agreement, a public price, a stated position.
+Name one irreversible move available to you in the next year. Equipment, a lease, an exclusive supply agreement, a hire that fixes your cost structure, a public price that would be embarrassing to retract.
 
-For each one, answer a single question: after making it, what would you *want* to do differently from what you want now? If the answer is nothing, it is a purchase rather than a commitment, and it will not change how anyone else behaves.
+Now write two sentences. What does your closest competitor do over the following year if you *do not* make it? What do they do if you *do*?
 
-Then take the one that does change your incentives and ask the harder version. Your competitor can see it. Given what they will then want to do, are you better off than before you moved?
+If those two sentences are the same, you have a purchase. It may well be a good one, and you should evaluate it exactly as you would any other equipment, with none of the strategic story attached to it.
 
-Most founders evaluate a commitment against the world as it is. The question that matters is how it looks in the world the commitment creates.
+If they differ, write down the difference, because that difference is what you are buying. Then ask the question that decides it: in the world where they respond that way, are you better off than you are today? That is a different calculation from the one that got you interested, and it is the only one that counts.
 :::
 
 ::: {.key-action}
-**The move:** Commitment works by changing what you will want to do, not by changing what you say. If a move leaves your own best response unchanged, it will not move your rival either, however expensive it was.
+**The move:** Before treating an irreversible investment as strategy, check whether it changes your rival's best response. If it does not, it is a purchase with a story attached, and the story is doing no work.
 :::
 
-This part began by observing that every parameter in the competition chapters was a decision somebody had made. It ends with the sharpest version of that claim: the most consequential decisions are the ones that cannot be revisited, they are made before revenue exists and before the prices they govern are ever charged, and they are evaluated by working out an equilibrium that has not happened yet. Which is the whole argument of this book, arriving at the place where the stakes are highest.
+This part began by noticing that every parameter in the competition chapters was a decision somebody had already made. It ends on the decisions that cannot be revisited: chosen before revenue exists, before the prices they govern are ever charged, and judged against an equilibrium that has not happened yet. Which is what this book has been about from its first page, arriving where the stakes are highest and where the option to change your mind has been deliberately given away.
