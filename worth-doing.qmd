@@ -1,7 +1,8 @@
 ---
-title: "Is This Worth Doing?"
 subtitle: "The decision you have to make before the numbers exist"
 ---
+
+# Is This Worth Doing? {.unnumbered #sec-worth-doing}
 
 Every venture reaches a moment when someone has to commit, and the numbers that would settle the question do not exist yet.
 

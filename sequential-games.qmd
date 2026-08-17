@@ -91,7 +91,7 @@ tibble::tibble(
 
 Read it as a chain rather than a table. Cheaper to make means cheaper to sell, so Hogi Yogi's *price* falls from \$1.02 to \$0.94. Smart Cookie has to follow it down, from \$1.53 to \$1.43. And Smart Cookie's *profit* falls from \$1.33 to \$0.99 — not because anything happened to Smart Cookie's costs, which never moved, but because its rival became cheaper and it had to answer.
 
-That is the first move in this whole part that takes something from the other firm, and the reason is a number from [chapter 13](differentiated-competition.qmd). Smart Cookie's demand responds to Hogi Yogi's price with a coefficient of 5.57, the largest in the system. Smart Cookie is enormously exposed to what Hogi Yogi charges. Neither kind of advertising reached that exposure; a cost cut goes straight at it.
+That is the first move in this whole part that takes something from the other firm, and the reason is a number from [chapter 12](differentiated-competition.qmd). Smart Cookie's demand responds to Hogi Yogi's price with a coefficient of 5.57, the largest in the system. Smart Cookie is enormously exposed to what Hogi Yogi charges. Neither kind of advertising reached that exposure; a cost cut goes straight at it.
 
 Now let Smart Cookie move, and run the test. The equipment is available to it too, so the question is what Smart Cookie does in each case, and the answer turns out to depend on what the equipment costs.
 
@@ -210,7 +210,7 @@ Be precise about the gain, because it is not simply money.
 
 At twelve cents both firms invest and Hogi Yogi finishes at \$1.08, which is more than the \$1.00 it earns at twenty-two. On this period's profit alone, Hogi Yogi should prefer the cheaper equipment.
 
-What the cheaper equipment does not buy is a position. Both firms end at low cost, neither holds anything the other lacks, and the structural asymmetry that [chapter 15](competitive-advantage.qmd) called the whole of competitive advantage has been competed away in a single round. At twenty-two cents Hogi Yogi is the only low-cost firm in the market and remains so while the equipment stays expensive.
+What the cheaper equipment does not buy is a position. Both firms end at low cost, neither holds anything the other lacks, and the structural asymmetry that [chapter 14](competitive-advantage.qmd) called the whole of competitive advantage has been competed away in a single round. At twenty-two cents Hogi Yogi is the only low-cost firm in the market and remains so while the equipment stays expensive.
 
 That is the trade a commitment offers and it is not the one people expect. It rarely maximizes this period's profit. It buys a structure that persists, by taking an option away from somebody else.
 
@@ -260,11 +260,11 @@ And nothing in the left column is automatically a commitment. A lease can be one
 
 There is a category of commitment the book has already covered under a different name, and it is worth joining them up.
 
-[Chapter 15](competitive-advantage.qmd) defined an entry barrier as structural asymmetry large enough to make an entrant's equilibrium profit negative, and observed that an incumbent investing in visible capacity or signalling low cost is not frightening anybody — it is changing their forecast. That is this chapter's test with one substitution. The rival's move is *enter*, and the commitment works if it changes that move to *do not*.
+[Chapter 14](competitive-advantage.qmd) defined an entry barrier as structural asymmetry large enough to make an entrant's equilibrium profit negative, and observed that an incumbent investing in visible capacity or signalling low cost is not frightening anybody — it is changing their forecast. That is this chapter's test with one substitution. The rival's move is *enter*, and the commitment works if it changes that move to *do not*.
 
 So entry deterrence is not a separate topic from strategic commitment. It is the special case where the response you are trying to change is the decision to show up at all, and the reason it gets its own literature is that the rival in question does not exist yet and cannot be observed. Everything else about it is the same: an irreversible move, a rival recomputing, and a best response that flips or does not.
 
-That symmetry is worth carrying in both directions. When you are the incumbent, your commitments are barriers. When you are the entrant, somebody else's commitments are what you are computing your way past, and the question in [chapter 15](competitive-advantage.qmd), *is the asymmetry real*, is the same question as *did they actually commit*.
+That symmetry is worth carrying in both directions. When you are the incumbent, your commitments are barriers. When you are the entrant, somebody else's commitments are what you are computing your way past, and the question in [chapter 14](competitive-advantage.qmd), *is the asymmetry real*, is the same question as *did they actually commit*.
 
 ## When Commitment Backfires
 
@@ -274,7 +274,7 @@ The property that makes a commitment work is the one that makes it dangerous, so
 
 **It invites the response it was meant to forestall.** A commitment only works if the rival sees it, and a rival who sees it has time to prepare. The same equipment deters Smart Cookie at twenty-two cents and provokes it at twelve, and the difference is a price Hogi Yogi does not set.
 
-**It spends flexibility, which is worth most when you know least.** **Flexibility** here is what [chapter 8](cost.qmd) meant in arguing that *when* you commit matters more than *how much*: the ability to wait, learn, and decide later on better information. A commitment converts that option into an obligation. Where demand is well understood the option was cheap and the trade is fine. Where demand is barely understood, you have paid for predictability with your ability to be wrong safely, which is the one thing a pre-revenue venture cannot spare.
+**It spends flexibility, which is worth most when you know least.** **Flexibility** here is what [chapter 7](cost.qmd) meant in arguing that *when* you commit matters more than *how much*: the ability to wait, learn, and decide later on better information. A commitment converts that option into an obligation. Where demand is well understood the option was cheap and the trade is fine. Where demand is barely understood, you have paid for predictability with your ability to be wrong safely, which is the one thing a pre-revenue venture cannot spare.
 
 ::: {.column-margin .def-margin}
 **Flexibility** — the ability to decide later, once you know more. Worth most when uncertainty is highest, which is exactly when a commitment costs the most to make.
@@ -284,7 +284,7 @@ No formula settles that trade. There is, unexpectedly, evidence about what tips 
 
 ## What Your Rival Believes
 
-Recall the simulated entry decisions from [chapter 15](competitive-advantage.qmd), where each firm held some representation of its market and its rival. Two results land directly on this chapter.^[@hatchCognitiveExposureHow2026, under revision.]
+Recall the simulated entry decisions from [chapter 14](competitive-advantage.qmd), where each firm held some representation of its market and its rival. Two results land directly on this chapter.^[@hatchCognitiveExposureHow2026, under revision.]
 
 The first is about what makes a competitor dangerous. A rival that *perceives* well, reading demand accurately and seeing the rivalry it is in, turns out to help you, because accurate perception makes a firm predictable and rarely reckless. What hurts you is a rival with **commitment capability**: the ability to move irreversibly and leave you to live with it. Commitment is the attribute of a competitor that damages you most, which is why it is worth having and why it is worth checking whether the firm across the street has it.
 

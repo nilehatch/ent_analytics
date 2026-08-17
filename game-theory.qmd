@@ -32,7 +32,7 @@ The last step is the one textbooks spend their pages on and it is genuinely mech
 
 Step three is where the difficulty is, and it is not close. *What are the payoffs?* is a question about what would actually happen to your business under four different futures, only one of which you will observe. Answering it requires knowing how customers respond to price, what serving them costs, how many of them exist, and how the other firm would price in each case.
 
-Which is to say: it requires everything in the previous sixteen chapters. The engine that turns parameters into equilibrium profit is the payoff function. That is why game theory belongs at the end of this book rather than in a chapter of its own somewhere near the front. Every other chapter was building the thing that fills in the cells.
+Which is to say: it requires everything in the previous fifteen chapters. The engine that turns parameters into equilibrium profit is the payoff function. That is why game theory belongs at the end of this book rather than in a chapter of its own somewhere near the front. Every other chapter was building the thing that fills in the cells.
 
 ## Payoffs Are Profit
 

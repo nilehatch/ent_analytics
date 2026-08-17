@@ -21,7 +21,7 @@ It helps you **decide what to pay attention to next**.
 
 
 ::: {.callout-note title="How this toolkit fits" icon=false collapse=true}
-This toolkit builds directly on *reading a profit curve* in [chapter 11](profit-reasoning.qmd).
+This toolkit builds directly on *reading a profit curve* in [chapter 10](profit-reasoning.qmd).
 
 It assumes you can already recognize:
 

@@ -269,7 +269,7 @@ What is left, for a venture standing alone, is a judgment, and it belongs to you
 
 The question is not whether the venture will succeed, whether the idea is exciting, or whether the number came out as high as possible. Stated precisely, it is this: *given what we now know about demand, cost, and scale, is there a path to profit that survives being somewhat wrong, and am I willing to commit to it?*
 
-Notice that both halves are required. The first is analytical and this book has spent eleven chapters on it. The second is not analytical at all. Two founders can read the same robust curve and reasonably disagree about whether to proceed, because they are exposed differently, have different alternatives, and can absorb different losses. Nothing in the arithmetic settles that, and a model that claimed to would be lying.
+Notice that both halves are required. The first is analytical and this book has spent ten chapters on it. The second is not analytical at all. Two founders can read the same robust curve and reasonably disagree about whether to proceed, because they are exposed differently, have different alternatives, and can absorb different losses. Nothing in the arithmetic settles that, and a model that claimed to would be lying.
 
 What profit reasoning does is narrow the space of responsible choices. It tells you when the design cannot work and must change, when profit exists but is too thin to commit against, and when the structure is sound enough to proceed deliberately. That is genuine progress even when the answer is *not yet* or *not like this*.
 

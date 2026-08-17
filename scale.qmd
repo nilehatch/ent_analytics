@@ -34,7 +34,7 @@ Treat **population** as a constraint rather than an estimate. It is a ceiling on
 
 This is also why the chapter sits here rather than earlier. With no commitments, population is close to irrelevant; you can serve whoever turns up. With commitments, it becomes decisive, because the commitments have to be covered by however many people exist to cover them.
 
-It is worth saying plainly that this is not market sizing in the usual sense. We are not estimating a share of an imagined market or forecasting growth, which is the move [chapter 2](familiar-tools.qmd) took apart. We start from demand you learned, costs you chose, and commitments you are considering, and then ask whether a large enough reachable population exists to support them. Scale here is a test rather than an aspiration.
+It is worth saying plainly that this is not market sizing in the usual sense. We are not estimating a share of an imagined market or forecasting growth, which is the move [chapter 1](familiar-tools.qmd) took apart. We start from demand you learned, costs you chose, and commitments you are considering, and then ask whether a large enough reachable population exists to support them. Scale here is a test rather than an aspiration.
 
 ## Existing Is Not Being Reachable
 

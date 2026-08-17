@@ -63,21 +63,27 @@ This book is the required text for **ENTP 5771** at the University of Utah
 Building the course means close-reading ch1–ch12 on a schedule, which is the re-voicing pass
 for those chapters whether or not it is billed as one. Separate sessions; one priority queue.
 
-Chapter numbers below are the **current** ones. They changed on 13 Aug 2026 when
-`ch2_uncertainty_types` dissolved into what is now ch3 and the `chN_` filename prefixes
-came off; the old numbers in any note written before that date are one or more higher.
+Chapter numbers below are the **current** ones, and they have now shifted twice. They changed
+on 13 Aug 2026 when `ch2_uncertainty_types` dissolved into what is now ch2, and again on
+17 Aug 2026 when `worth-doing` became an unnumbered opener outside the parts, matching EI.
+That removed it from the sequence, so **every chapter dropped by one**: `familiar-tools` is
+ch1 and `sequential-games` is ch18. Any note written before 17 Aug is one higher than the
+truth, and any note before 13 Aug is higher again.
+
+**If the ENTP 5771 syllabus cites chapter numbers, it needs the same decrement.** The
+filenames are the stable identifier; prefer them over numbers in anything the students see.
 
 | Class week | Opens | Book material |
 |---|---|---|
-| 6–7 | 28 Sep | ch4–ch6 (`what-demand-is` → `executing-experiments`), `survey-design`, `validate-evidence` |
-| 8 | 19 Oct | ch7 `estimating-demand`, `prepare-data`, `check-demand-curve` |
-| 9–11 | 26 Oct | ch8–ch11 (`cost` → `profit-reasoning`), the **four** profit toolkits |
-| 12–14 | 16 Nov | ch12–ch22 — **the four legacy game-theory files, now ch19–ch22, must be finished by ~25 Nov** |
+| 6–7 | 28 Sep | ch3–ch5 (`what-demand-is` → `executing-experiments`), `survey-design`, `validate-evidence` |
+| 8 | 19 Oct | ch6 `estimating-demand`, `prepare-data`, `check-demand-curve` |
+| 9–11 | 26 Oct | ch7–ch10 (`cost` → `profit-reasoning`), the **four** profit toolkits |
+| 12–14 | 16 Nov | ch11–ch18 (`competition` → `sequential-games`), plus the unnumbered sign-off |
 
-Careful with that last row. "ch19–ch22" now resolves to `game-theory`, `simultaneous-games`,
-`sequential-games` and `strategic-commitment` — the *legacy* files, which are the ones in the
-TOC. The orphaned `ch20_`–`ch22_` files are on disk and out of the TOC; `ch19_` was renamed
-`non-price-competition` and is now ch18.
+The old "ch19–ch22" note is retired: that range resolved to the four legacy game-theory files,
+which are now the rewritten `game-theory`, `simultaneous-games` and `sequential-games` at
+ch16–ch18. `non-price-competition` is ch15. The orphaned `ch20_`–`ch22_` files remain on disk
+and out of the TOC.
 
 Class week 8 material is written. The WTP survival-function transformation, revision
 opportunity 1 above, was the open item there and landed in `estimating-demand.qmd` on
