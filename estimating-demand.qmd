@@ -522,7 +522,7 @@ Plot.plot({
       grid: true, labelAnchor: "top"},
   // The demand ramp from R/theme-itwd.R, which OJS cannot read: linear is
   // itwd_demand, exponential itwd_demand_dark, sigmoid itwd_demand_light.
-  // Same colours as the two static figures above; do not diverge from those.
+  // Same colors as the two static figures above; do not diverge from those.
   color: {domain: ["Linear", "Exponential", "Sigmoid"],
           range: ["#2563EB", "#1E3A8A", "#93B4F5"]},
   marks: [

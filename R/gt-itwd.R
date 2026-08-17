@@ -9,7 +9,7 @@
 #   text on white at 100% size, bounded by 2px #D3D3D3 rules — the same rules
 #   that bound the table body. Nothing distinguishes the header row from a body
 #   row except its position. A reader meeting a table fresh has to stop and work
-#   out whether the top row is a label row or the first row of an unlabelled
+#   out whether the top row is a label row or the first row of an unlabeled
 #   table, and the faint zebra striping makes "white row" mean nothing.
 #
 #   THE SIGNAL. Pine type over a pine rule, which is exactly how base.css styles
@@ -20,7 +20,7 @@
 #   WHY NOT BOLD. These column labels are long — "Hogi Yogi does not advertise"
 #   — and already near wrapping. Measured against the current labels, bold costs
 #   about 8% width and uppercase 32% (12% even shrunk to 85%, because sans-serif
-#   capitals are much wider than lowercase). Colour and rules cost nothing, so
+#   capitals are much wider than lowercase). Color and rules cost nothing, so
 #   the signal is carried entirely by things that do not reflow the table.
 #
 #   Note on striping: the zebra rows come from Bootstrap's .table-striped, which

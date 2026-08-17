@@ -120,7 +120,7 @@ And the gap between the two firms, the thing Hogi Yogi was actually trying to cl
 
 ## Why the Spillover Runs That Way
 
-That result is not a quirk of these numbers. It follows directly from the asymmetry [the differentiation chapter](differentiated-competition.qmd) made the centre of the argument.
+That result is not a quirk of these numbers. It follows directly from the asymmetry [the differentiation chapter](differentiated-competition.qmd) made the center of the argument.
 
 The campaign puts more people in the market for an ice cream sandwich. Those people then face two prices. And this pair of firms has wildly lopsided switching: when Hogi Yogi's price rises, 5.57 units of demand move toward Smart Cookie, while a rise in Smart Cookie's price sends only 0.55 back the other way.
 

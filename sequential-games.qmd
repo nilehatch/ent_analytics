@@ -159,7 +159,7 @@ leaf <- tibble(x = 2.2, y = ys, ok = chosen,
                t = map_chr(lv, ~ sprintf("$%.2f,  $%.2f",
                                          pay(.x[1], .x[2])[1], pay(.x[1], .x[2])[2])))
 
-# Text carries its own colour rather than riding the segments' alpha scale.
+# Text carries its own color rather than riding the segments' alpha scale.
 # One alpha applied to everything lightened the branch labels twice, because
 # they alone started from itwd_muted while the lines and payoffs started from
 # itwd_ink: at alpha 0.20 they landed on 1.29:1 against white, lighter than the
@@ -288,7 +288,7 @@ Recall the simulated entry decisions from [the chapter on advantage](competitive
 
 The first is about what makes a competitor dangerous. A rival that *perceives* well, reading demand accurately and seeing the rivalry it is in, turns out to help you, because accurate perception makes a firm predictable and rarely reckless. What hurts you is a rival with **commitment capability**: the ability to move irreversibly and leave you to live with it. Commitment is the attribute of a competitor that damages you most, which is why it is worth having and why it is worth checking whether the firm across the street has it.
 
-The second settles the trade left open above. Whether to commit or stay flexible is not a fixed feature of your situation. It shifts with the representation your rival holds. Against a competitor who has not thought about you, flexibility is cheap and commitment usually unnecessary. Against one modelling you carefully, moving irreversibly is how you stop being modelled, because there is nothing left to predict.
+The second settles the trade left open above. Whether to commit or stay flexible is not a fixed feature of your situation. It shifts with the representation your rival holds. Against a competitor who has not thought about you, flexibility is cheap and commitment usually unnecessary. Against one modeling you carefully, moving irreversibly is how you stop being modelled, because there is nothing left to predict.
 
 So the question was never *commit or stay flexible*. It is *what does the other firm see*, and the answer to that changes which one is worth doing.
 

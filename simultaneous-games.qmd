@@ -217,7 +217,7 @@ html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
                         fill: d => d.isNash ? "#EBF4F0" : "#FAFAFA",
                         stroke: d => d.isNash ? "#2F855A" : "#E1E6E3",
                         strokeWidth: d => d.isNash ? 2 : 1}),
-      // Player colours are itwd_player_a / itwd_player_b from R/theme-itwd.R,
+      // Player colors are itwd_player_a / itwd_player_b from R/theme-itwd.R,
       // which OJS cannot read. Payoffs match each firm's arrows, so no legend.
       Plot.text(cells, {x: d => d.x - 0.02, y: "y", text: d => usd(d.sc),
                         textAnchor: "end", fontSize: 15, fontWeight: 600, fill: "#2563EB"}),
@@ -236,7 +236,7 @@ html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
 
 Smart Cookie is blue and Hogi Yogi orange, in the payoffs and in the arrows alike. Blue arrows run vertically because Smart Cookie is choosing a row; orange run horizontally because Hogi Yogi is choosing a column. The shaded cell is the one both point into.
 
-Dragging those sliders without a map is a good way to watch things change without learning much, so here is the map. Every point in it is a whole game, solved, and coloured by which equilibrium comes out. The dot is where your sliders currently sit.
+Dragging those sliders without a map is a good way to watch things change without learning much, so here is the map. Every point in it is a whole game, solved, and colored by which equilibrium comes out. The dot is where your sliders currently sit.
 
 ```{ojs}
 //| echo: false
@@ -276,7 +276,7 @@ mapCells = {
 
 ```{ojs}
 //| echo: false
-// Fixed colour per region, filtered to those the current map contains, so a
+// Fixed color per region, filtered to those the current map contains, so a
 // swatch never appears for a region the reader cannot find. Order is kept.
 regionPalette = [["neither advertises",        "#EFEFEE"],
                  ["Smart Cookie alone",        "#CFE0FA"],

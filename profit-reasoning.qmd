@@ -68,7 +68,7 @@ df <- map_dfr(cases, function(k) {
   mutate(lab = factor(lab, levels = c("Impossible", "Fragile", "Robust")))
 
 band <- df |> filter(Pi > 0) |> group_by(lab) |>
-  summarise(lo = min(P), hi = max(P), .groups = "drop")
+  summarize(lo = min(P), hi = max(P), .groups = "drop")
 
 ggplot(df, aes(P, Pi)) +
   { if (nrow(band)) geom_rect(data = band, inherit.aes = FALSE,

@@ -165,7 +165,7 @@ So the same two firms, the same customers, the same campaign effectiveness, prod
 
 Real decisions are rarely binary. Advertising comes in amounts, not in a switch, and the campaign that adds one unit per person is one point on a curve that probably bends.
 
-A two-by-two is a deliberate simplification that buys clarity about the *structure*: who has a dominant strategy, whether the outcome is a trap, which firm the spillover favours. Use it for that. When the question is *how much* rather than *whether*, the same machinery still works, but you are optimizing over a continuous choice rather than reading a cell, and the answer stops being a game in the textbook sense.
+A two-by-two is a deliberate simplification that buys clarity about the *structure*: who has a dominant strategy, whether the outcome is a trap, which firm the spillover favors. Use it for that. When the question is *how much* rather than *whether*, the same machinery still works, but you are optimizing over a continuous choice rather than reading a cell, and the answer stops being a game in the textbook sense.
 :::
 
 ## The Same Logic at Ten Billion Dollars

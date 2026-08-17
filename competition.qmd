@@ -156,7 +156,7 @@ Plot.plot({
 })
 ```
 
-The solid grey curve is where you were when the rival charged \$800; the dashed grey line is the ridge, the path the peak travels. Push the rival down toward \$300 and your whole curve sinks while your best price retreats with it — you are not being outsold, you are being compressed. Push them up toward \$1,300 and you follow them up, earning more at a higher price without doing anything differently.
+The solid gray curve is where you were when the rival charged \$800; the dashed gray line is the ridge, the path the peak travels. Push the rival down toward \$300 and your whole curve sinks while your best price retreats with it — you are not being outsold, you are being compressed. Push them up toward \$1,300 and you follow them up, earning more at a higher price without doing anything differently.
 
 That dashed ridge is a straight line, and it is worth knowing why before the next chapter derives it. Every dollar the rival adds sends some customers your way, which lifts your demand, which makes a slightly higher price your best answer. With demand this shape the relationship comes out exactly linear: your best price is a fixed starting point plus a little over a quarter of whatever they charge. You follow them, and you follow them partway.
 

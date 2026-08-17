@@ -153,7 +153,7 @@ Bad data disables it. Numbers appear, charts get drawn, estimates get computed, 
 
 Analysis will not save you here. A model assumes its inputs mean what you think they mean. It has no way to ask whether you sampled the right people, whether respondents read the question consistently, whether the prices and quantities refer to the same unit and period, or whether anyone found the scenario believable. Violate those assumptions and models do not fail gracefully. They amplify the error with precision, and what comes out is not noise but confident misdirection.
 
-Entrepreneurs are exposed to this more than most. The decisions feel urgent, so there is pressure to have *something* rather than wait for something better. Early evidence comes from small samples, where design and execution errors do their most concentrated damage. And once a price is set or an investment is made, revisiting the evidence underneath it becomes personally and organisationally awkward. Bad data does not mislead one decision. It sets a direction and then makes the direction expensive to question.
+Entrepreneurs are exposed to this more than most. The decisions feel urgent, so there is pressure to have *something* rather than wait for something better. Early evidence comes from small samples, where design and execution errors do their most concentrated damage. And once a price is set or an investment is made, revisiting the evidence underneath it becomes personally and organizationally awkward. Bad data does not mislead one decision. It sets a direction and then makes the direction expensive to question.
 
 So a rule worth carrying:
 
