@@ -54,6 +54,13 @@ itwd_muted <- "#6B7280"  # --brand-muted: tick labels, captions
 itwd_rule  <- "#E1E6E3"  # gridlines and the baseline
 itwd_ghost <- "#9CA8A2"  # reference/"before" lines that must recede
 
+# ---- brand pine, for structure rather than data ----------------------------
+# Never a data series. These are the colours base.css gives headings, and they
+# are here so R output can carry the same structural signal as the page: see
+# gt_itwd() in R/gt-itwd.R, which heads a table the way base.css heads an h2.
+itwd_pine      <- "#146B45"  # --brand-primary:   h2 colour and h2 rule
+itwd_pine_deep <- "#0D4F33"  # --brand-secondary: h3
+
 # ---- the theme -------------------------------------------------------------
 
 theme_itwd <- function(base_size = 12, base_family = "", grid = c("y", "xy", "none")) {

@@ -11,6 +11,7 @@ library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
+source("R/gt-itwd.R")
 ```
 
 The last chapter ended with an escape route and no directions. When two firms are stuck in a game that pays neither of them, the way out is to change what the other one expects. This chapter is how, and there is a test that tells you whether you have managed it.
@@ -83,10 +84,9 @@ tibble::tibble(
   `SC profit`               = c(dollar(b[3],.01), dollar(a[3],.01), dollar(a[3]-b[3],.01))
 ) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(6), table.width = pct(100)) |>
-  cols_align("center") |>
   tab_spanner(label = "Hogi Yogi", columns = c(`HY unit cost`, `HY price`, `HY profit`)) |>
-  tab_spanner(label = "Smart Cookie", columns = c(`SC price`, `SC profit`))
+  tab_spanner(label = "Smart Cookie", columns = c(`SC price`, `SC profit`)) |>
+  gt_itwd(padding = 6)
 ```
 
 Read it as a chain rather than a table. Cheaper to make means cheaper to sell, so Hogi Yogi's *price* falls from \$1.02 to \$0.94. Smart Cookie has to follow it down, from \$1.53 to \$1.43. And Smart Cookie's *profit* falls from \$1.33 to \$0.99 — not because anything happened to Smart Cookie's costs, which never moved, but because its rival became cheaper and it had to answer.
@@ -111,8 +111,8 @@ tibble::tibble(
   `So the move is`                          = c("a purchase", "a commitment")
 ) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(9), table.width = pct(100)) |>
-  cols_align("center") |> cols_align("left", columns = `If the equipment costs`)
+  gt_itwd(padding = 9) |>
+  cols_align("left", columns = `If the equipment costs`)
 ```
 
 At twelve cents the equipment is cheap enough that Smart Cookie installs it either way. Hogi Yogi installing it changes nothing about what Smart Cookie does. Both firms end up cheaper, nobody is deterred, and Hogi Yogi has bought a cost reduction — a perfectly good thing to buy, which did not change the game.
@@ -230,8 +230,7 @@ tibble::tribble(
     "very little, unless they believe the embarrassment"
 ) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(7), table.width = pct(100)) |>
-  cols_align("left")
+  gt_itwd(padding = 7, align = "left")
 ```
 
 Two things about that table are worth more than its contents.

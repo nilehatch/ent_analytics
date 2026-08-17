@@ -12,6 +12,7 @@ library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE) 
 source("R/theme-itwd.R")
+source("R/gt-itwd.R")
 ```
 
 Everything so far has been about learning: framing the question, designing evidence that could answer it, getting the right people to answer honestly.
@@ -61,9 +62,7 @@ wtp <- c(12, 8, 15, 10, 5, 12, 18, 9, 12, 15, 8, 10)
 
 tibble::tibble(Respondent = paste0("R", 1:12), `Max WTP` = scales::dollar(wtp)) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(3),
-              table.width = pct(70)) |>
-  cols_align("center")
+  gt_itwd(padding = 3, width = 70)
 ```
 
 Now ask a question you can answer by counting. *If the price were \$12, how many of these people would buy?*
@@ -85,9 +84,7 @@ tibble::tibble(wtp = wtp) |>
             `Buyers at exactly this price` = n_at,
             `Quantity (running count)` = quantity) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(3),
-              table.width = pct(70)) |>
-  cols_align("center")
+  gt_itwd(padding = 3, width = 70)
 ```
 
 That is the whole transformation.

@@ -11,6 +11,7 @@ library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
+source("R/gt-itwd.R")
 ```
 
 The last part treated competition as a fight about price. Two firms, two prices, one equilibrium, and everything else held still while they argued.
@@ -44,8 +45,7 @@ tibble::tribble(
     "the d's — how easily a rival reaches your customers"
 ) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(6), table.width = pct(97)) |>
-  cols_align("left")
+  gt_itwd(padding = 6, width = 97, align = "left")
 ```
 
 Read that table in the direction founders actually experience it. Nobody sits down to choose a substitution coefficient. They decide whether to sign the exclusive supply deal, whether to add the feature, whether to lease the bigger space, whether to sell to students or to families. The coefficient is what those decisions look like from the outside, months later, when somebody estimates a demand system.
@@ -107,8 +107,7 @@ tibble::tibble(
                               dollar(a$pi2 - 0.50 - b$pi2, .01))
 ) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(5), table.width = pct(100)) |>
-  cols_align("center") |>
+  gt_itwd(padding = 5) |>
   tab_footnote("Hogi Yogi's profit is net of the $0.50 campaign. Per person per month.",
                locations = cells_column_labels(columns = `Hogi Yogi profit`))
 ```

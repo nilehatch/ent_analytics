@@ -11,6 +11,7 @@ library(scales)
 library(gt)
 knitr::opts_chunk$set(echo = TRUE)
 source("R/theme-itwd.R")
+source("R/gt-itwd.R")
 ```
 
 The advertising game in the last chapter had a comfortable ending. Both firms bought the campaign, both finished better off than if neither had, and the money they spent bought something real. Whatever else was true, nobody was worse off for having played.
@@ -54,8 +55,8 @@ tibble::tibble(
                              sprintf("%s,  %s", dollar(gr(1,1)[1], .01), dollar(gr(1,1)[2], .01)))
 ) |>
   gt() |> fmt_markdown(columns = ` `) |>
-  tab_options(table.font.size = 13, data_row.padding = px(12), table.width = pct(100)) |>
-  cols_align("center") |> cols_align("left", columns = ` `)
+  gt_itwd(font_size = 13, padding = 12) |>
+  cols_align("left", columns = ` `)
 ```
 
 Look at the diagonal. When neither firm advertises, Smart Cookie earns \$1.33 and Hogi Yogi \$0.96. When *both* advertise, Smart Cookie earns \$1.33 and Hogi Yogi \$0.96.
@@ -88,8 +89,8 @@ tibble::tibble(
   `Hogi Yogi advertises` = c(cellK(0,1), cellK(1,1))
 ) |>
   gt() |> fmt_markdown(columns = ` `) |>
-  tab_options(table.font.size = 13, data_row.padding = px(12), table.width = pct(100)) |>
-  cols_align("center") |> cols_align("left", columns = ` `)
+  gt_itwd(font_size = 13, padding = 12) |>
+  cols_align("left", columns = ` `)
 ```
 
 Work through it the way the last chapter did. Smart Cookie earns \$1.33 sitting still against a passive rival and \$1.41 by advertising; \$1.15 against an advertising rival and \$1.23 by advertising. Better both times. Hogi Yogi finds the same thing.
@@ -326,8 +327,7 @@ tibble::tribble(
     "usually expands, if the constraint was real"
 ) |>
   gt() |>
-  tab_options(table.font.size = 12, data_row.padding = px(6), table.width = pct(97)) |>
-  cols_align("left")
+  gt_itwd(padding = 6, width = 97, align = "left")
 ```
 
 The middle rows are where founders get into trouble, because redistributive moves feel more competitive. Naming your rival, matching their price, locking up the supplier — these read as decisive action in a way that explaining your category to strangers does not. They are also the moves most likely to be matched, and matching is what turns them into a dilemma.
