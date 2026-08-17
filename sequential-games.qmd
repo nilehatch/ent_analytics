@@ -128,27 +128,42 @@ That is where order finally does some work, and it is easiest to see as a sequen
 #| fig-cap: "The twenty-two cent case read as a sequence. Smart Cookie's chosen branch is solid and the one it rejects is faded, so the deterrence is visible: Hogi Yogi installing the equipment is what stops Smart Cookie from installing it too. Payoffs are net of the equipment for whichever firm bought it."
 #| fig-align: center
 #| fig-width: 8.6
-#| fig-height: 3.9
+#| fig-height: 3.6
 
 K <- 0.22
 pay <- function(s, h) { v <- eqc(0.75 - 0.15*s, 0.50 - 0.15*h)
                         c(v[3] - K*s, v[4] - K*h) }
-lv <- list(c(1,1), c(0,1), c(1,0), c(0,0))
-ys <- c(1.5, 0.5, -0.5, -1.5)
+lv     <- list(c(1,1), c(0,1), c(1,0), c(0,0))
+ys     <- c(1.5, 0.5, -0.5, -1.5)
 chosen <- c(FALSE, TRUE, TRUE, FALSE)
 
-seg1 <- tibble(x = 0, y = 0, xend = 1.1, yend = c(1.0, -1.0))
-seg2 <- tibble(x = 1.1, y = rep(c(1.0, -1.0), each = 2),
-               xend = 2.2, yend = ys, ok = chosen)
+seg <- bind_rows(
+  tibble(x = 0,   y = 0,                        xend = 1.1, yend = c(1.0, -1.0), ok = TRUE),
+  tibble(x = 1.1, y = rep(c(1.0, -1.0), each = 2), xend = 2.2, yend = ys, ok = chosen)
+)
+
+# Labels are derived from the segments rather than placed by hand, so every one
+# sits the same PERPENDICULAR distance from the line it names. Offsetting by a
+# constant in y alone would not do it: the two forks have different slopes, so
+# the same vertical drop reads as a different gap on each. Scaling by
+# sqrt(1 + slope^2) converts a perpendicular distance into the vertical one.
+OFF <- 0.20
+lab <- seg |>
+  mutate(slope = (yend - y)/(xend - x),
+         mx    = (x + xend)/2,
+         my    = (y + yend)/2,
+         ly    = my + sign(slope) * OFF * sqrt(1 + slope^2),
+         txt   = rep(c("installs", "does not"), 3))
+
 leaf <- tibble(x = 2.2, y = ys, ok = chosen,
                t = map_chr(lv, ~ sprintf("$%.2f,  $%.2f",
                                          pay(.x[1], .x[2])[1], pay(.x[1], .x[2])[2])))
 
 ggplot() +
-  geom_segment(data = seg1, aes(x, y, xend = xend, yend = yend),
+  geom_segment(data = seg, aes(x, y, xend = xend, yend = yend, alpha = ok),
                color = itwd_ink, linewidth = 0.9) +
-  geom_segment(data = seg2, aes(x, y, xend = xend, yend = yend, alpha = ok),
-               color = itwd_ink, linewidth = 0.9) +
+  geom_text(data = lab, aes(mx, ly, label = txt, alpha = ok),
+            size = 3.2, color = itwd_muted) +
   geom_text(data = leaf, aes(x + 0.10, y, label = t, alpha = ok),
             hjust = 0, size = 3.9, color = itwd_ink) +
   scale_alpha_manual(values = c(`FALSE` = 0.20, `TRUE` = 1), guide = "none") +
@@ -157,17 +172,15 @@ ggplot() +
              size = 3.2, color = itwd_demand) +
   annotate("text", x = -0.10, y = 0, label = "Hogi Yogi", hjust = 1,
            size = 3.5, color = itwd_ink) +
-  annotate("text", x = 1.10, y = c(1.30, -0.72), label = "Smart Cookie",
+  annotate("text", x = 1.10, y = c(1.32, -0.68), label = "Smart Cookie",
            size = 3.3, color = itwd_demand) +
-  annotate("text", x = 0.52, y = c(0.72, -0.72), label = c("installs", "does not"),
-           size = 3.3, color = itwd_ink) +
-  annotate("text", x = 1.68, y = c(1.36, 0.64, -0.36, -1.64),
-           label = c("installs", "does not", "installs", "does not"),
-           size = 3.1, color = itwd_muted) +
-  annotate("text", x = 2.30, y = 1.92, label = "Smart Cookie, Hogi Yogi",
+  annotate("text", x = 2.30, y = 1.78, label = "Smart Cookie, Hogi Yogi",
            hjust = 0, size = 3.0, color = itwd_muted) +
-  coord_cartesian(xlim = c(-1.0, 3.6), ylim = c(-2.05, 2.05)) +
-  theme_void()
+  # content runs from the lowest leaf at -1.50 to the header at 1.78; equal
+  # margins top and bottom, which the hand-placed version did not have
+  coord_cartesian(xlim = c(-1.0, 3.6), ylim = c(-1.68, 1.96)) +
+  theme_void() +
+  theme(plot.margin = margin(2, 2, 2, 2))
 ```
 
 Read it backwards, which is the only way a tree can be read. In the upper branch, where Hogi Yogi has installed the equipment, Smart Cookie compares \$0.97 against \$0.99 and does not install. In the lower branch, where Hogi Yogi has not, Smart Cookie compares \$1.34 against \$1.33 and does install. Two different answers, which is the test passing.
