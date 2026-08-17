@@ -14,7 +14,7 @@ The last part says otherwise, and it needed four chapters to earn the claim. The
 
 Which changes the shape of the question this book is named after.
 
-*Is this worth doing?* has been handled so far as though it had one answer, computed from one demand curve, one cost structure, one population. It does not. It has an answer for every structure you might end up in, and the structures are partly chosen — by you, and by anyone else who can commit. The honest estimate is a range, held down by what a rival could commit to against you and lifted by what you could commit to yourself. A venture that only clears the bar in the structure nobody has moved to yet is fragile in exactly the sense [chapter 10](profit-reasoning.qmd) gave the word, and it will not look fragile on a profit curve, because a profit curve is drawn for one structure at a time.
+*Is this worth doing?* has been handled so far as though it had one answer, computed from one demand curve, one cost structure, one population. It does not. It has an answer for every structure you might end up in, and the structures are partly chosen — by you, and by anyone else who can commit. The honest estimate is a range, held down by what a rival could commit to against you and lifted by what you could commit to yourself. A venture that only clears the bar in the structure nobody has moved to yet is fragile in exactly the sense [the profit-reasoning chapter](profit-reasoning.qmd) gave the word, and it will not look fragile on a profit curve, because a profit curve is drawn for one structure at a time.
 
 So the estimate is not the deliverable. What you actually have is an estimate plus an account of how much it is worth, and the second half is the part nobody hands you. The preface promised three things you would know when you committed. They are worth collecting, because assembled they are the real output of the method.
 
@@ -52,10 +52,10 @@ An assumption the answer does not depend on is not worth an afternoon, however s
 
 The third promise is the one that turns an estimate into a decision, and it is a single question asked four ways. Each version has been computed somewhere in this book; here they become one request.
 
-- At what price does this stop working? [Chapter 10](profit-reasoning.qmd) drew that band, and its width is the whole reading.
-- At what penetration of the reachable population? [Chapter 8](scale.qmd) made you do that one by hand, and the number is usually a shock.
-- At what unit cost, or what size of commitment? Both move the same curve in different ways, and [chapter 7](cost.qmd) separated them.
-- And at what move by a competitor? [Chapter 12](differentiated-competition.qmd) gave you the equilibrium, and [chapter 18](sequential-games.qmd) gave you the test for which of their moves would actually change yours.
+- At what price does this stop working? [The profit-reasoning chapter](profit-reasoning.qmd) drew that band, and its width is the whole reading.
+- At what penetration of the reachable population? [The scale chapter](scale.qmd) made you do that one by hand, and the number is usually a shock.
+- At what unit cost, or what size of commitment? Both move the same curve in different ways, and [the cost chapter](cost.qmd) separated them.
+- And at what move by a competitor? [The differentiation chapter](differentiated-competition.qmd) gave you the equilibrium, and [the chapter on commitment](sequential-games.qmd) gave you the test for which of their moves would actually change yours.
 
 Four thresholds, and the useful form of each is a number rather than a direction. *Profit disappears below \$14.20* is a sentence you can act on. *We are somewhat sensitive to price* is not.
 
@@ -75,13 +75,13 @@ If any of the three is missing, the gap is not in your confidence. It is in the 
 
 Two things, and both matter more than anything it can do.
 
-The first is that the estimate ages. It is drawn for one structure, and [chapter 18](sequential-games.qmd) spent a chapter showing that structures move — that a rival with the ability to commit can change the game you priced into, and that you can do the same to them. An estimate is a photograph of a market that has not finished arranging itself. Re-run it when the structure changes, and treat a number more than a season old as a hypothesis rather than a finding.
+The first is that the estimate ages. It is drawn for one structure, and [the chapter on commitment](sequential-games.qmd) showed that structures move — that a rival with the ability to commit can change the game you priced into, and that you can do the same to them. An estimate is a photograph of a market that has not finished arranging itself. Re-run it when the structure changes, and treat a number more than a season old as a hypothesis rather than a finding.
 
 The second is larger. This book gets you an estimate and an honest account of its quality. It does not tell you whether to proceed, and it cannot, because that depends on things no demand curve knows: what else you could be doing, how much loss you can absorb, how long you can wait, and what you would still want to be doing if the number came in at half.
 
 That is a real subject with real methods, and it is not this one. *Make the Call* takes up deciding under uncertainty directly: how to hold a prior honestly, how much evidence is enough, and what to do when the evidence runs out before the decision does. This book hands you the estimate. That one is about what to do while holding it.
 
-Which is why the answer to the question on the cover is allowed to be *not yet*. [Chapter 18](sequential-games.qmd) named it and gave the reason: committing spends the option to wait, and that option is worth most precisely when you know least. A method that could only say yes or no would be hiding its most useful answer.
+Which is why the answer to the question on the cover is allowed to be *not yet*. [The chapter on commitment](sequential-games.qmd) named it and gave the reason: committing spends the option to wait, and that option is worth most precisely when you know least. A method that could only say yes or no would be hiding its most useful answer.
 
 ## Putting It to Work
 

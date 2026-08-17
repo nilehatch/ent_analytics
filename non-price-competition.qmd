@@ -70,7 +70,7 @@ That is the whole method of this part. What makes it worth a part rather than a 
 
 ## Running the Engine Once
 
-Return to Smart Cookie and Hogi Yogi, whose estimated demand system [chapter 14](competitive-advantage.qmd) already put on the table.
+Return to Smart Cookie and Hogi Yogi, whose estimated demand system [the chapter on advantage](competitive-advantage.qmd) already put on the table.
 
 Hogi Yogi is the frustrated firm. It has the cost advantage, twenty-five cents a unit, and it is losing anyway — charging \$1.02 against Smart Cookie's \$1.53, and earning \$0.96 per person per month against \$1.33. Suppose an advertising agency offers it a campaign: for \$0.50 per person per month, the campaign will add one more unit of consumption per person per month.
 
@@ -120,7 +120,7 @@ And the gap between the two firms, the thing Hogi Yogi was actually trying to cl
 
 ## Why the Spillover Runs That Way
 
-That result is not a quirk of these numbers. It follows directly from the asymmetry [chapter 12](differentiated-competition.qmd) made the centre of the argument.
+That result is not a quirk of these numbers. It follows directly from the asymmetry [the differentiation chapter](differentiated-competition.qmd) made the centre of the argument.
 
 The campaign puts more people in the market for an ice cream sandwich. Those people then face two prices. And this pair of firms has wildly lopsided switching: when Hogi Yogi's price rises, 5.57 units of demand move toward Smart Cookie, while a rise in Smart Cookie's price sends only 0.55 back the other way.
 
@@ -150,7 +150,7 @@ There is one assumption still buried in all of this, and it is large.
 
 Hogi Yogi was offered the campaign. Smart Cookie was not — or was offered it and did not take it, or had not heard of the agency. The entire analysis above assumes the rival stands still while you act.
 
-That is the assumption [chapter 11](competition.qmd) spent a whole chapter dismantling for price, and there is no reason it should survive here. Advertising agencies sell to whoever will buy. If the campaign is available to Hogi Yogi it is almost certainly available to Smart Cookie, and Smart Cookie can do the same arithmetic.
+That is the assumption [the chapter on price competition](competition.qmd) dismantled at length, and there is no reason it should survive here. Advertising agencies sell to whoever will buy. If the campaign is available to Hogi Yogi it is almost certainly available to Smart Cookie, and Smart Cookie can do the same arithmetic.
 
 Which means the honest version of the question is not *what happens if we advertise*. It is *what happens if we advertise and they do too, or we do and they do not, or they do and we do not, or neither of us does*. Four outcomes, each requiring its own equilibrium, and a decision that depends on which one you expect.
 
