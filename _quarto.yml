@@ -100,7 +100,14 @@ book:
     # game-theory files. That was one unfinished migration showing as two
     # parts. Merged here; the four legacy files collapse into three chapters
     # as they are rewritten.
-    - part: part-competitive-dynamics.qmd
+    #
+    # The opener file was retired 17 Aug 2026, the last of the narrative part
+    # openers to go. It still described the pre-rewrite structure — it named
+    # Strategic Commitment as a fourth chapter, and that file no longer exists
+    # — and everything it claimed was already in the chapters. A bare title
+    # now, matching the other four narrative parts. The two toolkit openers
+    # remain and go when the toolkits dissolve.
+    - part: "Competition Before Price"
       chapters:
         - non-price-competition.qmd
         - game-theory.qmd
