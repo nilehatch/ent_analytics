@@ -255,7 +255,7 @@ Start by lowering the market size. The curve sinks bodily until no price clears 
 
 Put it back and raise the unit cost instead. The curve flattens and drops as contribution per unit disappears. That is the cost cause, and it behaves differently: raising price no longer helps, because the problem travels with every unit you sell.
 
-Now watch the commitment, which is the slider worth spending time on. Raising $\mathsf{f}$ shifts the whole curve down without changing its shape at all, narrowing the profitable band from both ends at once. The starting position sits deliberately on a boundary: one step down and the reading turns robust, two steps up and profit is gone entirely. A forty-thousand-dollar decision moves this venture across all three readings.
+Now watch the commitment, which is the slider worth spending time on. Raising $\mathsf{f}$ shifts the whole curve down without changing its shape at all, narrowing the profitable band from both ends at once. The starting position sits deliberately on a boundary: one step down and the reading turns robust, two steps up and profit is gone entirely. A thirty-thousand-dollar decision moves this venture across all three readings.
 
 Nothing about your customers changed while you did that. Their willingness to pay is identical at every price. You simply raised the bar they have to clear, and at some point on that slider you raised it past them.
 
