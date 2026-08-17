@@ -139,6 +139,18 @@ Aj = (aa + bj * ccost) / (2 * bj)
 Bj = dj / (2 * bj)
 
 den = 1 - Bi * Bj
+
+// Two different things can make the crossing vanish from the chart, and only
+// one of them means there is no equilibrium.
+//   stable  — whether the best responses cross AT ALL. False needs
+//             (di/2bi)(dj/2bj) >= 1, which these slider ranges do not reach:
+//             the most extreme setting they allow, bi=1.2 with both d at 2.6,
+//             still leaves den at 0.296. The branch is kept as a guard.
+//   onChart — whether that crossing falls inside the 400-2400 window. This one
+//             IS reachable: with both d maxed, any bi below about 1.87 sends
+//             the equilibrium off the top while it remains a real equilibrium.
+// Reporting a price for a crossing the reader cannot see is what made the
+// figure contradict itself, so the readout now says when that has happened.
 stable = den > 0.02
 
 eqPi = stable ? (Ai + Bi * Aj) / den : null
@@ -146,6 +158,7 @@ eqPj = stable ? (Aj + Bj * Ai) / den : null
 eqQi = stable ? aa - bi * eqPi + di * eqPj : null
 eqProfitI = stable ? (eqPi - ccost) * eqQi - ffix : null
 eqQj = stable ? aa - bj * eqPj + dj * eqPi : null
+onChart = stable && eqPi >= 400 && eqPi <= 2400 && eqPj >= 400 && eqPj <= 2400
 eqProfitJ = stable ? (eqPj - ccost) * eqQj - ffix : null
 
 money = d3.format("$,.0f")
@@ -154,7 +167,10 @@ html`<div style="font-size:15px;margin:.2rem 0 .5rem 0;color:#1F2937">${
   stable
     ? html`Equilibrium: you charge <b>${money(eqPi)}</b> and earn
            <b>${money(eqProfitI)}</b>; they charge <b>${money(eqPj)}</b> and earn
-           <b>${money(eqProfitJ)}</b>.`
+           <b>${money(eqProfitJ)}</b>.${
+             onChart ? `` : html`<span style="color:#C2410C"> The lines still
+             cross — past the top of this window, at prices and profits no
+             market of this size would produce.</span>`}`
     : html`<span style="color:#C2410C;font-weight:600">No equilibrium.</span>
            The two best responses no longer cross — each firm's price chases the
            other's upward without settling.`
@@ -193,7 +209,7 @@ html`<div style="font-size:15px;margin:.2rem 0 .5rem 0;color:#1F2937">${
 
 Lower your price sensitivity and your line swings outward: at every rival price you can charge more, and the intersection slides up and to the right. Raise the customers you gain and the same thing happens more gently. Raise the customers you lose and it works against you, because that slider belongs to their equation rather than yours.
 
-Push far enough and the message changes: the two lines stop crossing inside the picture. That is not a drawing error, and it is worth understanding.
+Push far enough and the two lines stop crossing inside the picture. That is not a drawing error. The equilibrium is still there, and the readout will still name a price for it; it has simply run off the top of the window, and the prices and profits it reports have stopped describing any market you would recognize. Whether an equilibrium can vanish outright is a separate question, and a real one.
 
 ::: {.limit}
 **What this model cannot tell you**
