@@ -1,0 +1,102 @@
+# What Your Estimate Is Worth {.unnumbered}
+
+*You have a number now. This is how much of it you checked.*
+
+The chapters that build the argument are behind you, and it is worth saying what the argument was.
+
+[Chapter 1](worth-doing.qmd) put the whole book on one line and then said something about it that is easy to read past. Of the four terms in $\mathsf{\pi = pq - cq - f}$, three are yours. You set the price. You choose what a unit costs to make. You decide how large a commitment to carry. Only quantity belonged to somebody else. Four chapters went to closing that gap — what demand actually is, how to design an experiment that reveals it, how to turn answers into a curve — and four more to putting your own three terms against it: what a unit costs, how large a commitment to carry, and what profit looks like once both are laid on the curve.
+
+Then competition disturbed the arrangement. A rival does not merely move your quantity around. It reaches into the price, which you had been told was yours, and sets a bound on it that you did not choose. Read by itself, that part of the book says competition is weather: something that happens to you, best understood accurately and then endured.
+
+The last part says otherwise, and it needed four chapters to earn the claim. The parameters a rival competes against are not conditions of the market. They are the residue of decisions, and some of those decisions are still open. Move them and the equilibrium moves; move them irreversibly and the rival has to recompute. So the sequence of what an entrepreneur actually does runs: choose an offering that answers a real pain, which sets your appeal and your customers' loyalty; choose a price, which by then is close to arithmetic; and then choose the structural moves that decide which game the pricing happens inside. You are setting terms as well as responding to them.
+
+Which changes the shape of the question this book is named after.
+
+*Is this worth doing?* has been handled so far as though it had one answer, computed from one demand curve, one cost structure, one population. It does not. It has an answer for every structure you might end up in, and the structures are partly chosen — by you, and by anyone else who can commit. The honest estimate is a range, held down by what a rival could commit to against you and lifted by what you could commit to yourself. A venture that only clears the bar in the structure nobody has moved to yet is fragile in exactly the sense [chapter 11](profit-reasoning.qmd) gave the word, and it will not look fragile on a profit curve, because a profit curve is drawn for one structure at a time.
+
+So the estimate is not the deliverable. What you actually have is an estimate plus an account of how much it is worth, and the second half is the part nobody hands you. The preface promised three things you would know when you committed. They are worth collecting, because assembled they are the real output of the method.
+
+## What You Are Betting On
+
+Write the bet as a paragraph. Not a number, a paragraph, and not more than one.
+
+It has to name six things: who the customer is, what price you are assuming, what a unit costs you to deliver, how large a commitment you are carrying, how many of those customers you can actually reach, and what you are assuming the competition does. Anyone who cannot write that paragraph does not have an estimate. They have a spreadsheet whose inputs are scattered across a month of decisions nobody wrote down.
+
+The exercise is unpleasant in a specific and useful way. Most of the six will come out easily, and one or two will not, and the ones that resist are where the estimate is actually resting. A founder who can state price and cost to the penny and then writes *everyone in the valley who bakes* for the customer has found the problem, and found it for the price of a paragraph.
+
+Do it before reading the next section, because the next section asks where each of those six came from, and it is harder to be honest about that once you have started defending them.
+
+## How Much of It You Actually Checked
+
+Now sort those six by where they came from. There are only three answers, and the sorting takes about ten minutes.
+
+**Measured.** Willingness to pay, and quantity at a price, from people who answered a question you asked. This is the part the book spent four chapters on and the part most books skip, and it is usually the smallest of the three piles.
+
+**Chosen.** Your price, your unit cost, the size of your commitment. These are not uncertain at all, since you decide them, but they are not evidence either. They are decisions you can revisit, and the estimate moves when you do.
+
+**Assumed.** How many people you can reach, that the functional form you fitted is the right shape past the range you asked about, what the rival's parameters are, and that the structure holds still while you act. Every one of these was necessary to produce a number, and not one of them was measured.
+
+The uncomfortable pattern is worth naming plainly. Founders are usually most confident about the numbers in the second pile, because they chose them and so they feel certain, and least attentive to the third, because assumptions do not announce themselves. But the second pile is the one you can change at will, and the third is the one that can be wrong without telling you. Confidence is running exactly backwards from exposure.
+
+::: {.limit}
+**What this sorting cannot do**
+
+It cannot tell you an assumption is wrong. Nothing can, short of going and checking. What it does is tell you which assumptions your answer is resting on, so that the checking you can afford goes where it will change something.
+
+An assumption the answer does not depend on is not worth an afternoon, however shaky. An assumption the answer turns on is worth a week even if it looks solid, because *looks solid* and *was checked* are different claims and only one of them survives a bad quarter.
+:::
+
+## What Would Have to Be True for You to Be Wrong
+
+The third promise is the one that turns an estimate into a decision, and it is a single question asked four ways. Each version has been computed somewhere in this book; here they become one request.
+
+- At what price does this stop working? [Chapter 11](profit-reasoning.qmd) drew that band, and its width is the whole reading.
+- At what penetration of the reachable population? [Chapter 9](scale.qmd) made you do that one by hand, and the number is usually a shock.
+- At what unit cost, or what size of commitment? Both move the same curve in different ways, and [chapter 8](cost.qmd) separated them.
+- And at what move by a competitor? [Chapter 13](differentiated-competition.qmd) gave you the equilibrium, and [chapter 19](sequential-games.qmd) gave you the test for which of their moves would actually change yours.
+
+Four thresholds, and the useful form of each is a number rather than a direction. *Profit disappears below \$14.20* is a sentence you can act on. *We are somewhat sensitive to price* is not.
+
+This is also the request worth handing over rather than doing yourself. Give an AI the demand system, the cost structure, the commitment, and the competitive parameters, and ask for the four thresholds and the profit at each. What comes back is arithmetic. What you had to decide first is the judgment: which four thresholds, and against which structure. That was yours before any arithmetic could start.
+
+::: {.threshold}
+**Before you commit, you should be able to say all three**
+
+- **What I am betting on** — the six-part paragraph, written down, with the customer named specifically enough that someone could go and find one.
+- **How much of it I checked** — which of the six were measured, which were chosen, and which were assumed. If the measured pile is empty, you have a plan rather than an estimate.
+- **What would make me wrong** — the four thresholds as numbers, and which of them is nearest.
+
+If any of the three is missing, the gap is not in your confidence. It is in the estimate.
+:::
+
+## What This Book Cannot Do
+
+Two things, and both matter more than anything it can do.
+
+The first is that the estimate ages. It is drawn for one structure, and [chapter 19](sequential-games.qmd) spent a chapter showing that structures move — that a rival with the ability to commit can change the game you priced into, and that you can do the same to them. An estimate is a photograph of a market that has not finished arranging itself. Re-run it when the structure changes, and treat a number more than a season old as a hypothesis rather than a finding.
+
+The second is larger. This book gets you an estimate and an honest account of its quality. It does not tell you whether to proceed, and it cannot, because that depends on things no demand curve knows: what else you could be doing, how much loss you can absorb, how long you can wait, and what you would still want to be doing if the number came in at half.
+
+That is a real subject with real methods, and it is not this one. *Make the Call* takes up deciding under uncertainty directly: how to hold a prior honestly, how much evidence is enough, and what to do when the evidence runs out before the decision does. This book hands you the estimate. That one is about what to do while holding it.
+
+Which is why the answer to the question on the cover is allowed to be *not yet*. [Chapter 19](sequential-games.qmd) named it and gave the reason: committing spends the option to wait, and that option is worth most precisely when you know least. A method that could only say yes or no would be hiding its most useful answer.
+
+## Putting It to Work
+
+::: {.reflect}
+**Ask yourself — what did I actually learn?**
+
+Go back to the decision you brought to this book. You have a number for it now, and the number is the least interesting thing you have.
+
+Write down what you know that you did not know when you started. Not the estimate, but the structure underneath it. Which belief the answer rests on. Which threshold is nearest. Which of your six inputs you have never checked.
+
+Then ask the question that separates a method from a ritual: if you had run all of this and the answer had come out the other way, would you have believed it? If not, the analysis was decoration, and the decision was made before you started.
+:::
+
+::: {.key-action}
+**The move:** Do not report an estimate without reporting what it rests on and what would overturn it. A number offered alone invites a confidence it has not earned, and the account of its limits is the part that makes it usable by anyone, including you in six months.
+:::
+
+You began with a question most people agree to postpone, and the reason it gets postponed is that answering it is uncomfortable rather than impossible. It costs a survey, some arithmetic, and a willingness to find out that the thing you want to do does not clear the bar.
+
+What you have now is not certainty, which was never available. It is an estimate with its assumptions in the open, its fragile points marked, and a short list of what would have to be true for it to be wrong. That is enough to commit on, or to decline on, or to wait on, and knowing which of the three you are doing, and why, is the whole of what this book was for.

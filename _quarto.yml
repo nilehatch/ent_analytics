@@ -50,9 +50,17 @@ book:
   
   chapters:
     - index.qmd
+
+    # worth-doing stands outside the parts, matching Make the Call's intro.qmd
+    # and EI's opening chapter. It is an introductory chapter in substance and
+    # was the only one of the three books' openers sitting inside a part.
+    # It stays NUMBERED and stays chapter 1: Quarto numbers chapters
+    # sequentially regardless of parts, so nothing downstream renumbers and the
+    # book's many "[chapter N](file.qmd)" links keep pointing where they point.
+    - worth-doing.qmd
+
     - part: Pre-Revenue Decisions
       chapters:
-        - worth-doing.qmd
         - familiar-tools.qmd
         - what-to-learn.qmd
 
@@ -113,11 +121,21 @@ book:
         - game-theory.qmd
         - simultaneous-games.qmd        
         - sequential-games.qmd
+    # The sign-off, unparted and unnumbered. Not a recap — the chapters do that
+    # twice already, in ch11's "Is This Worth Doing?" and at the end of ch19.
+    # Its job is the three things the preface promises the reader will know when
+    # they commit (what you are betting on, how much of it you checked, what
+    # would make you wrong), which the book delivers in pieces and never
+    # assembles, plus the handoff to Make the Call. The arc and the title
+    # question moved here from ch19 on 17 Aug 2026; ch19 kept the filter and
+    # the "not yet" point, both of which belong to commitment specifically.
+    - what-its-worth.qmd
+
     # Removed 11 Aug 2026, both pending real content:
     #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)
     #   - summary.qmd                             (placeholder: "this book has no content
     #                                              whatsoever" — was live as ch. 24)
-    # summary.qmd is still on disk. Restore this line when a real summary exists.
+    # summary.qmd is superseded by what-its-worth.qmd and can be deleted.
     - references.qmd
 
 bibliography: references.bib

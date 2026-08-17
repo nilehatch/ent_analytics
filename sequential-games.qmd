@@ -322,20 +322,6 @@ Do this before you compute anything. Then compute it, and see whether you were r
 **The move:** Before treating an irreversible investment as strategy, check whether it changes your rival's best response. If it does not, it is a purchase with a story attached, and the story is doing no work.
 :::
 
-## Where That Leaves the Question
-
-This is the last of the chapters that build the argument, so it is worth saying what the argument was.
-
-[Chapter 1](worth-doing.qmd) put the whole book on one line and then said something about it that is easy to read past. Of the four terms in $\mathsf{\pi = pq - cq - f}$, three are yours. You set the price. You choose what a unit costs to make. You decide how large a commitment to carry. Only quantity belonged to somebody else. Four chapters went to closing that gap — what demand actually is, how to design an experiment that reveals it, how to turn answers into a curve — and four more to putting your own three terms against it: what a unit costs, how large a commitment to carry, and what profit looks like once both are laid on the curve.
-
-Then competition disturbed the arrangement. A rival does not merely move your quantity around. It reaches into the price, which you had been told was yours, and sets a bound on it that you did not choose. Read by itself, that part of the book says competition is weather: something that happens to you, best understood accurately and then endured.
-
-This part says otherwise, and it needed four chapters to earn the claim. The parameters a rival competes against are not conditions of the market. They are the residue of decisions, and some of those decisions are still open. Move them and the equilibrium moves; move them irreversibly and the rival has to recompute. So the sequence of what an entrepreneur actually does runs: choose an offering that answers a real pain, which sets your appeal and your customers' loyalty; choose a price, which by then is close to arithmetic; and then choose the structural moves that decide which game the pricing happens inside. You are setting terms as well as responding to them.
-
-Which changes the shape of the question this book is named after.
-
-*Is this worth doing?* has been handled so far as though it had one answer, computed from one demand curve, one cost structure, one population. It does not. It has an answer for every structure you might end up in, and the structures are partly chosen — by you, and by anyone else who can commit. The honest estimate is a range, held down by what a rival could commit to against you and lifted by what you could commit to yourself. A venture that only clears the bar in the structure nobody has moved to yet is fragile in exactly the sense [chapter 11](profit-reasoning.qmd) gave the word, and it will not look fragile on a profit curve, because a profit curve is drawn for one structure at a time.
-
-The test in this chapter is also, unglamorously, a filter. A great deal of money is spent on moves defended by strategic stories, and the question *does this change my rival's best response* dismisses most of those stories in an afternoon. What survives it is worth evaluating as strategy. What does not is equipment, and should have to earn its keep like equipment.
+The test in this chapter is, unglamorously, a filter. A great deal of money is spent on moves defended by strategic stories, and the question *does this change my rival's best response* dismisses most of those stories in an afternoon. What survives it is worth evaluating as strategy. What does not is equipment, and should have to earn its keep like equipment.
 
 And it puts a third answer beside yes and no. Committing spends the option to wait, and that option is worth most precisely when you know least, which is now. *Not yet* is a real answer, distinct from *no*, and this chapter is the reason the distinction matters: the decision you are protecting is not whether to proceed but whether to give away your ability to stop.
