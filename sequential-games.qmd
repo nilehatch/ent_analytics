@@ -326,7 +326,7 @@ Do this before you compute anything. Then compute it, and see whether you were r
 
 This is the last of the chapters that build the argument, so it is worth saying what the argument was.
 
-[Chapter 1](worth-doing.qmd) put the whole book on one line and then said something about it that is easy to read past. Of the four terms in $\mathsf{\pi = pq - cq - f}$, three are yours. You set the price. You choose what a unit costs to make. You decide how large a commitment to carry. Only quantity belonged to somebody else, and every chapter for the next two hundred pages was about that single unknown: what demand actually is, how to design an experiment that reveals it, how to turn answers into a curve, and what the curve implies once cost and scale are laid on top of it.
+[Chapter 1](worth-doing.qmd) put the whole book on one line and then said something about it that is easy to read past. Of the four terms in $\mathsf{\pi = pq - cq - f}$, three are yours. You set the price. You choose what a unit costs to make. You decide how large a commitment to carry. Only quantity belonged to somebody else. Four chapters went to closing that gap — what demand actually is, how to design an experiment that reveals it, how to turn answers into a curve — and four more to putting your own three terms against it: what a unit costs, how large a commitment to carry, and what profit looks like once both are laid on the curve.
 
 Then competition disturbed the arrangement. A rival does not merely move your quantity around. It reaches into the price, which you had been told was yours, and sets a bound on it that you did not choose. Read by itself, that part of the book says competition is weather: something that happens to you, best understood accurately and then endured.
 
