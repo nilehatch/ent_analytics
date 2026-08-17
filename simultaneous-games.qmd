@@ -217,7 +217,8 @@ html`<div style="font-size:15px;margin:.3rem 0 .4rem 0;color:#1F2937">
                         fill: d => d.isNash ? "#EBF4F0" : "#FAFAFA",
                         stroke: d => d.isNash ? "#2F855A" : "#E1E6E3",
                         strokeWidth: d => d.isNash ? 2 : 1}),
-      // payoffs coloured to match each firm's arrows, so no legend is needed
+      // Player colours are itwd_player_a / itwd_player_b from R/theme-itwd.R,
+      // which OJS cannot read. Payoffs match each firm's arrows, so no legend.
       Plot.text(cells, {x: d => d.x - 0.02, y: "y", text: d => usd(d.sc),
                         textAnchor: "end", fontSize: 15, fontWeight: 600, fill: "#2563EB"}),
       Plot.text(cells, {x: d => d.x + 0.02, y: "y", text: d => usd(d.hy),
@@ -315,7 +316,7 @@ Two things are worth reading off it before touching anything.
 
 The boundaries all slope the same way. A more effective campaign is worth more, so it stays worth buying at a higher cost, and every region boundary drifts right as effectiveness rises. Nothing surprising there, and it is the reason a single threshold is not the answer to *is this worth it* — the answer is a curve.
 
-What differs between the two campaigns is what lies at the bottom. Switch to reach and the cheap end of the map is entirely green: when advertising expands the market, both firms buying it is a good outcome, at every effectiveness. Switch to comparative and a band of salmon opens along the bottom, and that band *is* the trap. It sits at low costs, which is the corollary this chapter has already stated and the map now makes geographic: the cheaper a redistributive campaign gets, the more certainly both firms buy it and the more certainly both regret it.
+What differs between the two campaigns is what lies at the bottom, and seeing it takes one click: set the **Campaign** control above to *reach* and watch the map redraw. The cheap end is now entirely green, because when advertising expands the market, both firms buying it is a good outcome at every effectiveness. Switch to comparative and a band of salmon opens along the bottom, and that band *is* the trap. It sits at low costs, which is the corollary this chapter has already stated and the map now makes geographic: the cheaper a redistributive campaign gets, the more certainly both firms buy it and the more certainly both regret it.
 
 Above that band, under either campaign, is the region where only one firm advertises, and above that the region where nobody does. Notice which firm it is, because it changes. Under reach it is Smart Cookie, because the differentiated firm captures more of any expansion and can therefore justify a higher cost for it. Under comparative it is Hogi Yogi, because the firm with more to gain from poaching is the one with fewer customers to lose.
 
@@ -363,7 +364,7 @@ What changes the outcome is changing the game, and the honest list of ways to do
 
 **Change the move.** Most redistributive moves have an expanding cousin. Comparative advertising and category advertising cost about the same and land in completely different games. If you are about to spend on something that only moves customers, ask what the version that grows the market would cost.
 
-**Do not play.** If a move only pays when the rival sits still, and the rival can see the same arithmetic you can, the expected outcome is the one where both of you spent. Declining is a real option and it is usually invisible, because the case for spending is loud and the case against is a calculation nobody presents.
+**Do not play.** If a move only pays when the rival sits still, and the rival can see the same arithmetic you can, the expected outcome is the one where both of you spent. Declining is a genuine choice and it is usually invisible, because the case for spending is loud and the case against is a calculation nobody presents.
 
 **Change what the rival expects.** This is the one that genuinely works and it is the subject of the next chapter. Firms escape dilemmas by making commitments that alter what the other side believes will happen, which is a different move from playing the game well.
 

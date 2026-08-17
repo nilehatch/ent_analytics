@@ -186,11 +186,11 @@ ggplot() +
   scale_alpha_manual(values = c(`FALSE` = 0.20, `TRUE` = 1), guide = "none") +
   geom_point(aes(x = 0, y = 0), size = 3.4, color = itwd_ink) +
   geom_point(data = tibble(x = 1.1, y = c(1, -1)), aes(x, y),
-             size = 3.2, color = itwd_demand) +
+             size = 3.2, color = itwd_player_a) +
   annotate("text", x = -0.10, y = 0, label = "Hogi Yogi", hjust = 1,
            size = 3.5, color = itwd_ink) +
   annotate("text", x = 1.10, y = c(1.32, -0.68), label = "Smart Cookie",
-           size = 3.3, color = itwd_demand) +
+           size = 3.3, color = itwd_player_a) +
   annotate("text", x = 2.30, y = 1.78, label = "Smart Cookie, Hogi Yogi",
            hjust = 0, size = 3.0, color = itwd_muted) +
   # content runs from the lowest leaf at -1.50 to the header at 1.78; equal

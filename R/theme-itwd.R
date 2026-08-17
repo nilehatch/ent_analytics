@@ -54,6 +54,21 @@ itwd_muted <- "#6B7280"  # --brand-muted: tick labels, captions
 itwd_rule  <- "#E1E6E3"  # gridlines and the baseline
 itwd_ghost <- "#9CA8A2"  # reference/"before" lines that must recede
 
+# ---- the two players -------------------------------------------------------
+# Rival firms are an IDENTITY, not a role, and the palette above has no colour
+# for identity: a firm is not "demand" or "cost". These figures were borrowing
+# itwd_demand and itwd_cost to tell two firms apart, which worked and said
+# something false.
+#
+# The values are unchanged because the pair is already the right one. Blue and
+# orange is the canonical colourblind-safe two-category pair, and these two sit
+# at 5.17:1 and 5.18:1 on white — near-identical weight, which matters when the
+# players are symmetric and neither should look more important than the other.
+# Pine and gold were considered and rejected: gold is 2.26:1, under the 3:1
+# floor for graphics, and pine now means structure (see below).
+itwd_player_a <- "#2563EB"  # the row player — Smart Cookie in the game chapters
+itwd_player_b <- "#C2410C"  # the column player — Hogi Yogi
+
 # ---- brand pine, for structure rather than data ----------------------------
 # Never a data series. These are the colours base.css gives headings, and they
 # are here so R output can carry the same structural signal as the page: see
