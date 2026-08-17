@@ -132,6 +132,15 @@ decisions with different timing: the first is additive and safe to do now, the s
 the syllabus mid-course and cannot happen before the semester ends. Do not delete a toolkit
 file that appears in the table above while the class is running.
 
+**Who computes (style guide 16c-i, settled 17 Aug 2026).** Any chapter that tells the reader to
+compute something must say, once and in prose: what gets handed over (named inputs, not "your
+data"), what comes back (including the *threshold* worth asking for, not just the value), and what
+had to be decided first — the specification, which is the judgment. Where a computation is
+deliberately kept by hand, say so and say why; ch9's required penetration is the case.
+
+The arm most often missing is the threshold. Before this rule it appeared only in ch11, ch17, ch18
+and ch19. Check it when writing anything new.
+
 **Citations.** `scripts/sync-refs.py` runs as a pre-render hook and mirrors `references.bib`
 to the Better BibTeX auto-export at `~/Documents/bibs/zotero.bib`. Never hand-write a bib
 entry — put the work in Zotero and render. Cite keys are BBT's `authorTitleWordsYear`; the

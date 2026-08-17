@@ -114,6 +114,8 @@ A move that expands the pool creates something that was not there before. More p
 
 A move that redistributes takes from the rival. When both firms make it, the takings cancel, and whatever was spent is simply gone. Every firm behaved sensibly and the industry is poorer.
 
+Which of the two you are looking at is a question about customers rather than about arithmetic, and it has to be answered before anything can be computed. Where do the extra units come from? A machine can solve the four cells and shade the whole map of them in a second, and it cannot tell you whether your campaign creates a customer or takes one. That sentence is yours, and everything downstream inherits whether you got it right.
+
 There is a way of drawing a game that makes the answer visible rather than calculated, and it is worth learning because you will read a matrix faster with it than without.
 
 For each column, ask which row that player prefers, and draw an arrow pointing there. For each row, ask which column the other player prefers, and do the same. Where two arrows point into the same cell, neither firm wants to leave it, and that cell is the equilibrium. A player whose arrows both point the same way has a dominant strategy and does not need to think about the other at all.
@@ -348,7 +350,7 @@ What does *not* work is hoping. A dilemma where both firms would be better off c
 **Before committing to a competitive move**
 
 - **Which does it do — expand the pool or move it?** Say it in one sentence about customers, not about your firm. If the sentence is "more people buy this kind of thing," it expands. If it is "more of them buy mine instead of theirs," it redistributes.
-- **What happens if the rival matches it?** Not whether they will. Compute the cell. If matched-and-both-spent leaves you worse than nobody-moved, you are looking at a dilemma however good the unilateral case looks.
+- **What happens if the rival matches it?** Not whether they will. Compute the cell — which means handing over both demand systems, both cost structures, and what the move does to the parameters, and getting back four equilibria rather than one. If matched-and-both-spent leaves you worse than nobody-moved, you are looking at a dilemma however good the unilateral case looks.
 - **Is it cheap?** Cheap redistributive moves are the dangerous ones, because cheapness is what makes them individually rational for both firms and therefore certain to be matched.
 - **Could the same money buy an expanding move instead?** Compare them as alternatives rather than comparing the move to doing nothing.
 :::

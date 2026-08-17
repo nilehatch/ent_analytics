@@ -23,6 +23,10 @@ Here it means something narrow and checkable. You have an advantage when one or 
 
 There are four places the asymmetry can live, and the previous two chapters named them all. Your appeal, $\mathsf{a}$. Your customers' sensitivity to your own price, $\mathsf{b}$. The direction customers flow between you, $\mathsf{d_i}$ against $\mathsf{d_j}$. And your unit cost, $\mathsf{c}$.
 
+Every one of those four is estimated rather than argued, which puts the work in a familiar place. Hand over your demand system, your rival's, and both cost structures, and the equilibrium and the profit gap come back without anyone forming a view. Ask a second question while you are there, because it is the more useful one: *how much would each parameter have to move before the gap closes?* That converts four comparisons into four distances, and distances are what tell you which gap is worth attacking.
+
+What none of it settles is the comparison that started the exercise. Deciding which firm is your real rival, which segment you are both selling into, and whether a measured difference reflects something durable or something either of you could copy by Christmas — those come before the arithmetic and no amount of it substitutes for them.
+
 What makes this worth the trouble is that the four behave very differently, and the differences are not intuitive. The clearest way to see that is a case where the intuition was wrong.
 
 ## A Campus Case

@@ -170,6 +170,8 @@ A founder estimates willingness to pay honestly. They pick a price the evidence 
 
 Look back at the surface. The tallest curve on it is real, and it is what you get when the rival prices at \$1,300 — a choice they made for their own reasons and can unmake on a Tuesday. Building on that peak means building on someone else's decision.
 
+None of that is hard to compute once it is specified, and the specifying is the part that is yours. Which firm is actually your rival, what a customer would call the same thing, and whether the two of you are selling into one market or two that happen to overlap — those decide what the arithmetic is about, and getting any of them wrong produces an answer that is precise and about somebody else's business.
+
 The question that replaces *what is my optimal price?* is harder and more useful:
 
 > *What price survives when the other firm is optimizing too?*
