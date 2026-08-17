@@ -98,7 +98,7 @@ Now let Smart Cookie move, and run the test. The equipment is available to it to
 
 sc_best <- function(K, hy_invests) {
   hyc <- if (hy_invests) 0.35 else 0.50
-  if (eqc(0.60, hyc)[3] - K > eqc(0.75, hyc)[3]) "matches" else "does not"
+  if (eqc(0.60, hyc)[3] - K > eqc(0.75, hyc)[3]) "installs" else "does not"
 }
 tibble::tibble(
   `If the equipment costs` = c(dollar(0.12,.01), dollar(0.22,.01)),
@@ -111,7 +111,7 @@ tibble::tibble(
   cols_align("center") |> cols_align("left", columns = `If the equipment costs`)
 ```
 
-At twelve cents the equipment is cheap enough that Smart Cookie wants it either way. Hogi Yogi installing it changes nothing about what Smart Cookie does. Both firms end up cheaper, nobody is deterred, and Hogi Yogi has bought a cost reduction — a perfectly good thing to buy, which did not change the game.
+At twelve cents the equipment is cheap enough that Smart Cookie installs it either way. Hogi Yogi installing it changes nothing about what Smart Cookie does. Both firms end up cheaper, nobody is deterred, and Hogi Yogi has bought a cost reduction — a perfectly good thing to buy, which did not change the game.
 
 At twenty-two cents the answers split. If Hogi Yogi sits still, Smart Cookie buys the equipment. If Hogi Yogi installs it first, Smart Cookie no longer wants to, because matching a rival who is already cheap is worth less than matching one who is not. Hogi Yogi's move has stopped Smart Cookie doing something it would otherwise have done.
 
@@ -121,7 +121,7 @@ That is where order finally does some work, and it is easiest to see as a sequen
 #| label: fig-deterrence-tree
 #| echo: false
 #| warning: false
-#| fig-cap: "The twenty-two cent case read as a sequence. Smart Cookie's chosen branch is solid and the one it rejects is faded, so the deterrence is visible: installing the equipment is what stops Smart Cookie from matching. Payoffs are net of the equipment for whichever firm bought it."
+#| fig-cap: "The twenty-two cent case read as a sequence. Smart Cookie's chosen branch is solid and the one it rejects is faded, so the deterrence is visible: Hogi Yogi installing the equipment is what stops Smart Cookie from installing it too. Payoffs are net of the equipment for whichever firm bought it."
 #| fig-align: center
 #| fig-width: 8.6
 #| fig-height: 3.9
@@ -158,7 +158,7 @@ ggplot() +
   annotate("text", x = 0.52, y = c(0.72, -0.72), label = c("installs", "does not"),
            size = 3.3, color = itwd_ink) +
   annotate("text", x = 1.68, y = c(1.36, 0.64, -0.36, -1.64),
-           label = c("matches", "does not", "matches", "does not"),
+           label = c("installs", "does not", "installs", "does not"),
            size = 3.1, color = itwd_muted) +
   annotate("text", x = 2.30, y = 1.92, label = "Smart Cookie, Hogi Yogi",
            hjust = 0, size = 3.0, color = itwd_muted) +
@@ -166,7 +166,7 @@ ggplot() +
   theme_void()
 ```
 
-Read it backwards, which is the only way a tree can be read. In the upper branch, where Hogi Yogi has installed the equipment, Smart Cookie compares \$0.97 against \$0.99 and declines to match. In the lower branch, where Hogi Yogi has not, Smart Cookie compares \$1.34 against \$1.33 and matches. Two different answers, which is the test passing.
+Read it backwards, which is the only way a tree can be read. In the upper branch, where Hogi Yogi has installed the equipment, Smart Cookie compares \$0.97 against \$0.99 and does not install. In the lower branch, where Hogi Yogi has not, Smart Cookie compares \$1.34 against \$1.33 and does install. Two different answers, which is the test passing.
 
 Knowing that, Hogi Yogi compares the two outcomes it can actually reach: \$1.00 by installing, \$0.94 by sitting still. It installs. And Smart Cookie, which would have been a low-cost firm in the other branch, stays at seventy-five cents a sandwich.
 
@@ -285,4 +285,20 @@ If they differ, write down the difference, because that difference is what you a
 **The move:** Before treating an irreversible investment as strategy, check whether it changes your rival's best response. If it does not, it is a purchase with a story attached, and the story is doing no work.
 :::
 
-This part began by noticing that every parameter in the competition chapters was a decision somebody had already made. It ends on the decisions that cannot be revisited: chosen before revenue exists, before the prices they govern are ever charged, and judged against an equilibrium that has not happened yet. Which is what this book has been about from its first page, arriving where the stakes are highest and where the option to change your mind has been deliberately given away.
+## Where That Leaves the Question
+
+This is the last of the chapters that build the argument, so it is worth saying what the argument was.
+
+[Chapter 1](worth-doing.qmd) put the whole book on one line and then said something about it that is easy to read past. Of the four terms in $\mathsf{\pi = pq - cq - f}$, three are yours. You set the price. You choose what a unit costs to make. You decide how large a commitment to carry. Only quantity belonged to somebody else, and every chapter for the next two hundred pages was about that single unknown: what demand actually is, how to design an experiment that reveals it, how to turn answers into a curve, and what the curve implies once cost and scale are laid on top of it.
+
+Then competition disturbed the arrangement. A rival does not merely move your quantity around. It reaches into the price, which you had been told was yours, and sets a bound on it that you did not choose. Read by itself, that part of the book says competition is weather: something that happens to you, best understood accurately and then endured.
+
+This part says otherwise, and it needed four chapters to earn the claim. The parameters a rival competes against are not conditions of the market. They are the residue of decisions, and some of those decisions are still open. Move them and the equilibrium moves; move them irreversibly and the rival has to recompute. So the sequence of what an entrepreneur actually does runs: choose an offering that answers a real pain, which sets your appeal and your customers' loyalty; choose a price, which by then is close to arithmetic; and then choose the structural moves that decide which game the pricing happens inside. You are setting terms as well as responding to them.
+
+Which changes the shape of the question this book is named after.
+
+*Is this worth doing?* has been handled so far as though it had one answer, computed from one demand curve, one cost structure, one population. It does not. It has an answer for every structure you might end up in, and the structures are partly chosen — by you, and by anyone else who can commit. The honest estimate is a range, held down by what a rival could commit to against you and lifted by what you could commit to yourself. A venture that only clears the bar in the structure nobody has moved to yet is fragile in exactly the sense [chapter 11](profit-reasoning.qmd) gave the word, and it will not look fragile on a profit curve, because a profit curve is drawn for one structure at a time.
+
+The test in this chapter is also, unglamorously, a filter. A great deal of money is spent on moves defended by strategic stories, and the question *does this change my rival's best response* dismisses most of those stories in an afternoon. What survives it is worth evaluating as strategy. What does not is equipment, and should have to earn its keep like equipment.
+
+And it puts a third answer beside yes and no. Committing spends the option to wait, and that option is worth most precisely when you know least, which is now. *Not yet* is a real answer, distinct from *no*, and this chapter is the reason the distinction matters: the decision you are protecting is not whether to proceed but whether to give away your ability to stop.
