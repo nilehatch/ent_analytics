@@ -261,9 +261,11 @@ Nothing about your customers changed while you did that. Their willingness to pa
 
 ## Is This Worth Doing?
 
-By this point the analysis has done what analysis can. Demand was learned from evidence rather than assumed. Costs were treated as commitments you chose. Scale was made explicit instead of imagined. Profit has been examined for whether it exists, how much error it survives, and which belief it depends on.
+By this point the analysis has done what it can for a venture considered on its own. Demand was learned from evidence rather than assumed. Costs were treated as commitments you chose. Scale was made explicit instead of imagined. Profit has been examined for whether it exists, how much error it survives, and which belief it depends on.
 
-What is left is a judgment, and it belongs to you.
+What none of it has done is put a rival in the room, and a rival reaches into the price you were treating as yours. That is the subject of the rest of the book, and it changes what the arithmetic is worth rather than how it is done.
+
+What is left, for a venture standing alone, is a judgment, and it belongs to you.
 
 The question is not whether the venture will succeed, whether the idea is exciting, or whether the number came out as high as possible. Stated precisely, it is this: *given what we now know about demand, cost, and scale, is there a path to profit that survives being somewhat wrong, and am I willing to commit to it?*
 
