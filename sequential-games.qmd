@@ -159,13 +159,30 @@ leaf <- tibble(x = 2.2, y = ys, ok = chosen,
                t = map_chr(lv, ~ sprintf("$%.2f,  $%.2f",
                                          pay(.x[1], .x[2])[1], pay(.x[1], .x[2])[2])))
 
+# Text carries its own colour rather than riding the segments' alpha scale.
+# One alpha applied to everything lightened the branch labels twice, because
+# they alone started from itwd_muted while the lines and payoffs started from
+# itwd_ink: at alpha 0.20 they landed on 1.29:1 against white, lighter than the
+# faded LINES at 1.49:1, which is why they read as barely present. The rejected
+# branch should recede, not disappear, so its text is set to a stated contrast.
+on_white <- function(col, a)
+  rgb(t(255 - a * (255 - col2rgb(col))), maxColorValue = 255)
+
+LAB_ON  <- itwd_muted                  # 4.83:1
+LAB_OFF <- on_white(itwd_muted, 0.71)  # 2.80:1
+PAY_ON  <- itwd_ink                    # 14.68:1
+PAY_OFF <- on_white(itwd_ink,   0.47)  # 2.80:1
+
+lab  <- lab  |> mutate(col = ifelse(ok, LAB_ON, LAB_OFF))
+leaf <- leaf |> mutate(col = ifelse(ok, PAY_ON, PAY_OFF))
+
 ggplot() +
   geom_segment(data = seg, aes(x, y, xend = xend, yend = yend, alpha = ok),
                color = itwd_ink, linewidth = 0.9) +
-  geom_text(data = lab, aes(mx, ly, label = txt, alpha = ok),
-            size = 3.2, color = itwd_muted) +
-  geom_text(data = leaf, aes(x + 0.10, y, label = t, alpha = ok),
-            hjust = 0, size = 3.9, color = itwd_ink) +
+  geom_text(data = lab, aes(mx, ly, label = txt, color = col), size = 3.4) +
+  geom_text(data = leaf, aes(x + 0.10, y, label = t, color = col),
+            hjust = 0, size = 3.9) +
+  scale_color_identity() +
   scale_alpha_manual(values = c(`FALSE` = 0.20, `TRUE` = 1), guide = "none") +
   geom_point(aes(x = 0, y = 0), size = 3.4, color = itwd_ink) +
   geom_point(data = tibble(x = 1.1, y = c(1, -1)), aes(x, y),
