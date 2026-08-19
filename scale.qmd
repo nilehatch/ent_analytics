@@ -154,9 +154,11 @@ $$ \mathsf{q_{required}} = \frac{\mathsf{f}}{\mathsf{p - c}} $$
 **Contribution** — what one sale leaves after its own variable cost, $\mathsf{p - c}$, and therefore what it contributes toward fixed cost. If you have met *contribution margin* in accounting, this is the per-unit form of it.
 :::
 
-Divide that by the population you can actually reach, and you have the share of them who must buy.
+That is a count of *sales*, and the population you can reach is a count of *people*, so one conversion stands between them: how many units a buyer takes in the period. Where the decision is yes or no, that number is one and the two counts coincide. Where buyers take several — the case the how-many elicitation was built for — divide the required sales by units per buyer first, or you will report a penetration several times worse than the one you face.
 
-Work it once. Commit \$50,000. Charge \$40 against a variable cost of \$25, so each sale contributes \$15. You need 3,334 sales. If the population you can genuinely reach is 20,000 people, you need one in six of them, which is an extraordinary number for a new offering nobody has heard of. If it is 200,000, you need one in sixty, which is merely ambitious.
+Then divide by the population you can actually reach, and you have the share of them who must buy.
+
+Work it once, in the simple case. Commit \$50,000. Charge \$40 against a variable cost of \$25, so each sale contributes \$15. You need 3,334 sales, and if each buyer takes one, 3,334 buyers. If the population you can genuinely reach is 20,000 people, you need one in six of them, which is an extraordinary number for a new offering nobody has heard of. If it is 200,000, you need one in sixty, which is merely ambitious.
 
 Same commitment, same price, same cost. The only thing that changed was who you can reach, and it moved the requirement by a factor of ten.
 
@@ -165,6 +167,7 @@ Same commitment, same price, same cost. The only thing that changed was who you 
 viewof fCost = Inputs.range([5000, 250000], {value: 50000, step: 5000, label: "Commitment"})
 viewof pPrice = Inputs.range([10, 120], {value: 40, step: 1, label: "Price"})
 viewof cUnit = Inputs.range([1, 100], {value: 25, step: 1, label: "Cost per unit"})
+viewof uPer = Inputs.range([1, 12], {value: 1, step: 0.5, label: "Units one buyer takes"})
 viewof popn = Inputs.range([2000, 400000], {value: 20000, step: 2000, label: "Reachable population"})
 ```
 
@@ -172,7 +175,8 @@ viewof popn = Inputs.range([2000, 400000], {value: 20000, step: 2000, label: "Re
 //| echo: false
 contrib = pPrice - cUnit
 qReq = contrib > 0 ? fCost / contrib : Infinity
-penReq = qReq / popn
+buyersReq = qReq / uPer          // sales are not people unless uPer is 1
+penReq = buyersReq / popn
 fmt = d3.format(",.0f")
 pct = d3.format(".2%")
 
@@ -181,7 +185,8 @@ ${contrib <= 0
  ? `<p style="margin:0;color:#A33A2A"><strong>No price above cost.</strong> Every sale loses
     money, so no quantity and no population can cover the commitment.</p>`
  : `<p style="margin:0 0 .35rem">Each sale contributes <strong>$${fmt(contrib)}</strong>.
-    Covering the commitment takes <strong>${fmt(qReq)}</strong> sales.</p>
+    Covering the commitment takes <strong>${fmt(qReq)}</strong> sales${
+      uPer === 1 ? `` : `, which is ${fmt(buyersReq)} buyers at ${uPer} units each`}.</p>
     <p style="margin:0">Out of ${fmt(popn)} reachable people, that is
     <strong style="font-size:1.15em">${pct(penReq)}</strong> of them —
     about <strong>one in ${fmt(1/penReq)}</strong>.
@@ -210,11 +215,11 @@ Scale, then, is not a strategy. It is not chosen because you want to grow. It is
 ::: {.reflect}
 **Ask yourself — how many, out of how many?**
 
-Take the commitment you are actually contemplating and run the arithmetic once, by hand. Deliberately by hand: this is the one calculation in the book worth refusing to delegate, because it is a single division and the whole of its value is in the moment you see the number. Divide it by the contribution one sale makes, and you have the number of customers you need.
+Take the commitment you are actually contemplating and run the arithmetic once, by hand. Deliberately by hand: this is the one calculation in the book worth refusing to delegate, because it is a single division and the whole of its value is in the moment you see the number. Divide it by the contribution one sale makes, and you have the number of sales you need. If a buyer takes more than one, divide again by units per buyer to turn sales into people.
 
 Now the harder half. Write down the population you can genuinely reach: not everyone with the problem, but the ones you could find, contact, earn trust from, and serve again next month at a cost you can carry. If your honest answer is a range, use the low end.
 
-Divide, and say the result out loud as a fraction. One in six. One in forty. One in three hundred. Then ask somebody who knows the market whether a new and unknown offering takes that share of the people it can reach.
+Divide the buyers you need by the population you can reach, and say the result out loud as a fraction. One in six. One in forty. One in three hundred. Then ask somebody who knows the market whether a new and unknown offering takes that share of the people it can reach.
 
 If the number embarrasses you, you have learned something before spending anything, which is the cheapest way this lesson is ever available.
 :::
