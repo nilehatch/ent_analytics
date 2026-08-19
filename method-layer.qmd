@@ -160,14 +160,29 @@ def fit_sigmoid(P, Q):       # Q = L / (1 + exp((P - P0)/s))
 
 **Fit the exponential by regressing on log quantity, not by non-linear least squares on the raw quantities.** Those are different estimators and they do not agree. The log form is what this book means by an exponential fit, it is stable on small samples, and it is what the companion app computes. If you reach for `curve_fit` on the raw exponential, you will get a different curve and the human will not know why. Drop zero quantities before taking logs and say how many you dropped.
 
-Report R² for each and state plainly that R² does not decide this.
+**Compute goodness of fit for all three on the original quantity scale, never on a transformed one.** This matters and is easy to get wrong. The exponential was fitted by regressing on `ln Q`, and the R² that falls out of that regression describes how well the *logs* line up. It is routinely higher than the same model's fit to the actual quantities, and it is not comparable to the linear model's R². The sigmoid, fitted by non-linear least squares, has no variance decomposition at all, so an R² reported for it is descriptive only. Put all three on the same footing by predicting Q at each observed price and scoring there:
+
+```python
+def fit_quality(P, Q, predict):
+    # Same scale for every model: predicted quantity against observed quantity.
+    import numpy as np
+    resid  = Q - np.array([predict(p) for p in P])
+    ss_res = float((resid ** 2).sum())
+    ss_tot = float(((Q - Q.mean()) ** 2).sum())
+    return {"r2":   1 - ss_res / ss_tot if ss_tot else float("nan"),
+            "rmse": float(np.sqrt((resid ** 2).mean()))}
+```
+
+Report RMSE alongside R², in units the human recognises, and state plainly that neither decides this. The curve is chosen on behaviour, at the gate below.
 
 **Gate — before accepting a fitted curve.** Present, for each candidate: its shape, where it crosses zero, what it implies at prices beyond the evidence, and whether quantity falls monotonically as price rises. Then run two checks:
 
-- **Anchor test.** Pick one price the human already has intuition about and ask what the curve says at it. A curve that contradicts something they already know is wrong regardless of R².
-- **Prediction test.** Ask whether the curve implies anything checkable against the world — a known competitor's volume, an observed conversion rate, a previous launch. Check it if so.
+- **Anchor test.** Pick one price the human already has intuition about and ask what the curve says at it. A curve that contradicts something they already know is wrong regardless of fit statistics.
+- **Prediction test.** Ask *once* whether the curve implies anything checkable against the world — a known competitor's volume, an observed conversion rate, a previous launch. Check it if something is offered.
 
-Ask the human which one describes their customers, and require a reason that is about behaviour rather than fit.
+Expect the prediction test to come back empty. A pre-revenue venture usually has nothing external to check against, and that is the ordinary case rather than a failure. Ask once, accept *nothing to compare* as a complete answer, and move on. Do not press the human to manufacture a benchmark, because an invented comparison is worse than none.
+
+Ask the human which curve describes their customers, and require a reason that is about behaviour rather than fit.
 
 ## Stage 4 — Cost {#sec-ml-cost}
 
@@ -217,7 +232,32 @@ Then stop and hand over two numbers: required buyers, and N. Ask the human to di
 
 ## Stage 6 — Profit {#sec-ml-profit}
 
-Assemble. `π(p) = (p − c)·q(p) − f`, evaluated across the price grid using the curve chosen at Stage 3.
+Assemble. `π(p) = (p − c)·q(p) − f`, evaluated across the price grid using the population curve from Stage 5.
+
+Do this on a grid rather than analytically. Fitted demand is clipped at zero — `max(0, ...)` — so the profit function has a kink, and a derivative set to zero can return a peak sitting in the region where quantity is already zero. The grid cannot make that mistake.
+
+```python
+def profit_curve(q_of_p, c, f, lo=0.0, hi=1000.0, step=None):
+    step = step or (hi - lo) / 300
+    out, p = [], lo
+    while p <= hi:
+        out.append((p, (p - c) * max(0.0, q_of_p(p)) - f))
+        p += step
+    return out
+
+def read_curve(curve, price_range):
+    pos = [p for p, pi in curve if pi > 0]
+    peak_p, peak_pi = max(curve, key=lambda t: t[1])
+    if not pos:
+        return {"reading": "impossible", "peak_price": peak_p, "peak": peak_pi}
+    lo, hi = min(pos), max(pos)
+    width  = (hi - lo) / price_range
+    return {"reading": "fragile" if width < 0.28 else "robust",
+            "band": (lo, hi), "width": width,
+            "peak_price": peak_p, "peak": peak_pi}
+```
+
+Set the grid to span the prices the human might actually charge, and say what range you used — the band width, and therefore the reading, is a fraction of that range. If the positive region is not contiguous, say so rather than reporting its outer edges as a band.
 
 Report four things, never only the first:
 
@@ -278,7 +318,11 @@ reading             impossible if band empty
                     robust     otherwise
 ```
 
-The code blocks above are Python and assume `numpy` for the fits and `scipy` for the sigmoid. If neither is available, the linear and exponential forms are ordinary least squares and can be computed directly; say so rather than skipping the estimation.
+The code blocks above are Python. The transformation and rescaling functions need nothing but the standard library. The fits need `numpy`, and the sigmoid additionally needs `scipy`.
+
+Run them yourself wherever you can. A code-execution environment normally has both, and executing the arithmetic is far safer than reasoning about it in prose. If you have no execution environment and are handing code to the human to run on their own machine, check first whether they have the packages, and ask permission before telling them to install anything. The command is `python3 -m pip install --user numpy scipy`. Never install silently, and never present a number you did not actually compute.
+
+If neither package is available and none can be installed, the linear and exponential forms are ordinary least squares and can be computed from sums in plain Python. Do that, and say the sigmoid was skipped, rather than skipping the estimation.
 
 ## Validation rules {#sec-ml-validation}
 
