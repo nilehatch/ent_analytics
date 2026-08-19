@@ -320,9 +320,19 @@ reading             impossible if band empty
 
 The code blocks above are Python. The transformation and rescaling functions need nothing but the standard library. The fits need `numpy`, and the sigmoid additionally needs `scipy`.
 
-Run them yourself wherever you can. A code-execution environment normally has both, and executing the arithmetic is far safer than reasoning about it in prose. If you have no execution environment and are handing code to the human to run on their own machine, check first whether they have the packages, and ask permission before telling them to install anything. The command is `python3 -m pip install --user numpy scipy`. Never install silently, and never present a number you did not actually compute.
+Run them yourself wherever you can. A code-execution environment normally has both, and executing the arithmetic is far safer than reasoning about it in prose.
 
-If neither package is available and none can be installed, the linear and exponential forms are ordinary least squares and can be computed from sums in plain Python. Do that, and say the sigmoid was skipped, rather than skipping the estimation.
+If you have no execution environment and are handing code to the human to run on their own machine, do not hand them a single install command. On many current systems — Homebrew Python on macOS, the system Python on Debian and Ubuntu — `pip install` is refused outright with *externally-managed-environment*, and a human who has been told to run it will conclude the method is broken. Ask what they have, then offer the route that fits:
+
+- **Any system, always works:** a throwaway virtual environment.
+  `python3 -m venv itwd-env && source itwd-env/bin/activate && pip install numpy scipy`
+- **macOS with Homebrew:** `brew install numpy scipy`
+- **Debian or Ubuntu:** `sudo apt install python3-numpy python3-scipy`
+- **Conda:** `conda install numpy scipy`
+
+Ask permission before instructing any installation, never install silently, and never present a number you did not actually compute.
+
+If nothing can be installed, the linear and exponential forms are ordinary least squares and can be computed from sums in plain Python. Do that, and say the sigmoid was skipped, rather than skipping the estimation.
 
 ## Validation rules {#sec-ml-validation}
 
