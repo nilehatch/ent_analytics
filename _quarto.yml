@@ -137,6 +137,7 @@ book:
     # have to page past it. prose-check exempts both — a different register, per
     # family style guide S3.
     - method-layer.qmd
+    - method-layer-competition.qmd
 
     # Removed 11 Aug 2026, both pending real content:
     #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)

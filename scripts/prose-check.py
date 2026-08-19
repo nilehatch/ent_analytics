@@ -177,7 +177,7 @@ TRANSCRIPT_DIRS = ("demo/",)
 # written for you... optimized for a machine to execute, not for you to read"
 # (family style guide §3, the dual layer). The em-dash rule exists because a
 # human reader registers dash density as an AI tell. A machine does not.
-EXEMPT = {"method-layer.qmd"}
+EXEMPT = {"method-layer.qmd", "method-layer-competition.qmd"}
 
 
 def prose_only(text):
