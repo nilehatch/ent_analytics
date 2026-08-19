@@ -131,6 +131,13 @@ book:
     # the "not yet" point, both of which belong to commitment specifically.
     - what-its-worth.qmd
 
+    # The method layer, unnumbered like the sign-off. Two files by design: this
+    # one runs the single-firm pipeline (stages 0-7), and the competitive branch
+    # gets its own layer, because a reader who is not facing a rival should not
+    # have to page past it. prose-check exempts both — a different register, per
+    # family style guide S3.
+    - method-layer.qmd
+
     # Removed 11 Aug 2026, both pending real content:
     #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)
     #   - summary.qmd                             (placeholder: "this book has no content
