@@ -128,7 +128,8 @@ def respondent_line(q_free, max_wtp, q_at_max):
        own linear demand: q_free at price 0, q_at_max at their max_wtp,
        zero above it."""
     if max_wtp <= 0:
-        return lambda p: 0.0
+        # Would pay nothing, but may still take some when it is free.
+        return lambda p: (q_free if p <= 0 else 0.0)
     slope = (q_at_max - q_free) / max_wtp
     return lambda p: max(0.0, q_free + slope * p) if p <= max_wtp else 0.0
 
@@ -206,7 +207,9 @@ Demand was estimated from a sample. The commitment is a population-scale number.
 
 **5a — Define the reachable population, N.** Not everyone with the problem. The people the human could find, contact, earn trust from, and serve again next period at a cost they can carry. Work through the reductions explicitly and record each one: everyone with the problem → those they can reach at all → those reachable at a cost they can carry → those they could serve again next period. Research this with the human. Where the answer is a range, use the low end and say you did.
 
-**5b — Rescale demand from sample to population.** With `n` usable respondents and reachable population `N`:
+**5b — Rescale demand from sample to population.** With `n` usable respondents and reachable population `N`.
+
+**`n` counts everyone who passed the screen, including those who would buy nothing.** A non-buyer is evidence about the population, not a missing row, and dropping them from the denominator inflates every quantity downstream. In one of the practice datasets 11 of 46 respondents would take none even at a price of zero; rescaling on 35 rather than 46 would overstate demand by 31%.
 
 ```python
 def rescale(demand_points, n_sample, N_population):
