@@ -50,6 +50,26 @@ Your early demand experiments do not settle this. They were run with people who 
 
 So access shrinks the population you are allowed to use. Not the number who might benefit, but the number who are reachable, engageable, and realistically serviceable. That is not pessimism. It is the only version of the number that can carry a commitment.
 
+## Sample Is Not Population
+
+You are now holding two numbers that have never met. A demand curve fitted to the people who answered your instrument, and a reachable population you have just argued down from everyone who might have the problem. The curve describes a few dozen people. The commitment is owed by all of them.
+
+Putting the two on the same plane takes one multiplication. Count everyone who passed your screen and gave a usable answer, call that $\mathsf{n}$, and take the reachable population as $\mathsf{N}$. The ratio between them is the multiplier:
+
+$$ \mathsf{k} = \frac{\mathsf{N}}{\mathsf{n}} $$
+
+Multiply the quantity at every price by $\mathsf{k}$ and the curve you fitted for a sample becomes a curve for a market. Nothing else moves. Prices stay where they were and the shape is untouched, because the claim you are making is exactly that another $\mathsf{k}$ groups of people, otherwise like the ones who answered, would respond the way those people did. Apply it to the fitted curve rather than to the raw answers; the fit is where you already made your assumptions, and rescaling first only buries them.
+
+Hand your AI or the app the fitted curve, the count $\mathsf{n}$, and the population $\mathsf{N}$, and the rescaled curve comes back. Ask for $\mathsf{k}$ itself by name, because it is the one number in the operation you can judge on sight. What had to be settled before any of it runs is $\mathsf{N}$, and the reductions in the previous section are that judgment. No arithmetic downstream repairs a wrong one.
+
+Two things go wrong here, both quietly.
+
+**Who belongs in $\mathsf{n}$.** Everyone who passed the screen, including the ones who told you they would buy nothing. A zero is a finding about the population rather than a missing row. Drop the non-buyers and $\mathsf{n}$ falls while $\mathsf{N}$ holds still, so $\mathsf{k}$ rises and every quantity downstream rises with it. Suppose forty-six people passed your screen and eleven of them would take none of it even at a price of zero. Rescale on the thirty-five who would buy and you have lifted the whole curve by about a third, and nothing in the output will look wrong.
+
+**What $\mathsf{k}$ assumes.** That the sample behaves like the population. It is the strongest assumption in the entire method and the arithmetic never tests it. [Getting from one person to a market](estimating-demand.qmd) put the hazard plainly: a sample skewed toward enthusiasts gives you a curve too high and too flat, which reads as *raising the price is cheap*. Multiplying by $\mathsf{k}$ multiplies that distortion along with everything else. If you recruited through your own network, this is the place to say so rather than the last page.
+
+So look at $\mathsf{k}$ before you look at anything it produced. A curve built on forty people being multiplied by three thousand is a defensible thing to do and an uncomfortable thing to watch, and the discomfort is the correct response to it.
+
 ## Adoption Is Not Penetration
 
 One more distinction, and it is the one that trips up otherwise careful people.
@@ -209,6 +229,19 @@ Notice also what the calculation is not. It is not a forecast. Nobody is claimin
 Which reframes the question you should be asking. Not *is this a big market*, which invites the answer you want, but *is it plausible that this many reachable people will adopt, at a price that clears cost, in time to cover what I have already committed to?* You can hold that against what you know about reach and trust and how new the idea is, and get an answer you would be willing to defend.
 
 Scale, then, is not a strategy. It is not chosen because you want to grow. It is inherited from the commitments you make, and scaling never rescues a structure that does not work; it only amplifies whatever is already there.
+
+::: {.threshold}
+**Before you accept a population curve**
+
+Every profit number in the rest of this book is computed on the rescaled curve rather than the one you fitted. Four things before it goes forward.
+
+- **Say $\mathsf{k}$ out loud.** Multiplying by twelve and multiplying by twelve thousand are different acts, and only one of them is defensible from forty interviews.
+- **Say who is in $\mathsf{n}$**, including how many of them would buy nothing at any price. If you cannot say how many zeros you had, you do not know what you divided by.
+- **Say the reductions that produced $\mathsf{N}$**, in order, and name the ones where you took the low end of a range.
+- **Say the required penetration as a fraction**, not a percentage. One in six and 16.7% are the same number, and only one of them is hard to say without flinching.
+
+If you cannot do all four, what you have is a larger sample rather than a market.
+:::
 
 ## Putting It to Work
 

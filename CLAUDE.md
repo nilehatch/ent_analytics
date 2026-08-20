@@ -142,8 +142,9 @@ is stale.
 They were never a procedure. Measured 17 Aug: 1,163 executable lines across the chapters, 0
 across the ten toolkits. `competition-survey` ran 32 headings over 1,293 words, about forty words
 each — a table of contents for a method rather than the method. What replaced them is the two
-method layers, which a machine can execute, plus the chapters' `.threshold` gates, eleven as of
-20 Aug, one for every stage where a layer hands back.
+method layers, which a machine can execute, plus the chapters' `.threshold` gates, twelve as of
+20 Aug, one for every stage where a layer hands back. The last hole was ch8 `scale.qmd`, which had
+no gate against the layer's Stage 5; it now closes on *Before you accept a population curve*.
 
 Nothing was dropped in the move. The three-anchor elicitation and the four-scenario competitive
 design, this book's two genuinely unplaced contributions, are specified in the layers precisely
