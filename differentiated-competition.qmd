@@ -235,6 +235,18 @@ Differentiation is not one number. It is a claim about customers, and it shows u
 
 What differentiation is *not* is a story about your product. It is a set of claims about behavior, and every one of them is measurable: how much do you lose when you raise your price, how much do you gain when they raise theirs, and how much do you lose when they cut. Those are three different experiments, and they are what the next chapter is about.
 
+::: {.threshold}
+**Before you accept an equilibrium**
+
+The equilibrium is a prediction about what two firms will do, produced from six parameters and an assumption that both of them optimize. Check it against the market you can see.
+
+- **Does the rival's predicted price resemble what the rival charges today?** A wide gap means one of three things: the system is mis-estimated, the rival is not optimizing, or the firm you named is not the one your customers compare you to.
+- **Do the two switching numbers match what you observe?** Read $\mathsf{d_i}$ and $\mathsf{d_j}$ back in words — *this many come to me when they raise price, this many leave when I do* — and say whether that is the market you know.
+- **Does the crossing sit at a price you would actually charge?** Lines that meet far outside your range have not found a price war; they have found the edge of where this model describes anything.
+
+If you cannot answer all three, what you have is a solved system rather than a competitive position.
+:::
+
 ## Reading Your Position
 
 The practical shift in this chapter is where you evaluate everything you already know how to evaluate.

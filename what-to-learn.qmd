@@ -79,6 +79,19 @@ Costs can generally be estimated within a workable range, because you control th
 
 What is left is demand. It blocks the decision, and it can be learned. That combination is uncommon enough to be worth the trouble of going out and running a real experiment on it.
 
+::: {.threshold}
+**Before you go and gather evidence**
+
+Everything after this chapter costs real time and other people's patience. Do not spend either until you can say four things in one breath.
+
+- **What gets committed, and when.** Not "should we do this" but the lease, the batch, the hire. If you cannot name the thing you would sign, you are not yet facing a decision.
+- **Who the customer is**, specifically enough that you could find one this week.
+- **What one unit is** — the thing a buyer pictures themselves buying, in the period over which they decide again. A meal, this month. Not a share of revenue.
+- **Which unknown is blocking you**, and whether it is demand. Sometimes it is regulatory, or technical, and this method will answer a question you were not asking.
+
+If you cannot say all four, the survey you are about to write will produce answers to a question you have not settled.
+:::
+
 ## Putting It to Work
 
 ::: {.reflect}

@@ -225,6 +225,18 @@ Which means a cheaper structure can still be the wrong one when demand is small 
 
 Demand and cost only mean something together, and what they mean together is profit.
 
+::: {.threshold}
+**Before you accept a cost structure**
+
+Your AI will sort your costs into two columns and hand them back, and the sorting will look authoritative. It is a judgment, and it is yours. Check three things before the numbers go anywhere.
+
+- **Walk the variable column item by item and ask what triggers it.** One more sale, or the passage of a month? A baker on salary is not a variable cost however the accounting treats them; the flour is.
+- **Walk the fixed column and ask what is actually committed.** Signed, ordered, leased. A cost you could still avoid is a plan, not a commitment, and it does not belong in $\mathsf{f}$ yet.
+- **Name what would have to happen for one fixed item to become avoidable.** If nothing would, you have found the part of the structure you cannot design around.
+
+If you cannot do all three, what you have is a budget rather than a cost structure — and the difference shows up later, as a break-even that was never real.
+:::
+
 ## Putting It to Work
 
 ::: {.reflect}

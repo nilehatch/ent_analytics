@@ -180,6 +180,18 @@ Which is why an early demand curve is a provisional map. It rules things out, po
 
 **Validation closes the loop**, and this is where a named price finally earns its place. Return to a fresh group and ask whether they would buy at \$X, where X came from the curve rather than from your hopes. The answers should line up roughly with what the curve predicted. If they do, your confidence rises, not because the curve is correct but because the evidence is coherent. If they do not, you have learned that something in the framing or the sampling distorted the earlier work, which is worth knowing before you act on it. The strongest version of this test is not a question at all but a preorder, since a person who pays has settled the matter.
 
+::: {.threshold}
+**Before you field an instrument**
+
+An instrument goes out once. Whatever it fails to ask, you will not learn without asking a second group, and there is rarely a second group. Read your draft as a respondent and check three things.
+
+- **Where would you guess?** Find every question you could not answer honestly about your own life, and either fix it or accept that its answers are noise.
+- **Where would you answer to please?** Anything that reads as selling invites agreement. The price question is the one that suffers, and it is the one you came for.
+- **Does a number come back that you can count?** A rating is not demand and neither is interest. If no question yields a price and a quantity, the instrument is a conversation rather than an experiment.
+
+If you cannot answer all three, you are about to spend your one contact with these people learning something else.
+:::
+
 ## Putting It to Work
 
 ::: {.reflect}
