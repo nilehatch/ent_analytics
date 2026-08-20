@@ -27,7 +27,84 @@ Every one of those four is estimated rather than argued, which puts the work in 
 
 What none of it settles is the comparison that started the exercise. Deciding which firm is your real rival, which segment you are both selling into, and whether a measured difference reflects something durable or something either of you could copy by Christmas — those come before the arithmetic and no amount of it substitutes for them.
 
-What makes this worth the trouble is that the four behave very differently, and the differences are not intuitive. The clearest way to see that is a case where the intuition was wrong.
+The four are not interchangeable, and the differences are large enough to change what you would work on. Hold two identical firms side by side, then give one of them an edge in a single parameter and widen it. Everything else stays where it was.
+
+```{r}
+#| label: fig-advantage-levers
+#| echo: false
+#| fig-width: 9
+#| fig-height: 4.2
+#| fig-cap: "Two identical firms, then one advantage at a time. Both start at a price of \\$50 and a contribution of \\$1,250, marked by the dot. Moving right widens the gap in one parameter while the other three stay symmetric; the substitution line tilts the flow in your favor without changing how much switching there is in total. Baseline $\\mathsf{a=100}$, $\\mathsf{b=2}$, $\\mathsf{d=1}$, $\\mathsf{c=25}$."
+
+eqm_i <- function(a_i, b_i, d_i, c_i, a_j, b_j, d_j, c_j) {
+  A_i <- (a_i + b_i*c_i)/(2*b_i); k_i <- d_i/(2*b_i)
+  A_j <- (a_j + b_j*c_j)/(2*b_j); k_j <- d_j/(2*b_j)
+  den <- 1 - k_i*k_j
+  p_i <- (A_i + k_i*A_j)/den
+  p_j <- (A_j + k_j*A_i)/den
+  q_i <- a_i - b_i*p_i + d_i*p_j
+  tibble(price = p_i, profit = (p_i - c_i)*q_i)
+}
+
+a0 <- 100; b0 <- 2; d0 <- 1; c0 <- 25
+
+levers <- tribble(
+  ~lever,                          ~f,
+  "Appeal (higher a)",             function(x) eqm_i(a0*(1+x), b0, d0, c0, a0, b0, d0, c0),
+  "Insulation (lower b)",          function(x) eqm_i(a0, b0*(1-x), d0, c0, a0, b0, d0, c0),
+  "Substitution (d tilted your way)", function(x) eqm_i(a0, b0, d0*(1+x), c0, a0, b0, d0*(1-x), c0),
+  "Unit cost (lower c)",           function(x) eqm_i(a0, b0, d0, c0*(1-x), a0, b0, d0, c0)
+)
+
+curves <- levers |>
+  mutate(pts = map(f, \(g) tibble(adv = seq(0, 0.30, by = 0.005)) |>
+                            mutate(map_dfr(adv, g)))) |>
+  select(lever, pts) |> unnest(pts) |>
+  pivot_longer(c(price, profit), names_to = "outcome", values_to = "value") |>
+  mutate(
+    lever   = factor(lever, levels = levers$lever),
+    outcome = factor(outcome, levels = c("price", "profit"),
+                     labels = c("Equilibrium price", "Equilibrium contribution"))
+  )
+
+ggplot(curves, aes(adv, value, color = lever)) +
+  geom_line(linewidth = 1.1) +
+  geom_point(data = filter(curves, adv == 0, lever == levers$lever[1]),
+             color = itwd_ink, size = 2.4) +
+  facet_wrap(~outcome, scales = "free_y") +
+  scale_color_manual(values = c(itwd_demand_dark, itwd_demand,
+                                itwd_demand_light, itwd_cost)) +
+  scale_x_continuous(labels = label_percent(accuracy = 1),
+                     breaks = seq(0, 0.30, 0.1)) +
+  scale_y_continuous(labels = label_dollar(accuracy = 1)) +
+  guides(color = guide_legend(nrow = 2)) +
+  labs(x = "Your advantage over the rival, as a difference in that one parameter",
+       y = NULL) +
+  theme_itwd(grid = "y")
+```
+
+Read the right-hand panel first, because the ranking is the surprise. A thirty percent edge in insulation buys about three and a half times the contribution that the same edge in unit cost does, and the insulation line is still accelerating when the others have gone nearly straight. Low $\mathsf{b}$ compounds: customers who do not leave when you raise price let you raise it again. Nothing else in the figure compounds.
+
+Substitution is the weakest of the four, which is worth knowing before you spend a year engineering switching costs. Tilting the flow your way helps, and it helps about a fifth as much as making your own customers stickier by the same proportion. It is the only lever in the figure that a cost advantage beats.
+
+Then the left-hand panel, where the cost line goes the wrong way. A cost advantage **lowers** your equilibrium price. You pass part of the saving through, because your best response to your own lower cost is to charge less, and the profit arrives as volume rather than as a fatter price tag. Every founder who has said *we can make it cheaper, so we can charge the same and pocket the difference* has this backwards; the equilibrium will not let you.
+
+::: {.for-curious}
+<summary>For the Curious — how much of a cost saving do you actually keep?</summary>
+
+Some, never all, and the fraction is not yours to choose. Differentiating the equilibrium gives the pass-through rate
+
+$$ \frac{\partial \mathsf{p_i}}{\partial \mathsf{c_i}} \;=\; \frac{1}{2}\left(1 - \frac{\mathsf{d_i d_j}}{4\,\mathsf{b_i b_j}}\right)^{-1} $$
+
+which sits at exactly one half when the two firms are unconnected, and climbs toward one as the coupling between them tightens. Two isolated firms each keep half of any cost saving as margin. Two tightly coupled ones keep almost none of it, because a cost advantage you pass into price pulls your rival's best response down, which pulls yours down again.
+
+Whether your margin widens at all turns on the same quantity. It widens when $\mathsf{d_i d_j < 2\,b_i b_j}$ and shrinks when the inequality runs the other way, so the sign of the thing depends on a product of four parameters, only two of which are yours. In practice it will widen: shrinking requires cross-price effects so strong that one firm raising its price *grows* the whole market, which is a sign the demand system was estimated badly rather than a market anyone has met. The useful part is not the sign. It is that how much of a cost advantage survives to your bottom line is set by how tightly you are coupled to a rival, and you can compute it from four numbers you already have.
+:::
+
+One parameter is missing from the figure, and its absence is the point. Fixed cost $\mathsf{f}$ does not appear in the equilibrium at all; it is subtracted after both prices are set, so it cannot move a best response and cannot make you a better competitor. What it does is decide whether the contribution you just computed is enough. A rival with lower $\mathsf{f}$ does not out-compete you — they outlast you, at an equilibrium you both reached together. That makes $\mathsf{f}$ a survival threshold rather than an advantage, which is the same reading [scale and population](scale.qmd) gave it when it set the penetration you had to reach.
+
+
+The clearest way to see all of this at once is a case where the intuition was wrong.
 
 ## A Campus Case
 
