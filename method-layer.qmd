@@ -143,6 +143,8 @@ Every respondent is used and nothing is discarded. This is the book's own elicit
 
 **Step 2 — estimate.** Regress a smooth curve onto those points. Fit all three forms and report all three.
 
+**Fit at the prices the respondents named, not on a grid you invent.** The staircase has a natural set of prices — the distinct willingness-to-pay values in the data — and those are where the evidence actually is. Substituting an evenly spaced grid puts as much weight on the sparse tail, where one or two respondents sit, as on the dense middle where most of them are, and it changes the answer: on the practice dataset a regular grid returns a price slope 3% steeper than the respondents' own prices do, which moves the optimal price by \$3.43 and profit by \$15,572. Include a price of zero if it is not already there, and fit on that set.
+
 ```python
 import numpy as np
 def fit_linear(P, Q):        # Q = a + bP
