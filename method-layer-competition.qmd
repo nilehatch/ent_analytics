@@ -146,7 +146,13 @@ def q_yes_no(respondents, p_own, p_riv):
     return total
 ```
 
+**Build the surface at the prices respondents named**, not on a grid you invent: the distinct willingness-to-pay values for each product, which is where the evidence is. An evenly spaced grid weights the sparse tail as heavily as the dense middle and moves the answer — on the shipped yes/no data a \$25 grid returns an equilibrium price 1.2% low and profit 6% low against the respondents' own prices.
+
 **Then fit the summed surface**, using the same three functional forms and the same scoring rule as the single-firm layer: linear, exponential by regression on log quantity, sigmoid, all scored on the original quantity scale. Pooling is correct at this step, because the surface was built at prices you chose.
+
+For the competitive case the sigmoid is `Q = Qmax / (1 + exp(-(a + b·p_own + c·p_rival)))`, fitted by Levenberg–Marquardt with `c` constrained non-negative — a rival's price rise cannot reduce your quantity.
+
+**Report all three and let the human choose, at the gate below.** Fit statistics do not decide it, but they do rule things out: on both shipped competitive datasets the linear form returns a *negative* R², meaning it predicts worse than the sample mean, while the sigmoid reaches 0.97 and 0.99. A negative R² is not a close call and should be reported as a disqualification rather than a ranking.
 
 Report all six parameters with signs checked: both `b` positive, both `d` positive or near zero. A negative `d` says customers leave you when the rival gets more expensive, which is almost always a data problem rather than a discovery — report it as one.
 
@@ -170,26 +176,47 @@ Then the rival's unit cost, which you do not know. Do not invent it. Establish a
 
 Each firm's best response rises with the other's price. Where the two best responses cross, neither firm can improve alone, and that crossing is the equilibrium.
 
+**Solve it numerically, by iterating best responses.** This works for whichever demand form was chosen at C3, which matters because the closed form below exists only for the linear one — and linear is routinely the worst fit of the three.
+
 ```python
-def equilibrium(aA, bA, dA, cA, aB, bB, dB, cB, fA=0.0, fB=0.0):
-    XA, YA = (aA + bA*cA) / (2*bA), dA / (2*bA)
-    XB, YB = (aB + bB*cB) / (2*bB), dB / (2*bB)
-    den = 1 - YA*YB
-    if den <= 0:
-        return None                      # no equilibrium: see the note below
-    pA = (XA + YA*XB) / den
-    pB = (XB + YB*XA) / den
-    qA = aA - bA*pA + dA*pB
-    qB = aB - bB*pB + dB*pA
+def best_response(p_rival, demand, c, lo, hi, steps=4000):
+    # demand(p_own, p_rival) -> population quantity
+    best_p, best_pi = lo, float("-inf")
+    for i in range(steps + 1):
+        p = lo + (hi - lo) * i / steps
+        pi = (p - c) * max(0.0, demand(p, p_rival))
+        if pi > best_pi:
+            best_p, best_pi = p, pi
+    return best_p
+
+def equilibrium(demand_A, demand_B, cA, cB, lo, hi, fA=0.0, fB=0.0, tol=1e-6):
+    pA = pB = (lo + hi) / 2
+    for _ in range(300):
+        nA = best_response(pB, demand_A, cA, lo, hi)
+        nB = best_response(nA, demand_B, cB, lo, hi)
+        if max(abs(nA - pA), abs(nB - pB)) < tol:
+            pA, pB = nA, nB
+            break
+        pA, pB = nA, nB
+    qA, qB = demand_A(pA, pB), demand_B(pB, pA)
     return {"p_A": pA, "p_B": pB, "q_A": qA, "q_B": qB,
-            "profit_A": (pA - cA)*qA - fA,
-            "profit_B": (pB - cB)*qB - fB,
-            "stability": YA*YB}
+            "profit_A": (pA - cA) * qA - fA,
+            "profit_B": (pB - cB) * qB - fB}
 ```
 
-`stability` is `(d_A/2b_A)·(d_B/2b_B)` and must be below 1. At or above it there is no equilibrium to report: each firm's best answer to the other keeps rising and the arithmetic does not settle. That is the price war, arriving as a mathematical fact. Say that plainly rather than returning a number.
+Set `lo` and `hi` to the prices the human might actually charge. If the iteration does not converge, say so and do not report the lastvalue as an equilibrium — non-convergence is the price war arriving numerically, and it is a finding.
 
-Two failures to distinguish, because they look identical and mean opposite things. If `stability ≥ 1`, no equilibrium exists. If an equilibrium exists but sits far outside any price the human would charge, it exists and the model has been pushed somewhere it no longer describes a market — report the price and say so, rather than presenting it as a finding.
+**The closed form, for linear demand only.** When and only when the linear form was chosen, the equilibrium has an algebraic solution worth knowing because it makes the structure visible:
+
+```
+X_i = (a_i + b_i*c_i) / (2*b_i)     Y_i = d_i / (2*b_i)
+p_A = (X_A + Y_A*X_B) / (1 - Y_A*Y_B)
+stability            Y_A * Y_B < 1
+```
+
+`stability` must be below 1. At or above it there is no equilibrium: each firm's best answer to the other keeps rising and the arithmetic does not settle. That is the price war as a mathematical fact — say it plainly rather than returning a number. **This test is meaningful only for linear demand.** Under the exponential or sigmoid forms, run the numerical solver and treat non-convergence as the equivalent signal.
+
+Two failures to distinguish, because they look identical and mean opposite things. If the solver does not converge, no equilibrium exists. If it converges but lands far outside any price the human would charge, one exists and the model has been pushed somewhere it no longer describes a market — report the price and say so, rather than presenting it as a finding.
 
 **Gate — before accepting an equilibrium.** Present both prices, quantities and profits, the stability figure, and the rival cost range's effect. Ask whether the predicted rival price resembles what the rival actually charges today. A large gap means the system is mis-estimated, the rival is not optimising, or the rival is not the one named.
 
@@ -238,8 +265,14 @@ A stated intention is not a commitment. Before treating any announcement as one,
 ```
 demand              q_A = a_A - b_A*p_A + d_A*p_B
                     q_B = a_B - b_B*p_B + d_B*p_A
+equilibrium         iterate best responses numerically, for ANY demand form
+                      p_A <- argmax_p (p - c_A) * q_A(p, p_B)
+                      p_B <- argmax_p (p - c_B) * q_B(p, p_A)   until settled
+                    non-convergence = no equilibrium = the price war
+
+LINEAR ONLY, below this line:
 best response       p_A*(p_B) = (a_A + b_A*c_A + d_A*p_B) / (2*b_A)
-equilibrium         X_i = (a_i + b_i*c_i)/(2*b_i) ;  Y_i = d_i/(2*b_i)
+closed form         X_i = (a_i + b_i*c_i)/(2*b_i) ;  Y_i = d_i/(2*b_i)
                     p_A = (X_A + Y_A*X_B) / (1 - Y_A*Y_B)
 stability           Y_A * Y_B < 1          ; at or above, no equilibrium
 population rescale  a *= N/n               ; b and d are per-person, unchanged
