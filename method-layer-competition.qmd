@@ -108,50 +108,51 @@ q_B = a_B − b_B·p_B + d_B·p_A
 
 `a` is appeal at a price of zero. `b` is how fast you lose customers when **you** raise price. `d` is how many arrive when **they** raise theirs. The two `d` terms are different questions about different people and nothing requires them to be equal — that asymmetry is the most decision-relevant thing this method produces.
 
-**Transform per respondent, then sum. Do not pool the points and regress.**
+**Transform each respondent onto a common price grid, sum, then fit.** Never pool the raw respondent-specific points and regress on those. This is the method the Competition Analytics app uses, and the layer follows it so that the two agree.
 
-This is the same principle as the single-firm method, where each respondent's three anchors give their own demand line and the lines are summed. Here each respondent's four scenarios identify their own three parameters *exactly*, with no estimation at all:
+The order matters and the reason is not obvious. Each respondent answered about *their own* prices, so a respondent with high willingness to pay was asked about high prices and also tends to buy more. Regressing on those points directly confounds price with who was answering and attenuates both slopes toward zero. Moving every respondent onto the *same* grid first removes the confound, because after that step every quantity is measured at a price you chose rather than one they named.
+
+**How-many: bilinear interpolation inside each respondent's own box.**
 
 ```python
-def respondent_system(q_00, q_own0, q_0riv, q_ownriv, wtp_own, wtp_riv):
-    # Four scenarios, three unknowns. The fourth is a check, not a fitted point.
-    #   q_00      = a
-    #   q_own0    = a - b*wtp_own      ->  b
-    #   q_0riv    = a + d*wtp_riv      ->  d
-    #   q_ownriv  = a - b*wtp_own + d*wtp_riv   <- must reproduce, within noise
-    if wtp_own <= 0 or wtp_riv <= 0:
-        return None
-    a = q_00
-    b = (q_00 - q_own0) / wtp_own
-    d = (q_0riv - q_00) / wtp_riv
-    check = q_ownriv - (a - b*wtp_own + d*wtp_riv)
-    return {"a": a, "b": b, "d": d, "residual": check}
+def interp_q(p_own, p_riv, wtp_own, wtp_riv, q_00, q_own0, q_0riv, q_ownriv):
+    # Their four answers are the corners of a box. Interpolate inside it.
+    if p_own > wtp_own:
+        return 0.0                       # priced out of their own maximum
+    p_riv_eff = min(p_riv, wtp_riv)      # past the rival's max, no further switching
+    x = 1.0 if wtp_own == 0 else p_own / wtp_own
+    y = 1.0 if wtp_riv == 0 else p_riv_eff / wtp_riv
+    return ((1-x)*(1-y)*q_00 + x*(1-y)*q_own0
+            + (1-x)*y*q_0riv + x*y*q_ownriv)
 
-def system_from(respondents):
-    rs = [r for r in (respondent_system(**x) for x in respondents) if r]
-    return {"a": sum(r["a"] for r in rs),
-            "b": sum(r["b"] for r in rs),
-            "d": sum(r["d"] for r in rs),
-            "n": len(rs),
-            "residuals": [r["residual"] for r in rs]}
+def demand_surface(respondents, grid_own, grid_riv):
+    return [(po, pr, sum(interp_q(po, pr, **r) for r in respondents))
+            for po in grid_own for pr in grid_riv]
 ```
 
-**Pooling the four points from every respondent into one regression is wrong, and wrong in a direction that hides itself.** Respondents with a high willingness to pay are asked about high prices *and* tend to buy more, so pooled least squares confounds price variation with who was answering and attenuates both slopes toward zero. On the practice dataset shipped with this book, pooling returns `b = 0.45, d = 0.02` against the correct `b = 1.02, d = 0.23` — own-price sensitivity understated by a factor of two, substitution by a factor of eleven — and it returns an R² near 0.1, which correctly signals that something is wrong without saying what. Carried through to a decision, the two methods disagree about whether the venture makes money at all.
+Two behaviours in that function are doing real work. Above a respondent's own maximum they buy nothing, rather than a negative quantity that a fitted line would produce. And the rival's price stops mattering above *the rival's* maximum: once someone would not buy the rival at any price they are already fully yours, and pushing the rival's price higher cannot move them again. A linear form extrapolates substitution past that point and overstates it.
 
-**Use the fourth scenario as the diagnostic.** It was not used in fitting, so its residual is a genuine out-of-sample check on whether this respondent's answers are internally consistent. Report the share of respondents reproducing it within a unit. Where most do, the linear form is doing real work. Where most do not, say so — the parameters are arithmetic either way, and their meaning is not.
-
-**For yes/no demand there are no quantity scenarios**, and two willingness-to-pay figures are enough on their own. A respondent buys the focal product when they can afford it and it beats the rival on surplus:
+**Yes/no: the net-surplus choice rule.** Two willingness-to-pay figures are enough on their own; no quantity scenarios are needed.
 
 ```python
 def q_yes_no(respondents, p_own, p_riv):
-    # respondents: list of (wtp_own, wtp_riv)
-    return sum(1 for wo, wr in respondents
-               if wo >= p_own and (wo - p_own) >= (wr - p_riv))
+    # respondents: list of (wtp_own, wtp_riv). Ties split evenly.
+    total = 0.0
+    for wo, wr in respondents:
+        so, sr = wo - p_own, wr - p_riv
+        if so <= 0:      continue        # cannot afford yours
+        if so > sr:      total += 1.0    # yours wins on surplus
+        elif so == sr:   total += 0.5    # indifferent
+    return total
 ```
 
-Sweep both prices over a grid, build the quantity surface, then fit `q = a − b·p_own + d·p_riv` to that surface. Pooling is safe here because the surface is constructed at prices you chose rather than at prices each respondent named, so there is no respondent heterogeneity to confound. On the shipped yes/no practice data this recovers R² above 0.87 for both products.
+**Then fit the summed surface**, using the same three functional forms and the same scoring rule as the single-firm layer: linear, exponential by regression on log quantity, sigmoid, all scored on the original quantity scale. Pooling is correct at this step, because the surface was built at prices you chose.
 
 Report all six parameters with signs checked: both `b` positive, both `d` positive or near zero. A negative `d` says customers leave you when the rival gets more expensive, which is almost always a data problem rather than a discovery — report it as one.
+
+::: {.callout-note}
+A note on `d`, and it is unresolved. Interpolating with the cap above produces a smaller substitution term than identifying each respondent's demand line linearly and summing — on the practice data, 0.02 against 0.23. The difference is entirely the cap: linear identification keeps moving customers toward you as the rival's price rises past the point where those customers had already abandoned the rival. The interpolated figure is the conservative one and is what the app reports. If your own market knowledge says substitution keeps biting at high rival prices, the true value is nearer the larger number, and the equilibrium should be computed at both.
+:::
 
 Then rescale to the population exactly as the single-firm layer does: with `n` usable respondents and reachable population `N`, multiply `a` by `N/n` and leave `b` and `d` alone. Only the intercept scales; the sensitivities are per-person rates. Report the multiplier and state that it assumes the sample behaves like the population.
 
