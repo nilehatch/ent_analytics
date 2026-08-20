@@ -83,7 +83,16 @@ Mechanical, plus two checks specific to this design.
 
 - Reconcile unit and period against C0, for **both** products.
 - Flag and report, never silently remove: quantity rising with own price, quantity falling when the rival's price rises, straight-lining across all four conditions, duplicates.
-- **Quantity at condition 1 should be the largest** for each respondent — everything is free there. A respondent whose maximum is elsewhere misread the scenarios.
+- **Check the two monotonicities, not a single maximum.** For the focal product, quantity should fall as its own price rises and rise as the rival's does, which gives four pairwise comparisons per respondent:
+
+    ```
+    own price up, rival free      qA_00 >= qA_A0
+    own price up, rival priced    qA_0B >= qA_AB
+    rival price up, own free      qA_0B >= qA_00
+    rival price up, own priced    qA_AB >= qA_A0
+    ```
+
+    Note that the largest quantity is **not** the both-free cell. A respondent buys most of A when A is free *and the rival is expensive*, so `qA_0B` is the maximum and `qA_A0` the minimum. Expect ties, especially at zero, and count a tie as satisfying the condition. Report the share of respondents violating each comparison rather than dropping anyone: a few violations are noise, and a systematic failure of the rival-price conditions means substitution was not understood and the `d` terms will be meaningless.
 - **Zero willingness to pay** is data, not error. Under yes/no a screened-in respondent who would pay nothing is a real non-buyer; keep them. A zero from someone who should not have passed the screen is a sampling problem, and say so.
 
 Report N screened in, N usable, and what was flagged. Walk the human through the suspicious responses one at a time rather than listing them, and say what each would do to the estimate if kept.
@@ -225,7 +234,7 @@ Refuse to proceed and say why if any of these fail:
 
 - both `b` terms positive, and both `d` terms non-negative
 - `stability = (d_A/2b_A)·(d_B/2b_B) < 1`
-- each respondent's quantity is highest when both products are free
+- the two monotonicities hold for most respondents: quantity falls as own price rises, and rises as the rival's does. The maximum cell is own-free-rival-priced, not both-free.
 - prices used as levels are each respondent's own stated WTP, not a grid you chose
 - the decision period is identical in the instrument, the data, and both cost structures
 - `p_i > c_i` at any equilibrium you report as viable
