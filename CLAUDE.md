@@ -75,9 +75,9 @@ filenames are the stable identifier; prefer them over numbers in anything the st
 
 | Class week | Opens | Book material |
 |---|---|---|
-| 6–7 | 28 Sep | ch3–ch5 (`what-demand-is` → `executing-experiments`), `survey-design`, `validate-evidence` |
-| 8 | 19 Oct | ch6 `estimating-demand`, `prepare-data`, `check-demand-curve` |
-| 9–11 | 26 Oct | ch7–ch10 (`cost` → `profit-reasoning`), the **four** profit toolkits |
+| 6–7 | 28 Sep | ch3–ch5 (`what-demand-is` → `executing-experiments`) |
+| 8 | 19 Oct | ch6 `estimating-demand` |
+| 9–11 | 26 Oct | ch7–ch10 (`cost` → `profit-reasoning`) |
 | 12–14 | 16 Nov | ch11–ch18 (`competition` → `sequential-games`), plus the unnumbered sign-off |
 
 The old "ch19–ch22" note is retired: that range resolved to the four legacy game-theory files,
@@ -131,12 +131,31 @@ copy the sibling books' blanket `*.png` ignore rule into this repo.
 Per global CLAUDE.md: preserve the author's voice; cite when changing facts or claims;
 this is book content (the .qmd files here), not vault notes.
 
-**The toolkits are assigned reading this semester.** Weeks 6–7 assign `survey-design` and
-`validate-evidence`, week 8 assigns `prepare-data` and `check-demand-curve`, weeks 9–11 assign
-the four profit toolkits. So *building* the method layer and *dissolving* the toolkits are two
-decisions with different timing: the first is additive and safe to do now, the second breaks
-the syllabus mid-course and cannot happen before the semester ends. Do not delete a toolkit
-file that appears in the table above while the class is running.
+**The toolkits are gone, deleted 20 Aug 2026.** All ten, plus their two Part openers:
+`frame-the-problem`, `survey-design`, `validate-evidence`, `prepare-data`, `check-demand-curve`,
+`variable-cost`, `fixed-cost`, `scaling`, `sensitivity`, `competition-survey`. Roughly 11,700
+words. Earlier notes in this file and in the vault treated the deletion as a post-semester job,
+because the toolkits were assigned reading; that reasoning expired when the deletion landed four
+days before the semester opened, with no student having seen them. Any note recommending a wait
+is stale.
+
+They were never a procedure. Measured 17 Aug: 1,163 executable lines across the chapters, 0
+across the ten toolkits. `competition-survey` ran 32 headings over 1,293 words, about forty words
+each — a table of contents for a method rather than the method. What replaced them is the two
+method layers, which a machine can execute, plus the chapters' `.threshold` gates, eleven as of
+20 Aug, one for every stage where a layer hands back.
+
+Nothing was dropped in the move. The three-anchor elicitation and the four-scenario competitive
+design, this book's two genuinely unplaced contributions, are specified in the layers precisely
+enough to reproduce. Replication against a fresh sample moved into `estimating-demand`.
+`frame-the-problem`'s six framing items were already Stage 0 and are now the gate in
+`what-to-learn` as well. The syllabus rows above lost their toolkit column and nothing else.
+
+**The two layers are named symmetrically**: *The Method Layer: Without a Rival* and *The Method
+Layer: With a Rival*. Do not restore an unmarked "The Method Layer" here. Make the Call ships
+one layer and can leave it unmarked; this book ships two, and an unmarked title reads as the
+general case when it is in fact the no-rival case. The reader has to choose before fielding
+anything, since competitive evidence and single-firm evidence do not convert into each other.
 
 **Who computes (style guide 16c-i, settled 17 Aug 2026).** Any chapter that tells the reader to
 compute something must say, once and in prose: what gets handed over (named inputs, not "your

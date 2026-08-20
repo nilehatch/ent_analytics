@@ -95,7 +95,7 @@ What remains is workable. **Early access at the eventual price** concedes nothin
 
 One further possibility belongs outside this list, because it is not an incentive at all.
 
-If you are tempted to give people the product in exchange for answering, consider selling it to them instead. A preorder, a deposit, or a pledge at a stated price is not a stated preference. It is a purchase, and it is stronger evidence than any survey can produce. It does not replace the survey, which estimates a whole curve where a preorder gives you a single point. It validates one, at a real price, with real money, which is exactly the [one-point anchor test](check-demand-curve.qmd) the estimated curve should be held to.
+If you are tempted to give people the product in exchange for answering, consider selling it to them instead. A preorder, a deposit, or a pledge at a stated price is not a stated preference. It is a purchase, and it is stronger evidence than any survey can produce. It does not replace the survey, which estimates a whole curve where a preorder gives you a single point. It validates one, at a real price, with real money, which is exactly the [one-point check](estimating-demand.qmd) the estimated curve should be held to.
 
 ### When You Cannot Reach Them At All
 

@@ -54,9 +54,11 @@ book:
     # worth-doing stands outside the parts, matching Make the Call's intro.qmd
     # and EI's opening chapter. It is an introductory chapter in substance and
     # was the only one of the three books' openers sitting inside a part.
-    # It stays NUMBERED and stays chapter 1: Quarto numbers chapters
-    # sequentially regardless of parts, so nothing downstream renumbers and the
-    # book's many "[chapter N](file.qmd)" links keep pointing where they point.
+    # It is also UNNUMBERED, made so on 17 Aug 2026 because it was the only
+    # front-matter chapter in the family carrying a number in the nav bar. That
+    # renumbered the book once, deliberately: familiar-tools became ch1 and
+    # everything shifted down one. Notes written before that date carry the old
+    # numbers, one higher.
     - worth-doing.qmd
 
     - part: Pre-Revenue Decisions
@@ -71,27 +73,30 @@ book:
         - executing-experiments.qmd
         - estimating-demand.qmd
 
-    - part: part-demand-toolkits.qmd # Toolkit
-      chapters:
-        - frame-the-problem.qmd
-        - survey-design.qmd
-        - validate-evidence.qmd
-        - prepare-data.qmd
-        - check-demand-curve.qmd
-        
+    # The two Toolkit Parts and competition-survey.qmd were deleted 20 Aug 2026,
+    # ten files plus their two openers, ~11,700 words. They were never a
+    # procedure: measured 17 Aug, the 29 chapters carried 1,163 executable lines
+    # and the 10 toolkits carried 0. They asked the reader to understand a
+    # process and then invent it for their own case, which is the hybrid ChatGPT
+    # pushed the first draft into. The two method layers below now carry the
+    # mechanics, in a form a machine can actually execute, and the judgment they
+    # gestured at is in the chapters' .threshold gates -- eleven of them as of
+    # 20 Aug, one for every stage where the layer hands back. Deleted before the
+    # semester rather than after it, since no student had seen them yet and
+    # shipping both in parallel would have been the confusing outcome.
+    #
+    # Not lost in the deletion: the three-anchor elicitation and the
+    # four-scenario competitive design (the book's two unplaced contributions)
+    # are specified in the layers; replication against a fresh sample moved into
+    # estimating-demand; frame-the-problem's six framing items were already
+    # Stage 0 and are now also the gate in what-to-learn.
+
     - part: Profit
       chapters:
         - cost.qmd
         - scale.qmd
         - profit.qmd
         - profit-reasoning.qmd
-
-    - part: part-profit-toolkits.qmd # Toolkit
-      chapters:
-        - variable-cost.qmd
-        - fixed-cost.qmd
-        - scaling.qmd
-        - sensitivity.qmd
 
     - part: Competition
       chapters:
@@ -100,8 +105,6 @@ book:
         - competition-experiment.qmd
         - competitive-advantage.qmd
         
-    - competition-survey.qmd
-
     # One part, not two. Until 16 Aug 2026 the TOC carried a bare
     # "Competitive Dynamics" part holding non-price-competition AND a second
     # part keyed to part-competitive-dynamics.qmd holding the four legacy

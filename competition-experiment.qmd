@@ -48,7 +48,7 @@ That framing burden is heavier than it sounds. Describe the competitor warmly an
 
 Asking people what they would do when a competitor changes price measures intention under a described scenario, not behavior in a market. Cross-price effects are especially exposed to this, because switching is exactly the kind of decision people find easy to imagine and harder to execute against habit, convenience, and inertia.
 
-Treat estimated substitution as an upper bound on how mobile your customers really are, and prefer a smaller number when the evidence is thin. The [validation toolkit](validate-evidence.qmd) applies here with more force than it did under monopoly, not less.
+Treat estimated substitution as an upper bound on how mobile your customers really are, and prefer a smaller number when the evidence is thin. The [checks that decide whether a curve is safe to use](estimating-demand.qmd) apply here with more force than it did under monopoly, not less.
 :::
 
 ## Identification, Not Realism
@@ -65,7 +65,7 @@ This is where a sensible instinct does real damage. Founders build scenarios tha
 
 A respondent may never encounter the price pair you show them. That is acceptable and often necessary. What is not acceptable is a set of scenarios from which the parameters cannot be recovered.
 
-The obvious way to guarantee independent variation is to show every combination of prices, and that fails for a different reason: the combinations multiply fast, and a respondent asked twenty pricing questions stops thinking somewhere around the eighth. Structured designs exist that get identification from a fraction of the full grid, and [the competition toolkit](competition-survey.qmd) has the mechanics. The principle is what matters here. Competitive demand has to be identified on purpose. It does not turn up on its own.
+The obvious way to guarantee independent variation is to show every combination of prices, and that fails for a different reason: the combinations multiply fast, and a respondent asked twenty pricing questions stops thinking somewhere around the eighth. Structured designs exist that get identification from a fraction of the full grid, and the [method layer for a market with a rival](method-layer-competition.qmd) has the mechanics. The principle is what matters here. Competitive demand has to be identified on purpose. It does not turn up on its own.
 
 ## Reading the Coefficients
 

@@ -2,11 +2,13 @@
 subtitle: "The procedure your AI runs"
 ---
 
-# The Method Layer {.unnumbered #sec-method-layer}
+# The Method Layer: Without a Rival {.unnumbered #sec-method-layer}
 
 This appendix is not written for you. It is written for your AI.
 
 Everything before it taught you the judgment. This is the mechanical companion that lets a capable model run the method *with* you — drafting the instrument, cleaning what comes back, estimating demand, assembling profit, and handing every decision back to you at the point where it stops being arithmetic. Paste the block below into your AI's custom instructions — a project's system prompt, a saved persona, a pinned message — then work your decision through it. It is deliberately terse and imperative: optimized for a machine to execute, not for you to read.
+
+**Check first that this is your layer.** It assumes you are pricing without a rival close enough to matter. If you can name a specific competitor, a customer choosing you is plausibly choosing them instead, and their price is visible to your customers, stop here and use [The Method Layer: With a Rival](method-layer-competition.qmd) instead. The two run on different instruments and neither set of evidence converts into the other afterwards, so the choice has to be made before you field anything.
 
 Two kinds of stop are built into it, and they are not the same thing.
 
