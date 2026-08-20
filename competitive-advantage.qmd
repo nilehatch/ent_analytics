@@ -54,7 +54,37 @@ Solving for where the two best responses cross gives prices of \$1.53 and \$1.02
 So the franchise's cost advantage was real and it was not enough. It was outweighed by two demand-side asymmetries that nobody had thought to measure, and that no amount of operational excellence would have revealed.
 :::
 
-That case is small enough to see all the way through, and the same structure appears at any scale. Published estimates for cola concentrate put Coca-Cola's appeal at 63.4 against Pepsi's 49.5, its own-price sensitivity at 3.98 against 5.48, and its substitution gain at 2.25 against Pepsi's 1.40 — while **Pepsi holds the cost advantage**, \$3.96 against \$4.96 [@gasmiEconometricAnalysisCollusive1992]. Equilibrium prices come out near \$12.74 and \$8.13, with Coke earning roughly two and a half times the contribution.
+<!--
+Sourcing for the cola figures, verified against the PDF 20 Aug 2026.
+
+Gasmi, Laffont & Vuong (1992), model M10 (their selected model), Table XI, p. 294.
+Quarterly data 1968-1986 on regular carbonated soda; prices are SYRUP prices,
+deflated to real terms (their footnote 10). Firm 1 = Coca-Cola, firm 2 = Pepsi.
+
+READ STRAIGHT OFF TABLE XI:
+  own-price   Coke PCO -3.98   Pepsi PPE -5.48
+  cross-price Coke PPE  2.25   Pepsi PCO  1.40
+
+DERIVED, not printed anywhere in the paper. Their demand equation (1) is
+q1 = a11*p1 + a12*p2 + g11*sqrt(A1) + g12*sqrt(A2) + b10 + b11*DUM + b12*INC,
+so "appeal" is the composite intercept evaluated at the Table AI means (p. 309:
+ADCO 5.89, ADPE 5.28, INC 20.63) with DUM at 0.5, the regime dummy's mean over
+the 76 quarters:
+  Coke  26.17 + 9.58(.5) + 0.99(20.63) + 2.60(5.89) - 0.62(5.28) = 63.43
+  Pepsi 17.48 + 11.64(.5) + 1.92(20.63) - 4.81(5.89) + 2.83(5.28) = 49.52
+Marginal cost is the AC block of Table XI at the same means (SUG 1.15, LABOR
+0.55, RAAA 3.01, RBAA 4.27):
+  Coke  0.30(1.15) + 8.36(0.55) + 0.004(3.01) = 4.96
+  Pepsi 0.22(1.15) + 6.71(0.55) + 0.00(4.27)  = 3.94, 3.96 at unrounded LABOR
+
+EQUILIBRIUM is ours, from those six numbers: p1 = 12.74, p2 = 8.12,
+contribution 240.9 vs 95.0, ratio 2.54. Two independent checks that it is
+right: observed sample means are PCO 12.96 / PPE 8.16 and QCO 30.22 / QPE 22.72
+against our predicted quantities 31.0 / 22.8; and the implied Lerner indices,
+61% and 51%, sit inside the paper's own reported 59-64% and 45-56% (p. 297).
+-->
+
+That case is small enough to see all the way through, and the same structure appears at any scale. Gasmi, Laffont and Vuong estimated a demand system for cola concentrate over the years 1968 to 1986 [@gasmiEconometricAnalysisofCollusive1992]. Read at the averages of their sample, their parameters put Coca-Cola's appeal at 63.4 against Pepsi's 49.5, its own-price sensitivity at 3.98 against 5.48, and its substitution gain at 2.25 against Pepsi's 1.40 — while **Pepsi holds the cost advantage**, \$3.96 against \$4.96. Equilibrium prices come out near \$12.74 and \$8.12, with Coke earning roughly two and a half times the contribution. The same check applies as it did to the ice cream, and it survives it: across those years the two firms were actually charging \$12.96 and \$8.16.
 
 Twice, at wildly different scales, the firm with the cost advantage lost. That is not a coincidence and it is not a rule that cost never matters. It is what happens when a cost advantage of one size meets demand-side insulation of a larger one.
 

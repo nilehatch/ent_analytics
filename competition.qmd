@@ -188,7 +188,7 @@ Suppose your costs match your rival's, and they are charging \$100. You can take
 
 The undercutting stops at one place. When price reaches variable cost, the next cut loses money on every unit sold, and neither firm has a profitable move left:[^bertrand]
 
-[^bertrand]: This argument is old and it is not mine. Joseph Bertrand made it in 1883, reviewing Cournot, and the model of price competition that follows from it carries his name [@bertrandBookReviewEmphRecherche1883]. The next chapter is the version where products differ.
+[^bertrand]: This argument is old and it is not mine. Joseph Bertrand made it in 1883, reviewing Cournot, and the model of price competition that follows from it carries his name [@bertrandBookReviewRecherche1883]. The next chapter is the version where products differ.
 
 $$\mathsf{P = c}$$
 

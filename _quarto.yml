@@ -80,7 +80,7 @@ book:
     # process and then invent it for their own case, which is the hybrid ChatGPT
     # pushed the first draft into. The two method layers below now carry the
     # mechanics, in a form a machine can actually execute, and the judgment they
-    # gestured at is in the chapters' .threshold gates -- eleven of them as of
+    # gestured at is in the chapters' .threshold gates -- twelve of them as of
     # 20 Aug, one for every stage where the layer hands back. Deleted before the
     # semester rather than after it, since no student had seen them yet and
     # shipping both in parallel would have been the confusing outcome.
@@ -109,15 +109,21 @@ book:
     # "Competitive Dynamics" part holding non-price-competition AND a second
     # part keyed to part-competitive-dynamics.qmd holding the four legacy
     # game-theory files. That was one unfinished migration showing as two
-    # parts. Merged here; the four legacy files collapse into three chapters
-    # as they are rewritten.
+    # parts. Merged here; the four legacy files collapsed into the three
+    # chapters below.
     #
     # The opener file was retired 17 Aug 2026, the last of the narrative part
     # openers to go. It still described the pre-rewrite structure — it named
     # Strategic Commitment as a fourth chapter, and that file no longer exists
     # — and everything it claimed was already in the chapters. A bare title
-    # now, matching the other four narrative parts. The two toolkit openers
-    # remain and go when the toolkits dissolve.
+    # now, matching the other four narrative parts.
+    #
+    # The migration finished 20 Aug 2026, when the last three legacy files were
+    # deleted: two-stage-game.qmd, designing-advantage.qmd and
+    # commitment-and-deterrence.qmd, ~3,500 words, out of the TOC and
+    # superseded. Nothing was lost. sequential-games now folds entry deterrence
+    # into strategic commitment as the case where the rival has not shown up
+    # yet, and competitive-advantage carries the structural read of it.
     - part: "Competition Before Price"
       chapters:
         - non-price-competition.qmd
@@ -142,11 +148,10 @@ book:
     - method-layer.qmd
     - method-layer-competition.qmd
 
-    # Removed 11 Aug 2026, both pending real content:
-    #   - part: Competing to Sell to Businesses   (part had no chapters; rendered empty)
-    #   - summary.qmd                             (placeholder: "this book has no content
-    #                                              whatsoever" — was live as ch. 24)
-    # summary.qmd is superseded by what-its-worth.qmd and can be deleted.
+    # Removed 11 Aug 2026: an empty "Competing to Sell to Businesses" part, and
+    # summary.qmd, a placeholder that was live as ch. 24 and read "this book has
+    # no content whatsoever". what-its-worth.qmd superseded it; the file itself
+    # was deleted 20 Aug along with the rest of the orphans.
     - references.qmd
 
 bibliography: references.bib
