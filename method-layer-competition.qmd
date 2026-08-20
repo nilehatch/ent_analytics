@@ -108,32 +108,50 @@ q_B = a_B − b_B·p_B + d_B·p_A
 
 `a` is appeal at a price of zero. `b` is how fast you lose customers when **you** raise price. `d` is how many arrive when **they** raise theirs. The two `d` terms are different questions about different people and nothing requires them to be equal — that asymmetry is the most decision-relevant thing this method produces.
 
-**Transform**, then **estimate**, and keep them separate.
+**Transform per respondent, then sum. Do not pool the points and regress.**
+
+This is the same principle as the single-firm method, where each respondent's three anchors give their own demand line and the lines are summed. Here each respondent's four scenarios identify their own three parameters *exactly*, with no estimation at all:
 
 ```python
-def rows_for_regression(responses):
-    # responses: one record per respondent with their two WTPs and the four
-    # quantities for the focal product. Emits (p_own, p_rival, q) points.
-    out = []
-    for r in responses:
-        wa, wb = r["wtp_a"], r["wtp_b"]
-        for (pa, pb, q) in ((0.0, 0.0, r["q_free_free"]),
-                            (wa,  0.0, r["q_own_free"]),
-                            (0.0, wb,  r["q_free_rival"]),
-                            (wa,  wb,  r["q_own_rival"])):
-            out.append((pa, pb, float(q)))
-    return out
+def respondent_system(q_00, q_own0, q_0riv, q_ownriv, wtp_own, wtp_riv):
+    # Four scenarios, three unknowns. The fourth is a check, not a fitted point.
+    #   q_00      = a
+    #   q_own0    = a - b*wtp_own      ->  b
+    #   q_0riv    = a + d*wtp_riv      ->  d
+    #   q_ownriv  = a - b*wtp_own + d*wtp_riv   <- must reproduce, within noise
+    if wtp_own <= 0 or wtp_riv <= 0:
+        return None
+    a = q_00
+    b = (q_00 - q_own0) / wtp_own
+    d = (q_0riv - q_00) / wtp_riv
+    check = q_ownriv - (a - b*wtp_own + d*wtp_riv)
+    return {"a": a, "b": b, "d": d, "residual": check}
 
-def fit_system(points):
-    # q = a - b*p_own + d*p_rival, by ordinary least squares.
-    import numpy as np
-    P = np.array([[1.0, -pa, pb] for pa, pb, _ in points])
-    Q = np.array([q for _, _, q in points])
-    a, b, d = np.linalg.lstsq(P, Q, rcond=None)[0]
-    return {"a": float(a), "b": float(b), "d": float(d)}
+def system_from(respondents):
+    rs = [r for r in (respondent_system(**x) for x in respondents) if r]
+    return {"a": sum(r["a"] for r in rs),
+            "b": sum(r["b"] for r in rs),
+            "d": sum(r["d"] for r in rs),
+            "n": len(rs),
+            "residuals": [r["residual"] for r in rs]}
 ```
 
-Fit the focal product from its four conditions, then the rival from theirs. Report all six parameters with their signs checked: `b` positive, `d` positive or near zero. A negative `d` says customers leave you when the rival gets more expensive, which is almost always a data problem rather than a discovery — report it as one.
+**Pooling the four points from every respondent into one regression is wrong, and wrong in a direction that hides itself.** Respondents with a high willingness to pay are asked about high prices *and* tend to buy more, so pooled least squares confounds price variation with who was answering and attenuates both slopes toward zero. On the practice dataset shipped with this book, pooling returns `b = 0.45, d = 0.02` against the correct `b = 1.02, d = 0.23` — own-price sensitivity understated by a factor of two, substitution by a factor of eleven — and it returns an R² near 0.1, which correctly signals that something is wrong without saying what. Carried through to a decision, the two methods disagree about whether the venture makes money at all.
+
+**Use the fourth scenario as the diagnostic.** It was not used in fitting, so its residual is a genuine out-of-sample check on whether this respondent's answers are internally consistent. Report the share of respondents reproducing it within a unit. Where most do, the linear form is doing real work. Where most do not, say so — the parameters are arithmetic either way, and their meaning is not.
+
+**For yes/no demand there are no quantity scenarios**, and two willingness-to-pay figures are enough on their own. A respondent buys the focal product when they can afford it and it beats the rival on surplus:
+
+```python
+def q_yes_no(respondents, p_own, p_riv):
+    # respondents: list of (wtp_own, wtp_riv)
+    return sum(1 for wo, wr in respondents
+               if wo >= p_own and (wo - p_own) >= (wr - p_riv))
+```
+
+Sweep both prices over a grid, build the quantity surface, then fit `q = a − b·p_own + d·p_riv` to that surface. Pooling is safe here because the surface is constructed at prices you chose rather than at prices each respondent named, so there is no respondent heterogeneity to confound. On the shipped yes/no practice data this recovers R² above 0.87 for both products.
+
+Report all six parameters with signs checked: both `b` positive, both `d` positive or near zero. A negative `d` says customers leave you when the rival gets more expensive, which is almost always a data problem rather than a discovery — report it as one.
 
 Then rescale to the population exactly as the single-firm layer does: with `n` usable respondents and reachable population `N`, multiply `a` by `N/n` and leave `b` and `d` alone. Only the intercept scales; the sensitivities are per-person rates. Report the multiplier and state that it assumes the sample behaves like the population.
 
