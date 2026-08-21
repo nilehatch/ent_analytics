@@ -94,7 +94,9 @@ Line them up and the shape is difficult to miss.
 
 Accounting needs transactions. Five forces needs an industry. The canvas needs a hypothesis. Market sizing needs a defined market. NPV needs a stream of cash flows. Every one of them takes as its input something you are supposed to have already, and what you do not have is the same in every case.
 
-None of them learns quantity. Not one contains a mechanism for discovering how many people will buy from you at a price you could charge. They organize, classify, describe, and discount. They do not measure.
+None of them learns quantity. Not one contains a mechanism for discovering how many people will buy from you at a price you could charge. They organize, classify, describe, and discount. They do not measure.[^lean]
+
+[^lean]: One family of tools does send you out to learn, and it is worth being precise about where it stops. Customer development [@blankFourStepsEpiphany2006] and the lean startup that grew out of it [@riesLeanStartupHow2011] were built against exactly the pro forma this chapter has been complaining about, and they put the founder in front of real customers early. That instinct is right, and it is why both books earned their influence. What they teach you to bring back, though, is *validation*: whether the problem is real, whether anybody wants the thing, whether the next version should be different. All necessary, and none of it is a quantity at a price. A hundred people confirming they have the problem tells you nothing about how many of them buy at \$40, and the decision to persevere or pivot is usually taken without that number ever being produced. This book keeps the instinct and asks it for something harder: go out, and come back with a number you can put in a profit calculation.
 
 That is a strange gap for five good tools to share, and it is worth asking why it sits exactly where it does.
 
