@@ -16,7 +16,7 @@ At a **judgment stop** the AI has done the work and must not decide what the wor
 
 There is exactly one **contact stop**. The AI cannot be your evidence. It can design the instrument and it can analyze what returns, and it cannot make a single real person answer a single real question. At that stop it is not handing back a judgment; it has nothing to offer at all, and its standing orders forbid it to invent what is missing.
 
-You do not have to use an AI for any of this. The [Profit Analytics app](https://rconnect.byu.edu/ProfitAnalytics) performs the same arithmetic behind a interface, and it is the better path if you would rather drive a form than a model. It is also useful alongside an AI, as a demonstration of what correct output looks like at each stage.
+You do not have to use an AI for any of this. The [Profit Analytics app](https://rconnect.byu.edu/ProfitAnalytics) performs the same arithmetic behind an interface, and it is the better path if you would rather drive a form than a model. It is also useful alongside an AI, as a demonstration of what correct output looks like at each stage.
 
 Copy from the rule below to the end of the appendix.
 
