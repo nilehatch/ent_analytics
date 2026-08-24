@@ -14,13 +14,15 @@ difference.
 |---|---|
 | `muscle_cola_wqq.csv` | **collected.** Real respondents, real answers |
 | `fresh-prep_fast-food.csv` | **collected.** BYU undergraduates |
-| `dp_vp.csv` | **adapted.** Rescaled and relabelled from a student assignment, because the substitution pattern this design produces resisted simulation |
+| `dp_vp.csv` | **simulated.** See `simulate-dp-vp.R` |
 | `dorsal.csv` | **simulated.** See `simulate-dorsal.R` |
 
-Dorsal Pack is a real venture and its founders never recorded what respondents told
-them, so there was nothing to publish. The file stands in for evidence that was
-collected and lost, which is a common enough fate that it is worth naming rather than
-hiding.
+Both simulated files stand in for evidence that was never recorded. Dorsal Pack is a
+real venture whose founders did not keep what respondents told them, which is a common
+enough fate to be worth naming rather than hiding. `dp_vp.csv` previously held data
+rescaled and relabelled from a student class assignment; the students were asked about
+its use and no record of that permission survives, so it was replaced on 24 Aug 2026
+with a generator that reproduces the behaviour without borrowing anyone's answers.
 
 **Adapted and simulated data can teach a method. It cannot support a claim about the
 world**, and nothing in this book rests on either file.
@@ -68,7 +70,21 @@ picture identically and wtp/2 is a different price for every respondent. The aba
 collected after the design settled and never carried it.
 
 **`dp_vp.csv`** — two travel backpacks, Dorsal Pack and Versa Pack. `dp` and `vp` are the
-respondent's maximum for each. n = 110.
+respondent's maximum for each, and `security_preference` is a 0–10 attitude item. n = 110.
+
+**Simulated.** `simulate-dp-vp.R` builds it in three parts: a preference dimension, a
+small shared taste for good luggage, and the same focal-value reporting used for
+`dorsal.csv`. Security is Dorsal Pack's differentiator and drives what a respondent
+will pay for it (r = 0.91) while explaining almost nothing about Versa Pack (r = −0.07),
+so the file rewards a reader who segments on one attitudinal variable and shows that the
+same variable can be decisive for one product and irrelevant for its rival. The two
+maxima are close to uncorrelated, which means the substitution the choice rule produces
+comes from overlapping price distributions rather than from correlated tastes.
+
+Fitted on the summed surface it returns a demand system with both substitution terms
+sharply identified and unequal — Versa Pack gains more from a Dorsal price rise than the
+reverse, and loses customers faster to its own price. That asymmetry is what the file is
+for.
 
 **`fresh-prep_fast-food.csv`** — a prepared meal bowl against the respondent's usual
 fast-food option, among BYU undergraduates. `wtpA` and `wtpB` are the two maxima; `wowA`
