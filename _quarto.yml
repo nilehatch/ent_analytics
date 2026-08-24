@@ -16,6 +16,13 @@ project:
   # what went wrong and why Cache-Control alone was not enough.
   resources:
     - _headers
+    # The four practice datasets, their provenance note, and the two generators.
+    # data/README.md tells a reader they are "kept here so a reader can run the
+    # method before they have evidence of their own", which was untrue of the
+    # published site until 24 Aug 2026 -- the files existed only in the repo.
+    # Netlify serves no directory index, so /data/ itself 404s; link the files
+    # individually. Canonical URLs are listed at the top of data/README.md.
+    - data
 
 book:
   title: "Is This Worth Doing?"

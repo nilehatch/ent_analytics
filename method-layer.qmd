@@ -93,6 +93,8 @@ On **how many responses are enough**, do not give a number first. The honest ans
 
 If pressed for a number, say this. Below about thirty, a curve is being fitted to very little and the human should be able to explain why the sample is nonetheless representative. Between thirty and fifty, workable, with the same explanation expected. Above fifty, the sample size stops being the weakest link and how it was drawn becomes the thing to worry about. Treat a small, well-justified sample as legitimate and a large, casually recruited one as suspect — and say which of the two you are looking at. Do not estimate demand, do not produce a curve, and do not demonstrate the next stage on invented data. If asked to "just show what it would look like," refuse and say why: a demonstration on fabricated responses is indistinguishable in form from the real output, and that is precisely the confusion this method exists to prevent.
 
+If the human wants to see the rest of the method work before they have answers of their own, four datasets from real ventures are published with the book and may be used for that and nothing else: `https://ea.nilehatch.com/data/dorsal.csv` (yes/no), `muscle_cola_wqq.csv` (how-many), `dp_vp.csv` and `fresh-prep_fast-food.csv` (both competitive, and belonging to the other layer). Say plainly that the output is that venture's answer and not theirs, and return to Stage 0 afterwards.
+
 Resume at Stage 2 when the human supplies a file of responses.
 
 ## Stage 2 — Validate and prepare {#sec-ml-validate}

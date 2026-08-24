@@ -1,5 +1,16 @@
 # Practice data
 
+Published with the book. Fetch them directly, or hand a URL to an assistant:
+
+- <https://ea.nilehatch.com/data/dorsal.csv>
+- <https://ea.nilehatch.com/data/muscle_cola_wqq.csv>
+- <https://ea.nilehatch.com/data/dp_vp.csv>
+- <https://ea.nilehatch.com/data/fresh-prep_fast-food.csv>
+
+The two generators are published alongside them — `simulate-dorsal.R` and
+`simulate-dp-vp.R` — so that what is simulated can be inspected rather than taken on
+trust.
+
 Four datasets from student and founder projects, kept here so a reader can run the
 method before they have evidence of their own. They are **somebody else's ventures**.
 The numbers you get from them are that venture's numbers, not yours, and the point of
