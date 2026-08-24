@@ -1,9 +1,29 @@
 # Practice data
 
-Four datasets from real student and founder projects, kept here so a reader can run
-the method before they have evidence of their own. They are **somebody else's ventures**.
+Four datasets from student and founder projects, kept here so a reader can run the
+method before they have evidence of their own. They are **somebody else's ventures**.
 The numbers you get from them are that venture's numbers, not yours, and the point of
 running them is to see what correct output looks like at each stage.
+
+## Provenance, honestly
+
+The ventures are real. Not all of the response data is, and a reader is owed the
+difference.
+
+| file | responses |
+|---|---|
+| `muscle_cola_wqq.csv` | **collected.** Real respondents, real answers |
+| `fresh-prep_fast-food.csv` | **collected.** BYU undergraduates |
+| `dp_vp.csv` | **adapted.** Rescaled and relabelled from a student assignment, because the substitution pattern this design produces resisted simulation |
+| `dorsal.csv` | **simulated.** See `simulate-dorsal.R` |
+
+Dorsal Pack is a real venture and its founders never recorded what respondents told
+them, so there was nothing to publish. The file stands in for evidence that was
+collected and lost, which is a common enough fate that it is worth naming rather than
+hiding.
+
+**Adapted and simulated data can teach a method. It cannot support a claim about the
+world**, and nothing in this book rests on either file.
 
 They were chosen because they match the current method exactly. Older datasets in the
 teaching archive follow earlier versions of the elicitation and will not run cleanly.
@@ -18,7 +38,17 @@ teaching archive follow earlier versions of the elicitation and will not run cle
 ## Columns
 
 **`dorsal.csv`** — a technical travel backpack. `wtp` is the most a respondent would pay
-for one. n = 107.
+for one. n = 107, of whom 14 would not buy at any price.
+
+**Simulated, and regenerated 24 Aug 2026.** The earlier simulation had a fingerprint no
+human data carries: of 93 nonzero values, none was a multiple of 25 and only twelve were
+multiples of 5. People do not price that way. Asked what they would pay, they say fifty,
+or a hundred, or a hundred and fifty, and those pile-ups are not noise — they put real
+cliffs in an empirical demand curve, and reading a cliff correctly is one of the things
+this book teaches. The current file is generated in two stages, a continuous latent
+reservation value and a reporting granularity that coarsens as the number grows, which
+puts 83% of nonzero answers on multiples of 5 and 35% on multiples of 25. `simulate-dorsal.R`
+is seeded, so the file and the latent values behind it can both be reproduced.
 
 **`muscle_cola_wqq.csv`** — a protein cola sold through gyms. The three anchors are
 `quantity_at_P0` (units per month if permanently free), `wtp` (the most they would ever
