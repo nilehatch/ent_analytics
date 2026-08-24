@@ -23,7 +23,19 @@ for one. n = 107.
 **`muscle_cola_wqq.csv`** — a protein cola sold through gyms. The three anchors are
 `quantity_at_P0` (units per month if permanently free), `wtp` (the most they would ever
 pay for one), and `quantity` (units per month at that price). Remaining columns are
-segmentation. n = 46, of whom 11 would take none even at zero.
+segmentation. n = 46, of whom **12 would take none even at zero**.
+
+Eleven of those twelve also name a maximum of \$0. The twelfth names \$0.50 and still takes
+none at any price, including free — a respondent who is internally consistent with the
+validation rules and contributes nothing to the curve. Worth knowing before the arithmetic
+disagrees with a hand count.
+
+This is the one dataset that predates the settled elicitation. It was collected while the
+question being tested was quantity at **half** the stated maximum; anchoring at a permanent
+price of zero came later and replaced it, because zero is a price every respondent can
+picture identically and wtp/2 is a different price for every respondent. The abandoned
+`WTP_half` column was dropped from the file on 24 Aug 2026. The other three datasets were
+collected after the design settled and never carried it.
 
 **`dp_vp.csv`** — two travel backpacks, Dorsal Pack and Versa Pack. `dp` and `vp` are the
 respondent's maximum for each. n = 110.
