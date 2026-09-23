@@ -6,7 +6,11 @@ subtitle: "The procedure your AI runs when your price and theirs move together"
 
 This appendix is not written for you either. It is the second of two machine-readable procedures, and it is the one to use when a named rival is close enough that your price and theirs move together.
 
-**Use this layer instead of the other one, not after it.** The two run on different evidence. The single-firm layer elicits what a customer would pay for your offering; this one asks about your offering *and* a rival's at the same time, under four price conditions, and no scenario in it ever removes the rival. That is deliberate — it is what allows substitution to be measured — and it means single-firm demand cannot be recovered from competitive data, or the reverse. Choose the instrument before you field anything, because you cannot convert one into the other afterwards.
+**Field this instrument instead of the other one, not after it.** The two collect different evidence. The single-firm layer elicits what a customer would pay for your offering; this one asks about your offering *and* a rival's at the same time, under four price conditions, and no scenario in it ever removes the rival. That is deliberate — it is what allows substitution to be measured — and it means single-firm demand cannot be recovered from competitive data, or the reverse. Choose the instrument before you field anything, because you cannot convert one into the other afterwards.
+
+**Reading the single-firm layer first is a different matter, and a good idea.** It is the simpler machinery and this one is built on top of it. The restriction is on fielding twice, not on learning in order.
+
+**And this layer executes a method; it does not teach one.** If you have arrived here without reading the demand chapters, read them first. The gates below ask you to judge things — whether a curve behaves like customers, whether a sample resembles a population, what an equilibrium is a prediction about — that the chapters explain and this appendix assumes.
 
 Choose this layer when all three are true: a specific rival can be named, a customer choosing you is plausibly choosing them instead, and their price is visible to your customers. Otherwise use [the method layer for a market without a rival](method-layer.qmd). A rival nobody is comparing you to is not yet a competitor, and modelling one costs you a longer survey for parameters that will come back near zero.
 
