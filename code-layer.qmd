@@ -2,12 +2,11 @@
 subtitle: "The procedure you run yourself"
 ---
 
-# The Code Layer: Without a Rival {.unnumbered #sec-code-layer}
+# The Code Layer {.unnumbered #sec-code-layer}
 
 This appendix is for the reader who would rather write the code than drive a form or supervise a
 model. It performs the same arithmetic as the [Profit Analytics
-app](https://rconnect.byu.edu/ProfitAnalytics) and the same procedure as [The Method Layer: Without
-a Rival](method-layer.qmd), in R and in Python, with the reasoning kept where a person can read it.
+app](https://rconnect.byu.edu/ProfitAnalytics) and the same procedure as [the method layer](method-layer.qmd), in R and in Python, with the reasoning kept where a person can read it.
 
 **Why code rather than a prompt.** An earlier version of this material was written as prompts: a
 paragraph describing what to build, handed to an AI. It kept collapsing into the same thing. Asked
