@@ -37,3 +37,22 @@ low-price end.
 **Related, and already handled elsewhere:** the course's competence-check key and the estimation
 assignment were corrected on 23 Sep 2026 to say that a blank is not a zero — a typed zero is an
 answer, an optional skip is missing, and a branch implies zero.
+
+
+## `method-layer.qmd`, Stage 3 — the yes/no sigmoid claim is too strong
+
+**Current text:**
+
+> "Expect the sigmoid to fit well under how-many demand and to fail under yes/no ... a solver will
+> either refuse to converge or return an asymptote far above any observed quantity with an
+> inflection outside the price range."
+
+**On `muscle_cola_wqq.csv` it converges and fits respectably (R² 0.957), and its asymptote lands
+*below* the observed maximum, not far above it: 39.6 against 46 respondents at a price of zero.**
+The failure is real but it is in the opposite direction from the one predicted — it understates
+the low-price end by eight buyers, where the method layer warns about an inflated ceiling.
+
+**Suggested replacement:** keep the reasoning about the missing shoulder, drop the prediction about
+non-convergence and an inflated asymptote, and say instead that the sigmoid is poorly identified on
+a staircase and will describe the low-price end badly in whichever direction the solver lands. The
+code layer reports the observed numbers.

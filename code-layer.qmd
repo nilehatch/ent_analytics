@@ -273,5 +273,200 @@ not need.
 
 ---
 
-*The next section fits curves to these points: linear, exponential, and sigmoid, with goodness of
-fit computed on the original quantity scale.*
+## Fitting a curve {#sec-cl-fit}
+
+The staircase is evidence. A fitted curve is an assumption about the prices nobody was asked
+about, and it is what you need in order to compute profit at a price you are considering. Keep the
+two separate in your head: **counting is nearly assumption-free; fitting invents behaviour.**
+
+**Fit at the prices the respondents named**, the same set you built the curve on, plus zero. An
+evenly spaced grid of your own invention weights the sparse tail — where one or two respondents sit
+— as heavily as the dense middle, and it moves the answer.
+
+**Fit all three forms and report all three.** Not to crown a winner on fit, but to see how much your
+conclusion depends on the shape you assumed. When the three agree, your decision is robust; when
+they diverge, the divergence is the finding.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-fit-r
+#| eval: false
+lin_model <- lm(quantity ~ price, hm)
+
+# Exponential: regress on log quantity. Drop zero quantities first -- log(0) is
+# undefined -- and say how many you dropped.
+exp_model <- lm(log(quantity) ~ price, filter(hm, quantity > 0))
+
+# Sigmoid: a real non-linear optimiser, not a grid search.
+sig_model <- nls(quantity ~ SSlogis(price, Asym, xmid, scal), data = hm)
+
+pred_lin <- function(p) predict(lin_model, newdata = tibble(price = p))
+pred_exp <- function(p) exp(predict(exp_model, newdata = tibble(price = p)))
+pred_sig <- function(p) predict(sig_model, newdata = tibble(price = p))
+```
+
+`SSlogis` is written for curves that rise, so on demand data `scal` comes back negative
+(here −0.628). That is the curve bending the right way, not an error.
+
+### Python
+
+```{python}
+#| label: cl-fit-py
+#| eval: false
+import numpy as np
+from scipy.optimize import curve_fit
+
+P = np.array([p for p, _ in hm_points])
+Q = np.array([q for _, q in hm_points])
+
+coef = np.polyfit(P, Q, 1)                       # Q = a + bP
+pred_lin = lambda p: coef[0] * p + coef[1]
+
+m = Q > 0                                        # log of zero is undefined
+k, lnA = np.polyfit(P[m], np.log(Q[m]), 1)       # ln Q = ln A + kP
+pred_exp = lambda p: np.exp(lnA) * np.exp(k * p)
+
+f = lambda p, L, P0, s: L / (1 + np.exp((p - P0) / s))
+par, _ = curve_fit(f, P, Q, p0=[max(Q), np.median(P), (max(P) - min(P)) / 4])
+pred_sig = lambda p: f(p, *par)
+```
+
+:::
+
+On the practice data, all three fit the same 22 points:
+
+| | shape | q at \$1 | q at \$2 |
+|---|---|---|---|
+| linear | slope −447.6, crosses zero at \$3.12 | 949.1 | 501.5 |
+| exponential | A = 2209.9, k = −0.913 | 887.1 | 356.1 |
+| sigmoid | L = 1520.7, midpoint \$1.43 | 1008.5 | 434.9 |
+
+**At \$1 they differ by 121 units — 12% — and at \$2 by 145, which is 29%.** Nothing downstream is
+more consequential than this choice, and no fit statistic makes it for you.
+
+## Goodness of fit, on one scale {#sec-cl-fitquality}
+
+Compute fit for all three by **predicting quantity at each observed price and scoring there**. This
+is easy to get wrong and the error is invisible.
+
+The exponential was fitted by regressing on `ln Q`, so the R² that falls out of that regression
+describes how well the *logs* line up. It runs far higher than the same model's fit to actual
+quantities and it is not comparable to the linear model's R². On this dataset the log-scale figure
+is **0.913** and the quantity-scale figure is **0.607** — second of three by one measure, last by a
+wide margin on the other. The sigmoid, fitted by non-linear least squares, has no variance
+decomposition at all, so an R² reported for it is descriptive only.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-quality-r
+#| eval: false
+fit_quality <- function(predict_fn, tb) {
+  resid <- tb$quantity - predict_fn(tb$price)      # always on the quantity scale
+  c(r2   = 1 - sum(resid^2) / sum((tb$quantity - mean(tb$quantity))^2),
+    rmse = sqrt(mean(resid^2)))
+}
+
+fit_quality(pred_lin, hm)   # r2 0.970  rmse  73.0
+fit_quality(pred_exp, hm)   # r2 0.607  rmse 262.5   <- not summary(exp_model)$r.squared
+fit_quality(pred_sig, hm)   # r2 0.993  rmse  34.5
+```
+
+### Python
+
+```{python}
+#| label: cl-quality-py
+#| eval: false
+def fit_quality(P, Q, predict):
+    resid  = Q - np.array([predict(p) for p in P])
+    ss_res = float((resid ** 2).sum())
+    ss_tot = float(((Q - Q.mean()) ** 2).sum())
+    return {"r2":   1 - ss_res / ss_tot if ss_tot else float("nan"),
+            "rmse": float(np.sqrt((resid ** 2).mean()))}
+
+fit_quality(P, Q, pred_lin)   # r2 0.970  rmse  73.0
+fit_quality(P, Q, pred_exp)   # r2 0.607  rmse 262.5
+fit_quality(P, Q, pred_sig)   # r2 0.993  rmse  34.5
+```
+
+:::
+
+**Report RMSE beside R², in units you recognise.** "Off by 73 units a month on average" is a
+sentence you can argue with; 0.970 is not.
+
+**Neither statistic chooses the curve.** Choose on behaviour: does quantity fall as price rises
+everywhere you care about, does the curve stay non-negative, does it say something possible at a
+price you have intuition about, and what does it assume beyond the range of your evidence? A model
+that fits slightly worse while implying something sensible is the better guide to an irreversible
+commitment.
+
+## What to expect on yes/no data {#sec-cl-yesno-fit}
+
+The same three fits run on a yes/no staircase, with one difference worth knowing in advance.
+
+A logistic needs a flat shoulder at low prices before it bends, so that its ceiling and its bend
+can be told apart. Horizontal summation produces that shoulder. **A yes/no staircase does not** — it
+falls fastest immediately — so the sigmoid is poorly identified there.
+
+On this dataset's yes/no curve it converges and looks respectable, R² 0.957, and still gets the
+end that matters wrong: **its ceiling lands at 39.6 when 46 people were observed at a price of
+zero**, understating buyers at the low end by eight. The exponential does worse still, R² 0.165,
+because a head count does not decay exponentially. The linear fit, R² 0.941, is the honest
+description of a staircase.
+
+So on yes/no data: fit all three, and expect the plain line to be the one you defend.
+
+## Look at it {#sec-cl-plot}
+
+Plot the points and the fitted curve together before you use either. This is the check that catches
+what statistics hide: a curve sitting consistently above or below the evidence, one that fits the
+middle and misses both ends, or one dragged by two extreme answers.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-plot-r
+#| eval: false
+library(ggplot2)
+grid <- tibble(price = seq(0, max(hm$price), length.out = 200)) |>
+  mutate(linear = pred_lin(price), exponential = pred_exp(price), sigmoid = pred_sig(price)) |>
+  tidyr::pivot_longer(-price, names_to = "model", values_to = "quantity")
+
+ggplot(hm, aes(price, quantity)) +
+  geom_point(size = 2) +
+  geom_line(data = grid, aes(colour = model)) +
+  labs(x = "Price", y = "Quantity per period",
+       title = "Demand: respondents' points and three fitted curves")
+```
+
+### Python
+
+```{python}
+#| label: cl-plot-py
+#| eval: false
+import matplotlib.pyplot as plt
+grid = np.linspace(0, P.max(), 200)
+plt.plot(P, Q, "o", label="respondents")
+for name, fn in (("linear", pred_lin), ("exponential", pred_exp), ("sigmoid", pred_sig)):
+    plt.plot(grid, [fn(p) for p in grid], label=name)
+plt.xlabel("Price"); plt.ylabel("Quantity per period"); plt.legend()
+plt.title("Demand: respondents' points and three fitted curves")
+```
+
+:::
+
+**Cover the curves and look only at the points. Would you have drawn that line yourself?** If not,
+the difference between what you would have drawn and what was fitted is the finding, and it is
+usually telling you something about the evidence rather than about the model.
+
+---
+
+*The next section rescales the fitted curve from your sample to a reachable population, and then
+assembles profit from demand and cost.*
