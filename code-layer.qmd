@@ -74,9 +74,7 @@ typed a zero, so nothing in this appendix depends on the rule above — but your
 
 ### R
 
-```{r}
-#| label: cl-load-r
-#| eval: false
+```r
 library(dplyr); library(readr); library(tidyr); library(purrr)
 
 d <- read_csv("muscle-cola.csv", show_col_types = FALSE) |>
@@ -92,9 +90,7 @@ median(d$wtp[d$wtp > 0])# 1.99
 
 ### Python
 
-```{python}
-#| label: cl-load-py
-#| eval: false
+```python
 import csv, statistics
 
 def num(x):
@@ -137,9 +133,7 @@ nowhere else.
 
 ### R
 
-```{r}
-#| label: cl-yesno-r
-#| eval: false
+```r
 demand_yes_no <- function(wtp) {
   prices <- sort(unique(c(0, wtp)))          # the respondents' own prices, plus zero
   tibble(price    = prices,
@@ -156,9 +150,7 @@ yn |> filter(price %in% c(0, 1, 2))
 
 ### Python
 
-```{python}
-#| label: cl-yesno-py
-#| eval: false
+```python
 def demand_yes_no(wtp):
     """One unit per buyer. At price p, everyone whose maximum is >= p buys."""
     prices = sorted(set(wtp) | {0.0})
@@ -199,9 +191,7 @@ answer — *I would take three if you gave them away and will not pay for them* 
 
 ### R
 
-```{r}
-#| label: cl-howmany-r
-#| eval: false
+```r
 respondent_q <- function(p, q_free, max_wtp, q_at_max) {
   if (max_wtp <= 0) return(if (p <= 0) q_free else 0)   # no slope exists
   if (p > max_wtp)  return(0)                           # above their ceiling, they stop
@@ -226,9 +216,7 @@ demand_how_many(d, c(0, 1, 2))
 
 ### Python
 
-```{python}
-#| label: cl-howmany-py
-#| eval: false
+```python
 def respondent_line(q_free, max_wtp, q_at_max):
     """That respondent's own demand: q_free when free, q_at_max at their
        maximum, nothing above it."""
@@ -291,16 +279,14 @@ they diverge, the divergence is the finding.
 
 ### R
 
-```{r}
-#| label: cl-fit-r
-#| eval: false
+```r
 lin_model <- lm(quantity ~ price, hm)
 
 # Exponential: regress on log quantity. Drop zero quantities first -- log(0) is
 # undefined -- and say how many you dropped.
 exp_model <- lm(log(quantity) ~ price, filter(hm, quantity > 0))
 
-# Sigmoid: a real non-linear optimiser, not a grid search.
+# Sigmoid: a real non-linear optimizer, not a grid search.
 sig_model <- nls(quantity ~ SSlogis(price, Asym, xmid, scal), data = hm)
 
 pred_lin <- function(p) predict(lin_model, newdata = tibble(price = p))
@@ -313,9 +299,7 @@ pred_sig <- function(p) predict(sig_model, newdata = tibble(price = p))
 
 ### Python
 
-```{python}
-#| label: cl-fit-py
-#| eval: false
+```python
 import numpy as np
 from scipy.optimize import curve_fit
 
@@ -363,9 +347,7 @@ decomposition at all, so an R² reported for it is descriptive only.
 
 ### R
 
-```{r}
-#| label: cl-quality-r
-#| eval: false
+```r
 fit_quality <- function(predict_fn, tb) {
   resid <- tb$quantity - predict_fn(tb$price)      # always on the quantity scale
   c(r2   = 1 - sum(resid^2) / sum((tb$quantity - mean(tb$quantity))^2),
@@ -379,9 +361,7 @@ fit_quality(pred_sig, hm)   # r2 0.993  rmse  34.5
 
 ### Python
 
-```{python}
-#| label: cl-quality-py
-#| eval: false
+```python
 def fit_quality(P, Q, predict):
     resid  = Q - np.array([predict(p) for p in P])
     ss_res = float((resid ** 2).sum())
@@ -431,9 +411,7 @@ middle and misses both ends, or one dragged by two extreme answers.
 
 ### R
 
-```{r}
-#| label: cl-plot-r
-#| eval: false
+```r
 library(ggplot2)
 grid <- tibble(price = seq(0, max(hm$price), length.out = 200)) |>
   mutate(linear = pred_lin(price), exponential = pred_exp(price), sigmoid = pred_sig(price)) |>
@@ -448,9 +426,7 @@ ggplot(hm, aes(price, quantity)) +
 
 ### Python
 
-```{python}
-#| label: cl-plot-py
-#| eval: false
+```python
 import matplotlib.pyplot as plt
 grid = np.linspace(0, P.max(), 200)
 plt.plot(P, Q, "o", label="respondents")
@@ -489,9 +465,7 @@ and nothing downstream would reveal it.
 
 ### R
 
-```{r}
-#| label: cl-rescale-r
-#| eval: false
+```r
 n <- nrow(d)          # 46 -- everyone screened in, zeros included
 N <- 5000             # reachable population, argued down and written out
 k <- N / n            # 108.7
@@ -502,9 +476,7 @@ q_pop(1)                                   # 109,621 units per month
 
 ### Python
 
-```{python}
-#| label: cl-rescale-py
-#| eval: false
+```python
 n = len(rows)          # 46
 N = 5000               # reachable population
 k = N / n              # 108.7
@@ -527,9 +499,7 @@ recruited through your own network, say so here rather than in a footnote at the
 
 ### Break-even, as a check on the rescaling {#sec-cl-breakeven}
 
-```{r}
-#| label: cl-breakeven-r
-#| eval: false
+```r
 required_sales  <- function(p, c, f) ceiling(f / (p - c))   # a fraction of a sale covers nothing
 required_buyers <- function(p, c, f, units_per_buyer) required_sales(p, c, f) / units_per_buyer
 ```
@@ -558,9 +528,7 @@ of spending, and it is defined by irreversibility rather than by recurrence.
 a profit estimate: quantity per month against a commitment per year understates the required scale
 by twelve. Check it before you go further, every time.
 
-```{r}
-#| label: cl-cost-r
-#| eval: false
+```r
 c_var <- 0.90      # per unit, same period basis as q()
 f_fix <- 8000      # per month, because quantity is per month
 ```
@@ -579,9 +547,7 @@ already zero. A grid cannot make that mistake.
 
 ### R
 
-```{r}
-#| label: cl-profit-r
-#| eval: false
+```r
 profit_curve <- function(q_of_p, c, f, lo = 0, hi = 4, n = 401) {
   tibble(price = seq(lo, hi, length.out = n)) |>
     mutate(profit = (price - c) * pmax(0, map_dbl(price, q_of_p)) - f)
@@ -604,9 +570,7 @@ read_curve(curve, 0, 4)
 
 ### Python
 
-```{python}
-#| label: cl-profit-py
-#| eval: false
+```python
 def profit_curve(q_of_p, c, f, lo=0.0, hi=4.0, step=0.01):
     out, p = [], lo
     while p <= hi:
@@ -663,7 +627,7 @@ narrow to contain the answer. Widen it and recompute, and say in your write-up w
 
 ---
 
-## Feasibility, fragility, sensitivity — and optimisation last {#sec-cl-hedge}
+## Feasibility, fragility, sensitivity — and optimization last {#sec-cl-hedge}
 
 The order matters, and it is the opposite of what the arithmetic invites.
 
@@ -679,9 +643,7 @@ variable cost, fixed commitment, reachable population, units per buyer, demand s
 willingness to pay — and record **the value at which the reading changes**. That threshold is the
 output. The ranking by size of effect is not.
 
-```{r}
-#| label: cl-sensitivity-r
-#| eval: false
+```r
 threshold <- function(vals, build_q, c, f, lo = 0, hi = 4) {
   map_dfr(vals, function(v) {
     r <- read_curve(profit_curve(build_q(v), c, f, lo, hi), lo, hi)
@@ -700,7 +662,7 @@ Then sort what you found by **actionability**, not by size of effect:
 - **deferrable** — the commitment could wait until it is clearer
 - **fixed** — outside your control
 
-**Optimisation comes last, and it is the least interesting number in this appendix.** You already
+**Optimization comes last, and it is the least interesting number in this appendix.** You already
 have it: `peak_price` from `read_curve`. It is reported after feasibility, fragility and
 sensitivity precisely so that it arrives as one fact among several rather than as *the answer*. A
 peak computed from a curve fitted to 46 people and multiplied by 109 is not a price to take to the
