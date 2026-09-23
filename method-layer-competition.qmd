@@ -160,8 +160,10 @@ For the competitive case the sigmoid is `Q = Qmax / (1 + exp(-(a + b·p_own + c�
 
 Report all six parameters with signs checked: both `b` positive, both `d` positive or near zero. A negative `d` says customers leave you when the rival gets more expensive, which is almost always a data problem rather than a discovery — report it as one.
 
-::: {.callout-note}
-A note on `d`, and it is unresolved. Interpolating with the cap above produces a smaller substitution term than identifying each respondent's demand line linearly and summing — on the practice data, 0.02 against 0.23. The difference is entirely the cap: linear identification keeps moving customers toward you as the rival's price rises past the point where those customers had already abandoned the rival. The interpolated figure is the conservative one and is what the app reports. If your own market knowledge says substitution keeps biting at high rival prices, the true value is nearer the larger number, and the equilibrium should be computed at both.
+::: {.limit}
+**What the substitution term cannot settle**
+
+It is unresolved, and the data cannot resolve it: respondents were never asked about prices above their own maximum. Interpolating with the cap above produces a smaller substitution term than identifying each respondent's demand line linearly and summing — on the practice data, 0.02 against 0.23. The difference is entirely the cap: linear identification keeps moving customers toward you as the rival's price rises past the point where those customers had already abandoned the rival. The interpolated figure is the conservative one and is what the app reports. If your own market knowledge says substitution keeps biting at high rival prices, the true value is nearer the larger number, and the equilibrium should be computed at both.
 :::
 
 Then rescale to the population exactly as the single-firm layer does: with `n` usable respondents and reachable population `N`, multiply `a` by `N/n` and leave `b` and `d` alone. Only the intercept scales; the sensitivities are per-person rates. Report the multiplier and state that it assumes the sample behaves like the population.
