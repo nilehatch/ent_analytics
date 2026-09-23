@@ -34,12 +34,41 @@ Three columns, one row per respondent.
 | `quantity` | how many they would take per period **at that maximum price** | how-many only |
 | `quantity_at_P0` | how many they would take per period **if it were free** | how-many only |
 
-**Every respondent stays in.** Someone whose maximum is zero is not a broken row; they are evidence
-that part of your market will not pay. Someone who would take none even when it is free is the
-same. The most common way to get a wrong demand curve is to quietly drop them, and nothing in the
-output will tell you that you did.
+**Every screened-in respondent stays in.** Someone whose maximum is zero is not a broken row; they
+are a member of your market telling you they will not buy, which is one of the more useful things
+anyone will tell you. Someone who would take none even when it is free is the same. The most common
+way to get a wrong demand curve is to quietly drop them, and nothing in the output will tell you
+that you did.
 
-Blanks are zeros, not missing values, and reading them as `NA` will silently shrink your sample.
+**The line that matters is not buyer versus non-buyer. It is inside the target population versus
+outside it.** A non-buyer inside the population is evidence: the market contains people who decline
+at every price, and a curve that hides them overstates demand. A respondent outside the population
+is not evidence at all, whichever way they answered — an enthusiastic yes from someone who would
+never face this purchase corrupts the estimate exactly as much as their no would. That distinction
+is the screener's job, not the analysis's, and it is why a zero from someone who should not have
+passed the screen is a sampling problem rather than a demand observation.
+
+**A blank is not a zero.** A typed zero is an answer. A blank is an unanswered question, and
+imputing zero for it manufactures a non-buyer who never existed — pushing the curve down and making
+the offering look worse than the evidence says.
+
+The exception is a blank your instrument created. **If the form branched** — a respondent said they
+would pay nothing and was routed past the quantity questions — the blank *is* a zero, because the
+answer is implied by the path they took. They were not asked; they were answered for, correctly.
+
+So the rule is: **a blank means whatever your form made it mean.**
+
+| Where the blank came from | Read it as | Then |
+|---|---|---|
+| The form branched past the question | zero | keep the respondent |
+| The question was optional and they skipped it | missing | drop the respondent from that analysis, and report how many |
+| You do not know which | missing | drop, report, and fix the instrument before the next fielding |
+
+**And the design rule that makes this nearly moot:** make the valuation questions required, with
+zero explicitly permitted. Then blanks should not occur at all, and any that do came from a branch.
+
+`muscle-cola.csv` has no blanks in these three columns. All 11 respondents who would pay nothing
+typed a zero, so nothing in this appendix depends on the rule above — but your own data will.
 
 ::: {.panel-tabset}
 
