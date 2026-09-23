@@ -1,0 +1,248 @@
+---
+subtitle: "The procedure you run yourself"
+---
+
+# The Code Layer: Without a Rival {.unnumbered #sec-code-layer}
+
+This appendix is for the reader who would rather write the code than drive a form or supervise a
+model. It performs the same arithmetic as the [Profit Analytics
+app](https://rconnect.byu.edu/ProfitAnalytics) and the same procedure as [The Method Layer: Without
+a Rival](method-layer.qmd), in R and in Python, with the reasoning kept where a person can read it.
+
+**Why code rather than a prompt.** An earlier version of this material was written as prompts: a
+paragraph describing what to build, handed to an AI. It kept collapsing into the same thing. Asked
+in words for a transformation that counts every respondent and keeps the zeros, a model would
+return something conventional instead — fit a regression, drop the outliers, put the prices on an
+even grid. The only prompt that reliably produced the right code was one containing the code, at
+which point the prompt was doing nothing. So here is the code. Lift a block, change the variable
+names, run it.
+
+**Every block below runs on `muscle-cola.csv`**, the practice dataset used throughout the book: 46
+respondents, a protein cola sold through gyms. The printed numbers are what you should see. If
+yours differ, the difference is in your setup and it is worth finding before you trust the method
+on data whose answer you do not know.
+
+---
+
+## What you need {#sec-cl-data}
+
+Three columns, one row per respondent.
+
+| Column | Meaning | Used by |
+|---|---|---|
+| `wtp` | the most this respondent would ever pay for one unit | both elicitations |
+| `quantity` | how many they would take per period **at that maximum price** | how-many only |
+| `quantity_at_P0` | how many they would take per period **if it were free** | how-many only |
+
+**Every respondent stays in.** Someone whose maximum is zero is not a broken row; they are evidence
+that part of your market will not pay. Someone who would take none even when it is free is the
+same. The most common way to get a wrong demand curve is to quietly drop them, and nothing in the
+output will tell you that you did.
+
+Blanks are zeros, not missing values, and reading them as `NA` will silently shrink your sample.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-load-r
+#| eval: false
+library(dplyr); library(readr); library(tidyr); library(purrr)
+
+d <- read_csv("muscle-cola.csv", show_col_types = FALSE) |>
+  select(wtp, quantity, q0 = quantity_at_P0) |>
+  mutate(across(everything(), ~ replace_na(as.numeric(.x), 0)))
+
+nrow(d)                 # 46
+sum(d$wtp <= 0)         # 11  would pay nothing
+sum(d$q0  <= 0)         # 12  would take none even at a price of zero
+max(d$wtp)              # 3.51
+median(d$wtp[d$wtp > 0])# 1.99
+```
+
+### Python
+
+```{python}
+#| label: cl-load-py
+#| eval: false
+import csv, statistics
+
+def num(x):
+    x = (x or "").strip()
+    return float(x) if x else 0.0          # blank means zero, not missing
+
+rows = list(csv.DictReader(open("muscle-cola.csv")))
+wtp  = [num(r["wtp"])             for r in rows]
+q    = [num(r["quantity"])        for r in rows]
+q0   = [num(r["quantity_at_P0"])  for r in rows]
+
+len(rows)                                  # 46
+sum(1 for w in wtp if w <= 0)              # 11
+sum(1 for x in q0  if x <= 0)              # 12
+max(wtp)                                   # 3.51
+statistics.median([w for w in wtp if w > 0])   # 1.99
+```
+
+:::
+
+---
+
+## Yes/no demand: counting {#sec-cl-yesno}
+
+When a buyer takes one unit per period or none, the transformation is a count. **At each price, how
+many respondents said they would pay at least that much?** No regression, no interpolation, no
+assumption about anyone's behaviour beyond the answer they gave.
+
+Two details decide whether your curve is right.
+
+**Use the prices your respondents named.** The distinct willingness-to-pay values are where the
+evidence is. An evenly spaced grid you invent puts as much weight on the sparse tail as on the
+dense middle, and it changes the answer.
+
+**Add a price of zero to that set.** Respondents whose maximum is zero take one when it is free
+and nothing above it, which is exactly what `w >= p` produces. They belong at that point and
+nowhere else.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-yesno-r
+#| eval: false
+demand_yes_no <- function(wtp) {
+  prices <- sort(unique(c(0, wtp)))          # the respondents' own prices, plus zero
+  tibble(price    = prices,
+         quantity = map_dbl(prices, \(p) sum(wtp >= p)))
+}
+
+yn <- demand_yes_no(d$wtp)
+yn |> filter(price %in% c(0, 1, 2))
+#> price quantity
+#>     0       46
+#>     1       32
+#>     2       15
+```
+
+### Python
+
+```{python}
+#| label: cl-yesno-py
+#| eval: false
+def demand_yes_no(wtp):
+    """One unit per buyer. At price p, everyone whose maximum is >= p buys."""
+    prices = sorted(set(wtp) | {0.0})
+    return [(p, sum(1 for w in wtp if w >= p)) for p in prices]
+
+yn = dict(demand_yes_no(wtp))
+yn[0.0], yn[1.0], yn[2.0]                  # 46, 32, 15
+```
+
+:::
+
+That table is the demand curve: a staircase that steps down as the price rises. It is not an
+estimate yet and nothing has been fitted. Everything in the next section is the same operation with
+quantities that can exceed one.
+
+---
+
+## How-many demand: horizontal summation {#sec-cl-howmany}
+
+When a buyer takes several per period, each respondent's three anchors describe their own small
+demand line:
+
+- `q0` units at a price of zero
+- `quantity` units at their own maximum, `wtp`
+- nothing above it — a price beyond what they will pay does not make them buy fewer, it makes them
+  stop
+
+Join the first two points with a straight line and you have that person's demand. **Then add the
+quantities at each price.** That sum is the market curve, and the word *horizontal* refers to the
+direction you are adding in: quantity runs along the horizontal axis, so you are summing sideways
+at a fixed height.
+
+**Respondents whose maximum is zero carry no slope.** Dividing by `wtp` would divide by zero, so
+they contribute their free quantity at a price of zero and nothing above it. That is a coherent
+answer — *I would take three if you gave them away and will not pay for them* — not bad data.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-howmany-r
+#| eval: false
+respondent_q <- function(p, q_free, max_wtp, q_at_max) {
+  if (max_wtp <= 0) return(if (p <= 0) q_free else 0)   # no slope exists
+  if (p > max_wtp)  return(0)                           # above their ceiling, they stop
+  max(0, q_free + ((q_at_max - q_free) / max_wtp) * p)  # linear between the anchors
+}
+
+demand_how_many <- function(d, prices) {
+  tibble(price    = prices,
+         quantity = map_dbl(prices, \(p)
+           sum(pmap_dbl(list(d$q0, d$wtp, d$quantity),
+                        \(f, m, a) respondent_q(p, f, m, a)))))
+}
+
+prices <- sort(unique(c(0, d$wtp)))      # again: their prices, plus zero
+hm <- demand_how_many(d, prices)
+demand_how_many(d, c(0, 1, 2))
+#> price quantity
+#>     0   1402.0
+#>     1    997.9
+#>     2    419.0
+```
+
+### Python
+
+```{python}
+#| label: cl-howmany-py
+#| eval: false
+def respondent_line(q_free, max_wtp, q_at_max):
+    """That respondent's own demand: q_free when free, q_at_max at their
+       maximum, nothing above it."""
+    if max_wtp <= 0:
+        return lambda p: (q_free if p <= 0 else 0.0)
+    slope = (q_at_max - q_free) / max_wtp
+    return lambda p: max(0.0, q_free + slope * p) if p <= max_wtp else 0.0
+
+def demand_how_many(rows, prices):
+    """Horizontal summation: add the respondents' quantities at each price."""
+    lines = [respondent_line(*r) for r in rows]      # r = (q_free, max_wtp, q_at_max)
+    return [(p, sum(f(p) for f in lines)) for p in prices]
+
+rows   = list(zip(q0, wtp, q))
+prices = sorted(set(wtp) | {0.0})
+hm     = dict(demand_how_many(rows, prices))
+[round(hm[p], 1) for p in (0.0, 1.0, 2.0)]           # [1402.0, 997.9, 419.0]
+```
+
+:::
+
+**Check these three numbers before going further.** 1402.0, 997.9 and 419.0 are what the practice
+data produces. If your figures are close but not equal, the usual causes are blanks read as missing
+instead of zero, respondents dropped for having a maximum of zero, or a price grid of your own
+invention rather than the respondents' own prices.
+
+---
+
+## The two are one method {#sec-cl-unify}
+
+> **Yes/no demand is how-many demand where nobody buys more than one.**
+
+Set every respondent's `q0` and `quantity` to 1 and run the how-many code: each line becomes flat
+at one unit up to their maximum and zero above it, the sum becomes a head count, and the head count
+is the staircase from the previous section. One transformation, two special cases, which is why the
+app handles both without switching technique.
+
+It also means a reader who has the three anchors can always produce the yes/no curve, and a reader
+who has only `wtp` cannot produce the how-many one. **Collect the three anchors whenever the
+product is plausibly bought more than once per period**; you can always discard information you do
+not need.
+
+---
+
+*The next section fits curves to these points: linear, exponential, and sigmoid, with goodness of
+fit computed on the original quantity scale.*
