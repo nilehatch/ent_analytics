@@ -468,5 +468,245 @@ usually telling you something about the evidence rather than about the model.
 
 ---
 
-*The next section rescales the fitted curve from your sample to a reachable population, and then
-assembles profit from demand and cost.*
+## From sample to population {#sec-cl-rescale}
+
+Your curve describes the people who answered. The commitment you are weighing is a
+population-scale number. They cannot be subtracted from one another until they are on the same
+plane, and moving them there is one multiplication and one large assumption.
+
+**Define the reachable population, `N`, before you compute anything.** Not everyone with the
+problem. The people you could find, contact, earn trust from, and serve again next period at a cost
+you can carry. Write the reductions down — everyone with the problem, then those you can reach at
+all, then those reachable at a cost you can carry, then those you could serve again — and where a
+step is a range, use the low end and say you did.
+
+**`n` is everyone who passed the screen, including the people who would buy nothing.** They are
+evidence about the population, not missing rows. On this dataset 11 of 46 would pay nothing and 12
+would take none even when it is free; rescaling on 35 instead of 46 would overstate demand by 31%
+and nothing downstream would reveal it.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-rescale-r
+#| eval: false
+n <- nrow(d)          # 46 -- everyone screened in, zeros included
+N <- 5000             # reachable population, argued down and written out
+k <- N / n            # 108.7
+
+q_pop <- function(p) pred_sig(p) * k      # or pred_lin / pred_exp
+q_pop(1)                                   # 109,621 units per month
+```
+
+### Python
+
+```{python}
+#| label: cl-rescale-py
+#| eval: false
+n = len(rows)          # 46
+N = 5000               # reachable population
+k = N / n              # 108.7
+
+q_pop = lambda p: max(0.0, pred_sig(p)) * k
+q_pop(1.0)             # 109,621
+```
+
+:::
+
+**Rescale the fitted curve, not the raw points**, and report `k` out loud. A curve built on 46
+people is being multiplied by 109. That number should make you uncomfortable, and the discomfort is
+the correct response.
+
+**Say the assumption every time: the sample behaves like the population.** It is the strongest
+assumption in the method and the arithmetic never tests it. A sample skewed toward enthusiasts does
+not produce a slightly optimistic curve — it produces one that is too high *and too flat*, which
+reads as *raising the price is cheap*. That is the most expensive thing to be wrong about. If you
+recruited through your own network, say so here rather than in a footnote at the end.
+
+### Break-even, as a check on the rescaling {#sec-cl-breakeven}
+
+```{r}
+#| label: cl-breakeven-r
+#| eval: false
+required_sales  <- function(p, c, f) ceiling(f / (p - c))   # a fraction of a sale covers nothing
+required_buyers <- function(p, c, f, units_per_buyer) required_sales(p, c, f) / units_per_buyer
+```
+
+Under yes/no these two are the same number. Under how-many they are not, and reporting sales as
+people overstates your position by exactly the units-per-buyer factor.
+
+**Then stop and divide by hand.** Required buyers over `N`, said aloud as a fraction. This is the
+one calculation worth leaving undone in code: the number only lands when the person facing the
+commitment produces it themselves.
+
+---
+
+## Cost {#sec-cl-cost}
+
+Two numbers, and both are about triggers rather than categories.
+
+**Variable cost, `c`** — what one more sale *triggers*. A salaried baker who works the same hours
+whether you sell ten or thirty is not a variable cost; the flour is.
+
+**Fixed commitment, `f`** — what going ahead *commits*: signed, hired, leased, ordered. This method
+runs before the commitment, so the number is prospective. It is the size of the bet, not a record
+of spending, and it is defined by irreversibility rather than by recurrence.
+
+**Both must be in the same period as your demand curve.** This is the error that silently destroys
+a profit estimate: quantity per month against a commitment per year understates the required scale
+by twelve. Check it before you go further, every time.
+
+```{r}
+#| label: cl-cost-r
+#| eval: false
+c_var <- 0.90      # per unit, same period basis as q()
+f_fix <- 8000      # per month, because quantity is per month
+```
+
+---
+
+## Profit {#sec-cl-profit}
+
+Assemble: `profit(p) = (p − c) · q(p) − f`, with `q` the **population** curve.
+
+**Do it on a grid, not with calculus.** The fitted curve is clipped at zero, so the profit function
+has a kink, and a derivative set to zero can return a peak sitting in the region where quantity is
+already zero. A grid cannot make that mistake.
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| label: cl-profit-r
+#| eval: false
+profit_curve <- function(q_of_p, c, f, lo = 0, hi = 4, n = 401) {
+  tibble(price = seq(lo, hi, length.out = n)) |>
+    mutate(profit = (price - c) * pmax(0, map_dbl(price, q_of_p)) - f)
+}
+
+read_curve <- function(curve, lo, hi) {
+  pos <- curve$price[curve$profit > 0]
+  i   <- which.max(curve$profit)
+  if (!length(pos)) return(list(reading = "impossible",
+                                peak_price = curve$price[i], peak = curve$profit[i]))
+  width <- (max(pos) - min(pos)) / (hi - lo)
+  list(reading    = if (width < 0.28) "fragile" else "robust",
+       band       = c(min(pos), max(pos)), width = width,
+       peak_price = curve$price[i], peak = curve$profit[i])
+}
+
+curve <- profit_curve(q_pop, c_var, f_fix, 0, 4)
+read_curve(curve, 0, 4)
+```
+
+### Python
+
+```{python}
+#| label: cl-profit-py
+#| eval: false
+def profit_curve(q_of_p, c, f, lo=0.0, hi=4.0, step=0.01):
+    out, p = [], lo
+    while p <= hi:
+        out.append((p, (p - c) * max(0.0, q_of_p(p)) - f))
+        p += step
+    return out
+
+def read_curve(curve, lo, hi):
+    pos = [p for p, pi in curve if pi > 0]
+    peak_p, peak = max(curve, key=lambda t: t[1])
+    if not pos:
+        return {"reading": "impossible", "peak_price": peak_p, "peak": peak}
+    width = (max(pos) - min(pos)) / (hi - lo)
+    return {"reading": "fragile" if width < 0.28 else "robust",
+            "band": (min(pos), max(pos)), "width": width,
+            "peak_price": peak_p, "peak": peak}
+```
+
+:::
+
+**Report four things, never only the first:**
+
+1. peak profit, and the price where it occurs
+2. the band of prices where profit is positive
+3. that band as a share of the price range — the **reading**
+4. what falls away on either side, and how steeply
+
+The reading: **impossible** if the curve never crosses zero, **fragile** if the positive band is
+under 28% of the price range, **robust** above it.
+
+### The shape you chose is now worth real money {#sec-cl-shape-matters}
+
+Run the practice data both ways — same respondents, same `N` of 5,000, same `c` of \$0.90 and `f`
+of \$8,000 a month, price range \$0 to \$4 — and change nothing but the fitted curve:
+
+| fitted with | peak profit | at price | positive band | reading |
+|---|---|---|---|---|
+| linear | \$51,969 | \$2.01 | \$0.98 – \$3.04 | robust |
+| sigmoid | \$44,941 | \$1.85 | \$0.98 – \$4.00 | robust |
+
+Same reading, **\$7,028 of monthly profit apart, at prices 16 cents apart.** And look at the band's
+upper edge: under the line it closes at \$3.04, where fitted quantity reaches zero; under the
+sigmoid it runs to \$4.00, the edge of the range, because a logistic tail still sells 5,859 units a
+month at \$3.50 where the line says nobody buys.
+
+Two lessons, and the second is easy to miss.
+
+**When the shapes disagree, the disagreement is the finding.** Report it rather than choosing the
+flattering one.
+
+**A band that reaches the edge of your price range is not a band.** It means the range was too
+narrow to contain the answer. Widen it and recompute, and say in your write-up what range you used
+— the width, and therefore the reading, is a fraction of a range you chose.
+
+---
+
+## Feasibility, fragility, sensitivity — and optimisation last {#sec-cl-hedge}
+
+The order matters, and it is the opposite of what the arithmetic invites.
+
+**Feasibility first: is profit positive anywhere?** If the curve never crosses zero, no price
+rescues it, and everything after is decoration.
+
+**Then fragility: how wide is the band?** A robust reading says you can be wrong about the price
+and survive. A fragile one says the venture depends on finding a narrow window, and the honest
+response is to ask what would have to be true for the window to be wider.
+
+**Then sensitivity: which assumption, if wrong, changes the decision?** Vary one input at a time —
+variable cost, fixed commitment, reachable population, units per buyer, demand slope, maximum
+willingness to pay — and record **the value at which the reading changes**. That threshold is the
+output. The ranking by size of effect is not.
+
+```{r}
+#| label: cl-sensitivity-r
+#| eval: false
+threshold <- function(vals, build_q, c, f, lo = 0, hi = 4) {
+  map_dfr(vals, function(v) {
+    r <- read_curve(profit_curve(build_q(v), c, f, lo, hi), lo, hi)
+    tibble(value = v, reading = r$reading, peak = r$peak)
+  })
+}
+
+# example: how small can the reachable population get before this stops working?
+threshold(seq(5000, 500, by = -500), \(N) \(p) pred_sig(p) * (N / n), c_var, f_fix)
+```
+
+Then sort what you found by **actionability**, not by size of effect:
+
+- **testable** — could be checked with more evidence, cheaply
+- **designable** — could be changed by changing the offering
+- **deferrable** — the commitment could wait until it is clearer
+- **fixed** — outside your control
+
+**Optimisation comes last, and it is the least interesting number in this appendix.** You already
+have it: `peak_price` from `read_curve`. It is reported after feasibility, fragility and
+sensitivity precisely so that it arrives as one fact among several rather than as *the answer*. A
+peak computed from a curve fitted to 46 people and multiplied by 109 is not a price to take to the
+bank. The band is what you can defend; the peak is where the band is highest.
+
+---
+
+*The competition case — two products, a rival's price, and equilibrium — is a different method
+throughout, and has its own appendix.*
