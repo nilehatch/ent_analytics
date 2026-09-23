@@ -165,11 +165,10 @@ book:
         - method-layer.qmd
         - code-layer.qmd
 
-    # One chapter until the competition code layer is written. Left as a part
-    # anyway: it names the gap rather than hiding it.
     - part: "Running the Method: With a Rival"
       chapters:
         - method-layer-competition.qmd
+        - code-layer-competition.qmd
 
     # Removed 11 Aug 2026: an empty "Competing to Sell to Businesses" part, and
     # summary.qmd, a placeholder that was live as ch. 24 and read "this book has

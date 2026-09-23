@@ -56,3 +56,36 @@ the low-price end by eight buyers, where the method layer warns about an inflate
 non-convergence and an inflated asymptote, and say instead that the sigmoid is poorly identified on
 a staircase and will describe the low-price end badly in whichever direction the solver lands. The
 code layer reports the observed numbers.
+
+
+## `method-layer-competition.qmd`, Stage C3 — the negative R² claim does not reproduce
+
+**Current text:**
+
+> "on both shipped competitive datasets the linear form returns a *negative* R², meaning it predicts
+> worse than the sample mean, while the sigmoid reaches 0.97 and 0.99. A negative R² is not a close
+> call and should be reported as a disqualification rather than a ranking."
+
+**Measured 23 Sep 2026, fitting the summed surface the way the layer and the app both specify:**
+
+| dataset | linear R², A | linear R², B | sigmoid R², A | sigmoid R², B |
+|---|---|---|---|---|
+| `fresh-prep_fast-food.csv` | 0.895 | 0.731 | 0.985 | 0.988 |
+| `dp_vp.csv` | 0.955 | 0.900 | — | — |
+
+Tested under four conventions on FreshPrep — zero-WTP respondents kept or filtered out as the app
+filters them, price grid with and without a zero — and the linear R² stayed between 0.708 and 0.916
+in every one.
+
+**It cannot be negative as the app computes it.** `helpers_fit.R` fits `lm(Q ~ P_own + P_rival)` and
+reports `summary(model)$r.squared`, which for an OLS fit with an intercept cannot fall below zero on
+the data it was fitted to. A negative pseudo-R² is possible for the exponential and sigmoid, since
+those are scored out of sample of their own estimation scale, but not for the linear form.
+
+**The sigmoid figures are right** — 0.985 and 0.988 against the quoted 0.97 and 0.99.
+
+**Suggested fix:** keep the instruction to report all three and let behaviour decide, and replace
+the disqualification claim with what the data shows: the sigmoid fits materially better on both
+shipped datasets, and the linear form's own-price slope is the one that propagates into the
+equilibrium, so the gap matters more here than in the single-firm case. If a negative R² was
+observed at some point, it came from a fitting route that is no longer the one specified.

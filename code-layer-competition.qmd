@@ -1,0 +1,451 @@
+---
+subtitle: "The procedure you run yourself when a rival is in the room"
+---
+
+# The Code Layer {.unnumbered #sec-code-layer-competition}
+
+The companion to [the method layer for a market with a rival](method-layer-competition.qmd), for
+the reader who would rather write the code than drive a form or supervise a model. It performs the
+same arithmetic as the [Competition Analytics app](https://rconnect.byu.edu/CompetitionAnalytics),
+in R and in Python.
+
+**Read [the single-firm code layer](code-layer.qmd) first.** This one assumes you can already build
+a demand curve from respondents, fit three forms to it, score them on the same scale, and rescale a
+sample to a population. Everything here is that method with a second firm in it, and the second
+firm changes more than it looks.
+
+**Every block runs on `fresh-prep_fast-food.csv`**, the four-scenario dataset shipped with the book:
+53 BYU undergraduates, a meal-prep bowl against whatever fast food they already buy. The printed
+numbers are what you should see.
+
+---
+
+## What changes when a rival exists {#sec-clc-changes}
+
+Three things, and the first is the one that catches people.
+
+**You need two equations.** Writing only your own describes half the market, and the half you
+leave out is the half that reacts to you.
+
+**Your instrument must vary both prices independently.** If every scenario moves them together, no
+analysis recovers the difference between *customers leave when I raise price* and *customers arrive
+when they raise theirs*. The information is not in the data. This is a design constraint, not an
+analysis one, and it is why the two layers cannot share an instrument.
+
+**Substitution runs in two directions and they are not equal.** How many of the rival's customers
+come to you when they raise price is a different question, about different people, from how many of
+yours leave when you raise yours. That asymmetry is the most decision-relevant thing this method
+produces, and a single-firm study cannot see it at all.
+
+---
+
+## What you need {#sec-clc-data}
+
+Ten numeric columns, one row per respondent. The four-scenario design asks each respondent about
+both products under four price combinations — both free, yours priced, theirs priced, both priced —
+which gives the four corners of a box.
+
+| Column | Meaning |
+|---|---|
+| `wtpA`, `wtpB` | the most they would pay for each product |
+| `qA_00`, `qB_00` | quantities when **both are free** |
+| `qA_A0`, `qB_A0` | quantities when **yours is at their maximum**, theirs free |
+| `qA_0B`, `qB_0B` | quantities when **theirs is at their maximum**, yours free |
+| `qA_AB`, `qB_AB` | quantities when **both are at their maximums** |
+
+For yes/no demand the two willingness-to-pay columns are enough on their own; the quantity
+scenarios are not needed.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+library(dplyr); library(readr); library(purrr); library(tidyr)
+
+d <- read_csv("fresh-prep_fast-food.csv", show_col_types = FALSE) |>
+  select(wtpA, wtpB, qA_00, qB_00, qA_0B, qB_0B, qA_A0, qB_A0, qA_AB, qB_AB) |>
+  drop_na()
+
+n <- nrow(d)   # 53
+```
+
+### Python
+
+```python
+import csv, numpy as np
+
+cols = ["wtpA","wtpB","qA_00","qB_00","qA_0B","qB_0B","qA_A0","qB_A0","qA_AB","qB_AB"]
+def num(x):
+    try:    return float((x or "").strip())
+    except: return None
+
+rows = [{c: num(r[c]) for c in cols} for r in csv.DictReader(open("fresh-prep_fast-food.csv"))]
+rows = [r for r in rows if all(v is not None for v in r.values())]
+n = len(rows)    # 53
+```
+
+:::
+
+---
+
+## Transform: from answers to a surface {#sec-clc-transform}
+
+Under one firm the transformation produced a curve. Under two it produces a **surface**: quantity
+at every combination of your price and theirs.
+
+**Move every respondent onto a common grid first, then sum, then fit.** Never pool the
+respondent-specific points and regress on those. The order is not cosmetic: a respondent with high
+willingness to pay was asked about high prices *and* tends to buy more, so regressing on their own
+points confounds price with who was answering and pulls both slopes toward zero. After the
+transformation every quantity sits at a price you chose rather than one they named.
+
+### How-many: interpolate inside each respondent's box {#sec-clc-interp}
+
+Their four answers are the corners. Read anywhere inside by bilinear interpolation.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+interp_q <- function(p_own, p_riv, w_own, w_riv, q00, q_own0, q_0riv, q_ownriv) {
+  if (p_own > w_own) return(0)                 # priced out of their own maximum
+  p_riv_eff <- min(p_riv, w_riv)               # past the rival's max, no more switching
+  x <- if (w_own == 0) 1 else p_own / w_own
+  y <- if (w_riv == 0) 1 else p_riv_eff / w_riv
+  (1-x)*(1-y)*q00 + x*(1-y)*q_own0 + (1-x)*y*q_0riv + x*y*q_ownriv
+}
+
+QA <- function(pa, pb) sum(pmap_dbl(list(d$wtpA, d$wtpB, d$qA_00, d$qA_A0, d$qA_0B, d$qA_AB),
+                                    \(wa, wb, q00, qa0, q0b, qab) interp_q(pa, pb, wa, wb, q00, qa0, q0b, qab)))
+QB <- function(pb, pa) sum(pmap_dbl(list(d$wtpB, d$wtpA, d$qB_00, d$qB_0B, d$qB_A0, d$qB_AB),
+                                    \(wb, wa, q00, qb0, q0a, qab) interp_q(pb, pa, wb, wa, q00, qb0, q0a, qab)))
+```
+
+### Python
+
+```python
+def interp_q(p_own, p_riv, w_own, w_riv, q00, q_own0, q_0riv, q_ownriv):
+    if p_own > w_own:
+        return 0.0                               # priced out of their own maximum
+    p_riv_eff = min(p_riv, w_riv)                # past the rival's max, no more switching
+    x = 1.0 if w_own == 0 else p_own / w_own
+    y = 1.0 if w_riv == 0 else p_riv_eff / w_riv
+    return ((1-x)*(1-y)*q00 + x*(1-y)*q_own0 + (1-x)*y*q_0riv + x*y*q_ownriv)
+
+QA = lambda pa, pb: sum(interp_q(pa, pb, r["wtpA"], r["wtpB"],
+                                 r["qA_00"], r["qA_A0"], r["qA_0B"], r["qA_AB"]) for r in rows)
+QB = lambda pb, pa: sum(interp_q(pb, pa, r["wtpB"], r["wtpA"],
+                                 r["qB_00"], r["qB_0B"], r["qB_A0"], r["qB_AB"]) for r in rows)
+```
+
+:::
+
+**Two lines in that function carry the method.** Above a respondent's own maximum they buy nothing,
+rather than the negative quantity a fitted line would produce. And **the rival's price stops
+mattering above the rival's maximum**: once someone would not buy the rival at any price they are
+already entirely yours, and pushing the rival's price higher cannot move them again. A linear form
+keeps moving them, and overstates substitution for exactly that reason.
+
+### Yes/no: the net-surplus choice rule {#sec-clc-netsurplus}
+
+```python
+def q_yes_no(pairs, p_own, p_riv):
+    """pairs: (wtp_own, wtp_riv) per respondent. Ties split evenly."""
+    total = 0.0
+    for w_own, w_riv in pairs:
+        s_own, s_riv = w_own - p_own, w_riv - p_riv
+        if s_own <= 0:       continue      # cannot afford yours
+        if s_own > s_riv:    total += 1.0  # yours wins on surplus
+        elif s_own == s_riv: total += 0.5  # indifferent
+    return total
+```
+
+Each respondent buys whichever product leaves them better off, provided that surplus is positive.
+Nobody buys both.
+
+### Build the surface at the prices respondents named {#sec-clc-grid}
+
+```python
+grid_A = sorted({r["wtpA"] for r in rows} | {0.0})   # 14 prices
+grid_B = sorted({r["wtpB"] for r in rows} | {0.0})   # 16 prices
+surface = [(pa, pb, QA(pa, pb), QB(pb, pa)) for pa in grid_A for pb in grid_B]
+len(surface)        # 224 points
+QA(0, 0)            # 356 units, both free
+QA(10, 10)          # 79.9
+```
+
+An evenly spaced grid of your own invention weights the sparse tail as heavily as the dense middle
+and moves the answer.
+
+---
+
+## Fit the system {#sec-clc-fit}
+
+```
+q_A = a_A − b_A·p_A + d_A·p_B
+q_B = a_B − b_B·p_B + d_B·p_A
+```
+
+`a` is appeal at a price of zero, `b` is how fast you lose customers to **your own** price, `d` is
+how many arrive when **they** raise theirs. Two equations, six parameters, and pooling is correct
+here because the surface was built at prices you chose.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+surf <- expand_grid(P_A = grid_A, P_B = grid_B) |>
+  mutate(Q_A = map2_dbl(P_A, P_B, QA), Q_B = map2_dbl(P_B, P_A, QB))
+
+lin_A <- lm(Q_A ~ P_A + P_B, surf)      # coefficients come out as a, -b, +d
+lin_B <- lm(Q_B ~ P_B + P_A, surf)
+
+exp_A <- lm(log(Q_A) ~ P_A + P_B, filter(surf, Q_A > 0))
+
+# Sigmoid with the rival term constrained non-negative: a rival's price rise
+# cannot reduce your quantity.
+sig_A <- nls(Q_A ~ Qmax / (1 + exp(-(a + b * P_A + c * P_B))), data = surf,
+             start = list(Qmax = max(surf$Q_A) * 1.1, a = 0, b = -0.1, c = 0.05),
+             algorithm = "port", lower = c(0, -50, -10, 0))
+```
+
+### Python
+
+```python
+import numpy as np
+from scipy.optimize import curve_fit
+
+PA = np.array([p[0] for p in surface]); PB = np.array([p[1] for p in surface])
+QAv = np.array([p[2] for p in surface]); QBv = np.array([p[3] for p in surface])
+
+def fit_linear(y, own, riv):                      # returns a, b, d
+    X = np.column_stack([np.ones_like(own), -own, riv])
+    return np.linalg.lstsq(X, y, rcond=None)[0]
+
+def sigmoid(P, Qmax, a, b, c):
+    own, riv = P
+    return Qmax / (1 + np.exp(-(a + b * own + c * riv)))
+
+def fit_sigmoid(y, own, riv):
+    return curve_fit(sigmoid, (own, riv), y,
+                     p0=[y.max() * 1.1, 0.0, -0.1, 0.05],
+                     bounds=([0, -50, -10, 0], [np.inf, 50, 0, 10]),   # c >= 0
+                     maxfev=40000)[0]
+```
+
+:::
+
+On the practice data, scoring every model on the original quantity scale:
+
+| | a | b | d | R² |
+|---|---|---|---|---|
+| **linear, A** | 326.8 | 23.25 | 1.197 | 0.895 |
+| **linear, B** | 185.4 | 11.44 | 2.374 | 0.731 |
+| **sigmoid, A** | — | — | c = 0.015 | 0.985 |
+| **sigmoid, B** | — | — | c = 0.033 | 0.988 |
+
+**Check the signs before anything else.** Both `b` positive, both `d` positive or near zero. A
+negative `d` says customers leave you when the rival gets *more* expensive, which is almost always
+a data problem rather than a discovery.
+
+**Then read the asymmetry, which is the point of the whole exercise.** Here `d_B` is roughly twice
+`d_A`: when A raises price, B gains about twice as many customers as A gains when B raises price.
+The two firms are not symmetric substitutes, and only the firm that measured both directions knows
+it.
+
+::: {.callout-note}
+**A note on `d`, unresolved and worth knowing.** Interpolating with the cap above produces a
+*smaller* substitution term than identifying each respondent's line linearly and summing. The
+difference is entirely the cap: linear identification keeps moving customers toward you as the
+rival's price rises past the point where those customers had already abandoned the rival. The
+interpolated figure is the conservative one and is what the app reports. If your market knowledge
+says substitution keeps biting at high rival prices, the true value is nearer the larger number,
+and you should compute the equilibrium at both.
+:::
+
+**Rescale to the population by multiplying `a` alone.** With `n` respondents and reachable
+population `N`, the intercept scales by `N/n` and the sensitivities do not: `b` and `d` are
+per-person rates. On this data, `N` of 4,000 against 53 respondents gives `k = 75.5`.
+
+---
+
+## Costs, both firms {#sec-clc-cost}
+
+Your own unit cost and commitment, exactly as in the single-firm method.
+
+**Then the rival's unit cost, which you do not know. Do not invent it.** Build a defensible range
+from what is observable — their price, their visible scale, what the inputs cost anyone — and carry
+the range forward. Compute every result at both ends as well as the middle, and **if the answer
+flips inside the range, say plainly that the conclusion depends on a number nobody has.**
+
+```r
+c_A <- 4.50                 # yours, known
+c_B_range <- c(2.00, 3.00, 4.00)   # theirs, a range you can defend
+```
+
+---
+
+## Equilibrium {#sec-clc-equilibrium}
+
+Each firm's best response rises with the other's price. Where the two cross, neither can improve
+alone.
+
+**Solve it numerically by iterating best responses**, which works for whichever demand form you
+chose. The closed form below exists only for the linear one, and linear is often not the form you
+would pick.
+
+::: {.panel-tabset}
+
+### R
+
+```r
+best_response <- function(p_rival, demand, c, lo, hi, steps = 4000) {
+  p  <- seq(lo, hi, length.out = steps + 1)
+  pi <- (p - c) * pmax(0, map_dbl(p, \(x) demand(x, p_rival)))
+  p[which.max(pi)]
+}
+
+equilibrium <- function(dem_A, dem_B, cA, cB, lo, hi, tol = 1e-6) {
+  pA <- pB <- (lo + hi) / 2
+  for (i in 1:300) {
+    nA <- best_response(pB, dem_A, cA, lo, hi)
+    nB <- best_response(nA, dem_B, cB, lo, hi)
+    converged <- max(abs(nA - pA), abs(nB - pB)) < tol
+    pA <- nA; pB <- nB
+    if (converged) return(list(p_A = pA, p_B = pB, iterations = i, converged = TRUE))
+  }
+  list(p_A = pA, p_B = pB, iterations = 300, converged = FALSE)
+}
+```
+
+### Python
+
+```python
+def best_response(p_rival, demand, c, lo, hi, steps=4000):
+    best_p, best_pi = lo, float("-inf")
+    for i in range(steps + 1):
+        p = lo + (hi - lo) * i / steps
+        pi = (p - c) * max(0.0, demand(p, p_rival))
+        if pi > best_pi:
+            best_p, best_pi = p, pi
+    return best_p
+
+def equilibrium(dem_A, dem_B, cA, cB, lo, hi, tol=1e-6):
+    pA = pB = (lo + hi) / 2
+    for i in range(300):
+        nA = best_response(pB, dem_A, cA, lo, hi)
+        nB = best_response(nA, dem_B, cB, lo, hi)
+        done = max(abs(nA - pA), abs(nB - pB)) < tol
+        pA, pB = nA, nB
+        if done:
+            return {"p_A": pA, "p_B": pB, "iterations": i + 1, "converged": True}
+    return {"p_A": pA, "p_B": pB, "iterations": 300, "converged": False}
+```
+
+:::
+
+On the practice data, with `c_A` = \$4.50, `c_B` = \$3.00, `N` = 4,000 and a price range of \$0–\$25:
+
+| fitted with | p_A | p_B | q_A | q_B | contribution A | contribution B |
+|---|---|---|---|---|---|---|
+| linear | \$9.55 | \$10.59 | 8,868 | 6,554 | \$44,782 | \$49,771 |
+| sigmoid | \$8.96 | \$7.96 | 6,973 | 5,957 | \$31,071 | \$29,525 |
+
+Both converge in three iterations. **And they disagree by \$2.63 on the rival's price and by about
+\$15,000 of contribution each.** The shape you chose at the fitting stage is worth more here than
+anywhere else in the method, because it propagates through *both* firms' optimisations before you
+see it.
+
+### The closed form, linear only {#sec-clc-closed}
+
+```
+X_i = (a_i + b_i·c_i) / (2·b_i)      Y_i = d_i / (2·b_i)
+p_A = (X_A + Y_A·X_B) / (1 − Y_A·Y_B)
+stability:  Y_A · Y_B < 1
+```
+
+**Below 1 there is an equilibrium; at or above it there is none** — each firm's best answer to the
+other keeps rising and the arithmetic never settles. That is a price war as a mathematical fact,
+and it should be reported as one rather than as a number. On this data `Y_A · Y_B` is 0.0027, which
+is nowhere near the boundary: these two firms barely respond to each other's prices.
+
+**The test is meaningful only for linear demand.** Under the other forms, run the solver and treat
+non-convergence as the equivalent signal.
+
+**Two failures that look identical and mean opposite things.** If the solver does not converge, no
+equilibrium exists. If it converges but lands outside any price you would charge, one exists and
+the model has been pushed past the range it describes. Report the price and say so.
+
+---
+
+## The game {#sec-clc-game}
+
+A competitive move is evaluated by **recomputing the equilibrium it produces**. The payoff in a
+cell is not assumed — it falls out of solving the market under that combination of moves.
+
+```python
+def game(move_A, move_B, base, cA, cB, lo, hi, cost_A, cost_B):
+    """move_X: a function mapping the base parameters to the parameters under that move.
+       Returns the four cells, each the profit pair from solving that market."""
+    cells = {}
+    for a_moves in (False, True):
+        for b_moves in (False, True):
+            par = base
+            if a_moves: par = move_A(par)
+            if b_moves: par = move_B(par)
+            eq = equilibrium(par.demand_A, par.demand_B, cA, cB, lo, hi)
+            piA = (eq["p_A"] - cA) * par.demand_A(eq["p_A"], eq["p_B"]) - (cost_A if a_moves else 0)
+            piB = (eq["p_B"] - cB) * par.demand_B(eq["p_B"], eq["p_A"]) - (cost_B if b_moves else 0)
+            cells[(a_moves, b_moves)] = (piA, piB)
+    return cells
+```
+
+**Step 1 is the only one requiring judgment, and it is yours:** say what the move does to the
+parameters. Reach raises `a`. A comparative campaign transfers between the two `a` terms. A cost
+cut lowers `c`. Better differentiation lowers `b`, or lowers the rival's `d`.
+
+**Never fill a cell with a ranking or a guess.** If the parameter change cannot be stated, the game
+cannot be built, and saying so is the correct output.
+
+### Solving it {#sec-clc-solve}
+
+Mechanical, once the cells hold numbers.
+
+- **Dominant strategy:** does one action beat the other whatever the rival does? A firm with one
+  need not predict anything.
+- **Equilibria:** cells neither firm would leave alone. Report all of them. More than one is a
+  coordination problem rather than a dilemma, and the sign of it is that talking would resolve it.
+- **Compare with both-do-nothing.** If both firms end worse than if neither had moved, say so
+  explicitly: that is a prisoner's dilemma, and the advice is not to solve it harder.
+- **Report the cost at which each firm's answer flips.** The threshold is more useful than the cell.
+
+Then classify the move, because it decides everything: does it **expand** the pool or
+**redistribute** it? A move that expands can leave both firms better off. A move that only
+redistributes cancels when matched and burns whatever was spent. That question is about customers,
+not arithmetic.
+
+---
+
+## Commitment {#sec-clc-commitment}
+
+The escape from a bad game is changing it, and only irreversible moves do that. One test:
+
+> **Does the rival's best response change if this move is made?**
+
+```python
+br_before = best_response(p_A_base,  dem_B, cB, lo, hi)
+br_after  = best_response(p_A_after, dem_B, cB, lo, hi)
+changed   = abs(br_after - br_before) > tolerance
+```
+
+**If it is the same either way, the move is a purchase.** It may still be worth making, judged on
+its own returns like any equipment. **If it differs, the game has changed**, and the equilibrium
+worth evaluating is a new one.
+
+---
+
+*The single-firm case — one product, one price, no reaction — is [the other code
+layer](code-layer.qmd), and it is where the machinery here comes from.*
