@@ -69,7 +69,33 @@ zero explicitly permitted. Then blanks should not occur at all, and any that do 
 `muscle-cola.csv` has no blanks in these three columns. All 11 respondents who would pay nothing
 typed a zero, so nothing in this appendix depends on the rule above — but your own data will.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
+
+### Python
+
+```python
+import csv, statistics
+
+def num(x):
+    """A typed zero is an answer. A blank is not -- return None and decide later."""
+    x = (x or "").strip()
+    return float(x) if x else None
+
+rows = list(csv.DictReader(open("muscle-cola.csv")))
+cols = ("wtp", "quantity", "quantity_at_P0")
+blanks = {c: sum(1 for r in rows if num(r[c]) is None) for c in cols}
+blanks                                     # {'wtp': 0, 'quantity': 0, 'quantity_at_P0': 0}
+
+wtp = [num(r["wtp"])            for r in rows]
+q   = [num(r["quantity"])       for r in rows]
+q0  = [num(r["quantity_at_P0"]) for r in rows]
+
+len(rows)                                  # 46
+sum(1 for w in wtp if w <= 0)              # 11  typed zeros, and they stay
+sum(1 for x in q0  if x <= 0)              # 12
+max(wtp)                                   # 3.51
+statistics.median([w for w in wtp if w > 0])   # 1.99
+```
 
 ### R
 
@@ -78,37 +104,85 @@ library(dplyr); library(readr); library(tidyr); library(purrr)
 
 d <- read_csv("muscle-cola.csv", show_col_types = FALSE) |>
   select(wtp, quantity, q0 = quantity_at_P0) |>
-  mutate(across(everything(), ~ replace_na(as.numeric(.x), 0)))
+  mutate(across(everything(), as.numeric))
 
-nrow(d)                 # 46
-sum(d$wtp <= 0)         # 11  would pay nothing
-sum(d$q0  <= 0)         # 12  would take none even at a price of zero
-max(d$wtp)              # 3.51
-median(d$wtp[d$wtp > 0])# 1.99
+# Count the blanks before deciding anything about them.
+summarise(d, across(everything(), ~ sum(is.na(.x))))   # 0, 0, 0 in this file
+
+nrow(d)                  # 46
+sum(d$wtp <= 0)          # 11  typed zeros, and they stay
+sum(d$q0  <= 0)          # 12
+max(d$wtp)               # 3.51
+median(d$wtp[d$wtp > 0]) # 1.99
 ```
+:::
+
+---
+
+## Clean what came back {#sec-cl-clean}
+
+The practice file is tidy. **Your export will not be.** It arrives with the screener questions
+still in it, the open-text answers, prices typed as `$12`, `about 10`, `12-15` and `free`, and
+respondents who should never have passed the screen. This section is the one that decides whether
+everything after it means anything, and it is mechanical rather than clever.
+
+**Parse, do not coerce.** A value you cannot read is not a zero and not a one; it is a value you
+cannot read, and it should announce itself.
+
+::: {.panel-tabset group="language"}
 
 ### Python
 
 ```python
-import csv, statistics
+import re
 
-def num(x):
-    x = (x or "").strip()
-    return float(x) if x else 0.0          # blank means zero, not missing
+def parse_money(x):
+    """Return a number, or None if this cell cannot be read as one.
+       Never guess: an unreadable answer is reported, not repaired."""
+    if x is None: return None
+    s = str(x).strip().lower()
+    if s in ("", "na", "n/a", "-"):              return None
+    if s in ("free", "nothing", "zero", "none"): return 0.0
+    s = s.replace("$", "").replace(",", "")
+    m = re.findall(r"\d+(?:\.\d+)?", s)
+    if not m:  return None
+    if len(m) > 1:                                # "12-15" -- a range, not an answer
+        return sum(float(v) for v in m) / len(m)  # midpoint, and report that you did
+    return float(m[0])
+```
 
-rows = list(csv.DictReader(open("muscle-cola.csv")))
-wtp  = [num(r["wtp"])             for r in rows]
-q    = [num(r["quantity"])        for r in rows]
-q0   = [num(r["quantity_at_P0"])  for r in rows]
+### R
 
-len(rows)                                  # 46
-sum(1 for w in wtp if w <= 0)              # 11
-sum(1 for x in q0  if x <= 0)              # 12
-max(wtp)                                   # 3.51
-statistics.median([w for w in wtp if w > 0])   # 1.99
+```r
+parse_money <- function(x) {
+  s <- tolower(trimws(as.character(x)))
+  out <- rep(NA_real_, length(s))
+  out[s %in% c("free", "nothing", "zero", "none")] <- 0
+  nums <- regmatches(s, gregexpr("[0-9]+(\\.[0-9]+)?", s))
+  vals <- vapply(nums, \(v) if (length(v) == 0) NA_real_ else mean(as.numeric(v)), numeric(1))
+  ifelse(is.na(out), vals, out)   # "12-15" becomes 13.5 -- report that you did this
+}
 ```
 
 :::
+
+**Then, in this order:**
+
+1. **Drop respondents who failed the screen.** Not because their answers are wrong, but because
+   they are answers about a different population. Record how many.
+2. **Decide the blanks** by the rule above: a branch implies zero, an optional skip is missing.
+3. **Flag, do not silently remove.** Quantity at the maximum price exceeding quantity at zero.
+   Willingness to pay above any plausible bound. Straight-lining — the same number in every box.
+   Duplicate submissions.
+4. **Reconcile units and period.** Someone who answered per year when your period is monthly is a
+   units error, not an outlier, and the fix is division rather than deletion.
+
+**Walk the flagged responses one at a time and say what each would do to the estimate if kept.**
+The judgment is yours; the arithmetic below cannot make it for you, and a rule applied blindly at
+this step is how a clean-looking curve gets built on a contaminated sample.
+
+**Then report three numbers, always: screened in, usable, and flagged.** If more than a fifth of
+your responses are unusable, the honest move is to re-field rather than to proceed.
 
 ---
 
@@ -128,7 +202,19 @@ dense middle, and it changes the answer.
 and nothing above it, which is exactly what `w >= p` produces. They belong at that point and
 nowhere else.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
+
+### Python
+
+```python
+def demand_yes_no(wtp):
+    """One unit per buyer. At price p, everyone whose maximum is >= p buys."""
+    prices = sorted(set(wtp) | {0.0})
+    return [(p, sum(1 for w in wtp if w >= p)) for p in prices]
+
+yn = dict(demand_yes_no(wtp))
+yn[0.0], yn[1.0], yn[2.0]                  # 46, 32, 15
+```
 
 ### R
 
@@ -146,19 +232,6 @@ yn |> filter(price %in% c(0, 1, 2))
 #>     1       32
 #>     2       15
 ```
-
-### Python
-
-```python
-def demand_yes_no(wtp):
-    """One unit per buyer. At price p, everyone whose maximum is >= p buys."""
-    prices = sorted(set(wtp) | {0.0})
-    return [(p, sum(1 for w in wtp if w >= p)) for p in prices]
-
-yn = dict(demand_yes_no(wtp))
-yn[0.0], yn[1.0], yn[2.0]                  # 46, 32, 15
-```
-
 :::
 
 That table is the demand curve: a staircase that steps down as the price rises. It is not an
@@ -186,7 +259,29 @@ at a fixed height.
 they contribute their free quantity at a price of zero and nothing above it. That is a coherent
 answer — *I would take three if you gave them away and will not pay for them* — not bad data.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
+
+### Python
+
+```python
+def respondent_line(q_free, max_wtp, q_at_max):
+    """That respondent's own demand: q_free when free, q_at_max at their
+       maximum, nothing above it."""
+    if max_wtp <= 0:
+        return lambda p: (q_free if p <= 0 else 0.0)
+    slope = (q_at_max - q_free) / max_wtp
+    return lambda p: max(0.0, q_free + slope * p) if p <= max_wtp else 0.0
+
+def demand_how_many(rows, prices):
+    """Horizontal summation: add the respondents' quantities at each price."""
+    lines = [respondent_line(*r) for r in rows]      # r = (q_free, max_wtp, q_at_max)
+    return [(p, sum(f(p) for f in lines)) for p in prices]
+
+rows   = list(zip(q0, wtp, q))
+prices = sorted(set(wtp) | {0.0})
+hm     = dict(demand_how_many(rows, prices))
+[round(hm[p], 1) for p in (0.0, 1.0, 2.0)]           # [1402.0, 997.9, 419.0]
+```
 
 ### R
 
@@ -212,29 +307,6 @@ demand_how_many(d, c(0, 1, 2))
 #>     1    997.9
 #>     2    419.0
 ```
-
-### Python
-
-```python
-def respondent_line(q_free, max_wtp, q_at_max):
-    """That respondent's own demand: q_free when free, q_at_max at their
-       maximum, nothing above it."""
-    if max_wtp <= 0:
-        return lambda p: (q_free if p <= 0 else 0.0)
-    slope = (q_at_max - q_free) / max_wtp
-    return lambda p: max(0.0, q_free + slope * p) if p <= max_wtp else 0.0
-
-def demand_how_many(rows, prices):
-    """Horizontal summation: add the respondents' quantities at each price."""
-    lines = [respondent_line(*r) for r in rows]      # r = (q_free, max_wtp, q_at_max)
-    return [(p, sum(f(p) for f in lines)) for p in prices]
-
-rows   = list(zip(q0, wtp, q))
-prices = sorted(set(wtp) | {0.0})
-hm     = dict(demand_how_many(rows, prices))
-[round(hm[p], 1) for p in (0.0, 1.0, 2.0)]           # [1402.0, 997.9, 419.0]
-```
-
 :::
 
 **Check these three numbers before going further.** 1402.0, 997.9 and 419.0 are what the practice
@@ -274,27 +346,7 @@ evenly spaced grid of your own invention weights the sparse tail — where one o
 conclusion depends on the shape you assumed. When the three agree, your decision is robust; when
 they diverge, the divergence is the finding.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-lin_model <- lm(quantity ~ price, hm)
-
-# Exponential: regress on log quantity. Drop zero quantities first -- log(0) is
-# undefined -- and say how many you dropped.
-exp_model <- lm(log(quantity) ~ price, filter(hm, quantity > 0))
-
-# Sigmoid: a real non-linear optimizer, not a grid search.
-sig_model <- nls(quantity ~ SSlogis(price, Asym, xmid, scal), data = hm)
-
-pred_lin <- function(p) predict(lin_model, newdata = tibble(price = p))
-pred_exp <- function(p) exp(predict(exp_model, newdata = tibble(price = p)))
-pred_sig <- function(p) predict(sig_model, newdata = tibble(price = p))
-```
-
-`SSlogis` is written for curves that rise, so on demand data `scal` comes back negative
-(here −0.628). That is the curve bending the right way, not an error.
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -317,6 +369,25 @@ par, _ = curve_fit(f, P, Q, p0=[max(Q), np.median(P), (max(P) - min(P)) / 4])
 pred_sig = lambda p: f(p, *par)
 ```
 
+### R
+
+```r
+lin_model <- lm(quantity ~ price, hm)
+
+# Exponential: regress on log quantity. Drop zero quantities first -- log(0) is
+# undefined -- and say how many you dropped.
+exp_model <- lm(log(quantity) ~ price, filter(hm, quantity > 0))
+
+# Sigmoid: a real non-linear optimizer, not a grid search.
+sig_model <- nls(quantity ~ SSlogis(price, Asym, xmid, scal), data = hm)
+
+pred_lin <- function(p) predict(lin_model, newdata = tibble(price = p))
+pred_exp <- function(p) exp(predict(exp_model, newdata = tibble(price = p)))
+pred_sig <- function(p) predict(sig_model, newdata = tibble(price = p))
+```
+
+`SSlogis` is written for curves that rise, so on demand data `scal` comes back negative
+(here −0.628). That is the curve bending the right way, not an error.
 :::
 
 On the practice data, all three fit the same 22 points:
@@ -342,21 +413,7 @@ is **0.913** and the quantity-scale figure is **0.607** — second of three by o
 wide margin on the other. The sigmoid, fitted by non-linear least squares, has no variance
 decomposition at all, so an R² reported for it is descriptive only.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-fit_quality <- function(predict_fn, tb) {
-  resid <- tb$quantity - predict_fn(tb$price)      # always on the quantity scale
-  c(r2   = 1 - sum(resid^2) / sum((tb$quantity - mean(tb$quantity))^2),
-    rmse = sqrt(mean(resid^2)))
-}
-
-fit_quality(pred_lin, hm)   # r2 0.970  rmse  73.0
-fit_quality(pred_exp, hm)   # r2 0.607  rmse 262.5   <- not summary(exp_model)$r.squared
-fit_quality(pred_sig, hm)   # r2 0.993  rmse  34.5
-```
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -373,6 +430,19 @@ fit_quality(P, Q, pred_exp)   # r2 0.607  rmse 262.5
 fit_quality(P, Q, pred_sig)   # r2 0.993  rmse  34.5
 ```
 
+### R
+
+```r
+fit_quality <- function(predict_fn, tb) {
+  resid <- tb$quantity - predict_fn(tb$price)      # always on the quantity scale
+  c(r2   = 1 - sum(resid^2) / sum((tb$quantity - mean(tb$quantity))^2),
+    rmse = sqrt(mean(resid^2)))
+}
+
+fit_quality(pred_lin, hm)   # r2 0.970  rmse  73.0
+fit_quality(pred_exp, hm)   # r2 0.607  rmse 262.5   <- not summary(exp_model)$r.squared
+fit_quality(pred_sig, hm)   # r2 0.993  rmse  34.5
+```
 :::
 
 **Report RMSE beside R², in units you recognise.** "Off by 73 units a month on average" is a
@@ -406,7 +476,19 @@ Plot the points and the fitted curve together before you use either. This is the
 what statistics hide: a curve sitting consistently above or below the evidence, one that fits the
 middle and misses both ends, or one dragged by two extreme answers.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
+
+### Python
+
+```python
+import matplotlib.pyplot as plt
+grid = np.linspace(0, P.max(), 200)
+plt.plot(P, Q, "o", label="respondents")
+for name, fn in (("linear", pred_lin), ("exponential", pred_exp), ("sigmoid", pred_sig)):
+    plt.plot(grid, [fn(p) for p in grid], label=name)
+plt.xlabel("Price"); plt.ylabel("Quantity per period"); plt.legend()
+plt.title("Demand: respondents' points and three fitted curves")
+```
 
 ### R
 
@@ -422,19 +504,6 @@ ggplot(hm, aes(price, quantity)) +
   labs(x = "Price", y = "Quantity per period",
        title = "Demand: respondents' points and three fitted curves")
 ```
-
-### Python
-
-```python
-import matplotlib.pyplot as plt
-grid = np.linspace(0, P.max(), 200)
-plt.plot(P, Q, "o", label="respondents")
-for name, fn in (("linear", pred_lin), ("exponential", pred_exp), ("sigmoid", pred_sig)):
-    plt.plot(grid, [fn(p) for p in grid], label=name)
-plt.xlabel("Price"); plt.ylabel("Quantity per period"); plt.legend()
-plt.title("Demand: respondents' points and three fitted curves")
-```
-
 :::
 
 **Cover the curves and look only at the points. Would you have drawn that line yourself?** If not,
@@ -460,18 +529,7 @@ evidence about the population, not missing rows. On this dataset 11 of 46 would 
 would take none even when it is free; rescaling on 35 instead of 46 would overstate demand by 31%
 and nothing downstream would reveal it.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-n <- nrow(d)          # 46 -- everyone screened in, zeros included
-N <- 5000             # reachable population, argued down and written out
-k <- N / n            # 108.7
-
-q_pop <- function(p) pred_sig(p) * k      # or pred_lin / pred_exp
-q_pop(1)                                   # 109,621 units per month
-```
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -484,6 +542,16 @@ q_pop = lambda p: max(0.0, pred_sig(p)) * k
 q_pop(1.0)             # 109,621
 ```
 
+### R
+
+```r
+n <- nrow(d)          # 46 -- everyone screened in, zeros included
+N <- 5000             # reachable population, argued down and written out
+k <- N / n            # 108.7
+
+q_pop <- function(p) pred_sig(p) * k      # or pred_lin / pred_exp
+q_pop(1)                                   # 109,621 units per month
+```
 :::
 
 **Rescale the fitted curve, not the raw points**, and report `k` out loud. A curve built on 46
@@ -542,7 +610,28 @@ Assemble: `profit(p) = (p − c) · q(p) − f`, with `q` the **population** cur
 has a kink, and a derivative set to zero can return a peak sitting in the region where quantity is
 already zero. A grid cannot make that mistake.
 
-::: {.panel-tabset}
+::: {.panel-tabset group="language"}
+
+### Python
+
+```python
+def profit_curve(q_of_p, c, f, lo=0.0, hi=4.0, step=0.01):
+    out, p = [], lo
+    while p <= hi:
+        out.append((p, (p - c) * max(0.0, q_of_p(p)) - f))
+        p += step
+    return out
+
+def read_curve(curve, lo, hi):
+    pos = [p for p, pi in curve if pi > 0]
+    peak_p, peak = max(curve, key=lambda t: t[1])
+    if not pos:
+        return {"reading": "impossible", "peak_price": peak_p, "peak": peak}
+    width = (max(pos) - min(pos)) / (hi - lo)
+    return {"reading": "fragile" if width < 0.28 else "robust",
+            "band": (min(pos), max(pos)), "width": width,
+            "peak_price": peak_p, "peak": peak}
+```
 
 ### R
 
@@ -566,28 +655,6 @@ read_curve <- function(curve, lo, hi) {
 curve <- profit_curve(q_pop, c_var, f_fix, 0, 4)
 read_curve(curve, 0, 4)
 ```
-
-### Python
-
-```python
-def profit_curve(q_of_p, c, f, lo=0.0, hi=4.0, step=0.01):
-    out, p = [], lo
-    while p <= hi:
-        out.append((p, (p - c) * max(0.0, q_of_p(p)) - f))
-        p += step
-    return out
-
-def read_curve(curve, lo, hi):
-    pos = [p for p, pi in curve if pi > 0]
-    peak_p, peak = max(curve, key=lambda t: t[1])
-    if not pos:
-        return {"reading": "impossible", "peak_price": peak_p, "peak": peak}
-    width = (max(pos) - min(pos)) / (hi - lo)
-    return {"reading": "fragile" if width < 0.28 else "robust",
-            "band": (min(pos), max(pos)), "width": width,
-            "peak_price": peak_p, "peak": peak}
-```
-
 :::
 
 **Report four things, never only the first:**

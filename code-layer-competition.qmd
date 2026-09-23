@@ -56,19 +56,7 @@ which gives the four corners of a box.
 For yes/no demand the two willingness-to-pay columns are enough on their own; the quantity
 scenarios are not needed.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-library(dplyr); library(readr); library(purrr); library(tidyr)
-
-d <- read_csv("fresh-prep_fast-food.csv", show_col_types = FALSE) |>
-  select(wtpA, wtpB, qA_00, qB_00, qA_0B, qB_0B, qA_A0, qB_A0, qA_AB, qB_AB) |>
-  drop_na()
-
-n <- nrow(d)   # 53
-```
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -85,6 +73,17 @@ rows = [r for r in rows if all(v is not None for v in r.values())]
 n = len(rows)    # 53
 ```
 
+### R
+
+```r
+library(dplyr); library(readr); library(purrr); library(tidyr)
+
+d <- read_csv("fresh-prep_fast-food.csv", show_col_types = FALSE) |>
+  select(wtpA, wtpB, qA_00, qB_00, qA_0B, qB_0B, qA_A0, qB_A0, qA_AB, qB_AB) |>
+  drop_na()
+
+n <- nrow(d)   # 53
+```
 :::
 
 ---
@@ -104,24 +103,7 @@ transformation every quantity sits at a price you chose rather than one they nam
 
 Their four answers are the corners. Read anywhere inside by bilinear interpolation.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-interp_q <- function(p_own, p_riv, w_own, w_riv, q00, q_own0, q_0riv, q_ownriv) {
-  if (p_own > w_own) return(0)                 # priced out of their own maximum
-  p_riv_eff <- min(p_riv, w_riv)               # past the rival's max, no more switching
-  x <- if (w_own == 0) 1 else p_own / w_own
-  y <- if (w_riv == 0) 1 else p_riv_eff / w_riv
-  (1-x)*(1-y)*q00 + x*(1-y)*q_own0 + (1-x)*y*q_0riv + x*y*q_ownriv
-}
-
-QA <- function(pa, pb) sum(pmap_dbl(list(d$wtpA, d$wtpB, d$qA_00, d$qA_A0, d$qA_0B, d$qA_AB),
-                                    \(wa, wb, q00, qa0, q0b, qab) interp_q(pa, pb, wa, wb, q00, qa0, q0b, qab)))
-QB <- function(pb, pa) sum(pmap_dbl(list(d$wtpB, d$wtpA, d$qB_00, d$qB_0B, d$qB_A0, d$qB_AB),
-                                    \(wb, wa, q00, qb0, q0a, qab) interp_q(pb, pa, wb, wa, q00, qb0, q0a, qab)))
-```
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -140,6 +122,22 @@ QB = lambda pb, pa: sum(interp_q(pb, pa, r["wtpB"], r["wtpA"],
                                  r["qB_00"], r["qB_0B"], r["qB_A0"], r["qB_AB"]) for r in rows)
 ```
 
+### R
+
+```r
+interp_q <- function(p_own, p_riv, w_own, w_riv, q00, q_own0, q_0riv, q_ownriv) {
+  if (p_own > w_own) return(0)                 # priced out of their own maximum
+  p_riv_eff <- min(p_riv, w_riv)               # past the rival's max, no more switching
+  x <- if (w_own == 0) 1 else p_own / w_own
+  y <- if (w_riv == 0) 1 else p_riv_eff / w_riv
+  (1-x)*(1-y)*q00 + x*(1-y)*q_own0 + (1-x)*y*q_0riv + x*y*q_ownriv
+}
+
+QA <- function(pa, pb) sum(pmap_dbl(list(d$wtpA, d$wtpB, d$qA_00, d$qA_A0, d$qA_0B, d$qA_AB),
+                                    \(wa, wb, q00, qa0, q0b, qab) interp_q(pa, pb, wa, wb, q00, qa0, q0b, qab)))
+QB <- function(pb, pa) sum(pmap_dbl(list(d$wtpB, d$wtpA, d$qB_00, d$qB_0B, d$qB_A0, d$qB_AB),
+                                    \(wb, wa, q00, qb0, q0a, qab) interp_q(pb, pa, wb, wa, q00, qb0, q0a, qab)))
+```
 :::
 
 **Two lines in that function carry the method.** Above a respondent's own maximum they buy nothing,
@@ -192,25 +190,7 @@ q_B = a_B − b_B·p_B + d_B·p_A
 how many arrive when **they** raise theirs. Two equations, six parameters, and pooling is correct
 here because the surface was built at prices you chose.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-surf <- expand_grid(P_A = grid_A, P_B = grid_B) |>
-  mutate(Q_A = map2_dbl(P_A, P_B, QA), Q_B = map2_dbl(P_B, P_A, QB))
-
-lin_A <- lm(Q_A ~ P_A + P_B, surf)      # coefficients come out as a, -b, +d
-lin_B <- lm(Q_B ~ P_B + P_A, surf)
-
-exp_A <- lm(log(Q_A) ~ P_A + P_B, filter(surf, Q_A > 0))
-
-# Sigmoid with the rival term constrained non-negative: a rival's price rise
-# cannot reduce your quantity.
-sig_A <- nls(Q_A ~ Qmax / (1 + exp(-(a + b * P_A + c * P_B))), data = surf,
-             start = list(Qmax = max(surf$Q_A) * 1.1, a = 0, b = -0.1, c = 0.05),
-             algorithm = "port", lower = c(0, -50, -10, 0))
-```
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -236,6 +216,23 @@ def fit_sigmoid(y, own, riv):
                      maxfev=40000)[0]
 ```
 
+### R
+
+```r
+surf <- expand_grid(P_A = grid_A, P_B = grid_B) |>
+  mutate(Q_A = map2_dbl(P_A, P_B, QA), Q_B = map2_dbl(P_B, P_A, QB))
+
+lin_A <- lm(Q_A ~ P_A + P_B, surf)      # coefficients come out as a, -b, +d
+lin_B <- lm(Q_B ~ P_B + P_A, surf)
+
+exp_A <- lm(log(Q_A) ~ P_A + P_B, filter(surf, Q_A > 0))
+
+# Sigmoid with the rival term constrained non-negative: a rival's price rise
+# cannot reduce your quantity.
+sig_A <- nls(Q_A ~ Qmax / (1 + exp(-(a + b * P_A + c * P_B))), data = surf,
+             start = list(Qmax = max(surf$Q_A) * 1.1, a = 0, b = -0.1, c = 0.05),
+             algorithm = "port", lower = c(0, -50, -10, 0))
+```
 :::
 
 On the practice data, scoring every model on the original quantity scale:
@@ -301,29 +298,7 @@ alone.
 chose. The closed form below exists only for the linear one, and linear is often not the form you
 would pick.
 
-::: {.panel-tabset}
-
-### R
-
-```r
-best_response <- function(p_rival, demand, c, lo, hi, steps = 4000) {
-  p  <- seq(lo, hi, length.out = steps + 1)
-  pi <- (p - c) * pmax(0, map_dbl(p, \(x) demand(x, p_rival)))
-  p[which.max(pi)]
-}
-
-equilibrium <- function(dem_A, dem_B, cA, cB, lo, hi, tol = 1e-6) {
-  pA <- pB <- (lo + hi) / 2
-  for (i in 1:300) {
-    nA <- best_response(pB, dem_A, cA, lo, hi)
-    nB <- best_response(nA, dem_B, cB, lo, hi)
-    converged <- max(abs(nA - pA), abs(nB - pB)) < tol
-    pA <- nA; pB <- nB
-    if (converged) return(list(p_A = pA, p_B = pB, iterations = i, converged = TRUE))
-  }
-  list(p_A = pA, p_B = pB, iterations = 300, converged = FALSE)
-}
-```
+::: {.panel-tabset group="language"}
 
 ### Python
 
@@ -349,6 +324,27 @@ def equilibrium(dem_A, dem_B, cA, cB, lo, hi, tol=1e-6):
     return {"p_A": pA, "p_B": pB, "iterations": 300, "converged": False}
 ```
 
+### R
+
+```r
+best_response <- function(p_rival, demand, c, lo, hi, steps = 4000) {
+  p  <- seq(lo, hi, length.out = steps + 1)
+  pi <- (p - c) * pmax(0, map_dbl(p, \(x) demand(x, p_rival)))
+  p[which.max(pi)]
+}
+
+equilibrium <- function(dem_A, dem_B, cA, cB, lo, hi, tol = 1e-6) {
+  pA <- pB <- (lo + hi) / 2
+  for (i in 1:300) {
+    nA <- best_response(pB, dem_A, cA, lo, hi)
+    nB <- best_response(nA, dem_B, cB, lo, hi)
+    converged <- max(abs(nA - pA), abs(nB - pB)) < tol
+    pA <- nA; pB <- nB
+    if (converged) return(list(p_A = pA, p_B = pB, iterations = i, converged = TRUE))
+  }
+  list(p_A = pA, p_B = pB, iterations = 300, converged = FALSE)
+}
+```
 :::
 
 On the practice data, with `c_A` = \$4.50, `c_B` = \$3.00, `N` = 4,000 and a price range of \$0–\$25:
