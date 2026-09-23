@@ -147,13 +147,29 @@ book:
     # the "not yet" point, both of which belong to commitment specifically.
     - what-its-worth.qmd
 
-    # The method layer, unnumbered like the sign-off. Two files by design: this
-    # one runs the single-firm pipeline (stages 0-7), and the competitive branch
-    # gets its own layer, because a reader who is not facing a rival should not
-    # have to page past it. prose-check exempts both — a different register, per
-    # family style guide S3.
-    - method-layer.qmd
-    - method-layer-competition.qmd
+    # The method chapters, unnumbered like the sign-off, grouped into two parts
+    # on 23 Sep 2026 when the code layer arrived and four bare files in a row
+    # stopped telling a reader what they were.
+    #
+    # Split by rival, not by tool, because that is the order the choices come
+    # in. Whether a rival is close enough to matter must be settled BEFORE
+    # anything is fielded — the two branches run different instruments and
+    # neither set of evidence converts into the other afterwards — while AI or
+    # code is a preference a reader can change mid-project. Expensive choice
+    # outside, cheap one inside.
+    #
+    # prose-check exempts all four — a different register, per family style
+    # guide S3.
+    - part: "Running the Method: Without a Rival"
+      chapters:
+        - method-layer.qmd
+        - code-layer.qmd
+
+    # One chapter until the competition code layer is written. Left as a part
+    # anyway: it names the gap rather than hiding it.
+    - part: "Running the Method: With a Rival"
+      chapters:
+        - method-layer-competition.qmd
 
     # Removed 11 Aug 2026: an empty "Competing to Sell to Businesses" part, and
     # summary.qmd, a placeholder that was live as ch. 24 and read "this book has
