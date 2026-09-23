@@ -256,14 +256,18 @@ a data problem rather than a discovery.
 The two firms are not symmetric substitutes, and only the firm that measured both directions knows
 it.
 
-::: {.callout-note}
-**A note on `d`, unresolved and worth knowing.** Interpolating with the cap above produces a
-*smaller* substitution term than identifying each respondent's line linearly and summing. The
-difference is entirely the cap: linear identification keeps moving customers toward you as the
-rival's price rises past the point where those customers had already abandoned the rival. The
-interpolated figure is the conservative one and is what the app reports. If your market knowledge
-says substitution keeps biting at high rival prices, the true value is nearer the larger number,
-and you should compute the equilibrium at both.
+::: {.limit}
+**What the substitution term cannot settle**
+
+Interpolating with the cap above produces a *smaller* substitution term than identifying each
+respondent's line linearly and summing. The difference is entirely the cap: linear identification
+keeps moving customers toward you as the rival's price rises past the point where those customers
+had already abandoned the rival.
+
+The interpolated figure is the conservative one and is what the app reports. Which is right is not
+settled by the data, because the respondents were never asked about prices above their own maximum.
+If your market knowledge says substitution keeps biting at high rival prices, the true value is
+nearer the larger number — so compute the equilibrium at both and report the pair.
 :::
 
 **Rescale to the population by multiplying `a` alone.** With `n` respondents and reachable
