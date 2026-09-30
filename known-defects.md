@@ -6,6 +6,63 @@ Delete each entry when it is fixed.
 The three entries recorded on 23 Sep 2026 — the Stage 2 zero-WTP rule, the Stage 3 yes/no sigmoid
 claim, and the Stage C3 negative-R² claim — were fixed the same day.
 
+## `muscle_cola_wqq.csv` is labeled "collected" and one of its columns is manufactured
+
+**`quantity_at_P0` is exactly 2 x `quantity` for all 34 respondents with a positive quantity.** No
+exceptions; the only ratio in the file is 2.0. sum(quantity) = 701, sum(quantity_at_P0) = 1402.
+
+**Cause, from Nile, 30 Sep 2026.** Early in developing the four-anchor method he had no real
+four-anchor responses, so he generated that column by doubling `quantity` as scaffolding, to test
+that the transformation and estimation code ran at all. Real data came later; the manufactured
+column was never revisited. **The `wtp` figures are real. The free-quantity column is his.**
+
+**Found by a student**, not by us — in ENTP 5771's Week 5 competence check, which uses the same
+file. Thirty-three others described the curve's shape; one asked whether a ratio that ought to vary
+between people actually varied.
+
+### Why this is a book defect and not only a course one
+
+`data/README.md:26` classifies it:
+
+    | `muscle_cola_wqq.csv` | **collected.** Real respondents, real answers |
+
+That is true of `wtp` and false of `quantity_at_P0`. The README puts the file on the wrong side of
+its own stated line, twelve lines below: *"Adapted and simulated data can teach a method. It cannot
+support a claim about the market."* The README also explains that the simulated files ship with
+their generators "so that what is simulated can be inspected rather than taken on trust" — which is
+exactly the standard this column fails.
+
+There is precedent in the same README, at the *Dorsal* entry: **"Simulated, and regenerated 24 Aug
+2026. The earlier simulation had a fingerprint no real data would have."** A constant ratio across
+every respondent is the most obvious fingerprint available, and it sits in the file labeled
+collected.
+
+### What depends on it
+
+`method-layer.qmd` and `code-layer.qmd` both compute their published Reference answers from this
+file: 1402.0 at a price of zero, 997.9 at $1.00, 419.0 at $2.00, and the three fit statistics in the
+code layer (linear R^2 0.970, exponential 0.607, sigmoid 0.993).
+
+**The code is correct. The illustration is not innocent.** A sigmoid fits at 0.993 partly because
+the bottom half of that curve is arithmetically twice the top half — the "flat shoulder at low
+prices" the layer describes is produced by the doubling rule, not by respondents. The fit comparison
+is being read off a shape that was partly manufactured.
+
+### The fix
+
+**A real candidate already exists: `app-data/donuts-2025.csv`.** 42 rows, 34 usable, and the
+free-to-max quantity ratio takes **ten distinct values from 1.0 to 10.0** — which is what human
+variation looks like. Test any candidate the same way: if `q_at_P0 / quantity` is constant, it was
+generated.
+
+In order: pick the replacement; recompute every published number in both layers and in the code
+layer's Reference sections; correct the `data/README.md` provenance row; and re-check the sigmoid
+claim, which may change once the low-price shoulder is real.
+
+**Do not change the course's copy mid-semester** — 34 students submitted against the published key
+and the exercise still did its job. See `ops/competence-check-key.R` in
+`class-uu-bus-model-innovation`.
+
 ## Stage 3 says every assumption enters at step two. One enters at step one.
 
 `method-layer.qmd`, Stage 3, opening line: *"Two steps, and never merge them. Step one is a
