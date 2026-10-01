@@ -98,3 +98,22 @@ three-anchor curve and label each one counting or fitting, he labelled the inter
 *fitting* — and was right by the letter of the definition he had been given. The course documents
 (`assignments/estimation-competence-check.md` and `assignments/milestone-1-demand.md` in
 `class-uu-bus-model-innovation`) were corrected the same day along the lines above. The book was not.
+
+## `muscle_cola_wqq.csv` also contains one internally incoherent respondent
+
+Separate from the manufactured `quantity_at_P0` column above. One row reads **wtp = 0.50,
+quantity = 0, quantity_at_P0 = 0** — a respondent who would pay fifty cents for something they
+would not take for free.
+
+**It does not move any published number.** A respondent at zero quantity contributes zero to every
+sum, so all seven reference values in `method-layer.qmd` and `code-layer.qmd` stand.
+
+**Found by a student**, 30 Sep 2026, in ENTP 5771's week 5 check — by cross-tabulating `wtp`
+against `quantity_at_P0`, which nothing asked him to do. A second student found the same gap from
+the marginals (11 zero-wtp respondents against 12 who take none at a price of zero) and wrongly
+attributed it to the doubling; the doubling maps 0 to 0 and so cannot create or remove a zero.
+
+**Worth keeping deliberately.** Real survey data contains contradictions, and the stages that teach
+validation are stronger with a live example than with a clean file. If the file is replaced, carry
+one documented coherence violation into the replacement. Detail in
+`ops/competence-check-key.R` in `class-uu-bus-model-innovation`.
