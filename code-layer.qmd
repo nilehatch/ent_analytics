@@ -277,9 +277,10 @@ def demand_how_many(rows, prices):
     lines = [respondent_line(*r) for r in rows]      # r = (q_free, max_wtp, q_at_max)
     return [(p, sum(f(p) for f in lines)) for p in prices]
 
-rows   = list(zip(q0, wtp, q))
-prices = sorted(set(wtp) | {0.0})
-hm     = dict(demand_how_many(rows, prices))
+rows      = list(zip(q0, wtp, q))
+prices    = sorted(set(wtp) | {0.0})
+hm_points = demand_how_many(rows, prices)            # the (price, quantity) pairs -- 22 of them
+hm        = dict(hm_points)                          # the same data, keyed by price for lookups
 [round(hm[p], 1) for p in (0.0, 1.0, 2.0)]           # [1402.0, 997.9, 419.0]
 ```
 
